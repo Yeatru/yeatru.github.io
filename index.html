@@ -2168,5 +2168,58 @@
       document.body.style.overflow = 'auto';
     }
   </script>
+<!-- 替换原移动端菜单按钮和移动端导航菜单的样式/脚本部分 -->
+<!-- 1. 修复移动端菜单按钮样式 -->
+<button class="mobile-menu-btn md:hidden" id="mobileMenuBtn">
+  <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+</button>
+
+<!-- 2. 修复移动端导航菜单样式 -->
+<div id="mobileNavMenu" class="mobile-nav hidden bg-white shadow-md w-full">
+  <nav class="flex flex-col gap-1 p-4">
+    <a href="#home" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="home">Home</a>
+    <a href="#products" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="products">Products</a>
+    <a href="#services" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="services">Services</a>
+    <a href="#process" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="sourcingProcess">Sourcing Process</a>
+    <a href="#testimonials" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="testimonials">Testimonials</a>
+    <a href="#about" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="aboutUs">About Us</a>
+    <a href="#contact" class="lang-text py-2 px-3 hover:bg-primary/5 rounded" data-key="contactUs">Contact Us</a>
+    <div id="mobileAdminBtn" class="admin-hidden py-2 px-3 lang-text" data-key="login">Login</div>
+    <div id="mobileLogoutBtn" class="hidden admin-hidden text-red-500 py-2 px-3 lang-text" data-key="logout">Logout</div>
+  </nav>
+</div>
+
+<!-- 在</body>前添加交互脚本（如果原代码没有的话） -->
+<script>
+// 仅添加移动端菜单交互逻辑
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavMenu = document.getElementById('mobileNavMenu');
+  const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+  // 修复汉堡菜单点击切换逻辑
+  mobileMenuBtn.addEventListener('click', function() {
+    mobileNavMenu.classList.toggle('hidden');
+    // 切换菜单图标（汉堡/叉号）
+    if (mobileNavMenu.classList.contains('hidden')) {
+      mobileMenuIcon.classList.remove('fa-times');
+      mobileMenuIcon.classList.add('fa-bars');
+    } else {
+      mobileMenuIcon.classList.remove('fa-bars');
+      mobileMenuIcon.classList.add('fa-times');
+    }
+  });
+
+  // 点击菜单项后关闭菜单（优化体验）
+  const mobileNavLinks = mobileNavMenu.querySelectorAll('a');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNavMenu.classList.add('hidden');
+      mobileMenuIcon.classList.remove('fa-times');
+      mobileMenuIcon.classList.add('fa-bars');
+    });
+  });
+});
+</script>
 </body>
 </html>
