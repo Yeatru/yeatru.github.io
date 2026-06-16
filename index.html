@@ -520,8 +520,8 @@
             <a class="navbar-brand" href="#home">
                 <!-- ===== 5*5 标准尺寸 Logo 容器 ===== -->
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png" alt="Yeatru Logo" style="display:block;" />
-                    <span class="brand-logo-fallback" id="brandLogoFallback" style="display:none;">YC</span>
+                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
                 <span>Yeatru Sourcing</span>
@@ -609,8 +609,18 @@
                     <div class="filter-result-info" id="filterResultInfo"></div>
                 </div>
 
-                <!-- 新增产品按钮（仅管理员可见） -->
-                <button id="addProductBtn" class="btn btn-primary mb-4 d-none" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
+                <!-- 管理员数据工具（仅管理员可见）：新增产品 / 导出 JSON / 导入 JSON -->
+                <div id="adminDataTools" class="d-none flex-wrap gap-2 mb-4">
+                    <button id="addProductBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
+                    <button id="exportDataBtn" class="btn btn-outline-primary" type="button">
+                        <i class="fas fa-file-export me-1"></i> Export site-data.json
+                    </button>
+                    <button id="importDataBtn" class="btn btn-outline-secondary" type="button">
+                        <i class="fas fa-file-import me-1"></i> Import site-data.json
+                    </button>
+                    <input id="importDataFile" type="file" accept="application/json,.json" style="display:none;">
+                    <small class="text-muted align-self-center">Upload exported site-data.json to GitHub so visitors can see the latest edits.</small>
+                </div>
 
                 <!-- 产品列表 -->
                 <div class="row" id="productList"></div>
@@ -778,8 +788,8 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="#" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="https://https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png" alt="Yeatru Logo" style="display:block;">
-                            <span id="footerLogoFallback" style="display:none; color: var(--peacock-blue-light); font-weight: bold;">YC</span>
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <span id="footerLogoFallback" style="color: var(--peacock-blue-light); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing
                     </a>
@@ -983,9 +993,10 @@
     <script>
         /* ========== 默认数据 ========== */
         const DEFAULT_CATEGORIES = ["Electronics", "Home & Garden", "Kitchenware", "Toys", "Apparel"];
+        const REMOTE_DATA_URL = "./site-data.json";
         const DEFAULT_PRODUCTS = [
-            { id: 1, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL101A.jpg", category: "Apparel", name: "Quick Dry Activewear Set", sku: "YS-CL-001A", material: "Polyester", size: "L/XL/XXL/XXXL/XXXXL", moq: 100, priceMin: 6.49, priceMax: 6.99, description: "Men's 2-piece quick-dry athletic set with short-sleeve tee and 2-in-1 double-layer running shorts. Moisture-wicking lightweight fabric rapidly dissipates sweat for cool, breathable comfort during gym, jogging, swimming and training. Built-in compression liner avoids chafing, elastic drawstring waist secures fit. Minimalist branded black design. Sizes L–XXXXL fit men weighing 42.5–90.5kg, flexible stretch material enables full unrestricted sports movement.,【L】42.5–52.5kgs,【XL】52.5–62.5kgs,【XXL】62.5–72.5kgs,【XXXL】72.5–82.5kgs,【XXXXL】82.5–90.5kgs" },
-            { id: 2, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg", category: "Apparel", name: "Islamic/Muslim Women Swimsuit", sku: "YS-CL-002WS", material: "Polyester", size: "S/M/L/XL", moq: 200, priceMin: 7.69, priceMax: 7.99, description: "Women's 2-piece modest long sleeve swimsuit with tropical floral printed sleeves, available in black and navy blue. UPF 50+ quick-dry fabric blocks UV rays, ideal for surfing, diving, beach volleyball and Muslim modest swimwear. Soft elastic material ensures unrestricted movement, combining sun protection, coverage and stylish tropical print for all water activities." },
+            { id: 1, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL001A.jpg", category: "Apparel", name: "Quick Dry Activewear Set", sku: "YS-CL-001A", material: "Polyester", size: "L/XL/XXL/XXXL/XXXXL", moq: 100, priceMin: 6.49, priceMax: 6.99, description: "Men's 2-piece quick-dry athletic set with short-sleeve tee and 2-in-1 double-layer running shorts. Moisture-wicking lightweight fabric rapidly dissipates sweat for cool, breathable comfort during gym, jogging, swimming and training. Built-in compression liner avoids chafing, elastic drawstring waist secures fit. Minimalist branded black design. Sizes L–XXXXL fit men weighing 42.5–90.5kg, flexible stretch material enables full unrestricted sports movement.,【L】42.5–52.5kgs,【XL】52.5–62.5kgs,【XXL】62.5–72.5kgs,【XXXL】72.5–82.5kgs,【XXXXL】82.5–90.5kgs" },
+            { id: 2, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL002WS.jpg", category: "Apparel", name: "Islamic/Muslim Women Swimsuit", sku: "YS-CL-002WS", material: "Polyester", size: "S/M/L/XL", moq: 200, priceMin: 7.69, priceMax: 7.99, description: "Women's 2-piece modest long sleeve swimsuit with tropical floral printed sleeves, available in black and navy blue. UPF 50+ quick-dry fabric blocks UV rays, ideal for surfing, diving, beach volleyball and Muslim modest swimwear. Soft elastic material ensures unrestricted movement, combining sun protection, coverage and stylish tropical print for all water activities." },
             { id: 3, image: "https://picsum.photos/id/292/600/400", category: "Kitchenware", name: "Stainless Steel Kitchen Knife", sku: "YS-K001", material: "High Carbon Stainless Steel", size: "8 inch blade", moq: 150, priceMin: 19.99, priceMax: 29.99, description: "Professional kitchen knife made of high carbon stainless steel, sharp and durable." },
             { id: 4, image: "https://picsum.photos/id/160/600/400", category: "Toys", name: "Wooden Building Blocks", sku: "YS-T001", material: "Natural Wood", size: "Various sizes", moq: 300, priceMin: 14.99, priceMax: 24.99, description: "Eco-friendly wooden building blocks set for kids, safe and educational." }
         ];
@@ -1101,6 +1112,7 @@
                 }).then(function () {
                     updateContent();
                     bindLanguageEvents();
+                    loadRemoteSiteData();
                     renderCategoryFilter();
                     renderProducts();
                 });
@@ -1186,6 +1198,13 @@
                 document.getElementById('productId').value = '';
                 document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
             });
+
+            // 导出 / 导入 site-data.json（管理员用于同步到 GitHub）
+            document.getElementById('exportDataBtn').addEventListener('click', exportSiteData);
+            document.getElementById('importDataBtn').addEventListener('click', function () {
+                document.getElementById('importDataFile').click();
+            });
+            document.getElementById('importDataFile').addEventListener('change', importSiteDataFromFile);
 
             // 详情页：返回
             document.getElementById('detailBackBtn').addEventListener('click', function () {
@@ -1279,18 +1298,23 @@
             const loginBtn = document.getElementById('loginBtn');
             const logoutBtn = document.getElementById('logoutBtn');
             const addProductBtn = document.getElementById('addProductBtn');
+            const adminDataTools = document.getElementById('adminDataTools');
             const categoryManagement = document.getElementById('categoryManagement');
             const brandLogoEdit = document.getElementById('brandLogoEdit');
             if (loggedIn) {
                 loginBtn.classList.add('d-none');
                 logoutBtn.classList.remove('d-none');
                 addProductBtn.classList.remove('d-none');
+                adminDataTools.classList.remove('d-none');
+                adminDataTools.classList.add('d-flex');
                 categoryManagement.style.display = 'block';
                 brandLogoEdit.classList.add('admin-visible');
             } else {
                 loginBtn.classList.remove('d-none');
                 logoutBtn.classList.add('d-none');
                 addProductBtn.classList.add('d-none');
+                adminDataTools.classList.add('d-none');
+                adminDataTools.classList.remove('d-flex');
                 categoryManagement.style.display = 'none';
                 brandLogoEdit.classList.remove('admin-visible');
             }
@@ -1397,6 +1421,97 @@
         function saveProducts(products) {
             localStorage.setItem('yeatruProducts', JSON.stringify(products));
             renderProducts();
+        }
+
+        /* ========== GitHub 静态数据同步：读取 / 导出 / 导入 site-data.json ========== */
+        function buildSiteDataObject() {
+            return {
+                version: 1,
+                updatedAt: new Date().toISOString(),
+                logo: localStorage.getItem('yeatruBrandLogo') || '',
+                categories: getCategories(),
+                products: getProducts()
+            };
+        }
+
+        function applySiteData(data, options = {}) {
+            if (!data || typeof data !== 'object') return false;
+
+            if (Array.isArray(data.categories)) {
+                localStorage.setItem('yeatruCategories', JSON.stringify(data.categories));
+            }
+            if (Array.isArray(data.products)) {
+                localStorage.setItem('yeatruProducts', JSON.stringify(data.products));
+            }
+            if (Object.prototype.hasOwnProperty.call(data, 'logo')) {
+                if (data.logo) {
+                    localStorage.setItem('yeatruBrandLogo', data.logo);
+                } else {
+                    localStorage.removeItem('yeatruBrandLogo');
+                }
+            }
+
+            renderBrandLogo();
+            renderCategories();
+            renderCategoryFilter();
+            renderProducts();
+
+            if (currentDetailProductId) {
+                const exists = getProducts().some(p => p.id === currentDetailProductId);
+                if (exists) renderDetailPage(currentDetailProductId);
+                else hideDetailPage();
+            }
+
+            if (!options.silent) {
+                alert('site-data.json 已导入，当前浏览器已更新。请记得把 JSON 文件上传到 GitHub，游客才能看到。');
+            }
+            return true;
+        }
+
+        async function loadRemoteSiteData() {
+            try {
+                const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error('site-data.json not found');
+                const data = await response.json();
+                applySiteData(data, { silent: true });
+                console.info('已从 site-data.json 读取公开数据');
+            } catch (error) {
+                console.info('未读取到 site-data.json，使用本地缓存或默认数据。', error);
+            }
+        }
+
+        function exportSiteData() {
+            if (!isAdmin()) return;
+            const data = buildSiteDataObject();
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'site-data.json';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+            alert('已导出 site-data.json。把这个文件上传并覆盖 GitHub 仓库同目录的 site-data.json，游客刷新网页后即可看到更新。');
+        }
+
+        function importSiteDataFromFile(event) {
+            if (!isAdmin()) return;
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    applySiteData(data);
+                } catch (error) {
+                    alert('导入失败：请选择格式正确的 site-data.json 文件。');
+                } finally {
+                    event.target.value = '';
+                }
+            };
+            reader.readAsText(file, 'utf-8');
         }
 
         /* ========== 产品列表渲染（含筛选） ========== */
@@ -1836,10 +1951,8 @@
         }
 
         /* ========== Logo（5*5 = 50x50） ========== */
-        const DEFAULT_LOGO_URL = "https://https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png";
-
         function renderBrandLogo() {
-            const url = localStorage.getItem('yeatruBrandLogo') || DEFAULT_LOGO_URL;
+            const url = localStorage.getItem('yeatruBrandLogo');
             const img = document.getElementById('brandLogoImg');
             const fallback = document.getElementById('brandLogoFallback');
             const footerImg = document.getElementById('footerLogoImg');
