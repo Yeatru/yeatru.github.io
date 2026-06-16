@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T00:00:00.000Z",
-  "logo": "",
+  "updatedAt": "2026-06-16T12:31:58.217Z",
+  "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Electronics",
     "Home & Garden",
@@ -12,29 +12,72 @@
   "products": [
     {
       "id": 1,
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL001A.jpg",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL101A.jpg",
       "category": "Apparel",
       "name": "Quick Dry Activewear Set",
-      "sku": "YS-CL-001A",
+      "sku": "YS-CL-101A",
       "material": "Polyester",
       "size": "L/XL/XXL/XXXL/XXXXL",
       "moq": 100,
       "priceMin": 6.49,
       "priceMax": 6.99,
-      "description": "Men's 2-piece quick-dry athletic set with short-sleeve tee and 2-in-1 double-layer running shorts. Moisture-wicking lightweight fabric rapidly dissipates sweat for cool, breathable comfort during gym, jogging, swimming and training. Built-in compression liner avoids chafing, elastic drawstring waist secures fit. Minimalist branded black design. Sizes L–XXXXL fit men weighing 42.5–90.5kg, flexible stretch material enables full unrestricted sports movement.,【L】42.5–52.5kgs,【XL】52.5–62.5kgs,【XXL】62.5–72.5kgs,【XXXL】72.5–82.5kgs,【XXXXL】82.5–90.5kgs"
+      "description": "2026 New Men Quick Dry Workout Tracksuit Set, Short Sleeve Athletic T-Shirt + 2-in-1 Double Layer Running Shorts, Breathable Lightweight Training Sportswear for Gym Running Swimming Beach",
+      "aplus": [
+        {
+          "type": "hero",
+          "heading": "Premium Quality, Trusted Worldwide",
+          "text": "2026 New Men Quick Dry Workout Tracksuit Set, Short Sleeve Athletic T-Shirt + 2-in-1 Double Layer Running Shorts, Breathable Lightweight Training Sportswear for Gym Running Swimming Beach Product Features This men’s athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design. Fabric Composition Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight. Size Chart L: Fit weight 42.5 – 52.5 KG XL: Fit weight 52.5 – 62.5 KG XXL: Fit weight 62.5 – 72.5 KG XXXL: Fit weight 72.5 – 82.5 KG XXXXL: Fit weight 82.5 – 90.5 KG Applicable Occasions Gym fitness, running, jogging, swimming, beach, cycling, hiking, basketball training, daily casual loungewear.",
+          "image": "https://picsum.photos/1200/420"
+        },
+        {
+          "type": "textImage",
+          "heading": "About This Product",
+          "text": "Product Features This men’s athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E9%80%9F%E5%B9%B2%E8%A1%A3.jpg"
+        },
+        {
+          "type": "features",
+          "heading": "Key Features",
+          "items": []
+        },
+        {
+          "type": "text",
+          "heading": "Words",
+          "text": "men workout set, quick dry running suit, 2 in 1 double layer shorts, athletic short sleeve tee, gym training tracksuit, mens swim shorts set, breathable sportswear, lightweight fitness outfit, jogging suit for men, moisture wicking training clothes"
+        }
+      ]
     },
     {
       "id": 2,
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL002WS.jpg",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg",
       "category": "Apparel",
       "name": "Islamic/Muslim Women Swimsuit",
-      "sku": "YS-CL-002WS",
+      "sku": "YS-CL-102WS",
       "material": "Polyester",
       "size": "S/M/L/XL",
       "moq": 200,
       "priceMin": 7.69,
       "priceMax": 7.99,
-      "description": "Women's 2-piece modest long sleeve swimsuit with tropical floral printed sleeves, available in black and navy blue. UPF 50+ quick-dry fabric blocks UV rays, ideal for surfing, diving, beach volleyball and Muslim modest swimwear. Soft elastic material ensures unrestricted movement, combining sun protection, coverage and stylish tropical print for all water activities."
+      "description": "Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top + Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear",
+      "aplus": [
+        {
+          "type": "hero",
+          "heading": "Premium Quality, Trusted Worldwide",
+          "text": "Product Overview\nThis women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.\nDesign Details\nTop: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.\nBottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\nCraftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.\nFabric Advantage\n82% Nylon + 18% Spandex professional swim fabric:\nUPF50+ sun protection, anti-UV long sleeve design\nQuick-dry & moisture-wicking, no water retention\nHigh stretch & recovery, not easy to loose after stretching\nResist chlorine and seawater corrosion, long service life\nNo pilling, no color fading after multiple washes\nApplicable Occasions\nSea swimming, surfing, snorkeling, beach volleyball, hot spring spa, pool training, family beach vacation. Ideal conservative swimwear for Muslim women and ladies who want full sun coverage.\nColor Options\nBlack base with pink & green tropical flower print sleeves\nNavy blue base with palm leaf print sleeves",
+          "image": "https://picsum.photos/1200/420"
+        },
+        {
+          "type": "textImage",
+          "heading": "About This Product",
+          "text": "Material: 82% Polyamide(Nylon), 18% Spandex(Elastane)\nFeatures: Quick Dry, High Stretch, UPF 50+ UV Protection, Chlorine Resistant, Salt Water Resistant, Breathable, Anti-Chafing.\nBurkini swimwear, modest muslim swimsuit, women long sleeve two piece rash guard, full coverage swim leggings, islamic conservative beach suit, \nUPF50+ sun protection surfing suit, tropical print modest swimsuit, middle east swimwear, plus size burkini, quick dry muslim bathing suit.",
+          "image": ""
+        },
+        {
+          "type": "features",
+          "heading": "Key Features",
+          "items": []
+        }
+      ]
     },
     {
       "id": 3,
