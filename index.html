@@ -606,7 +606,7 @@
                 </div>
                 <div class="col-lg-6">
                     <!-- 修复：替换为稳定的图片URL -->
-                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shop%20display.jpg/751/450" alt="Yiwu Trade Center" class="img-fluid rounded shadow">
+                    <img src="https://picsum.photos/id/283/600/400" alt="Yiwu Trade Center" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
@@ -798,7 +798,7 @@
             <h2 class="section-title" data-i18n="about.title">About Yeatru Sourcing</h2>
             
             <!-- 修复：替换为稳定的图片URL -->
-            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg/1200/400" alt="Yiwu International Trade City" class="yiwu-img" onerror="this.src='https://github.com/Yeatru/Image/blob/main/mmexport1780994861567.jpg?raw=true/1200/400'; this.alt='Yiwu International Trade City'">
+            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg/1200/400" alt="Yiwu International Trade City" class="yiwu-img" onerror="this.src='https://picsum.photos/1200/400'; this.alt='Yiwu International Trade City'">
             
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -1062,32 +1062,28 @@
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <!-- 自定义JS - 修复所有功能问题 -->
- <script>
+    <script>
         // 初始化默认数据
-        const DEFAULT_CATEGORIES = ["Electronics", "Home & Garden", "Kitchenware", "Toys","Apparel ","Novetly"];
+        const DEFAULT_CATEGORIES = ["Electronics", "Home & Garden", "Kitchenware", "Toys"];
         const DEFAULT_PRODUCTS = [
             {
                 id: 1,
                 // 修复：替换为稳定的图片URL
-                image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YS-CL-001A.jpg",
-                category: "Apparel ",
-                name: "Black Quick Dry Short Sleeve Tee Activewear & Double Layer Casual Long Pants Set",
-                sku: "YS-CL-001A",
-                material: "Polyester",
-                size: "L【42.5–52.5kgs】
-                        XL【52.5–62.5kgs】
-                       XXL【62.5–72.5kgs】
-                      XXXL【72.5–82.5kgs】
-                      XXXXL【82.5–90.5kgs】",
-                moq: 50,
-                priceMin: 6.6,
-                priceMax: 6.6,
-                description: "Black Quick Dry Short Sleeve Tee Activewear & Double Layer Casual Long Pants Set"
+                image: "https://picsum.photos/id/96/600/400",
+                category: "Electronics",
+                name: "Wireless Bluetooth Speaker",
+                sku: "YS-E001",
+                material: "Plastic, Metal",
+                size: "10x15x8 cm",
+                moq: 100,
+                priceMin: 29.99,
+                priceMax: 39.99,
+                description: "High-quality wireless speaker with 20-hour battery life and waterproof design."
             },
             {
                 id: 2,
                 // 修复：替换为稳定的图片URL
-                image: "https://github.com/Yeatru/Image/blob/main/mmexport1780996966101.jpg?raw=true/600/400",
+                image: "https://picsum.photos/id/102/600/400",
                 category: "Home & Garden",
                 name: "Stainless Steel Water Bottle",
                 sku: "YS-H001",
@@ -1125,63 +1121,7 @@
                 priceMin: 14.99,
                 priceMax: 24.99,
                 description: "Eco-friendly wooden building blocks set for kids, safe and educational."
-            },
-            {
-                id: 5,
-                // 修复：替换为稳定的图片URL
-                image: "https://picsum.photos/id/96/600/400",
-                category: "Novetly",
-                name: "Acrylic Storage Box",
-                sku: "YS-V001",
-                material: "Acrylic",
-                size: "8x6x4 cm",
-                moq: 100,
-                priceMin: 8.99,
-                priceMax: 9.99,
-                description: "High-quality Acrylic material with novetly design."
-            },           
-            {
-                id: 6,
-                // 修复：替换为稳定的图片URL
-                image: "https://picsum.photos/id/160/600/400",
-                category: "Toys",
-                name: "Wooden Building Blocks",
-                sku: "YS-T001",
-                material: "Natural Wood",
-                size: "Various sizes",
-                moq: 300,
-                priceMin: 14.99,
-                priceMax: 24.99,
-                description: "Eco-friendly wooden building blocks set for kids, safe and educational."
-            },
-                        {
-                id: 7,
-                // 修复：替换为稳定的图片URL
-                image: "https://picsum.photos/id/160/600/400",
-                category: "Toys",
-                name: "Wooden Building Blocks",
-                sku: "YS-T001",
-                material: "Natural Wood",
-                size: "Various sizes",
-                moq: 300,
-                priceMin: 14.99,
-                priceMax: 24.99,
-                description: "Eco-friendly wooden building blocks set for kids, safe and educational."
-            },
-                        {
-                id: 8,
-                // 修复：替换为稳定的图片URL
-                image: "https://picsum.photos/id/160/600/400",
-                category: "Toys",
-                name: "Wooden Building Blocks",
-                sku: "YS-T001",
-                material: "Natural Wood",
-                size: "Various sizes",
-                moq: 300,
-                priceMin: 14.99,
-                priceMax: 24.99,
-                description: "Eco-friendly wooden building blocks set for kids, safe and educational."
-            },
+            }
         ];
 
         // 【修改6】多语言资源 - 更新products.subtitle翻译（Yiwu → China），移除services.learnMore相关翻译
