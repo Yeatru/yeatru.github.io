@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-16T13:56:04.960Z",
+  "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
+  "categories": [
+    "Electronics",
+    "Home & Garden",
+    "Kitchenware",
+    "Toys",
+    "Apparel"
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL101A.jpg",
+      "category": "Apparel",
+      "name": "Quick Dry Activewear Set",
+      "sku": "YS-CL-101A",
+      "material": "Polyester",
+      "size": "L/XL/XXL/XXXL/XXXXL",
+      "moq": 100,
+      "priceMin": 6.49,
+      "priceMax": 6.99,
+      "description": "2026 New Men Quick Dry Workout Tracksuit Set, Short Sleeve Athletic T-Shirt + 2-in-1 Double Layer Running Shorts, Breathable Lightweight Training Sportswear for Gym Running Swimming Beach",
+      "aplus": [
+        {
+          "type": "textImage",
+          "heading": "Product Overview",
+          "text": "This men’s athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E9%80%9F%E5%B9%B2%E8%A1%A3.jpg"
+        },
+        {
+          "type": "text",
+          "heading": "Size Chart",
+          "text": "L: Fit weight 42.5 – 52.5 KG  \nXL: Fit weight 52.5 – 62.5 KG  \nXXL: Fit weight 62.5 – 72.5 KG  \nXXXL: Fit weight 72.5 – 82.5 KG  \nXXXXL: Fit weight 82.5 – 90.5 KG"
+        },
+        {
+          "type": "text",
+          "heading": "Product Features",
+          "text": "- Premium Quick Dry Fabric: Made of high-quality polyester blend with spandex, ultra lightweight, moisture-wicking and sweat evaporates rapidly, keep you cool and dry during all workouts.  - 2-in-1 Double Layer Shorts Design: Built-in tight compression liner prevents rubbing and private exposure; outer loose short layer with drawstring elastic waist for adjustable fit, side split hem for unrestricted movement.  - Comfortable Athletic Short Sleeve Tee: Crew neck, raglan short sleeves, smooth stretch fabric, classic minimalist logo print, no tight binding, suitable for long-time gym, running and training.  - Multi-Scenario Sportswear Suit: Perfect for gym training, jogging, running, swimming, beach, fitness, cycling, hiking and daily casual wear; ideal as workout set, swim trunks set and summer athletic outfit.  - Multiple Sizes Available: L / XL / XXL / XXXL / XXXXL to fit weight range 42.5kg - 90.5kg, elastic fabric fits most body types, black solid color easy to match all gear."
+        },
+        {
+          "type": "text",
+          "heading": "Fabric Composition",
+          "text": "Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight."
+        },
+        {
+          "type": "text",
+          "heading": "Applicable Occasions",
+          "text": "Gym fitness, running, jogging, swimming, beach, cycling, hiking, basketball training, daily casual loungewear. Men Quick Dry Sport Suit Short Sleeve T-shirt Double Layer Running Shorts 2 Pieces Athletic Gym Training Set. men workout set, quick dry running suit, 2 in 1 double layer shorts, athletic short sleeve tee, gym training tracksuit, mens swim shorts set, breathable sportswear, lightweight fitness outfit, jogging suit for men, moisture wicking training clothes"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg",
+      "category": "Apparel",
+      "name": "Islamic/Muslim Women Swimsuit",
+      "sku": "YS-CL-102WS",
+      "material": "Polyester",
+      "size": "S/M/L/XL",
+      "moq": 200,
+      "priceMin": 7.69,
+      "priceMax": 7.99,
+      "description": "Women Modest Burkini Swimsuit, Long Sleeve Zipper Two Piece Rash Guard, Tropical Print Full Coverage Leggings Conservative Islamic Swimwear for Beach Surfing",
+      "aplus": [
+        {
+          "type": "features",
+          "heading": "Product Overview",
+          "items": []
+        },
+        {
+          "type": "text",
+          "heading": "Color Options",
+          "text": "- Black base with pink & green tropical flower print sleeves \n- Navy blue base with palm leaf print sleeves"
+        },
+        {
+          "type": "textImage",
+          "heading": "Size Details",
+          "text": "Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top + Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear\n【S】Top size:64-68cm,Waist:62-68cm,Hip:72-76cm;\n【M】Top size:68-72cm,Waist:68-72cm,Hip:76-80cm;\n【L】Top size:72-76cm,Waist:72-76cm,Hip:80-84cm;\n【XL】Top size:76-80cm,Waist:76-80cm,Hip:84-88cm.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blue.jpg"
+        },
+        {
+          "type": "text",
+          "heading": "Design Details",
+          "text": "- Top: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, - visually slim figure. - Bottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement. - Craftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear."
+        },
+        {
+          "type": "text",
+          "heading": "Applicable Occasions",
+          "text": "Sea swimming, surfing, snorkeling, beach volleyball, hot spring spa, pool training, family beach vacation. Ideal conservative swimwear for Muslim women and ladies who want full sun coverage."
+        },
+        {
+          "type": "hero",
+          "heading": "Product Features",
+          "text": "- Full Coverage Modest Islamic Design   Two-piece modest burkini set includes long sleeve zip-front tunic top & full-length swim leggings. Mid-front half zipper for easy on/off, layered peplum hem hides belly and hips, meets Middle East Muslim modest dressing demands while stylish. Two tropical print color options: black floral & navy palm leaf print. - UPF 50+ UV Protection Long Sleeve Rash Guard Long sleeve full arm coverage blocks harmful sun rays, professional surfing rash guard fabric prevents chafing during swimming, snorkeling and beach volleyball. Stretchy long pants fully cover legs without tight binding. - Premium Quick-Dry Swim Fabric Crafted from 82% Nylon + 18% Spandex blend. Ultra high elasticity, soft skin-friendly, chlorine & salt water resistant. Fast moisture-wicking, dries quickly after water activities, no sticky heavy feeling. Fade-resistant, no deformation after repeated washing. - Functional Half-Zip Front & Flattering Fit Half zipper stand collar allows adjustable ventilation; asymmetric peplum hem optimizes body curve, hides tummy and hip flaws. High waist full-length leggings offer supportive fit, won’t slide down during sports. Contrast tropical floral printed sleeves & hem add fashion sense to solid color main body. - Multi-Scenario Versatile Swimwear Perfect for Muslim ladies, modest wearers, swimming, surfing, snorkeling, beach holiday, hot spring and pool training. Suitable for Middle East, Southeast Asia market demand for full coverage swimsuits.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://picsum.photos/id/292/600/400",
+      "category": "Kitchenware",
+      "name": "Stainless Steel Kitchen Knife",
+      "sku": "YS-K001",
+      "material": "High Carbon Stainless Steel",
+      "size": "8 inch blade",
+      "moq": 150,
+      "priceMin": 19.99,
+      "priceMax": 29.99,
+      "description": "Professional kitchen knife made of high carbon stainless steel, sharp and durable."
+    },
+    {
+      "id": 4,
+      "image": "https://picsum.photos/id/160/600/400",
+      "category": "Toys",
+      "name": "Wooden Building Blocks",
+      "sku": "YS-T001",
+      "material": "Natural Wood",
+      "size": "Various sizes",
+      "moq": 300,
+      "priceMin": 14.99,
+      "priceMax": 24.99,
+      "description": "Eco-friendly wooden building blocks set for kids, safe and educational."
+    }
+  ]
+}
