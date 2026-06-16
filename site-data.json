@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T13:56:04.960Z",
+  "updatedAt": "2026-06-16T14:12:05.844Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Electronics",
@@ -65,20 +65,20 @@
       "description": "Women Modest Burkini Swimsuit, Long Sleeve Zipper Two Piece Rash Guard, Tropical Print Full Coverage Leggings Conservative Islamic Swimwear for Beach Surfing",
       "aplus": [
         {
-          "type": "features",
+          "type": "textImage",
+          "heading": "Size Details",
+          "text": "Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top \n Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear \n- 【S】Top size:64-68cm,Waist:62-68cm,Hip:72-76cm; \n- 【M】Top size:68-72cm,Waist:68-72cm,Hip:76-80cm; \n- 【L】Top size:72-76cm,Waist:72-76cm,Hip:80-84cm; \n- 【XL】Top size:76-80cm,Waist:76-80cm,Hip:84-88cm.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blue.jpg"
+        },
+        {
+          "type": "text",
           "heading": "Product Overview",
-          "items": []
+          "text": "This women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes."
         },
         {
           "type": "text",
           "heading": "Color Options",
-          "text": "- Black base with pink & green tropical flower print sleeves \n- Navy blue base with palm leaf print sleeves"
-        },
-        {
-          "type": "textImage",
-          "heading": "Size Details",
-          "text": "Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top + Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear\n【S】Top size:64-68cm,Waist:62-68cm,Hip:72-76cm;\n【M】Top size:68-72cm,Waist:68-72cm,Hip:76-80cm;\n【L】Top size:72-76cm,Waist:72-76cm,Hip:80-84cm;\n【XL】Top size:76-80cm,Waist:76-80cm,Hip:84-88cm.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blue.jpg"
+          "text": "- Black base with pink & green tropical flower print sleeves  \n- Navy blue base with palm leaf print sleeves"
         },
         {
           "type": "text",
