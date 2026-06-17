@@ -532,7 +532,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products" data-i18n="nav.products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sourcing-process" data-i18n="nav.sourcingProcess">Sourcing Process</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
@@ -566,7 +566,7 @@
                         <h1 class="hero-title" data-i18n="hero.title">Professional China Sourcing Agent Yiwu & Global Supply Chain</h1>
                         <p class="hero-text" data-i18n="hero.desc">One-stop sourcing solution from China: product sourcing, supplier audit, quality control, logistics shipping. Help global buyers source from China easily.</p>
                         <a href="#contact-us" class="btn btn-primary-custom" data-i18n="hero.contactBtn">Contact Us Now</a>
-                        <a href="#products" class="btn btn-outline-custom" data-i18n="hero.productsBtn">View Products</a>
+                        <a href="products.html" class="btn btn-outline-custom" data-i18n="hero.productsBtn">View Products</a>
                     </div>
                     <div class="col-lg-6">
                         <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shopdisplay.jpg" alt="shopdisplay" class="img-fluid rounded shadow" onerror="this.src='https://picsum.photos/800/500'">
@@ -578,54 +578,6 @@
             .hero-section img { filter: contrast(1.05) saturate(1.1) hue-rotate(180deg); transition: transform 0.3s ease; }
             .hero-section img:hover { transform: scale(1.02); }
         </style>
-
-        <!-- 产品模块 -->
-        <section id="products" class="py-5">
-            <div class="container">
-                <h2 class="section-title" data-i18n="products.title">Hot Products</h2>
-                <p class="section-subtitle" data-i18n="products.subtitle">Explore our featured products sourced from China</p>
-
-                <!-- 品类管理（仅管理员可见） -->
-                <div class="category-management" id="categoryManagement">
-                    <div class="card p-3">
-                        <h5 class="card-title" data-i18n="products.categoryManagement">Category Management</h5>
-                        <div class="d-flex gap-2 mb-3">
-                            <input type="text" id="newCategory" class="form-control" placeholder="Enter new category name" data-i18n-placeholder="products.enterCategory">
-                            <button id="addCategoryBtn" class="btn btn-primary" data-i18n="products.addCategory">Add Category</button>
-                        </div>
-                        <div id="categoryList" class="d-flex flex-wrap gap-2"></div>
-                    </div>
-                </div>
-
-                <!-- ===== 公开品类筛选条（游客也可使用） ===== -->
-                <div class="category-filter-bar" id="categoryFilterBar">
-                    <div class="category-filter-title">
-                        <i class="fas fa-filter"></i>
-                        <span data-i18n="filter.title">Filter by Category</span>
-                    </div>
-                    <div class="category-filter-list" id="categoryFilterList">
-                        <!-- 动态生成 -->
-                    </div>
-                    <div class="filter-result-info" id="filterResultInfo"></div>
-                </div>
-
-                <!-- 管理员数据工具（仅管理员可见）：新增产品 / 导出 JSON / 导入 JSON -->
-                <div id="adminDataTools" class="d-none flex-wrap gap-2 mb-4">
-                    <button id="addProductBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
-                    <button id="exportDataBtn" class="btn btn-outline-primary" type="button">
-                        <i class="fas fa-file-export me-1"></i> Export site-data.json
-                    </button>
-                    <button id="importDataBtn" class="btn btn-outline-secondary" type="button">
-                        <i class="fas fa-file-import me-1"></i> Import site-data.json
-                    </button>
-                    <input id="importDataFile" type="file" accept="application/json,.json" style="display:none;">
-                    <small class="text-muted align-self-center">Upload exported site-data.json to GitHub so visitors can see the latest edits.</small>
-                </div>
-
-                <!-- 产品列表 -->
-                <div class="row" id="productList"></div>
-            </div>
-        </section>
 
         <!-- 服务模块 -->
         <section id="services" class="py-5 bg-light">
@@ -803,7 +755,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
                     <a href="#home" class="footer-link" data-i18n="nav.home">Home</a>
-                    <a href="#products" class="footer-link" data-i18n="nav.products">Products</a>
+                    <a href="products.html" class="footer-link" data-i18n="nav.products">Products</a>
                     <a href="#services" class="footer-link" data-i18n="nav.services">Services</a>
                     <a href="#sourcing-process" class="footer-link" data-i18n="nav.sourcingProcess">Sourcing Process</a>
                     <a href="#testimonials" class="footer-link" data-i18n="nav.testimonials">Testimonials</a>

@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Yeatru Sourcing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --peacock-blue: #0b7b94;
+            --peacock-blue-dark: #085f73;
+            --peacock-blue-light: #109eb8;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            color: var(--peacock-blue) !important;
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .brand-logo-box {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            min-height: 50px;
+            max-width: 50px;
+            max-height: 50px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .brand-logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .brand-logo-fallback {
+            font-weight: 700;
+            color: var(--peacock-blue);
+            font-size: 1.1rem;
+        }
+        .nav-link {
+            color: var(--dark-gray) !important;
+            font-weight: 500;
+            margin: 0 0.3rem;
+            padding: 0.5rem 0.6rem !important;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .nav-link:hover {
+            color: var(--peacock-blue) !important;
+        }
+        .nav-link.active {
+            color: var(--peacock-blue) !important;
+        }
+        .lang-selector {
+            margin-left: 1rem;
+            white-space: nowrap;
+        }
+        .lang-dropdown-btn {
+            color: var(--dark-gray) !important;
+            border: 1px solid #ced4da;
+            white-space: nowrap;
+        }
+        .lang-dropdown-btn:hover {
+            background-color: var(--light-gray);
+        }
+        .login-btn, .logout-btn {
+            color: #6c757d !important;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 0.25rem 0.75rem !important;
+            margin-left: 0.5rem;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .login-btn:hover, .logout-btn:hover {
+            background-color: var(--light-gray);
+            color: var(--peacock-blue) !important;
+            border-color: var(--peacock-blue);
+        }
+        .section-title { font-size: 2.2rem; font-weight: 700; color: var(--peacock-blue-dark); text-align: center; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; color: #6c757d; margin-bottom: 3rem; }
+        .product-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
+        .product-card img { height: 200px; object-fit: cover; background-color: #f1f1f1; display: block; width: 100%; }
+        .product-category { color: var(--peacock-blue); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .product-title { font-weight: 600; color: var(--dark-gray); margin-bottom: 0.75rem; }
+        .product-desc { color: #6c757d; font-size: 0.95rem; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .product-price { font-weight: 700; color: var(--peacock-blue-dark); margin-bottom: 1rem; }
+        .product-action-btn { color: var(--peacock-blue); text-decoration: none; font-weight: 600; cursor: pointer; }
+        .product-action-btn:hover { color: var(--peacock-blue-dark); text-decoration: underline; }
+        .product-admin-actions { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+        .product-admin-btn { font-size: 0.85rem; padding: 0.25rem 0.5rem; }
+        .category-management { margin-bottom: 2rem; display: none; }
+        .category-filter-bar {
+            background-color: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .category-filter-title {
+            font-weight: 600;
+            color: var(--peacock-blue-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .category-filter-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .category-filter-btn {
+            border: 1px solid #ced4da;
+            background-color: #fff;
+            color: #495057;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .category-filter-btn:hover {
+            border-color: var(--peacock-blue);
+            color: var(--peacock-blue);
+        }
+        .category-filter-btn.active {
+            background-color: var(--peacock-blue);
+            border-color: var(--peacock-blue);
+            color: #fff;
+        }
+        .category-filter-reset {
+            margin-left: auto;
+            border: 1px solid var(--peacock-blue);
+            color: var(--peacock-blue);
+            background: transparent;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .category-filter-reset:hover {
+            background-color: var(--peacock-blue);
+            color: #fff;
+        }
+        .filter-result-info {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .footer { background-color: #212529; color: white; padding: 4rem 0 2rem; }
+        .footer-brand { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .footer-desc { color: #adb5bd; margin-bottom: 2rem; line-height: 1.8; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social-icon { color: #adb5bd; text-decoration: none; font-size: 1.2rem; }
+        .footer-social-icon:hover { color: white; }
+        .footer-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .footer-link { display: block; color: #adb5bd; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-link:hover { color: white; }
+        .footer-bottom { border-top: 1px solid #343a40; padding-top: 2rem; margin-top: 2rem; color: #adb5bd; text-align: center; }
+        .product-detail-page {
+            display: none;
+            padding: 3rem 0;
+            background-color: #fff;
+            min-height: 70vh;
+        }
+        .product-detail-page.active { display: block; }
+        .detail-back-btn {
+            border: 1px solid var(--peacock-blue);
+            color: var(--peacock-blue);
+            background: transparent;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+        .detail-back-btn:hover { background-color: var(--peacock-blue); color: white; }
+        .detail-toolbar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .detail-mode-toggle {
+            display: inline-flex;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .detail-mode-toggle button {
+            border: none;
+            background: #fff;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #495057;
+        }
+        .detail-mode-toggle button.active {
+            background: var(--peacock-blue);
+            color: #fff;
+        }
+        .save-status-badge {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-left: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .save-status-badge.saving { color: #ff9500; }
+        .save-status-badge.saved { color: #2e8b57; }
+        .save-status-badge.error { color: #dc3545; }
+        .detail-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 768px) {
+            .detail-main { grid-template-columns: 1fr; }
+        }
+        .detail-image {
+            width: 100%;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+            object-fit: cover;
+            max-height: 480px;
+        }
+        .detail-info h1 {
+            color: var(--peacock-blue-dark);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .detail-meta { color: #6c757d; font-size: 0.95rem; margin-bottom: 1rem; }
+        .detail-spec-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .detail-spec-table th, .detail-spec-table td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+        .detail-spec-table th {
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            width: 35%;
+            font-weight: 600;
+        }
+        .detail-price-big {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--peacock-blue-dark);
+            margin-bottom: 1rem;
+        }
+        .aplus-section { margin-top: 2rem; }
+        .aplus-section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--peacock-blue-dark);
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--peacock-blue);
+            padding-left: 0.8rem;
+        }
+        .aplus-blocks { display: flex; flex-direction: column; gap: 1.25rem; }
+        .aplus-block {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #fff;
+            position: relative;
+        }
+        .aplus-block.editing { border-color: var(--peacock-blue); box-shadow: 0 0 0 3px rgba(11,123,148,0.08); }
+        .aplus-block-toolbar {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: none;
+            gap: 0.3rem;
+        }
+        .aplus-block.edit-mode .aplus-block-toolbar { display: flex; }
+        .aplus-block-toolbar button {
+            border: 1px solid #ced4da;
+            background: #fff;
+            border-radius: 4px;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            color: #495057;
+        }
+        .aplus-block-toolbar button:hover { background-color: var(--light-gray); }
+        .aplus-block-toolbar button.danger { color: #dc3545; border-color: #dc3545; }
+        .aplus-block.edit-mode [contenteditable=true] {
+            outline: 1px dashed #b8d8e2;
+            outline-offset: 2px;
+            min-height: 30px;
+            border-radius: 3px;
+            padding: 4px;
+        }
+        .aplus-block.edit-mode [contenteditable=true]:focus {
+            outline: 2px solid var(--peacock-blue);
+            background-color: #fafdff;
+        }
+        .aplus-block-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 0.6rem;
+        }
+        .aplus-block-text {
+            color: #495057;
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+        .aplus-block-image-wrap {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .aplus-block-image-wrap img {
+            max-width: 100%;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        .aplus-block-image-wrap.layout-text-image { flex-direction: row; }
+        .aplus-block-image-wrap.layout-image-text { flex-direction: row-reverse; }
+        .aplus-block-image-wrap > .aplus-block-text-side { flex: 1; min-width: 240px; }
+        .aplus-block-image-wrap > img { width: 280px; height: 200px; }
+        .aplus-block-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.8rem;
+        }
+        .aplus-block-features li {
+            background: var(--light-gray);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #495057;
+            border-left: 3px solid var(--peacock-blue);
+        }
+        .aplus-add-block-bar {
+            display: none;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+        .aplus-add-block-bar.visible { display: flex; }
+        .aplus-add-block-bar button {
+            background-color: #fff;
+            border: 1px dashed var(--peacock-blue);
+            color: var(--peacock-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .aplus-add-block-bar button:hover {
+            background-color: var(--peacock-blue);
+            color: #fff;
+        }
+        .aplus-image-input {
+            font-size: 0.85rem;
+            padding: 0.3rem;
+            margin-top: 0.5rem;
+            display: none;
+            width: 100%;
+        }
+        .aplus-block.edit-mode .aplus-image-input { display: block; }
+        .modal-title { color: var(--peacock-blue-dark); font-weight: 600; }
+        .modal-footer .btn-primary { background-color: var(--peacock-blue); border-color: var(--peacock-blue); }
+        .modal-footer .btn-primary:hover { background-color: var(--peacock-blue-dark); border-color: var(--peacock-blue-dark); }
+        @media (max-width: 992px) {
+            .contact-info, .contact-form { padding: 2rem; }
+            .lang-selector { margin-left: 0; margin-top: 0.5rem; }
+            .login-btn, .logout-btn { margin-left: 0; margin-top: 0.5rem; }
+            .nav-link { font-size: 1rem !important; margin: 0; }
+        }
+        @media (max-width: 768px) {
+            .section-title { font-size: 1.8rem; }
+            .aplus-block-image-wrap, .aplus-block-image-wrap.layout-image-text { flex-direction: column; }
+            .aplus-block-image-wrap > img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-logo-box" id="brandLogoBox">
+                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
+                </span>
+                <span>Yeatru Sourcing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html" data-i18n="nav.products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sourcing-process" data-i18n="nav.sourcingProcess">Sourcing Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-us" data-i18n="nav.aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact-us" data-i18n="nav.contactUs">Contact Us</a></li>
+                </ul>
+                <div class="dropdown lang-selector">
+                    <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe"></i> <span id="current-lang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                    </ul>
+                </div>
+                <button id="loginBtn" class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-i18n="nav.login">Login</button>
+                <button id="logoutBtn" class="btn logout-btn d-none" data-i18n="nav.logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-i18n="products.title">Hot Products</h2>
+            <p class="section-subtitle" data-i18n="products.subtitle">Explore our featured products sourced from China</p>
+
+            <div class="category-management" id="categoryManagement">
+                <div class="card p-3">
+                    <h5 class="card-title" data-i18n="products.categoryManagement">Category Management</h5>
+                    <div class="d-flex gap-2 mb-3">
+                        <input type="text" id="newCategory" class="form-control" placeholder="Enter new category name" data-i18n-placeholder="products.enterCategory">
+                        <button id="addCategoryBtn" class="btn btn-primary" data-i18n="products.addCategory">Add Category</button>
+                    </div>
+                    <div id="categoryList" class="d-flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+
+            <div class="category-filter-bar" id="categoryFilterBar">
+                <div class="category-filter-title">
+                    <i class="fas fa-filter"></i>
+                    <span data-i18n="filter.title">Filter by Category</span>
+                </div>
+                <div class="category-filter-list" id="categoryFilterList"></div>
+                <div class="filter-result-info" id="filterResultInfo"></div>
+            </div>
+
+            <div id="adminDataTools" class="d-none flex-wrap gap-2 mb-4">
+                <button id="addProductBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
+                <button id="exportDataBtn" class="btn btn-outline-primary" type="button">
+                    <i class="fas fa-file-export me-1"></i> Export site-data.json
+                </button>
+                <button id="importDataBtn" class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-file-import me-1"></i> Import site-data.json
+                </button>
+                <input id="importDataFile" type="file" accept="application/json,.json" style="display:none;">
+                <small class="text-muted align-self-center">Upload exported site-data.json to GitHub so visitors can see the latest edits.</small>
+            </div>
+
+            <div class="row" id="productList"></div>
+        </div>
+    </section>
+
+    <section id="productDetailPage" class="product-detail-page">
+        <div class="container">
+            <button class="detail-back-btn" id="detailBackBtn"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.back">Back to Products</span></button>
+
+            <div class="detail-toolbar">
+                <div class="detail-mode-toggle" id="detailModeToggle" style="display:none;">
+                    <button type="button" data-mode="preview" class="active" data-i18n="detail.preview">Preview</button>
+                    <button type="button" data-mode="edit" data-i18n="detail.edit">Edit</button>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary" id="detailQuoteBtn"><i class="fas fa-file-invoice-dollar me-1"></i> <span data-i18n="products.quote">Get a Quote</span></button>
+                <span class="save-status-badge" id="saveStatusBadge" style="display:none;"><i class="fas fa-circle"></i> <span></span></span>
+            </div>
+
+            <div class="detail-main">
+                <div>
+                    <img id="detailImage" class="detail-image" src="" alt="Product image">
+                    <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
+                </div>
+                <div class="detail-info">
+                    <h1 id="detailName">—</h1>
+                    <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
+                    <div class="detail-meta">
+                        <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
+                        &nbsp;|&nbsp;
+                        <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
+                    </div>
+                    <table class="detail-spec-table">
+                        <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
+                    </table>
+                    <div class="detail-price-big" id="detailPriceBig">—</div>
+                    <p class="text-muted" id="detailDesc">—</p>
+                    <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+                </div>
+            </div>
+
+            <div class="aplus-section">
+                <h3 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i><span data-i18n="aplus.title">A+ Content</span></h3>
+                <div class="aplus-blocks" id="aplusBlocks"></div>
+                <div class="aplus-add-block-bar" id="aplusAddBar">
+                    <span class="me-2 small text-muted" data-i18n="aplus.addBlock">Add a content block:</span>
+                    <button type="button" data-add-type="hero"><i class="fas fa-image"></i> <span data-i18n="aplus.blockHero">Hero Banner</span></button>
+                    <button type="button" data-add-type="text"><i class="fas fa-paragraph"></i> <span data-i18n="aplus.blockText">Text</span></button>
+                    <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
+                    <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
+                    <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-brand">
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <span id="footerLogoFallback" style="color: var(--peacock-blue-light); font-weight: bold;">YC</span>
+                        </span>
+                        Yeatru Sourcing
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+                    <a href="products.html" class="footer-link" data-i18n="nav.products">Products</a>
+                    <a href="index.html#services" class="footer-link" data-i18n="nav.services">Services</a>
+                    <a href="index.html#sourcing-process" class="footer-link" data-i18n="nav.sourcingProcess">Sourcing Process</a>
+                    <a href="index.html#testimonials" class="footer-link" data-i18n="nav.testimonials">Testimonials</a>
+                    <a href="index.html#about-us" class="footer-link" data-i18n="nav.aboutUs">About Us</a>
+                    <a href="index.html#contact-us" class="footer-link" data-i18n="nav.contactUs">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.services">Our Services</h3>
+                    <a href="#" class="footer-link" data-i18n="services.supplierVerification">Supplier Verification</a>
+                    <a href="#" class="footer-link" data-i18n="services.productSourcing">Product Sourcing</a>
+                    <a href="#" class="footer-link" data-i18n="services.qualityControl">Quality Control</a>
+                    <a href="#" class="footer-link" data-i18n="services.logistics">Logistics & Shipping</a>
+                    <a href="#" class="footer-link" data-i18n="services.priceNegotiation">Price Negotiation</a>
+                    <a href="#" class="footer-link" data-i18n="services.riskManagement">Risk Management</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.contact">Contact Us</h3>
+                    <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang Province, China</a>
+                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408 (WhatsApp)</a>
+                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
+                    <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
+                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
+                    <a href="#" class="footer-link d-inline">Terms of Service</a> |
+                    <a href="#" class="footer-link d-inline">Cookie Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
+                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
+                    </div>
+                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel" data-i18n="products.addProduct">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="productImage" class="form-label">Image URL</label>
+                                <input type="url" class="form-control" id="productImage" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productCategory" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="productCategory" list="categoryDatalist" required>
+                                <datalist id="categoryDatalist"></datalist>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="productSKU" class="form-label">SKU</label>
+                                <input type="text" class="form-control" id="productSKU">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productMaterial" class="form-label">Material</label>
+                                <input type="text" class="form-control" id="productMaterial">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productSize" class="form-label">Size</label>
+                                <input type="text" class="form-control" id="productSize">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="productMOQ" class="form-label">MOQ</label>
+                                <input type="number" class="form-control" id="productMOQ" value="1">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productPriceMin" class="form-label">Min Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMin" value="1.00" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productPriceMax" class="form-label">Max Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMax" value="1.00" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveProduct" data-i18n="products.save">Save Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quoteModalLabel" data-i18n="quote.title">Get a Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://formsubmit.co/info@yeatru.com" method="POST">
+                        <input type="hidden" name="_subject" value="Quote Request from Yeatru Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <label for="quoteProductName" class="form-label">Product</label>
+                            <input type="text" class="form-control" id="quoteProductName" name="product" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="quoteName" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="quoteEmail" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quotePhone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="quotePhone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteQuantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quoteQuantity" name="quantity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="quoteMessage" name="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" data-i18n="quote.submit">Submit Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script>
+        /* ========== 默认产品数据（来自 site-data.json） ========== */
+        const DEFAULT_PRODUCTS = [{"id":1,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201Apic2.jpg","category":"Apparel","name":"Men Quick Dry Workout Tracksuit Set","sku":"YS-CL-201A","material":"Polyester","size":"L/XL/XXL/XXXL/XXXXL","moq":100,"priceMin":6.49,"priceMax":6.99,"description":"2026 New Men Quick Dry Workout Tracksuit Set, Short Sleeve Athletic T-Shirt + 2-in-1 Double Layer Running Shorts, Breathable Lightweight Training Sportswear for Gym Running Swimming Beach","aplus":[{"type":"textImage","heading":"Product Overview","text":"This men's athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201A.png"},{"type":"features","heading":"Prodcut Features","items":["Premium Quick Dry Fabric: Made of high-quality polyester blend with spandex, ultra lightweight, moisture-wicking and sweat evaporates rapidly, keep you cool and dry during all workouts.","2-in-1 Double Layer Shorts Design: Built-in tight compression liner prevents rubbing and private exposure; outer loose short layer with drawstring elastic waist for adjustable fit, side split hem for unrestricted movement.","Comfortable Athletic Short Sleeve Tee: Crew neck, raglan short sleeves, smooth stretch fabric, classic minimalist logo print, no tight binding, suitable for long-time gym, running and training.","Multi-Scenario Sportswear Suit: Perfect for gym training, jogging, running, swimming, beach, fitness, cycling, hiking and daily casual wear; ideal as workout set, swim trunks set and summer athletic outfit.","Multiple Sizes Available: L / XL / XXL / XXXL / XXXXL to fit weight range 42.5kg - 90.5kg, elastic fabric fits most body types, black solid color easy to match all gear."]},{"type":"imageText","heading":"Fabric Composition","text":"Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight. L: Fit weight 42.5 – 52.5 KG ; XL: Fit weight 52.5 – 62.5 KG ;  XXL: Fit weight 62.5 – 72.5 KG ;  XXXL: Fit weight 72.5 – 82.5 KG ;  XXXXL: Fit weight 82.5 – 90.5 KG;","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL201A.png"},{"type":"text","heading":"Applicable Occasions","text":"Gym fitness, running, jogging, swimming, beach, cycling, hiking, basketball training, daily casual loungewear. Men Quick Dry Sport Suit Short Sleeve T-shirt Double Layer Running Shorts 2 Pieces Athletic Gym Training Set. men workout set, quick dry running suit, 2 in 1 double layer shorts, athletic short sleeve tee, gym training tracksuit, mens swim shorts set, breathable sportswear, lightweight fitness outfit, jogging suit for men, moisture wicking training clothes"}]},{"id":2,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg","category":"Apparel","name":"Islamic Women Modest Burkini Swimsuit","sku":"YS-CL-102WS","material":"Polyester","size":"S/M/L/XL","moq":200,"priceMin":7.69,"priceMax":7.99,"description":"Women Modest Burkini Swimsuit, Long Sleeve Zipper Two Piece Rash Guard, Tropical Print Full Coverage Leggings Conservative Islamic Swimwear for Beach Surfing","aplus":[{"type":"textImage","heading":"Fabric Advantage","text":"82% Nylon + 18% Spandex professional swim fabric:\nUPF50+ sun protection, anti-UV long sleeve design\nQuick-dry & moisture-wicking, no water retention\nHigh stretch & recovery, not easy to loose after stretching\nResist chlorine and seawater corrosion, long service life\nNo pilling, no color fading after multiple washes","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL102WS.png"},{"type":"imageText","heading":"Product Overview","text":"This women's modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.\nDesign Details\nTop: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.\nBottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\nCraftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"},{"type":"text","heading":"Applicable Occasions","text":"Black base with pink & green tropical flower print sleeves\nNavy blue base with palm leaf print sleeves"},{"type":"hero","heading":"Product Features","text":"Full Coverage Modest Islamic Design\nTwo-piece modest burkini set includes long sleeve zip-front tunic top & full-length swim leggings. Mid-front half zipper for easy on/off, layered peplum hem hides belly and hips, meets Middle East Muslim modest dressing demands while stylish. Two tropical print color options: black floral & navy palm leaf print.\nUPF 50+ UV Protection Long Sleeve Rash Guard\nLong sleeve full arm coverage blocks harmful sun rays, professional surfing rash guard fabric prevents chafing during swimming, snorkeling and beach volleyball. Stretchy long pants fully cover legs without tight binding.\nPremium Quick-Dry Swim Fabric\nCrafted from 82% Nylon + 18% Spandex blend. Ultra high elasticity, soft skin-friendly, chlorine & salt water resistant. Fast moisture-wicking, dries quickly after water activities, no sticky heavy feeling. Fade-resistant, no deformation after repeated washing.\nFunctional Half-Zip Front & Flattering Fit\nHalf zipper stand collar allows adjustable ventilation; asymmetric peplum hem optimizes body curve, hides tummy and hip flaws. High waist full-length leggings offer supportive fit, won't slide down during sports. Contrast tropical floral printed sleeves & hem add fashion sense to solid color main body.\nMulti-Scenario Versatile Swimwear\nPerfect for Muslim ladies, modest wearers, swimming, surfing, snorkeling, beach holiday, hot spring and pool training. Suitable for Middle East, Southeast Asia market demand for full coverage swimsuits.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"}]},{"id":1781664526234,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A1.jpg","category":"Hand Bag","name":"Mini Cute Flap Square Crossbody Bag","sku":"YS-HB-1001A","material":"Synthetic Patent Leather","size":"Small","moq":1,"priceMin":1.59,"priceMax":1.69,"description":"New Glossy Mini Square Bag! Dual handle & crossbody strap, lightweight patent leather purse for daily outfits, 4 vintage colors available.\n\nCute tiny flap handbag for women, fits all your small essentials, hand/shoulder/crossbody 3 ways to wear, perfect daily fashion accessory.","aplus":[{"type":"textImage","heading":"About This Product","text":"Material: Synthetic Patent Leather\nLining: Polyester\nShape: Horizontal Mini Square\nClosure: Flap Cover\nBag Size: Small\nDimensions: Top Width 11cm / Bottom Width 13cm / Height 10cm / Depth 4cm\nHandle Drop: 6cm\nShoulder Strap Length: 110cm (Single Strap)\nWeight: 0.1KG\nColors: Black, Gray, Red, Green\nSeason: Spring 2026\nOccasion: Daily Matching","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1001A.png"},{"type":"features","heading":"Key Features","items":[]},{"type":"hero","heading":"Product Description","text":"Retro Glossy Mini Flap Square Handbag\nOur new arrival women small square bag is launched in Spring 2026, combining classic patent leather texture and minimalist square silhouette, a must-have trendy accessory for modern ladies.\nMade of high-quality soft synthetic patent leather, the bag features fine stitched seam craft as popular decorative element. The inner lining adopts durable polyester fabric, and the overall weight is only 0.1kg, super lightweight without pressing your shoulder.\nThis mini purse comes with dual carry accessories: a short handheld top handle and a 110cm long adjustable shoulder strap, you can freely switch between hand carry, single shoulder and crossbody styles according to your dressing look.\nThe flap cover closure design effectively protects your private items, with built-in inner patch pocket and zipper interlayer pocket to classify your lipstick, bank cards, keys and small change.\nFour timeless glossy colors including red, dark green, black and gray are optional, easy to collocate with all your daily outfits. Perfect for daily shopping, casual dating, short walk and daily commute.\nNotice: All dimensions are manually measured, please allow 1-3cm error; the actual color of the bag shall prevail due to different screen display.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A4.png"}]},{"id":1781666116700,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A2.jpg","category":"Hand Bag","name":"Mini Flap Square Crossbody Bag for Women","sku":"","material":"Soft PU Leather","size":"Small","moq":1,"priceMin":1.35,"priceMax":1.45,"description":"Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.\n\nMust-have tiny handbag for girls! With handle & long strap, easy to match all outfits, lightweight only 0.07kg.","aplus":[{"type":"hero","heading":"Vintage Mini Flap PU Leather Handbag","text":"This women's mini square crossbody bag combines minimalist silhouette and retro stitching craft, a must-have fashion small accessory for daily wear.\nCrafted from premium soft PU leather, the bag surface is smooth and scratch-resistant, easy to clean with damp cloth. The whole bag weighs only 0.07kg, lightweight design releases your shoulder pressure effectively.\nIt comes with two carry accessories: a portable short top handle and a 116cm adjustable long shoulder strap, supporting three wearing ways including handheld, single shoulder and crossbody. The mini interior space can well organize your lip gloss, cards, coins and wireless earphones.\nFour timeless color options (Black, White, Red, Coffee) meet all your matching demands. The gentle square shape matches sweaters, pleated skirts, jeans and dresses perfectly, ideal for daily shopping, casual dating, short trip and office commute.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A9.jpg"},{"type":"textImage","heading":"Product Specifications","text":"Outer Fabric: Soft PU Leather\nTotal Weight: 0.07kg\nDimensions: Top Width 12cm / Bottom Width 14cm / Height 9cm / Depth 5cm\nShoulder Strap Length: 116cm\nCarrying Modes: Handheld, Single Shoulder, Crossbody\nOptional Colors: Black, White, Red, Coffee\nNotice: All sizes are measured by hand, 1-3cm error may exist. The actual product color is subject to the real item.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1002A.jpg"},{"type":"imageText","heading":"Bullet Points","text":"🎀 Classic Minimalist Flap Design, 4 Versatile Shades\nAvailable in Black, White, Red, Coffee four classic solid colors. Neat outline stitching creates retro elegant texture, easily match knit tops, dresses, skirts and daily casual outfits, perfect for dating, shopping and commuting.\n🪶 Ultra-Light PU Material, Only 0.07KG Weight\nMade of soft smooth PU leather, wear-resistant and easy to wipe clean. Total weight just 0.07kg, no heavy burden even carrying all day long, friendly for ladies prefer lightweight small bags.\n📏 Reasonable Mini Size with Large Enough Capacity\nTop Width 12cm, Bottom Width 14cm, Height 9cm, Depth 5cm. Compact but can store lipstick, earbuds, bank cards, cash, keys and other small daily essentials without squeezing.\n3 Ways of Carrying for Different Styling\nEquipped with delicate short top handle + 116cm long crossbody shoulder strap, freely switch to handheld, single shoulder and crossbody styles to fit different dressing looks.\nClear Measurement Note to Avoid Disputes\nAll dimensions are manually measured, a tolerance of 1-3cm is acceptable. All size units are centimeters. Due to different screen displays, the actual bag color shall prevail.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A5.jpg"},{"type":"hero","heading":"Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.","text":"","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A1.jpg"}]},{"id":1781680522475,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone610.png","category":"Electronics","name":"In-Ear Sleep Wireless Bluetooth Earbuds V6.0","sku":"YS-ET-1001S","material":"ABS","size":"S16 Sleep Earbuds","moq":1,"priceMin":7.65,"priceMax":8.35,"description":"In-Ear Sleep Wireless Bluetooth Earbuds V6.0, Soft Silent Sleep Headphones with AAC/SBC Audio Decoding, Small Noise Isolating Sleeping Earphones for Side Sleeper","aplus":[{"type":"imageText","heading":"Full Set of Accessories","text":"1 × S16 Sleep Earbuds Charging Case\n1 Pair S16 Wireless Earbuds\n3 Pairs Replacement Silicone Ear Tips\n1 × Type-C Charging Cable\n1 × User Instruction Manual","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone6.png"},{"type":"text","heading":"Bullet Points","text":"😴 Ultra-Soft Ergonomic Sleep Design for Side Sleepers\nCurved wingtip silicone eartips fit snugly inside ear canal, low-profile tiny shape won't press ears when lying on side. Comes with 3 pairs of replaceable soft ear caps to fit different ear sizes, zero discomfort for all-night sleeping.\n📶 Stable Bluetooth V6.0 Connection, 10M Wide Range\nAdopts upgraded Bluetooth 6.0 chip, faster pairing and anti-interference signal, stable connection within 10 meters. Supports full Bluetooth protocols for smooth music playback, call answering and audio control.\n🎵 Hi-Fi Clear Sound with AAC & SBC Dual Decoding\nDual audio decoding technology restores rich sound details, delivers soft balanced audio for white noise, podcasts, meditation music and bedtime audiobooks. Effectively isolate ambient snoring and room noise.\n🔋 Long Lasting Battery Life\nSingle earbud built-in 30mAh battery, charging case with 230mAh storage. Compact pocket-sized case (5541.528mm) with Type-C charging cable included, easy to carry for travel, nap and overnight sleep.\nComplete Accessory Package & Safe Certified\nPackage includes S16 earbuds, charging case, Type-C charging cord, user manual and extra replacement silicone ear tips. Complies with GB 4943.1-2022 safety standard, reliable daily use."},{"type":"textImage","heading":"Specification Summary","text":"Brand: SOBAST\nModel: S16 Sleep Earbuds\nBluetooth Version: V6.0\nBluetooth Distance: 10 Meters\nEarbud Battery: 30mAh; Charging Case Battery: 230mAh\nInput: DC 5V\nSupported Codec: AAC, SBC\nCompliance Standard: GB 4943.1-2022","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone3.jpg"},{"type":"features","heading":"Product Description","items":["Comfortable Side-Sleep Friendly Shape\nDifferent from ordinary protruding earbuds, this mini in-ear headphone features a slim hidden design with flexible silicone wings. It stays deep inside your ear without sticking out, so you can lie on your side all night without painful pressure. 3 sizes of spare ear tips are included to match small, medium and large ear canals for all-day soft wearing.","Advanced Bluetooth 6.0 Smooth Connection\nEquipped with Bluetooth V6.0 chip, it pairs instantly with smartphones, tablets and laptops. The maximum transmission distance reaches 10 meters, no stuttering when you walk around your bedroom. It fully supports mainstream Bluetooth protocols, supporting hands-free calls, volume adjustment and track switching.","High-Quality AAC & SBC Audio Decoding\nDual audio decoding brings lossless sound performance. Whether you play relaxing white noise, sleep music, meditation podcasts or bedtime stories, the earbuds output mellow, clear sound while blocking outside disturbing noise for a quiet sleeping environment.","Portable & Long-Endurance Battery\nEach earbud has a 30mAh built-in battery, matched with a 230mAh compact charging case measuring only 5541.528mm, light enough to slip into pockets and handbags. The package is equipped with a Type-C charging cable for fast, convenient power replenishment."]},{"type":"hero","heading":"Wireless Sleep Earbuds – Ideal Headphones for Side Sleepers","text":"If you are troubled by snoring, noisy room or want to listen to bedtime audio without bulky headsets, our S16 sleep earbuds are your perfect choice.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone611.png"}]},{"id":1781681799719,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K1.png","category":"Kitchenware","name":"6-Cavity Train Silicone Baking Mold","sku":"YS-KW-1001K","material":"Silicone","size":"30*17.5*4 cm","moq":20,"priceMin":1,"priceMax":1.05,"description":"6 Cavity Train Silicone Cake Mold, Food Grade Silicone Chocolate Jelly Baking Tray, FDA Approved DIY Cartoon Train Baking Tool for Kids Party, Oven Microwave Safe","aplus":[{"type":"textImage","heading":"Specifications","text":"Model: JSC1800\nMaterial: Food-Grade Silicone (FDA Approved)\nCavity Count: 6 Cartoon Train Shapes\nDimensions: 30 × 17.5 × 4 cm\nNet Weight: 145g\nTemperature Range: -40℃ ~ 230℃\nApplicable Appliances: Oven, Microwave, Roaster, Refrigerator\nSuitable For: Mini cake, chocolate, jelly, candy, ice cube, handmade soap","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K5.png"},{"type":"features","heading":"Cartoon Train Silicone Baking Mold for DIY Homemade Treats","items":["This 6-cavity train silicone mold is a fun baking accessory for home bakers and parents. Adorable locomotive and carriage shapes create eye-catching mini desserts to delight children at birthday parties, baby showers and daily snacks.","Made of high-standard food-grade silicone certified by FDA, the mold is safe, non-toxic and environmentally friendly. It supports a wide working temperature range of -40℃ ~ 230℃, working great in ovens, microwaves and refrigerators for cakes, chocolate, jelly, candy, ice cubes and handmade soap.","The soft flexible silicone enables effortless non-stick demolding. After baking, leave the mold to cool for about 10 minutes before taking out desserts for intact perfect shapes. It is reusable and will not deform or fade after long-term repeated use. Cleaning is simple: flip the mold inside out and wash with neutral detergent, either by hand or in a dishwasher.","Compact size 30*17.5*4cm with a lightweight 145g body, built-in hanging hole for convenient storage when not in use."]},{"type":"imageText","heading":"Bullet Points","text":"🚂 Cute 6-Cavity Cartoon Train Shape\nFeatures 6 individual mini train cavities, lovely locomotive & carriage design, perfect for kid's birthday party, baby shower desserts, homemade chocolate, jelly, mini cakes and handmade soap.\n✅ FDA Certified Premium Food-Grade Silicone\nPassed US FDA food safety inspection, non-toxic, odorless, eco-friendly material, safe for direct food contact, no harmful substance release under normal baking temperature.\n🔥 Wide Temperature Resistance & Multi-Scene Use\nHeat resistant from -40°C up to 230°C, compatible with oven, microwave oven and roaster. Ideal for baking, freezing, making cold jelly and ice cubes.\n⚠️ Note: Do not use microwave Crisp mode.\n🧼 Easy Demold & Dishwasher Safe\nFlexible silicone construction, just twist gently after cooling to pop out food perfectly without sticking. Reusable, no deformation or fading after repeated use; can be cleaned in dishwasher or warm soapy water.\n🛡️ Durable & User-Friendly Design\nEquipped with hanging hole for easy storage; flexible but sturdy structure. Avoid sharp cutters, steel wool scrubbers and direct open flame contact to extend service life.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K4.png"},{"type":"hero","heading":"Instructions & Warnings","text":"Keep away from open flame and heating tubes of ovens; place the mold on the middle or upper rack, at least 5cm distance from heating elements.\nClean with neutral detergent, sponge or dishwasher; flip the mold inside out for deeper cleaning.\nDo NOT use the Crisp mode of microwave ovens.\nDo NOT scrub with steel wool or sharp hard tools to prevent scratches.\nLet the mold cool down for about 10 minutes after baking before demolding for better effect.\nProper operation can effectively extend the service life of the silicone mold.\nDo NOT scratch the surface with sharp objects.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K3.png"}]}];
+
+        const REMOTE_DATA_URL = 'site-data.json';
+        let currentFilterCategory = 'all';
+        let currentDetailMode = 'preview';
+        let currentDetailProductId = null;
+
+        function isAdmin() {
+            return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
+        }
+        function escapeHtml(str) {
+            if (str === null || str === undefined) return '';
+            return String(str).replace(/[&<>"']/g, function (s) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]);
+            });
+        }
+        function tt(key, fallback) {
+            try {
+                const v = i18next.t(key);
+                if (v && v !== key) return v;
+            } catch (e) {}
+            return fallback || key;
+        }
+
+        /* ========== 品类（数据层） ========== */
+        function getCategories() {
+            try {
+                const s = localStorage.getItem('yeatruCategories');
+                return s ? JSON.parse(s) : ['Home & Garden', 'Kitchenware', 'Toys', 'Apparel', 'Hand Bag', 'Electronics'];
+            } catch (e) { return ['Home & Garden', 'Kitchenware', 'Toys', 'Apparel', 'Hand Bag', 'Electronics']; }
+        }
+        function saveCategories(categories) {
+            localStorage.setItem('yeatruCategories', JSON.stringify(categories));
+            renderCategories();
+            renderCategoryFilter();
+        }
+        function renderCategories() {
+            if (!isAdmin()) return;
+            const list = document.getElementById('categoryList');
+            if (!list) return;
+            list.innerHTML = '';
+            getCategories().forEach(cat => {
+                const badge = document.createElement('span');
+                badge.className = 'badge bg-primary d-flex align-items-center';
+                badge.innerHTML = `${escapeHtml(cat)} <button type="button" class="btn-close btn-close-white ms-2" aria-label="Delete" data-cat="${escapeHtml(cat)}"></button>`;
+                badge.querySelector('button').addEventListener('click', function () {
+                    const removeCat = this.getAttribute('data-cat');
+                    const filtered = getCategories().filter(c => c !== removeCat);
+                    saveCategories(filtered);
+                });
+                list.appendChild(badge);
+            });
+        }
+
+        /* ========== 品类筛选条 ========== */
+        function renderCategoryFilter() {
+            const list = document.getElementById('categoryFilterList');
+            if (!list) return;
+            list.innerHTML = '';
+            const categories = getCategories();
+            const allBtn = document.createElement('button');
+            allBtn.type = 'button';
+            allBtn.className = 'category-filter-btn' + (currentFilterCategory === 'all' ? ' active' : '');
+            allBtn.innerHTML = '<i class="fas fa-th me-1"></i>' + tt('filter.all', 'All');
+            allBtn.addEventListener('click', function () {
+                currentFilterCategory = 'all';
+                renderCategoryFilter();
+                renderProducts();
+            });
+            list.appendChild(allBtn);
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'category-filter-btn' + (currentFilterCategory === cat ? ' active' : '');
+                btn.textContent = cat;
+                btn.addEventListener('click', function () {
+                    currentFilterCategory = cat;
+                    renderCategoryFilter();
+                    renderProducts();
+                });
+                list.appendChild(btn);
+            });
+            const resetBtn = document.createElement('button');
+            resetBtn.type = 'button';
+            resetBtn.className = 'category-filter-reset';
+            resetBtn.innerHTML = '<i class="fas fa-rotate-left me-1"></i>' + tt('filter.reset', 'Reset Filter');
+            resetBtn.addEventListener('click', function () {
+                currentFilterCategory = 'all';
+                renderCategoryFilter();
+                renderProducts();
+            });
+            list.appendChild(resetBtn);
+        }
+
+        /* ========== 产品（数据层） ========== */
+        function getProducts() {
+            try {
+                const s = localStorage.getItem('yeatruProducts');
+                return s ? JSON.parse(s) : DEFAULT_PRODUCTS.slice();
+            } catch (e) { return DEFAULT_PRODUCTS.slice(); }
+        }
+        function saveProducts(products) {
+            localStorage.setItem('yeatruProducts', JSON.stringify(products));
+            renderProducts();
+        }
+
+        /* ========== 产品列表渲染（含筛选） ========== */
+        function renderProducts() {
+            const products = getProducts();
+            const productList = document.getElementById('productList');
+            const filterInfo = document.getElementById('filterResultInfo');
+            if (!productList) return;
+
+            const filtered = currentFilterCategory === 'all'
+                ? products
+                : products.filter(p => p.category === currentFilterCategory);
+
+            if (filterInfo) {
+                if (currentFilterCategory === 'all') {
+                    filterInfo.textContent = `${tt('filter.showing', 'Showing')} ${filtered.length} ${tt('filter.products', 'products')}`;
+                } else {
+                    filterInfo.textContent = `${tt('filter.showing', 'Showing')} ${filtered.length} ${tt('filter.of', 'of')} ${products.length} ${tt('filter.products', 'products')} (${currentFilterCategory})`;
+                }
+            }
+
+            productList.innerHTML = '';
+
+            if (filtered.length === 0) {
+                productList.innerHTML = `<div class="col-12 text-center py-5"><h5>${tt('filter.noResult', 'No products in this category')}</h5></div>`;
+                return;
+            }
+
+            filtered.forEach(product => {
+                const priceText = (tt('products.price', 'Price: $')) + product.priceMin + ' - ' + product.priceMax;
+                const card = document.createElement('div');
+                card.className = 'col-lg-3 col-md-6';
+                card.innerHTML = `
+                    <div class="product-card">
+                        <img src="${escapeHtml(product.image)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" onerror="this.src='https://picsum.photos/600/400'; this.alt='${escapeHtml(product.name)}'">
+                        <div class="card-body">
+                            <div class="product-category">${escapeHtml(product.category)}</div>
+                            <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
+                            <p class="product-desc">${escapeHtml(product.description)}</p>
+                            <p class="product-price">${escapeHtml(priceText)}</p>
+                            <div class="d-flex flex-wrap gap-2 align-items-center">
+                                <a href="#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                                <span class="text-muted">|</span>
+                                <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
+                            </div>
+                            ${isAdmin() ? `
+                                <div class="product-admin-actions">
+                                    <button class="btn btn-sm btn-primary product-admin-btn edit-product" data-id="${product.id}"><i class="fas fa-edit me-1"></i>${tt('products.edit', 'Edit')}</button>
+                                    <button class="btn btn-sm btn-danger product-admin-btn delete-product" data-id="${product.id}"><i class="fas fa-trash me-1"></i>${tt('products.delete', 'Delete')}</button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                productList.appendChild(card);
+            });
+
+            document.querySelectorAll('.edit-product').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    const product = getProducts().find(p => p.id === productId);
+                    if (product) {
+                        document.getElementById('productId').value = product.id;
+                        document.getElementById('productImage').value = product.image;
+                        document.getElementById('productCategory').value = product.category;
+                        document.getElementById('productName').value = product.name;
+                        document.getElementById('productSKU').value = product.sku;
+                        document.getElementById('productMaterial').value = product.material;
+                        document.getElementById('productSize').value = product.size;
+                        document.getElementById('productMOQ').value = product.moq;
+                        document.getElementById('productPriceMin').value = product.priceMin;
+                        document.getElementById('productPriceMax').value = product.priceMax;
+                        document.getElementById('productDescription').value = product.description;
+                        document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
+                        new bootstrap.Modal(document.getElementById('productModal')).show();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.delete-product').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    if (confirm('Delete this product?')) {
+                        const products = getProducts().filter(p => p.id !== productId);
+                        saveProducts(products);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.product-img-clickable, .product-title-clickable, .view-detail-link').forEach(el => {
+                el.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const id = parseInt(this.getAttribute('data-id'));
+                    showDetailPage(id);
+                });
+            });
+
+            document.querySelectorAll('.quote-product').forEach(el => {
+                el.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const name = this.getAttribute('data-product');
+                    document.getElementById('quoteProductName').value = name;
+                    new bootstrap.Modal(document.getElementById('quoteModal')).show();
+                });
+            });
+        }
+
+        /* ========== 品牌 Logo ========== */
+        function renderBrandLogo() {
+            const logo = localStorage.getItem('yeatruBrandLogo');
+            const headerImg = document.getElementById('brandLogoImg');
+            const headerFallback = document.getElementById('brandLogoFallback');
+            const footerImg = document.getElementById('footerLogoImg');
+            const footerFallback = document.getElementById('footerLogoFallback');
+            if (logo) {
+                if (headerImg) { headerImg.src = logo; headerImg.style.display = 'block'; if (headerFallback) headerFallback.style.display = 'none'; }
+                if (footerImg) { footerImg.src = logo; footerImg.style.display = 'block'; if (footerFallback) footerFallback.style.display = 'none'; }
+            } else {
+                if (headerImg) { headerImg.style.display = 'none'; if (headerFallback) headerFallback.style.display = 'block'; }
+                if (footerImg) { footerImg.style.display = 'none'; if (footerFallback) footerFallback.style.display = 'block'; }
+            }
+        }
+
+        /* ========== 详情页 ========== */
+        function showDetailPage(productId) {
+            currentDetailProductId = productId;
+            const product = getProducts().find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('products').style.display = 'none';
+            const detailPage = document.getElementById('productDetailPage');
+            detailPage.classList.add('active');
+
+            document.getElementById('detailImage').src = product.image;
+            document.getElementById('detailImageInput').value = product.image;
+            document.getElementById('detailName').textContent = product.name;
+            document.getElementById('detailNameInput').value = product.name;
+            document.getElementById('detailCategory').textContent = product.category;
+            document.getElementById('detailSKU').textContent = product.sku || '-';
+            document.getElementById('detailMaterial').textContent = product.material || '-';
+            document.getElementById('detailSize').textContent = product.size || '-';
+            document.getElementById('detailMOQ').textContent = product.moq;
+            document.getElementById('detailPriceMin').textContent = product.priceMin;
+            document.getElementById('detailPriceMax').textContent = product.priceMax;
+            document.getElementById('detailPriceBig').textContent = '$' + product.priceMin + ' - $' + product.priceMax;
+            document.getElementById('detailDesc').textContent = product.description;
+            document.getElementById('detailDescInput').value = product.description;
+
+            if (isAdmin()) {
+                document.getElementById('detailModeToggle').style.display = 'inline-flex';
+                document.getElementById('saveStatusBadge').style.display = 'inline-flex';
+            } else {
+                document.getElementById('detailModeToggle').style.display = 'none';
+                document.getElementById('saveStatusBadge').style.display = 'none';
+                setDetailMode('preview');
+            }
+
+            renderAplusBlocks(product.aplus || []);
+            window.scrollTo(0, 0);
+        }
+
+        function hideDetailPage() {
+            currentDetailProductId = null;
+            document.getElementById('productDetailPage').classList.remove('active');
+            document.getElementById('products').style.display = 'block';
+            renderProducts();
+        }
+
+        function setDetailMode(mode) {
+            currentDetailMode = mode;
+            document.querySelectorAll('#detailModeToggle button').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-mode') === mode);
+            });
+            document.getElementById('detailImageInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailNameInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailMaterialInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailSizeInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailMOQInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailPriceMinInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailPriceMaxInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailDescInput').style.display = mode === 'edit' ? 'block' : 'none';
+
+            const isEdit = mode === 'edit';
+            document.querySelectorAll('.detail-edit-only').forEach(el => {
+                el.style.display = isEdit ? 'block' : 'none';
+            });
+            document.getElementById('detailImage').style.display = isEdit ? 'none' : 'block';
+            document.getElementById('detailName').style.display = isEdit ? 'none' : 'block';
+
+            document.querySelectorAll('.aplus-block').forEach(b => b.classList.toggle('edit-mode', isEdit));
+            document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
+
+            if (isEdit) {
+                document.getElementById('detailImageInput').value = document.getElementById('detailImage').src;
+                document.getElementById('detailMaterialInput').value = document.getElementById('detailMaterial').textContent === '-' ? '' : document.getElementById('detailMaterial').textContent;
+                document.getElementById('detailSizeInput').value = document.getElementById('detailSize').textContent === '-' ? '' : document.getElementById('detailSize').textContent;
+                document.getElementById('detailMOQInput').value = document.getElementById('detailMOQ').textContent;
+                document.getElementById('detailPriceMinInput').value = document.getElementById('detailPriceMin').textContent;
+                document.getElementById('detailPriceMaxInput').value = document.getElementById('detailPriceMax').textContent;
+            }
+        }
+
+        function renderAplusBlocks(aplus) {
+            const container = document.getElementById('aplusBlocks');
+            container.innerHTML = '';
+            if (!aplus || aplus.length === 0) {
+                container.innerHTML = '<p class="text-muted">No A+ content available.</p>';
+                return;
+            }
+            aplus.forEach((block, index) => {
+                const div = document.createElement('div');
+                div.className = 'aplus-block';
+                div.setAttribute('data-index', index);
+                let toolbar = '';
+                if (isAdmin() && currentDetailMode === 'edit') {
+                    toolbar = `<div class="aplus-block-toolbar">
+                        <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
+                        <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
+                        <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
+                    </div>`;
+                }
+                div.innerHTML = toolbar;
+
+                if (block.type === 'hero') {
+                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;">
+                        <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
+                        <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                } else if (block.type === 'text') {
+                    div.innerHTML += `<div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>`;
+                } else if (block.type === 'textImage') {
+                    div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
+                        <div class="aplus-block-text-side">
+                            <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                            <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
+                        </div>
+                        <img src="${escapeHtml(block.image || '')}" alt="">
+                    </div>
+                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                } else if (block.type === 'imageText') {
+                    div.innerHTML += `<div class="aplus-block-image-wrap layout-image-text">
+                        <img src="${escapeHtml(block.image || '')}" alt="">
+                        <div class="aplus-block-text-side">
+                            <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                            <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
+                        </div>
+                    </div>
+                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                } else if (block.type === 'features') {
+                    let itemsHtml = '<ul>';
+                    (block.items || []).forEach(item => {
+                        itemsHtml += `<li>${escapeHtml(item)}</li>`;
+                    });
+                    itemsHtml += '</ul>';
+                    div.innerHTML += `<div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-features">${itemsHtml}</div>`;
+                }
+                container.appendChild(div);
+            });
+
+            if (isAdmin() && currentDetailMode === 'edit') {
+                container.querySelectorAll('.aplus-block').forEach((block, index) => {
+                    block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            const aplus = getProducts().find(p => p.id === currentDetailProductId)?.aplus || [];
+                            if (this.classList.contains('btn-move-up') && index > 0) {
+                                [aplus[index], aplus[index - 1]] = [aplus[index - 1], aplus[index]];
+                            } else if (this.classList.contains('btn-move-down') && index < aplus.length - 1) {
+                                [aplus[index], aplus[index + 1]] = [aplus[index + 1], aplus[index]];
+                            } else if (this.classList.contains('btn-delete-block')) {
+                                aplus.splice(index, 1);
+                            }
+                            saveAplusData(aplus);
+                        });
+                    });
+                    block.querySelectorAll('[contenteditable]').forEach(el => {
+                        el.addEventListener('blur', function () {
+                            updateAplusContent(index, block);
+                        });
+                    });
+                    block.querySelectorAll('.aplus-image-input').forEach(input => {
+                        input.addEventListener('change', function () {
+                            updateAplusContent(index, block);
+                        });
+                    });
+                });
+            }
+        }
+
+        function updateAplusContent(index, blockEl) {
+            const product = getProducts().find(p => p.id === currentDetailProductId);
+            if (!product || !product.aplus) return;
+            const block = product.aplus[index];
+            if (!block) return;
+            block.heading = blockEl.querySelector('.aplus-block-heading')?.textContent || '';
+            block.text = blockEl.querySelector('.aplus-block-text')?.textContent || '';
+            if (blockEl.querySelector('.aplus-image-input')) {
+                block.image = blockEl.querySelector('.aplus-image-input').value;
+            }
+            saveAplusData(product.aplus);
+        }
+
+        function saveAplusData(aplus) {
+            const products = getProducts();
+            const productIndex = products.findIndex(p => p.id === currentDetailProductId);
+            if (productIndex >= 0) {
+                products[productIndex].aplus = aplus;
+                saveProducts(products);
+                renderAplusBlocks(aplus);
+            }
+        }
+
+        /* ========== GitHub 静态数据同步 ========== */
+        function buildSiteDataObject() {
+            return {
+                version: 1,
+                updatedAt: new Date().toISOString(),
+                logo: localStorage.getItem('yeatruBrandLogo') || '',
+                categories: getCategories(),
+                products: getProducts()
+            };
+        }
+
+        function applySiteData(data, options = {}) {
+            if (!data || typeof data !== 'object') return false;
+            if (Array.isArray(data.categories)) {
+                localStorage.setItem('yeatruCategories', JSON.stringify(data.categories));
+            }
+            if (Array.isArray(data.products)) {
+                localStorage.setItem('yeatruProducts', JSON.stringify(data.products));
+            }
+            if (Object.prototype.hasOwnProperty.call(data, 'logo')) {
+                if (data.logo) {
+                    localStorage.setItem('yeatruBrandLogo', data.logo);
+                } else {
+                    localStorage.removeItem('yeatruBrandLogo');
+                }
+            }
+            renderBrandLogo();
+            renderCategories();
+            renderCategoryFilter();
+            renderProducts();
+            if (currentDetailProductId) {
+                const exists = getProducts().some(p => p.id === currentDetailProductId);
+                if (exists) renderDetailPage(currentDetailProductId);
+                else hideDetailPage();
+            }
+            if (!options.silent) {
+                alert('site-data.json imported. Please upload to GitHub for visitors to see.');
+            }
+            return true;
+        }
+
+        async function loadRemoteSiteData() {
+            try {
+                const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error('site-data.json not found');
+                const data = await response.json();
+                applySiteData(data, { silent: true });
+                console.info('Loaded public data from site-data.json');
+            } catch (error) {
+                console.info('No site-data.json found, using local data.');
+            }
+        }
+
+        function exportSiteData() {
+            if (!isAdmin()) return;
+            const data = buildSiteDataObject();
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'site-data.json';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        function importSiteDataFromFile(event) {
+            if (!isAdmin()) return;
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    applySiteData(data);
+                } catch (error) {
+                    alert('Import failed: Please select a valid site-data.json file.');
+                } finally {
+                    event.target.value = '';
+                }
+            };
+            reader.readAsText(file, 'utf-8');
+        }
+
+        /* ========== i18n 翻译资源 ========== */
+        const translationResources = {
+            en: {
+                translation: {
+                    'nav.home': 'Home', 'nav.products': 'Products', 'nav.services': 'Services',
+                    'nav.sourcingProcess': 'Sourcing Process', 'nav.testimonials': 'Testimonials',
+                    'nav.aboutUs': 'About Us', 'nav.contactUs': 'Contact Us', 'nav.login': 'Login', 'nav.logout': 'Logout',
+                    'products.title': 'Hot Products', 'products.subtitle': 'Explore our featured products sourced from China',
+                    'products.viewDetails': 'View Details', 'products.quote': 'Get a Quote', 'products.edit': 'Edit',
+                    'products.delete': 'Delete', 'products.addProduct': 'Add New Product', 'products.save': 'Save Product',
+                    'products.categoryManagement': 'Category Management', 'products.enterCategory': 'Enter new category name',
+                    'products.addCategory': 'Add Category', 'filter.title': 'Filter by Category',
+                    'filter.all': 'All', 'filter.reset': 'Reset Filter', 'filter.showing': 'Showing',
+                    'filter.of': 'of', 'filter.products': 'products', 'filter.noResult': 'No products in this category',
+                    'detail.back': 'Back to Products', 'detail.preview': 'Preview', 'detail.edit': 'Edit',
+                    'products.category': 'Category', 'products.sku': 'SKU', 'products.material': 'Material',
+                    'products.size': 'Size', 'products.moq': 'MOQ', 'products.priceMin': 'Min Price', 'products.priceMax': 'Max Price',
+                    'products.price': 'Price: $', 'login.title': 'Admin Login', 'login.username': 'Username',
+                    'login.enterUsername': 'Enter username', 'login.password': 'Password', 'login.enterPassword': 'Enter password',
+                    'login.error': 'Incorrect username or password!', 'login.cancel': 'Cancel', 'login.submit': 'Login',
+                    'quote.title': 'Get a Quote', 'quote.submit': 'Submit Quote Request',
+                    'footer.desc': 'Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.',
+                    'footer.quickLinks': 'Quick Links', 'footer.services': 'Our Services', 'footer.contact': 'Contact Us',
+                    'services.supplierVerification': 'Supplier Verification', 'services.productSourcing': 'Product Sourcing',
+                    'services.qualityControl': 'Quality Control', 'services.logistics': 'Logistics & Shipping',
+                    'services.priceNegotiation': 'Price Negotiation', 'services.riskManagement': 'Risk Management',
+                    'aplus.title': 'A+ Content', 'aplus.addBlock': 'Add a content block:', 'aplus.blockHero': 'Hero Banner',
+                    'aplus.blockText': 'Text', 'aplus.blockTextImage': 'Text + Image', 'aplus.blockImageText': 'Image + Text',
+                    'aplus.blockFeatures': 'Feature Grid'
+                }
+            },
+            es: { translation: { 'nav.home': 'Inicio', 'nav.products': 'Productos', 'products.title': 'Productos Destacados' } },
+            fr: { translation: { 'nav.home': 'Accueil', 'nav.products': 'Produits', 'products.title': 'Produits Populaires' } },
+            ru: { translation: { 'nav.home': 'Главная', 'nav.products': 'Продукты', 'products.title': 'Горячие Продукты' } }
+        };
+
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                try { el.textContent = i18next.t(key); } catch (e) {}
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                try { el.placeholder = i18next.t(key); } catch (e) {}
+            });
+        }
+
+        function bindLanguageEvents() {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    i18next.changeLanguage(lang);
+                });
+            });
+        }
+
+        i18next.on('languageChanged', function () {
+            updateContent();
+            const lang = i18next.language;
+            const langNames = { en: 'English', es: 'Español', fr: 'Français', ru: 'Русский' };
+            const currentLangEl = document.getElementById('current-lang');
+            if (currentLangEl) currentLangEl.textContent = langNames[lang] || lang;
+            if (typeof renderProducts === 'function') renderProducts();
+            if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            i18next
+                .use(i18nextBrowserLanguageDetector)
+                .init({
+                    fallbackLng: 'en',
+                    resources: translationResources,
+                    detection: {
+                        order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+                        caches: ['localStorage', 'cookie']
+                    },
+                    interpolation: { escapeValue: false }
+                }).then(function () {
+                    updateContent();
+                    bindLanguageEvents();
+                    loadRemoteSiteData();
+                    renderCategoryFilter();
+                    renderProducts();
+                });
+
+            updateLoginUI(isAdmin());
+            renderCategories();
+            renderProducts();
+            renderBrandLogo();
+
+            document.getElementById('submitLogin').addEventListener('click', function () {
+                const username = document.getElementById('adminUsername').value.trim();
+                const password = document.getElementById('adminPassword').value.trim();
+                const errorEl = document.getElementById('loginError');
+                if (username === 'Yeatru' && password === 'Ldz52385109') {
+                    localStorage.setItem('yeatruAdminLoggedIn', 'true');
+                    updateLoginUI(true);
+                    const loginModal = document.getElementById('loginModal');
+                    const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
+                    modalInstance.hide();
+                    errorEl.classList.add('d-none');
+                    document.getElementById('adminUsername').value = '';
+                    document.getElementById('adminPassword').value = '';
+                } else {
+                    errorEl.classList.remove('d-none');
+                }
+            });
+
+            document.getElementById('logoutBtn').addEventListener('click', function () {
+                localStorage.removeItem('yeatruAdminLoggedIn');
+                updateLoginUI(false);
+                if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailMode === 'edit') {
+                    setDetailMode('preview');
+                }
+            });
+
+            document.getElementById('addCategoryBtn').addEventListener('click', function () {
+                const newCategory = document.getElementById('newCategory').value.trim();
+                if (newCategory && !getCategories().includes(newCategory)) {
+                    saveCategories([...getCategories(), newCategory]);
+                    document.getElementById('newCategory').value = '';
+                }
+            });
+
+            document.getElementById('saveProduct').addEventListener('click', function () {
+                const productId = document.getElementById('productId').value;
+                const product = {
+                    id: productId ? parseInt(productId) : Date.now(),
+                    image: document.getElementById('productImage').value,
+                    category: document.getElementById('productCategory').value,
+                    name: document.getElementById('productName').value,
+                    sku: document.getElementById('productSKU').value,
+                    material: document.getElementById('productMaterial').value,
+                    size: document.getElementById('productSize').value,
+                    moq: parseInt(document.getElementById('productMOQ').value),
+                    priceMin: parseFloat(document.getElementById('productPriceMin').value),
+                    priceMax: parseFloat(document.getElementById('productPriceMax').value),
+                    description: document.getElementById('productDescription').value
+                };
+                const products = getProducts();
+                if (productId) {
+                    const index = products.findIndex(p => p.id === parseInt(productId));
+                    if (index >= 0) {
+                        product.aplus = products[index].aplus || null;
+                        products[index] = product;
+                    }
+                } else {
+                    products.push(product);
+                }
+                saveProducts(products);
+                const productModal = document.getElementById('productModal');
+                bootstrap.Modal.getInstance(productModal).hide();
+                document.getElementById('productForm').reset();
+                document.getElementById('productId').value = '';
+                document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
+            });
+
+            document.getElementById('addProductBtn').addEventListener('click', function () {
+                document.getElementById('productForm').reset();
+                document.getElementById('productId').value = '';
+                document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
+            });
+
+            document.getElementById('exportDataBtn').addEventListener('click', exportSiteData);
+            document.getElementById('importDataBtn').addEventListener('click', function () {
+                document.getElementById('importDataFile').click();
+            });
+            document.getElementById('importDataFile').addEventListener('change', importSiteDataFromFile);
+
+            document.getElementById('detailBackBtn').addEventListener('click', function () {
+                hideDetailPage();
+            });
+
+            document.querySelectorAll('#detailModeToggle button').forEach(b => {
+                b.addEventListener('click', function () {
+                    setDetailMode(this.getAttribute('data-mode'));
+                });
+            });
+
+            document.getElementById('detailQuoteBtn').addEventListener('click', function () {
+                if (!currentDetailProductId) return;
+                const p = getProducts().find(x => x.id === currentDetailProductId);
+                if (!p) return;
+                document.getElementById('quoteProductName').value = p.name;
+                new bootstrap.Modal(document.getElementById('quoteModal')).show();
+            });
+
+            document.getElementById('aplusAddBar').querySelectorAll('button[data-add-type]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const type = this.getAttribute('data-add-type');
+                    const product = getProducts().find(p => p.id === currentDetailProductId);
+                    if (!product) return;
+                    if (!product.aplus) product.aplus = [];
+                    const newBlock = { type: type, heading: '', text: '', image: '' };
+                    if (type === 'features') newBlock.items = [];
+                    product.aplus.push(newBlock);
+                    saveAplusData(product.aplus);
+                });
+            });
+
+            const categoryDatalist = document.getElementById('categoryDatalist');
+            if (categoryDatalist) {
+                getCategories().forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    categoryDatalist.appendChild(option);
+                });
+            }
+        });
+
+        function updateLoginUI(loggedIn) {
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const adminDataTools = document.getElementById('adminDataTools');
+            const categoryManagement = document.getElementById('categoryManagement');
+            if (loggedIn) {
+                if (loginBtn) loginBtn.classList.add('d-none');
+                if (logoutBtn) logoutBtn.classList.remove('d-none');
+                if (adminDataTools) adminDataTools.classList.remove('d-none');
+                if (adminDataTools) adminDataTools.classList.add('d-flex');
+                if (categoryManagement) categoryManagement.style.display = 'block';
+            } else {
+                if (loginBtn) loginBtn.classList.remove('d-none');
+                if (logoutBtn) logoutBtn.classList.add('d-none');
+                if (adminDataTools) adminDataTools.classList.add('d-none');
+                if (categoryManagement) categoryManagement.style.display = 'none';
+            }
+            renderProducts();
+            if (currentDetailProductId) {
+                const detailModeToggle = document.getElementById('detailModeToggle');
+                const saveStatusBadge = document.getElementById('saveStatusBadge');
+                if (loggedIn) {
+                    if (detailModeToggle) detailModeToggle.style.display = 'inline-flex';
+                    if (saveStatusBadge) saveStatusBadge.style.display = 'inline-flex';
+                } else {
+                    if (detailModeToggle) detailModeToggle.style.display = 'none';
+                    if (saveStatusBadge) saveStatusBadge.style.display = 'none';
+                    setDetailMode('preview');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
