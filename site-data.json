@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T02:01:31.065Z",
+  "updatedAt": "2026-06-17T03:56:52.204Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
-    "Electronics",
     "Home & Garden",
     "Kitchenware",
     "Toys",
-    "Apparel"
+    "Apparel",
+    "Hand Bag"
   ],
   "products": [
     {
       "id": 1,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201Apic2.jpg",
       "category": "Apparel",
-      "name": "Quick Dry Activewear Set",
-      "sku": "YS-CL-101A",
+      "name": "Men Quick Dry Workout Tracksuit Set",
+      "sku": "YS-CL-201A",
       "material": "Polyester",
       "size": "L/XL/XXL/XXXL/XXXXL",
       "moq": 100,
@@ -57,7 +57,7 @@
       "id": 2,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg",
       "category": "Apparel",
-      "name": "Islamic/Muslim Women Swimsuit",
+      "name": "Islamic Women Modest Burkini Swimsuit",
       "sku": "YS-CL-102WS",
       "material": "Polyester",
       "size": "S/M/L/XL",
@@ -68,54 +68,99 @@
       "aplus": [
         {
           "type": "textImage",
-          "heading": "Product Overview",
-          "text": "This women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top ,Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear .",
+          "heading": "Fabric Advantage",
+          "text": "82% Nylon + 18% Spandex professional swim fabric:\nUPF50+ sun protection, anti-UV long sleeve design\nQuick-dry & moisture-wicking, no water retention\nHigh stretch & recovery, not easy to loose after stretching\nResist chlorine and seawater corrosion, long service life\nNo pilling, no color fading after multiple washes",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL102WS.png"
         },
         {
           "type": "imageText",
-          "heading": "Key Features",
-          "text": "[Top: ]Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.  \n[Craftsmanship:] Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.\n[Bottom:] High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\n- Black base with pink & green tropical flower print sleeves ;- Navy blue base with palm leaf print sleeves",
+          "heading": "Product Overview",
+          "text": "This women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.\nDesign Details\nTop: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.\nBottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\nCraftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"
         },
         {
           "type": "text",
           "heading": "Applicable Occasions",
-          "text": "Sea swimming, surfing, snorkeling, beach volleyball, hot spring spa, pool training, family beach vacation. Ideal conservative swimwear for Muslim women and ladies who want full sun coverage."
+          "text": "Black base with pink & green tropical flower print sleeves\nNavy blue base with palm leaf print sleeves"
         },
         {
           "type": "hero",
           "heading": "Product Features",
-          "text": "- Full Coverage Modest Islamic Design   Two-piece modest burkini set includes long sleeve zip-front tunic top & full-length swim leggings. Mid-front half zipper for easy on/off, layered peplum hem hides belly and hips, meets Middle East Muslim modest dressing demands while stylish. Two tropical print color options: black floral & navy palm leaf print. - UPF 50+ UV Protection Long Sleeve Rash Guard Long sleeve full arm coverage blocks harmful sun rays, professional surfing rash guard fabric prevents chafing during swimming, snorkeling and beach volleyball. Stretchy long pants fully cover legs without tight binding. - Premium Quick-Dry Swim Fabric Crafted from 82% Nylon + 18% Spandex blend. Ultra high elasticity, soft skin-friendly, chlorine & salt water resistant. Fast moisture-wicking, dries quickly after water activities, no sticky heavy feeling. Fade-resistant, no deformation after repeated washing. - Functional Half-Zip Front & Flattering Fit Half zipper stand collar allows adjustable ventilation; asymmetric peplum hem optimizes body curve, hides tummy and hip flaws. High waist full-length leggings offer supportive fit, won’t slide down during sports. Contrast tropical floral printed sleeves & hem add fashion sense to solid color main body. - Multi-Scenario Versatile Swimwear Perfect for Muslim ladies, modest wearers, swimming, surfing, snorkeling, beach holiday, hot spring and pool training. Suitable for Middle East, Southeast Asia market demand for full coverage swimsuits.",
+          "text": "Full Coverage Modest Islamic Design\nTwo-piece modest burkini set includes long sleeve zip-front tunic top & full-length swim leggings. Mid-front half zipper for easy on/off, layered peplum hem hides belly and hips, meets Middle East Muslim modest dressing demands while stylish. Two tropical print color options: black floral & navy palm leaf print.\nUPF 50+ UV Protection Long Sleeve Rash Guard\nLong sleeve full arm coverage blocks harmful sun rays, professional surfing rash guard fabric prevents chafing during swimming, snorkeling and beach volleyball. Stretchy long pants fully cover legs without tight binding.\nPremium Quick-Dry Swim Fabric\nCrafted from 82% Nylon + 18% Spandex blend. Ultra high elasticity, soft skin-friendly, chlorine & salt water resistant. Fast moisture-wicking, dries quickly after water activities, no sticky heavy feeling. Fade-resistant, no deformation after repeated washing.\nFunctional Half-Zip Front & Flattering Fit\nHalf zipper stand collar allows adjustable ventilation; asymmetric peplum hem optimizes body curve, hides tummy and hip flaws. High waist full-length leggings offer supportive fit, won’t slide down during sports. Contrast tropical floral printed sleeves & hem add fashion sense to solid color main body.\nMulti-Scenario Versatile Swimwear\nPerfect for Muslim ladies, modest wearers, swimming, surfing, snorkeling, beach holiday, hot spring and pool training. Suitable for Middle East, Southeast Asia market demand for full coverage swimsuits.",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"
         }
       ]
     },
     {
-      "id": 3,
-      "image": "https://picsum.photos/id/292/600/400",
-      "category": "Kitchenware",
-      "name": "Stainless Steel Kitchen Knife",
-      "sku": "YS-K001",
-      "material": "High Carbon Stainless Steel",
-      "size": "8 inch blade",
-      "moq": 150,
-      "priceMin": 19.99,
-      "priceMax": 29.99,
-      "description": "Professional kitchen knife made of high carbon stainless steel, sharp and durable."
+      "id": 1781664526234,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A1.jpg",
+      "category": "Hand Bag",
+      "name": "Mini Cute Flap Square Crossbody Bag",
+      "sku": "YS-HB-1001A",
+      "material": "Synthetic Patent Leather",
+      "size": "Small",
+      "moq": 1,
+      "priceMin": 1.59,
+      "priceMax": 1.69,
+      "description": "\nNew Glossy Mini Square Bag! Dual handle & crossbody strap, lightweight patent leather purse for daily outfits, 4 vintage colors available.\n\nCute tiny flap handbag for women, fits all your small essentials, hand/shoulder/crossbody 3 ways to wear, perfect daily fashion accessory.",
+      "aplus": [
+        {
+          "type": "textImage",
+          "heading": "About This Product",
+          "text": "Material: Synthetic Patent Leather\nLining: Polyester\nShape: Horizontal Mini Square\nClosure: Flap Cover\nBag Size: Small\nDimensions: Top Width 11cm / Bottom Width 13cm / Height 10cm / Depth 4cm\nHandle Drop: 6cm\nShoulder Strap Length: 110cm (Single Strap)\nWeight: 0.1KG\nColors: Black, Gray, Red, Green\nSeason: Spring 2026\nOccasion: Daily Matching",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1001A.png"
+        },
+        {
+          "type": "features",
+          "heading": "Key Features",
+          "items": []
+        },
+        {
+          "type": "hero",
+          "heading": "Product Description",
+          "text": "Retro Glossy Mini Flap Square Handbag\nOur new arrival women small square bag is launched in Spring 2026, combining classic patent leather texture and minimalist square silhouette, a must-have trendy accessory for modern ladies.\nMade of high-quality soft synthetic patent leather, the bag features fine stitched seam craft as popular decorative element. The inner lining adopts durable polyester fabric, and the overall weight is only 0.1kg, super lightweight without pressing your shoulder.\nThis mini purse comes with dual carry accessories: a short handheld top handle and a 110cm long adjustable shoulder strap, you can freely switch between hand carry, single shoulder and crossbody styles according to your dressing look.\nThe flap cover closure design effectively protects your private items, with built-in inner patch pocket and zipper interlayer pocket to classify your lipstick, bank cards, keys and small change.\nFour timeless glossy colors including red, dark green, black and gray are optional, easy to collocate with all your daily outfits. Perfect for daily shopping, casual dating, short walk and daily commute.\nNotice: All dimensions are manually measured, please allow 1-3cm error; the actual color of the bag shall prevail due to different screen display.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A4.png"
+        }
+      ]
     },
     {
-      "id": 4,
-      "image": "https://picsum.photos/id/160/600/400",
-      "category": "Toys",
-      "name": "Wooden Building Blocks",
-      "sku": "YS-T001",
-      "material": "Natural Wood",
-      "size": "Various sizes",
-      "moq": 300,
-      "priceMin": 14.99,
-      "priceMax": 24.99,
-      "description": "Eco-friendly wooden building blocks set for kids, safe and educational."
+      "id": 1781666116700,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A2.jpg",
+      "category": "Hand Bag",
+      "name": "Mini Flap Square Crossbody Bag for Women",
+      "sku": "",
+      "material": "Soft PU Leather",
+      "size": "Small",
+      "moq": 1,
+      "priceMin": 1.35,
+      "priceMax": 1.45,
+      "description": "Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.\n\nMust-have tiny handbag for girls! With handle & long strap, easy to match all outfits, lightweight only 0.07kg.",
+      "aplus": [
+        {
+          "type": "hero",
+          "heading": "Vintage Mini Flap PU Leather Handbag",
+          "text": "This women’s mini square crossbody bag combines minimalist silhouette and retro stitching craft, a must-have fashion small accessory for daily wear.\nCrafted from premium soft PU leather, the bag surface is smooth and scratch-resistant, easy to clean with damp cloth. The whole bag weighs only 0.07kg, lightweight design releases your shoulder pressure effectively.\nIt comes with two carry accessories: a portable short top handle and a 116cm adjustable long shoulder strap, supporting three wearing ways including handheld, single shoulder and crossbody. The mini interior space can well organize your lip gloss, cards, coins and wireless earphones.\nFour timeless color options (Black, White, Red, Coffee) meet all your matching demands. The gentle square shape matches sweaters, pleated skirts, jeans and dresses perfectly, ideal for daily shopping, casual dating, short trip and office commute.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A9.jpg"
+        },
+        {
+          "type": "textImage",
+          "heading": "Product Specifications",
+          "text": "Outer Fabric: Soft PU Leather\nTotal Weight: 0.07kg\nDimensions: Top Width 12cm / Bottom Width 14cm / Height 9cm / Depth 5cm\nShoulder Strap Length: 116cm\nCarrying Modes: Handheld, Single Shoulder, Crossbody\nOptional Colors: Black, White, Red, Coffee\nNotice: All sizes are measured by hand, 1-3cm error may exist. The actual product color is subject to the real item.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1002A.jpg"
+        },
+        {
+          "type": "imageText",
+          "heading": "Bullet Points",
+          "text": "🎀 Classic Minimalist Flap Design, 4 Versatile Shades\nAvailable in Black, White, Red, Coffee four classic solid colors. Neat outline stitching creates retro elegant texture, easily match knit tops, dresses, skirts and daily casual outfits, perfect for dating, shopping and commuting.\n🪶 Ultra-Light PU Material, Only 0.07KG Weight\nMade of soft smooth PU leather, wear-resistant and easy to wipe clean. Total weight just 0.07kg, no heavy burden even carrying all day long, friendly for ladies prefer lightweight small bags.\n📏 Reasonable Mini Size with Large Enough Capacity\nTop Width 12cm, Bottom Width 14cm, Height 9cm, Depth 5cm. Compact but can store lipstick, earbuds, bank cards, cash, keys and other small daily essentials without squeezing.\n3 Ways of Carrying for Different Styling\nEquipped with delicate short top handle + 116cm long crossbody shoulder strap, freely switch to handheld, single shoulder and crossbody styles to fit different dressing looks.\nClear Measurement Note to Avoid Disputes\nAll dimensions are manually measured, a tolerance of 1-3cm is acceptable. All size units are centimeters. Due to different screen displays, the actual bag color shall prevail.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A5.jpg"
+        },
+        {
+          "type": "hero",
+          "heading": "Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.",
+          "text": "",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A1.jpg"
+        }
+      ]
     }
   ]
 }
