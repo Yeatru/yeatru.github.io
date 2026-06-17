@@ -233,6 +233,24 @@
         .process-desc { color: #6c757d; font-size: 0.95rem; }
         /* 客户评价 */
         .testimonial-card { border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; background-color: var(--light-gray); }
+
+        /* Plan Service Cards */
+        .plan-section { padding: 5rem 0; }
+        .plan-card { background-color: #fff; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+        .plan-card-header { padding: 1.5rem; text-align: center; }
+        .plan-card-header.plan-a, .plan-card-header.plan-c { background-color: #ffc700; color: #212529; }
+        .plan-card-header.plan-b { background-color: #212529; color: #fff; }
+        .plan-card-header.plan-d { background-color: #ffc700; color: #212529; }
+        .plan-name { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .plan-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1; }
+        .plan-title.plan-b { color: #fff; }
+        .plan-subtitle { font-size: 0.95rem; margin-bottom: 0; }
+        .plan-percent { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .plan-card-body { padding: 1.75rem 1.75rem 2rem; flex: 1; }
+        .plan-feature-list { list-style: none; padding: 0; margin: 0; }
+        .plan-feature-list li { padding: 0.45rem 0 0.45rem 2rem; font-size: 0.95rem; color: #212529; position: relative; border-bottom: 1px dashed #e9ecef; }
+        .plan-feature-list li:last-child { border-bottom: none; }
+        .plan-feature-list li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #ffc700; position: absolute; left: 0; top: 0.5rem; }
         .testimonial-stars { color: #ffc107; margin-bottom: 1rem; font-size: 1.2rem; }
         .testimonial-text { font-style: italic; color: #6c757d; margin-bottom: 1.5rem; }
         .testimonial-author { font-weight: 600; color: var(--peacock-blue-dark); }
@@ -535,6 +553,7 @@
                     <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sourcing-process" data-i18n="nav.sourcingProcess">Sourcing Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#service-plans">Service Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about-us" data-i18n="nav.aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact-us" data-i18n="nav.contactUs">Contact Us</a></li>
@@ -605,6 +624,94 @@
                     <div class="col-lg-3 col-md-6"><div class="process-step"><div class="process-number">2</div><h3 class="process-title" data-i18n="process.step2">Supplier Matching</h3><p class="process-desc" data-i18n="process.step2Desc">We identify and verify the best suppliers that match your specific requirements.</p></div></div>
                     <div class="col-lg-3 col-md-6"><div class="process-step"><div class="process-number">3</div><h3 class="process-title" data-i18n="process.step3">Sample & Pricing</h3><p class="process-desc" data-i18n="process.step3Desc">Obtain samples and competitive pricing quotes from pre-vetted suppliers.</p></div></div>
                     <div class="col-lg-3 col-md-6"><div class="process-step"><div class="process-number">4</div><h3 class="process-title" data-i18n="process.step4">Delivery & Support</h3><p class="process-desc" data-i18n="process.step4Desc">We handle production oversight, quality control and shipping to your doorstep.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Plans -->
+        <section id="service-plans" class="plan-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Our Service Plans</h2>
+                <p class="section-subtitle">Choose the sourcing plan that fits your business needs</p>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="plan-card">
+                            <div class="plan-card-header plan-a">
+                                <div class="plan-name">Plan A</div>
+                                <div class="plan-title">On-Demand</div>
+                                <div class="plan-subtitle">Flat fee per task</div>
+                            </div>
+                            <div class="plan-card-body">
+                                <ul class="plan-feature-list">
+                                    <li>Payment Assistance</li>
+                                    <li>On-Demand QC Inspection</li>
+                                    <li>Factory On-site Audits</li>
+                                    <li>Lab Testing Coordination</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="plan-card">
+                            <div class="plan-card-header plan-b">
+                                <div class="plan-name">Plan B</div>
+                                <div class="plan-percent">0%</div>
+                                <div class="plan-subtitle">Don't have suppliers yet</div>
+                            </div>
+                            <div class="plan-card-body">
+                                <ul class="plan-feature-list">
+                                    <li>Manufacturing Sourcing</li>
+                                    <li>Quote Collection</li>
+                                    <li>Manufacturing Solution Support</li>
+                                    <li>Order Management</li>
+                                    <li>Mass Production Follow Up</li>
+                                    <li>Goods Consolidation</li>
+                                    <li>Free AQL 2.5 Quality Inspection</li>
+                                    <li>2 Months Free Warehousing</li>
+                                    <li>Door-to-Door Logistics</li>
+                                    <li>Quality Guarantee & Compensation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="plan-card">
+                            <div class="plan-card-header plan-c">
+                                <div class="plan-name">Plan C</div>
+                                <div class="plan-percent">3%</div>
+                                <div class="plan-subtitle">Have suppliers already</div>
+                            </div>
+                            <div class="plan-card-body">
+                                <ul class="plan-feature-list">
+                                    <li>Supplier Coordination</li>
+                                    <li>Full Order Follow-up</li>
+                                    <li>Goods Consolidation</li>
+                                    <li>Free AQL 2.5 Quality Inspection</li>
+                                    <li>1 Month Free Warehousing</li>
+                                    <li>Door-to-Door Logistics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="plan-card">
+                            <div class="plan-card-header plan-d">
+                                <div class="plan-name">Plan D</div>
+                                <div class="plan-title">Prep</div>
+                                <div class="plan-subtitle">3PL Prep & Fulfillment</div>
+                            </div>
+                            <div class="plan-card-body">
+                                <ul class="plan-feature-list">
+                                    <li>100% piece-by-piece Inspection</li>
+                                    <li>Compliance Labeling</li>
+                                    <li>Bundling & Kitting</li>
+                                    <li>Retail-Ready Re-pack</li>
+                                    <li>Sample Consolidation</li>
+                                    <li>Supplier Cargo Pick-up</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
