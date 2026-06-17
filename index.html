@@ -786,6 +786,64 @@
             width: 100%;
         }
         .aplus-block.edit-mode .aplus-image-input { display: block; }
+
+        /* ===== Floating WhatsApp Button ===== */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+        .whatsapp-float-btn i {
+            transform: scaleX(-1);
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 115%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #212529;
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+        }
+        .whatsapp-float-btn:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background-color: #212529;
+        }
+
         /* 响应式 */
         @media (max-width: 768px) {
             .hero-section { padding: 3.5rem 0 3rem; }
@@ -803,6 +861,7 @@
             .contact-info, .contact-form { padding: 2.5rem 1.75rem; }
             .aplus-block-image-wrap, .aplus-block-image-wrap.layout-image-text { flex-direction: column; }
             .aplus-block-image-wrap > img { width: 100%; height: auto; }
+            .whatsapp-float-btn { width: 52px; height: 52px; bottom: 1.5rem; right: 1.5rem; font-size: 1.3rem; }
         }
         @media (max-width: 576px) {
             .hero-text { font-size: 1rem; }
@@ -1142,6 +1201,12 @@
         </section>
     </div>
     <!-- /mainContent -->
+
+    <!-- 悬浮 WhatsApp 按钮 -->
+    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Contact Us on WhatsApp</span>
+    </a>
 
     <!-- ===== 产品详情页 + A+ 内容（独立视图） ===== -->
     <section id="productDetailPage" class="product-detail-page">
