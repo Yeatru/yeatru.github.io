@@ -1,13 +1,14 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T03:56:52.204Z",
+  "updatedAt": "2026-06-17T07:45:29.704Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Home & Garden",
     "Kitchenware",
     "Toys",
     "Apparel",
-    "Hand Bag"
+    "Hand Bag",
+    "Electronics"
   ],
   "products": [
     {
@@ -159,6 +160,97 @@
           "heading": "Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.",
           "text": "",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 1781680522475,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone610.png",
+      "category": "Electronics",
+      "name": "In-Ear Sleep Wireless Bluetooth Earbuds V6.0",
+      "sku": "YS-ET-1001S",
+      "material": "ABS",
+      "size": "S16 Sleep Earbuds",
+      "moq": 1,
+      "priceMin": 7.65,
+      "priceMax": 8.35,
+      "description": "In-Ear Sleep Wireless Bluetooth Earbuds V6.0, Soft Silent Sleep Headphones with AAC/SBC Audio Decoding, Small Noise Isolating Sleeping Earphones for Side Sleeper",
+      "aplus": [
+        {
+          "type": "imageText",
+          "heading": "Full Set of Accessories",
+          "text": "1 × S16 Sleep Earbuds Charging Case\n1 Pair S16 Wireless Earbuds\n3 Pairs Replacement Silicone Ear Tips\n1 × Type-C Charging Cable\n1 × User Instruction Manual",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone6.png"
+        },
+        {
+          "type": "text",
+          "heading": "Bullet Points",
+          "text": "😴 Ultra-Soft Ergonomic Sleep Design for Side Sleepers\nCurved wingtip silicone eartips fit snugly inside ear canal, low-profile tiny shape won’t press ears when lying on side. Comes with 3 pairs of replaceable soft ear caps to fit different ear sizes, zero discomfort for all-night sleeping.\n📶 Stable Bluetooth V6.0 Connection, 10M Wide Range\nAdopts upgraded Bluetooth 6.0 chip, faster pairing and anti-interference signal, stable connection within 10 meters. Supports full Bluetooth protocols for smooth music playback, call answering and audio control.\n🎵 Hi-Fi Clear Sound with AAC & SBC Dual Decoding\nDual audio decoding technology restores rich sound details, delivers soft balanced audio for white noise, podcasts, meditation music and bedtime audiobooks. Effectively isolate ambient snoring and room noise.\n🔋 Long Lasting Battery Life\nSingle earbud built-in 30mAh battery, charging case with 230mAh storage. Compact pocket-sized case (5541.528mm) with Type-C charging cable included, easy to carry for travel, nap and overnight sleep.\nComplete Accessory Package & Safe Certified\nPackage includes S16 earbuds, charging case, Type-C charging cord, user manual and extra replacement silicone ear tips. Complies with GB 4943.1-2022 safety standard, reliable daily use."
+        },
+        {
+          "type": "textImage",
+          "heading": "Specification Summary",
+          "text": "Brand: SOBAST\nModel: S16 Sleep Earbuds\nBluetooth Version: V6.0\nBluetooth Distance: 10 Meters\nEarbud Battery: 30mAh; Charging Case Battery: 230mAh\nInput: DC 5V\nSupported Codec: AAC, SBC\nCompliance Standard: GB 4943.1-2022",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone3.jpg"
+        },
+        {
+          "type": "features",
+          "heading": "Product Description",
+          "items": [
+            "Comfortable Side-Sleep Friendly Shape\nDifferent from ordinary protruding earbuds, this mini in-ear headphone features a slim hidden design with flexible silicone wings. It stays deep inside your ear without sticking out, so you can lie on your side all night without painful pressure. 3 sizes of spare ear tips are included to match small, medium and large ear canals for all-day soft wearing.",
+            "Advanced Bluetooth 6.0 Smooth Connection\nEquipped with Bluetooth V6.0 chip, it pairs instantly with smartphones, tablets and laptops. The maximum transmission distance reaches 10 meters, no stuttering when you walk around your bedroom. It fully supports mainstream Bluetooth protocols, supporting hands-free calls, volume adjustment and track switching.",
+            "High-Quality AAC & SBC Audio Decoding\nDual audio decoding brings lossless sound performance. Whether you play relaxing white noise, sleep music, meditation podcasts or bedtime stories, the earbuds output mellow, clear sound while blocking outside disturbing noise for a quiet sleeping environment.",
+            "Portable & Long-Endurance Battery\nEach earbud has a 30mAh built-in battery, matched with a 230mAh compact charging case measuring only 5541.528mm, light enough to slip into pockets and handbags. The package is equipped with a Type-C charging cable for fast, convenient power replenishment."
+          ]
+        },
+        {
+          "type": "hero",
+          "heading": "Wireless Sleep Earbuds – Ideal Headphones for Side Sleepers",
+          "text": "If you are troubled by snoring, noisy room or want to listen to bedtime audio without bulky headsets, our S16 sleep earbuds are your perfect choice.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone611.png"
+        }
+      ]
+    },
+    {
+      "id": 1781681799719,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K1.png",
+      "category": "Kitchenware",
+      "name": "6-Cavity Train Silicone Baking Mold",
+      "sku": "YS-KW-1001K",
+      "material": "Silicone",
+      "size": "30*17.5*4 cm",
+      "moq": 20,
+      "priceMin": 1,
+      "priceMax": 1.05,
+      "description": "6 Cavity Train Silicone Cake Mold, Food Grade Silicone Chocolate Jelly Baking Tray, FDA Approved DIY Cartoon Train Baking Tool for Kids Party, Oven Microwave Safe",
+      "aplus": [
+        {
+          "type": "textImage",
+          "heading": "Specifications",
+          "text": "Model: JSC1800\nMaterial: Food-Grade Silicone (FDA Approved)\nCavity Count: 6 Cartoon Train Shapes\nDimensions: 30 × 17.5 × 4 cm\nNet Weight: 145g\nTemperature Range: -40℃ ~ 230℃\nApplicable Appliances: Oven, Microwave, Roaster, Refrigerator\nSuitable For: Mini cake, chocolate, jelly, candy, ice cube, handmade soap",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K5.png"
+        },
+        {
+          "type": "features",
+          "heading": "Cartoon Train Silicone Baking Mold for DIY Homemade Treats",
+          "items": [
+            "This 6-cavity train silicone mold is a fun baking accessory for home bakers and parents. Adorable locomotive and carriage shapes create eye-catching mini desserts to delight children at birthday parties, baby showers and daily snacks.",
+            "Made of high-standard food-grade silicone certified by FDA, the mold is safe, non-toxic and environmentally friendly. It supports a wide working temperature range of -40℃ ~ 230℃, working great in ovens, microwaves and refrigerators for cakes, chocolate, jelly, candy, ice cubes and handmade soap.",
+            "The soft flexible silicone enables effortless non-stick demolding. After baking, leave the mold to cool for about 10 minutes before taking out desserts for intact perfect shapes. It is reusable and will not deform or fade after long-term repeated use. Cleaning is simple: flip the mold inside out and wash with neutral detergent, either by hand or in a dishwasher.",
+            "Compact size 30*17.5*4cm with a lightweight 145g body, built-in hanging hole for convenient storage when not in use."
+          ]
+        },
+        {
+          "type": "imageText",
+          "heading": "Bullet Points",
+          "text": "🚂 Cute 6-Cavity Cartoon Train Shape\nFeatures 6 individual mini train cavities, lovely locomotive & carriage design, perfect for kid’s birthday party, baby shower desserts, homemade chocolate, jelly, mini cakes and handmade soap.\n✅ FDA Certified Premium Food-Grade Silicone\nPassed US FDA food safety inspection, non-toxic, odorless, eco-friendly material, safe for direct food contact, no harmful substance release under normal baking temperature.\n🔥 Wide Temperature Resistance & Multi-Scene Use\nHeat resistant from -40°C up to 230°C, compatible with oven, microwave oven and roaster. Ideal for baking, freezing, making cold jelly and ice cubes.\n⚠️ Note: Do not use microwave Crisp mode.\n🧼 Easy Demold & Dishwasher Safe\nFlexible silicone construction, just twist gently after cooling to pop out food perfectly without sticking. Reusable, no deformation or fading after repeated use; can be cleaned in dishwasher or warm soapy water.\n🛡️ Durable & User-Friendly Design\nEquipped with hanging hole for easy storage; flexible but sturdy structure. Avoid sharp cutters, steel wool scrubbers and direct open flame contact to extend service life.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K4.png"
+        },
+        {
+          "type": "hero",
+          "heading": "Instructions & Warnings",
+          "text": "Keep away from open flame and heating tubes of ovens; place the mold on the middle or upper rack, at least 5cm distance from heating elements.\nClean with neutral detergent, sponge or dishwasher; flip the mold inside out for deeper cleaning.\nDo NOT use the Crisp mode of microwave ovens.\nDo NOT scrub with steel wool or sharp hard tools to prevent scratches.\nLet the mold cool down for about 10 minutes after baking before demolding for better effect.\nProper operation can effectively extend the service life of the silicone mold.\nDo NOT scratch the surface with sharp objects.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K3.png"
         }
       ]
     }
