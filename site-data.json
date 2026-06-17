@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T14:12:05.844Z",
+  "updatedAt": "2026-06-17T02:01:31.065Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Electronics",
@@ -12,7 +12,7 @@
   "products": [
     {
       "id": 1,
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL101A.jpg",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201Apic2.jpg",
       "category": "Apparel",
       "name": "Quick Dry Activewear Set",
       "sku": "YS-CL-101A",
@@ -27,22 +27,24 @@
           "type": "textImage",
           "heading": "Product Overview",
           "text": "This men’s athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E9%80%9F%E5%B9%B2%E8%A1%A3.jpg"
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201A.png"
         },
         {
-          "type": "text",
-          "heading": "Size Chart",
-          "text": "L: Fit weight 42.5 – 52.5 KG  \nXL: Fit weight 52.5 – 62.5 KG  \nXXL: Fit weight 62.5 – 72.5 KG  \nXXXL: Fit weight 72.5 – 82.5 KG  \nXXXXL: Fit weight 82.5 – 90.5 KG"
+          "type": "features",
+          "heading": "Prodcut Features",
+          "items": [
+            "Premium Quick Dry Fabric: Made of high-quality polyester blend with spandex, ultra lightweight, moisture-wicking and sweat evaporates rapidly, keep you cool and dry during all workouts.",
+            "2-in-1 Double Layer Shorts Design: Built-in tight compression liner prevents rubbing and private exposure; outer loose short layer with drawstring elastic waist for adjustable fit, side split hem for unrestricted movement.",
+            "Comfortable Athletic Short Sleeve Tee: Crew neck, raglan short sleeves, smooth stretch fabric, classic minimalist logo print, no tight binding, suitable for long-time gym, running and training.",
+            "Multi-Scenario Sportswear Suit: Perfect for gym training, jogging, running, swimming, beach, fitness, cycling, hiking and daily casual wear; ideal as workout set, swim trunks set and summer athletic outfit.",
+            "Multiple Sizes Available: L / XL / XXL / XXXL / XXXXL to fit weight range 42.5kg - 90.5kg, elastic fabric fits most body types, black solid color easy to match all gear."
+          ]
         },
         {
-          "type": "text",
-          "heading": "Product Features",
-          "text": "- Premium Quick Dry Fabric: Made of high-quality polyester blend with spandex, ultra lightweight, moisture-wicking and sweat evaporates rapidly, keep you cool and dry during all workouts.  - 2-in-1 Double Layer Shorts Design: Built-in tight compression liner prevents rubbing and private exposure; outer loose short layer with drawstring elastic waist for adjustable fit, side split hem for unrestricted movement.  - Comfortable Athletic Short Sleeve Tee: Crew neck, raglan short sleeves, smooth stretch fabric, classic minimalist logo print, no tight binding, suitable for long-time gym, running and training.  - Multi-Scenario Sportswear Suit: Perfect for gym training, jogging, running, swimming, beach, fitness, cycling, hiking and daily casual wear; ideal as workout set, swim trunks set and summer athletic outfit.  - Multiple Sizes Available: L / XL / XXL / XXXL / XXXXL to fit weight range 42.5kg - 90.5kg, elastic fabric fits most body types, black solid color easy to match all gear."
-        },
-        {
-          "type": "text",
+          "type": "imageText",
           "heading": "Fabric Composition",
-          "text": "Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight."
+          "text": "Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight. L: Fit weight 42.5 – 52.5 KG ; XL: Fit weight 52.5 – 62.5 KG ;  XXL: Fit weight 62.5 – 72.5 KG ;  XXXL: Fit weight 72.5 – 82.5 KG ;  XXXXL: Fit weight 82.5 – 90.5 KG;",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL201A.png"
         },
         {
           "type": "text",
@@ -66,24 +68,15 @@
       "aplus": [
         {
           "type": "textImage",
-          "heading": "Size Details",
-          "text": "Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top \n Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear \n- 【S】Top size:64-68cm,Waist:62-68cm,Hip:72-76cm; \n- 【M】Top size:68-72cm,Waist:68-72cm,Hip:76-80cm; \n- 【L】Top size:72-76cm,Waist:72-76cm,Hip:80-84cm; \n- 【XL】Top size:76-80cm,Waist:76-80cm,Hip:84-88cm.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blue.jpg"
-        },
-        {
-          "type": "text",
           "heading": "Product Overview",
-          "text": "This women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes."
+          "text": "This women’s modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.Women Split Modest Burkini Long Sleeve Zip Front Rash Guard Top ,Full Length Swim Pants, Floral Print Conservative Muslim Beach Swimwear .",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL102WS.png"
         },
         {
-          "type": "text",
-          "heading": "Color Options",
-          "text": "- Black base with pink & green tropical flower print sleeves  \n- Navy blue base with palm leaf print sleeves"
-        },
-        {
-          "type": "text",
-          "heading": "Design Details",
-          "text": "- Top: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, - visually slim figure. - Bottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement. - Craftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear."
+          "type": "imageText",
+          "heading": "Key Features",
+          "text": "[Top: ]Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.  \n[Craftsmanship:] Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.\n[Bottom:] High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\n- Black base with pink & green tropical flower print sleeves ;- Navy blue base with palm leaf print sleeves",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"
         },
         {
           "type": "text",
