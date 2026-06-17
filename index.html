@@ -484,36 +484,23 @@
         }
         /* 模态框 */
         .about-section { padding: 5rem 0; }
-        .about-card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-        }
-        .about-img-wrap { position: relative; overflow: hidden; }
-        .about-img-wrap img { width: 100%; height: 280px; object-fit: cover; display: block; }
-        .about-img-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11,123,148,0.6) 0%, transparent 60%);
-        }
-        .about-content { padding: 2.5rem; }
+        .yiwu-img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
         .about-title { font-weight: 700; color: var(--peacock-blue-dark); margin-bottom: 1rem; font-size: 1.3rem; }
-        .about-desc { color: #6c757d; line-height: 1.9; font-size: 0.98rem; }
+        .about-desc { color: #6c757d; line-height: 1.9; font-size: 0.98rem; margin-bottom: 1.5rem; }
         .about-stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin-top: 1.5rem;
         }
         .about-stat-item {
             background: var(--light-gray);
             border-radius: 10px;
-            padding: 1rem;
+            padding: 1.25rem 1rem;
             text-align: center;
         }
-        .about-stat-number { font-size: 1.4rem; font-weight: 800; color: var(--peacock-blue); }
-        .about-stat-label { font-size: 0.78rem; color: #6c757d; margin-top: 0.2rem; }
+        .about-stat-number { font-size: 1.5rem; font-weight: 800; color: var(--peacock-blue); }
+        .about-stat-label { font-size: 0.8rem; color: #6c757d; margin-top: 0.3rem; }
 
         /* ===== Contact ===== */
         .contact-section { padding: 5rem 0; background-color: var(--light-gray); }
@@ -1087,40 +1074,27 @@
                     <div class="section-divider"></div>
                     <h2 class="section-title" data-i18n="about.title">About Yeatru Sourcing</h2>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="about-card">
-                            <div class="row g-0">
-                                <div class="col-lg-5">
-                                    <div class="about-img-wrap">
-                                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Yiwu International Trade City" onerror="this.src='https://picsum.photos/800/600'">
-                                        <div class="about-img-overlay"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="about-content">
-                                        <h3 class="about-title" data-i18n="about.profile">Company Profile</h3>
-                                        <p class="about-desc" data-i18n="about.profileDesc">Yeatru Sourcing is a professional one-stop sourcing agent located in Yiwu City, the world's largest small commodity distribution center. We specialize in providing global clients with reliable procurement services, supplier development, strict quality inspection, supplier management and integrated logistics solutions.</p>
-                                        <div class="about-stats">
-                                            <div class="about-stat-item">
-                                                <div class="about-stat-number">8+</div>
-                                                <div class="about-stat-label">Years in Business</div>
-                                            </div>
-                                            <div class="about-stat-item">
-                                                <div class="about-stat-number">500+</div>
-                                                <div class="about-stat-label">Global Clients</div>
-                                            </div>
-                                            <div class="about-stat-item">
-                                                <div class="about-stat-number">50+</div>
-                                                <div class="about-stat-label">Countries Served</div>
-                                            </div>
-                                            <div class="about-stat-item">
-                                                <div class="about-stat-number">24/7</div>
-                                                <div class="about-stat-label">Support Available</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Yiwu International Trade City" class="yiwu-img" onerror="this.src='https://picsum.photos/1200/420'; this.alt='Yiwu International Trade City'">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h3 class="about-title" data-i18n="about.profile">Company Profile</h3>
+                        <p class="about-desc" data-i18n="about.profileDesc">Yeatru Sourcing is a professional one-stop sourcing agent located in Yiwu City, the world's largest small commodity distribution center. We specialize in providing global clients with reliable procurement services, supplier development, strict quality inspection, supplier management and integrated logistics solutions.</p>
+                        <div class="about-stats">
+                            <div class="about-stat-item">
+                                <div class="about-stat-number">8+</div>
+                                <div class="about-stat-label">Years in Business</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="about-stat-number">500+</div>
+                                <div class="about-stat-label">Global Clients</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="about-stat-number">50+</div>
+                                <div class="about-stat-label">Countries Served</div>
+                            </div>
+                            <div class="about-stat-item">
+                                <div class="about-stat-number">24/7</div>
+                                <div class="about-stat-label">Support Available</div>
                             </div>
                         </div>
                     </div>
