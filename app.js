@@ -874,11 +874,11 @@ function buildAplusBlockEl(b, idx) {
     });
     
     wrap.querySelectorAll('.format-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
+        btn.addEventListener('mousedown', function (e) {
+            e.preventDefault();
             const format = this.dataset.format;
             const textEl = wrap.querySelector('[data-editable="text"]');
             if (textEl) {
-                textEl.focus();
                 if (format === 'insertTable') {
                     document.execCommand('insertHTML', false, '<table><tr><td>Cell 1</td><td>Cell 2</td></tr><tr><td>Cell 3</td><td>Cell 4</td></tr></table>');
                 } else {
