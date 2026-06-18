@@ -1313,7 +1313,7 @@
                 el.addEventListener('click', function (e) {
                     e.preventDefault();
                     const lang = this.getAttribute('data-lang');
-                    i18next.changeLanguage(lang);
+                    i18next.changeLanguage(lang).then(updateContent);
                 });
             });
         }
