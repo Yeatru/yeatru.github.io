@@ -998,6 +998,30 @@ function collectAplusBlocks() {
                 if (v) item.items.push(v);
             });
         }
+        if (type === 'twoColumns') {
+            const col1 = blockEl.querySelector('[data-editable="column1"]');
+            const col2 = blockEl.querySelector('[data-editable="column2"]');
+            item.column1 = col1 ? col1.innerHTML.trim() : '';
+            item.column2 = col2 ? col2.innerHTML.trim() : '';
+        }
+        if (type === 'threeColumns') {
+            const col1 = blockEl.querySelector('[data-editable="col1"]');
+            const col2 = blockEl.querySelector('[data-editable="col2"]');
+            const col3 = blockEl.querySelector('[data-editable="col3"]');
+            item.col1 = col1 ? col1.innerHTML.trim() : '';
+            item.col2 = col2 ? col2.innerHTML.trim() : '';
+            item.col3 = col3 ? col3.innerHTML.trim() : '';
+        }
+        if (type === 'quote') {
+            const author = blockEl.querySelector('[data-editable="author"]');
+            item.author = author ? author.innerText.replace(/^—/, '').trim() : '';
+        }
+        if (type === 'imageGallery') {
+            item.images = [];
+            blockEl.querySelectorAll('[data-editable-img]').forEach(imgInput => {
+                if (imgInput.value) item.images.push(imgInput.value);
+            });
+        }
         out.push(item);
     });
     return out;
