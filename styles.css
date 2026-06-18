@@ -774,6 +774,49 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .aplus-block-toolbar button:hover { background-color: var(--light-gray); }
 .aplus-block-toolbar button.danger { color: #dc3545; border-color: #dc3545; }
 
+.aplus-text-toolbar {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: none;
+    gap: 0.2rem;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 0.3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    max-width: calc(100% - 120px);
+}
+
+.aplus-block.edit-mode .aplus-text-toolbar { display: flex; }
+
+.aplus-text-toolbar .format-btn {
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.aplus-text-toolbar .format-btn:hover { 
+    background-color: var(--light-gray); 
+    color: var(--peacock-blue);
+}
+
+.aplus-text-toolbar .toolbar-divider {
+    width: 1px;
+    background-color: #dee2e6;
+    margin: 0 0.2rem;
+}
+
 .aplus-block.edit-mode [contenteditable=true] {
     outline: 1px dashed #b8d8e2;
     outline-offset: 2px;

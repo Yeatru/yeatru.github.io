@@ -796,6 +796,25 @@ function buildAplusBlockEl(b, idx) {
     `;
     wrap.appendChild(toolbar);
 
+    const textToolbar = document.createElement('div');
+    textToolbar.className = 'aplus-text-toolbar';
+    textToolbar.innerHTML = `
+        <button type="button" class="format-btn" data-format="bold" title="Bold (Ctrl+B)"><i class="fas fa-bold"></i></button>
+        <button type="button" class="format-btn" data-format="italic" title="Italic (Ctrl+I)"><i class="fas fa-italic"></i></button>
+        <button type="button" class="format-btn" data-format="underline" title="Underline (Ctrl+U)"><i class="fas fa-underline"></i></button>
+        <span class="toolbar-divider"></span>
+        <button type="button" class="format-btn" data-format="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+        <button type="button" class="format-btn" data-format="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+        <span class="toolbar-divider"></span>
+        <button type="button" class="format-btn" data-format="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
+        <button type="button" class="format-btn" data-format="justifyCenter" title="Center"><i class="fas fa-align-center"></i></button>
+        <button type="button" class="format-btn" data-format="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
+        <span class="toolbar-divider"></span>
+        <button type="button" class="format-btn" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
+        <button type="button" class="format-btn" data-format="insertHorizontalRule" title="Insert Line"><i class="fas fa-minus"></i></button>
+    `;
+    wrap.appendChild(textToolbar);
+
     const content = document.createElement('div');
     content.className = 'aplus-block-content';
     if (b.type === 'hero') {
@@ -853,6 +872,23 @@ function buildAplusBlockEl(b, idx) {
             scheduleAutoSave();
         }
     });
+    
+    wrap.querySelectorAll('.format-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const format = this.dataset.format;
+            const textEl = wrap.querySelector('[data-editable="text"]');
+            if (textEl) {
+                textEl.focus();
+                if (format === 'insertTable') {
+                    document.execCommand('insertHTML', false, '<table><tr><td>Cell 1</td><td>Cell 2</td></tr><tr><td>Cell 3</td><td>Cell 4</td></tr></table>');
+                } else {
+                    document.execCommand(format, false, null);
+                }
+                scheduleAutoSave();
+            }
+        });
+    });
+    
     wrap.querySelectorAll('[data-editable]').forEach(el => {
         el.addEventListener('input', scheduleAutoSave);
         el.addEventListener('blur', scheduleAutoSave);
