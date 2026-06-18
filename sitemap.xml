@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://yeatru.github.io/</loc>
+        <lastmod>2026-06-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <!-- Alternate language versions -->
+        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/"/>
+    </url>
+
+    <!-- Products Page -->
+    <url>
+        <loc>https://yeatru.github.io/products.html</loc>
+        <lastmod>2026-06-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <!-- Alternate language versions -->
+        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/products.html"/>
+    </url>
+
+    <!-- CSS and JS files (optional, helps with resource indexing) -->
+    <url>
+        <loc>https://yeatru.github.io/styles.css</loc>
+        <lastmod>2026-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://yeatru.github.io/app.js</loc>
+        <lastmod>2026-06-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

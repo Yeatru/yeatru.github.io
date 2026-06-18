@@ -1,0 +1,14 @@
+# robots.txt for Yeatru Sourcing Website
+# https://yeatru.github.io/
+
+User-agent: *
+Allow: /
+
+# Disallow admin-related paths (optional, for security)
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://yeatru.github.io/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1
