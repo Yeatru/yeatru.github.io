@@ -1236,6 +1236,33 @@
                     itemsHtml += '</ul>';
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Key Features')}</div>
                         <div class="aplus-block-features">${itemsHtml}</div>`;
+                } else if (block.type === 'twoColumns') {
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-two-columns">
+                            <div class="aplus-column" data-editable="column1">${block.column1 || ''}</div>
+                            <div class="aplus-column" data-editable="column2">${block.column2 || ''}</div>
+                        </div>`;
+                } else if (block.type === 'threeColumns') {
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-three-columns">
+                            <div class="aplus-column" data-editable="col1">${block.col1 || ''}</div>
+                            <div class="aplus-column" data-editable="col2">${block.col2 || ''}</div>
+                            <div class="aplus-column" data-editable="col3">${block.col3 || ''}</div>
+                        </div>`;
+                } else if (block.type === 'quote') {
+                    div.innerHTML += `<div class="aplus-block-quote">
+                        <blockquote data-editable="text">${block.text || ''}</blockquote>
+                        <cite data-editable="author">— ${escapeHtml(block.author || '')}</cite>
+                    </div>`;
+                } else if (block.type === 'imageGallery') {
+                    const images = block.images || [];
+                    let galleryHtml = '';
+                    images.forEach((img, i) => {
+                        galleryHtml += `<img src="${escapeHtml(img || '')}" alt="Gallery ${i + 1}" onerror="this.src='https://picsum.photos/400/300'" data-editable-img data-index="${i}">`;
+                        galleryHtml += `<input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img-index="${i}" value="${escapeHtml(img || '')}">`;
+                    });
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Gallery')}</div>
+                        <div class="aplus-block-gallery">${galleryHtml}</div>`;
                 }
                 container.appendChild(div);
             });
@@ -1317,6 +1344,31 @@
             block.text = textEl ? textEl.innerHTML : '';
             if (blockEl.querySelector('.aplus-image-input')) {
                 block.image = blockEl.querySelector('.aplus-image-input').value;
+            }
+            // 新模块数据保存
+            if (block.type === 'twoColumns') {
+                const col1 = blockEl.querySelector('[data-editable="column1"]');
+                const col2 = blockEl.querySelector('[data-editable="column2"]');
+                block.column1 = col1 ? col1.innerHTML : '';
+                block.column2 = col2 ? col2.innerHTML : '';
+            }
+            if (block.type === 'threeColumns') {
+                const col1 = blockEl.querySelector('[data-editable="col1"]');
+                const col2 = blockEl.querySelector('[data-editable="col2"]');
+                const col3 = blockEl.querySelector('[data-editable="col3"]');
+                block.col1 = col1 ? col1.innerHTML : '';
+                block.col2 = col2 ? col2.innerHTML : '';
+                block.col3 = col3 ? col3.innerHTML : '';
+            }
+            if (block.type === 'quote') {
+                const author = blockEl.querySelector('[data-editable="author"]');
+                block.author = author ? author.textContent.replace(/^—/, '').trim() : '';
+            }
+            if (block.type === 'imageGallery') {
+                block.images = [];
+                blockEl.querySelectorAll('[data-editable-img-index]').forEach(input => {
+                    if (input.value) block.images.push(input.value);
+                });
             }
             saveAplusData(product.aplus);
         }
