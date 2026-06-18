@@ -797,16 +797,17 @@ function buildAplusBlockEl(b, idx) {
     wrap.appendChild(toolbar);
 
     const textToolbar = document.createElement('div');
-    textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;background:#0b7b94;padding:8px;border-radius:6px;margin-bottom:8px;';
+    textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;background:#ff6b6b;padding:12px;border-radius:8px;margin-bottom:12px;border:3px solid #cc0000;z-index:1000;position:relative;';
     const toolbarHTML = `
-        <button type="button" data-format="bold" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">B</button>
-        <button type="button" data-format="italic" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;font-style:italic;">I</button>
-        <button type="button" data-format="underline" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;text-decoration:underline;">U</button>
-        <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">•列表</button>
-        <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">1.列表</button>
-        <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">表格</button>
+        <button type="button" data-format="bold" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;min-width:36px;">B</button>
+        <button type="button" data-format="italic" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;min-width:36px;">I</button>
+        <button type="button" data-format="underline" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;min-width:36px;">U</button>
+        <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;">•列表</button>
+        <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;">1.列表</button>
+        <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:50px;">表格</button>
     `;
     textToolbar.innerHTML = toolbarHTML;
+    console.log('Creating toolbar for block:', b.type, textToolbar);
     wrap.appendChild(textToolbar);
 
     const content = document.createElement('div');
