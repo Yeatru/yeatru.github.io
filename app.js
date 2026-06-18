@@ -9,11 +9,11 @@ const DEFAULT_PRODUCTS = [
 
 const translationResources = {
     en: { translation: {
-        nav: { home: "Home", products: "Products", services: "Services", sourcingProcess: "Sourcing Process", testimonials: "Testimonials", aboutUs: "About Us", contactUs: "Contact Us", login: "Login", logout: "Logout", servicePlans: "Service Plans", payment: "Payment" },
+        nav: { home: "Home", products: "Products", services: "Services", sourcingProcess: "Sourcing Process", testimonials: "Testimonials", aboutUs: "About Us", contactUs: "Contact Us", login: "Login", logout: "Logout" },
         hero: { title: "Professional China Sourcing Agent Yiwu & Global Supply Chain", desc: "One-stop sourcing solution from China: product sourcing, supplier audit, quality control, logistics shipping. Help global buyers source from China easily.", contactBtn: "Contact Us Now", productsBtn: "View Products" },
         products: { title: "Hot Products", subtitle: "Explore our featured products sourced from China", categoryManagement: "Category Management", enterCategory: "Enter new category name", addCategory: "Add Category", addProduct: "Add New Product", imageUrl: "Image URL", enterImageUrl: "Enter product image URL", category: "Category", selectCategory: "Select Category", name: "Product Name", enterName: "Enter product name", sku: "SKU", enterSKU: "Enter product SKU", material: "Material", enterMaterial: "Enter material", size: "Size", enterSize: "Enter size", moq: "MOQ", enterMOQ: "Enter MOQ", priceMin: "Minimum Price ($)", enterMinPrice: "Enter minimum price", priceMax: "Maximum Price ($)", enterMaxPrice: "Enter maximum price", description: "Description", enterDescription: "Enter product description", cancel: "Cancel", save: "Save Product", edit: "Edit", delete: "Delete", quote: "Get a Quote", price: "Price: $", viewDetails: "View Details" },
         filter: { title: "Filter by Category", all: "All", reset: "Reset Filter", showing: "Showing", of: "of", products: "products", noResult: "No products in this category" },
-        services: { title: "Our Comprehensive Sourcing Services", subtitle: "We offer end-to-end sourcing solutions tailored to your business needs", supplierVerification: "Supplier Verification", supplierVerificationDesc: "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.", productSourcing: "Product Sourcing", productSourcingDesc: "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.", qualityControl: "Quality Control", qualityControlDesc: "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.", logistics: "Logistics & Warehousing", logisticsDesc: "Complete logistics and warehousing solutions including free storage, goods consolidation, and competitive shipping rates.", priceNegotiation: "Price Negotiation", priceNegotiationDesc: "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.", designPhotography: "Design & Photography", designPhotographyDesc: "Professional product photography and graphic design to make your products stand out and boost sales." },
+        services: { title: "Our Comprehensive Sourcing Services", subtitle: "We offer end-to-end sourcing solutions tailored to your business needs", supplierVerification: "Supplier Verification", supplierVerificationDesc: "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.", productSourcing: "Product Sourcing", productSourcingDesc: "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.", qualityControl: "Quality Control", qualityControlDesc: "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.", logistics: "Logistics & Shipping", logisticsDesc: "Hassle-free shipping solutions including sea, air and express delivery with competitive rates.", priceNegotiation: "Price Negotiation", priceNegotiationDesc: "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.", riskManagement: "Risk Management", riskManagementDesc: "Mitigate risks associated with international trade including payment security and delivery guarantees." },
         process: { title: "Our Simple Sourcing Process", subtitle: "We make sourcing from China straightforward and transparent", step1: "Your Requirements", step1Desc: "Share your product specifications, quantity, budget and timeline with our team.", step2: "Supplier Matching", step2Desc: "We identify and verify the best suppliers that match your specific requirements.", step3: "Sample & Pricing", step3Desc: "Obtain samples and competitive pricing quotes from pre-vetted suppliers.", step4: "Delivery & Support", step4Desc: "We handle production oversight, quality control and shipping to your doorstep." },
         testimonials: { title: "What Clients Say", subtitle: "Feedback from our global buyers", review1: "\"Yeatru Sourcing helped me source 5000+ storage boxes from Yiwu, great quality and fast shipping. Highly recommended!\"", review2: "\"Professional team, strict quality control, and excellent after-sales service. Best China sourcing partner I ever worked with.\"", review3: "\"The price negotiation service saved me over 20% on my order. The logistics team ensured on-time delivery to the US. Very satisfied!\"" },
         about: { title: "About Yeatru Sourcing", profile: "Company Profile", profileDesc: "Yeatru Sourcing is a professional one-stop sourcing agent located in Yiwu City, the world's largest small commodity distribution center. We specialize in providing global clients with reliable procurement services, supplier development, strict quality inspection, supplier management and integrated logistics solutions." },
@@ -26,11 +26,11 @@ const translationResources = {
         logo: { title: "Update Brand Logo", tip: "Logo is displayed in a 50x50 pixel container. Upload a square image (PNG/JPG/SVG) or paste an image URL for best results.", uploadFile: "Upload Image", imageUrl: "Or Image URL", reset: "Reset to Default", cancel: "Cancel", save: "Save Logo" }
     }},
     es: { translation: {
-        nav: { home: "Inicio", products: "Productos", services: "Servicios", sourcingProcess: "Proceso de Suministro", testimonials: "Testimonios", aboutUs: "Sobre Nosotros", contactUs: "Contáctenos", login: "Iniciar Sesión", logout: "Cerrar Sesión", servicePlans: "Planes de Servicio", payment: "Pago" },
+        nav: { home: "Inicio", products: "Productos", services: "Servicios", sourcingProcess: "Proceso de Suministro", testimonials: "Testimonios", aboutUs: "Sobre Nosotros", contactUs: "Contáctenos", login: "Iniciar Sesión", logout: "Cerrar Sesión" },
         hero: { title: "Agente Profesional de Suministro en China Yiwu & Cadena de Suministro Global", desc: "Solución integral de suministro desde China: búsqueda de productos, auditoría de proveedores, control de calidad, envío logístico. Ayudamos a compradores globales a abastecerse de China fácilmente.", contactBtn: "Contáctenos Ahora", productsBtn: "Ver Productos" },
         products: { title: "Productos Populares", subtitle: "Explora nuestros productos destacados suministrados desde China", categoryManagement: "Gestión de Categorías", enterCategory: "Ingrese el nombre de la nueva categoría", addCategory: "Agregar Categoría", addProduct: "Agregar Nuevo Producto", imageUrl: "URL de la Imagen", enterImageUrl: "Ingrese la URL de la imagen del producto", category: "Categoría", selectCategory: "Seleccionar Categoría", name: "Nombre del Producto", enterName: "Ingrese el nombre del producto", sku: "SKU", enterSKU: "Ingrese el SKU del producto", material: "Material", enterMaterial: "Ingrese el material", size: "Tamaño", enterSize: "Ingrese el tamaño", moq: "MOQ", enterMOQ: "Ingrese la MOQ", priceMin: "Precio Mínimo ($)", enterMinPrice: "Ingrese el precio mínimo", priceMax: "Precio Máximo ($)", enterMaxPrice: "Ingrese el precio máximo", description: "Descripción", enterDescription: "Ingrese la descripción del producto", cancel: "Cancelar", save: "Guardar Producto", edit: "Editar", delete: "Eliminar", quote: "Solicitar Presupuesto", price: "Precio: $", viewDetails: "Ver Detalles" },
         filter: { title: "Filtrar por Categoría", all: "Todos", reset: "Restablecer Filtro", showing: "Mostrando", of: "de", products: "productos", noResult: "No hay productos en esta categoría" },
-        services: { title: "Nuestros Servicios Integrales de Suministro", subtitle: "Ofrecemos soluciones de suministro de extremo a extremo adaptadas a las necesidades de su negocio", supplierVerification: "Verificación de Proveedores", supplierVerificationDesc: "Revisamos y verificamos a fondo a los proveedores para garantizar que cumplen con los estándares de calidad internacionales y la ética empresarial.", productSourcing: "Búsqueda de Productos", productSourcingDesc: "Encuentra los productos adecuados a precios competitivos con nuestra extensa red de fabricantes y proveedores confiables.", qualityControl: "Control de Calidad", qualityControlDesc: "Inspección de calidad integral en cada etapa de la producción para garantizar que los productos cumplen con sus especificaciones.", logistics: "Logística y Almacenamiento", logisticsDesc: "Soluciones completas de logística y almacenamiento con almacenamiento gratuito, consolidación de mercancías y tarifas de envío competitivas.", priceNegotiation: "Negociación de Precios", priceNegotiationDesc: "Aproveche nuestra experiencia local para negociar los mejores precios y condiciones de pago con los proveedores.", designPhotography: "Diseño y Fotografía", designPhotographyDesc: "Fotografía profesional de productos y diseño gráfico para que sus productos destaquen y aumenten las ventas." },
+        services: { title: "Nuestros Servicios Integrales de Suministro", subtitle: "Ofrecemos soluciones de suministro de extremo a extremo adaptadas a las necesidades de su negocio", supplierVerification: "Verificación de Proveedores", supplierVerificationDesc: "Revisamos y verificamos a fondo a los proveedores para garantizar que cumplen con los estándares de calidad internacionales y la ética empresarial.", productSourcing: "Búsqueda de Productos", productSourcingDesc: "Encuentra los productos adecuados a precios competitivos con nuestra extensa red de fabricantes y proveedores confiables.", qualityControl: "Control de Calidad", qualityControlDesc: "Inspección de calidad integral en cada etapa de la producción para garantizar que los productos cumplen con sus especificaciones.", logistics: "Logística y Envío", logisticsDesc: "Soluciones de envío sin complicaciones que incluyen envío marítimo, aéreo y exprés con tarifas competitivas.", priceNegotiation: "Negociación de Precios", priceNegotiationDesc: "Aproveche nuestra experiencia local para negociar los mejores precios y condiciones de pago con los proveedores.", riskManagement: "Gestión de Riesgos", riskManagementDesc: "Mitigar los riesgos asociados con el comercio internacional, incluida la seguridad de pagos y garantías de entrega." },
         process: { title: "Nuestro Simple Proceso de Suministro", subtitle: "Hacemos que el aprovisionamiento desde China sea sencillo y transparente", step1: "Sus Requisitos", step1Desc: "Comuníquese con nuestro equipo sobre las especificaciones del producto, cantidad, presupuesto y cronograma.", step2: "Coincidencia de Proveedores", step2Desc: "Identificamos y verificamos a los mejores proveedores que se adaptan a sus requisitos específicos.", step3: "Muestras y Precios", step3Desc: "Obtenga muestras y cotizaciones de precios competitivos de proveedores previamente verificados.", step4: "Entrega y Soporte", step4Desc: "Nos encargamos de la supervisión de la producción, el control de calidad y el envío hasta su puerta." },
         testimonials: { title: "Lo Que Dicen Nuestros Clientes", subtitle: "Comentarios de nuestros compradores globales", review1: "\"Yeatru Sourcing me ayudó a suministrar más de 5000 cajas de almacenamiento desde Yiwu, excelente calidad y envío rápido. ¡Muy recomendado!\"", review2: "\"Equipo profesional, control de calidad estricto y excelente servicio postventa. El mejor socio de suministro chino con el que he trabajado.\"", review3: "\"El servicio de negociación de precios me ahorró más del 20% en mi pedido. El equipo logístico garantizó la entrega a tiempo a EE. UU. ¡Muy satisfecho!\"" },
         about: { title: "Sobre Yeatru Sourcing", profile: "Perfil de la Empresa", profileDesc: "Yeatru Sourcing es un agente profesional de suministro integral ubicado en la ciudad de Yiwu, el mayor centro de distribución de pequeñas mercancías del mundo. Nos especializamos en brindar a clientes globales servicios de adquisición confiables, desarrollo de proveedores, inspección de calidad estricta, gestión de proveedores y soluciones logísticas integradas." },
@@ -43,11 +43,11 @@ const translationResources = {
         logo: { title: "Actualizar Logotipo", tip: "El logotipo se muestra en un contenedor de 50x50 píxeles. Cargue una imagen cuadrada o pegue una URL.", uploadFile: "Cargar Imagen", imageUrl: "O URL de Imagen", reset: "Restablecer", cancel: "Cancelar", save: "Guardar Logotipo" }
     }},
     fr: { translation: {
-        nav: { home: "Accueil", products: "Produits", services: "Services", sourcingProcess: "Processus d'Approvisionnement", testimonials: "Témoignages", aboutUs: "À Propos de Nous", contactUs: "Nous Contacter", login: "Connexion", logout: "Déconnexion", servicePlans: "Plans de Service", payment: "Paiement" },
+        nav: { home: "Accueil", products: "Produits", services: "Services", sourcingProcess: "Processus d'Approvisionnement", testimonials: "Témoignages", aboutUs: "À Propos de Nous", contactUs: "Nous Contacter", login: "Connexion", logout: "Déconnexion" },
         hero: { title: "Agent Professionnel d'Approvisionnement en Chine Yiwu & Chaîne d'Approvisionnement Mondiale", desc: "Solution d'approvisionnement tout-en-un depuis la Chine: recherche de produits, audit de fournisseurs, contrôle de qualité, expédition logistique. Aidons les acheteurs mondiaux à s'approvisionner facilement depuis la Chine.", contactBtn: "Nous Contacter Maintenant", productsBtn: "Voir les Produits" },
         products: { title: "Produits Populaires", subtitle: "Découvrez nos produits phares approvisionnés depuis la Chine", categoryManagement: "Gestion des Catégories", enterCategory: "Entrez le nom de la nouvelle catégorie", addCategory: "Ajouter une Catégorie", addProduct: "Ajouter un Nouveau Produit", imageUrl: "URL de l'Image", enterImageUrl: "Entrez l'URL de l'image du produit", category: "Catégorie", selectCategory: "Sélectionner une Catégorie", name: "Nom du Produit", enterName: "Entrez le nom du produit", sku: "SKU", enterSKU: "Entrez le SKU du produit", material: "Matériau", enterMaterial: "Entrez le matériau", size: "Taille", enterSize: "Entrez la taille", moq: "MOQ", enterMOQ: "Entrez la MOQ", priceMin: "Prix Minimum ($)", enterMinPrice: "Entrez le prix minimum", priceMax: "Prix Maximum ($)", enterMaxPrice: "Entrez le prix maximum", description: "Description", enterDescription: "Entrez la description du produit", cancel: "Annuler", save: "Enregistrer", edit: "Modifier", delete: "Supprimer", quote: "Demander un Devis", price: "Prix: $", viewDetails: "Voir les Détails" },
         filter: { title: "Filtrer par Catégorie", all: "Tous", reset: "Réinitialiser le Filtre", showing: "Affichage de", of: "sur", products: "produits", noResult: "Aucun produit dans cette catégorie" },
-        services: { title: "Nos Services Complets d'Approvisionnement", subtitle: "Nous offrons des solutions d'approvisionnement de bout en bout adaptées aux besoins de votre entreprise", supplierVerification: "Vérification des Fournisseurs", supplierVerificationDesc: "Nous examinons et vérifions en profondeur les fournisseurs pour garantir qu'ils respectent les normes de qualité internationales et l'éthique professionnelle.", productSourcing: "Recherche de Produits", productSourcingDesc: "Trouvez les bons produits à des prix compétitifs grâce à notre vaste réseau de fabricants et fournisseurs fiables.", qualityControl: "Contrôle de Qualité", qualityControlDesc: "Inspection de qualité complète à chaque étape de la production pour garantir que les produits répondent à vos spécifications.", logistics: "Logistique et Entrepôt", logisticsDesc: "Solutions complètes de logistique et d'entreposage avec stockage gratuit, consolidation des marchandises et tarifs d'expédition compétitifs.", priceNegotiation: "Négociation de Prix", priceNegotiationDesc: "Profitez de notre expertise locale pour négocier les meilleurs prix et conditions de paiement avec les fournisseurs.", designPhotography: "Design et Photographie", designPhotographyDesc: "Photographie professionnelle de produits et design graphique pour que vos produits se démarquent et augmentent les ventes." },
+        services: { title: "Nos Services Complets d'Approvisionnement", subtitle: "Nous offrons des solutions d'approvisionnement de bout en bout adaptées aux besoins de votre entreprise", supplierVerification: "Vérification des Fournisseurs", supplierVerificationDesc: "Nous examinons et vérifions en profondeur les fournisseurs pour garantir qu'ils respectent les normes de qualité internationales et l'éthique professionnelle.", productSourcing: "Recherche de Produits", productSourcingDesc: "Trouvez les bons produits à des prix compétitifs grâce à notre vaste réseau de fabricants et fournisseurs fiables.", qualityControl: "Contrôle de Qualité", qualityControlDesc: "Inspection de qualité complète à chaque étape de la production pour garantir que les produits répondent à vos spécifications.", logistics: "Logistique et Expédition", logisticsDesc: "Solutions d'expédition sans tracas incluant la livraison maritime, aérienne et express à des tarifs compétitifs.", priceNegotiation: "Négociation de Prix", priceNegotiationDesc: "Profitez de notre expertise locale pour négocier les meilleurs prix et conditions de paiement avec les fournisseurs.", riskManagement: "Gestion des Risques", riskManagementDesc: "Atténuer les risques liés au commerce international, y compris la sécurité des paiements et les garanties de livraison." },
         process: { title: "Notre Simple Processus d'Approvisionnement", subtitle: "Nous rendons l'approvisionnement depuis la Chine simple et transparent", step1: "Vos Exigences", step1Desc: "Partagez vos spécifications de produit, quantité, budget et calendrier avec notre équipe.", step2: "Appariement des Fournisseurs", step2Desc: "Nous identifions et vérifions les meilleurs fournisseurs correspondant à vos exigences spécifiques.", step3: "Échantillons et Prix", step3Desc: "Obtenez des échantillons et des devis de prix compétitifs de fournisseurs pré-vérifiés.", step4: "Livraison et Support", step4Desc: "Nous nous occupons de la supervision de la production, du contrôle de qualité et de l'expédition jusqu'à votre porte." },
         testimonials: { title: "Ce Que Disent Nos Clients", subtitle: "Avis de nos acheteurs mondiaux", review1: "\"Yeatru Sourcing m'a aidé à approvisionner plus de 5000 boîtes de rangement depuis Yiwu, excellente qualité et expédition rapide. Très recommandé!\"", review2: "\"Équipe professionnelle, contrôle de qualité strict et excellent service après-vente. Le meilleur partenaire d'approvisionnement chinois avec lequel j'ai travaillé.\"", review3: "\"Le service de négociation de prix m'a fait économiser plus de 20% sur ma commande. L'équipe logistique a assuré la livraison à temps aux États-Unis. Très satisfait!\"" },
         about: { title: "À Propos de Yeatru Sourcing", profile: "Profil de l'Entreprise", profileDesc: "Yeatru Sourcing est un agent d'approvisionnement tout-en-un professionnel situé dans la ville de Yiwu, le plus grand centre de distribution de petits articles au monde. Nous nous spécialisons dans la fourniture de services d'approvisionnement fiables, de développement de fournisseurs, d'inspection de qualité stricte, de gestion de fournisseurs et de solutions logistiques intégrées aux clients du monde entier." },
@@ -60,11 +60,11 @@ const translationResources = {
         logo: { title: "Mettre à jour le logo", tip: "Le logo s'affiche dans un conteneur 50x50. Téléchargez une image carrée ou collez une URL.", uploadFile: "Télécharger", imageUrl: "Ou URL d'image", reset: "Réinitialiser", cancel: "Annuler", save: "Enregistrer" }
     }},
     ru: { translation: {
-        nav: { home: "Главная", products: "Продукты", services: "Услуги", sourcingProcess: "Процесс Поставок", testimonials: "Отзывы", aboutUs: "О Нас", contactUs: "Связаться", login: "Войти", logout: "Выйти", servicePlans: "Тарифы", payment: "Оплата" },
+        nav: { home: "Главная", products: "Продукты", services: "Услуги", sourcingProcess: "Процесс Поставок", testimonials: "Отзывы", aboutUs: "О Нас", contactUs: "Связаться", login: "Войти", logout: "Выйти" },
         hero: { title: "Профессиональный Агент По Поставкам Из Китая Ивю", desc: "Комплексное решение по поставкам из Китая.", contactBtn: "Связаться Сейчас", productsBtn: "Посмотреть Продукты" },
         products: { title: "Популярные Продукты", subtitle: "Изучите наши рекомендуемые продукты из Китая", categoryManagement: "Управление Категориями", enterCategory: "Введите название", addCategory: "Добавить", addProduct: "Добавить Продукт", imageUrl: "URL Изображения", enterImageUrl: "Введите URL", category: "Категория", selectCategory: "Выберите", name: "Название", enterName: "Введите название", sku: "Артикул", enterSKU: "Введите артикул", material: "Материал", enterMaterial: "Введите материал", size: "Размер", enterSize: "Введите размер", moq: "MOQ", enterMOQ: "Введите MOQ", priceMin: "Мин. Цена ($)", enterMinPrice: "Введите мин. цену", priceMax: "Макс. Цена ($)", enterMaxPrice: "Введите макс. цену", description: "Описание", enterDescription: "Введите описание", cancel: "Отмена", save: "Сохранить", edit: "Редактировать", delete: "Удалить", quote: "Получить Котировку", price: "Цена: $", viewDetails: "Подробнее" },
         filter: { title: "Фильтр по Категории", all: "Все", reset: "Сбросить", showing: "Показано", of: "из", products: "продуктов", noResult: "Нет продуктов в этой категории" },
-        services: { title: "Наши Услуги По Поставкам", subtitle: "Комплексные решения по поставкам", supplierVerification: "Проверка Поставщиков", supplierVerificationDesc: "Тщательная проверка поставщиков.", productSourcing: "Поиск Продуктов", productSourcingDesc: "Найдите нужные продукты.", qualityControl: "Контроль Качества", qualityControlDesc: "Контроль качества на каждом этапе.", logistics: "Логистика и Склад", logisticsDesc: "Комплексные решения логистики и хранения с бесплатным хранением.", priceNegotiation: "Переговоры По Ценам", priceNegotiationDesc: "Лучшие цены.", designPhotography: "Дизайн и Фотография", designPhotographyDesc: "Профессиональная фотография и дизайн для продаж." },
+        services: { title: "Наши Услуги По Поставкам", subtitle: "Комплексные решения по поставкам", supplierVerification: "Проверка Поставщиков", supplierVerificationDesc: "Тщательная проверка поставщиков.", productSourcing: "Поиск Продуктов", productSourcingDesc: "Найдите нужные продукты.", qualityControl: "Контроль Качества", qualityControlDesc: "Контроль качества на каждом этапе.", logistics: "Логистика и Доставка", logisticsDesc: "Беспроблемная доставка.", priceNegotiation: "Переговоры По Ценам", priceNegotiationDesc: "Лучшие цены.", riskManagement: "Управление Рисками", riskManagementDesc: "Снижение рисков." },
         process: { title: "Наш Процесс Поставок", subtitle: "Простой и прозрачный процесс", step1: "Ваши Требования", step1Desc: "Поделитесь спецификациями.", step2: "Подбор Поставщиков", step2Desc: "Подбираем лучших поставщиков.", step3: "Образцы и Цены", step3Desc: "Образцы и цены.", step4: "Доставка и Поддержка", step4Desc: "Контроль производства и доставка." },
         testimonials: { title: "Отзывы Клиентов", subtitle: "Отзывы наших покупателей", review1: "\"Отличное качество и быстрая доставка!\"", review2: "\"Профессиональная команда.\"", review3: "\"Сэкономил 20%!\"" },
         about: { title: "О Yeatru Sourcing", profile: "Профиль Компании", profileDesc: "Yeatru Sourcing — профессиональный агент по поставкам в Ивю." },
@@ -102,74 +102,12 @@ function tt(key, fallback) {
     return fallback || key;
 }
 
-const EXCHANGE_RATES = {
-    USD: { rate: 1, symbol: '$', name: 'USD' },
-    EUR: { rate: 0.92, symbol: '€', name: 'EUR' },
-    GBP: { rate: 0.79, symbol: '£', name: 'GBP' },
-    RUB: { rate: 92.5, symbol: '₽', name: 'RUB' },
-    CNY: { rate: 7.25, symbol: '¥', name: 'CNY' }
-};
-
-let currentCurrency = 'USD';
-
-function getCurrentCurrency() {
-    return localStorage.getItem('yeatru_currency') || 'USD';
-}
-
-function formatPrice(usdPrice) {
-    const currency = getCurrentCurrency();
-    const cfg = EXCHANGE_RATES[currency] || EXCHANGE_RATES.USD;
-    const converted = (usdPrice * cfg.rate).toFixed(2);
-    return cfg.symbol + converted;
-}
-
-function initCurrencySelector() {
-    const currencyItems = document.querySelectorAll('[data-currency]');
-    const currentCurrencyEl = document.getElementById('current-currency');
-    const saved = getCurrentCurrency();
-    currentCurrency = saved;
-
-    if (currentCurrencyEl) {
-        currentCurrencyEl.textContent = saved;
-    }
-
-    currencyItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            const currency = this.dataset.currency;
-            localStorage.setItem('yeatru_currency', currency);
-            currentCurrency = currency;
-            if (currentCurrencyEl) {
-                currentCurrencyEl.textContent = currency;
-            }
-            document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
-            renderProducts();
-            renderIndexHotProducts();
-        });
-    });
-}
-
-function safeAddEventListener(id, event, handler) {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener(event, handler);
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    initCurrencySelector();
-    renderBrandLogo();
-    renderProductsDropdown();
-    renderIndexCategories();
-    renderIndexHotProducts();
-    renderCategories();
-    renderProducts();
-
     i18next
         .use(i18nextBrowserLanguageDetector)
         .init({
             fallbackLng: 'en',
             resources: translationResources,
-            supportedLngs: ['en', 'es', 'fr', 'ru'],
-            nonExplicitSupportedLngs: false,
             detection: {
                 order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
                 caches: ['localStorage', 'cookie']
@@ -179,13 +117,16 @@ document.addEventListener('DOMContentLoaded', function () {
             updateContent();
             bindLanguageEvents();
             loadRemoteSiteData();
-            updateLoginUI(isAdmin());
-        }).catch(function (err) {
-            console.error('i18next init error:', err);
-            updateLoginUI(isAdmin());
+            renderCategoryFilter();
+            renderProducts();
         });
 
-    safeAddEventListener('submitLogin', 'click', function () {
+    updateLoginUI(isAdmin());
+    renderCategories();
+    renderProducts();
+    renderBrandLogo();
+
+    document.getElementById('submitLogin').addEventListener('click', function () {
         const username = document.getElementById('adminUsername').value.trim();
         const password = document.getElementById('adminPassword').value.trim();
         const errorEl = document.getElementById('loginError');
@@ -193,79 +134,46 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('yeatruAdminLoggedIn', 'true');
             updateLoginUI(true);
             const loginModal = document.getElementById('loginModal');
-            if (loginModal) {
-                const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
-                modalInstance.hide();
-            }
-            if (errorEl) errorEl.classList.add('d-none');
-            const adminUser = document.getElementById('adminUsername');
-            const adminPass = document.getElementById('adminPassword');
-            if (adminUser) adminUser.value = '';
-            if (adminPass) adminPass.value = '';
+            const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
+            modalInstance.hide();
+            errorEl.classList.add('d-none');
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
         } else {
-            if (errorEl) errorEl.classList.remove('d-none');
+            errorEl.classList.remove('d-none');
         }
     });
 
-    safeAddEventListener('authBtn', 'click', function () {
-        if (this.classList.contains('logged-in')) {
-            localStorage.removeItem('yeatruAdminLoggedIn');
-            updateLoginUI(false);
-            const detailPage = document.getElementById('productDetailPage');
-            if (detailPage && detailPage.classList.contains('active') && currentDetailMode === 'edit') {
-                setDetailMode('preview');
-            }
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+        localStorage.removeItem('yeatruAdminLoggedIn');
+        updateLoginUI(false);
+        if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailMode === 'edit') {
+            setDetailMode('preview');
         }
     });
 
-    safeAddEventListener('closeExportPanel', 'click', function () {
-        const panel = document.getElementById('adminExportPanel');
-        if (panel) panel.classList.add('d-none');
-    });
-
-    safeAddEventListener('addCategoryBtn', 'click', function () {
-        const newCatInput = document.getElementById('newCategory');
-        if (!newCatInput) return;
-        const newCategory = newCatInput.value.trim();
+    document.getElementById('addCategoryBtn').addEventListener('click', function () {
+        const newCategory = document.getElementById('newCategory').value.trim();
         if (newCategory && !getCategories().includes(newCategory)) {
             saveCategories([...getCategories(), newCategory]);
-            newCatInput.value = '';
+            document.getElementById('newCategory').value = '';
         }
     });
 
-    safeAddEventListener('addVariationBtn', 'click', function () {
-        addVariationItem();
-    });
-
-    safeAddEventListener('saveProduct', 'click', function () {
-        const productIdEl = document.getElementById('productId');
-        if (!productIdEl) return;
-        const productId = productIdEl.value;
-        const variations = collectVariations();
-        let priceMin = null;
-        let priceMax = null;
-        const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
-        if (pricedVariations.length > 0) {
-            const prices = pricedVariations.map(v => v.price);
-            priceMin = Math.min(...prices);
-            priceMax = Math.max(...prices);
-        } else {
-            priceMin = 1;
-            priceMax = 1;
-        }
+    document.getElementById('saveProduct').addEventListener('click', function () {
+        const productId = document.getElementById('productId').value;
         const product = {
             id: productId ? parseInt(productId) : Date.now(),
-            image: document.getElementById('productImage') ? document.getElementById('productImage').value : '',
-            category: document.getElementById('productCategory') ? document.getElementById('productCategory').value : '',
-            name: document.getElementById('productName') ? document.getElementById('productName').value : '',
-            sku: document.getElementById('productSKU') ? document.getElementById('productSKU').value : '',
-            material: document.getElementById('productMaterial') ? document.getElementById('productMaterial').value : '',
-            size: document.getElementById('productSize') ? document.getElementById('productSize').value : '',
-            moq: document.getElementById('productMOQ') ? parseInt(document.getElementById('productMOQ').value) : 0,
-            priceMin: priceMin,
-            priceMax: priceMax,
-            description: document.getElementById('productDescription') ? document.getElementById('productDescription').value : '',
-            variations: variations
+            image: document.getElementById('productImage').value,
+            category: document.getElementById('productCategory').value,
+            name: document.getElementById('productName').value,
+            sku: document.getElementById('productSKU').value,
+            material: document.getElementById('productMaterial').value,
+            size: document.getElementById('productSize').value,
+            moq: parseInt(document.getElementById('productMOQ').value),
+            priceMin: parseFloat(document.getElementById('productPriceMin').value),
+            priceMax: parseFloat(document.getElementById('productPriceMax').value),
+            description: document.getElementById('productDescription').value
         };
         const products = getProducts();
         if (productId) {
@@ -279,37 +187,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         saveProducts(products);
         const productModal = document.getElementById('productModal');
-        if (productModal) {
-            bootstrap.Modal.getInstance(productModal).hide();
-        }
-        const productForm = document.getElementById('productForm');
-        if (productForm) productForm.reset();
-        const variationsContainer = document.getElementById('variationsContainer');
-        if (variationsContainer) variationsContainer.innerHTML = '';
-        if (productIdEl) productIdEl.value = '';
-        const modalLabel = document.getElementById('productModalLabel');
-        if (modalLabel) modalLabel.textContent = tt('products.addProduct', 'Add New Product');
+        bootstrap.Modal.getInstance(productModal).hide();
+        document.getElementById('productForm').reset();
+        document.getElementById('productId').value = '';
+        document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
 
-    safeAddEventListener('addProductBtn', 'click', function () {
-        const productForm = document.getElementById('productForm');
-        if (productForm) productForm.reset();
-        const productIdEl = document.getElementById('productId');
-        if (productIdEl) productIdEl.value = '';
-        const variationsContainer = document.getElementById('variationsContainer');
-        if (variationsContainer) variationsContainer.innerHTML = '';
-        const modalLabel = document.getElementById('productModalLabel');
-        if (modalLabel) modalLabel.textContent = tt('products.addProduct', 'Add New Product');
+    document.getElementById('addProductBtn').addEventListener('click', function () {
+        document.getElementById('productForm').reset();
+        document.getElementById('productId').value = '';
+        document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
 
-    safeAddEventListener('exportDataBtn', 'click', exportSiteData);
-    safeAddEventListener('importDataBtn', 'click', function () {
-        const importFile = document.getElementById('importDataFile');
-        if (importFile) importFile.click();
+    document.getElementById('exportDataBtn').addEventListener('click', exportSiteData);
+    document.getElementById('importDataBtn').addEventListener('click', function () {
+        document.getElementById('importDataFile').click();
     });
-    safeAddEventListener('importDataFile', 'change', importSiteDataFromFile);
+    document.getElementById('importDataFile').addEventListener('change', importSiteDataFromFile);
 
-    safeAddEventListener('detailBackBtn', 'click', function () {
+    document.getElementById('detailBackBtn').addEventListener('click', function () {
         hideDetailPage();
     });
 
@@ -319,14 +215,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    safeAddEventListener('detailQuoteBtn', 'click', function () {
+    document.getElementById('detailQuoteBtn').addEventListener('click', function () {
         if (!currentDetailProductId) return;
         const p = getProducts().find(x => x.id === currentDetailProductId);
         if (!p) return;
-        const quoteProductName = document.getElementById('quoteProductName');
-        if (quoteProductName) quoteProductName.value = p.name;
-        const quoteModal = document.getElementById('quoteModal');
-        if (quoteModal) new bootstrap.Modal(quoteModal).show();
+        document.getElementById('quoteProductName').value = p.name;
+        new bootstrap.Modal(document.getElementById('quoteModal')).show();
     });
 
     document.querySelectorAll('#aplusAddBar button').forEach(btn => {
@@ -340,78 +234,42 @@ document.addEventListener('DOMContentLoaded', function () {
         if (el) el.addEventListener('input', scheduleAutoSave);
     });
 
-    safeAddEventListener('brandLogoEdit', 'click', function (e) {
+    document.getElementById('brandLogoEdit').addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         if (!isAdmin()) return;
-        const logoUrlInput = document.getElementById('logoUrlInput');
-        if (logoUrlInput) logoUrlInput.value = localStorage.getItem('yeatruBrandLogo') || '';
-        const logoModal = document.getElementById('logoModal');
-        if (logoModal) new bootstrap.Modal(logoModal).show();
+        document.getElementById('logoUrlInput').value = localStorage.getItem('yeatruBrandLogo') || '';
+        new bootstrap.Modal(document.getElementById('logoModal')).show();
     });
-    safeAddEventListener('logoSaveBtn', 'click', saveLogoFromModal);
-    safeAddEventListener('logoResetBtn', 'click', function () {
+    document.getElementById('logoSaveBtn').addEventListener('click', saveLogoFromModal);
+    document.getElementById('logoResetBtn').addEventListener('click', function () {
         localStorage.removeItem('yeatruBrandLogo');
         renderBrandLogo();
-        const logoModal = document.getElementById('logoModal');
-        if (logoModal) bootstrap.Modal.getInstance(logoModal).hide();
+        bootstrap.Modal.getInstance(document.getElementById('logoModal')).hide();
     });
 
     window.addEventListener('hashchange', handleHashRoute);
     handleHashRoute();
-
-    document.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 991) {
-                e.preventDefault();
-                e.stopPropagation();
-                const parent = this.parentElement;
-                parent.classList.toggle('show');
-            }
-        });
-    });
-
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 991) {
-            if (!e.target.closest('.nav-item.dropdown')) {
-                document.querySelectorAll('.nav-item.dropdown.show').forEach(function(item) {
-                    item.classList.remove('show');
-                });
-            }
-        }
-    });
 });
 
 function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        try {
-            const v = i18next.t(key);
-            if (v && v !== key) el.textContent = v;
-        } catch (e) {}
+        const v = i18next.t(key);
+        if (v && v !== key) el.textContent = v;
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
-        try {
-            const v = i18next.t(key);
-            if (v && v !== key) el.placeholder = v;
-        } catch (e) {}
+        const v = i18next.t(key);
+        if (v && v !== key) el.placeholder = v;
     });
     const langNames = { en: 'English', es: 'Español', fr: 'Français', ru: 'Русский' };
     const cur = document.getElementById('current-lang');
-    if (cur) {
-        try {
-            cur.textContent = langNames[i18next.language] || 'English';
-        } catch (e) {
-            cur.textContent = 'English';
-        }
-    }
+    if (cur) cur.textContent = langNames[i18next.language] || 'English';
 
     renderCategoryFilter();
     renderProducts();
-    renderProductsDropdown();
-    const detailPage = document.getElementById('productDetailPage');
-    if (detailPage && detailPage.classList.contains('active') && currentDetailProductId) {
+    if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailProductId) {
         renderDetailPage(currentDetailProductId);
     }
 }
@@ -427,33 +285,31 @@ function bindLanguageEvents() {
 }
 
 function updateLoginUI(loggedIn) {
-    const authBtn = document.getElementById('authBtn');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
     const addProductBtn = document.getElementById('addProductBtn');
+    const adminDataTools = document.getElementById('adminDataTools');
     const categoryManagement = document.getElementById('categoryManagement');
     const brandLogoEdit = document.getElementById('brandLogoEdit');
-    const adminExportPanel = document.getElementById('adminExportPanel');
-    if (authBtn) {
-        authBtn.classList.toggle('logged-in', loggedIn);
-        const icon = authBtn.querySelector('i');
-        if (loggedIn) {
-            if (icon) icon.className = 'fas fa-sign-out-alt';
-            authBtn.title = 'Admin Logout';
-            authBtn.setAttribute('data-bs-toggle', '');
-            authBtn.setAttribute('data-bs-target', '');
-        } else {
-            if (icon) icon.className = 'fas fa-user-shield';
-            authBtn.title = 'Admin Login';
-            authBtn.setAttribute('data-bs-toggle', 'modal');
-            authBtn.setAttribute('data-bs-target', '#loginModal');
-        }
+    if (loggedIn) {
+        loginBtn.classList.add('d-none');
+        logoutBtn.classList.remove('d-none');
+        addProductBtn.classList.remove('d-none');
+        adminDataTools.classList.remove('d-none');
+        adminDataTools.classList.add('d-flex');
+        categoryManagement.style.display = 'block';
+        brandLogoEdit.classList.add('admin-visible');
+    } else {
+        loginBtn.classList.remove('d-none');
+        logoutBtn.classList.add('d-none');
+        addProductBtn.classList.add('d-none');
+        adminDataTools.classList.add('d-none');
+        adminDataTools.classList.remove('d-flex');
+        categoryManagement.style.display = 'none';
+        brandLogoEdit.classList.remove('admin-visible');
     }
-    if (addProductBtn) addProductBtn.classList.toggle('d-none', !loggedIn);
-    if (categoryManagement) categoryManagement.style.display = loggedIn ? 'block' : 'none';
-    if (brandLogoEdit) brandLogoEdit.classList.toggle('admin-visible', loggedIn);
-    if (adminExportPanel) adminExportPanel.classList.toggle('d-none', !loggedIn);
     renderCategories();
     renderProducts();
-    renderIndexHotProducts();
     if (!loggedIn && currentDetailMode === 'edit') setDetailMode('preview');
     const toggle = document.getElementById('detailModeToggle');
     if (toggle) toggle.style.display = loggedIn ? 'inline-flex' : 'none';
@@ -470,8 +326,6 @@ function saveCategories(categories) {
     localStorage.setItem('yeatruCategories', JSON.stringify(categories));
     renderCategories();
     renderCategoryFilter();
-    renderIndexCategories();
-    renderProductsDropdown();
 }
 
 function renderCategories() {
@@ -544,86 +398,6 @@ function renderCategoryFilter() {
     list.appendChild(resetBtn);
 }
 
-function renderProductsDropdown() {
-    const dropdown = document.getElementById('productsDropdownMenu');
-    if (!dropdown) return;
-    const categories = getCategories();
-    dropdown.innerHTML = '';
-    const allItem = document.createElement('li');
-    allItem.innerHTML = '<a class="dropdown-item" href="products.html">All Products</a>';
-    dropdown.appendChild(allItem);
-    const divider = document.createElement('li');
-    divider.innerHTML = '<hr class="dropdown-divider">';
-    dropdown.appendChild(divider);
-    categories.forEach(cat => {
-        const li = document.createElement('li');
-        li.innerHTML = '<a class="dropdown-item" href="products.html?category=' + encodeURIComponent(cat) + '">' + escapeHtml(cat) + '</a>';
-        dropdown.appendChild(li);
-    });
-}
-
-function getCategoryIcon(category) {
-    const icons = {
-        'Kitchenware': 'fa-utensils',
-        'Toys': 'fa-puzzle-piece',
-        'Apparel': 'fa-shirt',
-        'Hand Bag': 'fa-bag-shopping',
-        'Electronics': 'fa-mobile-screen-button',
-        'Home': 'fa-house',
-        'Garden': 'fa-leaf',
-        'Material': 'fa-layer-group'
-    };
-    return icons[category] || 'fa-box';
-}
-
-function renderIndexCategories() {
-    const list = document.getElementById('indexCategoryList');
-    if (!list) return;
-    const categories = getCategories();
-    list.innerHTML = '';
-    categories.forEach(cat => {
-        const col = document.createElement('div');
-        col.className = 'col-auto';
-        col.innerHTML = `
-            <a href="products.html?category=${encodeURIComponent(cat)}" class="category-text-card">
-                <span class="category-text">${escapeHtml(cat)}</span>
-            </a>
-        `;
-        list.appendChild(col);
-    });
-}
-
-function renderIndexHotProducts() {
-    const list = document.getElementById('indexHotProducts');
-    if (!list) return;
-    const products = getProducts();
-    list.innerHTML = '';
-    const displayCount = Math.min(products.length, 8);
-    for (let i = 0; i < displayCount; i++) {
-        const product = products[i];
-        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
-        const col = document.createElement('div');
-        col.className = 'col-lg-3 col-md-6';
-        col.innerHTML = `
-            <div class="product-card">
-                <img src="${escapeHtml(product.image)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" onerror="this.src='https://picsum.photos/600/400'; this.alt='${escapeHtml(product.name)}'">
-                <div class="card-body">
-                    <div class="product-category">${escapeHtml(product.category)}</div>
-                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
-                    <p class="product-desc">${escapeHtml(product.description)}</p>
-                    <p class="product-price">${escapeHtml(priceText)}</p>
-                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="products.html#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
-                        <span class="text-muted">|</span>
-                        <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
-                    </div>
-                </div>
-            </div>
-        `;
-        list.appendChild(col);
-    }
-}
-
 function getProducts() {
     try {
         const s = localStorage.getItem('yeatruProducts');
@@ -634,7 +408,6 @@ function getProducts() {
 function saveProducts(products) {
     localStorage.setItem('yeatruProducts', JSON.stringify(products));
     renderProducts();
-    renderIndexHotProducts();
 }
 
 function buildSiteDataObject() {
@@ -668,25 +441,11 @@ function applySiteData(data, options = {}) {
     renderCategories();
     renderCategoryFilter();
     renderProducts();
-    renderIndexCategories();
-    renderIndexHotProducts();
 
-    const detailPage = document.getElementById('productDetailPage');
-    const mainContent = document.getElementById('mainContent');
-    if (detailPage && mainContent) {
-        if (currentDetailProductId) {
-            const exists = getProducts().some(p => p.id === currentDetailProductId);
-            if (exists) renderDetailPage(currentDetailProductId);
-            else hideDetailPage();
-        } else {
-            const hash = location.hash || '';
-            const m = hash.match(/^#product\/(\d+)/);
-            if (m) {
-                const id = parseInt(m[1]);
-                const exists = getProducts().some(p => p.id === id);
-                if (exists) showDetailPage(id);
-            }
-        }
+    if (currentDetailProductId) {
+        const exists = getProducts().some(p => p.id === currentDetailProductId);
+        if (exists) renderDetailPage(currentDetailProductId);
+        else hideDetailPage();
     }
 
     if (!options.silent) {
@@ -700,9 +459,6 @@ async function loadRemoteSiteData() {
         const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
         if (!response.ok) throw new Error('site-data.json not found');
         const data = await response.json();
-        try {
-            localStorage.setItem('yeatruSiteDataCache', JSON.stringify(data));
-        } catch (e) {}
         applySiteData(data, { silent: true });
         console.info('已从 site-data.json 读取公开数据');
     } catch (error) {
@@ -770,7 +526,7 @@ function renderProducts() {
     }
 
     filtered.forEach(product => {
-        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
+        const priceText = (tt('products.price', 'Price: $')) + product.priceMin + ' - ' + product.priceMax;
         const card = document.createElement('div');
         card.className = 'col-lg-3 col-md-6';
         card.innerHTML = `
@@ -811,8 +567,9 @@ function renderProducts() {
                 document.getElementById('productMaterial').value = product.material;
                 document.getElementById('productSize').value = product.size;
                 document.getElementById('productMOQ').value = product.moq;
+                document.getElementById('productPriceMin').value = product.priceMin;
+                document.getElementById('productPriceMax').value = product.priceMax;
                 document.getElementById('productDescription').value = product.description;
-                renderVariationsModal(product.variations || []);
                 document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                 new bootstrap.Modal(document.getElementById('productModal')).show();
             }
@@ -851,9 +608,6 @@ function renderProducts() {
 function handleHashRoute() {
     const hash = location.hash || '';
     const m = hash.match(/^#product\/(\d+)/);
-    const detailPage = document.getElementById('productDetailPage');
-    const mainContent = document.getElementById('mainContent');
-    if (!detailPage || !mainContent) return;
     if (m) {
         const id = parseInt(m[1]);
         showDetailPage(id);
@@ -862,146 +616,15 @@ function handleHashRoute() {
     }
 }
 
-function renderVariationsModal(variations) {
-    const container = document.getElementById('variationsContainer');
-    if (!container) return;
-    container.innerHTML = '';
-    if (variations && variations.length > 0) {
-        variations.forEach(v => addVariationItem(v));
-    }
-}
-function addVariationItem(data) {
-    const container = document.getElementById('variationsContainer');
-    if (!container) return;
-    const v = data || { color: '', size: '', image: '', price: '' };
-    const item = document.createElement('div');
-    item.className = 'variation-item';
-    item.innerHTML = `
-        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
-        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
-        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
-        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
-        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
-    `;
-    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
-    container.appendChild(item);
-}
-function collectVariations() {
-    const variations = [];
-    document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
-        const color = item.querySelector('.variation-color').value.trim();
-        const size = item.querySelector('.variation-size').value.trim();
-        const image = item.querySelector('.variation-image').value.trim();
-        const priceVal = item.querySelector('.variation-price').value.trim();
-        const price = priceVal ? parseFloat(priceVal) : null;
-        if (color || size) variations.push({ color, size, image, price });
-    });
-    return variations;
-}
-function getColorValue(colorName) {
-    const colorMap = {
-        'Black': '#1a1a1a', 'White': '#f5f5f5', 'Gray': '#808080', 'Blue': '#0b7b94',
-        'Red': '#dc3545', 'Pink': '#e83e8c', 'Green': '#28a745', 'Yellow': '#ffc107',
-        'Orange': '#fd7e14', 'Purple': '#6f42c1', 'Brown': '#8b4513', 'Light Blue': '#87ceeb',
-        'Navy': '#001f3f', 'Cream': '#fffdd0', 'Natural': '#d4a574', 'Beige': '#f5f5dc',
-        'Teal': '#20c997', 'Gold': '#ffd700', 'Silver': '#c0c0c0', 'Charcoal': '#36454f'
-    };
-    return colorMap[colorName] || '#ccc';
-}
-
-function renderVariationsDisplay(variations) {
-    const display = document.getElementById('variationsDisplay');
-    const list = document.getElementById('variationsList');
-    if (!display || !list) return;
-    if (!variations || variations.length === 0) {
-        display.style.display = 'none';
-        return;
-    }
-    display.style.display = 'block';
-    list.innerHTML = '';
-    variations.forEach(v => {
-        const card = document.createElement('div');
-        card.className = 'variation-card';
-        card.innerHTML = `
-            <div class="variation-info">
-                <span class="variation-color-dot"${v.color ? ` style="background-color: ${getColorValue(v.color)}"` : ''}></span>
-                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">${formatPrice(parseFloat(v.price))}</span>` : ''}
-            </div>
-        `;
-        card.addEventListener('click', function () {
-            document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            const priceBig = document.getElementById('detailPriceBig');
-            if (priceBig) {
-                if (v.price !== undefined && v.price !== null && v.price !== '') {
-                    priceBig.textContent = formatPrice(parseFloat(v.price));
-                } else {
-                    const product = getProducts().find(p => p.id === currentDetailProductId);
-                    if (product) {
-                        priceBig.textContent = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
-                    }
-                }
-            }
-        });
-        list.appendChild(card);
-    });
-}
-
-function renderDetailVariationsEditor(variations) {
-    const container = document.getElementById('detailVariationsContainer');
-    if (!container) return;
-    container.innerHTML = '';
-    if (variations && variations.length > 0) {
-        variations.forEach(v => addDetailVariationItem(v));
-    } else {
-        addDetailVariationItem();
-    }
-}
-
-function addDetailVariationItem(data) {
-    const container = document.getElementById('detailVariationsContainer');
-    if (!container) return;
-    const v = data || { color: '', size: '', price: '', image: '' };
-    const item = document.createElement('div');
-    item.className = 'variation-item';
-    item.innerHTML = `
-        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
-        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
-        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
-        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
-        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
-    `;
-    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
-    container.appendChild(item);
-}
-
-function collectDetailVariations() {
-    const variations = [];
-    document.querySelectorAll('#detailVariationsContainer .variation-item').forEach(item => {
-        const color = item.querySelector('.variation-color').value.trim();
-        const size = item.querySelector('.variation-size').value.trim();
-        const image = item.querySelector('.variation-image').value.trim();
-        const priceVal = item.querySelector('.variation-price').value.trim();
-        const price = priceVal ? parseFloat(priceVal) : null;
-        if (color || size) variations.push({ color, size, image, price });
-    });
-    return variations;
-}
-
 function showDetailPage(productId) {
-    const mainContent = document.getElementById('mainContent');
-    const page = document.getElementById('productDetailPage');
-    if (!mainContent || !page) return;
     const product = getProducts().find(p => p.id === productId);
     if (!product) {
         hideDetailPage();
         return;
     }
     currentDetailProductId = productId;
-    mainContent.style.display = 'none';
-    page.style.display = 'block';
+    document.getElementById('mainContent').style.display = 'none';
+    const page = document.getElementById('productDetailPage');
     page.classList.add('active');
     setDetailMode('preview');
     renderDetailPage(productId);
@@ -1010,13 +633,8 @@ function showDetailPage(productId) {
 
 function hideDetailPage() {
     currentDetailProductId = null;
-    const mainContent = document.getElementById('mainContent');
-    const page = document.getElementById('productDetailPage');
-    if (mainContent) mainContent.style.display = '';
-    if (page) {
-        page.classList.remove('active');
-        page.style.display = 'none';
-    }
+    document.getElementById('mainContent').style.display = '';
+    document.getElementById('productDetailPage').classList.remove('active');
     if (location.hash.startsWith('#product/')) {
         history.replaceState(null, '', '#products');
     }
@@ -1025,67 +643,28 @@ function hideDetailPage() {
 function renderDetailPage(productId) {
     const product = getProducts().find(p => p.id === productId);
     if (!product) return;
-    const detailImage = document.getElementById('detailImage');
-    const detailName = document.getElementById('detailName');
-    const detailCategory = document.getElementById('detailCategory');
-    const detailSKU = document.getElementById('detailSKU');
-    const detailMaterial = document.getElementById('detailMaterial');
-    const detailSize = document.getElementById('detailSize');
-    const detailMOQ = document.getElementById('detailMOQ');
-    const detailPriceMin = document.getElementById('detailPriceMin');
-    const detailPriceMax = document.getElementById('detailPriceMax');
-    const detailDesc = document.getElementById('detailDesc');
-    const detailPriceBig = document.getElementById('detailPriceBig');
-    const detailNameInput = document.getElementById('detailNameInput');
-    const detailImageInput = document.getElementById('detailImageInput');
-    const detailMaterialInput = document.getElementById('detailMaterialInput');
-    const detailSizeInput = document.getElementById('detailSizeInput');
-    const detailMOQInput = document.getElementById('detailMOQInput');
-    const detailPriceMinInput = document.getElementById('detailPriceMinInput');
-    const detailPriceMaxInput = document.getElementById('detailPriceMaxInput');
-    const detailDescInput = document.getElementById('detailDescInput');
+    document.getElementById('detailImage').src = product.image || 'https://picsum.photos/600/400';
+    document.getElementById('detailImage').alt = product.name || '';
+    document.getElementById('detailName').textContent = product.name || '';
+    document.getElementById('detailCategory').textContent = product.category || '';
+    document.getElementById('detailSKU').textContent = product.sku || '';
+    document.getElementById('detailMaterial').textContent = product.material || '';
+    document.getElementById('detailSize').textContent = product.size || '';
+    document.getElementById('detailMOQ').textContent = product.moq || '';
+    document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
+    document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
+    document.getElementById('detailDesc').textContent = product.description || '';
+    document.getElementById('detailPriceBig').textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
 
-    if (detailImage) { detailImage.src = product.image || 'https://picsum.photos/600/400'; detailImage.alt = product.name || ''; }
-    if (detailName) detailName.textContent = product.name || '';
-    if (detailCategory) detailCategory.textContent = product.category || '';
-    if (detailSKU) detailSKU.textContent = product.sku || '';
-    if (detailMaterial) detailMaterial.textContent = product.material || '';
-    if (detailSize) detailSize.textContent = product.size || '';
-    if (detailMOQ) detailMOQ.textContent = product.moq || '';
-    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? formatPrice(product.priceMin) : '';
-    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? formatPrice(product.priceMax) : '';
-    if (detailDesc) detailDesc.textContent = product.description || '';
+    document.getElementById('detailNameInput').value = product.name || '';
+    document.getElementById('detailImageInput').value = product.image || '';
+    document.getElementById('detailMaterialInput').value = product.material || '';
+    document.getElementById('detailSizeInput').value = product.size || '';
+    document.getElementById('detailMOQInput').value = product.moq || '';
+    document.getElementById('detailPriceMinInput').value = product.priceMin || '';
+    document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
+    document.getElementById('detailDescInput').value = product.description || '';
 
-    let defaultPriceText;
-    if (product.variations && product.variations.length > 0) {
-        const pricedVariations = product.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
-        if (pricedVariations.length > 0) {
-            const prices = pricedVariations.map(v => parseFloat(v.price));
-            const vMin = Math.min(...prices);
-            const vMax = Math.max(...prices);
-            if (vMin === vMax) {
-                defaultPriceText = formatPrice(vMin);
-            } else {
-                defaultPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
-            }
-        } else {
-            defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
-        }
-    } else {
-        defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
-    }
-    if (detailPriceBig) detailPriceBig.textContent = defaultPriceText;
-
-    if (detailNameInput) detailNameInput.value = product.name || '';
-    if (detailImageInput) detailImageInput.value = product.image || '';
-    if (detailMaterialInput) detailMaterialInput.value = product.material || '';
-    if (detailSizeInput) detailSizeInput.value = product.size || '';
-    if (detailMOQInput) detailMOQInput.value = product.moq || '';
-    if (detailPriceMinInput) detailPriceMinInput.value = product.priceMin || '';
-    if (detailPriceMaxInput) detailPriceMaxInput.value = product.priceMax || '';
-    if (detailDescInput) detailDescInput.value = product.description || '';
-
-    renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
 }
 
@@ -1110,23 +689,7 @@ function setDetailMode(mode) {
         b.classList.toggle('edit-mode', isEdit);
         b.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = isEdit ? 'true' : 'false');
     });
-    const aplusAddBar = document.getElementById('aplusAddBar');
-    if (aplusAddBar) aplusAddBar.classList.toggle('visible', isEdit);
-
-    // 变体编辑区域切换
-    const variationsList = document.getElementById('variationsList');
-    const detailVariationsContainer = document.getElementById('detailVariationsContainer');
-    if (variationsList) variationsList.style.display = isEdit ? 'none' : '';
-    if (detailVariationsContainer) {
-        detailVariationsContainer.style.display = isEdit ? 'block' : 'none';
-        if (isEdit && currentDetailProductId) {
-            const product = getProducts().find(p => p.id === currentDetailProductId);
-            if (product && product.variations) {
-                renderDetailVariationsEditor(product.variations);
-            }
-        }
-    }
-
+    document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
     const badge = document.getElementById('saveStatusBadge');
     badge.style.display = isEdit ? 'inline-flex' : 'none';
     if (isEdit) setSaveStatus('saved');
@@ -1134,18 +697,17 @@ function setDetailMode(mode) {
 
 function setSaveStatus(state) {
     const badge = document.getElementById('saveStatusBadge');
-    if (!badge) return;
     const span = badge.querySelector('span');
     badge.classList.remove('saving', 'saved', 'error');
     if (state === 'saving') {
         badge.classList.add('saving');
-        if (span) span.textContent = tt('detail.saving', 'Saving...');
+        span.textContent = tt('detail.saving', 'Saving...');
     } else if (state === 'saved') {
         badge.classList.add('saved');
-        if (span) span.textContent = tt('detail.saved', 'Saved');
+        span.textContent = tt('detail.saved', 'Saved');
     } else if (state === 'error') {
         badge.classList.add('error');
-        if (span) span.textContent = tt('detail.error', 'Save failed');
+        span.textContent = tt('detail.error', 'Save failed');
     }
 }
 
@@ -1175,16 +737,6 @@ function commitSave() {
         p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
-        p.variations = collectDetailVariations();
-
-        // 从变体自动计算 priceMin 和 priceMax
-        const pricedVars = p.variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
-        if (pricedVars.length > 0) {
-            const prices = pricedVars.map(v => v.price);
-            p.priceMin = Math.min(...prices);
-            p.priceMax = Math.max(...prices);
-        }
-
         products[idx] = p;
         localStorage.setItem('yeatruProducts', JSON.stringify(products));
         document.getElementById('detailName').textContent = p.name;
@@ -1192,29 +744,10 @@ function commitSave() {
         document.getElementById('detailMaterial').textContent = p.material;
         document.getElementById('detailSize').textContent = p.size;
         document.getElementById('detailMOQ').textContent = p.moq;
-        document.getElementById('detailPriceMin').textContent = formatPrice(p.priceMin);
-        document.getElementById('detailPriceMax').textContent = formatPrice(p.priceMax);
+        document.getElementById('detailPriceMin').textContent = p.priceMin;
+        document.getElementById('detailPriceMax').textContent = p.priceMax;
         document.getElementById('detailDesc').textContent = p.description;
-
-        let savedPriceText;
-        if (p.variations && p.variations.length > 0) {
-            const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
-            if (pricedVariations.length > 0) {
-                const prices = pricedVariations.map(v => parseFloat(v.price));
-                const vMin = Math.min(...prices);
-                const vMax = Math.max(...prices);
-                if (vMin === vMax) {
-                    savedPriceText = formatPrice(vMin);
-                } else {
-                    savedPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
-                }
-            } else {
-                savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
-            }
-        } else {
-            savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
-        }
-        document.getElementById('detailPriceBig').textContent = savedPriceText;
+        document.getElementById('detailPriceBig').textContent = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
         setSaveStatus('saved');
         renderProducts();
     } catch (e) {
@@ -1268,14 +801,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
-            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;height:auto;border-radius:8px;" onerror="this.src='https://picsum.photos/1200/420'">
+            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
+            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -1283,7 +816,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
                 </div>
                 <img src="${escapeHtml(b.image || '')}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -1295,15 +828,8 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + it + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(it) + '</li>').join('')}
                 </ul>
-            </div>
-        `;
-    } else if (b.type === 'twoColumns') {
-        content.innerHTML = `
-            <div class="aplus-block-two-columns">
-                <div class="aplus-block-column" data-editable="column">${b.column1 || ''}</div>
-                <div class="aplus-block-column" data-editable="column">${b.column2 || ''}</div>
             </div>
         `;
     }
@@ -1368,7 +894,7 @@ function collectAplusBlocks() {
         const heading = blockEl.querySelector('[data-editable="heading"]');
         if (heading) item.heading = heading.innerText.trim();
         const text = blockEl.querySelector('[data-editable="text"]');
-        if (text) item.text = text.innerHTML;
+        if (text) item.text = text.innerText.trim();
         const imgInput = blockEl.querySelector('[data-editable-img]');
         if (imgInput) item.image = imgInput.value;
         else {
@@ -1378,14 +904,9 @@ function collectAplusBlocks() {
         if (type === 'features') {
             item.items = [];
             blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
-                const v = li.innerHTML.trim();
+                const v = li.innerText.trim();
                 if (v) item.items.push(v);
             });
-        }
-        if (type === 'twoColumns') {
-            const columns = blockEl.querySelectorAll('[data-editable="column"]');
-            if (columns.length >= 1) item.column1 = columns[0].innerHTML;
-            if (columns.length >= 2) item.column2 = columns[1].innerHTML;
         }
         out.push(item);
     });
@@ -1393,29 +914,16 @@ function collectAplusBlocks() {
 }
 
 function renderBrandLogo() {
-    let url = localStorage.getItem('yeatruBrandLogo');
+    const url = localStorage.getItem('yeatruBrandLogo');
     const img = document.getElementById('brandLogoImg');
     const fallback = document.getElementById('brandLogoFallback');
     const footerImg = document.getElementById('footerLogoImg');
     const footerFallback = document.getElementById('footerLogoFallback');
-    
-    if (!img || !fallback) return;
-    
-    if (!url) {
-        try {
-            const data = localStorage.getItem('yeatruSiteDataCache');
-            if (data) {
-                const parsed = JSON.parse(data);
-                if (parsed.logo) url = parsed.logo;
-            }
-        } catch (e) {}
-    }
-    
     if (url) {
         img.src = url;
         img.style.display = 'block';
         fallback.style.display = 'none';
-        if (footerImg && footerFallback) {
+        if (footerImg) {
             footerImg.src = url;
             footerImg.style.display = 'block';
             footerFallback.style.display = 'none';
@@ -1424,7 +932,7 @@ function renderBrandLogo() {
         img.src = '';
         img.style.display = 'none';
         fallback.style.display = '';
-        if (footerImg && footerFallback) {
+        if (footerImg) {
             footerImg.src = '';
             footerImg.style.display = 'none';
             footerFallback.style.display = '';
