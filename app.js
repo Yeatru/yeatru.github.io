@@ -796,25 +796,23 @@ function buildAplusBlockEl(b, idx) {
     `;
     wrap.appendChild(toolbar);
 
+    const textToolbar = document.createElement('div');
+    textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;background:#0b7b94;padding:8px;border-radius:6px;margin-bottom:8px;';
+    const toolbarHTML = `
+        <button type="button" data-format="bold" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">B</button>
+        <button type="button" data-format="italic" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;font-style:italic;">I</button>
+        <button type="button" data-format="underline" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;text-decoration:underline;">U</button>
+        <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">•列表</button>
+        <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">1.列表</button>
+        <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;">表格</button>
+    `;
+    textToolbar.innerHTML = toolbarHTML;
+    wrap.appendChild(textToolbar);
+
     const content = document.createElement('div');
     content.className = 'aplus-block-content';
     if (b.type === 'hero') {
         content.innerHTML = `
-            <div class="aplus-text-toolbar">
-                <button type="button" class="format-btn" data-format="bold" title="Bold (Ctrl+B)"><i class="fas fa-bold"></i></button>
-                <button type="button" class="format-btn" data-format="italic" title="Italic (Ctrl+I)"><i class="fas fa-italic"></i></button>
-                <button type="button" class="format-btn" data-format="underline" title="Underline (Ctrl+U)"><i class="fas fa-underline"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
-                <button type="button" class="format-btn" data-format="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
-                <button type="button" class="format-btn" data-format="justifyCenter" title="Center"><i class="fas fa-align-center"></i></button>
-                <button type="button" class="format-btn" data-format="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
-                <button type="button" class="format-btn" data-format="insertHorizontalRule" title="Insert Line"><i class="fas fa-minus"></i></button>
-            </div>
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
             <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
             <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
@@ -822,42 +820,12 @@ function buildAplusBlockEl(b, idx) {
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
-            <div class="aplus-text-toolbar">
-                <button type="button" class="format-btn" data-format="bold" title="Bold (Ctrl+B)"><i class="fas fa-bold"></i></button>
-                <button type="button" class="format-btn" data-format="italic" title="Italic (Ctrl+I)"><i class="fas fa-italic"></i></button>
-                <button type="button" class="format-btn" data-format="underline" title="Underline (Ctrl+U)"><i class="fas fa-underline"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
-                <button type="button" class="format-btn" data-format="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
-                <button type="button" class="format-btn" data-format="justifyCenter" title="Center"><i class="fas fa-align-center"></i></button>
-                <button type="button" class="format-btn" data-format="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
-                <button type="button" class="format-btn" data-format="insertHorizontalRule" title="Insert Line"><i class="fas fa-minus"></i></button>
-            </div>
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
             <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
         content.innerHTML = `
-            <div class="aplus-text-toolbar">
-                <button type="button" class="format-btn" data-format="bold" title="Bold (Ctrl+B)"><i class="fas fa-bold"></i></button>
-                <button type="button" class="format-btn" data-format="italic" title="Italic (Ctrl+I)"><i class="fas fa-italic"></i></button>
-                <button type="button" class="format-btn" data-format="underline" title="Underline (Ctrl+U)"><i class="fas fa-underline"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
-                <button type="button" class="format-btn" data-format="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
-                <button type="button" class="format-btn" data-format="justifyCenter" title="Center"><i class="fas fa-align-center"></i></button>
-                <button type="button" class="format-btn" data-format="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="format-btn" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
-                <button type="button" class="format-btn" data-format="insertHorizontalRule" title="Insert Line"><i class="fas fa-minus"></i></button>
-            </div>
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
@@ -899,14 +867,19 @@ function buildAplusBlockEl(b, idx) {
         }
     });
     
-    wrap.querySelectorAll('.format-btn').forEach(btn => {
+    wrap.querySelectorAll('[data-format]').forEach(btn => {
         btn.addEventListener('mousedown', function (e) {
             e.preventDefault();
             const format = this.dataset.format;
             const textEl = wrap.querySelector('[data-editable="text"]');
             if (textEl) {
+                textEl.focus();
                 if (format === 'insertTable') {
-                    document.execCommand('insertHTML', false, '<table><tr><td>Cell 1</td><td>Cell 2</td></tr><tr><td>Cell 3</td><td>Cell 4</td></tr></table>');
+                    document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">表头1</td><td style="padding:6px;border:1px solid #ccc;">表头2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">内容1</td><td style="padding:6px;border:1px solid #ccc;">内容2</td></tr></table>');
+                } else if (format === 'insertUnorderedList') {
+                    document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>项目1</li><li>项目2</li><li>项目3</li></ul>');
+                } else if (format === 'insertOrderedList') {
+                    document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>第一项</li><li>第二项</li><li>第三项</li></ol>');
                 } else {
                     document.execCommand(format, false, null);
                 }
