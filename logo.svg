@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#ffffff"/>
+
+  <!-- Orange Network Icon -->
+  <g transform="translate(256, 170)" fill="none" stroke="#FF9500" stroke-width="14" stroke-linecap="round">
+    <line x1="-140" y1="20" x2="-60" y2="-20"/>
+    <line x1="-60" y1="-20" x2="0" y2="20"/>
+    <line x1="0" y1="20" x2="60" y2="-20"/>
+    <line x1="60" y1="-20" x2="120" y2="20"/>
+    <line x1="-60" y1="-20" x2="-20" y2="-60"/>
+    <line x1="-20" y1="-60" x2="40" y2="-80"/>
+    <line x1="60" y1="-20" x2="100" y2="-72"/>
+    <line x1="40" y1="-80" x2="100" y2="-72"/>
+    <line x1="0" y1="20" x2="32" y2="60"/>
+    <line x1="60" y1="-20" x2="88" y2="-8"/>
+
+    <!-- Nodes -->
+    <g fill="#FF9500" stroke="none">
+      <circle cx="-140" cy="20" r="18"/>
+      <circle cx="-60" cy="-20" r="18"/>
+      <circle cx="0" cy="20" r="18"/>
+      <circle cx="60" cy="-20" r="18"/>
+      <circle cx="120" cy="20" r="18"/>
+      <circle cx="-20" cy="-60" r="18"/>
+      <circle cx="40" cy="-80" r="18"/>
+      <circle cx="100" cy="-72" r="18"/>
+      <circle cx="32" cy="60" r="18"/>
+      <circle cx="88" cy="-8" r="18"/>
+    </g>
+
+    <!-- Outer rings on selected nodes -->
+    <circle cx="-20" cy="-60" r="24" fill="none" stroke="#FF9500" stroke-width="6"/>
+    <circle cx="40" cy="-80" r="24" fill="none" stroke="#FF9500" stroke-width="6"/>
+    <circle cx="100" cy="-72" r="24" fill="none" stroke="#FF9500" stroke-width="6"/>
+
+    <!-- White icons inside ringed nodes -->
+    <g fill="#ffffff" stroke="none">
+      <!-- Package/box icon -->
+      <rect x="-10" y="-68" width="20" height="14" rx="2"/>
+      <rect x="-10" y="-68" width="20" height="4" fill="#FF9500"/>
+      <!-- Airplane icon -->
+      <path d="M30,-88 L52,-88 L48,-78 L34,-78 Z"/>
+      <!-- Check mark / user icon -->
+      <circle cx="-20" cy="-62" r="8"/>
+      <circle cx="-20" cy="-62" r="4" fill="#FF9500"/>
+    </g>
+  </g>
+
+  <!-- Yeatru Text -->
+  <g transform="translate(256, 360)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" fill="#001F5C">
+    <text x="0" y="0" font-size="168" letter-spacing="-4">Yeatru</text>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(256, 430)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" fill="#4A5A7C">
+    <text x="0" y="0" font-size="34" letter-spacing="1">GLOBAL PROCUREMENT. INSPECTION. LOGISTICS.</text>
+  </g>
+</svg>

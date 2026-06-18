@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" fill="#ffffff"/>
+
+  <!-- Orange Network Icon -->
+  <g transform="translate(64, 42)" fill="none" stroke="#FF9500" stroke-width="4" stroke-linecap="round">
+    <!-- Main network lines -->
+    <line x1="-35" y1="5" x2="-15" y2="-5"/>
+    <line x1="-15" y1="-5" x2="0" y2="5"/>
+    <line x1="0" y1="5" x2="15" y2="-5"/>
+    <line x1="15" y1="-5" x2="30" y2="5"/>
+    <line x1="-15" y1="-5" x2="-5" y2="-15"/>
+    <line x1="-5" y1="-15" x2="10" y2="-20"/>
+    <line x1="15" y1="-5" x2="25" y2="-18"/>
+    <line x1="10" y1="-20" x2="25" y2="-18"/>
+    <line x1="0" y1="5" x2="8" y2="15"/>
+    <line x1="15" y1="-5" x2="22" y2="-2"/>
+
+    <!-- Nodes / circles -->
+    <circle cx="-35" cy="5" r="4.5" fill="#FF9500"/>
+    <circle cx="-15" cy="-5" r="4.5" fill="#FF9500"/>
+    <circle cx="0" cy="5" r="4.5" fill="#FF9500"/>
+    <circle cx="15" cy="-5" r="4.5" fill="#FF9500"/>
+    <circle cx="30" cy="5" r="4.5" fill="#FF9500"/>
+    <circle cx="-5" cy="-15" r="4.5" fill="#FF9500"/>
+    <circle cx="10" cy="-20" r="4.5" fill="#FF9500"/>
+    <circle cx="25" cy="-18" r="4.5" fill="#FF9500"/>
+    <circle cx="8" cy="15" r="4.5" fill="#FF9500"/>
+    <circle cx="22" cy="-2" r="4.5" fill="#FF9500"/>
+    <circle cx="-5" cy="-15" r="6" fill="none" stroke="#FF9500" stroke-width="2"/>
+    <circle cx="10" cy="-20" r="6" fill="none" stroke="#FF9500" stroke-width="2"/>
+    <circle cx="25" cy="-18" r="6" fill="none" stroke="#FF9500" stroke-width="2"/>
+
+    <!-- Icons inside circles -->
+    <g fill="#FF9500" stroke="none">
+      <!-- Truck icon -->
+      <rect x="-10" y="-17" width="10" height="6" rx="1"/>
+      <circle cx="-7" cy="-9" r="1.5" fill="#ffffff"/>
+      <circle cx="-3" cy="-9" r="1.5" fill="#ffffff"/>
+      <!-- Plane icon -->
+      <path d="M21,-18 L30,-18 L28,-22 L24,-22 Z" fill="#ffffff"/>
+      <!-- Check icon -->
+      <circle cx="-5" cy="-15" r="3" fill="#ffffff" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- Yeatru Text -->
+  <g transform="translate(64, 90)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" fill="#001F5C">
+    <text x="0" y="0" font-size="42" letter-spacing="-1">Yeatru</text>
+  </g>
+</svg>
