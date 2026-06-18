@@ -485,14 +485,14 @@
 
             <div id="adminDataTools" class="d-none flex-wrap gap-2 mb-4">
                 <button id="addProductBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
-                <button id="exportDataBtn" class="btn btn-outline-primary" type="button">
+                <button id="exportDataBtn" class="btn btn-outline-primary" type="button" data-i18n="admin.export">
                     <i class="fas fa-file-export me-1"></i> Export site-data.json
                 </button>
-                <button id="importDataBtn" class="btn btn-outline-secondary" type="button">
+                <button id="importDataBtn" class="btn btn-outline-secondary" type="button" data-i18n="admin.import">
                     <i class="fas fa-file-import me-1"></i> Import site-data.json
                 </button>
                 <input id="importDataFile" type="file" accept="application/json,.json" style="display:none;">
-                <small class="text-muted align-self-center">Upload exported site-data.json to GitHub so visitors can see the latest edits.</small>
+                <small class="text-muted align-self-center" data-i18n="admin.uploadTip">Upload exported site-data.json to GitHub so visitors can see the latest edits.</small>
             </div>
 
             <div class="row" id="productList"></div>
@@ -599,10 +599,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
-                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
-                    <a href="#" class="footer-link d-inline">Terms of Service</a> |
-                    <a href="#" class="footer-link d-inline">Cookie Policy</a>
+                <p><span data-i18n="footer.copyright">&copy; 2026 Yeatru Sourcing. All rights reserved.</span> |
+                    <a href="#" class="footer-link d-inline" data-i18n="footer.privacyPolicy">Privacy Policy</a> |
+                    <a href="#" class="footer-link d-inline" data-i18n="footer.terms">Terms of Service</a> |
+                    <a href="#" class="footer-link d-inline" data-i18n="footer.cookie">Cookie Policy</a>
                 </p>
             </div>
         </div>
@@ -646,49 +646,49 @@
                         <input type="hidden" id="productId">
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label for="productImage" class="form-label">Image URL</label>
+                                <label for="productImage" class="form-label" data-i18n="form.imageUrl">Image URL</label>
                                 <input type="url" class="form-control" id="productImage" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="productCategory" class="form-label">Category</label>
+                                <label for="productCategory" class="form-label" data-i18n="products.category">Category</label>
                                 <input type="text" class="form-control" id="productCategory" list="categoryDatalist" required>
                                 <datalist id="categoryDatalist"></datalist>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="productName" class="form-label">Product Name</label>
+                            <label for="productName" class="form-label" data-i18n="form.productName">Product Name</label>
                             <input type="text" class="form-control" id="productName" required>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="productSKU" class="form-label">SKU</label>
+                                <label for="productSKU" class="form-label" data-i18n="products.sku">SKU</label>
                                 <input type="text" class="form-control" id="productSKU">
                             </div>
                             <div class="col-md-4">
-                                <label for="productMaterial" class="form-label">Material</label>
+                                <label for="productMaterial" class="form-label" data-i18n="products.material">Material</label>
                                 <input type="text" class="form-control" id="productMaterial">
                             </div>
                             <div class="col-md-4">
-                                <label for="productSize" class="form-label">Size</label>
+                                <label for="productSize" class="form-label" data-i18n="products.size">Size</label>
                                 <input type="text" class="form-control" id="productSize">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="productMOQ" class="form-label">MOQ</label>
+                                <label for="productMOQ" class="form-label" data-i18n="products.moq">MOQ</label>
                                 <input type="number" class="form-control" id="productMOQ" value="1">
                             </div>
                             <div class="col-md-4">
-                                <label for="productPriceMin" class="form-label">Min Price ($)</label>
+                                <label for="productPriceMin" class="form-label" data-i18n="products.priceMin">Min Price ($)</label>
                                 <input type="number" step="0.01" class="form-control" id="productPriceMin" value="1.00" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="productPriceMax" class="form-label">Max Price ($)</label>
+                                <label for="productPriceMax" class="form-label" data-i18n="products.priceMax">Max Price ($)</label>
                                 <input type="number" step="0.01" class="form-control" id="productPriceMax" value="1.00" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="productDescription" class="form-label">Description</label>
+                            <label for="productDescription" class="form-label" data-i18n="form.description">Description</label>
                             <textarea class="form-control" id="productDescription" rows="3"></textarea>
                         </div>
                     </form>
@@ -713,27 +713,27 @@
                         <input type="hidden" name="_subject" value="Quote Request from Yeatru Website">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="mb-3">
-                            <label for="quoteProductName" class="form-label">Product</label>
+                            <label for="quoteProductName" class="form-label" data-i18n="quote.product">Product</label>
                             <input type="text" class="form-control" id="quoteProductName" name="product" readonly>
                         </div>
                         <div class="mb-3">
-                            <label for="quoteName" class="form-label">Your Name</label>
+                            <label for="quoteName" class="form-label" data-i18n="quote.yourName">Your Name</label>
                             <input type="text" class="form-control" id="quoteName" name="name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="quoteEmail" class="form-label">Email</label>
+                            <label for="quoteEmail" class="form-label" data-i18n="quote.email">Email</label>
                             <input type="email" class="form-control" id="quoteEmail" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="quotePhone" class="form-label">Phone</label>
+                            <label for="quotePhone" class="form-label" data-i18n="quote.phone">Phone</label>
                             <input type="tel" class="form-control" id="quotePhone" name="phone" required>
                         </div>
                         <div class="mb-3">
-                            <label for="quoteQuantity" class="form-label">Quantity</label>
+                            <label for="quoteQuantity" class="form-label" data-i18n="quote.quantity">Quantity</label>
                             <input type="number" class="form-control" id="quoteQuantity" name="quantity" required>
                         </div>
                         <div class="mb-3">
-                            <label for="quoteMessage" class="form-label">Message</label>
+                            <label for="quoteMessage" class="form-label" data-i18n="quote.message">Message</label>
                             <textarea class="form-control" id="quoteMessage" name="message" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100" data-i18n="quote.submit">Submit Quote Request</button>
@@ -1066,7 +1066,7 @@
             const container = document.getElementById('aplusBlocks');
             container.innerHTML = '';
             if (!aplus || aplus.length === 0) {
-                container.innerHTML = '<p class="text-muted">No A+ content available.</p>';
+                container.innerHTML = `<p class="text-muted">${tt('aplus.noContent', 'No A+ content available.')}</p>`;
                 return;
             }
             aplus.forEach((block, index) => {
@@ -1277,24 +1277,136 @@
                     'filter.of': 'of', 'filter.products': 'products', 'filter.noResult': 'No products in this category',
                     'detail.back': 'Back to Products', 'detail.preview': 'Preview', 'detail.edit': 'Edit',
                     'products.category': 'Category', 'products.sku': 'SKU', 'products.material': 'Material',
-                    'products.size': 'Size', 'products.moq': 'MOQ', 'products.priceMin': 'Min Price', 'products.priceMax': 'Max Price',
+                    'products.size': 'Size', 'products.moq': 'MOQ', 'products.priceMin': 'Min Price ($)', 'products.priceMax': 'Max Price ($)',
                     'products.price': 'Price: $', 'login.title': 'Admin Login', 'login.username': 'Username',
                     'login.enterUsername': 'Enter username', 'login.password': 'Password', 'login.enterPassword': 'Enter password',
                     'login.error': 'Incorrect username or password!', 'login.cancel': 'Cancel', 'login.submit': 'Login',
-                    'quote.title': 'Get a Quote', 'quote.submit': 'Submit Quote Request',
+                    'quote.title': 'Get a Quote', 'quote.submit': 'Submit Quote Request', 'quote.product': 'Product',
+                    'quote.yourName': 'Your Name', 'quote.email': 'Email', 'quote.phone': 'Phone',
+                    'quote.quantity': 'Quantity', 'quote.message': 'Message',
                     'footer.desc': 'Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.',
                     'footer.quickLinks': 'Quick Links', 'footer.services': 'Our Services', 'footer.contact': 'Contact Us',
+                    'footer.copyright': '&copy; 2026 Yeatru Sourcing. All rights reserved.',
+                    'footer.privacyPolicy': 'Privacy Policy', 'footer.terms': 'Terms of Service', 'footer.cookie': 'Cookie Policy',
                     'services.supplierVerification': 'Supplier Verification', 'services.productSourcing': 'Product Sourcing',
                     'services.qualityControl': 'Quality Control', 'services.logistics': 'Logistics & Shipping',
                     'services.priceNegotiation': 'Price Negotiation', 'services.riskManagement': 'Risk Management',
                     'aplus.title': 'A+ Content', 'aplus.addBlock': 'Add a content block:', 'aplus.blockHero': 'Hero Banner',
                     'aplus.blockText': 'Text', 'aplus.blockTextImage': 'Text + Image', 'aplus.blockImageText': 'Image + Text',
-                    'aplus.blockFeatures': 'Feature Grid'
+                    'aplus.blockFeatures': 'Feature Grid', 'aplus.noContent': 'No A+ content available.',
+                    'form.imageUrl': 'Image URL', 'form.productName': 'Product Name', 'form.description': 'Description',
+                    'admin.export': 'Export site-data.json', 'admin.import': 'Import site-data.json',
+                    'admin.uploadTip': 'Upload exported site-data.json to GitHub so visitors can see the latest edits.'
                 }
             },
-            es: { translation: { 'nav.home': 'Inicio', 'nav.products': 'Productos', 'products.title': 'Productos Destacados' } },
-            fr: { translation: { 'nav.home': 'Accueil', 'nav.products': 'Produits', 'products.title': 'Produits Populaires' } },
-            ru: { translation: { 'nav.home': 'Главная', 'nav.products': 'Продукты', 'products.title': 'Горячие Продукты' } }
+            es: {
+                translation: {
+                    'nav.home': 'Inicio', 'nav.products': 'Productos', 'nav.services': 'Servicios',
+                    'nav.sourcingProcess': 'Proceso de Suministro', 'nav.testimonials': 'Testimonios',
+                    'nav.aboutUs': 'Sobre Nosotros', 'nav.contactUs': 'Contacto', 'nav.login': 'Iniciar Sesión', 'nav.logout': 'Cerrar Sesión',
+                    'products.title': 'Productos Destacados', 'products.subtitle': 'Explora nuestros productos destacados provenientes de China',
+                    'products.viewDetails': 'Ver Detalles', 'products.quote': 'Solicitar Cotización', 'products.edit': 'Editar',
+                    'products.delete': 'Eliminar', 'products.addProduct': 'Agregar Producto', 'products.save': 'Guardar Producto',
+                    'products.categoryManagement': 'Gestión de Categorías', 'products.enterCategory': 'Ingrese nombre de nueva categoría',
+                    'products.addCategory': 'Agregar Categoría', 'filter.title': 'Filtrar por Categoría',
+                    'filter.all': 'Todos', 'filter.reset': 'Restablecer Filtro', 'filter.showing': 'Mostrando',
+                    'filter.of': 'de', 'filter.products': 'productos', 'filter.noResult': 'No hay productos en esta categoría',
+                    'detail.back': 'Volver a Productos', 'detail.preview': 'Vista Previa', 'detail.edit': 'Editar',
+                    'products.category': 'Categoría', 'products.sku': 'SKU', 'products.material': 'Material',
+                    'products.size': 'Tamaño', 'products.moq': 'MOQ', 'products.priceMin': 'Precio Mínimo ($)', 'products.priceMax': 'Precio Máximo ($)',
+                    'products.price': 'Precio: $', 'login.title': 'Inicio de Sesión de Admin', 'login.username': 'Nombre de Usuario',
+                    'login.enterUsername': 'Ingrese nombre de usuario', 'login.password': 'Contraseña', 'login.enterPassword': 'Ingrese contraseña',
+                    'login.error': '¡Nombre de usuario o contraseña incorrectos!', 'login.cancel': 'Cancelar', 'login.submit': 'Iniciar Sesión',
+                    'quote.title': 'Solicitar Cotización', 'quote.submit': 'Enviar Solicitud de Cotización', 'quote.product': 'Producto',
+                    'quote.yourName': 'Tu Nombre', 'quote.email': 'Correo Electrónico', 'quote.phone': 'Teléfono',
+                    'quote.quantity': 'Cantidad', 'quote.message': 'Mensaje',
+                    'footer.desc': 'Agente profesional de suministro chino que ayuda a empresas de todo el mundo a encontrar proveedores confiables y productos de calidad a precios competitivos.',
+                    'footer.quickLinks': 'Enlaces Rápidos', 'footer.services': 'Nuestros Servicios', 'footer.contact': 'Contáctanos',
+                    'footer.copyright': '&copy; 2026 Yeatru Sourcing. Todos los derechos reservados.',
+                    'footer.privacyPolicy': 'Política de Privacidad', 'footer.terms': 'Términos de Servicio', 'footer.cookie': 'Política de Cookies',
+                    'services.supplierVerification': 'Verificación de Proveedores', 'services.productSourcing': 'Búsqueda de Productos',
+                    'services.qualityControl': 'Control de Calidad', 'services.logistics': 'Logística y Envío',
+                    'services.priceNegotiation': 'Negociación de Precios', 'services.riskManagement': 'Gestión de Riesgos',
+                    'aplus.title': 'Contenido A+', 'aplus.addBlock': 'Agregar bloque de contenido:', 'aplus.blockHero': 'Banner Principal',
+                    'aplus.blockText': 'Texto', 'aplus.blockTextImage': 'Texto + Imagen', 'aplus.blockImageText': 'Imagen + Texto',
+                    'aplus.blockFeatures': 'Cuadrícula de Características', 'aplus.noContent': 'No hay contenido A+ disponible.',
+                    'form.imageUrl': 'URL de Imagen', 'form.productName': 'Nombre del Producto', 'form.description': 'Descripción',
+                    'admin.export': 'Exportar site-data.json', 'admin.import': 'Importar site-data.json',
+                    'admin.uploadTip': 'Suba site-data.json exportado a GitHub para que los visitantes vean las últimas ediciones.'
+                }
+            },
+            fr: {
+                translation: {
+                    'nav.home': 'Accueil', 'nav.products': 'Produits', 'nav.services': 'Services',
+                    'nav.sourcingProcess': 'Processus d\'Approvisionnement', 'nav.testimonials': 'Témoignages',
+                    'nav.aboutUs': 'À Propos', 'nav.contactUs': 'Contact', 'nav.login': 'Connexion', 'nav.logout': 'Déconnexion',
+                    'products.title': 'Produits Populaires', 'products.subtitle': 'Découvrez nos produits phares provenant de Chine',
+                    'products.viewDetails': 'Voir les Détails', 'products.quote': 'Demander un Devis', 'products.edit': 'Éditer',
+                    'products.delete': 'Supprimer', 'products.addProduct': 'Ajouter un Produit', 'products.save': 'Enregistrer le Produit',
+                    'products.categoryManagement': 'Gestion des Catégories', 'products.enterCategory': 'Entrez le nom de la nouvelle catégorie',
+                    'products.addCategory': 'Ajouter une Catégorie', 'filter.title': 'Filtrer par Catégorie',
+                    'filter.all': 'Tous', 'filter.reset': 'Réinitialiser le Filtre', 'filter.showing': 'Affichage de',
+                    'filter.of': 'sur', 'filter.products': 'produits', 'filter.noResult': 'Aucun produit dans cette catégorie',
+                    'detail.back': 'Retour aux Produits', 'detail.preview': 'Aperçu', 'detail.edit': 'Éditer',
+                    'products.category': 'Catégorie', 'products.sku': 'SKU', 'products.material': 'Matériau',
+                    'products.size': 'Taille', 'products.moq': 'MOQ', 'products.priceMin': 'Prix Minimum ($)', 'products.priceMax': 'Prix Maximum ($)',
+                    'products.price': 'Prix : $', 'login.title': 'Connexion Admin', 'login.username': 'Nom d\'utilisateur',
+                    'login.enterUsername': 'Entrez le nom d\'utilisateur', 'login.password': 'Mot de passe', 'login.enterPassword': 'Entrez le mot de passe',
+                    'login.error': 'Nom d\'utilisateur ou mot de passe incorrect !', 'login.cancel': 'Annuler', 'login.submit': 'Se Connecter',
+                    'quote.title': 'Demander un Devis', 'quote.submit': 'Envoyer la Demande de Devis', 'quote.product': 'Produit',
+                    'quote.yourName': 'Votre Nom', 'quote.email': 'Email', 'quote.phone': 'Téléphone',
+                    'quote.quantity': 'Quantité', 'quote.message': 'Message',
+                    'footer.desc': 'Agent d\'approvisionnement chinois professionnel aidant les entreprises du monde entier à trouver des fournisseurs fiables et des produits de qualité à des prix compétitifs.',
+                    'footer.quickLinks': 'Liens Rapides', 'footer.services': 'Nos Services', 'footer.contact': 'Contactez-Nous',
+                    'footer.copyright': '&copy; 2026 Yeatru Sourcing. Tous droits réservés.',
+                    'footer.privacyPolicy': 'Politique de Confidentialité', 'footer.terms': 'Conditions d\'Utilisation', 'footer.cookie': 'Politique de Cookies',
+                    'services.supplierVerification': 'Vérification des Fournisseurs', 'services.productSourcing': 'Recherche de Produits',
+                    'services.qualityControl': 'Contrôle de Qualité', 'services.logistics': 'Logistique et Expédition',
+                    'services.priceNegotiation': 'Négociation de Prix', 'services.riskManagement': 'Gestion des Risques',
+                    'aplus.title': 'Contenu A+', 'aplus.addBlock': 'Ajouter un bloc de contenu :', 'aplus.blockHero': 'Bannière Hero',
+                    'aplus.blockText': 'Texte', 'aplus.blockTextImage': 'Texte + Image', 'aplus.blockImageText': 'Image + Texte',
+                    'aplus.blockFeatures': 'Grille de Fonctionnalités', 'aplus.noContent': 'Aucun contenu A+ disponible.',
+                    'form.imageUrl': 'URL de l\'Image', 'form.productName': 'Nom du Produit', 'form.description': 'Description',
+                    'admin.export': 'Exporter site-data.json', 'admin.import': 'Importer site-data.json',
+                    'admin.uploadTip': 'Téléchargez site-data.json exporté sur GitHub pour que les visiteurs voient les dernières modifications.'
+                }
+            },
+            ru: {
+                translation: {
+                    'nav.home': 'Главная', 'nav.products': 'Продукты', 'nav.services': 'Услуги',
+                    'nav.sourcingProcess': 'Процесс Закупок', 'nav.testimonials': 'Отзывы',
+                    'nav.aboutUs': 'О Нас', 'nav.contactUs': 'Контакты', 'nav.login': 'Вход', 'nav.logout': 'Выход',
+                    'products.title': 'Горячие Продукты', 'products.subtitle': 'Изучите наши популярные продукты из Китая',
+                    'products.viewDetails': 'Посмотреть Детали', 'products.quote': 'Получить Котировку', 'products.edit': 'Редактировать',
+                    'products.delete': 'Удалить', 'products.addProduct': 'Добавить Продукт', 'products.save': 'Сохранить Продукт',
+                    'products.categoryManagement': 'Управление Категориями', 'products.enterCategory': 'Введите название новой категории',
+                    'products.addCategory': 'Добавить Категорию', 'filter.title': 'Фильтр по Категориям',
+                    'filter.all': 'Все', 'filter.reset': 'Сбросить Фильтр', 'filter.showing': 'Показано',
+                    'filter.of': 'из', 'filter.products': 'продуктов', 'filter.noResult': 'Нет продуктов в этой категории',
+                    'detail.back': 'Назад к Продуктам', 'detail.preview': 'Предпросмотр', 'detail.edit': 'Редактировать',
+                    'products.category': 'Категория', 'products.sku': 'SKU', 'products.material': 'Материал',
+                    'products.size': 'Размер', 'products.moq': 'MOQ', 'products.priceMin': 'Минимальная Цена ($)', 'products.priceMax': 'Максимальная Цена ($)',
+                    'products.price': 'Цена: $', 'login.title': 'Вход Администратора', 'login.username': 'Имя Пользователя',
+                    'login.enterUsername': 'Введите имя пользователя', 'login.password': 'Пароль', 'login.enterPassword': 'Введите пароль',
+                    'login.error': 'Неверное имя пользователя или пароль!', 'login.cancel': 'Отмена', 'login.submit': 'Войти',
+                    'quote.title': 'Получить Котировку', 'quote.submit': 'Отправить Запрос на Котировку', 'quote.product': 'Продукт',
+                    'quote.yourName': 'Ваше Имя', 'quote.email': 'Email', 'quote.phone': 'Телефон',
+                    'quote.quantity': 'Количество', 'quote.message': 'Сообщение',
+                    'footer.desc': 'Профессиональный китайский агент по закупкам, помогающий предприятиям по всему миру найти надежных поставщиков и качественную продукцию по конкурентным ценам.',
+                    'footer.quickLinks': 'Быстрые Ссылки', 'footer.services': 'Наши Услуги', 'footer.contact': 'Свяжитесь с Нами',
+                    'footer.copyright': '&copy; 2026 Yeatru Sourcing. Все права защищены.',
+                    'footer.privacyPolicy': 'Политика Конфиденциальности', 'footer.terms': 'Условия Обслуживания', 'footer.cookie': 'Политика Куки',
+                    'services.supplierVerification': 'Проверка Поставщиков', 'services.productSourcing': 'Поиск Продуктов',
+                    'services.qualityControl': 'Контроль Качества', 'services.logistics': 'Логистика и Доставка',
+                    'services.priceNegotiation': 'Переговоры о Цене', 'services.riskManagement': 'Управление Рисками',
+                    'aplus.title': 'Контент A+', 'aplus.addBlock': 'Добавить блок контента:', 'aplus.blockHero': 'Главный Баннер',
+                    'aplus.blockText': 'Текст', 'aplus.blockTextImage': 'Текст + Изображение', 'aplus.blockImageText': 'Изображение + Текст',
+                    'aplus.blockFeatures': 'Сетка Особенностей', 'aplus.noContent': 'Контент A+ недоступен.',
+                    'form.imageUrl': 'URL Изображения', 'form.productName': 'Название Продукта', 'form.description': 'Описание',
+                    'admin.export': 'Экспорт site-data.json', 'admin.import': 'Импорт site-data.json',
+                    'admin.uploadTip': 'Загрузите экспортированный site-data.json на GitHub, чтобы посетители видели последние изменения.'
+                }
+            }
         };
 
         function updateContent() {
