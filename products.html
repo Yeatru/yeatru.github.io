@@ -428,6 +428,52 @@
             color: #495057;
             border-left: 3px solid var(--peacock-blue);
         }
+        .aplus-block-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .aplus-block-three-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+        .aplus-column {
+            padding: 1rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            min-height: 100px;
+            color: #495057;
+            line-height: 1.6;
+        }
+        .aplus-block-quote {
+            padding: 1.5rem 2rem;
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--peacock-blue);
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        .aplus-block-quote blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #495057;
+            margin: 0 0 0.5rem;
+        }
+        .aplus-block-quote cite {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .aplus-block-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .aplus-block-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
         .aplus-add-block-bar {
             display: none;
             gap: 0.5rem;
@@ -472,6 +518,9 @@
             .section-title { font-size: 1.8rem; }
             .aplus-block-image-wrap, .aplus-block-image-wrap.layout-image-text { flex-direction: column; }
             .aplus-block-image-wrap > img { width: 100%; height: auto; }
+            .aplus-block-two-columns { grid-template-columns: 1fr; }
+            .aplus-block-three-columns { grid-template-columns: 1fr; }
+            .aplus-block-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -605,6 +654,10 @@
                     <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
                     <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
                     <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
+                    <button type="button" data-add-type="twoColumns"><i class="fas fa-columns"></i> <span>Two Columns</span></button>
+                    <button type="button" data-add-type="threeColumns"><i class="fas fa-th-large"></i> <span>Three Columns</span></button>
+                    <button type="button" data-add-type="quote"><i class="fas fa-quote-left"></i> <span>Quote</span></button>
+                    <button type="button" data-add-type="imageGallery"><i class="fas fa-images"></i> <span>Image Gallery</span></button>
                 </div>
             </div>
         </div>
