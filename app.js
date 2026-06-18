@@ -791,28 +791,29 @@ function buildAplusBlockEl(b, idx) {
     wrap.dataset.type = b.type;
     wrap.dataset.idx = idx;
 
-    const toolbar = document.createElement('div');
-    toolbar.className = 'aplus-block-toolbar';
-    toolbar.innerHTML = `
-        <button type="button" class="move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
-        <button type="button" class="move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
-        <button type="button" class="danger delete-block" title="Delete"><i class="fas fa-trash"></i></button>
-    `;
-    wrap.appendChild(toolbar);
+    if (isAdmin()) {
+        const toolbar = document.createElement('div');
+        toolbar.className = 'aplus-block-toolbar';
+        toolbar.innerHTML = `
+            <button type="button" class="move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
+            <button type="button" class="move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
+            <button type="button" class="danger delete-block" title="Delete"><i class="fas fa-trash"></i></button>
+        `;
+        wrap.appendChild(toolbar);
 
-    const textToolbar = document.createElement('div');
-    textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;background:#ff6b6b;padding:12px;border-radius:8px;margin-bottom:12px;border:3px solid #cc0000;z-index:1000;position:relative;';
-    const toolbarHTML = `
-        <button type="button" data-format="bold" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;min-width:36px;">B</button>
-        <button type="button" data-format="italic" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;min-width:36px;">I</button>
-        <button type="button" data-format="underline" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;min-width:36px;">U</button>
-        <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;">•列表</button>
-        <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;">1.列表</button>
-        <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:50px;">表格</button>
-    `;
-    textToolbar.innerHTML = toolbarHTML;
-    console.log('Creating toolbar for block:', b.type, textToolbar);
-    wrap.appendChild(textToolbar);
+        const textToolbar = document.createElement('div');
+        textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;z-index:1000;position:relative;';
+        const toolbarHTML = `
+            <button type="button" data-format="bold" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;min-width:36px;transition:background 0.2s;">B</button>
+            <button type="button" data-format="italic" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;min-width:36px;transition:background 0.2s;">I</button>
+            <button type="button" data-format="underline" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;min-width:36px;transition:background 0.2s;">U</button>
+            <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;transition:background 0.2s;">•列表</button>
+            <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;transition:background 0.2s;">1.列表</button>
+            <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:50px;transition:background 0.2s;">表格</button>
+        `;
+        textToolbar.innerHTML = toolbarHTML;
+        wrap.appendChild(textToolbar);
+    }
 
     const content = document.createElement('div');
     content.className = 'aplus-block-content';
@@ -882,9 +883,9 @@ function buildAplusBlockEl(b, idx) {
                 if (format === 'insertTable') {
                     document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">表头1</td><td style="padding:6px;border:1px solid #ccc;">表头2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">内容1</td><td style="padding:6px;border:1px solid #ccc;">内容2</td></tr></table>');
                 } else if (format === 'insertUnorderedList') {
-                    document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>项目1</li><li>项目2</li><li>项目3</li></ul>');
+                    document.execCommand('insertUnorderedList', false, null);
                 } else if (format === 'insertOrderedList') {
-                    document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>第一项</li><li>第二项</li><li>第三项</li></ol>');
+                    document.execCommand('insertOrderedList', false, null);
                 } else {
                     document.execCommand(format, false, null);
                 }
