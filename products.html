@@ -1146,16 +1146,16 @@
                 if (block.type === 'hero') {
                     div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
                         <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'text') {
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>`;
+                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>`;
                 } else if (block.type === 'textImage') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         </div>
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                     </div>
@@ -1165,7 +1165,7 @@
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         </div>
                     </div>
                     <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
@@ -1186,7 +1186,7 @@
             container.querySelectorAll('.aplus-block').forEach((block, index) => {
                 block.classList.toggle('edit-mode', isEdit);
                 block.querySelectorAll('[data-editable]').forEach(el => {
-                    el.contentEditable = isEdit ? 'true' : 'false';
+                    el.contentEditable = isEdit ? true : false;
                 });
                 block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
                     btn.addEventListener('click', function () {
@@ -1241,7 +1241,8 @@
             const block = product.aplus[index];
             if (!block) return;
             block.heading = blockEl.querySelector('.aplus-block-heading')?.textContent || '';
-            block.text = blockEl.querySelector('.aplus-block-text')?.textContent || '';
+            const textEl = blockEl.querySelector('.aplus-block-text');
+            block.text = textEl ? textEl.innerHTML : '';
             if (blockEl.querySelector('.aplus-image-input')) {
                 block.image = blockEl.querySelector('.aplus-image-input').value;
             }
