@@ -881,7 +881,20 @@ function buildAplusBlockEl(b, idx) {
             if (textEl) {
                 textEl.focus();
                 if (format === 'insertTable') {
-                    document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">表头1</td><td style="padding:6px;border:1px solid #ccc;">表头2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">内容1</td><td style="padding:6px;border:1px solid #ccc;">内容2</td></tr></table>');
+                    const rows = parseInt(prompt('请输入表格行数:', '3')) || 3;
+                    const cols = parseInt(prompt('请输入表格列数:', '3')) || 3;
+                    if (rows > 0 && cols > 0 && rows <= 10 && cols <= 10) {
+                        let tableHTML = '<table border="1" style="border-collapse:collapse;margin:10px 0;">';
+                        for (let r = 0; r < rows; r++) {
+                            tableHTML += '<tr>';
+                            for (let c = 0; c < cols; c++) {
+                                tableHTML += `<td style="padding:6px;border:1px solid #ccc;">${r === 0 ? '表头' + (c + 1) : '单元格' + ((r - 1) * cols + c + 1)}</td>`;
+                            }
+                            tableHTML += '</tr>';
+                        }
+                        tableHTML += '</table>';
+                        document.execCommand('insertHTML', false, tableHTML);
+                    }
                 } else if (format === 'insertUnorderedList') {
                     document.execCommand('insertUnorderedList', false, null);
                 } else if (format === 'insertOrderedList') {
