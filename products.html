@@ -1131,22 +1131,22 @@
                 div.className = 'aplus-block';
                 div.setAttribute('data-index', index);
                 
-                // 富文本工具栏（编辑模式下显示，使用网站主题色）
-                const textToolbar = `<div class="rich-text-toolbar" style="display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;">
+                // 只有管理员登录时才创建工具栏
+                const isAdminUser = isAdmin();
+                const textToolbar = isAdminUser ? `<div class="rich-text-toolbar" style="display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;">
                     <button type="button" data-format="bold" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;transition:background 0.2s;">B</button>
                     <button type="button" data-format="italic" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;transition:background 0.2s;">I</button>
                     <button type="button" data-format="underline" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;transition:background 0.2s;">U</button>
                     <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">•列表</button>
                     <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">1.列表</button>
                     <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">表格</button>
-                </div>`;
+                </div>` : '';
 
-                // 工具栏始终创建，由 CSS/edit-mode 类控制显示
-                const toolbar = `<div class="aplus-block-toolbar">
+                const toolbar = isAdminUser ? `<div class="aplus-block-toolbar">
                     <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
                     <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
                     <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
-                </div>`;
+                </div>` : '';
                 div.innerHTML = toolbar + textToolbar;
 
                 if (block.type === 'hero') {
