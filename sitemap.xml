@@ -4,40 +4,40 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://yeatru.github.io/</loc>
+        <loc>https://www.yeatru.com/</loc>
         <lastmod>2026-06-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <!-- Alternate language versions -->
-        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/"/>
     </url>
 
     <!-- Products Page -->
     <url>
-        <loc>https://yeatru.github.io/products.html</loc>
+        <loc>https://www.yeatru.com/products.html</loc>
         <lastmod>2026-06-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
         <!-- Alternate language versions -->
-        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/products.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/products.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/products.html"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/products.html"/>
     </url>
 
     <!-- CSS and JS files (optional, helps with resource indexing) -->
     <url>
-        <loc>https://yeatru.github.io/styles.css</loc>
+        <loc>https://www.yeatru.com/styles.css</loc>
         <lastmod>2026-06-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://yeatru.github.io/app.js</loc>
+        <loc>https://www.yeatru.com/app.js</loc>
         <lastmod>2026-06-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
