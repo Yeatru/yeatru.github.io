@@ -4,127 +4,41 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://www.yeatru.com/</loc>
-        <lastmod>2026-06-23</lastmod>
+        <loc>https://yeatru.github.io/</loc>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/"/>
+        <!-- Alternate language versions -->
+        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/"/>
     </url>
 
     <!-- Products Page -->
     <url>
-        <loc>https://www.yeatru.com/products.html</loc>
-        <lastmod>2026-06-23</lastmod>
+        <loc>https://yeatru.github.io/products.html</loc>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/products.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/products.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/products.html"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/products.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/products.html"/>
+        <!-- Alternate language versions -->
+        <xhtml:link rel="alternate" hreflang="en" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://yeatru.github.io/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://yeatru.github.io/products.html"/>
     </url>
 
-    <!-- Product Detail Pages -->
+    <!-- CSS and JS files (optional, helps with resource indexing) -->
     <url>
-        <loc>https://www.yeatru.com/products.html?id=1</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=2</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=3</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=4</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=5</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=6</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=7</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=8</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=9</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=10</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=11</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=12</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=13</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/products.html?id=14</loc>
-        <lastmod>2026-06-23</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- CSS and JS files -->
-    <url>
-        <loc>https://www.yeatru.com/styles.css</loc>
-        <lastmod>2026-06-23</lastmod>
+        <loc>https://yeatru.github.io/styles.css</loc>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://www.yeatru.com/app.js</loc>
-        <lastmod>2026-06-23</lastmod>
+        <loc>https://yeatru.github.io/app.js</loc>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
