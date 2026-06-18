@@ -1124,13 +1124,24 @@
                 const div = document.createElement('div');
                 div.className = 'aplus-block';
                 div.setAttribute('data-index', index);
+                
+                // 富文本工具栏（始终显示，鲜红色背景醒目）
+                const textToolbar = `<div style="display:flex;flex-wrap:wrap;gap:6px;background:#ff6b6b;padding:10px;border-radius:6px;margin-bottom:10px;border:2px solid #cc0000;">
+                    <button type="button" data-format="bold" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;">B</button>
+                    <button type="button" data-format="italic" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;">I</button>
+                    <button type="button" data-format="underline" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;">U</button>
+                    <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">•列表</button>
+                    <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">1.列表</button>
+                    <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">表格</button>
+                </div>`;
+
                 // 工具栏始终创建，由 CSS/edit-mode 类控制显示
                 const toolbar = `<div class="aplus-block-toolbar">
                     <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
                     <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
                     <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
                 </div>`;
-                div.innerHTML = toolbar;
+                div.innerHTML = toolbar + textToolbar;
 
                 if (block.type === 'hero') {
                     div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
@@ -1200,6 +1211,27 @@
                             updateAplusContent(index, block);
                         });
                     });
+                // 富文本格式按钮事件
+                block.querySelectorAll('[data-format]').forEach(btn => {
+                    btn.addEventListener('mousedown', function (e) {
+                        e.preventDefault();
+                        const format = this.dataset.format;
+                        const textEl = block.querySelector('[data-editable="text"]');
+                        if (textEl) {
+                            textEl.focus();
+                            if (format === 'insertTable') {
+                                document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">表头1</td><td style="padding:6px;border:1px solid #ccc;">表头2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">内容1</td><td style="padding:6px;border:1px solid #ccc;">内容2</td></tr></table>');
+                            } else if (format === 'insertUnorderedList') {
+                                document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>项目1</li><li>项目2</li><li>项目3</li></ul>');
+                            } else if (format === 'insertOrderedList') {
+                                document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>第一项</li><li>第二项</li><li>第三项</li></ol>');
+                            } else {
+                                document.execCommand(format, false, null);
+                            }
+                            updateAplusContent(index, block);
+                        }
+                    });
+                });
             });
         }
 
