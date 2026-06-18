@@ -380,6 +380,12 @@
             outline: 2px solid var(--peacock-blue);
             background-color: #fafdff;
         }
+        .rich-text-toolbar {
+            display: none;
+        }
+        .aplus-block.edit-mode .rich-text-toolbar {
+            display: flex !important;
+        }
         .aplus-block-heading {
             font-size: 1.2rem;
             font-weight: 600;
@@ -1125,14 +1131,14 @@
                 div.className = 'aplus-block';
                 div.setAttribute('data-index', index);
                 
-                // 富文本工具栏（始终显示，鲜红色背景醒目）
-                const textToolbar = `<div style="display:flex;flex-wrap:wrap;gap:6px;background:#ff6b6b;padding:10px;border-radius:6px;margin-bottom:10px;border:2px solid #cc0000;">
-                    <button type="button" data-format="bold" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;">B</button>
-                    <button type="button" data-format="italic" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;">I</button>
-                    <button type="button" data-format="underline" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;">U</button>
-                    <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">•列表</button>
-                    <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">1.列表</button>
-                    <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.9);border:1px solid #fff;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;">表格</button>
+                // 富文本工具栏（编辑模式下显示，使用网站主题色）
+                const textToolbar = `<div class="rich-text-toolbar" style="display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;">
+                    <button type="button" data-format="bold" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;transition:background 0.2s;">B</button>
+                    <button type="button" data-format="italic" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;transition:background 0.2s;">I</button>
+                    <button type="button" data-format="underline" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;transition:background 0.2s;">U</button>
+                    <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">•列表</button>
+                    <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">1.列表</button>
+                    <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">表格</button>
                 </div>`;
 
                 // 工具栏始终创建，由 CSS/edit-mode 类控制显示
@@ -1222,9 +1228,9 @@
                             if (format === 'insertTable') {
                                 document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">表头1</td><td style="padding:6px;border:1px solid #ccc;">表头2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">内容1</td><td style="padding:6px;border:1px solid #ccc;">内容2</td></tr></table>');
                             } else if (format === 'insertUnorderedList') {
-                                document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>项目1</li><li>项目2</li><li>项目3</li></ul>');
+                                document.execCommand('insertUnorderedList', false, null);
                             } else if (format === 'insertOrderedList') {
-                                document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>第一项</li><li>第二项</li><li>第三项</li></ol>');
+                                document.execCommand('insertOrderedList', false, null);
                             } else {
                                 document.execCommand(format, false, null);
                             }
@@ -1571,6 +1577,13 @@
                 updateLoginUI(false);
                 if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailMode === 'edit') {
                     setDetailMode('preview');
+                }
+                // 重新渲染A+内容以移除工具栏
+                if (currentDetailProductId) {
+                    const product = getProducts().find(p => p.id === currentDetailProductId);
+                    if (product) {
+                        renderAplusBlocks(product.aplus || []);
+                    }
                 }
             });
 
