@@ -851,6 +851,38 @@ function buildAplusBlockEl(b, idx) {
                 </ul>
             </div>
         `;
+    } else if (b.type === 'twoColumns') {
+        content.innerHTML = `
+            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
+            <div class="aplus-block-two-columns">
+                <div class="aplus-column" data-editable="column1">${b.column1 || ''}</div>
+                <div class="aplus-column" data-editable="column2">${b.column2 || ''}</div>
+            </div>
+        `;
+    } else if (b.type === 'threeColumns') {
+        content.innerHTML = `
+            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
+            <div class="aplus-block-three-columns">
+                <div class="aplus-column" data-editable="col1">${b.col1 || ''}</div>
+                <div class="aplus-column" data-editable="col2">${b.col2 || ''}</div>
+                <div class="aplus-column" data-editable="col3">${b.col3 || ''}</div>
+            </div>
+        `;
+    } else if (b.type === 'quote') {
+        content.innerHTML = `
+            <div class="aplus-block-quote">
+                <blockquote data-editable="text">${b.text || ''}</blockquote>
+                <cite data-editable="author">— ${escapeHtml(b.author || '')}</cite>
+            </div>
+        `;
+    } else if (b.type === 'imageGallery') {
+        const images = b.images || [];
+        content.innerHTML = `
+            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Gallery')}</h3>
+            <div class="aplus-block-gallery">
+                ${images.map((img, i) => `<img src="${escapeHtml(img || '')}" alt="Gallery ${i + 1}" onerror="this.src='https://picsum.photos/400/300'" data-editable-img data-index="${i}"><input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img-index="${i}" value="${escapeHtml(img || '')}">`).join('')}
+            </div>
+        `;
     }
     wrap.appendChild(content);
 
@@ -928,7 +960,11 @@ function addAplusBlock(type) {
         text: { type: 'text', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...') },
         textImage: { type: 'textImage', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
         imageText: { type: 'imageText', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
-        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] }
+        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] },
+        twoColumns: { type: 'twoColumns', heading: tt('aplus.placeholderHeading', 'Section Heading'), column1: tt('aplus.placeholderText', 'Left column content...'), column2: tt('aplus.placeholderText', 'Right column content...') },
+        threeColumns: { type: 'threeColumns', heading: tt('aplus.placeholderHeading', 'Section Heading'), col1: tt('aplus.placeholderText', 'Column 1...'), col2: tt('aplus.placeholderText', 'Column 2...'), col3: tt('aplus.placeholderText', 'Column 3...') },
+        quote: { type: 'quote', text: tt('aplus.placeholderText', 'Enter your quote here...'), author: 'Author Name' },
+        imageGallery: { type: 'imageGallery', images: ['https://picsum.photos/400/300', 'https://picsum.photos/400/300', 'https://picsum.photos/400/300', 'https://picsum.photos/400/300'] }
     };
     const preset = presets[type];
     if (!preset) return;
