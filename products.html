@@ -817,9 +817,17 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="productMOQ" class="form-label" data-i18n="products.moq">MOQ (Min Order Quantity)</label>
+                            <div class="col-md-4">
+                                <label for="productMOQ" class="form-label" data-i18n="products.moq">MOQ</label>
                                 <input type="number" class="form-control" id="productMOQ" value="1">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productPriceMin" class="form-label" data-i18n="products.priceMin">Min Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMin" value="1.00" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productPriceMax" class="form-label" data-i18n="products.priceMax">Max Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMax" value="1.00" required>
                             </div>
                         </div>
                         <div class="mb-3">
