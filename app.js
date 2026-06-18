@@ -121,10 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
             renderProducts();
         });
 
-    window.addEventListener('beforeunload', function () {
-        localStorage.removeItem('yeatruAdminLoggedIn');
-    });
-
     updateLoginUI(isAdmin());
     renderCategories();
     renderProducts();
@@ -164,25 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('addVariationBtn').addEventListener('click', function () {
-        addVariationItem();
-    });
-
     document.getElementById('saveProduct').addEventListener('click', function () {
         const productId = document.getElementById('productId').value;
-        const variations = collectVariations();
-        // 从变体中计算 priceMin 和 priceMax
-        let priceMin = null;
-        let priceMax = null;
-        const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
-        if (pricedVariations.length > 0) {
-            const prices = pricedVariations.map(v => v.price);
-            priceMin = Math.min(...prices);
-            priceMax = Math.max(...prices);
-        } else {
-            priceMin = 1;
-            priceMax = 1;
-        }
         const product = {
             id: productId ? parseInt(productId) : Date.now(),
             image: document.getElementById('productImage').value,
@@ -192,10 +171,9 @@ document.addEventListener('DOMContentLoaded', function () {
             material: document.getElementById('productMaterial').value,
             size: document.getElementById('productSize').value,
             moq: parseInt(document.getElementById('productMOQ').value),
-            priceMin: priceMin,
-            priceMax: priceMax,
-            description: document.getElementById('productDescription').value,
-            variations: variations
+            priceMin: parseFloat(document.getElementById('productPriceMin').value),
+            priceMax: parseFloat(document.getElementById('productPriceMax').value),
+            description: document.getElementById('productDescription').value
         };
         const products = getProducts();
         if (productId) {
@@ -211,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const productModal = document.getElementById('productModal');
         bootstrap.Modal.getInstance(productModal).hide();
         document.getElementById('productForm').reset();
-        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productId').value = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
@@ -219,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addProductBtn').addEventListener('click', function () {
         document.getElementById('productForm').reset();
         document.getElementById('productId').value = '';
-        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
 
@@ -591,8 +567,9 @@ function renderProducts() {
                 document.getElementById('productMaterial').value = product.material;
                 document.getElementById('productSize').value = product.size;
                 document.getElementById('productMOQ').value = product.moq;
+                document.getElementById('productPriceMin').value = product.priceMin;
+                document.getElementById('productPriceMax').value = product.priceMax;
                 document.getElementById('productDescription').value = product.description;
-                renderVariationsModal(product.variations || []);
                 document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                 new bootstrap.Modal(document.getElementById('productModal')).show();
             }
@@ -639,121 +616,6 @@ function handleHashRoute() {
     }
 }
 
-function renderVariationsModal(variations) {
-    const container = document.getElementById('variationsContainer');
-    if (!container) return;
-    container.innerHTML = '';
-    if (variations && variations.length > 0) {
-        variations.forEach(v => addVariationItem(v));
-    }
-}
-function addVariationItem(data) {
-    const container = document.getElementById('variationsContainer');
-    if (!container) return;
-    const v = data || { color: '', size: '', image: '', price: '' };
-    const item = document.createElement('div');
-    item.className = 'variation-item';
-    item.innerHTML = `
-        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
-        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
-        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
-        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
-        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
-    `;
-    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
-    container.appendChild(item);
-}
-function collectVariations() {
-    const variations = [];
-    document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
-        const color = item.querySelector('.variation-color').value.trim();
-        const size = item.querySelector('.variation-size').value.trim();
-        const image = item.querySelector('.variation-image').value.trim();
-        const priceVal = item.querySelector('.variation-price').value.trim();
-        const price = priceVal ? parseFloat(priceVal) : null;
-        if (color || size) variations.push({ color, size, image, price });
-    });
-    return variations;
-}
-function renderVariationsDisplay(variations) {
-    const display = document.getElementById('variationsDisplay');
-    const list = document.getElementById('variationsList');
-    if (!display || !list) return;
-    if (!variations || variations.length === 0) {
-        display.style.display = 'none';
-        return;
-    }
-    display.style.display = 'block';
-    list.innerHTML = '';
-    variations.forEach(v => {
-        const card = document.createElement('div');
-        card.className = 'variation-card';
-        card.innerHTML = `
-            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-            <span class="variation-size">${escapeHtml(v.size || '')}</span>
-            ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
-        `;
-        card.addEventListener('click', function () {
-            document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            const priceBig = document.getElementById('detailPriceBig');
-            if (priceBig) {
-                if (v.price !== undefined && v.price !== null && v.price !== '') {
-                    priceBig.textContent = '$' + v.price;
-                } else {
-                    const product = getProducts().find(p => p.id === currentDetailProductId);
-                    if (product) {
-                        priceBig.textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
-                    }
-                }
-            }
-        });
-        list.appendChild(card);
-    });
-}
-
-function renderDetailVariationsEditor(variations) {
-    const container = document.getElementById('detailVariationsContainer');
-    if (!container) return;
-    container.innerHTML = '';
-    if (variations && variations.length > 0) {
-        variations.forEach(v => addDetailVariationItem(v));
-    } else {
-        addDetailVariationItem();
-    }
-}
-
-function addDetailVariationItem(data) {
-    const container = document.getElementById('detailVariationsContainer');
-    if (!container) return;
-    const v = data || { color: '', size: '', price: '', image: '' };
-    const item = document.createElement('div');
-    item.className = 'variation-item';
-    item.innerHTML = `
-        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
-        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
-        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
-        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
-        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
-    `;
-    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
-    container.appendChild(item);
-}
-
-function collectDetailVariations() {
-    const variations = [];
-    document.querySelectorAll('#detailVariationsContainer .variation-item').forEach(item => {
-        const color = item.querySelector('.variation-color').value.trim();
-        const size = item.querySelector('.variation-size').value.trim();
-        const image = item.querySelector('.variation-image').value.trim();
-        const priceVal = item.querySelector('.variation-price').value.trim();
-        const price = priceVal ? parseFloat(priceVal) : null;
-        if (color || size) variations.push({ color, size, image, price });
-    });
-    return variations;
-}
-
 function showDetailPage(productId) {
     const product = getProducts().find(p => p.id === productId);
     if (!product) {
@@ -792,27 +654,7 @@ function renderDetailPage(productId) {
     document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
     document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
     document.getElementById('detailDesc').textContent = product.description || '';
-
-    // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
-    let defaultPriceText;
-    if (product.variations && product.variations.length > 0) {
-        const pricedVariations = product.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
-        if (pricedVariations.length > 0) {
-            const prices = pricedVariations.map(v => parseFloat(v.price));
-            const vMin = Math.min(...prices);
-            const vMax = Math.max(...prices);
-            if (vMin === vMax) {
-                defaultPriceText = '$' + vMin;
-            } else {
-                defaultPriceText = '$' + vMin + ' - $' + vMax;
-            }
-        } else {
-            defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
-        }
-    } else {
-        defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
-    }
-    document.getElementById('detailPriceBig').textContent = defaultPriceText;
+    document.getElementById('detailPriceBig').textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
 
     document.getElementById('detailNameInput').value = product.name || '';
     document.getElementById('detailImageInput').value = product.image || '';
@@ -823,7 +665,6 @@ function renderDetailPage(productId) {
     document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
     document.getElementById('detailDescInput').value = product.description || '';
 
-    renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
 }
 
@@ -849,21 +690,6 @@ function setDetailMode(mode) {
         b.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = isEdit ? 'true' : 'false');
     });
     document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
-
-    // 变体编辑区域切换
-    const variationsList = document.getElementById('variationsList');
-    const detailVariationsContainer = document.getElementById('detailVariationsContainer');
-    if (variationsList) variationsList.style.display = isEdit ? 'none' : '';
-    if (detailVariationsContainer) {
-        detailVariationsContainer.style.display = isEdit ? 'block' : 'none';
-        if (isEdit && currentDetailProductId) {
-            const product = getProducts().find(p => p.id === currentDetailProductId);
-            if (product && product.variations) {
-                renderDetailVariationsEditor(product.variations);
-            }
-        }
-    }
-
     const badge = document.getElementById('saveStatusBadge');
     badge.style.display = isEdit ? 'inline-flex' : 'none';
     if (isEdit) setSaveStatus('saved');
@@ -911,16 +737,6 @@ function commitSave() {
         p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
-        p.variations = collectDetailVariations();
-
-        // 从变体自动计算 priceMin 和 priceMax
-        const pricedVars = p.variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
-        if (pricedVars.length > 0) {
-            const prices = pricedVars.map(v => v.price);
-            p.priceMin = Math.min(...prices);
-            p.priceMax = Math.max(...prices);
-        }
-
         products[idx] = p;
         localStorage.setItem('yeatruProducts', JSON.stringify(products));
         document.getElementById('detailName').textContent = p.name;
@@ -931,27 +747,7 @@ function commitSave() {
         document.getElementById('detailPriceMin').textContent = p.priceMin;
         document.getElementById('detailPriceMax').textContent = p.priceMax;
         document.getElementById('detailDesc').textContent = p.description;
-
-        // 保存后重新计算默认价格显示
-        let savedPriceText;
-        if (p.variations && p.variations.length > 0) {
-            const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
-            if (pricedVariations.length > 0) {
-                const prices = pricedVariations.map(v => parseFloat(v.price));
-                const vMin = Math.min(...prices);
-                const vMax = Math.max(...prices);
-                if (vMin === vMax) {
-                    savedPriceText = '$' + vMin;
-                } else {
-                    savedPriceText = '$' + vMin + ' - $' + vMax;
-                }
-            } else {
-                savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
-            }
-        } else {
-            savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
-        }
-        document.getElementById('detailPriceBig').textContent = savedPriceText;
+        document.getElementById('detailPriceBig').textContent = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
         setSaveStatus('saved');
         renderProducts();
     } catch (e) {
