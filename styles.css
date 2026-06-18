@@ -799,7 +799,41 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     color: #495057;
     line-height: 1.8;
     font-size: 0.98rem;
+    word-wrap: break-word;
+    min-height: 1.2em;
 }
+
+.aplus-block-text p { margin: 0 0 0.6rem 0; }
+.aplus-block-text br { display: block; content: ""; margin: 0; }
+.aplus-block-text h1, .aplus-block-text h2, .aplus-block-text h3 { margin: 0.8rem 0 0.4rem 0; color: #1a1a1a; }
+.aplus-block-text h1 { font-size: 1.4rem; font-weight: 600; }
+.aplus-block-text h2 { font-size: 1.2rem; font-weight: 600; }
+.aplus-block-text h3 { font-size: 1.1rem; font-weight: 600; }
+.aplus-block-text ul, .aplus-block-text ol { margin: 0.5rem 0 0.5rem 1.5rem; padding: 0; }
+.aplus-block-text li { margin: 0.2rem 0; }
+.aplus-block-text strong { font-weight: 600; color: #1a1a1a; }
+.aplus-block-text em { font-style: italic; }
+.aplus-block-text table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.8rem 0;
+    font-size: 0.92rem;
+}
+.aplus-block-text th, .aplus-block-text td {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+.aplus-block-text th {
+    background-color: #e6f0f3;
+    color: #0b7b94;
+    font-weight: 600;
+}
+.aplus-block-text tr:nth-child(even) td { background-color: #fafbfc; }
+.aplus-block-text hr { border: none; border-top: 1px solid #dee2e6; margin: 1rem 0; }
+.aplus-block-text a { color: #0b7b94; text-decoration: underline; }
+.aplus-block-text img { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; }
 
 .aplus-block-image-wrap {
     display: flex;
