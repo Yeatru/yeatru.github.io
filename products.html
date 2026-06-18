@@ -1006,8 +1006,10 @@
             } else {
                 document.getElementById('detailModeToggle').style.display = 'none';
                 document.getElementById('saveStatusBadge').style.display = 'none';
-                setDetailMode('preview');
             }
+
+            // 始终设置初始模式为 preview
+            setDetailMode('preview');
 
             renderAplusBlocks(product.aplus || []);
             window.scrollTo(0, 0);
@@ -1041,8 +1043,14 @@
             document.getElementById('detailImage').style.display = isEdit ? 'none' : 'block';
             document.getElementById('detailName').style.display = isEdit ? 'none' : 'block';
 
-            document.querySelectorAll('.aplus-block').forEach(b => b.classList.toggle('edit-mode', isEdit));
-            document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
+            // A+ 块切换 edit-mode 和 contenteditable
+            document.querySelectorAll('.aplus-block').forEach(b => {
+                b.classList.toggle('edit-mode', isEdit && isAdmin());
+                b.querySelectorAll('[data-editable]').forEach(el => {
+                    el.contentEditable = (isEdit && isAdmin()) ? 'true' : 'false';
+                });
+            });
+            document.getElementById('aplusAddBar').classList.toggle('visible', isEdit && isAdmin());
 
             if (isEdit) {
                 document.getElementById('detailImageInput').value = document.getElementById('detailImage').src;
@@ -1065,75 +1073,78 @@
                 const div = document.createElement('div');
                 div.className = 'aplus-block';
                 div.setAttribute('data-index', index);
-                let toolbar = '';
-                if (isAdmin() && currentDetailMode === 'edit') {
-                    toolbar = `<div class="aplus-block-toolbar">
-                        <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
-                        <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
-                        <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
-                    </div>`;
-                }
+                // 工具栏始终创建，由 CSS/edit-mode 类控制显示
+                const toolbar = `<div class="aplus-block-toolbar">
+                    <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
+                    <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
+                    <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
+                </div>`;
                 div.innerHTML = toolbar;
 
                 if (block.type === 'hero') {
-                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;">
-                        <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
-                        <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
+                        <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                        <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'text') {
-                    div.innerHTML += `<div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>`;
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>`;
                 } else if (block.type === 'textImage') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
                         <div class="aplus-block-text-side">
-                            <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
                         </div>
-                        <img src="${escapeHtml(block.image || '')}" alt="">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                     </div>
-                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'imageText') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-image-text">
-                        <img src="${escapeHtml(block.image || '')}" alt="">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                         <div class="aplus-block-text-side">
-                            <div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" contenteditable="false">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
                         </div>
                     </div>
-                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" value="${escapeHtml(block.image || '')}">`;
+                    <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'features') {
-                    let itemsHtml = '<ul>';
+                    let itemsHtml = '<ul data-editable="features">';
                     (block.items || []).forEach(item => {
-                        itemsHtml += `<li>${escapeHtml(item)}</li>`;
+                        itemsHtml += `<li data-editable="feature">${escapeHtml(item)}</li>`;
                     });
                     itemsHtml += '</ul>';
-                    div.innerHTML += `<div class="aplus-block-heading" contenteditable="false">${escapeHtml(block.heading || '')}</div>
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Key Features')}</div>
                         <div class="aplus-block-features">${itemsHtml}</div>`;
                 }
                 container.appendChild(div);
             });
 
-            if (isAdmin() && currentDetailMode === 'edit') {
-                container.querySelectorAll('.aplus-block').forEach((block, index) => {
-                    block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
-                        btn.addEventListener('click', function () {
-                            const aplus = getProducts().find(p => p.id === currentDetailProductId)?.aplus || [];
-                            if (this.classList.contains('btn-move-up') && index > 0) {
-                                [aplus[index], aplus[index - 1]] = [aplus[index - 1], aplus[index]];
-                            } else if (this.classList.contains('btn-move-down') && index < aplus.length - 1) {
-                                [aplus[index], aplus[index + 1]] = [aplus[index + 1], aplus[index]];
-                            } else if (this.classList.contains('btn-delete-block')) {
-                                aplus.splice(index, 1);
-                            }
-                            saveAplusData(aplus);
-                        });
+            // 根据当前编辑状态应用内容编辑和工具栏显示
+            const isEdit = currentDetailMode === 'edit' && isAdmin();
+            container.querySelectorAll('.aplus-block').forEach((block, index) => {
+                block.classList.toggle('edit-mode', isEdit);
+                block.querySelectorAll('[data-editable]').forEach(el => {
+                    el.contentEditable = isEdit ? 'true' : 'false';
+                });
+                block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const aplusData = getProducts().find(p => p.id === currentDetailProductId)?.aplus || [];
+                        if (this.classList.contains('btn-move-up') && index > 0) {
+                            [aplusData[index], aplusData[index - 1]] = [aplusData[index - 1], aplusData[index]];
+                        } else if (this.classList.contains('btn-move-down') && index < aplusData.length - 1) {
+                            [aplusData[index], aplusData[index + 1]] = [aplusData[index + 1], aplusData[index]];
+                        } else if (this.classList.contains('btn-delete-block')) {
+                            aplusData.splice(index, 1);
+                        }
+                        saveAplusData(aplusData);
                     });
-                    block.querySelectorAll('[contenteditable]').forEach(el => {
-                        el.addEventListener('blur', function () {
-                            updateAplusContent(index, block);
-                        });
+                });
+                block.querySelectorAll('[data-editable]').forEach(el => {
+                    el.addEventListener('blur', function () {
+                        updateAplusContent(index, block);
                     });
-                    block.querySelectorAll('.aplus-image-input').forEach(input => {
+                });
+                block.querySelectorAll('.aplus-image-input').forEach(input => {
                         input.addEventListener('change', function () {
                             updateAplusContent(index, block);
                         });
