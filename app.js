@@ -765,9 +765,12 @@ function defaultAplus() {
 }
 
 function renderAplusBlocks(product) {
+    console.log('renderAplusBlocks called with product:', product);
     const container = document.getElementById('aplusBlocks');
+    console.log('aplusBlocks container found:', !!container);
     if (!container) return;
     const blocks = (product && product.aplus && product.aplus.length) ? product.aplus : defaultAplus();
+    console.log('Blocks to render:', blocks.length);
     container.innerHTML = '';
     blocks.forEach((b, idx) => container.appendChild(buildAplusBlockEl(b, idx)));
     applyAplusEditState();
@@ -782,6 +785,7 @@ function applyAplusEditState() {
 }
 
 function buildAplusBlockEl(b, idx) {
+    console.log('buildAplusBlockEl called with block:', b.type, idx);
     const wrap = document.createElement('div');
     wrap.className = 'aplus-block';
     wrap.dataset.type = b.type;
