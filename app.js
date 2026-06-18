@@ -801,14 +801,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
+            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
             <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -816,7 +816,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
                 </div>
                 <img src="${escapeHtml(b.image || '')}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -894,7 +894,7 @@ function collectAplusBlocks() {
         const heading = blockEl.querySelector('[data-editable="heading"]');
         if (heading) item.heading = heading.innerText.trim();
         const text = blockEl.querySelector('[data-editable="text"]');
-        if (text) item.text = text.innerText.trim();
+        if (text) item.text = text.innerHTML.trim();
         const imgInput = blockEl.querySelector('[data-editable-img]');
         if (imgInput) item.image = imgInput.value;
         else {
