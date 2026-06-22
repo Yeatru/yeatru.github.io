@@ -1079,10 +1079,11 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     font-size: 0.85rem;
 }
 .variations-display {
+    display: none;
     margin-bottom: 1.5rem;
     padding: 1.25rem;
     background-color: #f8f9fa;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 .variations-display-title {
     font-size: 1.1rem;
