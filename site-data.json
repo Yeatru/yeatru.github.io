@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T07:11:00.738Z",
+  "updatedAt": "2026-06-22T07:09:08.073Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Kitchenware",
@@ -9,7 +9,8 @@
     "Hand Bag",
     "Electronics",
     "Home",
-    "Garden"
+    "Garden",
+    "Material"
   ],
   "products": [
     {
@@ -479,6 +480,113 @@
           "heading": "",
           "text": "xpe baby play mat, foldable crawling mat for toddlers, double sided foam playmat, large waterproof kids floor mat, 1cm thick baby play mat, portable play mat with storage bag, non slip infant crawling mat, heat insulated foam mat, oem baby play mat wholesale, toddler activity mat for living room",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSTY1002T5.jpg"
+        }
+      ]
+    },
+    {
+      "id": 1782111772835,
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSNV1000A%20(1).png",
+      "category": "Material",
+      "name": "Standard Solid Color PLA 3D Printer Filament 1.75mm 1KG",
+      "sku": "YS-NV-1000A",
+      "material": "PLA",
+      "size": "1.75mm,1kg",
+      "moq": 1,
+      "priceMin": 4.82,
+      "priceMax": 4.82,
+      "description": "1.75mm Standard Solid Color PLA 3D Printer Filament 1KG Spool, Neat Tangle-Free Winding, High Speed Printing Compatible Consumables, Low Warp No Bubble Smooth Print Material for All FDM 3D Printers",
+      "variations": [
+        {
+          "color": "White",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Black",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Gray",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Blue",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Red",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Pink",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Green",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Yellow",
+          "size": "1kg",
+          "image": "",
+          "price": null
+        },
+        {
+          "color": "Orange",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Purple",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        },
+        {
+          "color": "Brown",
+          "size": "1kg",
+          "image": "",
+          "price": null
+        },
+        {
+          "color": "Light Blue",
+          "size": "1kg",
+          "image": "",
+          "price": 4.82
+        }
+      ],
+      "aplus": [
+        {
+          "type": "hero",
+          "heading": "Product Overview",
+          "text": "Our Basic Solid Color PLA filament is the cost-effective all-round printing consumable for daily FDM creation. Made of pure biodegradable PLA pellets with specialized formula, it features precise 1.75mm diameter, neat tangle-free winding, upgraded toughness and low warping performance. It supports both normal and high-speed printing, fits almost all FDM printers, with 12 rich solid color variants for diverse DIY, commercial and student design projects.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSNV1000A%20(7).png"
+        },
+        {
+          "type": "imageText",
+          "heading": "Core Specifications",
+          "text": "<div style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"><ul><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Material: 100% Pure Biodegradable PLA</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Diameter: 1.75mm, Tolerance ±0.02mm</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Net Weight: 1000g / 1KG per spool</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Spool Size: Diameter 200mm, Width 60mm</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Available Solid Colors: White, Black, Gray, Blue, Red, Pink, Green, Yellow, Orange, Purple, Sky Blue, Brown</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Normal Printing Temp: 220℃-250℃, Speed 40-60mm/s</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">High Speed Printing Temp: 240℃-250℃, Speed 150-200mm/s</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Heat Bed Temp Suggested: 60℃-80℃</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Density: 1.27g/cm³</span></li><li><span style=\"background-color: rgba(0, 0, 0, 0);\">Key Features: No bubble, non-stick nozzle, low warp, high toughness, tangle-free winding, eco-friendly</span></li></ul><b style=\"background-color: rgba(0, 0, 0, 0);\">Usage &amp; Maintenance Tips</b></div><div style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"><ol><li style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Store filament in sealed moisture-proof bag to prevent water absorption; damp filament needs drying at 50℃ for 4-6 hours before printing.</li>\n<li style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">For high-speed printing, set fan speed above 60% to get better cooling effect and smoother surface.</li>\n<li style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Avoid sharp hard objects scratching filament surface to prevent feeding jams</li></ol></div>",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSNV1000A%20(8).png"
+        },
+        {
+          "type": "text",
+          "heading": "Bullet Points",
+          "text": "<ul><li style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Full Range of Rich Solid Color Options<div style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"></div>\nWe provide 12 classic solid colors including White, Black, Gray, Blue, Red, Pink, Green, Yellow, Orange, Purple, Sky Blue, Brown to meet all your model design demands. Uniform saturated color without color difference, brings clean, bright finished printing works for crafts, figurines, architectural models and DIY projects.</li><li style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Ultra Precise 1.75mm Diameter &amp; Stable Extrusion<div style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"></div>\nStrictly controlled diameter tolerance within ±0.02mm, consistent roundness across the whole spool. Stable feeding flow eliminates nozzle clogging, blobbing and layer shifting, effectively avoid warping issue for finished models, delivers smooth fine layer lines.</li><li style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Neat Layer Winding, Zero Tangling &amp; Smooth Feeding<div style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"></div>\nAdopts automatic precision winding craft, filament arranged evenly without overlapping or crossing. Solve the common jam and knot problem during high-speed printing, reduce printing failure and material waste, far better than messy winding ordinary filaments.</li><li style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Upgraded High Toughness Pure PLA Raw Material<div style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"></div>\nMade of 100% pure biodegradable PLA resin, no recycled filler mixed. Great flexibility &amp; impact resistance, hard to break during bending and feeding. Low shrinkage, no bubbling, non-stick nozzle, no weird odor during melting, eco-friendly and safe for long-time printing.</li><li style=\"color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\">Ultra High Compatibility &amp; Dual Speed Printing Support<div style=\"font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-family: ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 24px; flex: 0 1 auto; flex-direction: row; justify-content: normal; align-items: normal; padding: 0px; margin: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);\"></div>\nCompatible with 99.9% mainstream FDM 3D printers on market, including Creality, Bambu Lab, Anycubic, ELEGOO, Raise 3D and more. Supports normal speed (40-60mm/s, 220-250℃) &amp; high speed printing (150-200mm/s, 240-250℃), one filament fits all daily printing demands.</li></ul>\n\n\n\n",
+          "image": ""
         }
       ]
     }
