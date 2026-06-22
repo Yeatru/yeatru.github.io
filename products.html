@@ -451,6 +451,14 @@
             line-height: 1.8;
             font-size: 0.98rem;
         }
+        .aplus-block-text ul { list-style: disc; padding-left: 1.5rem; margin: 0.5rem 0; }
+        .aplus-block-text ol { list-style: decimal; padding-left: 1.5rem; margin: 0.5rem 0; }
+        .aplus-block-text li { margin: 0.3rem 0; line-height: 1.6; }
+        .aplus-block-text table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; }
+        .aplus-block-text table td { padding: 8px; border: 1px solid #ccc; }
+        .aplus-block-text table tr:first-child td { background: #f1f3f5; font-weight: 600; }
+        .aplus-block-text p { margin: 0.5rem 0; }
+        .aplus-block-text strong { font-weight: 700; color: #212529; }
         .aplus-block-image-wrap {
             display: flex;
             gap: 1rem;
@@ -1259,25 +1267,39 @@
                 div.setAttribute('data-index', index);
                 // 工具栏始终创建，由 CSS/edit-mode 类控制显示
                 const toolbar = `<div class="aplus-block-toolbar">
+                    <span class="toolbar-text-controls" style="display:inline-flex;gap:4px;margin-right:8px;border-right:1px solid #ddd;padding-right:8px;">
+                        <button type="button" class="btn-text-bold" title="Bold" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;font-weight:bold;">B</button>
+                        <button type="button" class="btn-text-italic" title="Italic" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;font-style:italic;">I</button>
+                        <button type="button" class="btn-text-underline" title="Underline" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;text-decoration:underline;">U</button>
+                        <button type="button" class="btn-text-ul" title="Bullet List" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;">• 列表</button>
+                        <button type="button" class="btn-text-ol" title="Numbered List" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;">1. 列表</button>
+                        <button type="button" class="btn-text-table" title="Insert Table" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;">表格</button>
+                        <button type="button" class="btn-text-br" title="Line Break" style="padding:4px 8px;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;">换行</button>
+                    </span>
                     <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
                     <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
                     <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
                 </div>`;
                 div.innerHTML = toolbar;
 
+                function renderRichText(s) {
+                    if (!s) return '';
+                    if (s.indexOf('<') !== -1) return s;
+                    return escapeHtml(s).replace(/\n/g, '<br>');
+                }
                 if (block.type === 'hero') {
                     div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
                         <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                        <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
                         <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'text') {
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>`;
+                        <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>`;
                 } else if (block.type === 'textImage') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
                         </div>
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                     </div>
@@ -1287,14 +1309,14 @@
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
                         </div>
                     </div>
                     <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'features') {
                     let itemsHtml = '<ul data-editable="features">';
                     (block.items || []).forEach(item => {
-                        itemsHtml += `<li data-editable="feature">${escapeHtml(item)}</li>`;
+                        itemsHtml += `<li data-editable="feature">${renderRichText(item)}</li>`;
                     });
                     itemsHtml += '</ul>';
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Key Features')}</div>
@@ -1309,6 +1331,37 @@
                 block.classList.toggle('edit-mode', isEdit);
                 block.querySelectorAll('[data-editable]').forEach(el => {
                     el.contentEditable = isEdit ? 'true' : 'false';
+                });
+                block.querySelectorAll('.btn-text-bold, .btn-text-italic, .btn-text-underline, .btn-text-ul, .btn-text-ol, .btn-text-table, .btn-text-br').forEach(btn => {
+                    btn.addEventListener('mousedown', function (e) { e.preventDefault(); });
+                    btn.addEventListener('click', function () {
+                        const textEl = block.querySelector('[data-editable="text"]');
+                        if (!textEl) return;
+                        textEl.focus();
+                        if (this.classList.contains('btn-text-bold')) document.execCommand('bold', false, null);
+                        else if (this.classList.contains('btn-text-italic')) document.execCommand('italic', false, null);
+                        else if (this.classList.contains('btn-text-underline')) document.execCommand('underline', false, null);
+                        else if (this.classList.contains('btn-text-ul')) document.execCommand('insertUnorderedList', false, null);
+                        else if (this.classList.contains('btn-text-ol')) document.execCommand('insertOrderedList', false, null);
+                        else if (this.classList.contains('btn-text-br')) document.execCommand('insertHTML', false, '<br><br>');
+                        else if (this.classList.contains('btn-text-table')) {
+                            const rows = parseInt(prompt('表格行数:', '3')) || 3;
+                            const cols = parseInt(prompt('表格列数:', '3')) || 3;
+                            if (rows > 0 && cols > 0 && rows <= 20 && cols <= 20) {
+                                let tableHTML = '<table border="1" style="border-collapse:collapse;margin:10px 0;table-layout:auto;width:100%;">';
+                                for (let r = 0; r < rows; r++) {
+                                    tableHTML += '<tr>';
+                                    for (let c = 0; c < cols; c++) {
+                                        tableHTML += '<td style="padding:8px;border:1px solid #ccc;vertical-align:top;">单元格</td>';
+                                    }
+                                    tableHTML += '</tr>';
+                                }
+                                tableHTML += '</table>';
+                                document.execCommand('insertHTML', false, tableHTML);
+                            }
+                        }
+                        updateAplusContent(index, block);
+                    });
                 });
                 block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
                     btn.addEventListener('click', function () {
@@ -1342,7 +1395,14 @@
             const block = product.aplus[index];
             if (!block) return;
             block.heading = blockEl.querySelector('.aplus-block-heading')?.textContent || '';
-            block.text = blockEl.querySelector('.aplus-block-text')?.textContent || '';
+            const textEl = blockEl.querySelector('[data-editable="text"]');
+            block.text = textEl ? textEl.innerHTML : '';
+            if (block.type === 'features') {
+                block.items = [];
+                blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
+                    block.items.push(li.innerHTML);
+                });
+            }
             if (blockEl.querySelector('.aplus-image-input')) {
                 block.image = blockEl.querySelector('.aplus-image-input').value;
             }
