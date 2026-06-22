@@ -272,6 +272,10 @@ document.addEventListener('DOMContentLoaded', function () {
         bootstrap.Modal.getInstance(document.getElementById('logoModal')).hide();
     });
 
+    document.getElementById('detailAddVariationBtn').addEventListener('click', function () {
+        addDetailVariationItem();
+    });
+
     window.addEventListener('hashchange', handleHashRoute);
     handleHashRoute();
 });
@@ -685,15 +689,25 @@ function renderVariationsDisplay(variations) {
     }
     display.style.display = 'block';
     list.innerHTML = '';
+    const hasImages = variations.some(v => v.image && v.image.trim());
     variations.forEach(v => {
         const card = document.createElement('div');
-        card.className = 'variation-card';
-        card.innerHTML = `
-            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-            <span class="variation-size">${escapeHtml(v.size || '')}</span>
-            ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
-        `;
+        card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
+        const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '';
+        if (hasImages && v.image && v.image.trim()) {
+            card.innerHTML = `
+                <img src="${escapeHtml(v.image.trim())}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
+            `;
+        } else {
+            card.innerHTML = `
+                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
+            `;
+        }
         card.addEventListener('click', function () {
             document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
