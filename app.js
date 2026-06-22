@@ -11,7 +11,7 @@ const translationResources = {
     en: { translation: {
         nav: { home: "Home", products: "Products", services: "Services", sourcingProcess: "Sourcing Process", testimonials: "Testimonials", aboutUs: "About Us", contactUs: "Contact Us", login: "Login", logout: "Logout" },
         hero: { title: "Professional China Sourcing Agent Yiwu & Global Supply Chain", desc: "One-stop sourcing solution from China: product sourcing, supplier audit, quality control, logistics shipping. Help global buyers source from China easily.", contactBtn: "Contact Us Now", productsBtn: "View Products" },
-        products: { title: "Hot Products", subtitle: "Explore our featured products sourced from China", categoryManagement: "Category Management", enterCategory: "Enter new category name", addCategory: "Add Category", addProduct: "Add New Product", imageUrl: "Image URL", enterImageUrl: "Enter product image URL", category: "Category", selectCategory: "Select Category", name: "Product Name", enterName: "Enter product name", sku: "SKU", enterSKU: "Enter product SKU", material: "Material", enterMaterial: "Enter material", size: "Size", enterSize: "Enter size", moq: "MOQ", enterMOQ: "Enter MOQ", variations: "Variations", priceMin: "Minimum Price ($)", enterMinPrice: "Enter minimum price", priceMax: "Maximum Price ($)", enterMaxPrice: "Enter maximum price", description: "Description", enterDescription: "Enter product description", cancel: "Cancel", save: "Save Product", edit: "Edit", delete: "Delete", quote: "Get a Quote", price: "Price: $", viewDetails: "View Details" },
+        products: { title: "Hot Products", subtitle: "Explore our featured products sourced from China", categoryManagement: "Category Management", enterCategory: "Enter new category name", addCategory: "Add Category", addProduct: "Add New Product", imageUrl: "Image URL", enterImageUrl: "Enter product image URL", category: "Category", selectCategory: "Select Category", name: "Product Name", enterName: "Enter product name", sku: "SKU", enterSKU: "Enter product SKU", material: "Material", enterMaterial: "Enter material", size: "Size", enterSize: "Enter size", moq: "MOQ", enterMOQ: "Enter MOQ", priceMin: "Minimum Price ($)", enterMinPrice: "Enter minimum price", priceMax: "Maximum Price ($)", enterMaxPrice: "Enter maximum price", description: "Description", enterDescription: "Enter product description", cancel: "Cancel", save: "Save Product", edit: "Edit", delete: "Delete", quote: "Get a Quote", price: "Price: $", viewDetails: "View Details" },
         filter: { title: "Filter by Category", all: "All", reset: "Reset Filter", showing: "Showing", of: "of", products: "products", noResult: "No products in this category" },
         services: { title: "Our Comprehensive Sourcing Services", subtitle: "We offer end-to-end sourcing solutions tailored to your business needs", supplierVerification: "Supplier Verification", supplierVerificationDesc: "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.", productSourcing: "Product Sourcing", productSourcingDesc: "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.", qualityControl: "Quality Control", qualityControlDesc: "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.", logistics: "Logistics & Shipping", logisticsDesc: "Hassle-free shipping solutions including sea, air and express delivery with competitive rates.", priceNegotiation: "Price Negotiation", priceNegotiationDesc: "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.", riskManagement: "Risk Management", riskManagementDesc: "Mitigate risks associated with international trade including payment security and delivery guarantees." },
         process: { title: "Our Simple Sourcing Process", subtitle: "We make sourcing from China straightforward and transparent", step1: "Your Requirements", step1Desc: "Share your product specifications, quantity, budget and timeline with our team.", step2: "Supplier Matching", step2Desc: "We identify and verify the best suppliers that match your specific requirements.", step3: "Sample & Pricing", step3Desc: "Obtain samples and competitive pricing quotes from pre-vetted suppliers.", step4: "Delivery & Support", step4Desc: "We handle production oversight, quality control and shipping to your doorstep." },
@@ -28,7 +28,7 @@ const translationResources = {
     es: { translation: {
         nav: { home: "Inicio", products: "Productos", services: "Servicios", sourcingProcess: "Proceso de Suministro", testimonials: "Testimonios", aboutUs: "Sobre Nosotros", contactUs: "Contáctenos", login: "Iniciar Sesión", logout: "Cerrar Sesión" },
         hero: { title: "Agente Profesional de Suministro en China Yiwu & Cadena de Suministro Global", desc: "Solución integral de suministro desde China: búsqueda de productos, auditoría de proveedores, control de calidad, envío logístico. Ayudamos a compradores globales a abastecerse de China fácilmente.", contactBtn: "Contáctenos Ahora", productsBtn: "Ver Productos" },
-        products: { title: "Productos Populares", subtitle: "Explora nuestros productos destacados suministrados desde China", categoryManagement: "Gestión de Categorías", enterCategory: "Ingrese el nombre de la nueva categoría", addCategory: "Agregar Categoría", addProduct: "Agregar Nuevo Producto", imageUrl: "URL de la Imagen", enterImageUrl: "Ingrese la URL de la imagen del producto", category: "Categoría", selectCategory: "Seleccionar Categoría", name: "Nombre del Producto", enterName: "Ingrese el nombre del producto", sku: "SKU", enterSKU: "Ingrese el SKU del producto", material: "Material", enterMaterial: "Ingrese el material", size: "Tamaño", enterSize: "Ingrese el tamaño", moq: "MOQ", enterMOQ: "Ingrese la MOQ", variations: "Variaciones", priceMin: "Precio Mínimo ($)", enterMinPrice: "Ingrese el precio mínimo", priceMax: "Precio Máximo ($)", enterMaxPrice: "Ingrese el precio máximo", description: "Descripción", enterDescription: "Ingrese la descripción del producto", cancel: "Cancelar", save: "Guardar Producto", edit: "Editar", delete: "Eliminar", quote: "Solicitar Presupuesto", price: "Precio: $", viewDetails: "Ver Detalles" },
+        products: { title: "Productos Populares", subtitle: "Explora nuestros productos destacados suministrados desde China", categoryManagement: "Gestión de Categorías", enterCategory: "Ingrese el nombre de la nueva categoría", addCategory: "Agregar Categoría", addProduct: "Agregar Nuevo Producto", imageUrl: "URL de la Imagen", enterImageUrl: "Ingrese la URL de la imagen del producto", category: "Categoría", selectCategory: "Seleccionar Categoría", name: "Nombre del Producto", enterName: "Ingrese el nombre del producto", sku: "SKU", enterSKU: "Ingrese el SKU del producto", material: "Material", enterMaterial: "Ingrese el material", size: "Tamaño", enterSize: "Ingrese el tamaño", moq: "MOQ", enterMOQ: "Ingrese la MOQ", priceMin: "Precio Mínimo ($)", enterMinPrice: "Ingrese el precio mínimo", priceMax: "Precio Máximo ($)", enterMaxPrice: "Ingrese el precio máximo", description: "Descripción", enterDescription: "Ingrese la descripción del producto", cancel: "Cancelar", save: "Guardar Producto", edit: "Editar", delete: "Eliminar", quote: "Solicitar Presupuesto", price: "Precio: $", viewDetails: "Ver Detalles" },
         filter: { title: "Filtrar por Categoría", all: "Todos", reset: "Restablecer Filtro", showing: "Mostrando", of: "de", products: "productos", noResult: "No hay productos en esta categoría" },
         services: { title: "Nuestros Servicios Integrales de Suministro", subtitle: "Ofrecemos soluciones de suministro de extremo a extremo adaptadas a las necesidades de su negocio", supplierVerification: "Verificación de Proveedores", supplierVerificationDesc: "Revisamos y verificamos a fondo a los proveedores para garantizar que cumplen con los estándares de calidad internacionales y la ética empresarial.", productSourcing: "Búsqueda de Productos", productSourcingDesc: "Encuentra los productos adecuados a precios competitivos con nuestra extensa red de fabricantes y proveedores confiables.", qualityControl: "Control de Calidad", qualityControlDesc: "Inspección de calidad integral en cada etapa de la producción para garantizar que los productos cumplen con sus especificaciones.", logistics: "Logística y Envío", logisticsDesc: "Soluciones de envío sin complicaciones que incluyen envío marítimo, aéreo y exprés con tarifas competitivas.", priceNegotiation: "Negociación de Precios", priceNegotiationDesc: "Aproveche nuestra experiencia local para negociar los mejores precios y condiciones de pago con los proveedores.", riskManagement: "Gestión de Riesgos", riskManagementDesc: "Mitigar los riesgos asociados con el comercio internacional, incluida la seguridad de pagos y garantías de entrega." },
         process: { title: "Nuestro Simple Proceso de Suministro", subtitle: "Hacemos que el aprovisionamiento desde China sea sencillo y transparente", step1: "Sus Requisitos", step1Desc: "Comuníquese con nuestro equipo sobre las especificaciones del producto, cantidad, presupuesto y cronograma.", step2: "Coincidencia de Proveedores", step2Desc: "Identificamos y verificamos a los mejores proveedores que se adaptan a sus requisitos específicos.", step3: "Muestras y Precios", step3Desc: "Obtenga muestras y cotizaciones de precios competitivos de proveedores previamente verificados.", step4: "Entrega y Soporte", step4Desc: "Nos encargamos de la supervisión de la producción, el control de calidad y el envío hasta su puerta." },
@@ -45,7 +45,7 @@ const translationResources = {
     fr: { translation: {
         nav: { home: "Accueil", products: "Produits", services: "Services", sourcingProcess: "Processus d'Approvisionnement", testimonials: "Témoignages", aboutUs: "À Propos de Nous", contactUs: "Nous Contacter", login: "Connexion", logout: "Déconnexion" },
         hero: { title: "Agent Professionnel d'Approvisionnement en Chine Yiwu & Chaîne d'Approvisionnement Mondiale", desc: "Solution d'approvisionnement tout-en-un depuis la Chine: recherche de produits, audit de fournisseurs, contrôle de qualité, expédition logistique. Aidons les acheteurs mondiaux à s'approvisionner facilement depuis la Chine.", contactBtn: "Nous Contacter Maintenant", productsBtn: "Voir les Produits" },
-        products: { title: "Produits Populaires", subtitle: "Découvrez nos produits phares approvisionnés depuis la Chine", categoryManagement: "Gestion des Catégories", enterCategory: "Entrez le nom de la nouvelle catégorie", addCategory: "Ajouter une Catégorie", addProduct: "Ajouter un Nouveau Produit", imageUrl: "URL de l'Image", enterImageUrl: "Entrez l'URL de l'image du produit", category: "Catégorie", selectCategory: "Sélectionner une Catégorie", name: "Nom du Produit", enterName: "Entrez le nom du produit", sku: "SKU", enterSKU: "Entrez le SKU du produit", material: "Matériau", enterMaterial: "Entrez le matériau", size: "Taille", enterSize: "Entrez la taille", moq: "MOQ", enterMOQ: "Entrez la MOQ", variations: "Variations", priceMin: "Prix Minimum ($)", enterMinPrice: "Entrez le prix minimum", priceMax: "Prix Maximum ($)", enterMaxPrice: "Entrez le prix maximum", description: "Description", enterDescription: "Entrez la description du produit", cancel: "Annuler", save: "Enregistrer", edit: "Modifier", delete: "Supprimer", quote: "Demander un Devis", price: "Prix: $", viewDetails: "Voir les Détails" },
+        products: { title: "Produits Populaires", subtitle: "Découvrez nos produits phares approvisionnés depuis la Chine", categoryManagement: "Gestion des Catégories", enterCategory: "Entrez le nom de la nouvelle catégorie", addCategory: "Ajouter une Catégorie", addProduct: "Ajouter un Nouveau Produit", imageUrl: "URL de l'Image", enterImageUrl: "Entrez l'URL de l'image du produit", category: "Catégorie", selectCategory: "Sélectionner une Catégorie", name: "Nom du Produit", enterName: "Entrez le nom du produit", sku: "SKU", enterSKU: "Entrez le SKU du produit", material: "Matériau", enterMaterial: "Entrez le matériau", size: "Taille", enterSize: "Entrez la taille", moq: "MOQ", enterMOQ: "Entrez la MOQ", priceMin: "Prix Minimum ($)", enterMinPrice: "Entrez le prix minimum", priceMax: "Prix Maximum ($)", enterMaxPrice: "Entrez le prix maximum", description: "Description", enterDescription: "Entrez la description du produit", cancel: "Annuler", save: "Enregistrer", edit: "Modifier", delete: "Supprimer", quote: "Demander un Devis", price: "Prix: $", viewDetails: "Voir les Détails" },
         filter: { title: "Filtrer par Catégorie", all: "Tous", reset: "Réinitialiser le Filtre", showing: "Affichage de", of: "sur", products: "produits", noResult: "Aucun produit dans cette catégorie" },
         services: { title: "Nos Services Complets d'Approvisionnement", subtitle: "Nous offrons des solutions d'approvisionnement de bout en bout adaptées aux besoins de votre entreprise", supplierVerification: "Vérification des Fournisseurs", supplierVerificationDesc: "Nous examinons et vérifions en profondeur les fournisseurs pour garantir qu'ils respectent les normes de qualité internationales et l'éthique professionnelle.", productSourcing: "Recherche de Produits", productSourcingDesc: "Trouvez les bons produits à des prix compétitifs grâce à notre vaste réseau de fabricants et fournisseurs fiables.", qualityControl: "Contrôle de Qualité", qualityControlDesc: "Inspection de qualité complète à chaque étape de la production pour garantir que les produits répondent à vos spécifications.", logistics: "Logistique et Expédition", logisticsDesc: "Solutions d'expédition sans tracas incluant la livraison maritime, aérienne et express à des tarifs compétitifs.", priceNegotiation: "Négociation de Prix", priceNegotiationDesc: "Profitez de notre expertise locale pour négocier les meilleurs prix et conditions de paiement avec les fournisseurs.", riskManagement: "Gestion des Risques", riskManagementDesc: "Atténuer les risques liés au commerce international, y compris la sécurité des paiements et les garanties de livraison." },
         process: { title: "Notre Simple Processus d'Approvisionnement", subtitle: "Nous rendons l'approvisionnement depuis la Chine simple et transparent", step1: "Vos Exigences", step1Desc: "Partagez vos spécifications de produit, quantité, budget et calendrier avec notre équipe.", step2: "Appariement des Fournisseurs", step2Desc: "Nous identifions et vérifions les meilleurs fournisseurs correspondant à vos exigences spécifiques.", step3: "Échantillons et Prix", step3Desc: "Obtenez des échantillons et des devis de prix compétitifs de fournisseurs pré-vérifiés.", step4: "Livraison et Support", step4Desc: "Nous nous occupons de la supervision de la production, du contrôle de qualité et de l'expédition jusqu'à votre porte." },
@@ -62,7 +62,7 @@ const translationResources = {
     ru: { translation: {
         nav: { home: "Главная", products: "Продукты", services: "Услуги", sourcingProcess: "Процесс Поставок", testimonials: "Отзывы", aboutUs: "О Нас", contactUs: "Связаться", login: "Войти", logout: "Выйти" },
         hero: { title: "Профессиональный Агент По Поставкам Из Китая Ивю", desc: "Комплексное решение по поставкам из Китая.", contactBtn: "Связаться Сейчас", productsBtn: "Посмотреть Продукты" },
-        products: { title: "Популярные Продукты", subtitle: "Изучите наши рекомендуемые продукты из Китая", categoryManagement: "Управление Категориями", enterCategory: "Введите название", addCategory: "Добавить", addProduct: "Добавить Продукт", imageUrl: "URL Изображения", enterImageUrl: "Введите URL", category: "Категория", selectCategory: "Выберите", name: "Название", enterName: "Введите название", sku: "Артикул", enterSKU: "Введите артикул", material: "Материал", enterMaterial: "Введите материал", size: "Размер", enterSize: "Введите размер", moq: "MOQ", enterMOQ: "Введите MOQ", variations: "Варианты", priceMin: "Мин. Цена ($)", enterMinPrice: "Введите мин. цену", priceMax: "Макс. Цена ($)", enterMaxPrice: "Введите макс. цену", description: "Описание", enterDescription: "Введите описание", cancel: "Отмена", save: "Сохранить", edit: "Редактировать", delete: "Удалить", quote: "Получить Котировку", price: "Цена: $", viewDetails: "Подробнее" },
+        products: { title: "Популярные Продукты", subtitle: "Изучите наши рекомендуемые продукты из Китая", categoryManagement: "Управление Категориями", enterCategory: "Введите название", addCategory: "Добавить", addProduct: "Добавить Продукт", imageUrl: "URL Изображения", enterImageUrl: "Введите URL", category: "Категория", selectCategory: "Выберите", name: "Название", enterName: "Введите название", sku: "Артикул", enterSKU: "Введите артикул", material: "Материал", enterMaterial: "Введите материал", size: "Размер", enterSize: "Введите размер", moq: "MOQ", enterMOQ: "Введите MOQ", priceMin: "Мин. Цена ($)", enterMinPrice: "Введите мин. цену", priceMax: "Макс. Цена ($)", enterMaxPrice: "Введите макс. цену", description: "Описание", enterDescription: "Введите описание", cancel: "Отмена", save: "Сохранить", edit: "Редактировать", delete: "Удалить", quote: "Получить Котировку", price: "Цена: $", viewDetails: "Подробнее" },
         filter: { title: "Фильтр по Категории", all: "Все", reset: "Сбросить", showing: "Показано", of: "из", products: "продуктов", noResult: "Нет продуктов в этой категории" },
         services: { title: "Наши Услуги По Поставкам", subtitle: "Комплексные решения по поставкам", supplierVerification: "Проверка Поставщиков", supplierVerificationDesc: "Тщательная проверка поставщиков.", productSourcing: "Поиск Продуктов", productSourcingDesc: "Найдите нужные продукты.", qualityControl: "Контроль Качества", qualityControlDesc: "Контроль качества на каждом этапе.", logistics: "Логистика и Доставка", logisticsDesc: "Беспроблемная доставка.", priceNegotiation: "Переговоры По Ценам", priceNegotiationDesc: "Лучшие цены.", riskManagement: "Управление Рисками", riskManagementDesc: "Снижение рисков." },
         process: { title: "Наш Процесс Поставок", subtitle: "Простой и прозрачный процесс", step1: "Ваши Требования", step1Desc: "Поделитесь спецификациями.", step2: "Подбор Поставщиков", step2Desc: "Подбираем лучших поставщиков.", step3: "Образцы и Цены", step3Desc: "Образцы и цены.", step4: "Доставка и Поддержка", step4Desc: "Контроль производства и доставка." },
@@ -87,22 +87,6 @@ function isAdmin() {
     return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
 }
 
-function decompressText(text) {
-    if (typeof text === 'object' && text.compressed && text.data) {
-        try {
-            const decoded = atob(text.data);
-            const charData = decoded.split('').map(function(c) { return c.charCodeAt(0); });
-            const binData = new Uint8Array(charData);
-            const decompressed = pako.inflate(binData, {to:'string'});
-            return decompressed;
-        } catch (e) {
-            console.warn('Failed to decompress text:', e);
-            return '';
-        }
-    }
-    return text;
-}
-
 function escapeHtml(str) {
     if (str === null || str === undefined) return '';
     return String(str).replace(/[&<>"']/g, function (s) {
@@ -119,10 +103,6 @@ function tt(key, fallback) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    localStorage.removeItem('yeatruSiteData');
-    localStorage.removeItem('yeatruProducts');
-    localStorage.removeItem('yeatruCategories');
-
     i18next
         .use(i18nextBrowserLanguageDetector)
         .init({
@@ -136,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(function () {
             updateContent();
             bindLanguageEvents();
+            loadRemoteSiteData();
+            renderCategoryFilter();
+            renderProducts();
         });
 
     window.addEventListener('beforeunload', function () {
@@ -143,17 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     updateLoginUI(isAdmin());
+    renderCategories();
+    renderProducts();
     renderBrandLogo();
-
-    // 先加载远程数据，再渲染产品列表
-    loadRemoteSiteData().then(function(data) {
-        if (data) {
-            console.info('Site data loaded, rendering products with', data.products ? data.products.length : 0, 'products');
-        }
-        renderCategories();
-        renderCategoryFilter();
-        renderProducts();
-    });
 
     document.getElementById('submitLogin').addEventListener('click', function () {
         const username = document.getElementById('adminUsername').value.trim();
@@ -295,10 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.removeItem('yeatruBrandLogo');
         renderBrandLogo();
         bootstrap.Modal.getInstance(document.getElementById('logoModal')).hide();
-    });
-
-    document.getElementById('detailAddVariationBtn').addEventListener('click', function () {
-        addDetailVariationItem();
     });
 
     window.addEventListener('hashchange', handleHashRoute);
@@ -509,23 +480,13 @@ function applySiteData(data, options = {}) {
 
 async function loadRemoteSiteData() {
     try {
-        const cacheBuster = '?v=' + Date.now();
-        const response = await fetch(REMOTE_DATA_URL + cacheBuster, {
-            cache: 'no-store',
-            headers: {
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Pragma': 'no-cache',
-                'Expires': '0'
-            }
-        });
+        const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
         if (!response.ok) throw new Error('site-data.json not found');
         const data = await response.json();
         applySiteData(data, { silent: true });
-        console.info('已从 site-data.json 读取公开数据, 产品数:', data.products ? data.products.length : 0);
-        return data;
+        console.info('已从 site-data.json 读取公开数据');
     } catch (error) {
         console.info('未读取到 site-data.json，使用本地缓存或默认数据。', error);
-        return null;
     }
 }
 
@@ -714,48 +675,6 @@ function collectVariations() {
     });
     return variations;
 }
-function renderVariationsSummary(variations) {
-    const row = document.getElementById('detailVariationsRow');
-    const summary = document.getElementById('detailVariationsSummary');
-    if (!row || !summary) return;
-
-    if (!variations || variations.length === 0) {
-        row.style.display = 'none';
-        return;
-    }
-
-    row.style.display = 'table-row';
-    summary.innerHTML = '';
-
-    variations.forEach(v => {
-        const tag = document.createElement('span');
-        tag.className = 'variation-tag';
-        
-        const colorDot = document.createElement('span');
-        colorDot.className = 'variation-tag-color';
-        colorDot.style.backgroundColor = v.color || '#ccc';
-        tag.appendChild(colorDot);
-
-        const colorName = document.createElement('span');
-        colorName.textContent = v.color || '-';
-        tag.appendChild(colorName);
-
-        if (v.size) {
-            const sizeSpan = document.createElement('span');
-            sizeSpan.textContent = v.size;
-            tag.appendChild(sizeSpan);
-        }
-
-        if (v.price !== undefined && v.price !== null && v.price !== '') {
-            const priceSpan = document.createElement('span');
-            priceSpan.className = 'variation-tag-price';
-            priceSpan.textContent = '$' + v.price;
-            tag.appendChild(priceSpan);
-        }
-
-        summary.appendChild(tag);
-    });
-}
 function renderVariationsDisplay(variations) {
     const display = document.getElementById('variationsDisplay');
     const list = document.getElementById('variationsList');
@@ -764,26 +683,17 @@ function renderVariationsDisplay(variations) {
         display.style.display = 'none';
         return;
     }
+    display.style.display = 'block';
     list.innerHTML = '';
-    const hasImages = variations.some(v => v.image && v.image.trim());
     variations.forEach(v => {
         const card = document.createElement('div');
-        card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
-        const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '';
-        if (hasImages && v.image && v.image.trim()) {
-            card.innerHTML = `
-                <img src="${escapeHtml(v.image.trim())}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
-            `;
-        } else {
-            card.innerHTML = `
-                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
-            `;
-        }
+        card.className = 'variation-card';
+        card.innerHTML = `
+            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+            <span class="variation-size">${escapeHtml(v.size || '')}</span>
+            ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
+        `;
         card.addEventListener('click', function () {
             document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
@@ -879,9 +789,9 @@ function renderDetailPage(productId) {
     document.getElementById('detailMaterial').textContent = product.material || '';
     document.getElementById('detailSize').textContent = product.size || '';
     document.getElementById('detailMOQ').textContent = product.moq || '';
+    document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
+    document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
     document.getElementById('detailDesc').textContent = product.description || '';
-
-    renderVariationsSummary(product.variations);
 
     // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
     let defaultPriceText;
@@ -906,13 +816,12 @@ function renderDetailPage(productId) {
 
     document.getElementById('detailNameInput').value = product.name || '';
     document.getElementById('detailImageInput').value = product.image || '';
-    const setInputValue = (id, value) => { const el = document.getElementById(id); if (el) el.value = value || ''; };
-    setInputValue('detailMaterialInput', product.material);
-    setInputValue('detailSizeInput', product.size);
-    setInputValue('detailMOQInput', product.moq);
-    setInputValue('detailPriceMinInput', product.priceMin);
-    setInputValue('detailPriceMaxInput', product.priceMax);
-    setInputValue('detailDescInput', product.description);
+    document.getElementById('detailMaterialInput').value = product.material || '';
+    document.getElementById('detailSizeInput').value = product.size || '';
+    document.getElementById('detailMOQInput').value = product.moq || '';
+    document.getElementById('detailPriceMinInput').value = product.priceMin || '';
+    document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
+    document.getElementById('detailDescInput').value = product.description || '';
 
     renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
@@ -991,16 +900,15 @@ function commitSave() {
         const p = products[idx];
         p.name = document.getElementById('detailNameInput').value || p.name;
         p.image = document.getElementById('detailImageInput').value || p.image;
-        const getInputValue = (id) => { const el = document.getElementById(id); return el ? el.value : ''; };
-        p.material = getInputValue('detailMaterialInput') || p.material;
-        p.size = getInputValue('detailSizeInput') || p.size;
-        const moqV = getInputValue('detailMOQInput');
+        p.material = document.getElementById('detailMaterialInput').value || p.material;
+        p.size = document.getElementById('detailSizeInput').value || p.size;
+        const moqV = document.getElementById('detailMOQInput').value;
         if (moqV) p.moq = parseInt(moqV);
-        const minV = getInputValue('detailPriceMinInput');
+        const minV = document.getElementById('detailPriceMinInput').value;
         if (minV) p.priceMin = parseFloat(minV);
-        const maxV = getInputValue('detailPriceMaxInput');
+        const maxV = document.getElementById('detailPriceMaxInput').value;
         if (maxV) p.priceMax = parseFloat(maxV);
-        p.description = getInputValue('detailDescInput') || p.description;
+        p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
         p.variations = collectDetailVariations();
@@ -1097,14 +1005,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <p class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</p>
-            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;height:auto;" onerror="this.src='https://picsum.photos/1200/420'">
+            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
+            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</div>
+            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -1112,7 +1020,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</div>
+                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
                 </div>
                 <img src="${escapeHtml(b.image || '')}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -1124,7 +1032,7 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(decompressText(it)) + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(it) + '</li>').join('')}
                 </ul>
             </div>
         `;

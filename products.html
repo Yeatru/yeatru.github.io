@@ -647,31 +647,30 @@
             </div>
 
             <div class="detail-main">
-                <div class="detail-image-wrapper">
+                <div>
                     <img id="detailImage" class="detail-image" src="" alt="Product image">
                     <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
                 </div>
-                <div class="detail-info-wrapper">
-                    <div class="detail-info">
-                        <h1 id="detailName">—</h1>
-                        <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
-                        <div class="detail-meta">
-                            <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
-                            &nbsp;|&nbsp;
-                            <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
-                        </div>
-                        <table class="detail-spec-table">
-                            <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
-                            <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
-                            <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
-                            <tr id="detailVariationsRow"><th data-i18n="products.variations">Variations</th><td><div id="detailVariationsSummary" class="variations-summary"></div></td></tr>
-                        </table>
-                        <div class="detail-price-big" id="detailPriceBig">—</div>
-                        <p class="text-muted" id="detailDesc">—</p>
-                        <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+                <div class="detail-info">
+                    <h1 id="detailName">—</h1>
+                    <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
+                    <div class="detail-meta">
+                        <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
+                        &nbsp;|&nbsp;
+                        <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
                     </div>
+                    <table class="detail-spec-table">
+                        <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
+                    </table>
+                    <div class="detail-price-big" id="detailPriceBig">—</div>
+                    <p class="text-muted" id="detailDesc">—</p>
+                    <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
 
-                    <div id="variationsDisplay" class="variations-display" style="display:none !important;">
+                    <div id="variationsDisplay" class="variations-display" style="display:none;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
                             <button type="button" class="btn btn-sm btn-outline-secondary detail-edit-only" id="detailAddVariationBtn" style="display:none;"><i class="fas fa-plus me-1"></i> Add Variation</button>
@@ -890,7 +889,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
     <script>
         /* ========== 默认产品数据（来自 site-data.json） ========== */
         const DEFAULT_PRODUCTS = [{"id":1,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201Apic2.jpg","category":"Apparel","name":"Men Quick Dry Workout Tracksuit Set","sku":"YS-CL-201A","material":"Polyester","size":"L/XL/XXL/XXXL/XXXXL","moq":100,"priceMin":6.49,"priceMax":6.99,"description":"2026 New Men Quick Dry Workout Tracksuit Set, Short Sleeve Athletic T-Shirt + 2-in-1 Double Layer Running Shorts, Breathable Lightweight Training Sportswear for Gym Running Swimming Beach","aplus":[{"type":"textImage","heading":"Product Overview","text":"This men's athletic 2-piece sport set includes a quick-dry short sleeve t-shirt and double layer running shorts, designed for all kinds of sports and summer daily use. The top adopts breathable quick-dry polyester fabric, effectively pulls sweat away from skin surface and speeds up air drying, lightweight without sticky feeling after sweating. Crew neck and stretch short sleeves bring zero restraint for arm movements. The matching shorts feature a practical double-layer structure. The inner compression liner offers supportive fit and avoids see-through or chafing; the outer loose layer comes with adjustable drawstring elastic waistband, convenient to tighten or loosen as you like. Side split design greatly boosts mobility during running, jumping and strength training. Minimal brand logo decoration on chest and shorts hem, simple stylish solid black design.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL201A.png"},{"type":"features","heading":"Prodcut Features","items":["Premium Quick Dry Fabric: Made of high-quality polyester blend with spandex, ultra lightweight, moisture-wicking and sweat evaporates rapidly, keep you cool and dry during all workouts.","2-in-1 Double Layer Shorts Design: Built-in tight compression liner prevents rubbing and private exposure; outer loose short layer with drawstring elastic waist for adjustable fit, side split hem for unrestricted movement.","Comfortable Athletic Short Sleeve Tee: Crew neck, raglan short sleeves, smooth stretch fabric, classic minimalist logo print, no tight binding, suitable for long-time gym, running and training.","Multi-Scenario Sportswear Suit: Perfect for gym training, jogging, running, swimming, beach, fitness, cycling, hiking and daily casual wear; ideal as workout set, swim trunks set and summer athletic outfit.","Multiple Sizes Available: L / XL / XXL / XXXL / XXXXL to fit weight range 42.5kg - 90.5kg, elastic fabric fits most body types, black solid color easy to match all gear."]},{"type":"imageText","heading":"Fabric Composition","text":"Main Fabric: Polyester + Spandex, high elasticity, wrinkle resistant, fade resistant, durable for frequent washing. Function: Quick dry, moisture wicking, breathable, stretch, lightweight. L: Fit weight 42.5 – 52.5 KG ; XL: Fit weight 52.5 – 62.5 KG ;  XXL: Fit weight 62.5 – 72.5 KG ;  XXXL: Fit weight 72.5 – 82.5 KG ;  XXXXL: Fit weight 82.5 – 90.5 KG;","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL201A.png"},{"type":"text","heading":"Applicable Occasions","text":"Gym fitness, running, jogging, swimming, beach, cycling, hiking, basketball training, daily casual loungewear. Men Quick Dry Sport Suit Short Sleeve T-shirt Double Layer Running Shorts 2 Pieces Athletic Gym Training Set. men workout set, quick dry running suit, 2 in 1 double layer shorts, athletic short sleeve tee, gym training tracksuit, mens swim shorts set, breathable sportswear, lightweight fitness outfit, jogging suit for men, moisture wicking training clothes"}]},{"id":2,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg","category":"Apparel","name":"Islamic Women Modest Burkini Swimsuit","sku":"YS-CL-102WS","material":"Polyester","size":"S/M/L/XL","moq":200,"priceMin":7.69,"priceMax":7.99,"description":"Women Modest Burkini Swimsuit, Long Sleeve Zipper Two Piece Rash Guard, Tropical Print Full Coverage Leggings Conservative Islamic Swimwear for Beach Surfing","aplus":[{"type":"textImage","heading":"Fabric Advantage","text":"82% Nylon + 18% Spandex professional swim fabric:\nUPF50+ sun protection, anti-UV long sleeve design\nQuick-dry & moisture-wicking, no water retention\nHigh stretch & recovery, not easy to loose after stretching\nResist chlorine and seawater corrosion, long service life\nNo pilling, no color fading after multiple washes","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSCL102WS.png"},{"type":"imageText","heading":"Product Overview","text":"This women's modest two-piece burkini swimwear is specially designed for customers who prefer full coverage swimwear, especially Muslim women in the Middle East market. The set combines a long sleeve zip-up rash guard tunic top and matching full-length swim leggings, mixing solid color main body with tropical floral printed sleeves and hem for a unique fashion look, available in 2 classic color schemes.\nDesign Details\nTop: Stand collar with half-length front zipper, easy to adjust tightness; long sleeves with tropical plant print; asymmetrical layered peplum hem to cover abdomen and hips, visually slim figure.\nBottom: High-waisted full-length stretch swim leggings, full leg coverage, elastic waist for all body shapes, no rolling down during movement.\nCraftsmanship: Flat lock stitching to reduce skin friction, seamless inner layer for comfortable long-time wear.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"},{"type":"text","heading":"Applicable Occasions","text":"Black base with pink & green tropical flower print sleeves\nNavy blue base with palm leaf print sleeves"},{"type":"hero","heading":"Product Features","text":"Full Coverage Modest Islamic Design\nTwo-piece modest burkini set includes long sleeve zip-front tunic top & full-length swim leggings. Mid-front half zipper for easy on/off, layered peplum hem hides belly and hips, meets Middle East Muslim modest dressing demands while stylish. Two tropical print color options: black floral & navy palm leaf print.\nUPF 50+ UV Protection Long Sleeve Rash Guard\nLong sleeve full arm coverage blocks harmful sun rays, professional surfing rash guard fabric prevents chafing during swimming, snorkeling and beach volleyball. Stretchy long pants fully cover legs without tight binding.\nPremium Quick-Dry Swim Fabric\nCrafted from 82% Nylon + 18% Spandex blend. Ultra high elasticity, soft skin-friendly, chlorine & salt water resistant. Fast moisture-wicking, dries quickly after water activities, no sticky heavy feeling. Fade-resistant, no deformation after repeated washing.\nFunctional Half-Zip Front & Flattering Fit\nHalf zipper stand collar allows adjustable ventilation; asymmetric peplum hem optimizes body curve, hides tummy and hip flaws. High waist full-length leggings offer supportive fit, won't slide down during sports. Contrast tropical floral printed sleeves & hem add fashion sense to solid color main body.\nMulti-Scenario Versatile Swimwear\nPerfect for Muslim ladies, modest wearers, swimming, surfing, snorkeling, beach holiday, hot spring and pool training. Suitable for Middle East, Southeast Asia market demand for full coverage swimsuits.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg"}]},{"id":1781664526234,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A1.jpg","category":"Hand Bag","name":"Mini Cute Flap Square Crossbody Bag","sku":"YS-HB-1001A","material":"Synthetic Patent Leather","size":"Small","moq":1,"priceMin":1.59,"priceMax":1.69,"description":"New Glossy Mini Square Bag! Dual handle & crossbody strap, lightweight patent leather purse for daily outfits, 4 vintage colors available.\n\nCute tiny flap handbag for women, fits all your small essentials, hand/shoulder/crossbody 3 ways to wear, perfect daily fashion accessory.","aplus":[{"type":"textImage","heading":"About This Product","text":"Material: Synthetic Patent Leather\nLining: Polyester\nShape: Horizontal Mini Square\nClosure: Flap Cover\nBag Size: Small\nDimensions: Top Width 11cm / Bottom Width 13cm / Height 10cm / Depth 4cm\nHandle Drop: 6cm\nShoulder Strap Length: 110cm (Single Strap)\nWeight: 0.1KG\nColors: Black, Gray, Red, Green\nSeason: Spring 2026\nOccasion: Daily Matching","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1001A.png"},{"type":"features","heading":"Key Features","items":[]},{"type":"hero","heading":"Product Description","text":"Retro Glossy Mini Flap Square Handbag\nOur new arrival women small square bag is launched in Spring 2026, combining classic patent leather texture and minimalist square silhouette, a must-have trendy accessory for modern ladies.\nMade of high-quality soft synthetic patent leather, the bag features fine stitched seam craft as popular decorative element. The inner lining adopts durable polyester fabric, and the overall weight is only 0.1kg, super lightweight without pressing your shoulder.\nThis mini purse comes with dual carry accessories: a short handheld top handle and a 110cm long adjustable shoulder strap, you can freely switch between hand carry, single shoulder and crossbody styles according to your dressing look.\nThe flap cover closure design effectively protects your private items, with built-in inner patch pocket and zipper interlayer pocket to classify your lipstick, bank cards, keys and small change.\nFour timeless glossy colors including red, dark green, black and gray are optional, easy to collocate with all your daily outfits. Perfect for daily shopping, casual dating, short walk and daily commute.\nNotice: All dimensions are manually measured, please allow 1-3cm error; the actual color of the bag shall prevail due to different screen display.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1001A4.png"}]},{"id":1781666116700,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A2.jpg","category":"Hand Bag","name":"Mini Flap Square Crossbody Bag for Women","sku":"","material":"Soft PU Leather","size":"Small","moq":1,"priceMin":1.35,"priceMax":1.45,"description":"Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.\n\nMust-have tiny handbag for girls! With handle & long strap, easy to match all outfits, lightweight only 0.07kg.","aplus":[{"type":"hero","heading":"Vintage Mini Flap PU Leather Handbag","text":"This women's mini square crossbody bag combines minimalist silhouette and retro stitching craft, a must-have fashion small accessory for daily wear.\nCrafted from premium soft PU leather, the bag surface is smooth and scratch-resistant, easy to clean with damp cloth. The whole bag weighs only 0.07kg, lightweight design releases your shoulder pressure effectively.\nIt comes with two carry accessories: a portable short top handle and a 116cm adjustable long shoulder strap, supporting three wearing ways including handheld, single shoulder and crossbody. The mini interior space can well organize your lip gloss, cards, coins and wireless earphones.\nFour timeless color options (Black, White, Red, Coffee) meet all your matching demands. The gentle square shape matches sweaters, pleated skirts, jeans and dresses perfectly, ideal for daily shopping, casual dating, short trip and office commute.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A9.jpg"},{"type":"textImage","heading":"Product Specifications","text":"Outer Fabric: Soft PU Leather\nTotal Weight: 0.07kg\nDimensions: Top Width 12cm / Bottom Width 14cm / Height 9cm / Depth 5cm\nShoulder Strap Length: 116cm\nCarrying Modes: Handheld, Single Shoulder, Crossbody\nOptional Colors: Black, White, Red, Coffee\nNotice: All sizes are measured by hand, 1-3cm error may exist. The actual product color is subject to the real item.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sizechartYSHB1002A.jpg"},{"type":"imageText","heading":"Bullet Points","text":"🎀 Classic Minimalist Flap Design, 4 Versatile Shades\nAvailable in Black, White, Red, Coffee four classic solid colors. Neat outline stitching creates retro elegant texture, easily match knit tops, dresses, skirts and daily casual outfits, perfect for dating, shopping and commuting.\n🪶 Ultra-Light PU Material, Only 0.07KG Weight\nMade of soft smooth PU leather, wear-resistant and easy to wipe clean. Total weight just 0.07kg, no heavy burden even carrying all day long, friendly for ladies prefer lightweight small bags.\n📏 Reasonable Mini Size with Large Enough Capacity\nTop Width 12cm, Bottom Width 14cm, Height 9cm, Depth 5cm. Compact but can store lipstick, earbuds, bank cards, cash, keys and other small daily essentials without squeezing.\n3 Ways of Carrying for Different Styling\nEquipped with delicate short top handle + 116cm long crossbody shoulder strap, freely switch to handheld, single shoulder and crossbody styles to fit different dressing looks.\nClear Measurement Note to Avoid Disputes\nAll dimensions are manually measured, a tolerance of 1-3cm is acceptable. All size units are centimeters. Due to different screen displays, the actual bag color shall prevail.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A5.jpg"},{"type":"hero","heading":"Cute vintage mini square crossbody bag! Soft lightweight PU leather, 3 carry styles, 4 classic colors, fits all your daily tiny essentials.","text":"","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A1.jpg"}]},{"id":1781680522475,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone610.png","category":"Electronics","name":"In-Ear Sleep Wireless Bluetooth Earbuds V6.0","sku":"YS-ET-1001S","material":"ABS","size":"S16 Sleep Earbuds","moq":1,"priceMin":7.65,"priceMax":8.35,"description":"In-Ear Sleep Wireless Bluetooth Earbuds V6.0, Soft Silent Sleep Headphones with AAC/SBC Audio Decoding, Small Noise Isolating Sleeping Earphones for Side Sleeper","aplus":[{"type":"imageText","heading":"Full Set of Accessories","text":"1 × S16 Sleep Earbuds Charging Case\n1 Pair S16 Wireless Earbuds\n3 Pairs Replacement Silicone Ear Tips\n1 × Type-C Charging Cable\n1 × User Instruction Manual","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone6.png"},{"type":"text","heading":"Bullet Points","text":"😴 Ultra-Soft Ergonomic Sleep Design for Side Sleepers\nCurved wingtip silicone eartips fit snugly inside ear canal, low-profile tiny shape won't press ears when lying on side. Comes with 3 pairs of replaceable soft ear caps to fit different ear sizes, zero discomfort for all-night sleeping.\n📶 Stable Bluetooth V6.0 Connection, 10M Wide Range\nAdopts upgraded Bluetooth 6.0 chip, faster pairing and anti-interference signal, stable connection within 10 meters. Supports full Bluetooth protocols for smooth music playback, call answering and audio control.\n🎵 Hi-Fi Clear Sound with AAC & SBC Dual Decoding\nDual audio decoding technology restores rich sound details, delivers soft balanced audio for white noise, podcasts, meditation music and bedtime audiobooks. Effectively isolate ambient snoring and room noise.\n🔋 Long Lasting Battery Life\nSingle earbud built-in 30mAh battery, charging case with 230mAh storage. Compact pocket-sized case (5541.528mm) with Type-C charging cable included, easy to carry for travel, nap and overnight sleep.\nComplete Accessory Package & Safe Certified\nPackage includes S16 earbuds, charging case, Type-C charging cord, user manual and extra replacement silicone ear tips. Complies with GB 4943.1-2022 safety standard, reliable daily use."},{"type":"textImage","heading":"Specification Summary","text":"Brand: SOBAST\nModel: S16 Sleep Earbuds\nBluetooth Version: V6.0\nBluetooth Distance: 10 Meters\nEarbud Battery: 30mAh; Charging Case Battery: 230mAh\nInput: DC 5V\nSupported Codec: AAC, SBC\nCompliance Standard: GB 4943.1-2022","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone3.jpg"},{"type":"features","heading":"Product Description","items":["Comfortable Side-Sleep Friendly Shape\nDifferent from ordinary protruding earbuds, this mini in-ear headphone features a slim hidden design with flexible silicone wings. It stays deep inside your ear without sticking out, so you can lie on your side all night without painful pressure. 3 sizes of spare ear tips are included to match small, medium and large ear canals for all-day soft wearing.","Advanced Bluetooth 6.0 Smooth Connection\nEquipped with Bluetooth V6.0 chip, it pairs instantly with smartphones, tablets and laptops. The maximum transmission distance reaches 10 meters, no stuttering when you walk around your bedroom. It fully supports mainstream Bluetooth protocols, supporting hands-free calls, volume adjustment and track switching.","High-Quality AAC & SBC Audio Decoding\nDual audio decoding brings lossless sound performance. Whether you play relaxing white noise, sleep music, meditation podcasts or bedtime stories, the earbuds output mellow, clear sound while blocking outside disturbing noise for a quiet sleeping environment.","Portable & Long-Endurance Battery\nEach earbud has a 30mAh built-in battery, matched with a 230mAh compact charging case measuring only 5541.528mm, light enough to slip into pockets and handbags. The package is equipped with a Type-C charging cable for fast, convenient power replenishment."]},{"type":"hero","heading":"Wireless Sleep Earbuds – Ideal Headphones for Side Sleepers","text":"If you are troubled by snoring, noisy room or want to listen to bedtime audio without bulky headsets, our S16 sleep earbuds are your perfect choice.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone611.png"}]},{"id":1781681799719,"image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K1.png","category":"Kitchenware","name":"6-Cavity Train Silicone Baking Mold","sku":"YS-KW-1001K","material":"Silicone","size":"30*17.5*4 cm","moq":20,"priceMin":1,"priceMax":1.05,"description":"6 Cavity Train Silicone Cake Mold, Food Grade Silicone Chocolate Jelly Baking Tray, FDA Approved DIY Cartoon Train Baking Tool for Kids Party, Oven Microwave Safe","aplus":[{"type":"textImage","heading":"Specifications","text":"Model: JSC1800\nMaterial: Food-Grade Silicone (FDA Approved)\nCavity Count: 6 Cartoon Train Shapes\nDimensions: 30 × 17.5 × 4 cm\nNet Weight: 145g\nTemperature Range: -40℃ ~ 230℃\nApplicable Appliances: Oven, Microwave, Roaster, Refrigerator\nSuitable For: Mini cake, chocolate, jelly, candy, ice cube, handmade soap","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K5.png"},{"type":"features","heading":"Cartoon Train Silicone Baking Mold for DIY Homemade Treats","items":["This 6-cavity train silicone mold is a fun baking accessory for home bakers and parents. Adorable locomotive and carriage shapes create eye-catching mini desserts to delight children at birthday parties, baby showers and daily snacks.","Made of high-standard food-grade silicone certified by FDA, the mold is safe, non-toxic and environmentally friendly. It supports a wide working temperature range of -40℃ ~ 230℃, working great in ovens, microwaves and refrigerators for cakes, chocolate, jelly, candy, ice cubes and handmade soap.","The soft flexible silicone enables effortless non-stick demolding. After baking, leave the mold to cool for about 10 minutes before taking out desserts for intact perfect shapes. It is reusable and will not deform or fade after long-term repeated use. Cleaning is simple: flip the mold inside out and wash with neutral detergent, either by hand or in a dishwasher.","Compact size 30*17.5*4cm with a lightweight 145g body, built-in hanging hole for convenient storage when not in use."]},{"type":"imageText","heading":"Bullet Points","text":"🚂 Cute 6-Cavity Cartoon Train Shape\nFeatures 6 individual mini train cavities, lovely locomotive & carriage design, perfect for kid's birthday party, baby shower desserts, homemade chocolate, jelly, mini cakes and handmade soap.\n✅ FDA Certified Premium Food-Grade Silicone\nPassed US FDA food safety inspection, non-toxic, odorless, eco-friendly material, safe for direct food contact, no harmful substance release under normal baking temperature.\n🔥 Wide Temperature Resistance & Multi-Scene Use\nHeat resistant from -40°C up to 230°C, compatible with oven, microwave oven and roaster. Ideal for baking, freezing, making cold jelly and ice cubes.\n⚠️ Note: Do not use microwave Crisp mode.\n🧼 Easy Demold & Dishwasher Safe\nFlexible silicone construction, just twist gently after cooling to pop out food perfectly without sticking. Reusable, no deformation or fading after repeated use; can be cleaned in dishwasher or warm soapy water.\n🛡️ Durable & User-Friendly Design\nEquipped with hanging hole for easy storage; flexible but sturdy structure. Avoid sharp cutters, steel wool scrubbers and direct open flame contact to extend service life.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K4.png"},{"type":"hero","heading":"Instructions & Warnings","text":"Keep away from open flame and heating tubes of ovens; place the mold on the middle or upper rack, at least 5cm distance from heating elements.\nClean with neutral detergent, sponge or dishwasher; flip the mold inside out for deeper cleaning.\nDo NOT use the Crisp mode of microwave ovens.\nDo NOT scrub with steel wool or sharp hard tools to prevent scratches.\nLet the mold cool down for about 10 minutes after baking before demolding for better effect.\nProper operation can effectively extend the service life of the silicone mold.\nDo NOT scratch the surface with sharp objects.","image":"https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1001K3.png"}]}];
@@ -902,21 +900,6 @@
 
         function isAdmin() {
             return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
-        }
-        function decompressText(text) {
-            if (typeof text === 'object' && text.compressed && text.data) {
-                try {
-                    const decoded = atob(text.data);
-                    const charData = decoded.split('').map(function(c) { return c.charCodeAt(0); });
-                    const binData = new Uint8Array(charData);
-                    const decompressed = pako.inflate(binData, {to:'string'});
-                    return decompressed;
-                } catch (e) {
-                    console.warn('Failed to decompress text:', e);
-                    return '';
-                }
-            }
-            return text;
         }
         function escapeHtml(str) {
             if (str === null || str === undefined) return '';
@@ -1173,48 +1156,6 @@
             });
             return variations;
         }
-        function renderVariationsSummary(variations) {
-            const row = document.getElementById('detailVariationsRow');
-            const summary = document.getElementById('detailVariationsSummary');
-            if (!row || !summary) return;
-
-            if (!variations || variations.length === 0) {
-                row.style.display = 'none';
-                return;
-            }
-
-            row.style.display = 'table-row';
-            summary.innerHTML = '';
-
-            variations.forEach(v => {
-                const tag = document.createElement('span');
-                tag.className = 'variation-tag';
-                
-                const colorDot = document.createElement('span');
-                colorDot.className = 'variation-tag-color';
-                colorDot.style.backgroundColor = v.color || '#ccc';
-                tag.appendChild(colorDot);
-
-                const colorName = document.createElement('span');
-                colorName.textContent = v.color || '-';
-                tag.appendChild(colorName);
-
-                if (v.size) {
-                    const sizeSpan = document.createElement('span');
-                    sizeSpan.textContent = v.size;
-                    tag.appendChild(sizeSpan);
-                }
-
-                if (v.price !== undefined && v.price !== null && v.price !== '') {
-                    const priceSpan = document.createElement('span');
-                    priceSpan.className = 'variation-tag-price';
-                    priceSpan.textContent = '$' + v.price;
-                    tag.appendChild(priceSpan);
-                }
-
-                summary.appendChild(tag);
-            });
-        }
         function renderVariationsDisplay(variations) {
             const display = document.getElementById('variationsDisplay');
             const list = document.getElementById('variationsList');
@@ -1222,26 +1163,18 @@
                 display.style.display = 'none';
                 return;
             }
+            display.style.display = 'block';
             list.innerHTML = '';
-            const hasImages = variations.some(v => v.image && v.image.trim());
             variations.forEach((v, idx) => {
                 const card = document.createElement('div');
-                card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
-                const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '';
-                if (hasImages && v.image && v.image.trim()) {
-                    card.innerHTML = `
-                        <img src="${escapeHtml(v.image.trim())}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-                        <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                        <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                        ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
-                    `;
-                } else {
-                    card.innerHTML = `
-                        <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                        <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                        ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
-                    `;
-                }
+                card.className = 'variation-card';
+                const imgSrc = v.image || 'https://via.placeholder.com/80?text=No+Image';
+                card.innerHTML = `
+                    <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                    <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                    <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                    ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
+                `;
                 card.addEventListener('click', function () {
                     document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
                     card.classList.add('selected');
@@ -1325,8 +1258,8 @@
             document.getElementById('detailMaterial').textContent = product.material || '-';
             document.getElementById('detailSize').textContent = product.size || '-';
             document.getElementById('detailMOQ').textContent = product.moq;
-
-            renderVariationsSummary(product.variations);
+            document.getElementById('detailPriceMin').textContent = product.priceMin;
+            document.getElementById('detailPriceMax').textContent = product.priceMax;
 
             // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
             let defaultPriceText;
@@ -1380,15 +1313,14 @@
             document.querySelectorAll('#detailModeToggle button').forEach(b => {
                 b.classList.toggle('active', b.getAttribute('data-mode') === mode);
             });
-            const setDisplay = (id, show) => { const el = document.getElementById(id); if (el) el.style.display = show ? 'block' : 'none'; };
-            setDisplay('detailImageInput', mode === 'edit');
-            setDisplay('detailNameInput', mode === 'edit');
-            setDisplay('detailMaterialInput', mode === 'edit');
-            setDisplay('detailSizeInput', mode === 'edit');
-            setDisplay('detailMOQInput', mode === 'edit');
-            setDisplay('detailPriceMinInput', mode === 'edit');
-            setDisplay('detailPriceMaxInput', mode === 'edit');
-            setDisplay('detailDescInput', mode === 'edit');
+            document.getElementById('detailImageInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailNameInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailMaterialInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailSizeInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailMOQInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailPriceMinInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailPriceMaxInput').style.display = mode === 'edit' ? 'block' : 'none';
+            document.getElementById('detailDescInput').style.display = mode === 'edit' ? 'block' : 'none';
 
             const isEdit = mode === 'edit';
             document.querySelectorAll('.detail-edit-only').forEach(el => {
@@ -1459,13 +1391,12 @@
                 div.innerHTML = toolbar;
 
                 function renderRichText(s) {
-                    s = decompressText(s);
                     if (!s) return '';
-                    if (typeof s === 'string' && s.indexOf('<') !== -1) return s;
+                    if (s.indexOf('<') !== -1) return s;
                     return escapeHtml(s).replace(/\n/g, '<br>');
                 }
                 if (block.type === 'hero') {
-                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;height:auto;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
+                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
                         <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
                         <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
                         <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
@@ -1691,23 +1622,13 @@
 
         async function loadRemoteSiteData() {
             try {
-                const cacheBuster = '?v=' + Date.now();
-                const response = await fetch(REMOTE_DATA_URL + cacheBuster, {
-                    cache: 'no-store',
-                    headers: {
-                        'Cache-Control': 'no-cache, no-store, must-revalidate',
-                        'Pragma': 'no-cache',
-                        'Expires': '0'
-                    }
-                });
+                const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
                 if (!response.ok) throw new Error('site-data.json not found');
                 const data = await response.json();
                 applySiteData(data, { silent: true });
-                console.info('Loaded public data from site-data.json, products count:', data.products ? data.products.length : 0);
-                return data;
+                console.info('Loaded public data from site-data.json');
             } catch (error) {
                 console.info('No site-data.json found, using local data.');
-                return null;
             }
         }
 
@@ -1760,7 +1681,7 @@
                     'filter.of': 'of', 'filter.products': 'products', 'filter.noResult': 'No products in this category',
                     'detail.back': 'Back to Products', 'detail.preview': 'Preview', 'detail.edit': 'Edit',
                     'products.category': 'Category', 'products.sku': 'SKU', 'products.material': 'Material',
-                    'products.size': 'Size', 'products.moq': 'MOQ', 'products.variations': 'Variations', 'products.priceMin': 'Min Price ($)', 'products.priceMax': 'Max Price ($)',
+                    'products.size': 'Size', 'products.moq': 'MOQ', 'products.priceMin': 'Min Price ($)', 'products.priceMax': 'Max Price ($)',
                     'products.price': 'Price: $', 'login.title': 'Admin Login', 'login.username': 'Username',
                     'login.enterUsername': 'Enter username', 'login.password': 'Password', 'login.enterPassword': 'Enter password',
                     'login.error': 'Incorrect username or password!', 'login.cancel': 'Cancel', 'login.submit': 'Login',
@@ -1796,7 +1717,7 @@
                     'filter.of': 'de', 'filter.products': 'productos', 'filter.noResult': 'No hay productos en esta categoría',
                     'detail.back': 'Volver a Productos', 'detail.preview': 'Vista Previa', 'detail.edit': 'Editar',
                     'products.category': 'Categoría', 'products.sku': 'SKU', 'products.material': 'Material',
-                    'products.size': 'Tamaño', 'products.moq': 'MOQ', 'products.variations': 'Variaciones', 'products.priceMin': 'Precio Mínimo ($)', 'products.priceMax': 'Precio Máximo ($)',
+                    'products.size': 'Tamaño', 'products.moq': 'MOQ', 'products.priceMin': 'Precio Mínimo ($)', 'products.priceMax': 'Precio Máximo ($)',
                     'products.price': 'Precio: $', 'login.title': 'Inicio de Sesión de Admin', 'login.username': 'Nombre de Usuario',
                     'login.enterUsername': 'Ingrese nombre de usuario', 'login.password': 'Contraseña', 'login.enterPassword': 'Ingrese contraseña',
                     'login.error': '¡Nombre de usuario o contraseña incorrectos!', 'login.cancel': 'Cancelar', 'login.submit': 'Iniciar Sesión',
@@ -1832,7 +1753,7 @@
                     'filter.of': 'sur', 'filter.products': 'produits', 'filter.noResult': 'Aucun produit dans cette catégorie',
                     'detail.back': 'Retour aux Produits', 'detail.preview': 'Aperçu', 'detail.edit': 'Éditer',
                     'products.category': 'Catégorie', 'products.sku': 'SKU', 'products.material': 'Matériau',
-                    'products.size': 'Taille', 'products.moq': 'MOQ', 'products.variations': 'Variations', 'products.priceMin': 'Prix Minimum ($)', 'products.priceMax': 'Prix Maximum ($)',
+                    'products.size': 'Taille', 'products.moq': 'MOQ', 'products.priceMin': 'Prix Minimum ($)', 'products.priceMax': 'Prix Maximum ($)',
                     'products.price': 'Prix : $', 'login.title': 'Connexion Admin', 'login.username': 'Nom d\'utilisateur',
                     'login.enterUsername': 'Entrez le nom d\'utilisateur', 'login.password': 'Mot de passe', 'login.enterPassword': 'Entrez le mot de passe',
                     'login.error': 'Nom d\'utilisateur ou mot de passe incorrect !', 'login.cancel': 'Annuler', 'login.submit': 'Se Connecter',
@@ -1868,7 +1789,7 @@
                     'filter.of': 'из', 'filter.products': 'продуктов', 'filter.noResult': 'Нет продуктов в этой категории',
                     'detail.back': 'Назад к Продуктам', 'detail.preview': 'Предпросмотр', 'detail.edit': 'Редактировать',
                     'products.category': 'Категория', 'products.sku': 'SKU', 'products.material': 'Материал',
-                    'products.size': 'Размер', 'products.moq': 'MOQ', 'products.variations': 'Варианты', 'products.priceMin': 'Минимальная Цена ($)', 'products.priceMax': 'Максимальная Цена ($)',
+                    'products.size': 'Размер', 'products.moq': 'MOQ', 'products.priceMin': 'Минимальная Цена ($)', 'products.priceMax': 'Максимальная Цена ($)',
                     'products.price': 'Цена: $', 'login.title': 'Вход Администратора', 'login.username': 'Имя Пользователя',
                     'login.enterUsername': 'Введите имя пользователя', 'login.password': 'Пароль', 'login.enterPassword': 'Введите пароль',
                     'login.error': 'Неверное имя пользователя или пароль!', 'login.cancel': 'Отмена', 'login.submit': 'Войти',
@@ -1928,10 +1849,6 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            localStorage.removeItem('yeatruSiteData');
-            localStorage.removeItem('yeatruProducts');
-            localStorage.removeItem('yeatruCategories');
-
             i18next
                 .use(i18nextBrowserLanguageDetector)
                 .init({
@@ -1945,20 +1862,15 @@
                 }).then(function () {
                     updateContent();
                     bindLanguageEvents();
+                    loadRemoteSiteData();
+                    renderCategoryFilter();
+                    renderProducts();
                 });
 
             updateLoginUI(isAdmin());
+            renderCategories();
+            renderProducts();
             renderBrandLogo();
-
-            // 先加载远程数据，再渲染产品列表
-            loadRemoteSiteData().then(function(data) {
-                if (data) {
-                    console.info('Site data loaded, rendering products with', data.products ? data.products.length : 0, 'products');
-                }
-                renderCategoryFilter();
-                renderCategories();
-                renderProducts();
-            });
 
             document.getElementById('submitLogin').addEventListener('click', function () {
                 const username = document.getElementById('adminUsername').value.trim();
@@ -1996,10 +1908,6 @@
 
             document.getElementById('addVariationBtn').addEventListener('click', function () {
                 addVariationItem();
-            });
-
-            document.getElementById('detailAddVariationBtn').addEventListener('click', function () {
-                addDetailVariationItem();
             });
 
             document.getElementById('saveProduct').addEventListener('click', function () {
