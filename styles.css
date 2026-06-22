@@ -728,7 +728,11 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     margin-bottom: 1rem;
 }
 
-.aplus-section { margin-top: 2rem; }
+.aplus-section { 
+    margin-top: 2rem; 
+    width: 100%;
+    max-width: 100%;
+}
 
 .aplus-section-title {
     font-size: 1.4rem;
@@ -742,14 +746,14 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .aplus-blocks { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .aplus-block {
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 1.5rem;
-    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 1.5rem 0;
+    background-color: transparent;
     position: relative;
 }
 
-.aplus-block.editing { border-color: var(--peacock-blue); box-shadow: 0 0 0 3px rgba(11,123,148,0.08); }
+.aplus-block.editing { border: 1px solid var(--peacock-blue); box-shadow: 0 0 0 3px rgba(11,123,148,0.08); background-color: #fff; border-radius: 8px; padding: 1.5rem; }
 
 .aplus-block-toolbar {
     position: absolute;
