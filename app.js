@@ -702,6 +702,47 @@ function renderVariationsDisplay(variations) {
     });
 }
 
+function renderDetailVariationsEditor(variations) {
+    const container = document.getElementById('detailVariationsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    if (variations && variations.length > 0) {
+        variations.forEach(v => addDetailVariationItem(v));
+    } else {
+        addDetailVariationItem();
+    }
+}
+
+function addDetailVariationItem(data) {
+    const container = document.getElementById('detailVariationsContainer');
+    if (!container) return;
+    const v = data || { color: '', size: '', price: '', image: '' };
+    const item = document.createElement('div');
+    item.className = 'variation-item';
+    item.innerHTML = `
+        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
+        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+    `;
+    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
+    container.appendChild(item);
+}
+
+function collectDetailVariations() {
+    const variations = [];
+    document.querySelectorAll('#detailVariationsContainer .variation-item').forEach(item => {
+        const color = item.querySelector('.variation-color').value.trim();
+        const size = item.querySelector('.variation-size').value.trim();
+        const image = item.querySelector('.variation-image').value.trim();
+        const priceVal = item.querySelector('.variation-price').value.trim();
+        const price = priceVal ? parseFloat(priceVal) : null;
+        if (color || size) variations.push({ color, size, image, price });
+    });
+    return variations;
+}
+
 function showDetailPage(productId) {
     const product = getProducts().find(p => p.id === productId);
     if (!product) {
@@ -797,6 +838,21 @@ function setDetailMode(mode) {
         b.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = isEdit ? 'true' : 'false');
     });
     document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
+
+    // 变体编辑区域切换
+    const variationsList = document.getElementById('variationsList');
+    const detailVariationsContainer = document.getElementById('detailVariationsContainer');
+    if (variationsList) variationsList.style.display = isEdit ? 'none' : '';
+    if (detailVariationsContainer) {
+        detailVariationsContainer.style.display = isEdit ? 'block' : 'none';
+        if (isEdit && currentDetailProductId) {
+            const product = getProducts().find(p => p.id === currentDetailProductId);
+            if (product && product.variations) {
+                renderDetailVariationsEditor(product.variations);
+            }
+        }
+    }
+
     const badge = document.getElementById('saveStatusBadge');
     badge.style.display = isEdit ? 'inline-flex' : 'none';
     if (isEdit) setSaveStatus('saved');
@@ -844,6 +900,7 @@ function commitSave() {
         p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
+        p.variations = collectDetailVariations();
         products[idx] = p;
         localStorage.setItem('yeatruProducts', JSON.stringify(products));
         document.getElementById('detailName').textContent = p.name;
