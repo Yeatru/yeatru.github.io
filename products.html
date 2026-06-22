@@ -1218,6 +1218,7 @@
         function renderVariationsDisplay(variations) {
             const display = document.getElementById('variationsDisplay');
             const list = document.getElementById('variationsList');
+            if (!display || !list) return;
             if (!variations || variations.length === 0) {
                 display.style.display = 'none';
                 return;
