@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
             renderProducts();
         });
 
+    window.addEventListener('beforeunload', function () {
+        localStorage.removeItem('yeatruAdminLoggedIn');
+    });
+
     updateLoginUI(isAdmin());
     renderCategories();
     renderProducts();
@@ -160,6 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    document.getElementById('addVariationBtn').addEventListener('click', function () {
+        addVariationItem();
+    });
+
     document.getElementById('saveProduct').addEventListener('click', function () {
         const productId = document.getElementById('productId').value;
         const product = {
@@ -173,7 +181,8 @@ document.addEventListener('DOMContentLoaded', function () {
             moq: parseInt(document.getElementById('productMOQ').value),
             priceMin: parseFloat(document.getElementById('productPriceMin').value),
             priceMax: parseFloat(document.getElementById('productPriceMax').value),
-            description: document.getElementById('productDescription').value
+            description: document.getElementById('productDescription').value,
+            variations: collectVariations()
         };
         const products = getProducts();
         if (productId) {
@@ -189,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const productModal = document.getElementById('productModal');
         bootstrap.Modal.getInstance(productModal).hide();
         document.getElementById('productForm').reset();
+        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productId').value = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
@@ -196,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addProductBtn').addEventListener('click', function () {
         document.getElementById('productForm').reset();
         document.getElementById('productId').value = '';
+        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
 
@@ -570,6 +581,7 @@ function renderProducts() {
                 document.getElementById('productPriceMin').value = product.priceMin;
                 document.getElementById('productPriceMax').value = product.priceMax;
                 document.getElementById('productDescription').value = product.description;
+                renderVariationsModal(product.variations || []);
                 document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                 new bootstrap.Modal(document.getElementById('productModal')).show();
             }
@@ -614,6 +626,61 @@ function handleHashRoute() {
     } else {
         hideDetailPage();
     }
+}
+
+function renderVariationsModal(variations) {
+    const container = document.getElementById('variationsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    if (variations && variations.length > 0) {
+        variations.forEach(v => addVariationItem(v));
+    }
+}
+function addVariationItem(data) {
+    const container = document.getElementById('variationsContainer');
+    if (!container) return;
+    const v = data || { color: '', size: '', image: '' };
+    const item = document.createElement('div');
+    item.className = 'variation-item';
+    item.innerHTML = `
+        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+    `;
+    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
+    container.appendChild(item);
+}
+function collectVariations() {
+    const variations = [];
+    document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
+        const color = item.querySelector('.variation-color').value.trim();
+        const size = item.querySelector('.variation-size').value.trim();
+        const image = item.querySelector('.variation-image').value.trim();
+        if (color || size) variations.push({ color, size, image });
+    });
+    return variations;
+}
+function renderVariationsDisplay(variations) {
+    const display = document.getElementById('variationsDisplay');
+    const list = document.getElementById('variationsList');
+    if (!display || !list) return;
+    if (!variations || variations.length === 0) {
+        display.style.display = 'none';
+        return;
+    }
+    display.style.display = 'block';
+    list.innerHTML = '';
+    variations.forEach(v => {
+        const card = document.createElement('div');
+        card.className = 'variation-card';
+        card.innerHTML = `
+            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+            <span class="variation-size">${escapeHtml(v.size || '')}</span>
+        `;
+        list.appendChild(card);
+    });
 }
 
 function showDetailPage(productId) {
@@ -665,6 +732,7 @@ function renderDetailPage(productId) {
     document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
     document.getElementById('detailDescInput').value = product.description || '';
 
+    renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
 }
 
