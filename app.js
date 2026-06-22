@@ -750,7 +750,6 @@ function renderVariationsDisplay(variations) {
         display.style.display = 'none';
         return;
     }
-    display.style.display = 'block';
     list.innerHTML = '';
     const hasImages = variations.some(v => v.image && v.image.trim());
     variations.forEach(v => {

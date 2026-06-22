@@ -649,15 +649,18 @@
                             <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
                             <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
                             <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
-                            <tr id="detailVariationsRow" style="display:none;"><th data-i18n="products.variations">Variations</th><td><div id="detailVariationsSummary" class="variations-summary"></div></td></tr>
+                            <tr id="detailVariationsRow"><th data-i18n="products.variations">Variations</th><td><div id="detailVariationsSummary" class="variations-summary"></div></td></tr>
                         </table>
                         <div class="detail-price-big" id="detailPriceBig">—</div>
                         <p class="text-muted" id="detailDesc">—</p>
                         <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
                     </div>
 
-                    <div id="variationsDisplay" class="variations-display" style="display:none;">
-                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                    <div id="variationsDisplay" class="variations-display" style="display:none !important;">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary detail-edit-only" id="detailAddVariationBtn" style="display:none;"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                        </div>
                         <div id="variationsList" class="variations-list"></div>
                     </div>
                 </div>
@@ -1210,7 +1213,6 @@
                 display.style.display = 'none';
                 return;
             }
-            display.style.display = 'block';
             list.innerHTML = '';
             const hasImages = variations.some(v => v.image && v.image.trim());
             variations.forEach((v, idx) => {
