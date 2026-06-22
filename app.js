@@ -119,6 +119,10 @@ function tt(key, fallback) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    localStorage.removeItem('yeatruSiteData');
+    localStorage.removeItem('yeatruProducts');
+    localStorage.removeItem('yeatruCategories');
+
     i18next
         .use(i18nextBrowserLanguageDetector)
         .init({
@@ -132,9 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(function () {
             updateContent();
             bindLanguageEvents();
-            loadRemoteSiteData();
-            renderCategoryFilter();
-            renderProducts();
         });
 
     window.addEventListener('beforeunload', function () {
@@ -142,9 +143,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     updateLoginUI(isAdmin());
-    renderCategories();
-    renderProducts();
     renderBrandLogo();
+
+    // 先加载远程数据，再渲染产品列表
+    loadRemoteSiteData().then(function(data) {
+        if (data) {
+            console.info('Site data loaded, rendering products with', data.products ? data.products.length : 0, 'products');
+        }
+        renderCategories();
+        renderCategoryFilter();
+        renderProducts();
+    });
 
     document.getElementById('submitLogin').addEventListener('click', function () {
         const username = document.getElementById('adminUsername').value.trim();
@@ -500,13 +509,23 @@ function applySiteData(data, options = {}) {
 
 async function loadRemoteSiteData() {
     try {
-        const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+        const cacheBuster = '?v=' + Date.now();
+        const response = await fetch(REMOTE_DATA_URL + cacheBuster, {
+            cache: 'no-store',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+        });
         if (!response.ok) throw new Error('site-data.json not found');
         const data = await response.json();
         applySiteData(data, { silent: true });
-        console.info('已从 site-data.json 读取公开数据');
+        console.info('已从 site-data.json 读取公开数据, 产品数:', data.products ? data.products.length : 0);
+        return data;
     } catch (error) {
         console.info('未读取到 site-data.json，使用本地缓存或默认数据。', error);
+        return null;
     }
 }
 
