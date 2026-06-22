@@ -1381,14 +1381,15 @@
             document.querySelectorAll('#detailModeToggle button').forEach(b => {
                 b.classList.toggle('active', b.getAttribute('data-mode') === mode);
             });
-            document.getElementById('detailImageInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailNameInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailMaterialInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailSizeInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailMOQInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailPriceMinInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailPriceMaxInput').style.display = mode === 'edit' ? 'block' : 'none';
-            document.getElementById('detailDescInput').style.display = mode === 'edit' ? 'block' : 'none';
+            const setDisplay = (id, show) => { const el = document.getElementById(id); if (el) el.style.display = show ? 'block' : 'none'; };
+            setDisplay('detailImageInput', mode === 'edit');
+            setDisplay('detailNameInput', mode === 'edit');
+            setDisplay('detailMaterialInput', mode === 'edit');
+            setDisplay('detailSizeInput', mode === 'edit');
+            setDisplay('detailMOQInput', mode === 'edit');
+            setDisplay('detailPriceMinInput', mode === 'edit');
+            setDisplay('detailPriceMaxInput', mode === 'edit');
+            setDisplay('detailDescInput', mode === 'edit');
 
             const isEdit = mode === 'edit';
             document.querySelectorAll('.detail-edit-only').forEach(el => {
