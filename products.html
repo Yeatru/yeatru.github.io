@@ -632,28 +632,30 @@
             </div>
 
             <div class="detail-main">
-                <div>
+                <div class="detail-image-wrapper">
                     <img id="detailImage" class="detail-image" src="" alt="Product image">
                     <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
                 </div>
-                <div class="detail-info">
-                    <h1 id="detailName">—</h1>
-                    <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
-                    <div class="detail-meta">
-                        <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
-                        &nbsp;|&nbsp;
-                        <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
+                <div class="detail-info-wrapper">
+                    <div class="detail-info">
+                        <h1 id="detailName">—</h1>
+                        <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
+                        <div class="detail-meta">
+                            <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
+                            &nbsp;|&nbsp;
+                            <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
+                        </div>
+                        <table class="detail-spec-table">
+                            <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
+                            <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
+                            <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
+                            <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
+                            <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
+                        </table>
+                        <div class="detail-price-big" id="detailPriceBig">—</div>
+                        <p class="text-muted" id="detailDesc">—</p>
+                        <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
                     </div>
-                    <table class="detail-spec-table">
-                        <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
-                        <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
-                        <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
-                        <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
-                        <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
-                    </table>
-                    <div class="detail-price-big" id="detailPriceBig">—</div>
-                    <p class="text-muted" id="detailDesc">—</p>
-                    <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
 
                     <div id="variationsDisplay" class="variations-display" style="display:none;">
                         <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
