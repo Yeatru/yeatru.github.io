@@ -3,7 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Yeatru Sourcing</title>
+    <title>Products - Yeatru Sourcing | Quality Wholesale Products from China</title>
+    <meta name="description" content="Browse Yeatru Sourcing's quality product catalog - apparel, kitchenware, electronics, home goods, toys, and more. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers worldwide.">
+    <meta name="keywords" content="China sourcing agent, wholesale products, small business sourcing, startup products, ecommerce inventory, Amazon FBA products, dropshipping suppliers, Yiwu market products, Alibaba alternative, bulk wholesale, China manufacturer, quality products, international trade, procurement services, supplier audit, dropshipping">
+    <meta name="author" content="Yeatru Sourcing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yeatru.com/products.html">
+    <meta property="og:title" content="Products - Yeatru Sourcing | Quality Wholesale Products from China">
+    <meta property="og:description" content="Browse our quality product catalog. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yeatru.com/products.html">
+    <meta property="og:site_name" content="Yeatru Sourcing">
+    <meta property="og:image" content="https://www.yeatru.com/logo.svg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Products - Yeatru Sourcing | Quality Wholesale Products from China">
+    <meta name="twitter:description" content="Browse our quality product catalog. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers.">
+    <meta name="twitter:image" content="https://www.yeatru.com/logo.svg">
+    <meta name="twitter:url" content="https://www.yeatru.com/products.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Yeatru Sourcing",
+        "url": "https://www.yeatru.com",
+        "logo": "https://www.yeatru.com/logo.svg",
+        "description": "Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yiwu",
+            "addressRegion": "Zhejiang",
+            "addressCountry": "China"
+        },
+        "sameAs": [
+            "https://www.yeatru.com",
+            "https://www.yeatru.com/products.html"
+        ]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -281,6 +318,80 @@
             color: var(--peacock-blue-dark);
             margin-bottom: 1rem;
         }
+        .variations-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .variation-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr auto;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+            align-items: center;
+        }
+        .variation-item input {
+            font-size: 0.9rem;
+        }
+        .variation-remove {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .variations-display {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+        .variations-display-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--peacock-blue-dark);
+            margin-bottom: 1rem;
+        }
+        .variations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .variation-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.75rem;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            min-width: 110px;
+            transition: border-color 0.2s;
+        }
+        .variation-card:hover {
+            border-color: var(--peacock-blue);
+        }
+        .variation-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        .variation-card .variation-name {
+            font-size: 0.85rem;
+            color: var(--peacock-blue-dark);
+            font-weight: 600;
+        }
+        .variation-size {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
         .aplus-section { margin-top: 2rem; }
         .aplus-section-title {
             font-size: 1.4rem;
@@ -535,6 +646,11 @@
                     <div class="detail-price-big" id="detailPriceBig">—</div>
                     <p class="text-muted" id="detailDesc">—</p>
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+
+                    <div id="variationsDisplay" class="variations-display" style="display:none;">
+                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div id="variationsList" class="variations-list"></div>
+                    </div>
                 </div>
             </div>
 
@@ -690,6 +806,14 @@
                         <div class="mb-3">
                             <label for="productDescription" class="form-label" data-i18n="form.description">Description</label>
                             <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:var(--peacock-blue);"></i> Variations (Colors / Sizes)</label>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                            </div>
+                            <div id="variationsContainer" class="variations-container"></div>
                         </div>
                     </form>
                 </div>
@@ -925,6 +1049,7 @@
                         document.getElementById('productPriceMin').value = product.priceMin;
                         document.getElementById('productPriceMax').value = product.priceMax;
                         document.getElementById('productDescription').value = product.description;
+                        renderVariationsModal(product.variations || []);
                         document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                         new bootstrap.Modal(document.getElementById('productModal')).show();
                     }
@@ -975,6 +1100,64 @@
             }
         }
 
+        /* ========== 产品变体 ========== */
+        function renderVariationsModal(variations) {
+            const container = document.getElementById('variationsContainer');
+            container.innerHTML = '';
+            if (variations && variations.length > 0) {
+                variations.forEach(v => addVariationItem(v));
+            }
+        }
+        function addVariationItem(data) {
+            const container = document.getElementById('variationsContainer');
+            const v = data || { color: '', size: '', image: '' };
+            const item = document.createElement('div');
+            item.className = 'variation-item';
+            item.innerHTML = `
+                <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+                <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+                <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+                <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+            `;
+            item.querySelector('.variation-remove').addEventListener('click', function () {
+                item.remove();
+            });
+            container.appendChild(item);
+        }
+        function collectVariations() {
+            const variations = [];
+            document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
+                const color = item.querySelector('.variation-color').value.trim();
+                const size = item.querySelector('.variation-size').value.trim();
+                const image = item.querySelector('.variation-image').value.trim();
+                if (color || size) {
+                    variations.push({ color, size, image });
+                }
+            });
+            return variations;
+        }
+        function renderVariationsDisplay(variations) {
+            const display = document.getElementById('variationsDisplay');
+            const list = document.getElementById('variationsList');
+            if (!variations || variations.length === 0) {
+                display.style.display = 'none';
+                return;
+            }
+            display.style.display = 'block';
+            list.innerHTML = '';
+            variations.forEach(v => {
+                const card = document.createElement('div');
+                card.className = 'variation-card';
+                const imgSrc = v.image || 'https://via.placeholder.com/80?text=No+Image';
+                card.innerHTML = `
+                    <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                    <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                    <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                `;
+                list.appendChild(card);
+            });
+        }
+
         /* ========== 详情页 ========== */
         function showDetailPage(productId) {
             currentDetailProductId = productId;
@@ -999,6 +1182,7 @@
             document.getElementById('detailPriceBig').textContent = '$' + product.priceMin + ' - $' + product.priceMax;
             document.getElementById('detailDesc').textContent = product.description;
             document.getElementById('detailDescInput').value = product.description;
+            renderVariationsDisplay(product.variations);
 
             if (isAdmin()) {
                 document.getElementById('detailModeToggle').style.display = 'inline-flex';
@@ -1440,6 +1624,10 @@
             if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
         });
 
+        window.addEventListener('beforeunload', function () {
+            localStorage.removeItem('yeatruAdminLoggedIn');
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             i18next
                 .use(i18nextBrowserLanguageDetector)
@@ -1498,6 +1686,10 @@
                 }
             });
 
+            document.getElementById('addVariationBtn').addEventListener('click', function () {
+                addVariationItem();
+            });
+
             document.getElementById('saveProduct').addEventListener('click', function () {
                 const productId = document.getElementById('productId').value;
                 const product = {
@@ -1511,7 +1703,8 @@
                     moq: parseInt(document.getElementById('productMOQ').value),
                     priceMin: parseFloat(document.getElementById('productPriceMin').value),
                     priceMax: parseFloat(document.getElementById('productPriceMax').value),
-                    description: document.getElementById('productDescription').value
+                    description: document.getElementById('productDescription').value,
+                    variations: collectVariations()
                 };
                 const products = getProducts();
                 if (productId) {
@@ -1534,6 +1727,7 @@
             document.getElementById('addProductBtn').addEventListener('click', function () {
                 document.getElementById('productForm').reset();
                 document.getElementById('productId').value = '';
+                document.getElementById('variationsContainer').innerHTML = '';
                 document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
             });
 

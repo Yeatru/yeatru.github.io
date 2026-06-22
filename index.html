@@ -3,7 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeatru Sourcing - Professional China Sourcing Agent</title>
+    <title>Yeatru Sourcing - Professional China Sourcing Agent | Yiwu Wholesale Supplier</title>
+    <meta name="description" content="Yeatru Sourcing is a professional China sourcing agent based in Yiwu. We help small businesses, startups, online sellers, and international trade buyers source quality products at competitive prices. Services include supplier audit, quality control, logistics, and price negotiation.">
+    <meta name="keywords" content="China sourcing agent, Yiwu sourcing, Yiwu market, Alibaba alternative, small business sourcing, startup sourcing, ecommerce inventory, Amazon FBA, dropshipping suppliers, wholesale China, China manufacturer, procurement services, supplier verification, quality control, international trade, bulk products, import from China, export from China, business opportunities China">
+    <meta name="author" content="Yeatru Sourcing">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#0b7b94">
+    <link rel="canonical" href="https://www.yeatru.com/">
+    <meta property="og:title" content="Yeatru Sourcing - Professional China Sourcing Agent">
+    <meta property="og:description" content="Professional China sourcing agent helping small businesses, startups, and international trade buyers source quality products at competitive prices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yeatru.com/">
+    <meta property="og:site_name" content="Yeatru Sourcing">
+    <meta property="og:image" content="https://www.yeatru.com/logo.svg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yeatru Sourcing - Professional China Sourcing Agent">
+    <meta name="twitter:description" content="Professional China sourcing agent helping small businesses, startups, online sellers, and international trade buyers source quality products from China.">
+    <meta name="twitter:image" content="https://www.yeatru.com/logo.svg">
+    <meta name="twitter:url" content="https://www.yeatru.com/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Yeatru Sourcing",
+        "url": "https://www.yeatru.com",
+        "logo": "https://www.yeatru.com/logo.svg",
+        "image": "https://www.yeatru.com/logo.svg",
+        "description": "Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Yiwu International Trade City",
+            "addressLocality": "Yiwu",
+            "addressRegion": "Zhejiang Province",
+            "postalCode": "322000",
+            "addressCountry": "CN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "29.3117",
+            "longitude": "120.0807"
+        },
+        "priceRange": "$$",
+        "areaServed": ["Worldwide", "North America", "Europe", "Asia", "Middle East", "South America", "Africa", "Oceania"],
+        "serviceType": ["Product Sourcing", "Supplier Verification", "Quality Control", "Logistics & Shipping", "Price Negotiation", "Custom Packaging", "Factory Audit"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does a China sourcing agent do?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A China sourcing agent helps international buyers find reliable suppliers, negotiate prices, verify product quality, manage logistics, and handle the entire procurement process from China efficiently."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a minimum order quantity (MOQ)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MOQ varies by product. We work with suppliers that offer flexible MOQ options suitable for small businesses, startups, and online sellers. Contact us for specific product MOQ details."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does shipping take from China?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shipping times vary by destination and method: air freight typically takes 5-15 days, while sea freight takes 25-45 days. We provide logistics solutions tailored to your budget and timeline."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you help with Amazon FBA sourcing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We specialize in sourcing products for Amazon FBA sellers, including supplier verification, quality control, custom packaging, and shipping directly to Amazon fulfillment centers."
+                }
+            }
+        ]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -366,6 +452,11 @@
                     <div class="detail-price-big" id="detailPriceBig">—</div>
                     <p class="text-muted" id="detailDesc">—</p>
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+
+                    <div id="variationsDisplay" class="variations-display" style="display:none;">
+                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div id="variationsList" class="variations-list"></div>
+                    </div>
                 </div>
             </div>
 
@@ -524,6 +615,14 @@
                         <div class="mb-3">
                             <label for="productDescription" class="form-label" data-i18n="products.description">Description</label>
                             <textarea class="form-control" id="productDescription" rows="3" placeholder="Enter product description" required data-i18n-placeholder="products.enterDescription"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                            </div>
+                            <div id="variationsContainer" class="variations-container"></div>
                         </div>
                     </form>
                 </div>
