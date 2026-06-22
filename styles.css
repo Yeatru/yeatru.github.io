@@ -810,14 +810,14 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .aplus-block-image-wrap img {
     max-width: 100%;
+    height: auto;
     border-radius: 6px;
-    object-fit: cover;
 }
 
 .aplus-block-image-wrap.layout-text-image { flex-direction: row; }
 .aplus-block-image-wrap.layout-image-text { flex-direction: row-reverse; }
 .aplus-block-image-wrap > .aplus-block-text-side { flex: 1; min-width: 240px; }
-.aplus-block-image-wrap > img { width: 280px; height: 200px; }
+.aplus-block-image-wrap > img { max-width: 280px; height: auto; }
 
 .aplus-block-features ul {
     list-style: none;
@@ -1133,6 +1133,19 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .variation-card.no-image .variation-price {
     margin-top: 0;
     margin-left: auto;
+}
+.variation-card.no-image {
+    padding: 0.5rem 0.75rem;
+    min-width: auto;
+    border-radius: 20px;
+    border-width: 2px;
+}
+.variation-card.no-image .variation-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.variation-card.no-image .variation-size {
+    font-size: 0.85rem;
 }
 
 @media (max-width: 992px) {

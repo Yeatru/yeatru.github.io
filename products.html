@@ -1153,33 +1153,26 @@
             }
             display.style.display = 'block';
             list.innerHTML = '';
-            
             const hasImages = variations.some(v => v.image && v.image.trim());
-            
-            variations.forEach(v => {
+            variations.forEach((v, idx) => {
                 const card = document.createElement('div');
                 card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
-                
-                const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '-';
-                
+                const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '';
                 if (hasImages && v.image && v.image.trim()) {
-                    // 有图片的样式
                     card.innerHTML = `
                         <img src="${escapeHtml(v.image.trim())}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
                         <span class="variation-name">${escapeHtml(v.color || '-')}</span>
                         <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                        <span class="variation-price">${priceText}</span>
+                        ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
                     `;
                 } else {
-                    // 没有图片的扁平标签样式
                     card.innerHTML = `
                         <span class="variation-name">${escapeHtml(v.color || '-')}</span>
                         <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                        <span class="variation-price">${priceText}</span>
+                        ${priceText ? `<span class="variation-price">${priceText}</span>` : ''}
                     `;
                 }
-                
-                card.addEventListener('click', function() {
+                card.addEventListener('click', function () {
                     document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
                     card.classList.add('selected');
                     if (v.price !== null && v.price !== undefined && !isNaN(v.price)) {
@@ -1926,6 +1919,10 @@
 
             document.getElementById('addVariationBtn').addEventListener('click', function () {
                 addVariationItem();
+            });
+
+            document.getElementById('detailAddVariationBtn').addEventListener('click', function () {
+                addDetailVariationItem();
             });
 
             document.getElementById('saveProduct').addEventListener('click', function () {
