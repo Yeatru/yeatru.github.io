@@ -671,8 +671,12 @@
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
 
                     <div id="variationsDisplay" class="variations-display" style="display:none;">
-                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary detail-edit-only" id="detailAddVariationBtn" style="display:none;"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                        </div>
                         <div id="variationsList" class="variations-list"></div>
+                        <div id="detailVariationsContainer" class="variations-container detail-edit-only" style="display:none;margin-top:1rem;"></div>
                     </div>
                 </div>
             </div>
