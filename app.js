@@ -170,6 +170,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('saveProduct').addEventListener('click', function () {
         const productId = document.getElementById('productId').value;
+        const variations = collectVariations();
+        // 从变体中计算 priceMin 和 priceMax
+        let priceMin = null;
+        let priceMax = null;
+        const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
+        if (pricedVariations.length > 0) {
+            const prices = pricedVariations.map(v => v.price);
+            priceMin = Math.min(...prices);
+            priceMax = Math.max(...prices);
+        } else {
+            priceMin = 1;
+            priceMax = 1;
+        }
         const product = {
             id: productId ? parseInt(productId) : Date.now(),
             image: document.getElementById('productImage').value,
@@ -179,10 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
             material: document.getElementById('productMaterial').value,
             size: document.getElementById('productSize').value,
             moq: parseInt(document.getElementById('productMOQ').value),
-            priceMin: parseFloat(document.getElementById('productPriceMin').value),
-            priceMax: parseFloat(document.getElementById('productPriceMax').value),
+            priceMin: priceMin,
+            priceMax: priceMax,
             description: document.getElementById('productDescription').value,
-            variations: collectVariations()
+            variations: variations
         };
         const products = getProducts();
         if (productId) {
@@ -578,8 +591,6 @@ function renderProducts() {
                 document.getElementById('productMaterial').value = product.material;
                 document.getElementById('productSize').value = product.size;
                 document.getElementById('productMOQ').value = product.moq;
-                document.getElementById('productPriceMin').value = product.priceMin;
-                document.getElementById('productPriceMax').value = product.priceMax;
                 document.getElementById('productDescription').value = product.description;
                 renderVariationsModal(product.variations || []);
                 document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
@@ -901,6 +912,15 @@ function commitSave() {
 
         p.aplus = collectAplusBlocks();
         p.variations = collectDetailVariations();
+
+        // 从变体自动计算 priceMin 和 priceMax
+        const pricedVars = p.variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
+        if (pricedVars.length > 0) {
+            const prices = pricedVars.map(v => v.price);
+            p.priceMin = Math.min(...prices);
+            p.priceMax = Math.max(...prices);
+        }
+
         products[idx] = p;
         localStorage.setItem('yeatruProducts', JSON.stringify(products));
         document.getElementById('detailName').textContent = p.name;

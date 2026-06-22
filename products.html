@@ -1065,8 +1065,6 @@
                         document.getElementById('productMaterial').value = product.material;
                         document.getElementById('productSize').value = product.size;
                         document.getElementById('productMOQ').value = product.moq;
-                        document.getElementById('productPriceMin').value = product.priceMin;
-                        document.getElementById('productPriceMax').value = product.priceMax;
                         document.getElementById('productDescription').value = product.description;
                         renderVariationsModal(product.variations || []);
                         document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
@@ -1524,9 +1522,60 @@
             const productIndex = products.findIndex(p => p.id === currentDetailProductId);
             if (productIndex >= 0) {
                 products[productIndex].aplus = aplus;
-                products[productIndex].variations = collectDetailVariations();
+                const variations = collectDetailVariations();
+                products[productIndex].variations = variations;
+
+                // 从变体自动计算 priceMin 和 priceMax
+                const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
+                if (pricedVariations.length > 0) {
+                    const prices = pricedVariations.map(v => v.price);
+                    products[productIndex].priceMin = Math.min(...prices);
+                    products[productIndex].priceMax = Math.max(...prices);
+                }
+
+                // 同时保存基本信息
+                const nameV = document.getElementById('detailNameInput').value;
+                const imageV = document.getElementById('detailImageInput').value;
+                const materialV = document.getElementById('detailMaterialInput').value;
+                const sizeV = document.getElementById('detailSizeInput').value;
+                const moqV = document.getElementById('detailMOQInput').value;
+                const descV = document.getElementById('detailDescInput').value;
+                if (nameV) products[productIndex].name = nameV;
+                if (imageV) products[productIndex].image = imageV;
+                if (materialV) products[productIndex].material = materialV;
+                if (sizeV) products[productIndex].size = sizeV;
+                if (moqV) products[productIndex].moq = parseInt(moqV);
+                if (descV) products[productIndex].description = descV;
+
                 saveProducts(products);
                 renderAplusBlocks(aplus);
+
+                // 更新页面显示
+                document.getElementById('detailName').textContent = products[productIndex].name;
+                document.getElementById('detailImage').src = products[productIndex].image;
+                document.getElementById('detailMaterial').textContent = products[productIndex].material || '-';
+                document.getElementById('detailSize').textContent = products[productIndex].size || '-';
+                document.getElementById('detailMOQ').textContent = products[productIndex].moq;
+                document.getElementById('detailPriceMin').textContent = products[productIndex].priceMin;
+                document.getElementById('detailPriceMax').textContent = products[productIndex].priceMax;
+                document.getElementById('detailDesc').textContent = products[productIndex].description;
+
+                // 更新大价格显示
+                let savedPriceText;
+                if (products[productIndex].variations && products[productIndex].variations.length > 0) {
+                    const pV = products[productIndex].variations.filter(v => v.price !== undefined && v.price !== null && !isNaN(v.price));
+                    if (pV.length > 0) {
+                        const ps = pV.map(v => v.price);
+                        const vMin = Math.min(...ps);
+                        const vMax = Math.max(...ps);
+                        savedPriceText = vMin === vMax ? '$' + vMin : '$' + vMin + ' - $' + vMax;
+                    } else {
+                        savedPriceText = '$' + products[productIndex].priceMin + ' - $' + products[productIndex].priceMax;
+                    }
+                } else {
+                    savedPriceText = '$' + products[productIndex].priceMin + ' - $' + products[productIndex].priceMax;
+                }
+                document.getElementById('detailPriceBig').textContent = savedPriceText;
             }
         }
 
@@ -1863,6 +1912,19 @@
 
             document.getElementById('saveProduct').addEventListener('click', function () {
                 const productId = document.getElementById('productId').value;
+                const variations = collectVariations();
+                // 从变体中计算 priceMin 和 priceMax
+                let priceMin = null;
+                let priceMax = null;
+                const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
+                if (pricedVariations.length > 0) {
+                    const prices = pricedVariations.map(v => v.price);
+                    priceMin = Math.min(...prices);
+                    priceMax = Math.max(...prices);
+                } else {
+                    priceMin = 1;
+                    priceMax = 1;
+                }
                 const product = {
                     id: productId ? parseInt(productId) : Date.now(),
                     image: document.getElementById('productImage').value,
@@ -1872,10 +1934,10 @@
                     material: document.getElementById('productMaterial').value,
                     size: document.getElementById('productSize').value,
                     moq: parseInt(document.getElementById('productMOQ').value),
-                    priceMin: parseFloat(document.getElementById('productPriceMin').value),
-                    priceMax: parseFloat(document.getElementById('productPriceMax').value),
+                    priceMin: priceMin,
+                    priceMax: priceMax,
                     description: document.getElementById('productDescription').value,
-                    variations: collectVariations()
+                    variations: variations
                 };
                 const products = getProducts();
                 if (productId) {
