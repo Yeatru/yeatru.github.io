@@ -845,12 +845,13 @@ function renderDetailPage(productId) {
 
     document.getElementById('detailNameInput').value = product.name || '';
     document.getElementById('detailImageInput').value = product.image || '';
-    document.getElementById('detailMaterialInput').value = product.material || '';
-    document.getElementById('detailSizeInput').value = product.size || '';
-    document.getElementById('detailMOQInput').value = product.moq || '';
-    document.getElementById('detailPriceMinInput').value = product.priceMin || '';
-    document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
-    document.getElementById('detailDescInput').value = product.description || '';
+    const setInputValue = (id, value) => { const el = document.getElementById(id); if (el) el.value = value || ''; };
+    setInputValue('detailMaterialInput', product.material);
+    setInputValue('detailSizeInput', product.size);
+    setInputValue('detailMOQInput', product.moq);
+    setInputValue('detailPriceMinInput', product.priceMin);
+    setInputValue('detailPriceMaxInput', product.priceMax);
+    setInputValue('detailDescInput', product.description);
 
     renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
@@ -914,15 +915,16 @@ function commitSave() {
         const p = products[idx];
         p.name = document.getElementById('detailNameInput').value || p.name;
         p.image = document.getElementById('detailImageInput').value || p.image;
-        p.material = document.getElementById('detailMaterialInput').value || p.material;
-        p.size = document.getElementById('detailSizeInput').value || p.size;
-        const moqV = document.getElementById('detailMOQInput').value;
+        const getInputValue = (id) => { const el = document.getElementById(id); return el ? el.value : ''; };
+        p.material = getInputValue('detailMaterialInput') || p.material;
+        p.size = getInputValue('detailSizeInput') || p.size;
+        const moqV = getInputValue('detailMOQInput');
         if (moqV) p.moq = parseInt(moqV);
-        const minV = document.getElementById('detailPriceMinInput').value;
+        const minV = getInputValue('detailPriceMinInput');
         if (minV) p.priceMin = parseFloat(minV);
-        const maxV = document.getElementById('detailPriceMaxInput').value;
+        const maxV = getInputValue('detailPriceMaxInput');
         if (maxV) p.priceMax = parseFloat(maxV);
-        p.description = document.getElementById('detailDescInput').value || p.description;
+        p.description = getInputValue('detailDescInput') || p.description;
 
         p.aplus = collectAplusBlocks();
         products[idx] = p;
