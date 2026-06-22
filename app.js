@@ -671,14 +671,38 @@ function renderVariationsDisplay(variations) {
     }
     display.style.display = 'block';
     list.innerHTML = '';
+    
+    const hasImages = variations.some(v => v.image && v.image.trim());
+    
     variations.forEach(v => {
         const card = document.createElement('div');
-        card.className = 'variation-card';
-        card.innerHTML = `
-            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-            <span class="variation-size">${escapeHtml(v.size || '')}</span>
-        `;
+        card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
+        
+        const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '-';
+        
+        if (hasImages && v.image && v.image.trim()) {
+            card.innerHTML = `
+                <img src="${v.image.trim()}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                <span class="variation-price">${priceText}</span>
+            `;
+        } else {
+            card.innerHTML = `
+                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                <span class="variation-price">${priceText}</span>
+            `;
+        }
+        
+        card.addEventListener('click', function() {
+            document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            if (v.price !== null && v.price !== undefined && !isNaN(v.price)) {
+                document.getElementById('detailPriceBig').textContent = '$' + v.price;
+            }
+        });
+        
         list.appendChild(card);
     });
 }
@@ -869,14 +893,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
-            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
+            <p class="aplus-block-text" data-editable="text">${b.text || ''}</p>
+            <img src="${b.image || 'https://picsum.photos/1200/420'}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -884,9 +908,9 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
                 </div>
-                <img src="${escapeHtml(b.image || '')}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
+                <img src="${b.image || 'https://picsum.photos/600/400'}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
@@ -896,9 +920,37 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(it) + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + it + '</li>').join('')}
                 </ul>
             </div>
+        `;
+    } else if (b.type === 'gallery') {
+        const images = b.images || [];
+        content.innerHTML = `
+            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Gallery')}</h3>
+            <div class="aplus-block-gallery">
+                ${images.map((img, i) => `
+                    <div class="gallery-item">
+                        <img src="${img || 'https://picsum.photos/400/300'}" alt="" onerror="this.src='https://picsum.photos/400/300'">
+                        <input type="url" class="form-control aplus-image-input mt-1" placeholder="Image URL" data-editable-img data-index="${i}" value="${escapeHtml(img || '')}">
+                    </div>
+                `).join('')}
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-gallery-image">+ Add Image</button>
+        `;
+    } else if (b.type === 'multiText') {
+        const texts = b.texts || ['', ''];
+        const headings = b.headings || ['', ''];
+        content.innerHTML = `
+            <div class="aplus-block-multi-text">
+                ${texts.map((txt, i) => `
+                    <div class="multi-text-item">
+                        <div class="multi-text-heading" data-editable="heading">${escapeHtml(headings[i] || '')}</div>
+                        <div class="multi-text-content" data-editable="text">${txt || ''}</div>
+                    </div>
+                `).join('')}
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-text-block">+ Add Text Block</button>
         `;
     }
     wrap.appendChild(content);
@@ -942,7 +994,9 @@ function addAplusBlock(type) {
         text: { type: 'text', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...') },
         textImage: { type: 'textImage', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
         imageText: { type: 'imageText', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
-        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] }
+        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] },
+        gallery: { type: 'gallery', heading: 'Gallery', images: ['https://picsum.photos/400/300', 'https://picsum.photos/400/300'] },
+        multiText: { type: 'multiText', headings: ['Section 1', 'Section 2'], texts: ['Click to edit text...', 'Click to edit text...'] }
     };
     const preset = presets[type];
     if (!preset) return;
@@ -962,19 +1016,36 @@ function collectAplusBlocks() {
         const heading = blockEl.querySelector('[data-editable="heading"]');
         if (heading) item.heading = heading.innerText.trim();
         const text = blockEl.querySelector('[data-editable="text"]');
-        if (text) item.text = text.innerText.trim();
-        const imgInput = blockEl.querySelector('[data-editable-img]');
-        if (imgInput) item.image = imgInput.value;
-        else {
-            const img = blockEl.querySelector('img');
-            if (img) item.image = img.src;
-        }
-        if (type === 'features') {
-            item.items = [];
-            blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
-                const v = li.innerText.trim();
-                if (v) item.items.push(v);
+        if (text) item.text = text.innerHTML;
+        
+        if (type === 'gallery') {
+            item.images = [];
+            blockEl.querySelectorAll('.gallery-item .aplus-image-input').forEach(input => {
+                item.images.push(input.value || '');
             });
+        } else if (type === 'multiText') {
+            item.texts = [];
+            item.headings = [];
+            blockEl.querySelectorAll('.multi-text-item').forEach(itemEl => {
+                const h = itemEl.querySelector('.multi-text-heading')?.textContent || '';
+                const t = itemEl.querySelector('.multi-text-content')?.innerHTML || '';
+                item.headings.push(h);
+                item.texts.push(t);
+            });
+        } else {
+            const imgInput = blockEl.querySelector('[data-editable-img]');
+            if (imgInput) item.image = imgInput.value;
+            else {
+                const img = blockEl.querySelector('img');
+                if (img) item.image = img.src;
+            }
+            if (type === 'features') {
+                item.items = [];
+                blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
+                    const v = li.innerHTML;
+                    if (v) item.items.push(v);
+                });
+            }
         }
         out.push(item);
     });

@@ -666,13 +666,15 @@
                 <h3 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i><span data-i18n="aplus.title">A+ Content</span></h3>
                 <div class="aplus-blocks" id="aplusBlocks"></div>
                 <div class="aplus-add-block-bar" id="aplusAddBar">
-                    <span class="me-2 small text-muted" data-i18n="aplus.addBlock">Add a content block:</span>
-                    <button type="button" data-add-type="hero"><i class="fas fa-image"></i> <span data-i18n="aplus.blockHero">Hero Banner</span></button>
-                    <button type="button" data-add-type="text"><i class="fas fa-paragraph"></i> <span data-i18n="aplus.blockText">Text</span></button>
-                    <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
-                    <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
-                    <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
-                </div>
+                <span class="me-2 small text-muted" data-i18n="aplus.addBlock">Add a content block:</span>
+                <button type="button" data-add-type="hero"><i class="fas fa-image"></i> <span data-i18n="aplus.blockHero">Hero Banner</span></button>
+                <button type="button" data-add-type="text"><i class="fas fa-paragraph"></i> <span data-i18n="aplus.blockText">Text</span></button>
+                <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
+                <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
+                <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
+                <button type="button" data-add-type="gallery"><i class="fas fa-images"></i> <span data-i18n="aplus.blockGallery">Image Gallery</span></button>
+                <button type="button" data-add-type="multiText"><i class="fas fa-align-left"></i> <span data-i18n="aplus.blockMultiText">Multi-Text</span></button>
+            </div>
             </div>
         </div>
     </section>
@@ -1151,15 +1153,40 @@
             }
             display.style.display = 'block';
             list.innerHTML = '';
+            
+            const hasImages = variations.some(v => v.image && v.image.trim());
+            
             variations.forEach(v => {
                 const card = document.createElement('div');
-                card.className = 'variation-card';
-                const imgSrc = v.image || 'https://via.placeholder.com/80?text=No+Image';
-                card.innerHTML = `
-                    <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-                    <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-                    <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                `;
+                card.className = 'variation-card' + (hasImages && v.image && v.image.trim() ? '' : ' no-image');
+                
+                const priceText = v.price !== null && v.price !== undefined && !isNaN(v.price) ? '$' + v.price : '-';
+                
+                if (hasImages && v.image && v.image.trim()) {
+                    // 有图片的样式
+                    card.innerHTML = `
+                        <img src="${escapeHtml(v.image.trim())}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                        <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                        <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                        <span class="variation-price">${priceText}</span>
+                    `;
+                } else {
+                    // 没有图片的扁平标签样式
+                    card.innerHTML = `
+                        <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                        <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                        <span class="variation-price">${priceText}</span>
+                    `;
+                }
+                
+                card.addEventListener('click', function() {
+                    document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    if (v.price !== null && v.price !== undefined && !isNaN(v.price)) {
+                        document.getElementById('detailPriceBig').textContent = '$' + v.price;
+                    }
+                });
+                
                 list.appendChild(card);
             });
         }
@@ -1321,39 +1348,63 @@
                     return escapeHtml(s).replace(/\n/g, '<br>');
                 }
                 if (block.type === 'hero') {
-                    div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
+                    div.innerHTML += `<img src="${block.image || 'https://picsum.photos/1200/420'}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;">
                         <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
+                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'text') {
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>`;
+                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>`;
                 } else if (block.type === 'textImage') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         </div>
-                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
+                        <img src="${block.image || 'https://picsum.photos/600/400'}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                     </div>
                     <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'imageText') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-image-text">
-                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
+                        <img src="${block.image || 'https://picsum.photos/600/400'}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${renderRichText(block.text || '')}</div>
+                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
                         </div>
                     </div>
                     <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'features') {
                     let itemsHtml = '<ul data-editable="features">';
                     (block.items || []).forEach(item => {
-                        itemsHtml += `<li data-editable="feature">${renderRichText(item)}</li>`;
+                        itemsHtml += `<li data-editable="feature">${item || ''}</li>`;
                     });
                     itemsHtml += '</ul>';
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Key Features')}</div>
                         <div class="aplus-block-features">${itemsHtml}</div>`;
+                } else if (block.type === 'gallery') {
+                    const images = block.images || [];
+                    let galleryHtml = '<div class="aplus-block-gallery">';
+                    images.forEach((img, idx) => {
+                        galleryHtml += `<div class="gallery-item">
+                            <img src="${img || 'https://picsum.photos/400/300'}" alt="" onerror="this.src='https://picsum.photos/400/300'">
+                            <input type="url" class="form-control aplus-image-input mt-1" placeholder="Image URL" data-editable-img data-index="${idx}" value="${escapeHtml(img || '')}">
+                        </div>`;
+                    });
+                    galleryHtml += '</div>';
+                    galleryHtml += `<button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-gallery-image">+ Add Image</button>`;
+                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Gallery')}</div>${galleryHtml}`;
+                } else if (block.type === 'multiText') {
+                    const texts = block.texts || ['', ''];
+                    let textsHtml = '<div class="aplus-block-multi-text">';
+                    texts.forEach((txt, idx) => {
+                        textsHtml += `<div class="multi-text-item">
+                            <div class="multi-text-heading" data-editable="heading">${escapeHtml(block.headings && block.headings[idx] || '')}</div>
+                            <div class="multi-text-content" data-editable="text">${txt || ''}</div>
+                        </div>`;
+                    });
+                    textsHtml += '</div>';
+                    textsHtml += `<button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-text-block">+ Add Text Block</button>`;
+                    div.innerHTML += textsHtml;
                 }
                 container.appendChild(div);
             });
@@ -1419,6 +1470,28 @@
                             updateAplusContent(index, block);
                         });
                     });
+                block.querySelectorAll('.add-gallery-image').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const product = getProducts().find(p => p.id === currentDetailProductId);
+                        if (product && product.aplus && product.aplus[index]) {
+                            if (!product.aplus[index].images) product.aplus[index].images = [];
+                            product.aplus[index].images.push('');
+                            saveAplusData(product.aplus);
+                        }
+                    });
+                });
+                block.querySelectorAll('.add-text-block').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const product = getProducts().find(p => p.id === currentDetailProductId);
+                        if (product && product.aplus && product.aplus[index]) {
+                            if (!product.aplus[index].texts) product.aplus[index].texts = [];
+                            if (!product.aplus[index].headings) product.aplus[index].headings = [];
+                            product.aplus[index].texts.push('');
+                            product.aplus[index].headings.push('');
+                            saveAplusData(product.aplus);
+                        }
+                    });
+                });
             });
         }
 
@@ -1427,18 +1500,38 @@
             if (!product || !product.aplus) return;
             const block = product.aplus[index];
             if (!block) return;
-            block.heading = blockEl.querySelector('.aplus-block-heading')?.textContent || '';
-            const textEl = blockEl.querySelector('[data-editable="text"]');
-            block.text = textEl ? textEl.innerHTML : '';
-            if (block.type === 'features') {
+            
+            const headingEl = blockEl.querySelector('.aplus-block-heading');
+            if (headingEl) block.heading = headingEl.textContent || '';
+            
+            const textEl = blockEl.querySelector('.aplus-block-text');
+            if (textEl) block.text = textEl.innerHTML || '';
+            
+            if (block.type === 'gallery') {
+                block.images = [];
+                blockEl.querySelectorAll('.gallery-item .aplus-image-input').forEach(input => {
+                    block.images.push(input.value || '');
+                });
+            } else if (block.type === 'multiText') {
+                block.texts = [];
+                block.headings = [];
+                blockEl.querySelectorAll('.multi-text-item').forEach(item => {
+                    const h = item.querySelector('.multi-text-heading')?.textContent || '';
+                    const t = item.querySelector('.multi-text-content')?.innerHTML || '';
+                    block.headings.push(h);
+                    block.texts.push(t);
+                });
+            } else if (block.type === 'features') {
                 block.items = [];
                 blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
-                    block.items.push(li.innerHTML);
+                    block.items.push(li.innerHTML || '');
                 });
             }
-            if (blockEl.querySelector('.aplus-image-input')) {
+            
+            if (blockEl.querySelector('.aplus-image-input') && block.type !== 'gallery') {
                 block.image = blockEl.querySelector('.aplus-image-input').value;
             }
+            
             saveAplusData(product.aplus);
         }
 
@@ -1921,6 +2014,17 @@
                     if (!product.aplus) product.aplus = [];
                     const newBlock = { type: type, heading: '', text: '', image: '' };
                     if (type === 'features') newBlock.items = [];
+                    if (type === 'gallery') {
+                        newBlock.images = ['', ''];
+                        delete newBlock.text;
+                        delete newBlock.image;
+                    }
+                    if (type === 'multiText') {
+                        newBlock.texts = ['', ''];
+                        newBlock.headings = ['', ''];
+                        delete newBlock.text;
+                        delete newBlock.image;
+                    }
                     product.aplus.push(newBlock);
                     saveAplusData(product.aplus);
                 });
