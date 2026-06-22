@@ -639,12 +639,13 @@ function renderVariationsModal(variations) {
 function addVariationItem(data) {
     const container = document.getElementById('variationsContainer');
     if (!container) return;
-    const v = data || { color: '', size: '', image: '' };
+    const v = data || { color: '', size: '', image: '', price: '' };
     const item = document.createElement('div');
     item.className = 'variation-item';
     item.innerHTML = `
         <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
         <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
         <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
         <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
     `;
@@ -657,7 +658,9 @@ function collectVariations() {
         const color = item.querySelector('.variation-color').value.trim();
         const size = item.querySelector('.variation-size').value.trim();
         const image = item.querySelector('.variation-image').value.trim();
-        if (color || size) variations.push({ color, size, image });
+        const priceVal = item.querySelector('.variation-price').value.trim();
+        const price = priceVal ? parseFloat(priceVal) : null;
+        if (color || size) variations.push({ color, size, image, price });
     });
     return variations;
 }
@@ -678,7 +681,23 @@ function renderVariationsDisplay(variations) {
             <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
             <span class="variation-name">${escapeHtml(v.color || '-')}</span>
             <span class="variation-size">${escapeHtml(v.size || '')}</span>
+            ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
         `;
+        card.addEventListener('click', function () {
+            document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            const priceBig = document.getElementById('detailPriceBig');
+            if (priceBig) {
+                if (v.price !== undefined && v.price !== null && v.price !== '') {
+                    priceBig.textContent = '$' + v.price;
+                } else {
+                    const product = getProducts().find(p => p.id === currentDetailProductId);
+                    if (product) {
+                        priceBig.textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+                    }
+                }
+            }
+        });
         list.appendChild(card);
     });
 }
@@ -721,7 +740,27 @@ function renderDetailPage(productId) {
     document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
     document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
     document.getElementById('detailDesc').textContent = product.description || '';
-    document.getElementById('detailPriceBig').textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+
+    // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
+    let defaultPriceText;
+    if (product.variations && product.variations.length > 0) {
+        const pricedVariations = product.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
+        if (pricedVariations.length > 0) {
+            const prices = pricedVariations.map(v => parseFloat(v.price));
+            const vMin = Math.min(...prices);
+            const vMax = Math.max(...prices);
+            if (vMin === vMax) {
+                defaultPriceText = '$' + vMin;
+            } else {
+                defaultPriceText = '$' + vMin + ' - $' + vMax;
+            }
+        } else {
+            defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+        }
+    } else {
+        defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+    }
+    document.getElementById('detailPriceBig').textContent = defaultPriceText;
 
     document.getElementById('detailNameInput').value = product.name || '';
     document.getElementById('detailImageInput').value = product.image || '';
@@ -815,7 +854,27 @@ function commitSave() {
         document.getElementById('detailPriceMin').textContent = p.priceMin;
         document.getElementById('detailPriceMax').textContent = p.priceMax;
         document.getElementById('detailDesc').textContent = p.description;
-        document.getElementById('detailPriceBig').textContent = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
+
+        // 保存后重新计算默认价格显示
+        let savedPriceText;
+        if (p.variations && p.variations.length > 0) {
+            const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
+            if (pricedVariations.length > 0) {
+                const prices = pricedVariations.map(v => parseFloat(v.price));
+                const vMin = Math.min(...prices);
+                const vMax = Math.max(...prices);
+                if (vMin === vMax) {
+                    savedPriceText = '$' + vMin;
+                } else {
+                    savedPriceText = '$' + vMin + ' - $' + vMax;
+                }
+            } else {
+                savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
+            }
+        } else {
+            savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
+        }
+        document.getElementById('detailPriceBig').textContent = savedPriceText;
         setSaveStatus('saved');
         renderProducts();
     } catch (e) {

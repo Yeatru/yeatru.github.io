@@ -961,7 +961,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 .variation-item {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr auto;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr auto;
     gap: 0.5rem;
     padding: 0.75rem;
     background-color: #f8f9fa;
@@ -1025,6 +1025,21 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     font-size: 0.85rem;
     color: #6c757d;
     margin-top: 0.25rem;
+}
+.variation-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0b7b94;
+    margin-top: 0.35rem;
+}
+.variation-card {
+    cursor: pointer;
+    user-select: none;
+}
+.variation-card.selected {
+    border-color: #0b7b94;
+    background-color: rgba(11, 123, 148, 0.05);
+    box-shadow: 0 0 0 2px rgba(11, 123, 148, 0.15);
 }
 
 @media (max-width: 768px) {
