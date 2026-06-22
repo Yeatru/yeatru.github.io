@@ -3,58 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Yeatru Sourcing | China Product Sourcing Services</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Browse our curated products from China. Yeatru Sourcing offers quality products from verified suppliers in Yiwu - storage boxes, household items, and more.">
-    <meta name="keywords" content="China products, Yiwu products, sourcing products, wholesale products, China wholesale, product catalog, storage boxes, household items">
+    <title>Products - Yeatru Sourcing | Quality Wholesale Products from China</title>
+    <meta name="description" content="Browse Yeatru Sourcing's quality product catalog - apparel, kitchenware, electronics, home goods, toys, and more. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers worldwide.">
+    <meta name="keywords" content="China sourcing agent, wholesale products, small business sourcing, startup products, ecommerce inventory, Amazon FBA products, dropshipping suppliers, Yiwu market products, Alibaba alternative, bulk wholesale, China manufacturer, quality products, international trade, procurement services, supplier audit, dropshipping">
     <meta name="author" content="Yeatru Sourcing">
     <meta name="robots" content="index, follow">
-
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.yeatru.com/products.html">
-
-    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Products - Yeatru Sourcing | Quality Wholesale Products from China">
+    <meta property="og:description" content="Browse our quality product catalog. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers worldwide.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.yeatru.com/products.html">
-    <meta property="og:title" content="Products - Yeatru Sourcing | China Product Sourcing Services">
-    <meta property="og:description" content="Browse our curated products from China. Quality products from verified suppliers in Yiwu - storage boxes, household items, and more.">
-    <meta property="og:image" content="https://www.yeatru.com/logo.svg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
     <meta property="og:site_name" content="Yeatru Sourcing">
+    <meta property="og:image" content="https://www.yeatru.com/logo.svg">
     <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="es_ES">
-    <meta property="og:locale:alternate" content="fr_FR">
-    <meta property="og:locale:alternate" content="ru_RU">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.yeatru.com/products.html">
-    <meta name="twitter:title" content="Products - Yeatru Sourcing">
-    <meta name="twitter:description" content="Browse our curated products from China. Quality products from verified suppliers in Yiwu.">
+    <meta name="twitter:title" content="Products - Yeatru Sourcing | Quality Wholesale Products from China">
+    <meta name="twitter:description" content="Browse our quality product catalog. Trusted China sourcing agent for small businesses, startups, online sellers, and international trade buyers.">
     <meta name="twitter:image" content="https://www.yeatru.com/logo.svg">
-
-    <!-- Theme / Mobile Theme Colors -->
-    <meta name="theme-color" content="#001F5C">
-    <meta name="msapplication-TileColor" content="#001F5C">
-    <meta name="color-scheme" content="light">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="mask-icon" href="/favicon.svg" color="#001F5C">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-    <!-- PWA / Web Manifest -->
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="application-name" content="Yeatru Sourcing">
-    <meta name="apple-mobile-web-app-title" content="Yeatru">
-
-    <!-- Stylesheets -->
+    <meta name="twitter:url" content="https://www.yeatru.com/products.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Yeatru Sourcing",
+        "url": "https://www.yeatru.com",
+        "logo": "https://www.yeatru.com/logo.svg",
+        "description": "Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yiwu",
+            "addressRegion": "Zhejiang",
+            "addressCountry": "China"
+        },
+        "sameAs": [
+            "https://www.yeatru.com",
+            "https://www.yeatru.com/products.html"
+        ]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -332,6 +318,80 @@
             color: var(--peacock-blue-dark);
             margin-bottom: 1rem;
         }
+        .variations-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .variation-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr auto;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+            align-items: center;
+        }
+        .variation-item input {
+            font-size: 0.9rem;
+        }
+        .variation-remove {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .variations-display {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+        .variations-display-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--peacock-blue-dark);
+            margin-bottom: 1rem;
+        }
+        .variations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .variation-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.75rem;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            min-width: 110px;
+            transition: border-color 0.2s;
+        }
+        .variation-card:hover {
+            border-color: var(--peacock-blue);
+        }
+        .variation-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        .variation-card .variation-name {
+            font-size: 0.85rem;
+            color: var(--peacock-blue-dark);
+            font-weight: 600;
+        }
+        .variation-size {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
         .aplus-section { margin-top: 2rem; }
         .aplus-section-title {
             font-size: 1.4rem;
@@ -380,12 +440,6 @@
             outline: 2px solid var(--peacock-blue);
             background-color: #fafdff;
         }
-        .rich-text-toolbar {
-            display: none;
-        }
-        .aplus-block.edit-mode .rich-text-toolbar {
-            display: flex !important;
-        }
         .aplus-block-heading {
             font-size: 1.2rem;
             font-weight: 600;
@@ -427,52 +481,6 @@
             font-size: 0.95rem;
             color: #495057;
             border-left: 3px solid var(--peacock-blue);
-        }
-        .aplus-block-two-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        .aplus-block-three-columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-        }
-        .aplus-column {
-            padding: 1rem;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            min-height: 100px;
-            color: #495057;
-            line-height: 1.6;
-        }
-        .aplus-block-quote {
-            padding: 1.5rem 2rem;
-            background-color: var(--light-gray);
-            border-left: 4px solid var(--peacock-blue);
-            border-radius: 0 8px 8px 0;
-            margin: 1rem 0;
-        }
-        .aplus-block-quote blockquote {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #495057;
-            margin: 0 0 0.5rem;
-        }
-        .aplus-block-quote cite {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-        .aplus-block-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        .aplus-block-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
         }
         .aplus-add-block-bar {
             display: none;
@@ -518,9 +526,6 @@
             .section-title { font-size: 1.8rem; }
             .aplus-block-image-wrap, .aplus-block-image-wrap.layout-image-text { flex-direction: column; }
             .aplus-block-image-wrap > img { width: 100%; height: auto; }
-            .aplus-block-two-columns { grid-template-columns: 1fr; }
-            .aplus-block-three-columns { grid-template-columns: 1fr; }
-            .aplus-block-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -641,6 +646,11 @@
                     <div class="detail-price-big" id="detailPriceBig">—</div>
                     <p class="text-muted" id="detailDesc">—</p>
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+
+                    <div id="variationsDisplay" class="variations-display" style="display:none;">
+                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div id="variationsList" class="variations-list"></div>
+                    </div>
                 </div>
             </div>
 
@@ -654,10 +664,6 @@
                     <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
                     <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
                     <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
-                    <button type="button" data-add-type="twoColumns"><i class="fas fa-columns"></i> <span>Two Columns</span></button>
-                    <button type="button" data-add-type="threeColumns"><i class="fas fa-th-large"></i> <span>Three Columns</span></button>
-                    <button type="button" data-add-type="quote"><i class="fas fa-quote-left"></i> <span>Quote</span></button>
-                    <button type="button" data-add-type="imageGallery"><i class="fas fa-images"></i> <span>Image Gallery</span></button>
                 </div>
             </div>
         </div>
@@ -723,7 +729,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -749,7 +755,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="productModalLabel" data-i18n="products.addProduct">Add New Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="productForm">
@@ -801,6 +807,14 @@
                             <label for="productDescription" class="form-label" data-i18n="form.description">Description</label>
                             <textarea class="form-control" id="productDescription" rows="3"></textarea>
                         </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:var(--peacock-blue);"></i> Variations (Colors / Sizes)</label>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                            </div>
+                            <div id="variationsContainer" class="variations-container"></div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -816,7 +830,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="quoteModalLabel" data-i18n="quote.title">Get a Quote</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="https://formsubmit.co/info@yeatru.com" method="POST">
@@ -1035,6 +1049,7 @@
                         document.getElementById('productPriceMin').value = product.priceMin;
                         document.getElementById('productPriceMax').value = product.priceMax;
                         document.getElementById('productDescription').value = product.description;
+                        renderVariationsModal(product.variations || []);
                         document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                         new bootstrap.Modal(document.getElementById('productModal')).show();
                     }
@@ -1085,6 +1100,64 @@
             }
         }
 
+        /* ========== 产品变体 ========== */
+        function renderVariationsModal(variations) {
+            const container = document.getElementById('variationsContainer');
+            container.innerHTML = '';
+            if (variations && variations.length > 0) {
+                variations.forEach(v => addVariationItem(v));
+            }
+        }
+        function addVariationItem(data) {
+            const container = document.getElementById('variationsContainer');
+            const v = data || { color: '', size: '', image: '' };
+            const item = document.createElement('div');
+            item.className = 'variation-item';
+            item.innerHTML = `
+                <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+                <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+                <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+                <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+            `;
+            item.querySelector('.variation-remove').addEventListener('click', function () {
+                item.remove();
+            });
+            container.appendChild(item);
+        }
+        function collectVariations() {
+            const variations = [];
+            document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
+                const color = item.querySelector('.variation-color').value.trim();
+                const size = item.querySelector('.variation-size').value.trim();
+                const image = item.querySelector('.variation-image').value.trim();
+                if (color || size) {
+                    variations.push({ color, size, image });
+                }
+            });
+            return variations;
+        }
+        function renderVariationsDisplay(variations) {
+            const display = document.getElementById('variationsDisplay');
+            const list = document.getElementById('variationsList');
+            if (!variations || variations.length === 0) {
+                display.style.display = 'none';
+                return;
+            }
+            display.style.display = 'block';
+            list.innerHTML = '';
+            variations.forEach(v => {
+                const card = document.createElement('div');
+                card.className = 'variation-card';
+                const imgSrc = v.image || 'https://via.placeholder.com/80?text=No+Image';
+                card.innerHTML = `
+                    <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+                    <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                    <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                `;
+                list.appendChild(card);
+            });
+        }
+
         /* ========== 详情页 ========== */
         function showDetailPage(productId) {
             currentDetailProductId = productId;
@@ -1109,6 +1182,7 @@
             document.getElementById('detailPriceBig').textContent = '$' + product.priceMin + ' - $' + product.priceMax;
             document.getElementById('detailDesc').textContent = product.description;
             document.getElementById('detailDescInput').value = product.description;
+            renderVariationsDisplay(product.variations);
 
             if (isAdmin()) {
                 document.getElementById('detailModeToggle').style.display = 'inline-flex';
@@ -1183,38 +1257,27 @@
                 const div = document.createElement('div');
                 div.className = 'aplus-block';
                 div.setAttribute('data-index', index);
-                
-                // 只有管理员登录时才创建工具栏
-                const isAdminUser = isAdmin();
-                const textToolbar = isAdminUser ? `<div class="rich-text-toolbar" style="display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;">
-                    <button type="button" data-format="bold" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;transition:background 0.2s;">B</button>
-                    <button type="button" data-format="italic" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;transition:background 0.2s;">I</button>
-                    <button type="button" data-format="underline" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;transition:background 0.2s;">U</button>
-                    <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">•列表</button>
-                    <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">1.列表</button>
-                    <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.2s;">表格</button>
-                </div>` : '';
-
-                const toolbar = isAdminUser ? `<div class="aplus-block-toolbar">
+                // 工具栏始终创建，由 CSS/edit-mode 类控制显示
+                const toolbar = `<div class="aplus-block-toolbar">
                     <button type="button" class="btn-move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
                     <button type="button" class="btn-move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
                     <button type="button" class="danger btn-delete-block" title="Delete"><i class="fas fa-trash"></i></button>
-                </div>` : '';
-                div.innerHTML = toolbar + textToolbar;
+                </div>`;
+                div.innerHTML = toolbar;
 
                 if (block.type === 'hero') {
                     div.innerHTML += `<img src="${escapeHtml(block.image || '')}" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:1rem;" onerror="this.src='https://picsum.photos/1200/420'">
                         <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
+                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
                         <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
                 } else if (block.type === 'text') {
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>`;
+                        <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>`;
                 } else if (block.type === 'textImage') {
                     div.innerHTML += `<div class="aplus-block-image-wrap layout-text-image">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
+                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
                         </div>
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                     </div>
@@ -1224,7 +1287,7 @@
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
                         <div class="aplus-block-text-side">
                             <div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                            <div class="aplus-block-text" data-editable="text">${block.text || ''}</div>
+                            <div class="aplus-block-text" data-editable="text">${escapeHtml(block.text || '')}</div>
                         </div>
                     </div>
                     <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(block.image || '')}">`;
@@ -1236,33 +1299,6 @@
                     itemsHtml += '</ul>';
                     div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Key Features')}</div>
                         <div class="aplus-block-features">${itemsHtml}</div>`;
-                } else if (block.type === 'twoColumns') {
-                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-two-columns">
-                            <div class="aplus-column" data-editable="column1">${block.column1 || ''}</div>
-                            <div class="aplus-column" data-editable="column2">${block.column2 || ''}</div>
-                        </div>`;
-                } else if (block.type === 'threeColumns') {
-                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || '')}</div>
-                        <div class="aplus-block-three-columns">
-                            <div class="aplus-column" data-editable="col1">${block.col1 || ''}</div>
-                            <div class="aplus-column" data-editable="col2">${block.col2 || ''}</div>
-                            <div class="aplus-column" data-editable="col3">${block.col3 || ''}</div>
-                        </div>`;
-                } else if (block.type === 'quote') {
-                    div.innerHTML += `<div class="aplus-block-quote">
-                        <blockquote data-editable="text">${block.text || ''}</blockquote>
-                        <cite data-editable="author">— ${escapeHtml(block.author || '')}</cite>
-                    </div>`;
-                } else if (block.type === 'imageGallery') {
-                    const images = block.images || [];
-                    let galleryHtml = '';
-                    images.forEach((img, i) => {
-                        galleryHtml += `<img src="${escapeHtml(img || '')}" alt="Gallery ${i + 1}" onerror="this.src='https://picsum.photos/400/300'" data-editable-img data-index="${i}">`;
-                        galleryHtml += `<input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img-index="${i}" value="${escapeHtml(img || '')}">`;
-                    });
-                    div.innerHTML += `<div class="aplus-block-heading" data-editable="heading">${escapeHtml(block.heading || 'Gallery')}</div>
-                        <div class="aplus-block-gallery">${galleryHtml}</div>`;
                 }
                 container.appendChild(div);
             });
@@ -1272,7 +1308,7 @@
             container.querySelectorAll('.aplus-block').forEach((block, index) => {
                 block.classList.toggle('edit-mode', isEdit);
                 block.querySelectorAll('[data-editable]').forEach(el => {
-                    el.contentEditable = isEdit ? true : false;
+                    el.contentEditable = isEdit ? 'true' : 'false';
                 });
                 block.querySelectorAll('.btn-move-up, .btn-move-down, .btn-delete-block').forEach(btn => {
                     btn.addEventListener('click', function () {
@@ -1297,47 +1333,6 @@
                             updateAplusContent(index, block);
                         });
                     });
-                // 富文本格式按钮事件
-                block.querySelectorAll('[data-format]').forEach(btn => {
-                    btn.addEventListener('mousedown', function (e) {
-                        e.preventDefault();
-                        const format = this.dataset.format;
-                        // 找到当前聚焦的可编辑元素，或默认使用第一个
-                        let editEl = block.querySelector('[data-editable]:focus') || block.querySelector('[data-editable="text"]') || block.querySelector('[data-editable]');
-                        if (editEl) {
-                            editEl.focus();
-                            if (format === 'insertTable') {
-                                const input = prompt('请输入表格大小（行×列，如：3×4）:', '3×4');
-                                if (input) {
-                                    const match = input.match(/^(\d+)\s*[×xX*]\s*(\d+)$/);
-                                    if (match) {
-                                        const rows = Math.min(parseInt(match[1]) || 3, 10);
-                                        const cols = Math.min(parseInt(match[2]) || 4, 10);
-                                        let tableHTML = '<table border="1" style="border-collapse:collapse;margin:10px 0;">';
-                                        for (let r = 0; r < rows; r++) {
-                                            tableHTML += '<tr>';
-                                            for (let c = 0; c < cols; c++) {
-                                                tableHTML += `<td style="padding:6px;border:1px solid #ccc;">${r === 0 ? '表头' + (c + 1) : ''}</td>`;
-                                            }
-                                            tableHTML += '</tr>';
-                                        }
-                                        tableHTML += '</table>';
-                                        document.execCommand('insertHTML', false, tableHTML);
-                                    } else {
-                                        alert('格式错误，请使用如 3×4 的格式');
-                                    }
-                                }
-                            } else if (format === 'insertUnorderedList') {
-                                document.execCommand('insertUnorderedList', false, null);
-                            } else if (format === 'insertOrderedList') {
-                                document.execCommand('insertOrderedList', false, null);
-                            } else {
-                                document.execCommand(format, false, null);
-                            }
-                            updateAplusContent(index, block);
-                        }
-                    });
-                });
             });
         }
 
@@ -1347,35 +1342,9 @@
             const block = product.aplus[index];
             if (!block) return;
             block.heading = blockEl.querySelector('.aplus-block-heading')?.textContent || '';
-            const textEl = blockEl.querySelector('.aplus-block-text');
-            block.text = textEl ? textEl.innerHTML : '';
+            block.text = blockEl.querySelector('.aplus-block-text')?.textContent || '';
             if (blockEl.querySelector('.aplus-image-input')) {
                 block.image = blockEl.querySelector('.aplus-image-input').value;
-            }
-            // 新模块数据保存
-            if (block.type === 'twoColumns') {
-                const col1 = blockEl.querySelector('[data-editable="column1"]');
-                const col2 = blockEl.querySelector('[data-editable="column2"]');
-                block.column1 = col1 ? col1.innerHTML : '';
-                block.column2 = col2 ? col2.innerHTML : '';
-            }
-            if (block.type === 'threeColumns') {
-                const col1 = blockEl.querySelector('[data-editable="col1"]');
-                const col2 = blockEl.querySelector('[data-editable="col2"]');
-                const col3 = blockEl.querySelector('[data-editable="col3"]');
-                block.col1 = col1 ? col1.innerHTML : '';
-                block.col2 = col2 ? col2.innerHTML : '';
-                block.col3 = col3 ? col3.innerHTML : '';
-            }
-            if (block.type === 'quote') {
-                const author = blockEl.querySelector('[data-editable="author"]');
-                block.author = author ? author.textContent.replace(/^—/, '').trim() : '';
-            }
-            if (block.type === 'imageGallery') {
-                block.images = [];
-                blockEl.querySelectorAll('[data-editable-img-index]').forEach(input => {
-                    if (input.value) block.images.push(input.value);
-                });
             }
             saveAplusData(product.aplus);
         }
@@ -1655,6 +1624,10 @@
             if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
         });
 
+        window.addEventListener('beforeunload', function () {
+            localStorage.removeItem('yeatruAdminLoggedIn');
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             i18next
                 .use(i18nextBrowserLanguageDetector)
@@ -1703,13 +1676,6 @@
                 if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailMode === 'edit') {
                     setDetailMode('preview');
                 }
-                // 重新渲染A+内容以移除工具栏
-                if (currentDetailProductId) {
-                    const product = getProducts().find(p => p.id === currentDetailProductId);
-                    if (product) {
-                        renderAplusBlocks(product.aplus || []);
-                    }
-                }
             });
 
             document.getElementById('addCategoryBtn').addEventListener('click', function () {
@@ -1718,6 +1684,10 @@
                     saveCategories([...getCategories(), newCategory]);
                     document.getElementById('newCategory').value = '';
                 }
+            });
+
+            document.getElementById('addVariationBtn').addEventListener('click', function () {
+                addVariationItem();
             });
 
             document.getElementById('saveProduct').addEventListener('click', function () {
@@ -1733,7 +1703,8 @@
                     moq: parseInt(document.getElementById('productMOQ').value),
                     priceMin: parseFloat(document.getElementById('productPriceMin').value),
                     priceMax: parseFloat(document.getElementById('productPriceMax').value),
-                    description: document.getElementById('productDescription').value
+                    description: document.getElementById('productDescription').value,
+                    variations: collectVariations()
                 };
                 const products = getProducts();
                 if (productId) {
@@ -1756,6 +1727,7 @@
             document.getElementById('addProductBtn').addEventListener('click', function () {
                 document.getElementById('productForm').reset();
                 document.getElementById('productId').value = '';
+                document.getElementById('variationsContainer').innerHTML = '';
                 document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
             });
 
@@ -1837,27 +1809,6 @@
                 }
             }
         }
-    </script>
-
-    <!-- Schema.org Structured Data for Product Catalog -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Products - Yeatru Sourcing",
-        "description": "Browse our curated products from China. Quality products from verified suppliers in Yiwu.",
-        "url": "https://www.yeatru.com/products.html",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "Yeatru Sourcing",
-            "url": "https://www.yeatru.com/"
-        },
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Yeatru Sourcing",
-            "url": "https://www.yeatru.com/"
-        }
-    }
     </script>
 </body>
 </html>
