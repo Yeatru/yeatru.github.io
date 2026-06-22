@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
             renderProducts();
         });
 
+    window.addEventListener('beforeunload', function () {
+        localStorage.removeItem('yeatruAdminLoggedIn');
+    });
+
     updateLoginUI(isAdmin());
     renderCategories();
     renderProducts();
@@ -160,6 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    document.getElementById('addVariationBtn').addEventListener('click', function () {
+        addVariationItem();
+    });
+
     document.getElementById('saveProduct').addEventListener('click', function () {
         const productId = document.getElementById('productId').value;
         const product = {
@@ -173,7 +181,8 @@ document.addEventListener('DOMContentLoaded', function () {
             moq: parseInt(document.getElementById('productMOQ').value),
             priceMin: parseFloat(document.getElementById('productPriceMin').value),
             priceMax: parseFloat(document.getElementById('productPriceMax').value),
-            description: document.getElementById('productDescription').value
+            description: document.getElementById('productDescription').value,
+            variations: collectVariations()
         };
         const products = getProducts();
         if (productId) {
@@ -189,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const productModal = document.getElementById('productModal');
         bootstrap.Modal.getInstance(productModal).hide();
         document.getElementById('productForm').reset();
+        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productId').value = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
@@ -196,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addProductBtn').addEventListener('click', function () {
         document.getElementById('productForm').reset();
         document.getElementById('productId').value = '';
+        document.getElementById('variationsContainer').innerHTML = '';
         document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
     });
 
@@ -570,6 +581,7 @@ function renderProducts() {
                 document.getElementById('productPriceMin').value = product.priceMin;
                 document.getElementById('productPriceMax').value = product.priceMax;
                 document.getElementById('productDescription').value = product.description;
+                renderVariationsModal(product.variations || []);
                 document.getElementById('productModalLabel').textContent = (tt('products.edit', 'Edit')) + ' ' + product.name;
                 new bootstrap.Modal(document.getElementById('productModal')).show();
             }
@@ -614,6 +626,61 @@ function handleHashRoute() {
     } else {
         hideDetailPage();
     }
+}
+
+function renderVariationsModal(variations) {
+    const container = document.getElementById('variationsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    if (variations && variations.length > 0) {
+        variations.forEach(v => addVariationItem(v));
+    }
+}
+function addVariationItem(data) {
+    const container = document.getElementById('variationsContainer');
+    if (!container) return;
+    const v = data || { color: '', size: '', image: '' };
+    const item = document.createElement('div');
+    item.className = 'variation-item';
+    item.innerHTML = `
+        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+    `;
+    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
+    container.appendChild(item);
+}
+function collectVariations() {
+    const variations = [];
+    document.querySelectorAll('#variationsContainer .variation-item').forEach(item => {
+        const color = item.querySelector('.variation-color').value.trim();
+        const size = item.querySelector('.variation-size').value.trim();
+        const image = item.querySelector('.variation-image').value.trim();
+        if (color || size) variations.push({ color, size, image });
+    });
+    return variations;
+}
+function renderVariationsDisplay(variations) {
+    const display = document.getElementById('variationsDisplay');
+    const list = document.getElementById('variationsList');
+    if (!display || !list) return;
+    if (!variations || variations.length === 0) {
+        display.style.display = 'none';
+        return;
+    }
+    display.style.display = 'block';
+    list.innerHTML = '';
+    variations.forEach(v => {
+        const card = document.createElement('div');
+        card.className = 'variation-card';
+        card.innerHTML = `
+            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
+            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+            <span class="variation-size">${escapeHtml(v.size || '')}</span>
+        `;
+        list.appendChild(card);
+    });
 }
 
 function showDetailPage(productId) {
@@ -665,6 +732,7 @@ function renderDetailPage(productId) {
     document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
     document.getElementById('detailDescInput').value = product.description || '';
 
+    renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
 }
 
@@ -787,43 +855,28 @@ function buildAplusBlockEl(b, idx) {
     wrap.dataset.type = b.type;
     wrap.dataset.idx = idx;
 
-    if (isAdmin()) {
-        const toolbar = document.createElement('div');
-        toolbar.className = 'aplus-block-toolbar';
-        toolbar.innerHTML = `
-            <button type="button" class="move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
-            <button type="button" class="move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
-            <button type="button" class="danger delete-block" title="Delete"><i class="fas fa-trash"></i></button>
-        `;
-        wrap.appendChild(toolbar);
-
-        const textToolbar = document.createElement('div');
-        textToolbar.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;background:#0b7b94;padding:10px;border-radius:6px;margin-bottom:10px;border:1px solid #085f73;z-index:1000;position:relative;';
-        const toolbarHTML = `
-            <button type="button" data-format="bold" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;min-width:36px;transition:background 0.2s;">B</button>
-            <button type="button" data-format="italic" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;font-style:italic;min-width:36px;transition:background 0.2s;">I</button>
-            <button type="button" data-format="underline" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;text-decoration:underline;min-width:36px;transition:background 0.2s;">U</button>
-            <button type="button" data-format="insertUnorderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;transition:background 0.2s;">•列表</button>
-            <button type="button" data-format="insertOrderedList" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:60px;transition:background 0.2s;">1.列表</button>
-            <button type="button" data-format="insertTable" style="background:rgba(255,255,255,0.95);border:1px solid #e9ecef;color:#333;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:14px;min-width:50px;transition:background 0.2s;">表格</button>
-        `;
-        textToolbar.innerHTML = toolbarHTML;
-        wrap.appendChild(textToolbar);
-    }
+    const toolbar = document.createElement('div');
+    toolbar.className = 'aplus-block-toolbar';
+    toolbar.innerHTML = `
+        <button type="button" class="move-up" title="Move Up"><i class="fas fa-arrow-up"></i></button>
+        <button type="button" class="move-down" title="Move Down"><i class="fas fa-arrow-down"></i></button>
+        <button type="button" class="danger delete-block" title="Delete"><i class="fas fa-trash"></i></button>
+    `;
+    wrap.appendChild(toolbar);
 
     const content = document.createElement('div');
     content.className = 'aplus-block-content';
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
             <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -831,7 +884,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
                 </div>
                 <img src="${escapeHtml(b.image || '')}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -845,38 +898,6 @@ function buildAplusBlockEl(b, idx) {
                 <ul data-editable="features">
                     ${items.map(it => '<li data-editable="feature">' + escapeHtml(it) + '</li>').join('')}
                 </ul>
-            </div>
-        `;
-    } else if (b.type === 'twoColumns') {
-        content.innerHTML = `
-            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-two-columns">
-                <div class="aplus-column" data-editable="column1">${b.column1 || ''}</div>
-                <div class="aplus-column" data-editable="column2">${b.column2 || ''}</div>
-            </div>
-        `;
-    } else if (b.type === 'threeColumns') {
-        content.innerHTML = `
-            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-three-columns">
-                <div class="aplus-column" data-editable="col1">${b.col1 || ''}</div>
-                <div class="aplus-column" data-editable="col2">${b.col2 || ''}</div>
-                <div class="aplus-column" data-editable="col3">${b.col3 || ''}</div>
-            </div>
-        `;
-    } else if (b.type === 'quote') {
-        content.innerHTML = `
-            <div class="aplus-block-quote">
-                <blockquote data-editable="text">${b.text || ''}</blockquote>
-                <cite data-editable="author">— ${escapeHtml(b.author || '')}</cite>
-            </div>
-        `;
-    } else if (b.type === 'imageGallery') {
-        const images = b.images || [];
-        content.innerHTML = `
-            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Gallery')}</h3>
-            <div class="aplus-block-gallery">
-                ${images.map((img, i) => `<img src="${escapeHtml(img || '')}" alt="Gallery ${i + 1}" onerror="this.src='https://picsum.photos/400/300'" data-editable-img data-index="${i}"><input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img-index="${i}" value="${escapeHtml(img || '')}">`).join('')}
             </div>
         `;
     }
@@ -900,47 +921,6 @@ function buildAplusBlockEl(b, idx) {
             scheduleAutoSave();
         }
     });
-    
-    wrap.querySelectorAll('[data-format]').forEach(btn => {
-        btn.addEventListener('mousedown', function (e) {
-            e.preventDefault();
-            const format = this.dataset.format;
-            const textEl = wrap.querySelector('[data-editable="text"]');
-            if (textEl) {
-                textEl.focus();
-                if (format === 'insertTable') {
-                    const input = prompt('请输入表格大小（行×列，如：3×4）:', '3×4');
-                    if (input) {
-                        const match = input.match(/^(\d+)\s*[×xX*]\s*(\d+)$/);
-                        if (match) {
-                            const rows = Math.min(parseInt(match[1]) || 3, 10);
-                            const cols = Math.min(parseInt(match[2]) || 4, 10);
-                            let tableHTML = '<table border="1" style="border-collapse:collapse;margin:10px 0;">';
-                            for (let r = 0; r < rows; r++) {
-                                tableHTML += '<tr>';
-                                for (let c = 0; c < cols; c++) {
-                                    tableHTML += `<td style="padding:6px;border:1px solid #ccc;">${r === 0 ? '表头' + (c + 1) : ''}</td>`;
-                                }
-                                tableHTML += '</tr>';
-                            }
-                            tableHTML += '</table>';
-                            document.execCommand('insertHTML', false, tableHTML);
-                        } else {
-                            alert('格式错误，请使用如 3×4 的格式');
-                        }
-                    }
-                } else if (format === 'insertUnorderedList') {
-                    document.execCommand('insertUnorderedList', false, null);
-                } else if (format === 'insertOrderedList') {
-                    document.execCommand('insertOrderedList', false, null);
-                } else {
-                    document.execCommand(format, false, null);
-                }
-                scheduleAutoSave();
-            }
-        });
-    });
-    
     wrap.querySelectorAll('[data-editable]').forEach(el => {
         el.addEventListener('input', scheduleAutoSave);
         el.addEventListener('blur', scheduleAutoSave);
@@ -962,11 +942,7 @@ function addAplusBlock(type) {
         text: { type: 'text', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...') },
         textImage: { type: 'textImage', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
         imageText: { type: 'imageText', heading: tt('aplus.placeholderHeading', 'Click to edit heading'), text: tt('aplus.placeholderText', 'Click to edit text content...'), image: 'https://picsum.photos/600/400' },
-        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] },
-        twoColumns: { type: 'twoColumns', heading: tt('aplus.placeholderHeading', 'Section Heading'), column1: tt('aplus.placeholderText', 'Left column content...'), column2: tt('aplus.placeholderText', 'Right column content...') },
-        threeColumns: { type: 'threeColumns', heading: tt('aplus.placeholderHeading', 'Section Heading'), col1: tt('aplus.placeholderText', 'Column 1...'), col2: tt('aplus.placeholderText', 'Column 2...'), col3: tt('aplus.placeholderText', 'Column 3...') },
-        quote: { type: 'quote', text: tt('aplus.placeholderText', 'Enter your quote here...'), author: 'Author Name' },
-        imageGallery: { type: 'imageGallery', images: ['https://picsum.photos/400/300', 'https://picsum.photos/400/300', 'https://picsum.photos/400/300', 'https://picsum.photos/400/300'] }
+        features: { type: 'features', heading: 'Key Features', items: [tt('aplus.placeholderFeature', 'Feature point') + ' 1', tt('aplus.placeholderFeature', 'Feature point') + ' 2', tt('aplus.placeholderFeature', 'Feature point') + ' 3'] }
     };
     const preset = presets[type];
     if (!preset) return;
@@ -986,7 +962,7 @@ function collectAplusBlocks() {
         const heading = blockEl.querySelector('[data-editable="heading"]');
         if (heading) item.heading = heading.innerText.trim();
         const text = blockEl.querySelector('[data-editable="text"]');
-        if (text) item.text = text.innerHTML.trim();
+        if (text) item.text = text.innerText.trim();
         const imgInput = blockEl.querySelector('[data-editable-img]');
         if (imgInput) item.image = imgInput.value;
         else {
@@ -998,30 +974,6 @@ function collectAplusBlocks() {
             blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
                 const v = li.innerText.trim();
                 if (v) item.items.push(v);
-            });
-        }
-        if (type === 'twoColumns') {
-            const col1 = blockEl.querySelector('[data-editable="column1"]');
-            const col2 = blockEl.querySelector('[data-editable="column2"]');
-            item.column1 = col1 ? col1.innerHTML.trim() : '';
-            item.column2 = col2 ? col2.innerHTML.trim() : '';
-        }
-        if (type === 'threeColumns') {
-            const col1 = blockEl.querySelector('[data-editable="col1"]');
-            const col2 = blockEl.querySelector('[data-editable="col2"]');
-            const col3 = blockEl.querySelector('[data-editable="col3"]');
-            item.col1 = col1 ? col1.innerHTML.trim() : '';
-            item.col2 = col2 ? col2.innerHTML.trim() : '';
-            item.col3 = col3 ? col3.innerHTML.trim() : '';
-        }
-        if (type === 'quote') {
-            const author = blockEl.querySelector('[data-editable="author"]');
-            item.author = author ? author.innerText.replace(/^—/, '').trim() : '';
-        }
-        if (type === 'imageGallery') {
-            item.images = [];
-            blockEl.querySelectorAll('[data-editable-img]').forEach(imgInput => {
-                if (imgInput.value) item.images.push(imgInput.value);
             });
         }
         out.push(item);
