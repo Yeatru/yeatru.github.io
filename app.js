@@ -87,6 +87,22 @@ function isAdmin() {
     return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
 }
 
+function decompressText(text) {
+    if (typeof text === 'object' && text.compressed && text.data) {
+        try {
+            const decoded = atob(text.data);
+            const charData = decoded.split('').map(function(c) { return c.charCodeAt(0); });
+            const binData = new Uint8Array(charData);
+            const decompressed = pako.inflate(binData, {to:'string'});
+            return decompressed;
+        } catch (e) {
+            console.warn('Failed to decompress text:', e);
+            return '';
+        }
+    }
+    return text;
+}
+
 function escapeHtml(str) {
     if (str === null || str === undefined) return '';
     return String(str).replace(/[&<>"']/g, function (s) {
@@ -892,14 +908,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
+            <p class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</p>
             <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;height:auto;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <div class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -907,7 +923,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+                    <div class="aplus-block-text" data-editable="text">${escapeHtml(decompressText(b.text) || '')}</div>
                 </div>
                 <img src="${b.image || 'https://picsum.photos/600/400'}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -919,7 +935,7 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + it + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(decompressText(it)) + '</li>').join('')}
                 </ul>
             </div>
         `;
