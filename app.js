@@ -695,6 +695,48 @@ function collectVariations() {
     });
     return variations;
 }
+function renderVariationsSummary(variations) {
+    const row = document.getElementById('detailVariationsRow');
+    const summary = document.getElementById('detailVariationsSummary');
+    if (!row || !summary) return;
+
+    if (!variations || variations.length === 0) {
+        row.style.display = 'none';
+        return;
+    }
+
+    row.style.display = 'table-row';
+    summary.innerHTML = '';
+
+    variations.forEach(v => {
+        const tag = document.createElement('span');
+        tag.className = 'variation-tag';
+        
+        const colorDot = document.createElement('span');
+        colorDot.className = 'variation-tag-color';
+        colorDot.style.backgroundColor = v.color || '#ccc';
+        tag.appendChild(colorDot);
+
+        const colorName = document.createElement('span');
+        colorName.textContent = v.color || '-';
+        tag.appendChild(colorName);
+
+        if (v.size) {
+            const sizeSpan = document.createElement('span');
+            sizeSpan.textContent = v.size;
+            tag.appendChild(sizeSpan);
+        }
+
+        if (v.price !== undefined && v.price !== null && v.price !== '') {
+            const priceSpan = document.createElement('span');
+            priceSpan.className = 'variation-tag-price';
+            priceSpan.textContent = '$' + v.price;
+            tag.appendChild(priceSpan);
+        }
+
+        summary.appendChild(tag);
+    });
+}
 function renderVariationsDisplay(variations) {
     const display = document.getElementById('variationsDisplay');
     const list = document.getElementById('variationsList');
@@ -819,9 +861,9 @@ function renderDetailPage(productId) {
     document.getElementById('detailMaterial').textContent = product.material || '';
     document.getElementById('detailSize').textContent = product.size || '';
     document.getElementById('detailMOQ').textContent = product.moq || '';
-    document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
-    document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
     document.getElementById('detailDesc').textContent = product.description || '';
+
+    renderVariationsSummary(product.variations);
 
     // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
     let defaultPriceText;

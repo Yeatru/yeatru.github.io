@@ -664,8 +664,7 @@
                             <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
                             <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
                             <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
-                            <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
-                            <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
+                            <tr id="detailVariationsRow" style="display:none;"><th data-i18n="products.variations">Variations</th><td><div id="detailVariationsSummary" class="variations-summary"></div></td></tr>
                         </table>
                         <div class="detail-price-big" id="detailPriceBig">—</div>
                         <p class="text-muted" id="detailDesc">—</p>
@@ -1174,6 +1173,48 @@
             });
             return variations;
         }
+        function renderVariationsSummary(variations) {
+            const row = document.getElementById('detailVariationsRow');
+            const summary = document.getElementById('detailVariationsSummary');
+            if (!row || !summary) return;
+
+            if (!variations || variations.length === 0) {
+                row.style.display = 'none';
+                return;
+            }
+
+            row.style.display = 'table-row';
+            summary.innerHTML = '';
+
+            variations.forEach(v => {
+                const tag = document.createElement('span');
+                tag.className = 'variation-tag';
+                
+                const colorDot = document.createElement('span');
+                colorDot.className = 'variation-tag-color';
+                colorDot.style.backgroundColor = v.color || '#ccc';
+                tag.appendChild(colorDot);
+
+                const colorName = document.createElement('span');
+                colorName.textContent = v.color || '-';
+                tag.appendChild(colorName);
+
+                if (v.size) {
+                    const sizeSpan = document.createElement('span');
+                    sizeSpan.textContent = v.size;
+                    tag.appendChild(sizeSpan);
+                }
+
+                if (v.price !== undefined && v.price !== null && v.price !== '') {
+                    const priceSpan = document.createElement('span');
+                    priceSpan.className = 'variation-tag-price';
+                    priceSpan.textContent = '$' + v.price;
+                    tag.appendChild(priceSpan);
+                }
+
+                summary.appendChild(tag);
+            });
+        }
         function renderVariationsDisplay(variations) {
             const display = document.getElementById('variationsDisplay');
             const list = document.getElementById('variationsList');
@@ -1285,8 +1326,8 @@
             document.getElementById('detailMaterial').textContent = product.material || '-';
             document.getElementById('detailSize').textContent = product.size || '-';
             document.getElementById('detailMOQ').textContent = product.moq;
-            document.getElementById('detailPriceMin').textContent = product.priceMin;
-            document.getElementById('detailPriceMax').textContent = product.priceMax;
+
+            renderVariationsSummary(product.variations);
 
             // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
             let defaultPriceText;
