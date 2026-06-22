@@ -991,11 +991,13 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     font-weight: 600;
     color: #085f73;
     margin-bottom: 1rem;
+    text-align: center;
 }
 .variations-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    justify-content: center;
 }
 .variation-card {
     display: flex;
@@ -1005,10 +1007,16 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     background: #fff;
     border: 1px solid #e9ecef;
     border-radius: 8px;
-    min-width: 110px;
-    transition: border-color 0.2s;
+    width: calc(25% - 0.56rem);
+    min-width: 120px;
+    max-width: 160px;
+    transition: all 0.2s;
 }
-.variation-card:hover { border-color: #0b7b94; }
+.variation-card:hover { 
+    border-color: #0b7b94; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 123, 148, 0.1);
+}
 .variation-card img {
     width: 80px;
     height: 80px;
@@ -1020,11 +1028,14 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     font-size: 0.85rem;
     color: #085f73;
     font-weight: 600;
+    text-align: center;
+    word-break: break-word;
 }
 .variation-size {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #6c757d;
     margin-top: 0.25rem;
+    text-align: center;
 }
 .variation-price {
     font-size: 0.9rem;
@@ -1042,8 +1053,24 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     box-shadow: 0 0 0 2px rgba(11, 123, 148, 0.15);
 }
 
+@media (max-width: 992px) {
+    .variation-card {
+        width: calc(33.333% - 0.5rem);
+    }
+}
+
 @media (max-width: 768px) {
-    .variations-list { grid-template-columns: 1fr; }
+    .variation-card {
+        width: calc(50% - 0.375rem);
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .variation-card {
+        width: calc(50% - 0.375rem);
+        min-width: 90px;
+    }
 }
 
 @media (max-width: 576px) {
