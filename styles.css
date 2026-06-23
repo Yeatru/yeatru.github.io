@@ -1294,31 +1294,30 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 @media (max-width: 576px) {
     .variations-list {
-        gap: 0.25rem;
+        gap: 0.15rem;
     }
     .variation-card {
-        min-width: 120px;
-        max-width: 150px;
-        height: 46px;
-        padding: 0.25rem 0.4rem;
+        min-width: 55px;
+        max-width: 70px;
+        padding: 0.06rem 0.12rem;
+        height: auto;
+        flex-direction: column;
     }
     .variation-image-wrap {
-        width: 34px;
-        height: 34px;
-        margin-right: 0.35rem;
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+        margin-bottom: 0.1rem;
     }
     .variation-card .variation-name {
-        font-size: 0.66rem;
+        font-size: 0.32rem;
     }
     .variation-size {
-        font-size: 0.6rem;
+        font-size: 0.28rem;
     }
     .variation-price {
-        font-size: 0.66rem;
+        font-size: 0.32rem;
     }
-}
-
-@media (max-width: 576px) {
     .hero-text { font-size: 1rem; }
     .hero-title { font-size: 1.75rem; }
     .service-card { padding: 1.5rem 1rem; }
@@ -1326,4 +1325,9 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .testimonial-card { padding: 1.5rem; }
     .about-stats { grid-template-columns: repeat(2, 1fr); }
     .contact-info, .contact-form { padding: 2rem 1.25rem; }
+    .detail-main { grid-template-columns: 1fr; gap: 1rem; }
+    .detail-image { max-height: 350px; }
+    .detail-info h1 { font-size: 1.4rem; }
+    .aplus-block-image-wrap { flex-direction: column; }
+    .aplus-block-image-wrap > img { max-width: 100%; height: auto; }
 }
