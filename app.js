@@ -903,7 +903,7 @@ function buildAplusBlockEl(b, idx) {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
             <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
-            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;border-radius:8px;max-height:360px;object-fit:cover;" onerror="this.src='https://picsum.photos/1200/420'">
+            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;height:auto;border-radius:8px;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
