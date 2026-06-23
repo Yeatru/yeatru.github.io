@@ -675,10 +675,14 @@ function renderVariationsDisplay(variations) {
         const card = document.createElement('div');
         card.className = 'variation-card';
         card.innerHTML = `
-            <img src="${escapeHtml(v.image || 'https://picsum.photos/80/80')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/80/80'">
-            <span class="variation-name">${escapeHtml(v.color || '-')}</span>
-            <span class="variation-size">${escapeHtml(v.size || '')}</span>
-            ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
+            <div class="variation-image-wrap">
+                <img src="${escapeHtml(v.image || 'https://picsum.photos/60/60')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/60/60'">
+            </div>
+            <div class="variation-info">
+                <span class="variation-name">${escapeHtml(v.color || '-')}</span>
+                <span class="variation-size">${escapeHtml(v.size || '')}</span>
+                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
+            </div>
         `;
         card.addEventListener('click', function () {
             document.querySelectorAll('.variation-card').forEach(c => c.classList.remove('selected'));
