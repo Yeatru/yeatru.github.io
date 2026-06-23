@@ -888,43 +888,75 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     font-size: 0.98rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .aplus-block-text table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 450px;
+    min-width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .aplus-block-text table th, .aplus-block-text table td {
-    padding: 0.5rem 0.7rem;
-    border: 1px solid #e9ecef;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #e9ecef;
     font-size: 0.9rem;
     white-space: nowrap;
+    text-align: center;
 }
 
 .aplus-block-text table th {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #0b7b94, #085f73);
+    color: #fff;
     font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.aplus-block-text table tr:last-child td {
+    border-bottom: none;
+}
+
+.aplus-block-text table tr:hover td {
+    background-color: rgba(11, 123, 148, 0.05);
 }
 
 @media (max-width: 768px) {
+    .aplus-block-text {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
     .aplus-block-text table {
-        min-width: 380px;
+        min-width: 400px;
     }
     .aplus-block-text table th, .aplus-block-text table td {
-        padding: 0.35rem 0.45rem;
-        font-size: 0.78rem;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    .aplus-block-text table th {
+        font-size: 0.7rem;
     }
 }
 
 @media (max-width: 576px) {
+    .aplus-block-text {
+        margin: 0 -0.75rem;
+        padding: 0 0.75rem;
+    }
     .aplus-block-text table {
-        min-width: 300px;
+        min-width: 320px;
     }
     .aplus-block-text table th, .aplus-block-text table td {
-        padding: 0.25rem 0.35rem;
-        font-size: 0.7rem;
+        padding: 0.3rem 0.4rem;
+        font-size: 0.68rem;
+    }
+    .aplus-block-text table th {
+        font-size: 0.65rem;
     }
 }
 
