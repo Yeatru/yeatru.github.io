@@ -364,27 +364,30 @@
         .variation-card {
             display: flex;
             flex-direction: row;
-            align-items: center;
-            padding: 0.3rem 0.4rem;
+            align-items: flex-start;
+            padding: 0.35rem;
             background: #fff;
             border: 1px solid #e9ecef;
             border-radius: 5px;
             min-width: 130px;
-            max-width: 160px;
-            height: 50px;
+            max-width: 170px;
+            height: auto;
+            min-height: 60px;
             transition: all 0.2s ease;
+            box-sizing: border-box;
         }
         .variation-card:hover {
             border-color: var(--peacock-blue);
             box-shadow: 0 2px 8px rgba(11, 123, 148, 0.1);
         }
         .variation-image-wrap {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             flex-shrink: 0;
             border-radius: 3px;
             overflow: hidden;
-            margin-right: 0.4rem;
+            margin-right: 0.5rem;
+            flex-grow: 0;
         }
         .variation-image-wrap img {
             width: 100%;
@@ -394,31 +397,35 @@
         .variation-info {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             flex: 1;
             min-width: 0;
+            padding: 0;
         }
         .variation-card .variation-name {
-            font-size: 0.72rem;
+            font-size: 0.74rem;
             color: var(--peacock-blue-dark);
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            display: block;
         }
         .variation-size {
-            font-size: 0.66rem;
+            font-size: 0.68rem;
             color: #6c757d;
-            margin-top: 0.08rem;
+            margin-top: 0.1rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            display: block;
         }
         .variation-price {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--peacock-blue);
-            margin-top: 0.12rem;
+            margin-top: 0.15rem;
+            display: block;
         }
         .variation-card {
             cursor: pointer;
