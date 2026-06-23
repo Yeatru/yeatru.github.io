@@ -723,7 +723,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .detail-info h1 {
     color: var(--peacock-blue-dark);
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
@@ -1169,10 +1169,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     border-radius: 10px;
 }
 .variations-display-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #085f73;
-    margin-bottom: 1rem;
+    display: none;
 }
 .variations-list {
     display: flex;
