@@ -709,12 +709,16 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 100%;
 }
 .detail-spec-table { 
     width: 100%; 
     border-collapse: collapse; 
-    min-width: 600px;
+    min-width: 500px;
+    table-layout: auto;
 }
 .detail-spec-table th, .detail-spec-table td {
     padding: 0.6rem 0.8rem;
@@ -734,24 +738,40 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 @media (max-width: 768px) {
     .table-responsive {
         margin-bottom: 1rem;
+        padding: 0;
     }
     .detail-spec-table th, .detail-spec-table td {
-        padding: 0.4rem 0.5rem;
-        font-size: 0.8rem;
+        padding: 0.35rem 0.45rem;
+        font-size: 0.78rem;
+    }
+    .detail-spec-table {
+        min-width: 400px;
     }
 }
 
 @media (max-width: 576px) {
     .detail-spec-table th, .detail-spec-table td {
-        padding: 0.3rem 0.4rem;
-        font-size: 0.75rem;
+        padding: 0.25rem 0.35rem;
+        font-size: 0.7rem;
+    }
+    .detail-spec-table {
+        min-width: 320px;
     }
 }
 
+.aplus-content .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+}
 .aplus-content table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px;
+    min-width: 450px;
+    table-layout: auto;
 }
 .aplus-content table th, .aplus-content table td {
     padding: 0.5rem 0.7rem;
@@ -763,10 +783,25 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     background-color: #f8f9fa;
     font-weight: 600;
 }
-.aplus-content .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
+
+@media (max-width: 768px) {
+    .aplus-content table {
+        min-width: 380px;
+    }
+    .aplus-content table th, .aplus-content table td {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .aplus-content table {
+        min-width: 300px;
+    }
+    .aplus-content table th, .aplus-content table td {
+        padding: 0.25rem 0.35rem;
+        font-size: 0.7rem;
+    }
 }
 
 .detail-price-big {
@@ -851,6 +886,46 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     color: #495057;
     line-height: 1.8;
     font-size: 0.98rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.aplus-block-text table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+.aplus-block-text table th, .aplus-block-text table td {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #e9ecef;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.aplus-block-text table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .aplus-block-text table {
+        min-width: 380px;
+    }
+    .aplus-block-text table th, .aplus-block-text table td {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .aplus-block-text table {
+        min-width: 300px;
+    }
+    .aplus-block-text table th, .aplus-block-text table td {
+        padding: 0.25rem 0.35rem;
+        font-size: 0.7rem;
+    }
 }
 
 .aplus-block-image-wrap {
