@@ -685,8 +685,16 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     margin-bottom: 3rem;
 }
 
-@media (max-width: 768px) {
-    .detail-main { grid-template-columns: 1fr; }
+.detail-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .detail-image {
@@ -695,6 +703,21 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     background-color: #f1f1f1;
     object-fit: cover;
     max-height: 480px;
+}
+
+.detail-specs {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .detail-main { grid-template-columns: 1fr; }
+    .detail-left {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 .detail-info h1 {
