@@ -911,14 +911,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <p class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</p>
+            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
             <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;height:auto;border-radius:8px;" onerror="this.src='https://picsum.photos/1200/420'">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -926,7 +926,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${escapeHtml(b.text || '')}</div>
+                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
                 </div>
                 <img src="${b.image || 'https://picsum.photos/600/400'}" alt="block" onerror="this.src='https://picsum.photos/600/400'">
             </div>
@@ -938,15 +938,15 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + escapeHtml(it) + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + it + '</li>').join('')}
                 </ul>
             </div>
         `;
     } else if (b.type === 'twoColumns') {
         content.innerHTML = `
             <div class="aplus-block-two-columns">
-                <div class="aplus-block-column">${b.column1 || ''}</div>
-                <div class="aplus-block-column">${b.column2 || ''}</div>
+                <div class="aplus-block-column" data-editable="column">${b.column1 || ''}</div>
+                <div class="aplus-block-column" data-editable="column">${b.column2 || ''}</div>
             </div>
         `;
     }
@@ -1014,11 +1014,17 @@ function collectAplusBlocks() {
         if (heading) item.heading = heading.innerText.trim();
         const text = blockEl.querySelector('[data-editable="text"]');
         if (text) item.text = text.innerHTML;
-        
-        if (type === 'gallery') {
-            item.images = [];
-            blockEl.querySelectorAll('.gallery-item .aplus-image-input').forEach(input => {
-                item.images.push(input.value || '');
+        const imgInput = blockEl.querySelector('[data-editable-img]');
+        if (imgInput) item.image = imgInput.value;
+        else {
+            const img = blockEl.querySelector('img');
+            if (img) item.image = img.src;
+        }
+        if (type === 'features') {
+            item.items = [];
+            blockEl.querySelectorAll('[data-editable="feature"]').forEach(li => {
+                const v = li.innerHTML.trim();
+                if (v) item.items.push(v);
             });
         } else if (type === 'multiText') {
             item.texts = [];
@@ -1043,6 +1049,11 @@ function collectAplusBlocks() {
                     if (v) item.items.push(v);
                 });
             }
+        }
+        if (type === 'twoColumns') {
+            const columns = blockEl.querySelectorAll('[data-editable="column"]');
+            if (columns.length >= 1) item.column1 = columns[0].innerHTML;
+            if (columns.length >= 2) item.column2 = columns[1].innerHTML;
         }
         out.push(item);
     });
