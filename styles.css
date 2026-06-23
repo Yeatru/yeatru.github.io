@@ -1152,31 +1152,34 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     margin-bottom: 1rem;
 }
 .variations-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
 }
 .variation-card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.4rem;
     background: #fff;
     border: 1px solid #e9ecef;
-    border-radius: 6px;
-    min-width: 160px;
-    max-width: 200px;
-    height: 60px;
-    transition: border-color 0.2s;
+    border-radius: 5px;
+    min-width: 130px;
+    max-width: 160px;
+    height: 50px;
+    transition: all 0.2s ease;
 }
-.variation-card:hover { border-color: #0b7b94; }
+.variation-card:hover { 
+    border-color: #0b7b94; 
+    box-shadow: 0 2px 8px rgba(11, 123, 148, 0.1);
+}
 .variation-image-wrap {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
-    border-radius: 4px;
+    border-radius: 3px;
     overflow: hidden;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
 }
 .variation-image-wrap img {
     width: 100%;
@@ -1191,7 +1194,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     min-width: 0;
 }
 .variation-card .variation-name {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     color: #085f73;
     font-weight: 600;
     white-space: nowrap;
@@ -1199,18 +1202,18 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     text-overflow: ellipsis;
 }
 .variation-size {
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     color: #6c757d;
-    margin-top: 0.1rem;
+    margin-top: 0.08rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .variation-price {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #0b7b94;
-    margin-top: 0.15rem;
+    margin-top: 0.12rem;
 }
 .variation-card {
     cursor: pointer;
@@ -1224,55 +1227,57 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 @media (max-width: 768px) {
     .variations-list {
-        gap: 0.35rem;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.3rem;
     }
     .variation-card {
-        min-width: 140px;
-        max-width: 180px;
-        height: 52px;
-        padding: 0.3rem 0.5rem;
+        min-width: 110px;
+        max-width: 150px;
+        height: 48px;
+        padding: 0.25rem 0.4rem;
     }
     .variation-image-wrap {
-        width: 40px;
-        height: 40px;
-        margin-right: 0.4rem;
+        width: 36px;
+        height: 36px;
+        margin-right: 0.35rem;
     }
     .variation-card .variation-name {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
     }
     .variation-size {
-        font-size: 0.66rem;
+        font-size: 0.62rem;
     }
     .variation-price {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
     }
 }
 
 @media (max-width: 576px) {
     .variations-list {
-        gap: 0.15rem;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.2rem;
     }
     .variation-card {
-        min-width: 55px;
-        max-width: 70px;
-        padding: 0.06rem 0.12rem;
-        height: auto;
-        flex-direction: column;
+        min-width: 90px;
+        max-width: 120px;
+        height: 42px;
+        padding: 0.2rem 0.3rem;
+        flex-direction: row;
     }
     .variation-image-wrap {
         width: 30px;
         height: 30px;
-        margin-right: 0;
-        margin-bottom: 0.1rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0;
     }
     .variation-card .variation-name {
-        font-size: 0.32rem;
+        font-size: 0.62rem;
     }
     .variation-size {
-        font-size: 0.28rem;
+        font-size: 0.56rem;
     }
     .variation-price {
-        font-size: 0.32rem;
+        font-size: 0.62rem;
     }
     .hero-text { font-size: 1rem; }
     .hero-title { font-size: 1.75rem; }
