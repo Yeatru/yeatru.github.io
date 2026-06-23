@@ -706,12 +706,22 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .detail-meta { color: #6c757d; font-size: 0.95rem; margin-bottom: 1rem; }
 
-.detail-spec-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+}
+.detail-spec-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 600px;
+}
 .detail-spec-table th, .detail-spec-table td {
     padding: 0.6rem 0.8rem;
     border-bottom: 1px solid #e9ecef;
     font-size: 0.95rem;
     text-align: left;
+    white-space: nowrap;
 }
 
 .detail-spec-table th {
@@ -719,6 +729,44 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     background-color: var(--light-gray);
     width: 35%;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        margin-bottom: 1rem;
+    }
+    .detail-spec-table th, .detail-spec-table td {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .detail-spec-table th, .detail-spec-table td {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.75rem;
+    }
+}
+
+.aplus-content table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+.aplus-content table th, .aplus-content table td {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #e9ecef;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+.aplus-content table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+.aplus-content .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
 }
 
 .detail-price-big {
