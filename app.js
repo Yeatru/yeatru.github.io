@@ -1049,6 +1049,13 @@ function buildAplusBlockEl(b, idx) {
                 </ul>
             </div>
         `;
+    } else if (b.type === 'twoColumns') {
+        content.innerHTML = `
+            <div class="aplus-block-two-columns">
+                <div class="aplus-block-column">${b.column1 || ''}</div>
+                <div class="aplus-block-column">${b.column2 || ''}</div>
+            </div>
+        `;
     }
     wrap.appendChild(content);
 

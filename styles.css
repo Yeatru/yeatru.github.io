@@ -1019,6 +1019,23 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     border-left: 3px solid var(--peacock-blue);
 }
 
+.aplus-block-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.aplus-block-column {
+    padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .aplus-block-two-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
 .aplus-add-block-bar {
     display: none;
     gap: 0.5rem;
