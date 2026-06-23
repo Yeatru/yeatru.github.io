@@ -661,6 +661,17 @@ function collectVariations() {
     });
     return variations;
 }
+function getColorValue(colorName) {
+    const colorMap = {
+        'Black': '#1a1a1a', 'White': '#f5f5f5', 'Gray': '#808080', 'Blue': '#0b7b94',
+        'Red': '#dc3545', 'Pink': '#e83e8c', 'Green': '#28a745', 'Yellow': '#ffc107',
+        'Orange': '#fd7e14', 'Purple': '#6f42c1', 'Brown': '#8b4513', 'Light Blue': '#87ceeb',
+        'Navy': '#001f3f', 'Cream': '#fffdd0', 'Natural': '#d4a574', 'Beige': '#f5f5dc',
+        'Teal': '#20c997', 'Gold': '#ffd700', 'Silver': '#c0c0c0', 'Charcoal': '#36454f'
+    };
+    return colorMap[colorName] || '#ccc';
+}
+
 function renderVariationsDisplay(variations) {
     const display = document.getElementById('variationsDisplay');
     const list = document.getElementById('variationsList');
@@ -675,10 +686,8 @@ function renderVariationsDisplay(variations) {
         const card = document.createElement('div');
         card.className = 'variation-card';
         card.innerHTML = `
-            <div class="variation-image-wrap">
-                <img src="${escapeHtml(v.image || 'https://picsum.photos/60/60')}" alt="${escapeHtml((v.color || '') + ' ' + (v.size || ''))}" onerror="this.src='https://picsum.photos/60/60'">
-            </div>
             <div class="variation-info">
+                <span class="variation-color-dot"${v.color ? ` style="background-color: ${getColorValue(v.color)}"` : ''}></span>
                 <span class="variation-name">${escapeHtml(v.color || '-')}</span>
                 <span class="variation-size">${escapeHtml(v.size || '')}</span>
                 ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
