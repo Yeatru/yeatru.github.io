@@ -942,33 +942,12 @@ function buildAplusBlockEl(b, idx) {
                 </ul>
             </div>
         `;
-    } else if (b.type === 'gallery') {
-        const images = b.images || [];
+    } else if (b.type === 'twoColumns') {
         content.innerHTML = `
-            <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Gallery')}</h3>
-            <div class="aplus-block-gallery">
-                ${images.map((img, i) => `
-                    <div class="gallery-item">
-                        <img src="${img || 'https://picsum.photos/400/300'}" alt="" onerror="this.src='https://picsum.photos/400/300'">
-                        <input type="url" class="form-control aplus-image-input mt-1" placeholder="Image URL" data-editable-img data-index="${i}" value="${escapeHtml(img || '')}">
-                    </div>
-                `).join('')}
+            <div class="aplus-block-two-columns">
+                <div class="aplus-block-column">${b.column1 || ''}</div>
+                <div class="aplus-block-column">${b.column2 || ''}</div>
             </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-gallery-image">+ Add Image</button>
-        `;
-    } else if (b.type === 'multiText') {
-        const texts = b.texts || ['', ''];
-        const headings = b.headings || ['', ''];
-        content.innerHTML = `
-            <div class="aplus-block-multi-text">
-                ${texts.map((txt, i) => `
-                    <div class="multi-text-item">
-                        <div class="multi-text-heading" data-editable="heading">${escapeHtml(headings[i] || '')}</div>
-                        <div class="multi-text-content" data-editable="text">${txt || ''}</div>
-                    </div>
-                `).join('')}
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary mt-2 add-text-block">+ Add Text Block</button>
         `;
     }
     wrap.appendChild(content);
