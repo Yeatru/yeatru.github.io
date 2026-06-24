@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', function () {
             loadRemoteSiteData();
             renderCategoryFilter();
             renderProducts();
+            updateLoginUI(isAdmin());
         });
 
-    updateLoginUI(isAdmin());
     renderCategories();
     renderProducts();
     renderBrandLogo();
