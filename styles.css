@@ -332,6 +332,42 @@ body.edit-mode .process-image-input {
     display: block;
 }
 
+.page-block-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.block-image-input {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+}
+
+body.edit-mode .block-image-input {
+    display: block;
+}
+
+.page-block-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 0;
+}
+
+.page-blocks-section [contenteditable="true"]:focus {
+    outline: 2px dashed var(--peacock-blue-light);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+body.edit-mode .page-block [data-block-field]:hover {
+    background-color: rgba(0, 150, 173, 0.05);
+    border-radius: 4px;
+}
+
 .process-number {
     width: 50px;
     height: 50px;
