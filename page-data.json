@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "updatedAt": "2026-01-01T00:00:00.000Z",
+  "pages": {
+    "services": {
+      "title": "Our Comprehensive Sourcing Services",
+      "subtitle": "We offer end-to-end sourcing solutions tailored to your business needs",
+      "services": [
+        {
+          "icon": "fa-user-check",
+          "title": "Supplier Verification",
+          "desc": "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics."
+        },
+        {
+          "icon": "fa-search",
+          "title": "Product Sourcing",
+          "desc": "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers."
+        },
+        {
+          "icon": "fa-check-square",
+          "title": "Quality Control",
+          "desc": "Comprehensive quality inspection at every stage of production to ensure products meet your specifications."
+        },
+        {
+          "icon": "fa-truck",
+          "title": "Logistics & Shipping",
+          "desc": "Hassle-free shipping solutions including sea, air and express delivery with competitive rates."
+        },
+        {
+          "icon": "fa-handshake",
+          "title": "Price Negotiation",
+          "desc": "Leverage our local expertise to negotiate the best prices and payment terms with suppliers."
+        },
+        {
+          "icon": "fa-shield-alt",
+          "title": "Risk Management",
+          "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our Simple Sourcing Process",
+      "subtitle": "We make sourcing from China straightforward and transparent",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Your Requirements",
+          "desc": "Share your product specifications, quantity, budget and timeline with our team."
+        },
+        {
+          "number": 2,
+          "title": "Supplier Matching",
+          "desc": "We identify and verify the best suppliers that match your specific requirements."
+        },
+        {
+          "number": 3,
+          "title": "Sample & Pricing",
+          "desc": "Obtain samples and competitive pricing quotes from pre-vetted suppliers."
+        },
+        {
+          "number": 4,
+          "title": "Delivery & Support",
+          "desc": "We handle production oversight, quality control and shipping to your doorstep."
+        }
+      ]
+    },
+    "plans": {
+      "title": "Our Service Plans",
+      "subtitle": "Choose the sourcing plan that fits your business needs",
+      "plans": [
+        {
+          "name": "Plan A",
+          "title": "On-Demand",
+          "subtitle": "Flat fee per task",
+          "features": [
+            "Payment Assistance",
+            "On-Demand QC Inspection",
+            "Factory On-site Audits",
+            "Lab Testing Coordination"
+          ],
+          "featured": false
+        },
+        {
+          "name": "Plan B",
+          "title": "0% Commission",
+          "subtitle": "Don't have suppliers yet",
+          "features": [
+            "Manufacturing Sourcing",
+            "Quote Collection",
+            "Manufacturing Solution Support",
+            "Order Management",
+            "Mass Production Follow Up",
+            "Goods Consolidation",
+            "Free AQL 2.5 Quality Inspection",
+            "2 Months Free Warehousing",
+            "Door-to-Door Logistics",
+            "Quality Guarantee & Compensation"
+          ],
+          "featured": true
+        },
+        {
+          "name": "Plan C",
+          "title": "3% Commission",
+          "subtitle": "Have suppliers already",
+          "features": [
+            "Supplier Coordination",
+            "Full Order Follow-up",
+            "Goods Consolidation",
+            "Free AQL 2.5 Quality Inspection",
+            "1 Month Free Warehousing",
+            "Door-to-Door Logistics"
+          ],
+          "featured": false
+        },
+        {
+          "name": "Plan D",
+          "title": "Prep",
+          "subtitle": "3PL Prep & Fulfillment",
+          "features": [
+            "100% piece-by-piece Inspection",
+            "Compliance Labeling",
+            "Bundling & Kitting",
+            "Retail-Ready Re-pack",
+            "Sample Consolidation",
+            "Supplier Cargo Pick-up"
+          ],
+          "featured": false
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Clients Say",
+      "subtitle": "Feedback from our global buyers",
+      "testimonials": [
+        {
+          "text": "Yeatru Sourcing helped me source 5000+ storage boxes from Yiwu, great quality and fast shipping. Highly recommended!",
+          "author": "Marco",
+          "country": "Italy",
+          "initial": "M"
+        },
+        {
+          "text": "Professional team, strict quality control, and excellent after-sales service. Best China sourcing partner I ever worked with.",
+          "author": "Anna",
+          "country": "Germany",
+          "initial": "A"
+        },
+        {
+          "text": "The price negotiation service saved me over 20% on my order. The logistics team ensured on-time delivery to the US. Very satisfied!",
+          "author": "John",
+          "country": "USA",
+          "initial": "J"
+        }
+      ]
+    },
+    "about": {
+      "title": "About Yeatru Sourcing",
+      "profileTitle": "Company Profile",
+      "profileDesc": "Yeatru Sourcing is a professional one-stop sourcing agent located in Yiwu City, the world's largest small commodity distribution center. We specialize in providing global clients with reliable procurement services, supplier development, strict quality inspection, supplier management and integrated logistics solutions.",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg",
+      "stats": [
+        {
+          "number": "8+",
+          "label": "Years in Business"
+        },
+        {
+          "number": "500+",
+          "label": "Global Clients"
+        },
+        {
+          "number": "50+",
+          "label": "Countries Served"
+        },
+        {
+          "number": "24/7",
+          "label": "Support Available"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get In Touch With Us",
+      "subtitle": "Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.",
+      "address": "Yiwu City, Zhejiang Province, China",
+      "phone": "+86 15988516408 (WhatsApp)",
+      "email": "info@yeatru.com"
+    }
+  }
+}

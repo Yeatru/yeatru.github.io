@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Yeatru Sourcing - China Sourcing Agent</title>
+    <meta name="description" content="Learn about Yeatru Sourcing, a professional one-stop sourcing agent based in Yiwu, China. With 8+ years of experience, we help global businesses find reliable suppliers and quality products at competitive prices.">
+    <meta name="keywords" content="about Yeatru, China sourcing company, Yiwu sourcing agent, sourcing agency, procurement company China, import export company">
+    <link rel="canonical" href="https://www.yeatru.com/about.html">
+    <meta property="og:title" content="About Us - Yeatru Sourcing">
+    <meta property="og:description" content="Professional China sourcing agent based in Yiwu with 8+ years of experience serving global clients.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yeatru.com/about.html">
+    <meta property="og:image" content="https://www.yeatru.com/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-logo-box">
+                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback">YC</span>
+                </span>
+                <span>Yeatru Sourcing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">Sourcing Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plans.html">Service Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                <button id="loginBtn" class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button id="logoutBtn" class="btn logout-btn d-none">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header py-5 bg-light">
+        <div class="container text-center">
+            <span class="section-eyebrow">About Us</span>
+            <div class="section-divider mx-auto"></div>
+            <h1 class="section-title" id="pageTitle">About Yeatru Sourcing</h1>
+            <p class="section-subtitle" id="pageSubtitle">Your trusted China sourcing partner since day one</p>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <button id="pageEditBtn" class="btn btn-sm btn-outline-secondary" style="display:none;"><i class="fas fa-edit me-1"></i> Edit Page</button>
+                <button id="pageSaveBtn" class="btn btn-sm btn-primary" style="display:none;"><i class="fas fa-save me-1"></i> Save</button>
+                <button id="pageExportBtn" class="btn btn-sm btn-success" style="display:none;"><i class="fas fa-download me-1"></i> Export Data</button>
+                <label class="btn btn-sm btn-info" style="display:none;cursor:pointer;margin-bottom:0;">
+                    <i class="fas fa-upload me-1"></i> Import
+                    <input type="file" id="pageImportBtn" accept=".json" style="display:none;">
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section py-5 bg-white">
+        <div class="container">
+            <img id="aboutImage" src="" alt="Yiwu International Trade City" class="yiwu-img" onerror="this.src='https://picsum.photos/1200/420'">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h3 class="about-title" id="aboutProfileTitle"></h3>
+                    <p class="about-desc" id="aboutProfileDesc"></p>
+                    <div class="about-stats" id="aboutStats"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title mb-3">Ready to Work With Us?</h2>
+            <p class="section-subtitle mb-4">Contact us today and let's discuss how we can help your business grow</p>
+            <a href="contact.html" class="btn btn-primary-custom">Contact Us Today</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-brand">
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
+                            <span style="color: var(--peacock-blue-light); font-weight: bold;">YC</span>
+                        </span>
+                        Yeatru Sourcing
+                    </a>
+                    <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="products.html" class="footer-link">Products</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="process.html" class="footer-link">Sourcing Process</a>
+                    <a href="testimonials.html" class="footer-link">Testimonials</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Services</h3>
+                    <a href="services.html" class="footer-link">Supplier Verification</a>
+                    <a href="services.html" class="footer-link">Product Sourcing</a>
+                    <a href="services.html" class="footer-link">Quality Control</a>
+                    <a href="services.html" class="footer-link">Logistics & Shipping</a>
+                    <a href="services.html" class="footer-link">Price Negotiation</a>
+                    <a href="services.html" class="footer-link">Risk Management</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang Province, China</a>
+                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408 (WhatsApp)</a>
+                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
+                    <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yeatru Sourcing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password">
+                    </div>
+                    <div id="loginError" class="text-danger d-none">Incorrect username or password!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const pageId = 'about';
+    </script>
+    <script src="page.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            currentPageId = 'about';
+        });
+    </script>
+</body>
+</html>
