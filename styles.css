@@ -330,6 +330,29 @@ body.edit-mode .process-image-input {
     display: block;
 }
 
+.page-block-image.small-image {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+.page-block-image.small-image img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 992px) {
+    .page-block-image.small-image {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .page-block-image.small-image img {
+        height: auto;
+        max-height: 200px;
+    }
+}
+
 .block-image-input {
     display: none;
     margin-top: 0.5rem;
