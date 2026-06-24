@@ -108,6 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .init({
             fallbackLng: 'en',
             resources: translationResources,
+            supportedLngs: ['en', 'es', 'fr', 'ru'],
+            nonExplicitSupportedLngs: false,
             detection: {
                 order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
                 caches: ['localStorage', 'cookie']
