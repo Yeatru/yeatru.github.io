@@ -312,10 +312,6 @@ function renderPage(pageId) {
 
     if (pageId === 'services') {
         renderServicesPage(pageData);
-        const plansData = data.pages.plans;
-        if (plansData && document.getElementById('plansGrid')) {
-            renderPlansPage(plansData);
-        }
     } else if (pageId === 'process') {
         renderProcessPage(pageData);
     } else if (pageId === 'plans') {
@@ -508,6 +504,20 @@ function movePageBlock(idx, direction) {
     renderPage(currentPageId);
 }
 
+function getServicePageUrl(title) {
+    const t = (title || '').toLowerCase().trim();
+    const urlMap = {
+        'supplier verification': 'supplier-verification.html',
+        'product sourcing': 'product-sourcing.html',
+        'quality control': 'quality-control.html',
+        'logistics & shipping': 'logistics-shipping.html',
+        'logistics and shipping': 'logistics-shipping.html',
+        'price negotiation': 'price-negotiation.html',
+        'risk management': 'risk-management.html'
+    };
+    return urlMap[t] || '';
+}
+
 function renderServicesPage(data) {
     const container = document.getElementById('servicesGrid');
     if (!container) return;
@@ -516,6 +526,8 @@ function renderServicesPage(data) {
     (data.services || []).forEach((svc, idx) => {
         const col = document.createElement('div');
         col.className = 'col-lg-4 col-md-6';
+        const serviceUrl = getServicePageUrl(svc.title);
+        const isLinked = !isEdit && serviceUrl;
         const imgHtml = svc.image ? `
             <div class="service-card-image">
                 <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none';this.parentElement.querySelector('.no-image-placeholder')?.style.removeProperty('display');">
@@ -537,13 +549,16 @@ function renderServicesPage(data) {
                 <i class="fas fa-trash"></i>
             </button>
         ` : '';
+        const cardTag = isLinked ? 'a' : 'div';
+        const cardHref = isLinked ? `href="${serviceUrl}"` : '';
+        const cardStyle = isLinked ? 'position:relative;display:block;text-decoration:none;color:inherit;' : 'position:relative;';
         col.innerHTML = `
-            <div class="service-card" style="position:relative;">
+            <${cardTag} class="service-card" style="${cardStyle}" ${cardHref}>
                 ${deleteBtn}
                 ${imgHtml}
                 <h3 class="service-title" data-editable="service-title" data-idx="${idx}">${escapeHtml(svc.title || '')}</h3>
                 <p class="service-desc" data-editable="service-desc" data-idx="${idx}">${escapeHtml(svc.desc || '')}</p>
-            </div>
+            </${cardTag}>
         `;
         container.appendChild(col);
     });
