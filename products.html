@@ -662,6 +662,9 @@
 
             <div id="adminDataTools" class="d-none flex-wrap gap-2 mb-4">
                 <button id="addProductBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-i18n="products.addProduct">Add New Product</button>
+                <button id="syncDataBtn" class="btn btn-warning" type="button" data-i18n="admin.syncToGithub">
+                    <i class="fas fa-cloud-upload-alt me-1"></i> Sync to GitHub
+                </button>
                 <button id="exportDataBtn" class="btn btn-outline-primary" type="button" data-i18n="admin.export">
                     <i class="fas fa-file-export me-1"></i> Export site-data.json
                 </button>
@@ -1987,6 +1990,88 @@
             URL.revokeObjectURL(url);
         }
 
+        const GITHUB_OWNER = 'Yeatru';
+        const GITHUB_REPO = 'yeatru.github.io';
+        const GITHUB_BRANCH = 'main';
+        const GITHUB_TOKEN_KEY = 'yeatruGithubToken';
+        const SITE_DATA_FILE = 'site-data.json';
+
+        function getGithubToken() {
+            return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+        }
+
+        function setGithubToken(token) {
+            localStorage.setItem(GITHUB_TOKEN_KEY, token);
+        }
+
+        async function getGithubFileSha(filePath, token) {
+            const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            if (response.status === 404) return null;
+            if (!response.ok) {
+                const err = await response.json().catch(() => ({}));
+                throw new Error(err.message || `HTTP ${response.status}`);
+            }
+            const data = await response.json();
+            return data.sha;
+        }
+
+        async function uploadToGithub(filePath, content, message, token) {
+            const sha = await getGithubFileSha(filePath, token);
+            const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}`;
+            const body = {
+                message: message,
+                content: btoa(unescape(encodeURIComponent(content))),
+                branch: GITHUB_BRANCH
+            };
+            if (sha) body.sha = sha;
+
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+            if (!response.ok) {
+                const err = await response.json().catch(() => ({}));
+                throw new Error(err.message || `HTTP ${response.status}`);
+            }
+            return await response.json();
+        }
+
+        async function syncSiteDataToGithub() {
+            if (!isAdmin()) return;
+            const token = getGithubToken();
+            if (!token) {
+                const input = prompt('GitHub Token\nEnter your GitHub personal access token');
+                if (!input) return;
+                setGithubToken(input.trim());
+            }
+            if (!confirm('This will update the live site data. Continue?')) return;
+
+            try {
+                const data = buildSiteDataObject();
+                const jsonStr = JSON.stringify(data, null, 2);
+                await uploadToGithub(
+                    SITE_DATA_FILE,
+                    jsonStr,
+                    `Update site data via admin (${new Date().toISOString().slice(0, 10)})`,
+                    getGithubToken()
+                );
+                alert('Successfully synced to GitHub!');
+            } catch (err) {
+                alert('Sync failed: ' + err.message);
+            }
+        }
+
         function importSiteDataFromFile(event) {
             if (!isAdmin()) return;
             const file = event.target.files && event.target.files[0];
@@ -2040,6 +2125,7 @@
                     'aplus.blockFeatures': 'Feature Grid', 'aplus.noContent': 'No A+ content available.',
                     'form.imageUrl': 'Image URL', 'form.productName': 'Product Name', 'form.description': 'Description',
                     'admin.export': 'Export site-data.json', 'admin.import': 'Import site-data.json',
+                    'admin.syncToGithub': 'Sync to GitHub',
                     'admin.uploadTip': 'Upload exported site-data.json to GitHub so visitors can see the latest edits.'
                 }
             },
@@ -2305,6 +2391,7 @@
             });
 
             document.getElementById('exportDataBtn').addEventListener('click', exportSiteData);
+            document.getElementById('syncDataBtn').addEventListener('click', syncSiteDataToGithub);
             document.getElementById('importDataBtn').addEventListener('click', function () {
                 document.getElementById('importDataFile').click();
             });

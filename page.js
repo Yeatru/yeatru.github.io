@@ -1,5 +1,9 @@
 const PAGE_DATA_KEY = 'yeatruPageData';
 const PAGE_DATA_URL = 'page-data.json';
+const GITHUB_OWNER = 'Yeatru';
+const GITHUB_REPO = 'yeatru.github.io';
+const GITHUB_BRANCH = 'main';
+const GITHUB_TOKEN_KEY = 'yeatruGithubToken';
 
 let currentPageId = '';
 let currentPageMode = 'preview';
@@ -8,22 +12,22 @@ const i18n = {
     en: {
         nav: { home: 'Home', products: 'Products', services: 'Services', sourcingProcess: 'Sourcing Process', testimonials: 'Testimonials', aboutUs: 'About Us', contactUs: 'Contact Us', login: 'Login', logout: 'Logout', servicePlans: 'Service Plans' },
         login: { title: 'Admin Login', username: 'Username', enterUsername: 'Enter username', password: 'Password', enterPassword: 'Enter password', error: 'Incorrect username or password!', cancel: 'Cancel', submit: 'Login' },
-        page: { edit: 'Edit Page', save: 'Save', export: 'Export Data', import: 'Import', preview: 'Preview' }
+        page: { edit: 'Edit Page', save: 'Save', export: 'Export Data', import: 'Import', preview: 'Preview', syncToGithub: 'Sync to GitHub', githubToken: 'GitHub Token', tokenPlaceholder: 'Enter your GitHub personal access token', syncSuccess: 'Successfully synced to GitHub!', syncError: 'Sync failed: ', syncConfirm: 'This will update the live site data. Continue?' }
     },
     es: {
         nav: { home: 'Inicio', products: 'Productos', services: 'Servicios', sourcingProcess: 'Proceso de Suministro', testimonials: 'Testimonios', aboutUs: 'Sobre Nosotros', contactUs: 'Contáctenos', login: 'Iniciar Sesión', logout: 'Cerrar Sesión', servicePlans: 'Planes de Servicio' },
         login: { title: 'Inicio de Sesión de Administrador', username: 'Nombre de Usuario', enterUsername: 'Ingrese el nombre de usuario', password: 'Contraseña', enterPassword: 'Ingrese la contraseña', error: '¡Nombre de usuario o contraseña incorrectos!', cancel: 'Cancelar', submit: 'Iniciar Sesión' },
-        page: { edit: 'Editar Página', save: 'Guardar', export: 'Exportar Datos', import: 'Importar', preview: 'Vista Previa' }
+        page: { edit: 'Editar Página', save: 'Guardar', export: 'Exportar Datos', import: 'Importar', preview: 'Vista Previa', syncToGithub: 'Sincronizar con GitHub', githubToken: 'Token de GitHub', tokenPlaceholder: 'Ingrese su token de acceso personal de GitHub', syncSuccess: '¡Sincronizado con GitHub exitosamente!', syncError: 'Error de sincronización: ', syncConfirm: 'Esto actualizará los datos del sitio en vivo. ¿Continuar?' }
     },
     fr: {
         nav: { home: 'Accueil', products: 'Produits', services: 'Services', sourcingProcess: 'Processus d\'Approvisionnement', testimonials: 'Témoignages', aboutUs: 'À Propos de Nous', contactUs: 'Nous Contacter', login: 'Connexion', logout: 'Déconnexion', servicePlans: 'Plans de Service' },
         login: { title: 'Connexion Administrateur', username: 'Nom d\'Utilisateur', enterUsername: 'Entrez le nom d\'utilisateur', password: 'Mot de Passe', enterPassword: 'Entrez le mot de passe', error: 'Nom d\'utilisateur ou mot de passe incorrect!', cancel: 'Annuler', submit: 'Se Connecter' },
-        page: { edit: 'Modifier la Page', save: 'Enregistrer', export: 'Exporter les Données', import: 'Importer', preview: 'Aperçu' }
+        page: { edit: 'Modifier la Page', save: 'Enregistrer', export: 'Exporter les Données', import: 'Importer', preview: 'Aperçu', syncToGithub: 'Synchroniser sur GitHub', githubToken: 'Token GitHub', tokenPlaceholder: 'Entrez votre token d\'accès personnel GitHub', syncSuccess: 'Synchronisé sur GitHub avec succès!', syncError: 'Échec de la synchronisation: ', syncConfirm: 'Cela mettra à jour les données du site en direct. Continuer?' }
     },
     ru: {
         nav: { home: 'Главная', products: 'Продукты', services: 'Услуги', sourcingProcess: 'Процесс Поставок', testimonials: 'Отзывы', aboutUs: 'О Нас', contactUs: 'Связаться', login: 'Войти', logout: 'Выйти', servicePlans: 'Тарифы' },
         login: { title: 'Вход', username: 'Логин', enterUsername: 'Введите логин', password: 'Пароль', enterPassword: 'Введите пароль', error: 'Неверные данные!', cancel: 'Отмена', submit: 'Войти' },
-        page: { edit: 'Редактировать', save: 'Сохранить', export: 'Экспорт Данных', import: 'Импорт', preview: 'Просмотр' }
+        page: { edit: 'Редактировать', save: 'Сохранить', export: 'Экспорт Данных', import: 'Импорт', preview: 'Просмотр', syncToGithub: 'Синхр. с GitHub', githubToken: 'GitHub Токен', tokenPlaceholder: 'Введите ваш персональный токен доступа GitHub', syncSuccess: 'Успешно синхронизировано с GitHub!', syncError: 'Ошибка синхронизации: ', syncConfirm: 'Это обновит данные живого сайта. Продолжить?' }
     }
 };
 
@@ -114,6 +118,83 @@ function getPageData() {
 
 function savePageData(data) {
     localStorage.setItem(PAGE_DATA_KEY, JSON.stringify(data));
+}
+
+function getGithubToken() {
+    return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+}
+
+function setGithubToken(token) {
+    localStorage.setItem(GITHUB_TOKEN_KEY, token);
+}
+
+async function getGithubFileSha(filePath, token) {
+    const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+    if (response.status === 404) return null;
+    if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        throw new Error(err.message || `HTTP ${response.status}`);
+    }
+    const data = await response.json();
+    return data.sha;
+}
+
+async function uploadToGithub(filePath, content, message, token) {
+    const sha = await getGithubFileSha(filePath, token);
+    const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}`;
+    const body = {
+        message: message,
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch: GITHUB_BRANCH
+    };
+    if (sha) body.sha = sha;
+
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+    if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        throw new Error(err.message || `HTTP ${response.status}`);
+    }
+    return await response.json();
+}
+
+async function syncPageDataToGithub() {
+    const token = getGithubToken();
+    if (!token) {
+        const input = prompt(t('page.githubToken') + '\n' + t('page.tokenPlaceholder'));
+        if (!input) return false;
+        setGithubToken(input.trim());
+    }
+    if (!confirm(t('page.syncConfirm'))) return false;
+
+    try {
+        const data = getPageData();
+        const jsonStr = JSON.stringify(data, null, 2);
+        await uploadToGithub(
+            PAGE_DATA_URL,
+            jsonStr,
+            `Update page data via admin (${new Date().toISOString().slice(0, 10)})`,
+            getGithubToken()
+        );
+        alert(t('page.syncSuccess'));
+        return true;
+    } catch (err) {
+        alert(t('page.syncError') + err.message);
+        return false;
+    }
 }
 
 function getDefaultPageData() {
@@ -485,10 +566,12 @@ function applyPageEditState() {
     const editBtn = document.getElementById('pageEditBtn');
     const saveBtn = document.getElementById('pageSaveBtn');
     const exportBtn = document.getElementById('pageExportBtn');
+    const syncBtn = document.getElementById('pageSyncBtn');
     const importLabel = document.querySelector('label[for="pageImportBtn"], label:has(#pageImportBtn)');
     if (editBtn) editBtn.style.display = isAdmin() ? 'inline-block' : 'none';
     if (saveBtn) saveBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
     if (exportBtn) exportBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
+    if (syncBtn) syncBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
     if (importLabel) importLabel.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
 
     if (isEdit) {
@@ -723,6 +806,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const exportBtn = document.getElementById('pageExportBtn');
     if (exportBtn) {
         exportBtn.addEventListener('click', exportPageData);
+    }
+
+    const syncBtn = document.getElementById('pageSyncBtn');
+    if (syncBtn) {
+        syncBtn.addEventListener('click', function() {
+            saveCurrentPage();
+            setTimeout(syncPageDataToGithub, 100);
+        });
     }
 
     const importBtn = document.getElementById('pageImportBtn');
