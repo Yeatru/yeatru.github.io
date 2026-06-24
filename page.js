@@ -365,6 +365,32 @@ function renderPageBlocks(pageData) {
                     <p data-block-field="text">${escapeHtml(block.text || '')}</p>
                 </div>
             </div>`;
+        } else if (block.type === 'smallImageText') {
+            html = `<div class="row align-items-center">
+                <div class="col-lg-2">
+                    <div class="page-block-image small-image">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
+                        <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
+                    <p data-block-field="text">${escapeHtml(block.text || '')}</p>
+                </div>
+            </div>`;
+        } else if (block.type === 'smallTextImage') {
+            html = `<div class="row align-items-center">
+                <div class="col-lg-10">
+                    <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
+                    <p data-block-field="text">${escapeHtml(block.text || '')}</p>
+                </div>
+                <div class="col-lg-2">
+                    <div class="page-block-image small-image">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
+                        <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
+                    </div>
+                </div>
+            </div>`;
         } else if (block.type === 'twoImages') {
             html = `<div class="aplus-multi-images aplus-two-images">
                 <div class="aplus-multi-image-item">
@@ -420,7 +446,7 @@ function addPageBlock(type) {
     if (type === 'heading') newBlock.heading = 'New Heading';
     if (type === 'text') newBlock.text = 'Enter your text here...';
     if (type === 'image') newBlock.image = '';
-    if (type === 'textImage' || type === 'imageText') {
+    if (type === 'textImage' || type === 'imageText' || type === 'smallImageText' || type === 'smallTextImage') {
         newBlock.heading = 'Heading';
         newBlock.text = 'Enter your text here...';
         newBlock.image = '';
@@ -472,17 +498,20 @@ function renderServicesPage(data) {
         col.className = 'col-lg-4 col-md-6';
         const imgHtml = svc.image ? `
             <div class="service-card-image">
-                <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none';">
-                <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
-            </div>
-        ` : (isEdit ? `
-            <div class="service-card-image">
-                <div style="height:150px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#adb5bd;border-radius:8px;">
+                <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none';this.parentElement.querySelector('.no-image-placeholder')?.style.removeProperty('display');">
+                <div class="no-image-placeholder" style="display:none;height:180px;background:#f8f9fa;display:none;align-items:center;justify-content:center;color:#adb5bd;border-radius:8px;">
                     <i class="fas fa-image me-2"></i> No Image
                 </div>
                 <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
             </div>
-        ` : '');
+        ` : `
+            <div class="service-card-image">
+                <div class="no-image-placeholder" style="height:180px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#adb5bd;border-radius:8px;">
+                    <i class="fas fa-image me-2"></i> No Image
+                </div>
+                <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
+            </div>
+        `;
         const deleteBtn = isEdit ? `
             <button class="btn btn-sm btn-danger delete-service-btn" data-idx="${idx}" style="position:absolute;top:10px;right:10px;z-index:10;">
                 <i class="fas fa-trash"></i>
@@ -492,7 +521,6 @@ function renderServicesPage(data) {
             <div class="service-card" style="position:relative;">
                 ${deleteBtn}
                 ${imgHtml}
-                <div class="service-icon"><i class="fas ${escapeHtml(svc.icon || '')}"></i></div>
                 <h3 class="service-title" data-editable="service-title" data-idx="${idx}">${escapeHtml(svc.title || '')}</h3>
                 <p class="service-desc" data-editable="service-desc" data-idx="${idx}">${escapeHtml(svc.desc || '')}</p>
             </div>
@@ -504,7 +532,7 @@ function renderServicesPage(data) {
         const addCol = document.createElement('div');
         addCol.className = 'col-lg-4 col-md-6';
         addCol.innerHTML = `
-            <div class="service-card add-service-card" id="addServiceBtn" style="cursor:pointer;border:2px dashed #dee2e6;display:flex;align-items:center;justify-content:center;min-height:200px;color:#adb5bd;flex-direction:column;gap:0.5rem;">
+            <div class="service-card add-service-card" id="addServiceBtn" style="cursor:pointer;border:2px dashed #dee2e6;display:flex;align-items:center;justify-content:center;min-height:280px;color:#adb5bd;flex-direction:column;gap:0.5rem;">
                 <i class="fas fa-plus-circle" style="font-size:2rem;"></i>
                 <span>Add Service</span>
             </div>

@@ -49,13 +49,13 @@
           "heading": "Why Choose Yeatru Sourcing?"
         },
         {
-          "type": "imageText",
+          "type": "smallImageText",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg",
           "heading": "Extensive Product Range",
           "text": "With access to thousands of suppliers across China, we help you find the perfect products for your business. From consumer electronics to home goods, we cover a wide range of categories."
         },
         {
-          "type": "textImage",
+          "type": "smallImageText",
           "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg",
           "heading": "Strict Quality Control",
           "text": "Every product goes through our rigorous quality control process. We inspect at every stage - from raw materials to final packaging - ensuring you receive only the highest quality products."
