@@ -264,11 +264,11 @@ function getDefaultPageData() {
             about: {
                 title: 'About Yeatru Sourcing',
                 profileTitle: 'Company Profile',
-                profileDesc: 'Yeatru Sourcing is a professional one-stop sourcing agent located in Yiwu City, the world\'s largest small commodity distribution center. We specialize in providing global clients with reliable procurement services, supplier development, strict quality inspection, supplier management and integrated logistics solutions.',
+                profileDesc: 'Yeatru Sourcing is a professional China sourcing agent founded in 2023, located in Yiwu City - the world\'s largest small commodity distribution center. We specialize in serving overseas small-to-medium wholesale buyers, cross-border e-commerce sellers, and small-batch purchasers. Our core services include procurement agency, supplier sourcing, supplier verification, quality management, goods receiving, inspection, and logistics solutions. Our management team brings over 14 years of combined experience in supplier management, procurement, logistics, and quality control, committed to serving our clients with sincerity and integrity.',
                 image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg',
                 stats: [
-                    { number: '8+', label: 'Years in Business' },
-                    { number: '500+', label: 'Global Clients' },
+                    { number: '3+', label: 'Years in Business' },
+                    { number: '200+', label: 'Global Clients' },
                     { number: '50+', label: 'Countries Served' },
                     { number: '24/7', label: 'Support Available' }
                 ]

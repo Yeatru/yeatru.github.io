@@ -1166,11 +1166,14 @@ function renderBrandLogo() {
     const fallback = document.getElementById('brandLogoFallback');
     const footerImg = document.getElementById('footerLogoImg');
     const footerFallback = document.getElementById('footerLogoFallback');
+    
+    if (!img || !fallback) return;
+    
     if (url) {
         img.src = url;
         img.style.display = 'block';
         fallback.style.display = 'none';
-        if (footerImg) {
+        if (footerImg && footerFallback) {
             footerImg.src = url;
             footerImg.style.display = 'block';
             footerFallback.style.display = 'none';
@@ -1179,7 +1182,7 @@ function renderBrandLogo() {
         img.src = '';
         img.style.display = 'none';
         fallback.style.display = '';
-        if (footerImg) {
+        if (footerImg && footerFallback) {
             footerImg.src = '';
             footerImg.style.display = 'none';
             footerFallback.style.display = '';
