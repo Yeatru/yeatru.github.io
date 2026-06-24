@@ -9,32 +9,38 @@
         {
           "icon": "fa-user-check",
           "title": "Supplier Verification",
-          "desc": "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics."
+          "desc": "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
         },
         {
           "icon": "fa-search",
           "title": "Product Sourcing",
-          "desc": "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers."
+          "desc": "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.",
+          "image": ""
         },
         {
           "icon": "fa-check-square",
           "title": "Quality Control",
-          "desc": "Comprehensive quality inspection at every stage of production to ensure products meet your specifications."
+          "desc": "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg"
         },
         {
           "icon": "fa-truck",
           "title": "Logistics & Shipping",
-          "desc": "Hassle-free shipping solutions including sea, air and express delivery with competitive rates."
+          "desc": "Hassle-free shipping solutions including sea, air and express delivery with competitive rates.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg"
         },
         {
           "icon": "fa-handshake",
           "title": "Price Negotiation",
-          "desc": "Leverage our local expertise to negotiate the best prices and payment terms with suppliers."
+          "desc": "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.",
+          "image": ""
         },
         {
           "icon": "fa-shield-alt",
           "title": "Risk Management",
-          "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees."
+          "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees.",
+          "image": ""
         }
       ]
     },
@@ -45,22 +51,26 @@
         {
           "number": 1,
           "title": "Your Requirements",
-          "desc": "Share your product specifications, quantity, budget and timeline with our team."
+          "desc": "Share your product specifications, quantity, budget and timeline with our team.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg"
         },
         {
           "number": 2,
           "title": "Supplier Matching",
-          "desc": "We identify and verify the best suppliers that match your specific requirements."
+          "desc": "We identify and verify the best suppliers that match your specific requirements.",
+          "image": ""
         },
         {
           "number": 3,
           "title": "Sample & Pricing",
-          "desc": "Obtain samples and competitive pricing quotes from pre-vetted suppliers."
+          "desc": "Obtain samples and competitive pricing quotes from pre-vetted suppliers.",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg"
         },
         {
           "number": 4,
           "title": "Delivery & Support",
-          "desc": "We handle production oversight, quality control and shipping to your doorstep."
+          "desc": "We handle production oversight, quality control and shipping to your doorstep.",
+          "image": ""
         }
       ]
     },

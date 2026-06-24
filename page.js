@@ -236,9 +236,16 @@ function renderServicesPage(data) {
     container.innerHTML = '';
     (data.services || []).forEach((svc, idx) => {
         const col = document.createElement('div');
-        col.className = 'col-lg-2 col-md-4 col-sm-6';
+        col.className = 'col-lg-4 col-md-6';
+        const imgHtml = svc.image ? `
+            <div class="service-card-image">
+                <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
+            </div>
+        ` : '';
         col.innerHTML = `
             <div class="service-card">
+                ${imgHtml}
                 <div class="service-icon"><i class="fas ${escapeHtml(svc.icon || '')}"></i></div>
                 <h3 class="service-title" data-editable="service-title" data-idx="${idx}">${escapeHtml(svc.title || '')}</h3>
                 <p class="service-desc" data-editable="service-desc" data-idx="${idx}">${escapeHtml(svc.desc || '')}</p>
@@ -255,7 +262,14 @@ function renderProcessPage(data) {
     (data.steps || []).forEach((step, idx) => {
         const div = document.createElement('div');
         div.className = 'process-step-alt';
+        const imgHtml = step.image ? `
+            <div class="process-step-image">
+                <img src="${escapeHtml(step.image)}" alt="Step ${step.number}" onerror="this.style.display='none';">
+                <input type="url" class="form-control process-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(step.image || '')}">
+            </div>
+        ` : '';
         div.innerHTML = `
+            ${imgHtml}
             <div class="process-number">${step.number || idx + 1}</div>
             <h3 class="process-title" data-editable="step-title" data-idx="${idx}">${escapeHtml(step.title || '')}</h3>
             <p class="process-desc" data-editable="step-desc" data-idx="${idx}">${escapeHtml(step.desc || '')}</p>
@@ -397,7 +411,8 @@ function saveCurrentPage() {
             const title = card.querySelector('[data-editable="service-title"]')?.textContent || '';
             const desc = card.querySelector('[data-editable="service-desc"]')?.textContent || '';
             const icon = card.querySelector('.service-icon i')?.className?.replace('fas ', '') || 'fa-check';
-            pageData.services.push({ icon, title, desc });
+            const image = card.querySelector('.service-image-input')?.value || '';
+            pageData.services.push({ icon, title, desc, image });
         });
         if (document.getElementById('plansGrid') && data.pages.plans) {
             data.pages.plans.plans = [];
@@ -419,7 +434,8 @@ function saveCurrentPage() {
             const number = step.querySelector('.process-number')?.textContent || (idx + 1);
             const title = step.querySelector('[data-editable="step-title"]')?.textContent || '';
             const desc = step.querySelector('[data-editable="step-desc"]')?.textContent || '';
-            pageData.steps.push({ number, title, desc });
+            const image = step.querySelector('.process-image-input')?.value || '';
+            pageData.steps.push({ number, title, desc, image });
         });
     } else if (currentPageId === 'testimonials') {
         pageData.testimonials = [];
