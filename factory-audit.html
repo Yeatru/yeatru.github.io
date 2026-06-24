@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional factory audit service in China. Comprehensive supplier verification with Neil's 14+ years of experience.">
+    <meta property="og:title" content="Factory Audit Service | Yeatru Sourcing - China Sourcing Agent">
+    <meta property="og:description" content="Professional factory verification and compliance audits. 14+ years of supplier management experience.">
+    <meta property="og:type" content="website">
     <title>Factory Audit Service | Yeatru Sourcing - China Sourcing Agent</title>
-    <meta name="description" content="Independent factory audits in China. Comprehensive on-site assessment of production capacity, quality systems, compliance, and social responsibility.">
-    <link rel="canonical" href="https://www.yeatru.com/factory-audit.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://www.yeatru.com/factory-audit">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
@@ -19,415 +25,151 @@
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
-                <span>Yeatru Sourcing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
-                            <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
-                            <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
-                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
-                            <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
-                            <li><a class="dropdown-item active" href="factory-audit.html">Factory Audit</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
-                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
-                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
+                            <li><a class="dropdown-item" href="supplier-sourcing.html">Supplier Sourcing</a></li>
+                            <li><a class="dropdown-item" href="quality-inspection.html">Quality Inspection</a></li>
+                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
+                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics & Shipping</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Service Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#payment">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe"></i> <span>EN</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
-                        </ul>
-                    </div>
-                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
-                        <i class="fas fa-comment-dots me-1"></i>Get Quote
-                    </a>
-                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
-                        <i class="fas fa-user-shield"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <nav class="breadcrumb-bar" aria-label="breadcrumb">
-                <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span>
-                <a href="#">Sourcing Service</a> <span class="breadcrumb-sep">/</span>
-                <span class="breadcrumb-current">Factory Audit</span>
-            </nav>
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <span class="hero-tag"><i class="fas fa-industry me-2"></i>Factory Audit</span>
-                    <h1 class="page-hero-title">Independent Factory Audits — Know Before You Commit</h1>
-                    <p class="page-hero-subtitle">Comprehensive on-site assessment of production capacity, quality systems, compliance, and ethical standards. 2-3 days on-site, full report in 5 days.</p>
-                    <div class="banner-features">
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> On-Site 2-3 Days</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 60+ Point Audit</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Compliance Check</span>
-                    </div>
-                    <div class="banner-cta">
-                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Book Audit</a>
-                        <a href="#process" class="btn btn-outline-primary">See Process</a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Audit3.jpg" alt="Factory Audit" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                        <div class="page-hero-image-placeholder">
-                            <i class="fas fa-industry"></i>
-                            <span>Factory Audit</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container text-center">
+            <span class="section-eyebrow">FACTORY AUDIT</span>
+            <div class="section-divider mx-auto"></div>
+            <h1 class="section-title" id="pageTitle">Factory Audit Service</h1>
+            <p class="section-subtitle" id="pageSubtitle">Professional factory verification and compliance audits</p>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="why" class="py-5 bg-white">
-        <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Why Factory Audit</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Go Beyond Basic Verification</h2>
-                <p class="section-subtitle">For high-value orders, ongoing partnerships, or compliance-sensitive products — a deep-dive audit is essential. We assess what other agents miss.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-cogs"></i></div>
-                        <h3 class="advantage-title">Production Capacity</h3>
-                        <p class="advantage-desc">Equipment count, line capacity, monthly output, and scalability for your forecast volumes.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-award"></i></div>
-                        <h3 class="advantage-title">Quality Management</h3>
-                        <p class="advantage-desc">ISO 9001 compliance, QC procedures, defect tracking, corrective action processes, and certifications.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="advantage-title">Compliance Verification</h3>
-                        <p class="advantage-desc">BSCI, SEDEX, SA8000, ISO 14001, OHSAS 18001 — social and environmental compliance audit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-flask"></i></div>
-                        <h3 class="advantage-title">R&amp;D Capability</h3>
-                        <p class="advantage-desc">In-house design team, mold shop, prototyping, and ability to handle OEM/ODM development.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-link"></i></div>
-                        <h3 class="advantage-title">Supply Chain</h3>
-                        <p class="advantage-desc">Raw material sources, sub-supplier dependencies, and supply chain resilience assessment.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-chart-bar"></i></div>
-                        <h3 class="advantage-title">Financial Health</h3>
-                        <p class="advantage-desc">Years in business, customer concentration, export markets, and financial stability indicators.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Page Blocks -->
+    <section class="py-5 page-blocks-section bg-light">
+        <div class="container" id="pageBlocksContainer"></div>
     </section>
 
-    <!-- Audit Process -->
-    <section id="process" class="py-5" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Audit Process</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">4-Step Factory Audit Workflow</h2>
-                <p class="section-subtitle">From booking to final report — 2-3 days on-site plus 2 days reporting.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Audit Scope Definition</h3>
-                        <p class="step-desc">We define audit criteria: quality, social, environmental, or full combination.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">On-Site Audit (2-3 days)</h3>
-                        <p class="step-desc">Lead auditor + specialists visit factory, interview management, inspect lines.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Findings &amp; Scoring</h3>
-                        <p class="step-desc">60+ point scoring matrix, risk classification, photo/video evidence collection.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Audit Report</h3>
-                        <p class="step-desc">30-50 page report with score, findings, corrective actions, and re-audit schedule.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audit Coverage -->
+    <!-- CTA Section -->
     <section class="py-5 bg-white">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="section-eyebrow">Audit Coverage</span>
-                    <div class="section-divider" style="margin: 0.75rem 0 1.5rem;"></div>
-                    <h2 class="section-title mb-3">60+ Audit Points</h2>
-                    <p class="section-subtitle text-start" style="margin: 0 0 1.5rem;">Industry-recognized audit methodology.</p>
-                    <div class="check-list">
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Production:</strong> Equipment list, age, capacity, maintenance schedule</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Quality:</strong> ISO certification, IQC/IPQC/OQC process, calibration records</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>HR:</strong> Worker count, turnover rate, training records, working hours</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Compliance:</strong> Fire safety, building permits, environmental licenses</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Trade:</strong> Export license, customs record, major customer list</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>R&amp;D:</strong> Design team, sample room, mold workshop, testing equipment</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Social:</strong> BSCI/SEDEX audit, no child labor, fair wages, safety</div></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Audit%20report.png" alt="Audit Report" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                        <div class="page-hero-image-placeholder">
-                            <i class="fas fa-clipboard-list"></i>
-                            <span>Audit Checklist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container text-center">
+            <h2 class="section-title mb-3">Need Factory Verification?</h2>
+            <p class="section-subtitle mb-4">Contact us today to arrange a factory audit</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-5" style="background-color: var(--bg-light);">
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
         <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">FAQ</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Factory Audit FAQs</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="faq-item active">
-                        <button class="faq-question"><span>What is the difference between supplier verification and factory audit?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Verification is a basic check (1-day visit, license, capacity). Audit is a deep-dive (2-3 days, 60+ points, compliance, social, R&amp;D). Audit is recommended for high-value or long-term partnerships.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>How much does a factory audit cost?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Standard audit (quality + production) starts at $400 for 1-day on-site. Full audit (quality + social + environmental) starts at $600 for 2-day on-site. International auditor rates are 2-3x our local rates.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>Do you use international auditors?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>We have both. Local Chinese auditors (lower cost) for standard audits, and international auditors (higher cost, native language) for compliance-sensitive audits. You choose.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>How long is an audit report valid?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Reports are valid for 6-12 months. Annual re-audit is recommended for ongoing partnerships. We can schedule recurring audits at discounted rates.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>Can the factory fail the audit?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Yes. If critical issues are found (fake licenses, no export rights, child labor, safety violations), we mark the audit as 'Failed - Not Recommended' and suggest alternative suppliers.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="final-cta-box text-center">
-                <span class="section-eyebrow">Get Started</span>
-                <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
-                <h2 class="section-title">Audit Your Supplier Today</h2>
-                <p class="section-subtitle mb-4">Comprehensive on-site audit in 2-3 days. Full report within 5 days.</p>
-                <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-industry me-2"></i>Book Factory Audit</a>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Contact Us on WhatsApp</span>
-    </a>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
-                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <span class="brand-logo-box me-3" id="footerLogoBox">
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none; width:40px; height:40px;" />
+                            <span class="brand-logo-fallback" id="footerLogoFallback">YC</span>
                         </span>
-                        Yeatru Sourcing
-                    </a>
-                    <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-light opacity-75">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/8615988516408" class="text-light"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="products.html" class="footer-link">Products</a>
-                    <a href="service-plans.html" class="footer-link">Service Plans</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="blog.html" class="footer-link">Blog</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-light mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light opacity-75">Home</a></li>
+                        <li><a href="products.html" class="text-light opacity-75">Products</a></li>
+                        <li><a href="services.html" class="text-light opacity-75">Services</a></li>
+                        <li><a href="service-plans.html" class="text-light opacity-75">Service Plans</a></li>
+                        <li><a href="testimonials.html" class="text-light opacity-75">Testimonials</a></li>
+                        <li><a href="about.html" class="text-light opacity-75">About Us</a></li>
+                        <li><a href="contact.html" class="text-light opacity-75">Contact Us</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Services</h3>
-                    <a href="supplier-verification.html" class="footer-link">Supplier Verification</a>
-                    <a href="product-sourcing.html" class="footer-link">Product Sourcing</a>
-                    <a href="quality-control.html" class="footer-link">Quality Control</a>
-                    <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
-                    <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
-                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-light mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="supplier-sourcing.html" class="text-light opacity-75">Supplier Sourcing</a></li>
+                        <li><a href="quality-inspection.html" class="text-light opacity-75">Quality Inspection</a></li>
+                        <li><a href="factory-audit.html" class="text-light opacity-75">Factory Audit</a></li>
+                        <li><a href="logistics-shipping.html" class="text-light opacity-75">Logistics & Shipping</a></li>
+                        <li><a href="service-plans.html" class="text-light opacity-75">Service Plans</a></li>
+                        <li><a href="contact.html" class="text-light opacity-75">Free Consultation</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang, China</a>
-                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
-                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
-                    <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-light mb-3">Contact Us</h5>
+                    <ul class="list-unstyled text-light opacity-75">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Yiwu City, Zhejiang Province, China</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+86 15988516408 (WhatsApp)</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@yeatru.com</li>
+                        <li><i class="fas fa-clock me-2"></i>24/7 Available</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
-                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
-                    <a href="#" class="footer-link d-inline">Terms of Service</a>
-                </p>
+            <hr class="my-4 opacity-25">
+            <div class="text-center">
+                <p class="text-light opacity-75 mb-0">&copy; 2026 Yeatru Sourcing. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
-                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
-                    </div>
-                    <div class="mb-3">
-                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
-                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
-                    </div>
-                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Logo Modal -->
-    <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" data-i18n="logo.title">Change Logo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted small mb-3">Upload an image file or paste an image URL:</p>
-                    <input type="file" id="logoFileInput" class="form-control mb-3" accept="image/*">
-                    <div class="text-center mb-3"><small class="text-muted">— or —</small></div>
-                    <input type="url" id="logoUrlInput" class="form-control" placeholder="https://...">
-                    <button type="button" class="btn btn-outline-danger me-auto mt-3" id="logoResetBtn" data-i18n="logo.reset">Reset to Default</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="logoSaveBtn" data-i18n="logo.save">Save Logo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Export Panel -->
-    <div id="adminExportPanel" class="admin-export-panel d-none">
-        <div class="admin-export-header">
-            <h6><i class="fas fa-database me-2"></i>Data Management</h6>
-            <button type="button" class="btn-close btn-close-white" id="closeExportPanel"></button>
-        </div>
-        <div class="admin-export-body">
-            <button class="btn btn-light btn-sm w-100 mb-2" id="exportDataBtn">
-                <i class="fas fa-download me-1"></i> Export site-data.json
-            </button>
-            <button class="btn btn-light btn-sm w-100 mb-2" id="syncGithubBtn">
-                <i class="fab fa-github me-1"></i> Sync to GitHub
-            </button>
-            <button class="btn btn-light btn-sm w-100" id="importDataBtn">
-                <i class="fas fa-upload me-1"></i> Import from JSON
-            </button>
-            <input type="file" id="importFileInput" accept=".json" style="display:none;">
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
+    <script src="page.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-                if (!isActive) faqItem.classList.add('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPageData('factory-audit', {
+                title: 'Factory Audit Service',
+                subtitle: 'Professional factory verification and compliance audits',
+                blocks: [
+                    {
+                        type: 'heading',
+                        heading: 'Thorough Factory Verification'
+                    },
+                    {
+                        type: 'text',
+                        text: 'Our factory audit service provides you with a comprehensive assessment of potential suppliers. Led by Neil with 14+ years of supplier management experience, we conduct on-site audits to verify factory capabilities, quality systems, and compliance standards.'
+                    },
+                    {
+                        type: 'textImage',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png',
+                        heading: 'What We Audit',
+                        text: 'Factory Profile & Legal Status: Verify business license, certifications, and factory ownership.\n\nProduction Capacity: Assess production lines, equipment, monthly output, and workforce size.\n\nQuality Management System: Check quality control procedures, inspection standards, and documentation.\n\nSocial Compliance: Evaluate working conditions, labor practices, and safety standards.\n\nEnvironmental Management: Review environmental policies and waste handling practices.'
+                    },
+                    {
+                        type: 'heading',
+                        heading: 'Detailed Audit Report'
+                    },
+                    {
+                        type: 'text',
+                        text: 'You will receive a comprehensive audit report with photos, findings, and our professional recommendation within 3-5 working days after the on-site audit.'
+                    }
+                ]
             });
         });
-    });
     </script>
 </body>
 </html>

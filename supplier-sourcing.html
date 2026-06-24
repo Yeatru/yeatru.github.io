@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Service Plans - Choose the sourcing plan that fits your business needs. Plans for every stage from on-demand inspection to full-service sourcing.">
-    <meta property="og:title" content="Service Plans | Yeatru Sourcing - China Sourcing Agent">
-    <meta property="og:description" content="Choose the sourcing plan that fits your business needs. Flexible plans from on-demand to full-service.">
+    <meta name="description" content="Professional supplier sourcing service in China. Find reliable manufacturers and suppliers with our expert team led by Neil with 14+ years of experience.">
+    <meta property="og:title" content="Supplier Sourcing Service | Yeatru Sourcing - China Sourcing Agent">
+    <meta property="og:description" content="Find reliable suppliers and products from China with our expert sourcing team. 14+ years of supplier management experience.">
     <meta property="og:type" content="website">
-    <title>Service Plans | Yeatru Sourcing - China Sourcing Agent</title>
-    <link rel="canonical" href="https://www.yeatru.com/service-plans">
+    <title>Supplier Sourcing Service | Yeatru Sourcing - China Sourcing Agent</title>
+    <link rel="canonical" href="https://www.yeatru.com/supplier-sourcing">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,52 +57,36 @@
     <!-- Page Header -->
     <section class="page-header py-5 bg-light">
         <div class="container text-center">
-            <span class="section-eyebrow">SERVICE PLANS</span>
+            <span class="section-eyebrow">SUPPLIER SOURCING</span>
             <div class="section-divider mx-auto"></div>
-            <h1 class="section-title" id="pageTitle">Our Service Plans</h1>
-            <p class="section-subtitle" id="pageSubtitle">Choose the sourcing plan that fits your business needs</p>
+            <h1 class="section-title" id="pageTitle">Supplier Sourcing Service</h1>
+            <p class="section-subtitle" id="pageSubtitle">Find reliable suppliers and products from China with our expert sourcing team</p>
         </div>
     </section>
 
-    <!-- Plans Section -->
-    <section class="plan-section py-5 bg-light" id="plansSection">
+    <!-- Sourcing Process Timeline -->
+    <section class="process-section-alt py-5 bg-white">
         <div class="container">
-            <div class="row g-4" id="plansContainer"></div>
-        </div>
-    </section>
-
-    <!-- Plan Guide Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="plan-guide-section">
-                <h3 class="plan-guide-title"><i class="fas fa-lightbulb me-2"></i>Which Plan is Right for You?</h3>
-                <div class="plan-guide-grid">
-                    <div class="plan-guide-item plan-b-guide">
-                        <div class="plan-guide-plan">New to Sourcing? → Plan B</div>
-                        <div class="plan-guide-desc">Just starting out, no suppliers yet? Get complete one-stop sourcing + production + logistics with zero commission, backed by our after-sales guarantee.</div>
-                    </div>
-                    <div class="plan-guide-item plan-c-guide">
-                        <div class="plan-guide-plan">Have Factory? → Plan C</div>
-                        <div class="plan-guide-desc">Already have your own factory but need professional third-party production follow-up and quality control oversight.</div>
-                    </div>
-                    <div class="plan-guide-item plan-a-guide">
-                        <div class="plan-guide-plan">One-Time Needs? → Plan A</div>
-                        <div class="plan-guide-desc">Only need factory audits, random inspections, or lab testing. You handle direct factory coordination.</div>
-                    </div>
-                    <div class="plan-guide-item plan-d-guide">
-                        <div class="plan-guide-plan">Goods Ready? → Plan D</div>
-                        <div class="plan-guide-desc">All goods prepared but need labeling, repacking, full inspection, and consolidation for shipping.</div>
-                    </div>
-                </div>
+            <div class="section-title-wrap text-center">
+                <span class="section-eyebrow">HOW IT WORKS</span>
+                <div class="section-divider mx-auto"></div>
+                <h2 class="section-title">Our Sourcing Process</h2>
+                <p class="section-subtitle">We make sourcing from China straightforward and transparent</p>
             </div>
+            <div class="row g-4 justify-content-center" id="processTimeline"></div>
         </div>
+    </section>
+
+    <!-- Page Blocks -->
+    <section class="py-5 page-blocks-section bg-light">
+        <div class="container" id="pageBlocksContainer"></div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-white">
         <div class="container text-center">
-            <h2 class="section-title mb-3">Ready to Get Started?</h2>
-            <p class="section-subtitle mb-4">Contact us today to discuss which plan is right for you</p>
+            <h2 class="section-title mb-3">Ready to Start Sourcing?</h2>
+            <p class="section-subtitle mb-4">Contact us today for a free quote and consultation</p>
             <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
         </div>
     </section>
@@ -170,67 +154,63 @@
     <script src="page.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            loadPageData('plans', {
-                title: 'Our Service Plans',
-                subtitle: 'Choose the sourcing plan that fits your business needs',
-                plans: [
+            loadPageData('supplier-sourcing', {
+                title: 'Supplier Sourcing Service',
+                subtitle: 'Find reliable suppliers and products from China with our expert sourcing team',
+                steps: [
                     {
-                        name: 'Plan A',
-                        title: 'On-Demand',
-                        subtitle: 'Flat fee per task',
-                        features: [
-                            'Payment Assistance',
-                            'On-Demand QC Inspection',
-                            'Factory On-site Audits',
-                            'Lab Testing Coordination'
-                        ],
-                        featured: false
+                        number: 1,
+                        title: 'Your Requirements',
+                        desc: 'Share your product specifications, quantity, budget and timeline with our team.',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg'
                     },
                     {
-                        name: 'Plan B',
-                        title: '0% Commission',
-                        subtitle: "Don't have suppliers yet",
-                        features: [
-                            'Manufacturing Sourcing',
-                            'Quote Collection',
-                            'Manufacturing Solution Support',
-                            'Order Management',
-                            'Mass Production Follow Up',
-                            'Goods Consolidation',
-                            'Free AQL 2.5 Quality Inspection',
-                            '2 Months Free Warehousing',
-                            'Door-to-Door Logistics',
-                            'Quality Guarantee & Compensation'
-                        ],
-                        featured: true
+                        number: 2,
+                        title: 'Supplier Matching',
+                        desc: 'We identify and verify the best suppliers that match your specific requirements.',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png'
                     },
                     {
-                        name: 'Plan C',
-                        title: '3%',
-                        subtitle: 'Have suppliers already',
-                        features: [
-                            'Supplier Coordination',
-                            'Full Order Follow-up',
-                            'Goods Consolidation',
-                            'Free AQL 2.5 Quality Inspection',
-                            '1 Month Free Warehousing',
-                            'Door-to-Door Logistics'
-                        ],
-                        featured: false
+                        number: 3,
+                        title: 'Sample & Pricing',
+                        desc: 'Obtain samples and competitive pricing quotes from pre-vetted suppliers.',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg'
                     },
                     {
-                        name: 'Plan D',
-                        title: 'Prep',
-                        subtitle: '3PL Prep & Fulfillment',
-                        features: [
-                            '100% piece-by-piece Inspection',
-                            'Compliance Labeling',
-                            'Bundling & Kitting',
-                            'Retail-Ready Re-pack',
-                            'Sample Consolidation',
-                            'Supplier Cargo Pick-up'
-                        ],
-                        featured: false
+                        number: 4,
+                        title: 'Delivery & Support',
+                        desc: 'We handle production oversight, quality control and shipping to your doorstep.',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg'
+                    }
+                ],
+                blocks: [
+                    {
+                        type: 'heading',
+                        heading: 'How We Help You Source'
+                    },
+                    {
+                        type: 'text',
+                        text: 'Our supplier sourcing service helps you find reliable manufacturers and suppliers in China. With over 14 years of experience in supplier management, our team led by Neil thoroughly vets every supplier to ensure quality, reliability, and competitive pricing.'
+                    },
+                    {
+                        type: 'textImage',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg',
+                        heading: 'Market Research & Supplier Matching',
+                        text: 'We conduct in-depth market research to identify the best suppliers matching your product specifications, quantity requirements, and budget. Our extensive network covers hundreds of verified manufacturers across various industries.'
+                    },
+                    {
+                        type: 'imageText',
+                        image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg',
+                        heading: 'Price Negotiation & Sample Verification',
+                        text: 'Leverage our local expertise to negotiate the best prices and payment terms. We arrange sample procurement and verification to ensure product quality before you commit to bulk orders.'
+                    },
+                    {
+                        type: 'heading',
+                        heading: 'Our Sourcing Process'
+                    },
+                    {
+                        type: 'text',
+                        text: 'Step 1: Share your product specifications, quantity, budget, and timeline.\nStep 2: We identify and verify 3-5 matching suppliers within 2-3 working days.\nStep 3: Get competitive quotes and sample options for your evaluation.\nStep 4: We handle order management, production follow-up, and quality control until delivery.'
                     }
                 ]
             });

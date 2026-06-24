@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Service Plans - Choose the sourcing plan that fits your business needs. Plans for every stage from on-demand inspection to full-service sourcing.">
-    <meta property="og:title" content="Service Plans | Yeatru Sourcing - China Sourcing Agent">
-    <meta property="og:description" content="Choose the sourcing plan that fits your business needs. Flexible plans from on-demand to full-service.">
+    <meta name="description" content="Professional quality inspection service in China. Comprehensive QC at every production stage with 14+ years experience by Neil.">
+    <meta property="og:title" content="Quality Inspection Service | Yeatru Sourcing - China Sourcing Agent">
+    <meta property="og:description" content="Comprehensive quality control at every stage of production. 14+ years of quality control experience.">
     <meta property="og:type" content="website">
-    <title>Service Plans | Yeatru Sourcing - China Sourcing Agent</title>
-    <link rel="canonical" href="https://www.yeatru.com/service-plans">
+    <title>Quality Inspection Service | Yeatru Sourcing - China Sourcing Agent</title>
+    <link rel="canonical" href="https://www.yeatru.com/quality-inspection">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,52 +57,23 @@
     <!-- Page Header -->
     <section class="page-header py-5 bg-light">
         <div class="container text-center">
-            <span class="section-eyebrow">SERVICE PLANS</span>
+            <span class="section-eyebrow">QUALITY CONTROL</span>
             <div class="section-divider mx-auto"></div>
-            <h1 class="section-title" id="pageTitle">Our Service Plans</h1>
-            <p class="section-subtitle" id="pageSubtitle">Choose the sourcing plan that fits your business needs</p>
+            <h1 class="section-title" id="pageTitle">Quality Inspection Service</h1>
+            <p class="section-subtitle" id="pageSubtitle">Comprehensive quality control at every stage of production</p>
         </div>
     </section>
 
-    <!-- Plans Section -->
-    <section class="plan-section py-5 bg-light" id="plansSection">
-        <div class="container">
-            <div class="row g-4" id="plansContainer"></div>
-        </div>
-    </section>
-
-    <!-- Plan Guide Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="plan-guide-section">
-                <h3 class="plan-guide-title"><i class="fas fa-lightbulb me-2"></i>Which Plan is Right for You?</h3>
-                <div class="plan-guide-grid">
-                    <div class="plan-guide-item plan-b-guide">
-                        <div class="plan-guide-plan">New to Sourcing? → Plan B</div>
-                        <div class="plan-guide-desc">Just starting out, no suppliers yet? Get complete one-stop sourcing + production + logistics with zero commission, backed by our after-sales guarantee.</div>
-                    </div>
-                    <div class="plan-guide-item plan-c-guide">
-                        <div class="plan-guide-plan">Have Factory? → Plan C</div>
-                        <div class="plan-guide-desc">Already have your own factory but need professional third-party production follow-up and quality control oversight.</div>
-                    </div>
-                    <div class="plan-guide-item plan-a-guide">
-                        <div class="plan-guide-plan">One-Time Needs? → Plan A</div>
-                        <div class="plan-guide-desc">Only need factory audits, random inspections, or lab testing. You handle direct factory coordination.</div>
-                    </div>
-                    <div class="plan-guide-item plan-d-guide">
-                        <div class="plan-guide-plan">Goods Ready? → Plan D</div>
-                        <div class="plan-guide-desc">All goods prepared but need labeling, repacking, full inspection, and consolidation for shipping.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Page Blocks -->
+    <section class="py-5 page-blocks-section bg-light">
+        <div class="container" id="pageBlocksContainer"></div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-white">
         <div class="container text-center">
-            <h2 class="section-title mb-3">Ready to Get Started?</h2>
-            <p class="section-subtitle mb-4">Contact us today to discuss which plan is right for you</p>
+            <h2 class="section-title mb-3">Need Quality Inspection?</h2>
+            <p class="section-subtitle mb-4">Contact us today to discuss your QC requirements</p>
             <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
         </div>
     </section>
@@ -170,67 +141,30 @@
     <script src="page.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            loadPageData('plans', {
-                title: 'Our Service Plans',
-                subtitle: 'Choose the sourcing plan that fits your business needs',
-                plans: [
+            loadPageData('quality-inspection', {
+                title: 'Quality Inspection Service',
+                subtitle: 'Comprehensive quality control at every stage of production',
+                blocks: [
                     {
-                        name: 'Plan A',
-                        title: 'On-Demand',
-                        subtitle: 'Flat fee per task',
-                        features: [
-                            'Payment Assistance',
-                            'On-Demand QC Inspection',
-                            'Factory On-site Audits',
-                            'Lab Testing Coordination'
-                        ],
-                        featured: false
+                        type: 'heading',
+                        heading: 'Quality You Can Trust'
                     },
                     {
-                        name: 'Plan B',
-                        title: '0% Commission',
-                        subtitle: "Don't have suppliers yet",
-                        features: [
-                            'Manufacturing Sourcing',
-                            'Quote Collection',
-                            'Manufacturing Solution Support',
-                            'Order Management',
-                            'Mass Production Follow Up',
-                            'Goods Consolidation',
-                            'Free AQL 2.5 Quality Inspection',
-                            '2 Months Free Warehousing',
-                            'Door-to-Door Logistics',
-                            'Quality Guarantee & Compensation'
-                        ],
-                        featured: true
+                        type: 'text',
+                        text: 'With 14+ years of quality control experience, our team ensures every product meets your specifications. We offer inspection services at every stage of production, from raw materials to final shipment.'
                     },
                     {
-                        name: 'Plan C',
-                        title: '3%',
-                        subtitle: 'Have suppliers already',
-                        features: [
-                            'Supplier Coordination',
-                            'Full Order Follow-up',
-                            'Goods Consolidation',
-                            'Free AQL 2.5 Quality Inspection',
-                            '1 Month Free Warehousing',
-                            'Door-to-Door Logistics'
-                        ],
-                        featured: false
+                        type: 'twoImages',
+                        image1: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg',
+                        image2: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png'
                     },
                     {
-                        name: 'Plan D',
-                        title: 'Prep',
-                        subtitle: '3PL Prep & Fulfillment',
-                        features: [
-                            '100% piece-by-piece Inspection',
-                            'Compliance Labeling',
-                            'Bundling & Kitting',
-                            'Retail-Ready Re-pack',
-                            'Sample Consolidation',
-                            'Supplier Cargo Pick-up'
-                        ],
-                        featured: false
+                        type: 'heading',
+                        heading: 'Our Inspection Services'
+                    },
+                    {
+                        type: 'text',
+                        text: 'Pre-Production Inspection (PPI): Verify raw materials, components, and production setup before manufacturing begins.\n\nDuring Production Inspection (DUPRO): Check product quality during the production process, catch issues early.\n\nFinal Random Inspection (FRI): Comprehensive AQL 2.5 inspection before shipment, covering function, appearance, packaging, and quantity.\n\nContainer Loading Check (CLC): Ensure correct quantities, proper packaging, and secure loading conditions.'
                     }
                 ]
             });
