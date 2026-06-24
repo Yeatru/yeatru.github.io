@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-24T00:00:00.000Z",
+  "version": 1,
+  "updatedAt": "2026-01-01T00:00:00.000Z",
   "pages": {
     "services": {
       "title": "Our Comprehensive Sourcing Services",
@@ -9,56 +9,32 @@
         {
           "icon": "fa-user-check",
           "title": "Supplier Verification",
-          "desc": "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
+          "desc": "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics."
         },
         {
           "icon": "fa-search",
           "title": "Product Sourcing",
-          "desc": "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg"
+          "desc": "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers."
         },
         {
           "icon": "fa-check-square",
           "title": "Quality Control",
-          "desc": "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg"
+          "desc": "Comprehensive quality inspection at every stage of production to ensure products meet your specifications."
         },
         {
           "icon": "fa-truck",
           "title": "Logistics & Shipping",
-          "desc": "Hassle-free shipping solutions including sea, air and express delivery with competitive rates.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg"
+          "desc": "Hassle-free shipping solutions including sea, air and express delivery with competitive rates."
         },
         {
           "icon": "fa-handshake",
           "title": "Price Negotiation",
-          "desc": "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg"
+          "desc": "Leverage our local expertise to negotiate the best prices and payment terms with suppliers."
         },
         {
           "icon": "fa-shield-alt",
           "title": "Risk Management",
-          "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
-        }
-      ],
-      "blocks": [
-        {
-          "type": "heading",
-          "heading": "Why Choose Yeatru Sourcing?"
-        },
-        {
-          "type": "smallImageText",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg",
-          "heading": "Extensive Product Range",
-          "text": "With access to thousands of suppliers across China, we help you find the perfect products for your business. From consumer electronics to home goods, we cover a wide range of categories."
-        },
-        {
-          "type": "smallImageText",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg",
-          "heading": "Strict Quality Control",
-          "text": "Every product goes through our rigorous quality control process. We inspect at every stage - from raw materials to final packaging - ensuring you receive only the highest quality products."
+          "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees."
         }
       ]
     },
@@ -69,41 +45,22 @@
         {
           "number": 1,
           "title": "Your Requirements",
-          "desc": "Share your product specifications, quantity, budget and timeline with our team.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg"
+          "desc": "Share your product specifications, quantity, budget and timeline with our team."
         },
         {
           "number": 2,
           "title": "Supplier Matching",
-          "desc": "We identify and verify the best suppliers that match your specific requirements.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
+          "desc": "We identify and verify the best suppliers that match your specific requirements."
         },
         {
           "number": 3,
           "title": "Sample & Pricing",
-          "desc": "Obtain samples and competitive pricing quotes from pre-vetted suppliers.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg"
+          "desc": "Obtain samples and competitive pricing quotes from pre-vetted suppliers."
         },
         {
           "number": 4,
           "title": "Delivery & Support",
-          "desc": "We handle production oversight, quality control and shipping to your doorstep.",
-          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg"
-        }
-      ],
-      "blocks": [
-        {
-          "type": "heading",
-          "heading": "Quality You Can Trust"
-        },
-        {
-          "type": "twoImages",
-          "image1": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg",
-          "image2": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
-        },
-        {
-          "type": "text",
-          "text": "Our quality control team works tirelessly to ensure every product meets your exact specifications. From initial sample verification to final pre-shipment inspections, we've got you covered at every step of the way."
+          "desc": "We handle production oversight, quality control and shipping to your doorstep."
         }
       ]
     },
@@ -169,8 +126,7 @@
           ],
           "featured": false
         }
-      ],
-      "blocks": []
+      ]
     },
     "testimonials": {
       "title": "What Clients Say",
@@ -194,8 +150,7 @@
           "country": "USA",
           "initial": "J"
         }
-      ],
-      "blocks": []
+      ]
     },
     "about": {
       "title": "About Yeatru Sourcing",
@@ -219,16 +174,14 @@
           "number": "24/7",
           "label": "Support Available"
         }
-      ],
-      "blocks": []
+      ]
     },
     "contact": {
       "title": "Get In Touch With Us",
       "subtitle": "Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.",
       "address": "Yiwu City, Zhejiang Province, China",
       "phone": "+86 15988516408 (WhatsApp)",
-      "email": "info@yeatru.com",
-      "blocks": []
+      "email": "info@yeatru.com"
     }
   }
 }
