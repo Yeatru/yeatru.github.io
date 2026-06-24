@@ -20,9 +20,9 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box">
+                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
                     <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
-                    <span class="brand-logo-fallback">YC</span>
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                 </span>
                 <span>Yeatru Sourcing</span>
             </a>
@@ -31,17 +31,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="process.html">Sourcing Process</a></li>
-                    <li class="nav-item"><a class="nav-link" href="plans.html">Service Plans</a></li>
-                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html" data-i18n="nav.services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html" data-i18n="nav.sourcingProcess">Sourcing Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html" data-i18n="nav.testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html" data-i18n="nav.aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact Us</a></li>
                 </ul>
-                <button id="loginBtn" class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button id="logoutBtn" class="btn logout-btn d-none">Logout</button>
+                <div class="dropdown lang-selector">
+                    <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe"></i> <span id="current-lang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                    </ul>
+                </div>
+                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-i18n="nav.login">Login</button>
+                <button id="logoutBtn" class="btn logout-btn ms-2 d-none" data-i18n="nav.logout">Logout</button>
             </div>
         </div>
     </nav>
@@ -91,7 +101,8 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <span style="color: var(--peacock-blue-light); font-weight: bold;">YC</span>
+                            <img id="footerLogoImg" src="" alt="Logo" style="display:none;width:100%;height:100%;object-fit:contain;">
+                            <span id="footerLogoFallback" style="color: var(--peacock-blue-light); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing
                     </a>
@@ -103,14 +114,14 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="products.html" class="footer-link">Products</a>
-                    <a href="services.html" class="footer-link">Services</a>
-                    <a href="process.html" class="footer-link">Sourcing Process</a>
-                    <a href="testimonials.html" class="footer-link">Testimonials</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
+                    <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+                    <a href="products.html" class="footer-link" data-i18n="nav.products">Products</a>
+                    <a href="services.html" class="footer-link" data-i18n="nav.services">Services</a>
+                    <a href="process.html" class="footer-link" data-i18n="nav.sourcingProcess">Sourcing Process</a>
+                    <a href="testimonials.html" class="footer-link" data-i18n="nav.testimonials">Testimonials</a>
+                    <a href="about.html" class="footer-link" data-i18n="nav.aboutUs">About Us</a>
+                    <a href="contact.html" class="footer-link" data-i18n="nav.contactUs">Contact Us</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Our Services</h3>
@@ -143,23 +154,23 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Admin Login</h5>
+                    <h5 class="modal-title" data-i18n="login.title">Admin Login</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username">
+                        <label class="form-label" data-i18n="login.username">Username</label>
+                        <input type="text" class="form-control" id="adminUsername" data-i18n-placeholder="login.enterUsername" placeholder="Enter username">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password">
+                        <label class="form-label" data-i18n="login.password">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" data-i18n-placeholder="login.enterPassword" placeholder="Enter password">
                     </div>
-                    <div id="loginError" class="text-danger d-none">Incorrect username or password!</div>
+                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="submitLogin">Login</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
                 </div>
             </div>
         </div>

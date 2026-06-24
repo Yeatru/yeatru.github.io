@@ -121,10 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
             renderProducts();
         });
 
-    window.addEventListener('beforeunload', function () {
-        localStorage.removeItem('yeatruAdminLoggedIn');
-    });
-
     updateLoginUI(isAdmin());
     renderCategories();
     renderProducts();

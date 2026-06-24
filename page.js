@@ -4,6 +4,64 @@ const PAGE_DATA_URL = 'page-data.json';
 let currentPageId = '';
 let currentPageMode = 'preview';
 
+const i18n = {
+    en: {
+        nav: { home: 'Home', products: 'Products', services: 'Services', sourcingProcess: 'Sourcing Process', testimonials: 'Testimonials', aboutUs: 'About Us', contactUs: 'Contact Us', login: 'Login', logout: 'Logout', servicePlans: 'Service Plans' },
+        login: { title: 'Admin Login', username: 'Username', enterUsername: 'Enter username', password: 'Password', enterPassword: 'Enter password', error: 'Incorrect username or password!', cancel: 'Cancel', submit: 'Login' },
+        page: { edit: 'Edit Page', save: 'Save', export: 'Export Data', import: 'Import', preview: 'Preview' }
+    },
+    es: {
+        nav: { home: 'Inicio', products: 'Productos', services: 'Servicios', sourcingProcess: 'Proceso de Suministro', testimonials: 'Testimonios', aboutUs: 'Sobre Nosotros', contactUs: 'Contáctenos', login: 'Iniciar Sesión', logout: 'Cerrar Sesión', servicePlans: 'Planes de Servicio' },
+        login: { title: 'Inicio de Sesión de Administrador', username: 'Nombre de Usuario', enterUsername: 'Ingrese el nombre de usuario', password: 'Contraseña', enterPassword: 'Ingrese la contraseña', error: '¡Nombre de usuario o contraseña incorrectos!', cancel: 'Cancelar', submit: 'Iniciar Sesión' },
+        page: { edit: 'Editar Página', save: 'Guardar', export: 'Exportar Datos', import: 'Importar', preview: 'Vista Previa' }
+    },
+    fr: {
+        nav: { home: 'Accueil', products: 'Produits', services: 'Services', sourcingProcess: 'Processus d\'Approvisionnement', testimonials: 'Témoignages', aboutUs: 'À Propos de Nous', contactUs: 'Nous Contacter', login: 'Connexion', logout: 'Déconnexion', servicePlans: 'Plans de Service' },
+        login: { title: 'Connexion Administrateur', username: 'Nom d\'Utilisateur', enterUsername: 'Entrez le nom d\'utilisateur', password: 'Mot de Passe', enterPassword: 'Entrez le mot de passe', error: 'Nom d\'utilisateur ou mot de passe incorrect!', cancel: 'Annuler', submit: 'Se Connecter' },
+        page: { edit: 'Modifier la Page', save: 'Enregistrer', export: 'Exporter les Données', import: 'Importer', preview: 'Aperçu' }
+    },
+    ru: {
+        nav: { home: 'Главная', products: 'Продукты', services: 'Услуги', sourcingProcess: 'Процесс Поставок', testimonials: 'Отзывы', aboutUs: 'О Нас', contactUs: 'Связаться', login: 'Войти', logout: 'Выйти', servicePlans: 'Тарифы' },
+        login: { title: 'Вход', username: 'Логин', enterUsername: 'Введите логин', password: 'Пароль', enterPassword: 'Введите пароль', error: 'Неверные данные!', cancel: 'Отмена', submit: 'Войти' },
+        page: { edit: 'Редактировать', save: 'Сохранить', export: 'Экспорт Данных', import: 'Импорт', preview: 'Просмотр' }
+    }
+};
+
+function getCurrentLang() {
+    return localStorage.getItem('yeatruLang') || 'en';
+}
+
+function setCurrentLang(lang) {
+    localStorage.setItem('yeatruLang', lang);
+}
+
+function t(key) {
+    const lang = getCurrentLang();
+    const keys = key.split('.');
+    let obj = i18n[lang] || i18n.en;
+    for (const k of keys) {
+        if (obj && obj[k]) obj = obj[k];
+        else return key;
+    }
+    return obj;
+}
+
+function applyI18n() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = t(key);
+        if (val && val !== key) el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        const val = t(key);
+        if (val && val !== key) el.placeholder = val;
+    });
+    const langNames = { en: 'English', es: 'Español', fr: 'Français', ru: 'Русский' };
+    const cur = document.getElementById('current-lang');
+    if (cur) cur.textContent = langNames[getCurrentLang()] || 'English';
+}
+
 function isAdmin() {
     return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
 }
@@ -13,6 +71,37 @@ function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, function (s) {
         return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]);
     });
+}
+
+function renderBrandLogo() {
+    const url = localStorage.getItem('yeatruBrandLogo');
+    const img = document.getElementById('brandLogoImg');
+    const fallback = document.getElementById('brandLogoFallback');
+    const footerImg = document.getElementById('footerLogoImg');
+    const footerFallback = document.getElementById('footerLogoFallback');
+    if (url) {
+        if (img) {
+            img.src = url;
+            img.style.display = 'block';
+        }
+        if (fallback) fallback.style.display = 'none';
+        if (footerImg) {
+            footerImg.src = url;
+            footerImg.style.display = 'block';
+        }
+        if (footerFallback) footerFallback.style.display = 'none';
+    } else {
+        if (img) {
+            img.src = '';
+            img.style.display = 'none';
+        }
+        if (fallback) fallback.style.display = '';
+        if (footerImg) {
+            footerImg.src = '';
+            footerImg.style.display = 'none';
+        }
+        if (footerFallback) footerFallback.style.display = '';
+    }
 }
 
 function getPageData() {
@@ -122,6 +211,10 @@ function renderPage(pageId) {
 
     if (pageId === 'services') {
         renderServicesPage(pageData);
+        const plansData = data.pages.plans;
+        if (plansData && document.getElementById('plansGrid')) {
+            renderPlansPage(plansData);
+        }
     } else if (pageId === 'process') {
         renderProcessPage(pageData);
     } else if (pageId === 'plans') {
@@ -306,6 +399,20 @@ function saveCurrentPage() {
             const icon = card.querySelector('.service-icon i')?.className?.replace('fas ', '') || 'fa-check';
             pageData.services.push({ icon, title, desc });
         });
+        if (document.getElementById('plansGrid') && data.pages.plans) {
+            data.pages.plans.plans = [];
+            document.querySelectorAll('.plan-card').forEach((card, idx) => {
+                const name = card.querySelector('[data-editable="plan-name"]')?.textContent || '';
+                const title = card.querySelector('[data-editable="plan-title"]')?.textContent || card.querySelector('[data-editable="plan-percent"]')?.textContent || '';
+                const subtitle = card.querySelector('[data-editable="plan-subtitle"]')?.textContent || '';
+                const features = [];
+                card.querySelectorAll('[data-editable="plan-feature"]').forEach(li => {
+                    features.push(li.textContent || '');
+                });
+                const featured = card.classList.contains('featured');
+                data.pages.plans.plans.push({ name, title, subtitle, features, featured });
+            });
+        }
     } else if (currentPageId === 'process') {
         pageData.steps = [];
         document.querySelectorAll('.process-step-alt').forEach((step, idx) => {
@@ -422,10 +529,10 @@ document.addEventListener('DOMContentLoaded', function() {
         editBtn.addEventListener('click', function() {
             if (currentPageMode === 'edit') {
                 setPageMode('preview');
-                this.textContent = 'Edit Page';
+                this.innerHTML = '<i class="fas fa-edit me-1"></i> ' + t('page.edit');
             } else {
                 setPageMode('edit');
-                this.textContent = 'Preview';
+                this.innerHTML = '<i class="fas fa-eye me-1"></i> ' + t('page.preview');
             }
         });
     }
@@ -449,9 +556,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    updateLoginUI(isAdmin());
-});
+    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            setCurrentLang(lang);
+            applyI18n();
+        });
+    });
 
-window.addEventListener('beforeunload', function() {
-    localStorage.removeItem('yeatruAdminLoggedIn');
+    applyI18n();
+    renderBrandLogo();
+    updateLoginUI(isAdmin());
 });
