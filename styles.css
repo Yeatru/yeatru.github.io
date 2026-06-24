@@ -2269,6 +2269,12 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .detail-info h1 { font-size: 1.4rem; }
     .aplus-block-image-wrap { flex-direction: column; }
     .aplus-block-image-wrap > img { max-width: 100%; height: auto; }
+    .page-header .section-title { font-size: 1.75rem; }
+    .page-header .section-subtitle { font-size: 0.95rem; }
+    .service-process-card { padding: 1.5rem 1rem; }
+    .process-number { font-size: 2rem; }
+    .payment-card { padding: 1.5rem 1rem; }
+    .payment-icon { width: 60px; height: 60px; font-size: 1.5rem; }
 }
 
 .page-header {

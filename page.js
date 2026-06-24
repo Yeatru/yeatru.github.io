@@ -510,10 +510,11 @@ function getServicePageUrl(title) {
         'supplier verification': 'supplier-verification.html',
         'product sourcing': 'product-sourcing.html',
         'quality control': 'quality-control.html',
+        'logistics & warehousing': 'logistics-shipping.html',
         'logistics & shipping': 'logistics-shipping.html',
         'logistics and shipping': 'logistics-shipping.html',
         'price negotiation': 'price-negotiation.html',
-        'risk management': 'risk-management.html'
+        'design & photography': 'design-photography.html'
     };
     return urlMap[t] || '';
 }
