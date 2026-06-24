@@ -234,17 +234,31 @@ function renderServicesPage(data) {
     const container = document.getElementById('servicesGrid');
     if (!container) return;
     container.innerHTML = '';
+    const isEdit = currentPageMode === 'edit' && isAdmin();
     (data.services || []).forEach((svc, idx) => {
         const col = document.createElement('div');
         col.className = 'col-lg-4 col-md-6';
         const imgHtml = svc.image ? `
             <div class="service-card-image">
-                <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                <img src="${escapeHtml(svc.image)}" alt="${escapeHtml(svc.title)}" onerror="this.style.display='none';">
                 <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
             </div>
+        ` : (isEdit ? `
+            <div class="service-card-image">
+                <div style="height:150px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#adb5bd;border-radius:8px;">
+                    <i class="fas fa-image me-2"></i> No Image
+                </div>
+                <input type="url" class="form-control service-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(svc.image || '')}">
+            </div>
+        ` : '');
+        const deleteBtn = isEdit ? `
+            <button class="btn btn-sm btn-danger delete-service-btn" data-idx="${idx}" style="position:absolute;top:10px;right:10px;z-index:10;">
+                <i class="fas fa-trash"></i>
+            </button>
         ` : '';
         col.innerHTML = `
-            <div class="service-card">
+            <div class="service-card" style="position:relative;">
+                ${deleteBtn}
                 ${imgHtml}
                 <div class="service-icon"><i class="fas ${escapeHtml(svc.icon || '')}"></i></div>
                 <h3 class="service-title" data-editable="service-title" data-idx="${idx}">${escapeHtml(svc.title || '')}</h3>
@@ -253,22 +267,62 @@ function renderServicesPage(data) {
         `;
         container.appendChild(col);
     });
+
+    if (isEdit) {
+        const addCol = document.createElement('div');
+        addCol.className = 'col-lg-4 col-md-6';
+        addCol.innerHTML = `
+            <div class="service-card add-service-card" id="addServiceBtn" style="cursor:pointer;border:2px dashed #dee2e6;display:flex;align-items:center;justify-content:center;min-height:200px;color:#adb5bd;flex-direction:column;gap:0.5rem;">
+                <i class="fas fa-plus-circle" style="font-size:2rem;"></i>
+                <span>Add Service</span>
+            </div>
+        `;
+        container.appendChild(addCol);
+    }
+}
+
+function addServiceItem() {
+    const data = getPageData();
+    if (!data.pages.services) return;
+    data.pages.services.services.push({
+        icon: 'fa-star',
+        title: 'New Service',
+        desc: 'Service description goes here.',
+        image: ''
+    });
+    savePageData(data);
+    renderPage('services');
 }
 
 function renderProcessPage(data) {
     const container = document.getElementById('processTimeline');
     if (!container) return;
     container.innerHTML = '';
+    const isEdit = currentPageMode === 'edit' && isAdmin();
     (data.steps || []).forEach((step, idx) => {
         const div = document.createElement('div');
         div.className = 'process-step-alt';
+        div.style.position = 'relative';
         const imgHtml = step.image ? `
             <div class="process-step-image">
                 <img src="${escapeHtml(step.image)}" alt="Step ${step.number}" onerror="this.style.display='none';">
                 <input type="url" class="form-control process-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(step.image || '')}">
             </div>
+        ` : (isEdit ? `
+            <div class="process-step-image">
+                <div style="height:180px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#adb5bd;border-radius:8px;">
+                    <i class="fas fa-image me-2"></i> No Image
+                </div>
+                <input type="url" class="form-control process-image-input" placeholder="Image URL" data-idx="${idx}" value="${escapeHtml(step.image || '')}">
+            </div>
+        ` : '');
+        const deleteBtn = isEdit ? `
+            <button class="btn btn-sm btn-danger delete-step-btn" data-idx="${idx}" style="position:absolute;top:10px;right:10px;z-index:10;">
+                <i class="fas fa-trash"></i>
+            </button>
         ` : '';
         div.innerHTML = `
+            ${deleteBtn}
             ${imgHtml}
             <div class="process-number">${step.number || idx + 1}</div>
             <h3 class="process-title" data-editable="step-title" data-idx="${idx}">${escapeHtml(step.title || '')}</h3>
@@ -276,6 +330,40 @@ function renderProcessPage(data) {
         `;
         container.appendChild(div);
     });
+
+    if (isEdit) {
+        const addDiv = document.createElement('div');
+        addDiv.className = 'process-step-alt';
+        addDiv.id = 'addStepBtn';
+        addDiv.style.cursor = 'pointer';
+        addDiv.style.border = '2px dashed #dee2e6';
+        addDiv.style.display = 'flex';
+        addDiv.style.alignItems = 'center';
+        addDiv.style.justifyContent = 'center';
+        addDiv.style.flexDirection = 'column';
+        addDiv.style.color = '#adb5bd';
+        addDiv.style.gap = '0.5rem';
+        addDiv.innerHTML = `
+            <i class="fas fa-plus-circle" style="font-size:2rem;"></i>
+            <span>Add Step</span>
+        `;
+        container.appendChild(addDiv);
+    }
+}
+
+function addProcessStep() {
+    const data = getPageData();
+    if (!data.pages.process) return;
+    const steps = data.pages.process.steps || [];
+    steps.push({
+        number: steps.length + 1,
+        title: 'New Step',
+        desc: 'Step description goes here.',
+        image: ''
+    });
+    data.pages.process.steps = steps;
+    savePageData(data);
+    renderPage('process');
 }
 
 function renderPlansPage(data) {
@@ -389,10 +477,77 @@ function applyPageEditState() {
     });
     document.body.classList.toggle('edit-mode', isEdit);
 
+    const pageTitle = document.getElementById('pageTitle');
+    const pageSubtitle = document.getElementById('pageSubtitle');
+    if (pageTitle) pageTitle.contentEditable = isEdit ? 'true' : 'false';
+    if (pageSubtitle) pageSubtitle.contentEditable = isEdit ? 'true' : 'false';
+
     const editBtn = document.getElementById('pageEditBtn');
     const saveBtn = document.getElementById('pageSaveBtn');
+    const exportBtn = document.getElementById('pageExportBtn');
+    const importLabel = document.querySelector('label[for="pageImportBtn"], label:has(#pageImportBtn)');
     if (editBtn) editBtn.style.display = isAdmin() ? 'inline-block' : 'none';
     if (saveBtn) saveBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
+    if (exportBtn) exportBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
+    if (importLabel) importLabel.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
+
+    if (isEdit) {
+        bindEditModeEvents();
+    }
+}
+
+function bindEditModeEvents() {
+    const addServiceBtn = document.getElementById('addServiceBtn');
+    if (addServiceBtn) {
+        addServiceBtn.onclick = function() { addServiceItem(); };
+    }
+
+    document.querySelectorAll('.delete-service-btn').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-idx'));
+            if (confirm('Delete this service?')) {
+                const data = getPageData();
+                if (data.pages.services && data.pages.services.services) {
+                    data.pages.services.services.splice(idx, 1);
+                    savePageData(data);
+                    renderPage('services');
+                }
+            }
+        };
+    });
+
+    const addStepBtn = document.getElementById('addStepBtn');
+    if (addStepBtn) {
+        addStepBtn.onclick = function() { addProcessStep(); };
+    }
+
+    document.querySelectorAll('.delete-step-btn').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-idx'));
+            if (confirm('Delete this step?')) {
+                const data = getPageData();
+                if (data.pages.process && data.pages.process.steps) {
+                    data.pages.process.steps.splice(idx, 1);
+                    data.pages.process.steps.forEach((s, i) => { s.number = i + 1; });
+                    savePageData(data);
+                    renderPage('process');
+                }
+            }
+        };
+    });
+
+    document.querySelectorAll('.service-image-input, .process-image-input').forEach(input => {
+        input.addEventListener('input', function() {
+            const idx = this.getAttribute('data-idx');
+            const img = this.parentElement.querySelector('img');
+            if (img) {
+                img.src = this.value;
+                img.style.display = this.value ? 'block' : 'none';
+            }
+        });
+    });
 }
 
 function setPageMode(mode) {
@@ -405,9 +560,15 @@ function saveCurrentPage() {
     const pageData = data.pages[currentPageId];
     if (!pageData) return;
 
+    const pageTitle = document.getElementById('pageTitle')?.textContent?.trim();
+    const pageSubtitle = document.getElementById('pageSubtitle')?.textContent?.trim();
+    if (pageTitle) pageData.title = pageTitle;
+    if (pageSubtitle) pageData.subtitle = pageSubtitle;
+
     if (currentPageId === 'services') {
         pageData.services = [];
-        document.querySelectorAll('.service-card').forEach((card, idx) => {
+        const serviceCards = document.querySelectorAll('.service-card:not(.add-service-card)');
+        serviceCards.forEach((card, idx) => {
             const title = card.querySelector('[data-editable="service-title"]')?.textContent || '';
             const desc = card.querySelector('[data-editable="service-desc"]')?.textContent || '';
             const icon = card.querySelector('.service-icon i')?.className?.replace('fas ', '') || 'fa-check';
@@ -430,7 +591,8 @@ function saveCurrentPage() {
         }
     } else if (currentPageId === 'process') {
         pageData.steps = [];
-        document.querySelectorAll('.process-step-alt').forEach((step, idx) => {
+        const stepCards = document.querySelectorAll('.process-step-alt:not(#addStepBtn)');
+        stepCards.forEach((step, idx) => {
             const number = step.querySelector('.process-number')?.textContent || (idx + 1);
             const title = step.querySelector('[data-editable="step-title"]')?.textContent || '';
             const desc = step.querySelector('[data-editable="step-desc"]')?.textContent || '';
