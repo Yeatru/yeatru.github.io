@@ -1,4 +1,6 @@
 const PAGE_DATA_KEY = 'yeatruPageData';
+const PAGE_DATA_VERSION_KEY = 'yeatruPageDataVersion';
+const CURRENT_DATA_VERSION = 3;
 const PAGE_DATA_URL = 'page-data.json';
 const GITHUB_OWNER = 'Yeatru';
 const GITHUB_REPO = 'yeatru.github.io';
@@ -110,6 +112,13 @@ function renderBrandLogo() {
 
 function getPageData() {
     try {
+        const cachedVersion = parseInt(localStorage.getItem(PAGE_DATA_VERSION_KEY) || '0');
+        if (cachedVersion < CURRENT_DATA_VERSION) {
+            localStorage.removeItem(PAGE_DATA_KEY);
+            const defaultData = getDefaultPageData();
+            savePageData(defaultData);
+            return defaultData;
+        }
         const s = localStorage.getItem(PAGE_DATA_KEY);
         if (s) return JSON.parse(s);
     } catch (e) {}
@@ -118,6 +127,7 @@ function getPageData() {
 
 function savePageData(data) {
     localStorage.setItem(PAGE_DATA_KEY, JSON.stringify(data));
+    localStorage.setItem(PAGE_DATA_VERSION_KEY, String(CURRENT_DATA_VERSION));
 }
 
 function getGithubToken() {
@@ -204,22 +214,32 @@ function getDefaultPageData() {
                 title: 'Our Comprehensive Sourcing Services',
                 subtitle: 'We offer end-to-end sourcing solutions tailored to your business needs',
                 services: [
-                    { icon: 'fa-user-check', title: 'Supplier Verification', desc: 'We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.' },
-                    { icon: 'fa-search', title: 'Product Sourcing', desc: 'Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.' },
-                    { icon: 'fa-check-square', title: 'Quality Control', desc: 'Comprehensive quality inspection at every stage of production to ensure products meet your specifications.' },
-                    { icon: 'fa-truck', title: 'Logistics & Shipping', desc: 'Hassle-free shipping solutions including sea, air and express delivery with competitive rates.' },
-                    { icon: 'fa-handshake', title: 'Price Negotiation', desc: 'Leverage our local expertise to negotiate the best prices and payment terms with suppliers.' },
-                    { icon: 'fa-shield-alt', title: 'Risk Management', desc: 'Mitigate risks associated with international trade including payment security and delivery guarantees.' }
+                    { icon: 'fa-user-check', title: 'Supplier Verification', desc: 'We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png' },
+                    { icon: 'fa-search', title: 'Product Sourcing', desc: 'Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg' },
+                    { icon: 'fa-check-square', title: 'Quality Control', desc: 'Comprehensive quality inspection at every stage of production to ensure products meet your specifications.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg' },
+                    { icon: 'fa-truck', title: 'Logistics & Shipping', desc: 'Hassle-free shipping solutions including sea, air and express delivery with competitive rates.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg' },
+                    { icon: 'fa-handshake', title: 'Price Negotiation', desc: 'Leverage our local expertise to negotiate the best prices and payment terms with suppliers.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg' },
+                    { icon: 'fa-shield-alt', title: 'Risk Management', desc: 'Mitigate risks associated with international trade including payment security and delivery guarantees.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png' }
+                ],
+                blocks: [
+                    { type: 'heading', heading: 'Why Choose Yeatru Sourcing?' },
+                    { type: 'smallImageText', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg', heading: 'Extensive Product Range', text: 'With access to thousands of suppliers across China, we help you find the perfect products for your business. From consumer electronics to home goods, we cover a wide range of categories.' },
+                    { type: 'smallImageText', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg', heading: 'Strict Quality Control', text: 'Every product goes through our rigorous quality control process. We inspect at every stage - from raw materials to final packaging - ensuring you receive only the highest quality products.' }
                 ]
             },
             process: {
                 title: 'Our Simple Sourcing Process',
                 subtitle: 'We make sourcing from China straightforward and transparent',
                 steps: [
-                    { number: 1, title: 'Your Requirements', desc: 'Share your product specifications, quantity, budget and timeline with our team.' },
-                    { number: 2, title: 'Supplier Matching', desc: 'We identify and verify the best suppliers that match your specific requirements.' },
-                    { number: 3, title: 'Sample & Pricing', desc: 'Obtain samples and competitive pricing quotes from pre-vetted suppliers.' },
-                    { number: 4, title: 'Delivery & Support', desc: 'We handle production oversight, quality control and shipping to your doorstep.' }
+                    { number: 1, title: 'Your Requirements', desc: 'Share your product specifications, quantity, budget and timeline with our team.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg' },
+                    { number: 2, title: 'Supplier Matching', desc: 'We identify and verify the best suppliers that match your specific requirements.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png' },
+                    { number: 3, title: 'Sample & Pricing', desc: 'Obtain samples and competitive pricing quotes from pre-vetted suppliers.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg' },
+                    { number: 4, title: 'Delivery & Support', desc: 'We handle production oversight, quality control and shipping to your doorstep.', image: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg' }
+                ],
+                blocks: [
+                    { type: 'heading', heading: 'Quality You Can Trust' },
+                    { type: 'twoImages', image1: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg', image2: 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png' },
+                    { type: 'text', text: 'Our quality control team works tirelessly to ensure every product meets your exact specifications. From initial sample verification to final pre-shipment inspections, we\'ve got you covered at every step of the way.' }
                 ]
             },
             plans: {
@@ -270,7 +290,7 @@ async function loadRemotePageData() {
         if (res.ok) {
             const data = await res.json();
             if (data && data.pages) {
-                localStorage.setItem(PAGE_DATA_KEY, JSON.stringify(data));
+                savePageData(data);
                 return data;
             }
         }
@@ -367,24 +387,24 @@ function renderPageBlocks(pageData) {
             </div>`;
         } else if (block.type === 'smallImageText') {
             html = `<div class="row align-items-center">
-                <div class="col-lg-2">
+                <div class="col-md-2 col-4">
                     <div class="page-block-image small-image">
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
                         <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
                     </div>
                 </div>
-                <div class="col-lg-10">
+                <div class="col-md-10 col-8">
                     <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
                     <p data-block-field="text">${escapeHtml(block.text || '')}</p>
                 </div>
             </div>`;
         } else if (block.type === 'smallTextImage') {
             html = `<div class="row align-items-center">
-                <div class="col-lg-10">
+                <div class="col-md-10 col-8">
                     <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
                     <p data-block-field="text">${escapeHtml(block.text || '')}</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-md-2 col-4">
                     <div class="page-block-image small-image">
                         <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
                         <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
