@@ -342,14 +342,12 @@ body.edit-mode .process-image-input {
     border-radius: 8px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .page-block-image.small-image {
-        max-width: 100%;
-        margin-bottom: 1rem;
+        max-width: 100px;
     }
     .page-block-image.small-image img {
-        height: auto;
-        max-height: 200px;
+        height: 100px;
     }
 }
 
@@ -1146,7 +1144,7 @@ body.edit-mode [contenteditable="true"]:focus {
 .service-card:hover { box-shadow: 0 12px 32px rgba(11,123,148,0.12); transform: translateY(-4px); }
 .service-card:hover::after { transform: scaleX(1); }
 
-.service-icon {
+/* .service-icon {
     font-size: 2.4rem;
     color: var(--peacock-blue);
     margin-bottom: 1.2rem;
@@ -1160,7 +1158,7 @@ body.edit-mode [contenteditable="true"]:focus {
     transition: all 0.3s ease;
 }
 
-.service-card:hover .service-icon { background: var(--peacock-blue); color: #fff; transform: scale(1.1); }
+.service-card:hover .service-icon { background: var(--peacock-blue); color: #fff; transform: scale(1.1); } */
 .service-title { font-weight: 700; color: var(--dark-gray); margin-bottom: 0.75rem; font-size: 1.05rem; }
 .service-desc { color: #6c757d; font-size: 0.88rem; line-height: 1.7; margin: 0; }
 
