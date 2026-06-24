@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCategories();
     renderProducts();
     renderBrandLogo();
+    renderProductsDropdown();
 
     document.getElementById('submitLogin').addEventListener('click', function () {
         const username = document.getElementById('adminUsername').value.trim();
@@ -278,6 +279,7 @@ function updateContent() {
 
     renderCategoryFilter();
     renderProducts();
+    renderProductsDropdown();
     if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailProductId) {
         renderDetailPage(currentDetailProductId);
     }
@@ -405,6 +407,24 @@ function renderCategoryFilter() {
         renderProducts();
     });
     list.appendChild(resetBtn);
+}
+
+function renderProductsDropdown() {
+    const dropdown = document.getElementById('productsDropdownMenu');
+    if (!dropdown) return;
+    const categories = getCategories();
+    dropdown.innerHTML = '';
+    const allItem = document.createElement('li');
+    allItem.innerHTML = '<a class="dropdown-item" href="products.html">All Products</a>';
+    dropdown.appendChild(allItem);
+    const divider = document.createElement('li');
+    divider.innerHTML = '<hr class="dropdown-divider">';
+    dropdown.appendChild(divider);
+    categories.forEach(cat => {
+        const li = document.createElement('li');
+        li.innerHTML = '<a class="dropdown-item" href="products.html?category=' + encodeURIComponent(cat) + '">' + escapeHtml(cat) + '</a>';
+        dropdown.appendChild(li);
+    });
 }
 
 function getProducts() {

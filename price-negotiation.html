@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price Negotiation Service | Yeatru Sourcing - China Sourcing Agent</title>
-    <meta name="description" content="Save 15-30% on your China orders with expert price negotiation. Local expertise, multi-supplier bidding, transparent cost breakdowns.">
+    <meta name="description" content="Leverage our local expertise to negotiate the best prices and payment terms with Chinese suppliers. Save up to 20% on your orders.">
     <link rel="canonical" href="https://www.yeatru.com/price-negotiation.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,417 +17,239 @@
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
                     <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
-                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
-                <span>Yeatru Sourcing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
                             <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
-                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
-                            <li><a class="dropdown-item active" href="price-negotiation.html">Price Negotiation</a></li>
-                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
-                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
-                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
+                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics & Shipping</a></li>
+                            <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
+                            <li><a class="dropdown-item" href="risk-management.html">Risk Management</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Service Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment.html">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe"></i> <span>EN</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
-                        </ul>
-                    </div>
-                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
-                        <i class="fas fa-comment-dots me-1"></i>Get Quote
-                    </a>
-                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
-                        <i class="fas fa-user-shield"></i>
+                <div class="dropdown lang-selector">
+                    <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i> <span id="current-lang">English</span>
                     </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                    </ul>
                 </div>
+                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button id="logoutBtn" class="btn logout-btn ms-2 d-none">Logout</button>
             </div>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <nav class="breadcrumb-bar" aria-label="breadcrumb">
-                <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span>
-                <a href="#">Sourcing Service</a> <span class="breadcrumb-sep">/</span>
-                <span class="breadcrumb-current">Price Negotiation</span>
-            </nav>
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <span class="hero-tag"><i class="fas fa-hand-holding-usd me-2"></i>Price Negotiation</span>
-                    <h1 class="page-hero-title">Save 15-30% on Every Order with Expert Negotiation</h1>
-                    <p class="page-hero-subtitle">Local buying agents who speak the language, know the culture, and have the relationships to get you factory-direct pricing.</p>
-                    <div class="banner-features">
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Save 15-30%</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Multi-Supplier Bidding</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Transparent Cost Breakdown</span>
-                    </div>
-                    <div class="banner-cta">
-                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Start Negotiation</a>
-                        <a href="#process" class="btn btn-outline-primary">See Process</a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/price%20nego%201.jpg" alt="Price Negotiation" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                        <div class="page-hero-image-placeholder">
-                            <i class="fas fa-hand-holding-usd"></i>
-                            <span>Price Negotiation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="page-header py-5 bg-light">
+        <div class="container text-center">
+            <span class="section-eyebrow">OUR SERVICES</span>
+            <div class="section-divider mx-auto"></div>
+            <h1 class="section-title">Price Negotiation</h1>
+            <p class="section-subtitle">Leverage our local expertise to negotiate the best prices and payment terms with suppliers.</p>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="why" class="py-5 bg-white">
-        <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Why Negotiate with Us</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Local Knowledge = Better Prices</h2>
-                <p class="section-subtitle">14+ years of supplier relationships and fluent Mandarin give us leverage you can't get on your own. We don't just ask for discounts — we earn them.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-industry"></i></div>
-                        <h3 class="advantage-title">Factory-Direct Pricing</h3>
-                        <p class="advantage-desc">Skip the trading company markup. We connect you directly with manufacturers and their best pricing.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-gavel"></i></div>
-                        <h3 class="advantage-title">Multi-Supplier Bidding</h3>
-                        <p class="advantage-desc">We collect 3-5 quotes per product and pit suppliers against each other for the best deal.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-tags"></i></div>
-                        <h3 class="advantage-title">Volume Discounts</h3>
-                        <p class="advantage-desc">Strategic ordering and volume consolidation to unlock tier pricing and free shipping.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-credit-card"></i></div>
-                        <h3 class="advantage-title">Payment Terms</h3>
-                        <p class="advantage-desc">Negotiate 30% deposit / 70% balance, or L/C at sight — we protect your cash flow.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-search-dollar"></i></div>
-                        <h3 class="advantage-title">Hidden Cost Audit</h3>
-                        <p class="advantage-desc">Reveal hidden fees: tooling, packaging, certificates, special requests. No surprises.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><i class="fas fa-file-signature"></i></div>
-                        <h3 class="advantage-title">Annual Contracts</h3>
-                        <p class="advantage-desc">Lock in pricing for 6-12 months with frame agreements. Hedge against RMB fluctuation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Negotiation Process -->
-    <section id="process" class="py-5" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Negotiation Process</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">4-Step Negotiation Workflow</h2>
-                <p class="section-subtitle">From quote request to signed PO — typically 5-10 business days.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Requirements Brief</h3>
-                        <p class="step-desc">You provide specs, target price, and quantity. We set negotiation strategy.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Multi-Supplier RFQ</h3>
-                        <p class="step-desc">We send RFQs to 3-5 vetted suppliers and collect initial quotes.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Bid Comparison</h3>
-                        <p class="step-desc">Side-by-side cost analysis, terms comparison, and risk assessment.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Final Negotiation</h3>
-                        <p class="step-desc">We close the deal at target price or below. You get signed quote with terms.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Negotiate -->
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="section-eyebrow">What We Negotiate</span>
-                    <div class="section-divider" style="margin: 0.75rem 0 1.5rem;"></div>
-                    <h2 class="section-title mb-3">Beyond Just Unit Price</h2>
-                    <p class="section-subtitle text-start" style="margin: 0 0 1.5rem;">Total cost optimization, not just headline price.</p>
-                    <div class="check-list">
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Unit Price:</strong> FOB, EXW, CIF, DDP — all incoterms available</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>MOQ Flexibility:</strong> Push for lower minimums for first orders</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Payment Terms:</strong> Negotiate 30/70, L/C, or even 0/100 for repeat clients</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Tooling/Mold Fees:</strong> One-time fees for OEM — get them waived or amortized</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Sample Fees:</strong> Free or refundable with bulk order commitment</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Packaging Costs:</strong> Custom packaging at standard material pricing</div></div>
-                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Shipping &amp; Lead Time:</strong> Free shipping, faster production, priority scheduling</div></div>
-                    </div>
+                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Price Negotiation" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6">
-                    <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/price%20nego.jpg" alt="Cost Breakdown" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                        <div class="page-hero-image-placeholder">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>Cost Breakdown</span>
+                    <h2 class="section-title mb-4">Save Money with Expert Negotiation</h2>
+                    <p class="text-muted mb-4">With 14+ years of experience in the China sourcing industry, our team led by Neil knows how to negotiate the best prices and payment terms. We leverage our local relationships, volume purchasing power, and market knowledge to save you money while maintaining quality standards.</p>
+                    <div class="mb-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
+                            <div>
+                                <h5>Market Price Analysis</h5>
+                                <p class="text-muted mb-0">We research market prices to ensure you get fair and competitive pricing.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
+                            <div>
+                                <h5>Multi-Supplier Quotes</h5>
+                                <p class="text-muted mb-0">Get quotes from multiple suppliers and use competition to drive better prices.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
+                            <div>
+                                <h5>Payment Terms Negotiation</h5>
+                                <p class="text-muted mb-0">Negotiate favorable payment terms like 30% deposit + 70% before shipping.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
+                            <div>
+                                <h5>Volume Discounts</h5>
+                                <p class="text-muted mb-0">Leverage our combined order volume to get better pricing from factories.</p>
+                            </div>
                         </div>
                     </div>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Start Saving</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-5" style="background-color: var(--bg-light);">
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">FAQ</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Price Negotiation FAQs</h2>
+                <span class="section-eyebrow">HOW IT WORKS</span>
+                <div class="section-divider mx-auto"></div>
+                <h2 class="section-title">Our Negotiation Process</h2>
+                <p class="section-subtitle">Strategic approach to get you the best deal</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="faq-item active">
-                        <button class="faq-question"><span>How much can you save on prices?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Average savings: 15-30% compared to retail sourcing platforms like Alibaba. For new suppliers without existing relationship, savings can exceed 40%.</p></div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-process-card text-center">
+                        <div class="process-number">01</div>
+                        <h4>Research</h4>
+                        <p>Analyze market prices and identify target suppliers for your product.</p>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>Do suppliers pay your fee, or do I?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>For Plan B (full sourcing), the supplier pays a 0% commission fee to us. You pay nothing extra. For Plan C (you have a supplier), we charge a small flat fee per negotiation.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-process-card text-center">
+                        <div class="process-number">02</div>
+                        <h4>Request Quotes</h4>
+                        <p>Get detailed quotes from multiple qualified and verified suppliers.</p>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>Can you negotiate with suppliers I already have?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Yes. We offer Plan C — we coordinate with your existing suppliers, audit their pricing, negotiate better terms, and follow up on quality. 3% service fee.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-process-card text-center">
+                        <div class="process-number">03</div>
+                        <h4>Negotiate</h4>
+                        <p>Use our expertise and relationships to negotiate better terms and pricing.</p>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>Will the supplier know I'm using a negotiation agent?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Optionally. We can negotiate anonymously using our name, or introduce ourselves as your buying partner. Many Chinese suppliers actually prefer working with agents for smoother communication.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question"><span>What if I can't reach my target price?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>We'll be transparent. If target is unrealistic, we'll explain why and suggest a workable alternative. We never promise prices we can't deliver — that destroys long-term relationships.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-process-card text-center">
+                        <div class="process-number">04</div>
+                        <h4>Secure Deal</h4>
+                        <p>Finalize the best deal while maintaining product quality standards.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="py-5 bg-white">
-        <div class="container">
-            <div class="final-cta-box text-center">
-                <span class="section-eyebrow">Get Started</span>
-                <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
-                <h2 class="section-title">Get the Best Price, Guaranteed</h2>
-                <p class="section-subtitle mb-4">Send your target price. We'll match or beat it.</p>
-                <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-hand-holding-usd me-2"></i>Start Negotiating</a>
-            </div>
+        <div class="container text-center">
+            <h2 class="section-title mb-3">Ready to Get Better Prices?</h2>
+            <p class="section-subtitle mb-4">Contact us today and start saving on your China sourcing</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Consultation</a>
         </div>
     </section>
 
-    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Contact Us on WhatsApp</span>
-    </a>
-
-    <footer class="footer">
+    <footer class="bg-dark text-light py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
-                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <span class="brand-logo-box me-3" id="footerLogoBox">
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none; width:40px; height:40px;" />
+                            <span class="brand-logo-fallback" id="footerLogoFallback">YC</span>
                         </span>
-                        Yeatru Sourcing
-                    </a>
-                    <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-light opacity-75">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/8615988516408" class="text-light"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="products.html" class="footer-link">Products</a>
-                    <a href="service-plans.html" class="footer-link">Service Plans</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="blog.html" class="footer-link">Blog</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-light mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light opacity-75">Home</a></li>
+                        <li><a href="products.html" class="text-light opacity-75">Products</a></li>
+                        <li><a href="services.html" class="text-light opacity-75">Services</a></li>
+                        <li><a href="service-plans.html" class="text-light opacity-75">Service Plans</a></li>
+                        <li><a href="about.html" class="text-light opacity-75">About Us</a></li>
+                        <li><a href="contact.html" class="text-light opacity-75">Contact Us</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Services</h3>
-                    <a href="supplier-verification.html" class="footer-link">Supplier Verification</a>
-                    <a href="product-sourcing.html" class="footer-link">Product Sourcing</a>
-                    <a href="quality-control.html" class="footer-link">Quality Control</a>
-                    <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
-                    <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
-                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-light mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="supplier-verification.html" class="text-light opacity-75">Supplier Verification</a></li>
+                        <li><a href="product-sourcing.html" class="text-light opacity-75">Product Sourcing</a></li>
+                        <li><a href="quality-control.html" class="text-light opacity-75">Quality Control</a></li>
+                        <li><a href="logistics-shipping.html" class="text-light opacity-75">Logistics & Shipping</a></li>
+                        <li><a href="price-negotiation.html" class="text-light opacity-75">Price Negotiation</a></li>
+                        <li><a href="risk-management.html" class="text-light opacity-75">Risk Management</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang, China</a>
-                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
-                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
-                    <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-light mb-3">Contact Us</h5>
+                    <ul class="list-unstyled text-light opacity-75">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Yiwu City, Zhejiang Province, China</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+86 15988516408 (WhatsApp)</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@yeatru.com</li>
+                        <li><i class="fas fa-clock me-2"></i>24/7 Available</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
-                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
-                    <a href="#" class="footer-link d-inline">Terms of Service</a>
-                </p>
+            <hr class="my-4 opacity-25">
+            <div class="text-center">
+                <p class="text-light opacity-75 mb-0">&copy; 2026 Yeatru Sourcing. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
-                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" id="adminUsername">
                     </div>
                     <div class="mb-3">
-                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
-                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="adminPassword">
                     </div>
-                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Logo Modal -->
-    <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" data-i18n="logo.title">Change Logo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted small mb-3">Upload an image file or paste an image URL:</p>
-                    <input type="file" id="logoFileInput" class="form-control mb-3" accept="image/*">
-                    <div class="text-center mb-3"><small class="text-muted">— or —</small></div>
-                    <input type="url" id="logoUrlInput" class="form-control" placeholder="https://...">
-                    <button type="button" class="btn btn-outline-danger me-auto mt-3" id="logoResetBtn" data-i18n="logo.reset">Reset to Default</button>
+                    <div class="alert alert-danger d-none" id="loginError">Incorrect username or password!</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="logoSaveBtn" data-i18n="logo.save">Save Logo</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin">Login</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Admin Export Panel -->
-    <div id="adminExportPanel" class="admin-export-panel d-none">
-        <div class="admin-export-header">
-            <h6><i class="fas fa-database me-2"></i>Data Management</h6>
-            <button type="button" class="btn-close btn-close-white" id="closeExportPanel"></button>
-        </div>
-        <div class="admin-export-body">
-            <button class="btn btn-light btn-sm w-100 mb-2" id="exportDataBtn">
-                <i class="fas fa-download me-1"></i> Export site-data.json
-            </button>
-            <button class="btn btn-light btn-sm w-100 mb-2" id="syncGithubBtn">
-                <i class="fab fa-github me-1"></i> Sync to GitHub
-            </button>
-            <button class="btn btn-light btn-sm w-100" id="importDataBtn">
-                <i class="fas fa-upload me-1"></i> Import from JSON
-            </button>
-            <input type="file" id="importFileInput" accept=".json" style="display:none;">
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.16/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/dist/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-                if (!isActive) faqItem.classList.add('active');
-            });
-        });
-    });
-    </script>
 </body>
 </html>
