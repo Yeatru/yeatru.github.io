@@ -31,13 +31,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="services.html" data-i18n="nav.services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="process.html" data-i18n="nav.sourcingProcess">Sourcing Process</a></li>
-                    <li class="nav-item"><a class="nav-link" href="testimonials.html" data-i18n="nav.testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.aboutUs">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="supplier-sourcing.html">Supplier Sourcing</a></li>
+                            <li><a class="dropdown-item" href="quality-inspection.html">Quality Inspection</a></li>
+                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
+                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics & Shipping</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Service Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#payment">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="dropdown lang-selector">
                     <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,8 +61,8 @@
                         <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
                     </ul>
                 </div>
-                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-i18n="nav.login">Login</button>
-                <button id="logoutBtn" class="btn logout-btn ms-2 d-none" data-i18n="nav.logout">Logout</button>
+                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button id="logoutBtn" class="btn logout-btn ms-2 d-none">Logout</button>
             </div>
         </div>
     </nav>
