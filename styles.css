@@ -231,12 +231,36 @@ img {
     text-align: center;
     transition: all 0.3s;
     height: 100%;
+    overflow: hidden;
 }
 
 .service-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     border-color: var(--peacock-blue-light);
+}
+
+.service-card-image {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.service-image-input {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+}
+
+body.edit-mode .service-image-input {
+    display: block;
 }
 
 .service-icon {
@@ -283,6 +307,29 @@ img {
     border-radius: 10px;
     border: 1px solid #e9ecef;
     position: relative;
+}
+
+.process-step-image {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.process-step-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.process-image-input {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+}
+
+body.edit-mode .process-image-input {
+    display: block;
 }
 
 .process-number {
