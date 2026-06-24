@@ -308,7 +308,158 @@ function renderPage(pageId) {
         renderContactPage(pageData);
     }
 
+    renderPageBlocks(pageData);
     applyPageEditState();
+}
+
+function renderPageBlocks(pageData) {
+    const container = document.getElementById('pageBlocks');
+    if (!container) return;
+    container.innerHTML = '';
+    const blocks = pageData.blocks || [];
+    const isEdit = currentPageMode === 'edit' && isAdmin();
+
+    blocks.forEach((block, idx) => {
+        const blockDiv = document.createElement('div');
+        blockDiv.className = 'page-block';
+        blockDiv.setAttribute('data-block-idx', idx);
+
+        let html = '';
+        if (block.type === 'heading') {
+            html = `<div class="section-title-wrap text-center">
+                <h2 class="section-title" data-block-field="heading">${escapeHtml(block.heading || '')}</h2>
+                <div class="section-divider mx-auto"></div>
+            </div>`;
+        } else if (block.type === 'text') {
+            html = `<div class="page-block-text">
+                <p data-block-field="text">${escapeHtml(block.text || '')}</p>
+            </div>`;
+        } else if (block.type === 'image') {
+            html = `<div class="page-block-image">
+                <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
+                <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
+            </div>`;
+        } else if (block.type === 'textImage') {
+            html = `<div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
+                    <p data-block-field="text">${escapeHtml(block.text || '')}</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="page-block-image">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
+                        <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
+                    </div>
+                </div>
+            </div>`;
+        } else if (block.type === 'imageText') {
+            html = `<div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="page-block-image">
+                        <img src="${escapeHtml(block.image || '')}" alt="" onerror="this.style.display='none';">
+                        <input type="url" class="form-control block-image-input" placeholder="Image URL" data-block-field="image" value="${escapeHtml(block.image || '')}">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 data-block-field="heading" class="mb-3">${escapeHtml(block.heading || '')}</h3>
+                    <p data-block-field="text">${escapeHtml(block.text || '')}</p>
+                </div>
+            </div>`;
+        } else if (block.type === 'twoImages') {
+            html = `<div class="aplus-multi-images aplus-two-images">
+                <div class="aplus-multi-image-item">
+                    <img src="${escapeHtml(block.image1 || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
+                    <input type="url" class="form-control block-image-input" placeholder="Image 1 URL" data-block-field="image1" value="${escapeHtml(block.image1 || '')}">
+                </div>
+                <div class="aplus-multi-image-item">
+                    <img src="${escapeHtml(block.image2 || '')}" alt="" onerror="this.src='https://picsum.photos/600/400'">
+                    <input type="url" class="form-control block-image-input" placeholder="Image 2 URL" data-block-field="image2" value="${escapeHtml(block.image2 || '')}">
+                </div>
+            </div>`;
+        } else if (block.type === 'threeImages') {
+            html = `<div class="aplus-multi-images aplus-three-images">
+                <div class="aplus-multi-image-item">
+                    <img src="${escapeHtml(block.image1 || '')}" alt="" onerror="this.src='https://picsum.photos/400/300'">
+                    <input type="url" class="form-control block-image-input" placeholder="Image 1 URL" data-block-field="image1" value="${escapeHtml(block.image1 || '')}">
+                </div>
+                <div class="aplus-multi-image-item">
+                    <img src="${escapeHtml(block.image2 || '')}" alt="" onerror="this.src='https://picsum.photos/400/300'">
+                    <input type="url" class="form-control block-image-input" placeholder="Image 2 URL" data-block-field="image2" value="${escapeHtml(block.image2 || '')}">
+                </div>
+                <div class="aplus-multi-image-item">
+                    <img src="${escapeHtml(block.image3 || '')}" alt="" onerror="this.src='https://picsum.photos/400/300'">
+                    <input type="url" class="form-control block-image-input" placeholder="Image 3 URL" data-block-field="image3" value="${escapeHtml(block.image3 || '')}">
+                </div>
+            </div>`;
+        }
+
+        if (isEdit) {
+            html = `<div style="position:relative; border: 1px dashed #dee2e6; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                <div class="block-toolbar" style="position:absolute;top:-12px;right:10px;display:flex;gap:4px;z-index:10;">
+                    <button class="btn btn-sm btn-outline-secondary move-block-up" data-idx="${idx}" title="Move Up"><i class="fas fa-chevron-up"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary move-block-down" data-idx="${idx}" title="Move Down"><i class="fas fa-chevron-down"></i></button>
+                    <button class="btn btn-sm btn-danger delete-block-btn" data-idx="${idx}" title="Delete"><i class="fas fa-trash"></i></button>
+                    <span class="badge bg-secondary" style="align-self:center;">${block.type}</span>
+                </div>
+                ${html}
+            </div>`;
+        }
+
+        blockDiv.innerHTML = html;
+        container.appendChild(blockDiv);
+    });
+}
+
+function addPageBlock(type) {
+    const data = getPageData();
+    const pageData = data.pages[currentPageId];
+    if (!pageData) return;
+    if (!pageData.blocks) pageData.blocks = [];
+
+    const newBlock = { type: type };
+    if (type === 'heading') newBlock.heading = 'New Heading';
+    if (type === 'text') newBlock.text = 'Enter your text here...';
+    if (type === 'image') newBlock.image = '';
+    if (type === 'textImage' || type === 'imageText') {
+        newBlock.heading = 'Heading';
+        newBlock.text = 'Enter your text here...';
+        newBlock.image = '';
+    }
+    if (type === 'twoImages') {
+        newBlock.image1 = '';
+        newBlock.image2 = '';
+    }
+    if (type === 'threeImages') {
+        newBlock.image1 = '';
+        newBlock.image2 = '';
+        newBlock.image3 = '';
+    }
+
+    pageData.blocks.push(newBlock);
+    savePageData(data);
+    renderPage(currentPageId);
+}
+
+function deletePageBlock(idx) {
+    const data = getPageData();
+    const pageData = data.pages[currentPageId];
+    if (!pageData || !pageData.blocks) return;
+    if (!confirm('Delete this block?')) return;
+    pageData.blocks.splice(idx, 1);
+    savePageData(data);
+    renderPage(currentPageId);
+}
+
+function movePageBlock(idx, direction) {
+    const data = getPageData();
+    const pageData = data.pages[currentPageId];
+    if (!pageData || !pageData.blocks) return;
+    const blocks = pageData.blocks;
+    const newIdx = direction === 'up' ? idx - 1 : idx + 1;
+    if (newIdx < 0 || newIdx >= blocks.length) return;
+    [blocks[idx], blocks[newIdx]] = [blocks[newIdx], blocks[idx]];
+    savePageData(data);
+    renderPage(currentPageId);
 }
 
 function renderServicesPage(data) {
@@ -556,6 +707,11 @@ function applyPageEditState() {
     document.querySelectorAll('[data-editable]').forEach(el => {
         el.contentEditable = isEdit ? 'true' : 'false';
     });
+    document.querySelectorAll('[data-block-field]').forEach(el => {
+        if (el.tagName !== 'INPUT') {
+            el.contentEditable = isEdit ? 'true' : 'false';
+        }
+    });
     document.body.classList.toggle('edit-mode', isEdit);
 
     const pageTitle = document.getElementById('pageTitle');
@@ -567,11 +723,13 @@ function applyPageEditState() {
     const saveBtn = document.getElementById('pageSaveBtn');
     const exportBtn = document.getElementById('pageExportBtn');
     const syncBtn = document.getElementById('pageSyncBtn');
+    const addBlockToolbar = document.getElementById('addBlockToolbar');
     const importLabel = document.querySelector('label[for="pageImportBtn"], label:has(#pageImportBtn)');
     if (editBtn) editBtn.style.display = isAdmin() ? 'inline-block' : 'none';
     if (saveBtn) saveBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
     if (exportBtn) exportBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
     if (syncBtn) syncBtn.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
+    if (addBlockToolbar) addBlockToolbar.style.display = (isAdmin() && isEdit) ? 'block' : 'none';
     if (importLabel) importLabel.style.display = (isAdmin() && isEdit) ? 'inline-block' : 'none';
 
     if (isEdit) {
@@ -630,6 +788,49 @@ function bindEditModeEvents() {
                 img.style.display = this.value ? 'block' : 'none';
             }
         });
+    });
+
+    document.querySelectorAll('.block-image-input').forEach(input => {
+        input.addEventListener('input', function() {
+            const img = this.parentElement.querySelector('img');
+            if (img) {
+                img.src = this.value;
+                img.style.display = this.value ? 'block' : 'none';
+                img.onerror = function() { this.style.display = 'none'; };
+            }
+        });
+    });
+
+    document.querySelectorAll('.delete-block-btn').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-idx'));
+            deletePageBlock(idx);
+        };
+    });
+
+    document.querySelectorAll('.move-block-up').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-idx'));
+            movePageBlock(idx, 'up');
+        };
+    });
+
+    document.querySelectorAll('.move-block-down').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const idx = parseInt(this.getAttribute('data-idx'));
+            movePageBlock(idx, 'down');
+        };
+    });
+
+    document.querySelectorAll('.add-block-btn').forEach(btn => {
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            const type = this.getAttribute('data-type');
+            addPageBlock(type);
+        };
     });
 }
 
@@ -701,6 +902,43 @@ function saveCurrentPage() {
         const subtitle = document.querySelector('[data-editable="contact-subtitle"]')?.textContent || pageData.subtitle;
         if (title) pageData.title = title;
         if (subtitle) pageData.subtitle = subtitle;
+    }
+
+    const blocksContainer = document.getElementById('pageBlocks');
+    if (blocksContainer) {
+        const blocks = [];
+        blocksContainer.querySelectorAll('.page-block').forEach((blockDiv, idx) => {
+            const blockData = {};
+            const blockEl = blockDiv.querySelector('[data-block-field]')?.closest('.page-block > div') || blockDiv.firstElementChild;
+            const typeBadge = blockDiv.querySelector('.block-toolbar .badge');
+            let type = typeBadge ? typeBadge.textContent.trim() : null;
+            
+            if (!type) {
+                if (blockDiv.querySelector('[data-block-field="heading"]') && blockDiv.querySelector('h2.section-title')) type = 'heading';
+                else if (blockDiv.querySelector('[data-block-field="text"]') && !blockDiv.querySelector('[data-block-field="heading"]') && !blockDiv.querySelector('.aplus-multi-images')) type = 'text';
+                else if (blockDiv.querySelector('[data-block-field="image"]') && !blockDiv.querySelector('[data-block-field="heading"]')) type = 'image';
+                else if (blockDiv.querySelector('.aplus-three-images')) type = 'threeImages';
+                else if (blockDiv.querySelector('.aplus-two-images')) type = 'twoImages';
+                else if (blockDiv.querySelector('[data-block-field="image"]') && blockDiv.querySelector('[data-block-field="heading"]')) {
+                    const firstCol = blockDiv.querySelector('.row > div:first-child');
+                    if (firstCol && firstCol.querySelector('.page-block-image')) type = 'imageText';
+                    else type = 'textImage';
+                }
+            }
+            if (!type) return;
+
+            blockData.type = type;
+            blockDiv.querySelectorAll('[data-block-field]').forEach(fieldEl => {
+                const field = fieldEl.getAttribute('data-block-field');
+                if (fieldEl.tagName === 'INPUT') {
+                    blockData[field] = fieldEl.value || '';
+                } else {
+                    blockData[field] = fieldEl.textContent || '';
+                }
+            });
+            blocks.push(blockData);
+        });
+        pageData.blocks = blocks;
     }
 
     savePageData(data);

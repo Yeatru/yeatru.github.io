@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-01-01T00:00:00.000Z",
   "pages": {
     "services": {
@@ -42,6 +42,24 @@
           "desc": "Mitigate risks associated with international trade including payment security and delivery guarantees.",
           "image": ""
         }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "heading": "Why Choose Yeatru Sourcing?"
+        },
+        {
+          "type": "imageText",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg",
+          "heading": "Extensive Product Range",
+          "text": "With access to thousands of suppliers across China, we help you find the perfect products for your business. From consumer electronics to home goods, we cover a wide range of categories."
+        },
+        {
+          "type": "textImage",
+          "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg",
+          "heading": "Strict Quality Control",
+          "text": "Every product goes through our rigorous quality control process. We inspect at every stage - from raw materials to final packaging - ensuring you receive only the highest quality products."
+        }
       ]
     },
     "process": {
@@ -71,6 +89,21 @@
           "title": "Delivery & Support",
           "desc": "We handle production oversight, quality control and shipping to your doorstep.",
           "image": ""
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "heading": "Quality You Can Trust"
+        },
+        {
+          "type": "twoImages",
+          "image1": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg",
+          "image2": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png"
+        },
+        {
+          "type": "text",
+          "text": "Our quality control team works tirelessly to ensure every product meets your exact specifications. From initial sample verification to final pre-shipment inspections, we've got you covered at every step of the way."
         }
       ]
     },
@@ -136,7 +169,8 @@
           ],
           "featured": false
         }
-      ]
+      ],
+      "blocks": []
     },
     "testimonials": {
       "title": "What Clients Say",
@@ -160,7 +194,8 @@
           "country": "USA",
           "initial": "J"
         }
-      ]
+      ],
+      "blocks": []
     },
     "about": {
       "title": "About Yeatru Sourcing",
@@ -184,14 +219,16 @@
           "number": "24/7",
           "label": "Support Available"
         }
-      ]
+      ],
+      "blocks": []
     },
     "contact": {
       "title": "Get In Touch With Us",
       "subtitle": "Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.",
       "address": "Yiwu City, Zhejiang Province, China",
       "phone": "+86 15988516408 (WhatsApp)",
-      "email": "info@yeatru.com"
+      "email": "info@yeatru.com",
+      "blocks": []
     }
   }
 }
