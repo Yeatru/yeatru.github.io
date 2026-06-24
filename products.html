@@ -1020,6 +1020,15 @@
         let currentDetailMode = 'preview';
         let currentDetailProductId = null;
 
+        function getCategoryFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get('category');
+            if (category) {
+                return decodeURIComponent(category);
+            }
+            return 'all';
+        }
+
         function isAdmin() {
             return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
         }
@@ -2329,7 +2338,13 @@
             renderCategories();
             renderProducts();
             renderBrandLogo();
-            renderProductsDropdown();
+            
+            const urlCategory = getCategoryFromURL();
+            if (urlCategory !== 'all') {
+                currentFilterCategory = urlCategory;
+                renderCategoryFilter();
+                renderProducts();
+            }
 
             document.getElementById('submitLogin').addEventListener('click', function () {
                 const username = document.getElementById('adminUsername').value.trim();
