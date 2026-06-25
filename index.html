@@ -131,12 +131,40 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
+                    <!-- Global Search -->
+                    <div class="nav-search-wrapper">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="nav-search-dropdown" id="navSearchDropdown">
+                            <form class="nav-search-form" id="navSearchForm">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="nav-search-results" id="navSearchResults"></div>
+                        </div>
+                    </div>
+                    <!-- Currency Selector -->
+                    <div class="dropdown currency-selector">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="current-currency">USD</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
+                        </ul>
+                    </div>
+                    <!-- Language Selector -->
                     <div class="dropdown lang-selector">
                         <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
                             <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
                             <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
                             <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
@@ -1275,17 +1303,63 @@
                     <div class="col-lg-7">
                         <div class="contact-form">
                             <h2 class="form-title" data-i18n="contact.requestQuote">Request a Free Quote</h2>
-                            <form action="https://formsubmit.co/info@yeatru.com" method="POST">
+                            <form action="https://formsubmit.co/info@yeatru.com" method="POST" id="contactQuoteForm">
                                 <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
                                 <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
                                 <div class="row">
-                                    <div class="col-md-6"><input type="text" class="form-control" name="name" placeholder="Your Name" required data-i18n-placeholder="contact.yourName"></div>
-                                    <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email Address" required data-i18n-placeholder="contact.email"></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" name="name" placeholder="Your Name *" required></div>
+                                    <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email Address *" required></div>
                                 </div>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required data-i18n-placeholder="contact.phone">
-                                <input type="text" class="form-control" name="product" placeholder="Product You Need (e.g. Plastic storage boxes)" required data-i18n-placeholder="contact.product">
-                                <textarea class="form-control" name="message" placeholder="Please describe your requirements in detail" required data-i18n-placeholder="contact.message"></textarea>
-                                <button type="submit" class="btn btn-primary-custom w-100" data-i18n="contact.sendRequest">Send Request</button>
+                                <input type="tel" class="form-control" name="phone" placeholder="Phone Number / WhatsApp *" required>
+                                
+                                <!-- Product Category Dropdown -->
+                                <select class="form-control form-select" name="category" id="quoteCategory">
+                                    <option value="">Select Product Category *</option>
+                                    <option value="Home Decor">Home Decor &amp; Storage</option>
+                                    <option value="Kitchenware">Kitchenware &amp; Utensils</option>
+                                    <option value="Silicone">Silicone Products</option>
+                                    <option value="Packaging">Packaging &amp; Boxes</option>
+                                    <option value="Bags">Bags &amp; Cases</option>
+                                    <option value="Electronics">Electronics &amp; Accessories</option>
+                                    <option value="Beauty">Beauty &amp; Personal Care</option>
+                                    <option value="Fashion">Fashion &amp; Jewelry</option>
+                                    <option value="Toys">Toys &amp; Gifts</option>
+                                    <option value="Sports">Sports &amp; Outdoors</option>
+                                    <option value="Other">Other (specify below)</option>
+                                </select>
+                                
+                                <input type="text" class="form-control" name="product" placeholder="Product Name / SKU (e.g. Storage Box 500ml)" id="quoteProduct">
+                                
+                                <!-- Quantity & MOQ Row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" name="quantity" placeholder="Quantity Needed *" min="1" id="quoteQuantity" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control form-select" name="moq_preference" id="quoteMOQ">
+                                            <option value="">MOQ Preference</option>
+                                            <option value="Low (50-200 pcs)">Low MOQ (50-200 pcs)</option>
+                                            <option value="Medium (200-1000 pcs)">Medium MOQ (200-1000 pcs)</option>
+                                            <option value="Standard (1000+ pcs)">Standard MOQ (1000+ pcs)</option>
+                                            <option value="Flexible">Flexible / Not Sure</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Service Type -->
+                                <select class="form-control form-select" name="service_type" id="quoteServiceType">
+                                    <option value="">Service Type Needed *</option>
+                                    <option value="Product Sourcing">Product Sourcing (find suppliers)</option>
+                                    <option value="OEM Customization">OEM / Private Label</option>
+                                    <option value="Quality Control">Quality Control / Inspection</option>
+                                    <option value="Logistics">Logistics &amp; Shipping</option>
+                                    <option value="Full Service">Full One-Stop Service</option>
+                                </select>
+                                
+                                <textarea class="form-control" name="message" placeholder="Additional requirements (specs, target price, timeline, etc.)" rows="3"></textarea>
+                                
+                                <button type="submit" class="btn btn-cta w-100"><i class="fas fa-paper-plane me-2"></i>Send Request</button>
                             </form>
                         </div>
                     </div>
@@ -1294,10 +1368,39 @@
         </section>
     </div>
 
-    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Contact Us on WhatsApp</span>
-    </a>
+    <!-- Floating Inquiry Widget -->
+    <div class="float-inquiry-widget" id="floatInquiryWidget">
+        <button class="float-inquiry-toggle" id="floatInquiryToggle" aria-label="Contact options">
+            <i class="fas fa-comments"></i>
+            <span class="float-inquiry-badge">3</span>
+        </button>
+        <div class="float-inquiry-panel" id="floatInquiryPanel">
+            <div class="float-inquiry-header">
+                <h4>Contact Us</h4>
+                <p>Choose your preferred channel</p>
+            </div>
+            <div class="float-inquiry-options">
+                <a href="https://wa.me/+8615988516408" target="_blank" class="float-inquiry-option whatsapp" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                    <small>Instant reply</small>
+                </a>
+                <a href="mailto:info@yeatru.com" class="float-inquiry-option email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <small>info@yeatru.com</small>
+                </a>
+                <a href="tel:+8615988516408" class="float-inquiry-option phone">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                    <small>+86 15988516408</small>
+                </a>
+            </div>
+            <div class="float-inquiry-footer">
+                <a href="contact.html" class="btn btn-cta btn-sm w-100"><i class="fas fa-paper-plane me-1"></i>Send Inquiry</a>
+            </div>
+        </div>
+    </div>
 
     <section id="productDetailPage" class="product-detail-page">
         <div class="container">
@@ -1684,6 +1787,192 @@
                 });
             });
         });
+        
+        // ===== Phase 5: Currency Selector =====
+        const currencyItems = document.querySelectorAll('[data-currency]');
+        const currentCurrencyEl = document.getElementById('current-currency');
+        const savedCurrency = localStorage.getItem('yeatru_currency') || 'USD';
+        
+        if (currentCurrencyEl) {
+            currentCurrencyEl.textContent = savedCurrency;
+        }
+        
+        currencyItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const currency = this.dataset.currency;
+                localStorage.setItem('yeatru_currency', currency);
+                if (currentCurrencyEl) {
+                    currentCurrencyEl.textContent = currency;
+                }
+                // Trigger currency change event for any listeners
+                document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
+            });
+        });
+        
+        // ===== Phase 5: Global Search =====
+        const searchToggle = document.getElementById('navSearchToggle');
+        const searchDropdown = document.getElementById('navSearchDropdown');
+        const searchInput = document.getElementById('navSearchInput');
+        const searchResults = document.getElementById('navSearchResults');
+        const searchForm = document.getElementById('navSearchForm');
+        
+        // Search data index
+        const searchData = [
+            { title: 'Product Sourcing', type: 'Service', url: 'product-sourcing.html', icon: 'fa-search' },
+            { title: 'Supplier Verification', type: 'Service', url: 'supplier-verification.html', icon: 'fa-shield-halved' },
+            { title: 'Quality Control', type: 'Service', url: 'quality-control.html', icon: 'fa-clipboard-check' },
+            { title: 'Logistics & Shipping', type: 'Service', url: 'logistics-shipping.html', icon: 'fa-shipping-fast' },
+            { title: 'Price Negotiation', type: 'Service', url: 'price-negotiation.html', icon: 'fa-hand-holding-usd' },
+            { title: 'Factory Audit', type: 'Service', url: 'factory-audit.html', icon: 'fa-industry' },
+            { title: 'OEM Customization', type: 'Service', url: 'oem.html', icon: 'fa-magic' },
+            { title: 'Sample Order', type: 'Service', url: 'sample-order.html', icon: 'fa-box-open' },
+            { title: 'Home Decor', type: 'Category', url: 'products.html?category=Home+Decor', icon: 'fa-home' },
+            { title: 'Kitchenware', type: 'Category', url: 'products.html?category=Kitchen', icon: 'fa-utensils' },
+            { title: 'Silicone Products', type: 'Category', url: 'products.html?category=Silicone', icon: 'fa-grip-lines' },
+            { title: 'Packaging', type: 'Category', url: 'products.html?category=Packaging', icon: 'fa-box' },
+            { title: 'Bags & Cases', type: 'Category', url: 'products.html?category=Bags', icon: 'fa-shopping-bag' },
+            { title: 'Electronics', type: 'Category', url: 'products.html?category=Electronics', icon: 'fa-mobile-alt' },
+            { title: 'Amazon FBA Supplier Guide', type: 'Blog', url: 'blog-amazon-supplier-guide.html', icon: 'fa-amazon' },
+            { title: 'EU/US Certifications Guide', type: 'Blog', url: 'blog-product-certifications.html', icon: 'fa-certificate' },
+            { title: 'Private Mold vs Logo Printing', type: 'Blog', url: 'blog-private-mold-packaging.html', icon: 'fa-palette' },
+            { title: 'Yiwu Market Guide', type: 'Blog', url: 'blog-yiwu-market-guide.html', icon: 'fa-store' },
+            { title: 'Sea Freight Guide', type: 'Blog', url: 'blog-sea-freight-guide.html', icon: 'fa-ship' },
+            { title: 'Sourcing Agent vs Alibaba', type: 'Blog', url: 'blog-alibaba-vs-agent.html', icon: 'fa-balance-scale' },
+            { title: 'About Yeatru', type: 'Page', url: 'about.html', icon: 'fa-users' },
+            { title: 'Contact Us', type: 'Page', url: 'contact.html', icon: 'fa-envelope' },
+            { title: 'Service Plans', type: 'Page', url: 'service-plans.html', icon: 'fa-list' },
+            { title: 'Blog', type: 'Page', url: 'blog.html', icon: 'fa-book-open' },
+            { title: 'Products', type: 'Page', url: 'products.html', icon: 'fa-th' }
+        ];
+        
+        if (searchToggle && searchDropdown) {
+            searchToggle.addEventListener('click', function() {
+                searchDropdown.classList.toggle('active');
+                if (searchDropdown.classList.contains('active') && searchInput) {
+                    searchInput.focus();
+                }
+            });
+            
+            // Close search on click outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-search-wrapper')) {
+                    searchDropdown.classList.remove('active');
+                }
+            });
+            
+            // Search input handler
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase().trim();
+                    if (query.length < 2) {
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+                    
+                    const matches = searchData.filter(item => 
+                        item.title.toLowerCase().includes(query) || 
+                        item.type.toLowerCase().includes(query)
+                    ).slice(0, 8);
+                    
+                    if (matches.length === 0) {
+                        searchResults.innerHTML = '<div class="nav-search-empty">No results found</div>';
+                    } else {
+                        searchResults.innerHTML = matches.map(item => `
+                            <a href="${item.url}" class="nav-search-result-item">
+                                <div class="nav-search-result-icon"><i class="fas ${item.icon}"></i></div>
+                                <div class="nav-search-result-content">
+                                    <p class="nav-search-result-title">${item.title}</p>
+                                    <p class="nav-search-result-type">${item.type}</p>
+                                </div>
+                            </a>
+                        `).join('');
+                    }
+                });
+            }
+            
+            // Search form submit
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        window.location.href = 'products.html?search=' + encodeURIComponent(query);
+                    }
+                });
+            }
+        }
+        
+        // ===== Phase 5: Floating Inquiry Widget =====
+        const inquiryToggle = document.getElementById('floatInquiryToggle');
+        const inquiryPanel = document.getElementById('floatInquiryPanel');
+        
+        if (inquiryToggle && inquiryPanel) {
+            inquiryToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                inquiryPanel.classList.toggle('active');
+            });
+            
+            // Close on click outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.float-inquiry-widget')) {
+                    inquiryToggle.classList.remove('active');
+                    inquiryPanel.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== Phase 5: URL Parameter Pre-fill for Contact Form =====
+        const urlParams = new URLSearchParams(window.location.search);
+        const quoteCategorySelect = document.getElementById('quoteCategory');
+        const quoteProductInput = document.getElementById('quoteProduct');
+        const quoteQuantityInput = document.getElementById('quoteQuantity');
+        const quoteMOQSelect = document.getElementById('quoteMOQ');
+        const quoteServiceTypeSelect = document.getElementById('quoteServiceType');
+        
+        // Pre-fill from URL params
+        if (urlParams.get('category') && quoteCategorySelect) {
+            const category = urlParams.get('category');
+            for (let option of quoteCategorySelect.options) {
+                if (option.value === category) {
+                    option.selected = true;
+                    quoteCategorySelect.classList.add('prefilled');
+                    break;
+                }
+            }
+        }
+        
+        if (urlParams.get('product') && quoteProductInput) {
+            quoteProductInput.value = urlParams.get('product');
+            quoteProductInput.classList.add('prefilled');
+        }
+        
+        if (urlParams.get('quantity') && quoteQuantityInput) {
+            quoteQuantityInput.value = urlParams.get('quantity');
+            quoteQuantityInput.classList.add('prefilled');
+        }
+        
+        if (urlParams.get('moq') && quoteMOQSelect) {
+            const moq = urlParams.get('moq');
+            for (let option of quoteMOQSelect.options) {
+                if (option.value.includes(moq)) {
+                    option.selected = true;
+                    quoteMOQSelect.classList.add('prefilled');
+                    break;
+                }
+            }
+        }
+        
+        if (urlParams.get('service') && quoteServiceTypeSelect) {
+            const service = urlParams.get('service');
+            for (let option of quoteServiceTypeSelect.options) {
+                if (option.value === service) {
+                    option.selected = true;
+                    quoteServiceTypeSelect.classList.add('prefilled');
+                    break;
+                }
+            }
+        }
     });
     </script>
     

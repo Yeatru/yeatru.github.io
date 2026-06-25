@@ -4351,3 +4351,388 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .section-title-wrap .section-title.text-start {
     text-align: center;
 }
+
+/* ============================================
+   Phase 5: Currency Selector & Global Search
+   ============================================ */
+.currency-dropdown-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    min-width: 52px;
+}
+
+.currency-dropdown-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.currency-selector .dropdown-menu {
+    min-width: 100px;
+}
+
+.nav-search-wrapper {
+    position: relative;
+}
+
+.nav-search-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.6rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.nav-search-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.nav-search-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 320px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+    display: none;
+    z-index: 1050;
+    overflow: hidden;
+}
+
+.nav-search-dropdown.active {
+    display: block;
+    animation: searchDropdownFade 0.25s ease;
+}
+
+@keyframes searchDropdownFade {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-search-form {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-search-input {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.nav-search-input:focus {
+    border-color: var(--primary);
+}
+
+.nav-search-submit {
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    transition: background 0.2s ease;
+}
+
+.nav-search-submit:hover {
+    background: var(--primary-dark);
+}
+
+.nav-search-results {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+
+.nav-search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.nav-search-result-item:hover {
+    background: var(--primary-50);
+}
+
+.nav-search-result-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-50);
+    border-radius: var(--radius-sm);
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+.nav-search-result-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.nav-search-result-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-search-result-type {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin: 0;
+}
+
+.nav-search-empty {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 991px) {
+    .nav-search-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+    }
+    .nav-search-wrapper {
+        order: -1;
+    }
+}
+
+/* ============================================
+   Phase 5: Floating Inquiry Widget
+   ============================================ */
+.float-inquiry-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1050;
+}
+
+.float-inquiry-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--cta);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(255, 125, 48, 0.35);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.float-inquiry-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(255, 125, 48, 0.45);
+}
+
+.float-inquiry-toggle.active {
+    background: var(--cta-dark);
+}
+
+.float-inquiry-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float-inquiry-panel {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    width: 280px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+    display: none;
+    overflow: hidden;
+}
+
+.float-inquiry-panel.active {
+    display: block;
+    animation: inquiryPanelFade 0.3s ease;
+}
+
+@keyframes inquiryPanelFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.float-inquiry-header {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, var(--primary-50) 0%, #fff 100%);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.float-inquiry-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem;
+}
+
+.float-inquiry-header p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.float-inquiry-options {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.float-inquiry-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-light);
+}
+
+.float-inquiry-option:hover {
+    border-color: var(--primary-100);
+    transform: translateX(4px);
+}
+
+.float-inquiry-option i {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+}
+
+.float-inquiry-option.whatsapp i {
+    background: #25D366;
+    color: #fff;
+}
+
+.float-inquiry-option.email i {
+    background: var(--primary);
+    color: #fff;
+}
+
+.float-inquiry-option.phone i {
+    background: var(--mint-dark);
+    color: var(--text-primary);
+}
+
+.float-inquiry-option span {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.float-inquiry-option small {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.float-inquiry-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+@media (max-width: 768px) {
+    .float-inquiry-widget {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .float-inquiry-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    .float-inquiry-panel {
+        width: 260px;
+        right: -10px;
+    }
+}
+
+/* ============================================
+   Phase 5: Enhanced Contact Form
+   ============================================ */
+.contact-form .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    padding-right: 2rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    margin-bottom: 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.1);
+    outline: none;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* URL param pre-fill indicator */
+.contact-form .form-control.prefilled {
+    border-color: var(--primary-light);
+    background-color: var(--primary-50);
+}
