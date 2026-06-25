@@ -341,7 +341,6 @@ function updateLoginUI(loggedIn) {
     const loginBtn = document.getElementById('loginBtn');
     const logoutBtn = document.getElementById('logoutBtn');
     const addProductBtn = document.getElementById('addProductBtn');
-    const adminDataTools = document.getElementById('adminDataTools');
     const categoryManagement = document.getElementById('categoryManagement');
     const brandLogoEdit = document.getElementById('brandLogoEdit');
     const adminExportPanel = document.getElementById('adminExportPanel');
@@ -349,10 +348,6 @@ function updateLoginUI(loggedIn) {
         loginBtn.classList.add('d-none');
         logoutBtn.classList.remove('d-none');
         addProductBtn.classList.remove('d-none');
-        if (adminDataTools) {
-            adminDataTools.classList.remove('d-none');
-            adminDataTools.classList.add('d-flex');
-        }
         if (categoryManagement) categoryManagement.style.display = 'block';
         if (brandLogoEdit) brandLogoEdit.classList.add('admin-visible');
         if (adminExportPanel) adminExportPanel.classList.remove('d-none');
@@ -360,10 +355,6 @@ function updateLoginUI(loggedIn) {
         loginBtn.classList.remove('d-none');
         logoutBtn.classList.add('d-none');
         addProductBtn.classList.add('d-none');
-        if (adminDataTools) {
-            adminDataTools.classList.add('d-none');
-            adminDataTools.classList.remove('d-flex');
-        }
         if (categoryManagement) categoryManagement.style.display = 'none';
         if (brandLogoEdit) brandLogoEdit.classList.remove('admin-visible');
         if (adminExportPanel) adminExportPanel.classList.add('d-none');
@@ -534,7 +525,7 @@ function renderIndexHotProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="products.html#product/${product.id}" class="product-action-btn"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="products.html#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
