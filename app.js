@@ -128,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
     renderProducts();
     renderBrandLogo();
     renderProductsDropdown();
+    renderIndexCategories();
+    renderIndexHotProducts();
 
     document.getElementById('submitLogin').addEventListener('click', function () {
         const username = document.getElementById('adminUsername').value.trim();
@@ -371,6 +373,8 @@ function saveCategories(categories) {
     localStorage.setItem('yeatruCategories', JSON.stringify(categories));
     renderCategories();
     renderCategoryFilter();
+    renderIndexCategories();
+    renderProductsDropdown();
 }
 
 function renderCategories() {
@@ -461,6 +465,73 @@ function renderProductsDropdown() {
     });
 }
 
+function getCategoryIcon(category) {
+    const icons = {
+        'Kitchenware': 'fa-utensils',
+        'Toys': 'fa-puzzle-piece',
+        'Apparel': 'fa-shirt',
+        'Hand Bag': 'fa-bag-shopping',
+        'Electronics': 'fa-mobile-screen-button',
+        'Home': 'fa-house',
+        'Garden': 'fa-leaf',
+        'Material': 'fa-layer-group'
+    };
+    return icons[category] || 'fa-box';
+}
+
+function renderIndexCategories() {
+    const list = document.getElementById('indexCategoryList');
+    if (!list) return;
+    const categories = getCategories();
+    list.innerHTML = '';
+    const displayCount = Math.min(categories.length, 8);
+    for (let i = 0; i < displayCount; i++) {
+        const cat = categories[i];
+        const col = document.createElement('div');
+        col.className = 'col-6 col-md-4 col-lg-3';
+        col.innerHTML = `
+            <a href="products.html?category=${encodeURIComponent(cat)}" class="category-icon-card">
+                <div class="category-icon">
+                    <i class="fas ${getCategoryIcon(cat)}"></i>
+                </div>
+                <span class="category-name">${escapeHtml(cat)}</span>
+            </a>
+        `;
+        list.appendChild(col);
+    }
+}
+
+function renderIndexHotProducts() {
+    const list = document.getElementById('indexHotProducts');
+    if (!list) return;
+    const products = getProducts();
+    list.innerHTML = '';
+    const displayCount = Math.min(products.length, 8);
+    for (let i = 0; i < displayCount; i++) {
+        const product = products[i];
+        const priceText = (tt('products.price', 'Price: $')) + product.priceMin + ' - ' + product.priceMax;
+        const col = document.createElement('div');
+        col.className = 'col-lg-3 col-md-6';
+        col.innerHTML = `
+            <div class="product-card">
+                <img src="${escapeHtml(product.image)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" onerror="this.src='https://picsum.photos/600/400'; this.alt='${escapeHtml(product.name)}'">
+                <div class="card-body">
+                    <div class="product-category">${escapeHtml(product.category)}</div>
+                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
+                    <p class="product-desc">${escapeHtml(product.description)}</p>
+                    <p class="product-price">${escapeHtml(priceText)}</p>
+                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                        <a href="products.html#product/${product.id}" class="product-action-btn"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <span class="text-muted">|</span>
+                        <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        list.appendChild(col);
+    }
+}
+
 function getProducts() {
     try {
         const s = localStorage.getItem('yeatruProducts');
@@ -471,6 +542,7 @@ function getProducts() {
 function saveProducts(products) {
     localStorage.setItem('yeatruProducts', JSON.stringify(products));
     renderProducts();
+    renderIndexHotProducts();
 }
 
 function buildSiteDataObject() {
@@ -504,6 +576,8 @@ function applySiteData(data, options = {}) {
     renderCategories();
     renderCategoryFilter();
     renderProducts();
+    renderIndexCategories();
+    renderIndexHotProducts();
 
     if (currentDetailProductId) {
         const exists = getProducts().some(p => p.id === currentDetailProductId);
