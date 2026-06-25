@@ -152,43 +152,182 @@
     </nav>
 
     <div id="mainContent">
-        <section id="home" class="hero-section">
+        <!-- Banner Carousel -->
+        <section id="home" class="banner-carousel">
+            <div class="banner-slides" id="bannerSlides">
+                <!-- Slide 1: Small MOQ -->
+                <div class="banner-slide active" data-slide="0">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="banner-content">
+                                    <span class="banner-tag"><i class="fas fa-fire me-2"></i>Popular for Amazon Sellers</span>
+                                    <h1 class="banner-title">Small MOQ One-Stop Sourcing for Amazon &amp; TikTok Sellers</h1>
+                                    <p class="banner-subtitle">Start with low minimum order quantities. We help small-to-medium wholesale buyers and cross-border e-commerce sellers source quality products from China.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Low MOQ Support</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Amazon FBA Ready</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Strict QC Inspection</span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get Free Quote</a>
+                                        <a href="products.html" class="btn btn-outline-primary">View Products</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="banner-image">
+                                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Amazon FBA Sourcing" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2: OEM & Sample -->
+                <div class="banner-slide" data-slide="1">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="banner-content">
+                                    <span class="banner-tag"><i class="fas fa-box-open me-2"></i>OEM & Private Label</span>
+                                    <h1 class="banner-title">OEM Private Label + Fast Sample Delivery In 3-7 Days</h1>
+                                    <p class="banner-subtitle">Customize products with your brand logo and packaging. Get professional samples quickly to verify quality before mass production.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Logo Printing</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Custom Packaging</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 3-7 Days Sample</span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get Free Quote</a>
+                                        <a href="service-plans.html" class="btn btn-outline-primary">View Plans</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="banner-image">
+                                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="OEM Custom Products" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3: Drop Shipping -->
+                <div class="banner-slide" data-slide="2">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="banner-content">
+                                    <span class="banner-tag"><i class="fas fa-shipping-fast me-2"></i>Global Logistics</span>
+                                    <h1 class="banner-title">Drop Shipping &amp; Global Warehouse Consolidation</h1>
+                                    <p class="banner-subtitle">Ship directly to your customers worldwide. We offer free warehousing, goods consolidation, and competitive door-to-door shipping rates.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Free Warehousing</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Door-to-Door Delivery</span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Global Coverage</span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get Free Quote</a>
+                                        <a href="logistics-shipping.html" class="btn btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="banner-image">
+                                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Global Shipping" onerror="this.src='https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Banner Navigation -->
+            <button class="banner-nav prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="banner-nav next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            
+            <!-- Banner Indicators -->
+            <div class="banner-indicators">
+                <div class="banner-indicator active" onclick="goToSlide(0)"></div>
+                <div class="banner-indicator" onclick="goToSlide(1)"></div>
+                <div class="banner-indicator" onclick="goToSlide(2)"></div>
+            </div>
+        </section>
+
+        <!-- Core Advantages 6-Grid -->
+        <section id="advantages" class="py-5" style="background-color: var(--bg-light);">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <span class="section-eyebrow">Your Trusted China Sourcing Partner</span>
-                        <h1 class="hero-title" data-i18n="hero.title">Small MOQ One-Stop Sourcing for Amazon &amp; TikTok Sellers</h1>
-                        <p class="hero-text" data-i18n="hero.desc">Professional China sourcing agent serving small-to-medium wholesale buyers, cross-border e-commerce sellers, and small-batch purchasers. Low MOQ, strict QC, and door-to-door shipping worldwide.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="contact.html" class="btn btn-cta" data-i18n="hero.contactBtn"><i class="fas fa-comment-dots me-2"></i>Get Free Quote</a>
-                            <a href="products.html" class="btn btn-outline-primary" data-i18n="hero.productsBtn">View Products</a>
-                        </div>
-                        <div class="hero-stats row g-3 mt-2">
-                            <div class="col-4">
-                                <div class="hero-stat-item">
-                                    <div class="hero-stat-number">8+</div>
-                                    <div class="hero-stat-label">Years Experience</div>
-                                </div>
+                <div class="section-title-wrap text-center mb-5">
+                    <span class="section-eyebrow">Why Choose Us</span>
+                    <div class="section-divider"></div>
+                    <h2 class="section-title">Our Core Advantages</h2>
+                    <p class="section-subtitle">What makes Yeatru your best China sourcing partner</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-cubes"></i>
                             </div>
-                            <div class="col-4">
-                                <div class="hero-stat-item">
-                                    <div class="hero-stat-number">500+</div>
-                                    <div class="hero-stat-label">Clients Served</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="hero-stat-item">
-                                    <div class="hero-stat-number">50K+</div>
-                                    <div class="hero-stat-label">Products Sourced</div>
-                                </div>
-                            </div>
+                            <h3 class="advantage-title">Low MOQ Support</h3>
+                            <p class="advantage-desc">Start with small orders. We connect you with suppliers offering flexible MOQ suitable for startups and small businesses.</p>
+                            <span class="tag">Flexible MOQ</span>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="hero-img-wrap">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shopdisplay.jpg" alt="Yiwu International Trade City" onerror="this.src='https://picsum.photos/800/600'">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="advantage-title">One-Stop China Sourcing</h3>
+                            <p class="advantage-desc">From supplier matching to quality control and shipping — we handle the entire procurement process for you.</p>
+                            <span class="tag">Full Service</span>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <h3 class="advantage-title">OEM &amp; Private Label</h3>
+                            <p class="advantage-desc">Customize products with your brand logo, packaging, and design. Professional samples in 3-7 days.</p>
+                            <span class="tag">Custom Branding</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3 class="advantage-title">Fast Sample Production</h3>
+                            <p class="advantage-desc">Get professional samples quickly to verify quality before mass production. Sample fee refundable with bulk orders.</p>
+                            <span class="tag">3-7 Days</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="advantage-title">Strict QC Inspection</h3>
+                            <p class="advantage-desc">AQL 2.5 quality inspections at every stage. We ensure products meet your specifications before shipping.</p>
+                            <span class="tag">Quality Assured</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3 class="advantage-title">Global Door-to-Door</h3>
+                            <p class="advantage-desc">Free warehousing, goods consolidation, and competitive shipping rates to anywhere in the world.</p>
+                            <span class="tag">Worldwide Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get Free Quote</a>
                 </div>
             </div>
         </section>
@@ -212,39 +351,309 @@
             </div>
         </section>
 
-        <section id="sourcing-process" class="process-section-alt bg-white">
+        <!-- Product Categories -->
+        <section id="products" class="py-5" style="background-color: var(--bg-light);">
             <div class="container">
-                <div class="section-title-wrap text-center">
+                <div class="section-title-wrap text-center mb-5">
+                    <span class="section-eyebrow">Popular Categories</span>
+                    <div class="section-divider"></div>
+                    <h2 class="section-title">Hot Selling Products</h2>
+                    <p class="section-subtitle">Browse our most popular product categories sourced from trusted suppliers</p>
+                </div>
+                
+                <!-- Category Icons -->
+                <div class="row g-3 mb-5">
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Home+Decor" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <span class="category-name">Home Decor</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Kitchen" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <span class="category-name">Kitchen</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Silicone" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-grip-lines"></i>
+                            </div>
+                            <span class="category-name">Silicone</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Packaging" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <span class="category-name">Packaging</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Bags" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span class="category-name">Bags & Cases</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <a href="products.html?category=Electronics" class="category-icon-card">
+                            <div class="category-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <span class="category-name">Electronics</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Cards -->
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-mini-card">
+                            <div class="product-mini-image">
+                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Storage Box" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400'">
+                                <span class="product-mini-tag tag">Stock Available</span>
+                            </div>
+                            <div class="product-mini-content">
+                                <h4 class="product-mini-title">Plastic Storage Boxes</h4>
+                                <p class="product-mini-moq">MOQ: 100-500 pcs</p>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-mini-card">
+                            <div class="product-mini-image">
+                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Silicone Products" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'">
+                                <span class="product-mini-tag tag">Customizable</span>
+                            </div>
+                            <div class="product-mini-content">
+                                <h4 class="product-mini-title">Silicone Kitchenware</h4>
+                                <p class="product-mini-moq">MOQ: 200-1000 pcs</p>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-mini-card">
+                            <div class="product-mini-image">
+                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Cosmetics Packaging" onerror="this.src='https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400'">
+                                <span class="product-mini-tag tag">Stock Available</span>
+                            </div>
+                            <div class="product-mini-content">
+                                <h4 class="product-mini-title">Cosmetics Packaging</h4>
+                                <p class="product-mini-moq">MOQ: 500-2000 pcs</p>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-mini-card">
+                            <div class="product-mini-image">
+                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shopdisplay.jpg" alt="Phone Cases" onerror="this.src='https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400'">
+                                <span class="product-mini-tag tag">Customizable</span>
+                            </div>
+                            <div class="product-mini-content">
+                                <h4 class="product-mini-title">Phone Accessories</h4>
+                                <p class="product-mini-moq">MOQ: 50-500 pcs</p>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="products.html" class="btn btn-cta"><i class="fas fa-th me-2"></i>Browse All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sourcing-process" class="py-5" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-title-wrap text-center mb-5">
                     <span class="section-eyebrow">How It Works</span>
                     <div class="section-divider"></div>
-                    <h2 class="section-title" data-i18n="process.title">Our Simple Sourcing Process</h2>
-                    <p class="section-subtitle" data-i18n="process.subtitle">We make sourcing from China straightforward and transparent</p>
+                    <h2 class="section-title">Simple 4-Step Sourcing Process</h2>
+                    <p class="section-subtitle">From inquiry to delivery, we make sourcing from China easy</p>
                 </div>
-                <div class="process-timeline">
-                    <div class="process-step-alt">
-                        <div class="process-step-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Your Requirements"></div>
-                        <div class="process-number">1</div>
-                        <h3 class="process-title" data-i18n="process.step1">Your Requirements</h3>
-                        <p class="process-desc" data-i18n="process.step1Desc">Share your product specifications, quantity, budget and timeline with our team.</p>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Send Requirements</h3>
+                            <p class="step-desc">Tell us your product needs, quantity, budget, and timeline. We'll find the best suppliers for you.</p>
+                        </div>
                     </div>
-                    <div class="process-step-alt">
-                        <div class="process-step-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png" alt="Supplier Matching"></div>
-                        <div class="process-number">2</div>
-                        <h3 class="process-title" data-i18n="process.step2">Supplier Matching</h3>
-                        <p class="process-desc" data-i18n="process.step2Desc">We identify and verify the best suppliers that match your specific requirements.</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">Source &amp; Quote</h3>
+                            <p class="step-desc">We identify verified suppliers, negotiate prices, and send you detailed quotes with samples.</p>
+                        </div>
                     </div>
-                    <div class="process-step-alt">
-                        <div class="process-step-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Sample & Pricing"></div>
-                        <div class="process-number">3</div>
-                        <h3 class="process-title" data-i18n="process.step3">Sample & Pricing</h3>
-                        <p class="process-desc" data-i18n="process.step3Desc">Obtain samples and competitive pricing quotes from pre-vetted suppliers.</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Sample Confirm</h3>
+                            <p class="step-desc">Review samples, confirm quality, and finalize your order details before mass production.</p>
+                        </div>
                     </div>
-                    <div class="process-step-alt">
-                        <div class="process-step-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Delivery & Support"></div>
-                        <div class="process-number">4</div>
-                        <h3 class="process-title" data-i18n="process.step4">Delivery & Support</h3>
-                        <p class="process-desc" data-i18n="process.step4Desc">We handle production oversight, quality control and shipping to your doorstep.</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Production &amp; Ship</h3>
+                            <p class="step-desc">We oversee production, QC inspection, consolidation, and ship directly to your door.</p>
+                        </div>
                     </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="contact.html" class="btn btn-cta"><i class="fas fa-paper-plane me-2"></i>Start Your Sourcing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-5 bg-white">
+            <div class="container">
+                <div class="section-title-wrap text-center mb-5">
+                    <span class="section-eyebrow">FAQ</span>
+                    <div class="section-divider"></div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions about our sourcing services</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="faq-categories mb-4">
+                            <div class="faq-category-tabs">
+                                <button class="faq-tab active" data-category="all">All</button>
+                                <button class="faq-tab" data-category="moq">MOQ & Price</button>
+                                <button class="faq-tab" data-category="sample">Sample</button>
+                                <button class="faq-tab" data-category="oem">OEM</button>
+                                <button class="faq-tab" data-category="logistics">Logistics</button>
+                                <button class="faq-tab" data-category="qc">Quality</button>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-list" id="faqList">
+                            <!-- MOQ & Price -->
+                            <div class="faq-item" data-category="moq">
+                                <button class="faq-question">
+                                    <span>What is your minimum order quantity (MOQ)?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>MOQ varies by product type. We work with suppliers who offer flexible MOQs starting from as low as 50-100 pieces for many items. For customized OEM products, MOQ typically starts at 200-500 pieces. Contact us with your specific product requirements for accurate MOQ information.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" data-category="moq">
+                                <button class="faq-question">
+                                    <span>How do you ensure competitive pricing?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>With 14+ years of local experience and established supplier relationships, we negotiate the best prices on your behalf. We provide transparent quotes with detailed cost breakdowns and compare multiple suppliers to ensure you get competitive rates.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Sample -->
+                            <div class="faq-item" data-category="sample">
+                                <button class="faq-question">
+                                    <span>How long does it take to get samples?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Sample production typically takes 3-7 days depending on product complexity. Shipping time varies by destination (7-15 days by express). We recommend requesting samples 2-3 weeks before your planned order to allow for review and decision-making.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" data-category="sample">
+                                <button class="faq-question">
+                                    <span>Is the sample fee refundable?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes! For most products, sample fees are fully refundable when you place a bulk order of 1,000+ pieces with the same supplier. This allows you to test product quality risk-free before committing to larger quantities.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- OEM -->
+                            <div class="faq-item" data-category="oem">
+                                <button class="faq-question">
+                                    <span>Can you help with custom logo and packaging?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Absolutely! We offer full OEM/ODM services including custom logo printing, hang tags, poly bags, gift boxes, and color boxes. We can also assist with product design modifications based on your specifications.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" data-category="oem">
+                                <button class="faq-question">
+                                    <span>What customization options are available?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We offer various customization options: logo printing (screen, embroidery, heat transfer), custom packaging (size, material, design), product modifications (size, color, material), and private label solutions. Share your requirements and we'll find the best approach.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Logistics -->
+                            <div class="faq-item" data-category="logistics">
+                                <button class="faq-question">
+                                    <span>What shipping methods do you offer?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We offer multiple shipping options: express (DHL, FedEx, UPS), air freight, sea freight, and combined sea+express for cost efficiency. Door-to-door delivery available to most countries. We also provide warehousing and consolidation services.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" data-category="logistics">
+                                <button class="faq-question">
+                                    <span>How long does shipping take?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Shipping times vary by method: Express (5-10 days), Air freight (10-15 days), Sea freight (25-40 days). Door-to-door delivery to most destinations takes 15-45 days depending on your location and chosen shipping method.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Quality -->
+                            <div class="faq-item" data-category="qc">
+                                <button class="faq-question">
+                                    <span>How do you ensure product quality?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We implement strict QC at every stage: pre-production inspection, during-production checks, pre-shipment inspection (AQL 2.5 standard), and loading supervision. For Amazon FBA sellers, we offer 100% piece-by-piece inspection and FBA label compliance checks.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" data-category="qc">
+                                <button class="faq-question">
+                                    <span>Do you offer Amazon FBA preparation services?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes! Our FBA Prep service includes 100% piece-by-piece inspection, compliance labeling, bundling/kitting, retail-ready repackaging, sample consolidation, and supplier cargo pickup. We ensure your products meet Amazon's requirements before shipping.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="mb-3">Still have questions?</p>
+                    <a href="contact.html" class="btn btn-cta"><i class="fas fa-comments me-2"></i>Chat With Us</a>
                 </div>
             </div>
         </section>
@@ -705,6 +1114,123 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    
+    <!-- Banner Carousel Script -->
+    <script>
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let autoSlideInterval;
+    const slideDuration = 5000;
+
+    function goToSlide(index) {
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('.banner-indicator');
+        
+        if (slides.length === 0) return;
+        
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        
+        currentSlide = index;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+        const newIndex = currentSlide + direction;
+        goToSlide(newIndex);
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, slideDuration);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Start auto slide
+        startAutoSlide();
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const bannerCarousel = document.querySelector('.banner-carousel');
+        
+        if (bannerCarousel) {
+            bannerCarousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            bannerCarousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+        }
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1);
+                } else {
+                    changeSlide(-1);
+                }
+            }
+        }
+        
+        // FAQ Accordion & Filter
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+        
+        // FAQ Category Filter
+        const faqTabs = document.querySelectorAll('.faq-tab');
+        faqTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                
+                // Update active tab
+                faqTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Filter FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+    </script>
+    
     <script src="app.js"></script>
 </body>
 </html>
