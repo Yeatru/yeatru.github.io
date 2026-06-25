@@ -31,7 +31,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
@@ -48,11 +48,23 @@
                             <li><a class="dropdown-item" href="logistics-shipping.html">Logistics & Warehousing</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Service Plans</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="service-plans.html">Service Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="payment.html">Payment</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+                <div class="dropdown lang-selector">
+                    <button class="btn lang-btn dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i> <span data-lang-label="English">English</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                    </ul>
+                </div>
+                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button id="logoutBtn" class="btn logout-btn ms-2 d-none" onclick="adminLogout()">Logout</button>
             </div>
         </div>
     </nav>
