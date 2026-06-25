@@ -42,10 +42,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
-                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
@@ -100,250 +97,37 @@
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
-                    <button id="loginBtn" class="btn btn-outline-primary d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Admin</button>
-                    <button id="logoutBtn" class="btn btn-outline-primary d-none">Logout</button>
+                    <button id="loginBtn" class="btn admin-nav-btn d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+                        <i class="fas fa-user-shield"></i>
+                    </button>
+                    <button id="logoutBtn" class="btn admin-nav-btn d-none">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <div id="mainContent">
-        <section class="page-hero">
+        <section class="page-header-section py-5 bg-light">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7">
-                        <span class="hero-tag"><i class="fas fa-th-large me-2"></i>Our Products</span>
-                        <h1 class="page-hero-title">Wholesale Products from China</h1>
-                        <p class="page-hero-subtitle">Explore curated product categories sourced directly from verified Chinese factories. Low MOQ, competitive prices, and one-stop service.</p>
-                        <div class="banner-features">
-                            <span class="banner-feature"><i class="fas fa-check-circle"></i> 75,000+ Factory Network</span>
-                            <span class="banner-feature"><i class="fas fa-check-circle"></i> Low MOQ from 50 pcs</span>
-                            <span class="banner-feature"><i class="fas fa-check-circle"></i> Free Sample Available</span>
-                        </div>
-                        <div class="banner-cta">
-                            <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get a Quote</a>
-                            <a href="#services-section" class="btn btn-outline-primary">View Services</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="page-hero-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Wholesale Products from China" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                            <div class="page-hero-image-placeholder">
-                                <i class="fas fa-boxes"></i>
-                                <span>Wholesale Products</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <span class="section-eyebrow">Our Products</span>
+                    <h1 class="section-title mb-3">Wholesale Products from China</h1>
+                    <p class="section-subtitle mx-auto" style="max-width: 650px;">Explore curated product categories sourced directly from verified Chinese factories. Low MOQ, competitive prices, and one-stop service.</p>
                 </div>
             </div>
         </section>
 
         <section class="py-5 bg-white">
             <div class="container">
-                <div class="section-title-wrap text-center mb-5">
-                    <span class="section-eyebrow">Product Categories</span>
-                    <div class="section-divider"></div>
-                    <h2 class="section-title">Browse by Category</h2>
-                    <p class="section-subtitle">Find the products you need across 6 major categories</p>
-                </div>
-                <div class="row g-3 mb-4">
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Home+Decor" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <span class="category-name">Home Decor</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Kitchen" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="category-name">Kitchenware</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Silicone" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-grip-lines"></i>
-                            </div>
-                            <span class="category-name">Silicone Products</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Packaging" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-box"></i>
-                            </div>
-                            <span class="category-name">Packaging</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Bags" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-shopping-bag"></i>
-                            </div>
-                            <span class="category-name">Bags &amp; Cases</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4">
-                        <a href="products.html?category=Electronics" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <span class="category-name">Electronics</span>
-                        </a>
+                <div class="product-filter-bar mb-4">
+                    <div class="d-flex flex-wrap align-items-center gap-3 justify-content-between">
+                        <div id="categoryFilterList" class="category-filter-list d-flex flex-wrap gap-2"></div>
+                        <div id="filterResultInfo" class="text-muted small"></div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="py-5" style="background-color: var(--bg-light);">
-            <div class="container">
-                <div class="section-title-wrap text-center mb-5">
-                    <span class="section-eyebrow">Featured Products</span>
-                    <div class="section-divider"></div>
-                    <h2 class="section-title">Trending Products</h2>
-                    <p class="section-subtitle">Popular items requested by our buyers this month</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Plastic Storage Box Set" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400'">
-                                <span class="product-mini-tag tag">Stock Available</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Plastic Storage Box Set</h4>
-                                <p class="product-mini-moq">$4.99 / MOQ: 100 pcs</p>
-                                <a href="contact.html?product=Plastic%20Storage%20Box%20Set" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Stainless Steel Water Bottle" onerror="this.src='https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400'">
-                                <span class="product-mini-tag tag">Customizable</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Stainless Steel Water Bottle</h4>
-                                <p class="product-mini-moq">$3.49 / MOQ: 200 pcs</p>
-                                <a href="contact.html?product=Stainless%20Steel%20Water%20Bottle" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Silicone Kitchen Utensil Set" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400'">
-                                <span class="product-mini-tag tag">Best Seller</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Silicone Kitchen Utensil Set</h4>
-                                <p class="product-mini-moq">$6.99 / MOQ: 150 pcs</p>
-                                <a href="contact.html?product=Silicone%20Kitchen%20Utensil%20Set" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shopdisplay.jpg" alt="Custom Printed Packaging Box" onerror="this.src='https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400'">
-                                <span class="product-mini-tag tag">Customizable</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Custom Printed Packaging Box</h4>
-                                <p class="product-mini-moq">$0.35 / MOQ: 500 pcs</p>
-                                <a href="contact.html?product=Custom%20Printed%20Packaging%20Box" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(5).jpg" alt="Cosmetic Travel Bag" onerror="this.src='https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400'">
-                                <span class="product-mini-tag tag">Stock Available</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Cosmetic Travel Bag</h4>
-                                <p class="product-mini-moq">$2.99 / MOQ: 100 pcs</p>
-                                <a href="contact.html?product=Cosmetic%20Travel%20Bag" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Phone Stand Holder" onerror="this.src='https://images.unsplash.com/photo-1585399000684-d2f72660f092?w=400'">
-                                <span class="product-mini-tag tag">Low MOQ</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Phone Stand Holder</h4>
-                                <p class="product-mini-moq">$1.29 / MOQ: 50 pcs</p>
-                                <a href="contact.html?product=Phone%20Stand%20Holder" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Aromatherapy Diffuser" onerror="this.src='https://images.unsplash.com/photo-1602928321679-560bb453f190?w=400'">
-                                <span class="product-mini-tag tag">Trending</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Aromatherapy Diffuser</h4>
-                                <p class="product-mini-moq">$8.99 / MOQ: 200 pcs</p>
-                                <a href="contact.html?product=Aromatherapy%20Diffuser" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Reusable Shopping Tote" onerror="this.src='https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400'">
-                                <span class="product-mini-tag tag">Eco Friendly</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Reusable Shopping Tote</h4>
-                                <p class="product-mini-moq">$1.89 / MOQ: 100 pcs</p>
-                                <a href="contact.html?product=Reusable%20Shopping%20Tote" class="btn btn-outline-primary btn-sm w-100">Quick Inquiry</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services-section" class="py-5 bg-white">
-            <div class="container">
-                <div class="section-title-wrap text-center mb-5">
-                    <span class="section-eyebrow">Our Services</span>
-                    <div class="section-divider"></div>
-                    <h2 class="section-title">Sourcing Services to Help You Win</h2>
-                    <p class="section-subtitle">Beyond products — we offer end-to-end sourcing solutions tailored to your business</p>
-                </div>
-                <div class="row g-3">
-                    <div class="col-lg-4 col-md-6"><a href="supplier-verification.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png" alt="Supplier Verification"></div><h3 class="service-title">Supplier Verification</h3><p class="service-desc">We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.</p></div></a></div>
-                    <div class="col-lg-4 col-md-6"><a href="product-sourcing.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Product Sourcing"></div><h3 class="service-title">Product Sourcing</h3><p class="service-desc">Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.</p></div></a></div>
-                    <div class="col-lg-4 col-md-6"><a href="quality-control.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Quality Control"></div><h3 class="service-title">Quality Control</h3><p class="service-desc">Comprehensive quality inspection at every stage of production to ensure products meet your specifications.</p></div></a></div>
-                    <div class="col-lg-4 col-md-6"><a href="logistics-shipping.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Logistics & Warehousing"></div><h3 class="service-title">Logistics &amp; Warehousing</h3><p class="service-desc">Complete logistics and warehousing solutions including free storage, goods consolidation, and competitive shipping rates.</p></div></a></div>
-                    <div class="col-lg-4 col-md-6"><a href="price-negotiation.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Price Negotiation"></div><h3 class="service-title">Price Negotiation</h3><p class="service-desc">Leverage our local expertise to negotiate the best prices and payment terms with suppliers.</p></div></a></div>
-                    <div class="col-lg-4 col-md-6"><a href="factory-audit.html" class="service-card-link"><div class="service-card"><div class="service-card-image"><img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(5).jpg" alt="Factory Audit"></div><h3 class="service-title">Factory Audit</h3><p class="service-desc">On-site factory audits to verify capacity, quality systems, and compliance with international standards.</p></div></a></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-5" style="background-color: var(--bg-light);">
-            <div class="container">
-                <div class="final-cta-box text-center">
-                    <span class="section-eyebrow">Ready to Source?</span>
-                    <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
-                    <h2 class="section-title">Need Custom or Bulk Order?</h2>
-                    <p class="section-subtitle mb-4">Get a personalized quote with factory-direct pricing.</p>
-                    <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-paper-plane me-2"></i>Get Quote Now</a>
-                </div>
+                <div class="row g-4" id="productList"></div>
             </div>
         </section>
     </div>
@@ -477,7 +261,162 @@
         </div>
     </footer>
 
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
+                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
+                    </div>
+                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel" data-i18n="products.addProduct">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="productImage" class="form-label" data-i18n="products.imageUrl">Image URL</label>
+                                <input type="url" class="form-control" id="productImage" placeholder="Enter product image URL" required data-i18n-placeholder="products.enterImageUrl">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productCategory" class="form-label" data-i18n="products.category">Category</label>
+                                <select class="form-select" id="productCategory" required>
+                                    <option value="" data-i18n="products.selectCategory">Select Category</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="productName" class="form-label" data-i18n="products.name">Product Name</label>
+                                <input type="text" class="form-control" id="productName" placeholder="Enter product name" required data-i18n-placeholder="products.enterName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productSKU" class="form-label" data-i18n="products.sku">SKU</label>
+                                <input type="text" class="form-control" id="productSKU" placeholder="Enter product SKU" required data-i18n-placeholder="products.enterSKU">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="productMaterial" class="form-label" data-i18n="products.material">Material</label>
+                                <input type="text" class="form-control" id="productMaterial" placeholder="Enter material" required data-i18n-placeholder="products.enterMaterial">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productSize" class="form-label" data-i18n="products.size">Size</label>
+                                <input type="text" class="form-control" id="productSize" placeholder="Enter size" required data-i18n-placeholder="products.enterSize">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="productMOQ" class="form-label" data-i18n="products.moq">MOQ</label>
+                                <input type="number" class="form-control" id="productMOQ" placeholder="Enter MOQ" required data-i18n-placeholder="products.enterMOQ">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="productPriceMin" class="form-label" data-i18n="products.priceMin">Minimum Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMin" placeholder="Enter minimum price" required data-i18n-placeholder="products.enterMinPrice">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productPriceMax" class="form-label" data-i18n="products.priceMax">Maximum Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="productPriceMax" placeholder="Enter maximum price" required data-i18n-placeholder="products.enterMaxPrice">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label" data-i18n="products.description">Description</label>
+                            <textarea class="form-control" id="productDescription" rows="3" placeholder="Enter product description" required data-i18n-placeholder="products.enterDescription"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                            </div>
+                            <div id="variationsContainer" class="variations-container"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="products.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveProduct" data-i18n="products.save">Save Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quoteModalLabel" data-i18n="quote.title">Get a Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="quoteForm" action="https://formsubmit.co/info@yeatru.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Product Quote Request">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" id="quoteProductName" name="productName">
+                        <div class="mb-3"><label for="quoteName" class="form-label" data-i18n="contact.yourName">Your Name</label><input type="text" class="form-control" id="quoteName" name="name" required placeholder="Enter your name" data-i18n-placeholder="contact.enterName"></div>
+                        <div class="mb-3"><label for="quoteEmail" class="form-label" data-i18n="contact.email">Email Address</label><input type="email" class="form-control" id="quoteEmail" name="email" required placeholder="Enter your email" data-i18n-placeholder="contact.enterEmail"></div>
+                        <div class="mb-3"><label for="quoteQuantity" class="form-label" data-i18n="quote.quantity">Required Quantity</label><input type="number" class="form-control" id="quoteQuantity" name="quantity" required placeholder="Enter quantity" data-i18n-placeholder="quote.enterQuantity"></div>
+                        <div class="mb-3"><label for="quoteMessage" class="form-label" data-i18n="contact.message">Additional Message</label><textarea class="form-control" id="quoteMessage" name="message" rows="3" placeholder="Enter your message" data-i18n-placeholder="contact.enterMessage"></textarea></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="quote.cancel">Cancel</button>
+                    <button type="submit" form="quoteForm" class="btn btn-primary" data-i18n="quote.send">Send Quote Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="logo.title">Update Brand Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted small" data-i18n="logo.tip">Logo is displayed in a 50x50 pixel container. Upload a square image (PNG/JPG/SVG) or paste an image URL for best results.</p>
+                    <label class="form-label" data-i18n="logo.uploadFile">Upload Image</label>
+                    <input type="file" id="logoFileInput" class="form-control mb-3" accept="image/*">
+                    <label class="form-label" data-i18n="logo.imageUrl">Or Image URL</label>
+                    <input type="url" id="logoUrlInput" class="form-control" placeholder="https://...">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger me-auto" id="logoResetBtn" data-i18n="logo.reset">Reset to Default</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="logo.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="logoSaveBtn" data-i18n="logo.save">Save Logo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -622,14 +561,19 @@
         const search = urlParams.get('search');
         
         if (category) {
-            const titleEl = document.querySelector('.page-hero-title');
+            const titleEl = document.querySelector('.page-header-section .section-title');
             if (titleEl) {
                 titleEl.textContent = decodeURIComponent(category) + ' - Wholesale from China';
+            }
+            if (typeof currentFilterCategory !== 'undefined') {
+                currentFilterCategory = decodeURIComponent(category);
+                if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
+                if (typeof renderProducts === 'function') renderProducts();
             }
         }
         
         if (search) {
-            const titleEl = document.querySelector('.page-hero-title');
+            const titleEl = document.querySelector('.page-header-section .section-title');
             if (titleEl) {
                 titleEl.textContent = 'Search Results for "' + decodeURIComponent(search) + '"';
             }

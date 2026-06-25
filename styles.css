@@ -121,6 +121,26 @@ a:hover {
     font-size: 0.8rem;
 }
 
+/* Low-profile admin button */
+.admin-nav-btn {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.8rem !important;
+    color: #adb5bd !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+.admin-nav-btn:hover {
+    color: var(--primary) !important;
+    opacity: 1;
+}
+
+.admin-nav-btn i {
+    font-size: 0.85rem;
+}
+
 .btn {
     border-radius: var(--radius) !important;
 }
@@ -193,20 +213,27 @@ a:hover {
 .navbar-brand {
     color: var(--primary) !important;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    letter-spacing: -0.01em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.navbar {
+    padding: 0.5rem 0;
+    min-height: 60px;
 }
 
 .brand-logo-box {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    min-height: 50px;
-    max-width: 50px;
-    max-height: 50px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 38px;
+    max-height: 38px;
     border: 1px solid #e9ecef;
     border-radius: 8px;
     background-color: #fff;
@@ -225,7 +252,7 @@ a:hover {
 .brand-logo-fallback {
     font-weight: 700;
     color: var(--primary);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .login-btn {
@@ -2895,24 +2922,24 @@ body.edit-mode [contenteditable="true"]:focus {
 .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(11,123,148,0.1); }
 textarea.form-control { min-height: 120px; resize: vertical; }
 
-.footer { background-color: #212529; color: white; padding: 4rem 0 2rem; }
-.footer-brand { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
-.footer-desc { color: #adb5bd; margin-bottom: 2rem; line-height: 1.8; }
-.footer-social { display: flex; gap: 1rem; }
-.footer-social-icon { color: #adb5bd; text-decoration: none; font-size: 1.2rem; transition: color 0.2s ease; }
+.footer { background-color: #212529; color: white; padding: 3rem 0 1.5rem; }
+.footer-brand { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.01em; }
+.footer-desc { color: #adb5bd; margin-bottom: 1.25rem; line-height: 1.6; font-size: 0.88rem; }
+.footer-social { display: flex; gap: 0.75rem; }
+.footer-social-icon { color: #adb5bd; text-decoration: none; font-size: 1rem; transition: color 0.2s ease; }
 .footer-social-icon:hover { color: var(--cta); }
-.footer-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
-.footer-link { display: block; color: #adb5bd; text-decoration: none; margin-bottom: 0.75rem; transition: color 0.2s ease; }
+.footer-title { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+.footer-link { display: block; color: #adb5bd; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s ease; font-size: 0.88rem; }
 .footer-link:hover { color: white; }
-.footer-bottom { border-top: 1px solid #343a40; padding-top: 2rem; margin-top: 2rem; color: #adb5bd; text-align: center; }
+.footer-bottom { border-top: 1px solid #343a40; padding-top: 1.25rem; margin-top: 1.5rem; color: #adb5bd; text-align: center; font-size: 0.8rem; }
 
 /* Footer Trust Badges */
 .footer-trust-badges {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    padding: 1rem 0 1.5rem;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid #343a40;
     flex-wrap: wrap;
 }
@@ -2920,12 +2947,12 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .trust-badge-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     color: #fff;
 }
 
 .trust-badge-item i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--cta);
 }
 
@@ -2935,16 +2962,16 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 
 .trust-badge-number {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: #fff;
     line-height: 1;
 }
 
 .trust-badge-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #adb5bd;
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
 }
 
 /* Footer Payment Row */
@@ -2952,25 +2979,25 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    margin-top: 1rem;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
     border-top: 1px solid #343a40;
     flex-wrap: wrap;
 }
 
 .footer-payment-label {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     color: #adb5bd;
 }
 
 .footer-payment-icons {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .payment-icon {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     color: #adb5bd;
     transition: color 0.2s ease;
 }
@@ -2980,20 +3007,28 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 
 @media (max-width: 768px) {
+    .footer { padding: 2rem 0 1.5rem; }
     .footer-trust-badges {
-        gap: 1rem;
-        padding: 1.5rem 0;
+        gap: 0.75rem;
+        padding: 0.75rem 0 1rem;
+        margin-bottom: 1rem;
     }
     .trust-badge-item i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .trust-badge-number {
-        font-size: 1.25rem;
+        font-size: 1rem;
+    }
+    .trust-badge-label {
+        font-size: 0.65rem;
     }
     .footer-payment-row {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
+    .footer-title { margin-bottom: 0.75rem; }
+    .footer-link { margin-bottom: 0.4rem; }
+    .footer-desc { margin-bottom: 1rem; }
 }
 
 .modal-title { color: var(--primary-dark); font-weight: 600; }
@@ -4878,4 +4913,495 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .contact-form .form-control.prefilled {
     border-color: var(--primary-light);
     background-color: var(--primary-50);
+}
+
+/* ============================================
+   GLOBAL OPTIMIZATION STYLES
+   ============================================ */
+
+/* Unified page top spacing */
+#mainContent > section:first-of-type {
+    padding-top: 3rem !important;
+}
+
+#mainContent > section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Navbar brand optimization */
+.navbar-brand {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    gap: 0.6rem !important;
+}
+
+.brand-logo-box {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    border-radius: 10px !important;
+    border: 1px solid #e9ecef !important;
+    background: #fff !important;
+}
+
+/* Footer compact layout */
+.footer {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.footer-brand {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.75rem !important;
+    gap: 0.5rem !important;
+}
+
+.footer-brand .brand-logo-box {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+}
+
+.footer-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.footer-title {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.footer-link {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.footer-social {
+    gap: 0.5rem !important;
+    margin-top: 0.5rem !important;
+}
+
+.footer-social-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.85rem !important;
+}
+
+.footer-trust-badges {
+    gap: 1.25rem !important;
+    padding: 0.75rem 0 1rem !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.trust-badge-item i {
+    font-size: 1.25rem !important;
+}
+
+.trust-badge-number {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+}
+
+.trust-badge-label {
+    font-size: 0.68rem !important;
+    margin-top: 0.15rem !important;
+}
+
+.footer-payment-row {
+    padding: 0.75rem 0 !important;
+    margin-top: 0.25rem !important;
+    gap: 0.6rem !important;
+}
+
+.footer-payment-label {
+    font-size: 0.75rem !important;
+}
+
+.payment-icon {
+    font-size: 1.2rem !important;
+}
+
+.footer-bottom {
+    padding-top: 1rem !important;
+    margin-top: 1rem !important;
+    font-size: 0.78rem !important;
+}
+
+/* Product page filter bar optimization */
+.product-filter-bar {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.category-filter-btn {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 999px !important;
+    border: 1px solid #d1d5db !important;
+    background: #fff !important;
+    color: #4b5563 !important;
+    cursor: pointer;
+    transition: all 0.2s ease !important;
+    white-space: nowrap;
+}
+
+.category-filter-btn:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    background: var(--primary-50) !important;
+}
+
+.category-filter-btn.active {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #fff !important;
+}
+
+.category-filter-reset {
+    padding: 0.4rem 0.9rem !important;
+    font-size: 0.82rem !important;
+    border-radius: 999px !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: all 0.2s ease !important;
+}
+
+.category-filter-reset:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+/* Product card unified style */
+.product-card {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow-sm) !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.product-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--primary-light) !important;
+}
+
+.product-card img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    background-color: var(--bg-light) !important;
+}
+
+.product-card .card-body {
+    padding: 1rem !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.product-category {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-50);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.product-title {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.4 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.product-desc {
+    font-size: 0.82rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.5 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    flex: 1 !important;
+}
+
+.product-price {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: var(--cta) !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.product-action-btn {
+    font-size: 0.8rem !important;
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
+.product-action-btn:hover {
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
+}
+
+/* Admin product actions */
+.product-admin-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.product-admin-btn {
+    font-size: 0.78rem !important;
+    padding: 0.25rem 0.6rem !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Mobile navigation optimization */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        border-radius: 0 0 16px 16px;
+        padding: 1rem 1.25rem;
+        z-index: 1000;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        padding: 0.7rem 1rem !important;
+        border-radius: 10px;
+        margin: 0.15rem 0 !important;
+        font-size: 0.95rem !important;
+        transition: all 0.2s ease !important;
+        line-height: 1.5 !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--primary-50) !important;
+        color: var(--primary) !important;
+    }
+
+    .nav-item.dropdown .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        display: none;
+        border-top: 1px solid var(--border-light);
+        padding-top: 0.25rem;
+        margin-top: 0.25rem;
+    }
+
+    .nav-item.dropdown.show .dropdown-menu {
+        display: block;
+    }
+
+    .nav-item.dropdown .dropdown-item {
+        padding: 0.6rem 1rem 0.6rem 2rem !important;
+        background: transparent;
+        border-radius: 8px;
+        margin: 0.1rem 0;
+        font-size: 0.88rem;
+        line-height: 1.4;
+        min-height: auto;
+    }
+
+    .nav-item.dropdown .dropdown-item:hover {
+        background: var(--primary-50);
+        color: var(--primary);
+    }
+
+    .navbar-toggler {
+        border: none !important;
+        padding: 0.4rem !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+        width: 26px;
+        height: 26px;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23165DFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Mobile: nav tools alignment */
+    .navbar-collapse .d-flex.align-items-center {
+        flex-wrap: wrap;
+        gap: 0.5rem !important;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-light);
+    }
+}
+
+/* Desktop dropdown unified line height */
+@media (min-width: 992px) {
+    .nav-item.dropdown .dropdown-menu {
+        min-width: 220px;
+        padding: 0.4rem 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+        border: 1px solid var(--border) !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item {
+        padding: 0.6rem 1.1rem !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        min-height: auto !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-divider {
+        margin: 0.35rem 0 !important;
+    }
+}
+
+/* Page header section */
+.page-header-section {
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--bg-light) 100%);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.page-header-section .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .page-header-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .page-header-section .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    #mainContent > section:first-of-type {
+        padding-top: 2rem !important;
+    }
+
+    #mainContent > section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .footer-trust-badges {
+        gap: 0.75rem !important;
+    }
+
+    .trust-badge-item {
+        gap: 0.4rem !important;
+    }
+
+    .trust-badge-item i {
+        font-size: 1.1rem !important;
+    }
+
+    .trust-badge-number {
+        font-size: 0.9rem !important;
+    }
+
+    .trust-badge-label {
+        font-size: 0.62rem !important;
+    }
+}
+
+/* Low-profile admin button - ensure it's consistent */
+.admin-nav-btn {
+    padding: 0.3rem 0.45rem !important;
+    font-size: 0.78rem !important;
+    color: #adb5bd !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.35;
+    transition: opacity 0.2s ease, color 0.2s ease !important;
+}
+
+.admin-nav-btn:hover {
+    color: var(--primary) !important;
+    opacity: 1;
+}
+
+.admin-nav-btn i {
+    font-size: 0.8rem;
+}
+
+/* Navbar height consistency */
+.navbar {
+    padding: 0.6rem 0 !important;
+    min-height: 64px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.5rem 0 !important;
+        min-height: 58px !important;
+    }
 }
