@@ -102,12 +102,60 @@ function tt(key, fallback) {
     return fallback || key;
 }
 
+const EXCHANGE_RATES = {
+    USD: { rate: 1, symbol: '$', name: 'USD' },
+    EUR: { rate: 0.92, symbol: '€', name: 'EUR' },
+    GBP: { rate: 0.79, symbol: '£', name: 'GBP' },
+    RUB: { rate: 92.5, symbol: '₽', name: 'RUB' },
+    CNY: { rate: 7.25, symbol: '¥', name: 'CNY' }
+};
+
+let currentCurrency = 'USD';
+
+function getCurrentCurrency() {
+    return localStorage.getItem('yeatru_currency') || 'USD';
+}
+
+function formatPrice(usdPrice) {
+    const currency = getCurrentCurrency();
+    const cfg = EXCHANGE_RATES[currency] || EXCHANGE_RATES.USD;
+    const converted = (usdPrice * cfg.rate).toFixed(2);
+    return cfg.symbol + converted;
+}
+
+function initCurrencySelector() {
+    const currencyItems = document.querySelectorAll('[data-currency]');
+    const currentCurrencyEl = document.getElementById('current-currency');
+    const saved = getCurrentCurrency();
+    currentCurrency = saved;
+
+    if (currentCurrencyEl) {
+        currentCurrencyEl.textContent = saved;
+    }
+
+    currencyItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const currency = this.dataset.currency;
+            localStorage.setItem('yeatru_currency', currency);
+            currentCurrency = currency;
+            if (currentCurrencyEl) {
+                currentCurrencyEl.textContent = currency;
+            }
+            document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
+            renderProducts();
+            renderIndexHotProducts();
+        });
+    });
+}
+
 function safeAddEventListener(id, event, handler) {
     const el = document.getElementById(id);
     if (el) el.addEventListener(event, handler);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    initCurrencySelector();
     renderBrandLogo();
     renderProductsDropdown();
     renderIndexCategories();
@@ -528,11 +576,9 @@ function renderIndexCategories() {
     if (!list) return;
     const categories = getCategories();
     list.innerHTML = '';
-    const displayCount = Math.min(categories.length, 8);
-    for (let i = 0; i < displayCount; i++) {
-        const cat = categories[i];
+    categories.forEach(cat => {
         const col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3';
+        col.className = 'col-auto';
         col.innerHTML = `
             <a href="products.html?category=${encodeURIComponent(cat)}" class="category-icon-card">
                 <div class="category-icon">
@@ -542,7 +588,7 @@ function renderIndexCategories() {
             </a>
         `;
         list.appendChild(col);
-    }
+    });
 }
 
 function renderIndexHotProducts() {
@@ -553,7 +599,7 @@ function renderIndexHotProducts() {
     const displayCount = Math.min(products.length, 8);
     for (let i = 0; i < displayCount; i++) {
         const product = products[i];
-        const priceText = (tt('products.price', 'Price: $')) + product.priceMin + ' - ' + product.priceMax;
+        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
         const col = document.createElement('div');
         col.className = 'col-lg-3 col-md-6';
         col.innerHTML = `
@@ -722,7 +768,7 @@ function renderProducts() {
     }
 
     filtered.forEach(product => {
-        const priceText = (tt('products.price', 'Price: $')) + product.priceMin + ' - ' + product.priceMax;
+        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
         const card = document.createElement('div');
         card.className = 'col-lg-3 col-md-6';
         card.innerHTML = `
@@ -879,7 +925,7 @@ function renderVariationsDisplay(variations) {
                 <span class="variation-color-dot"${v.color ? ` style="background-color: ${getColorValue(v.color)}"` : ''}></span>
                 <span class="variation-name">${escapeHtml(v.color || '-')}</span>
                 <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">$${escapeHtml(v.price)}</span>` : ''}
+                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">${formatPrice(parseFloat(v.price))}</span>` : ''}
             </div>
         `;
         card.addEventListener('click', function () {
@@ -888,11 +934,11 @@ function renderVariationsDisplay(variations) {
             const priceBig = document.getElementById('detailPriceBig');
             if (priceBig) {
                 if (v.price !== undefined && v.price !== null && v.price !== '') {
-                    priceBig.textContent = '$' + v.price;
+                    priceBig.textContent = formatPrice(parseFloat(v.price));
                 } else {
                     const product = getProducts().find(p => p.id === currentDetailProductId);
                     if (product) {
-                        priceBig.textContent = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+                        priceBig.textContent = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
                     }
                 }
             }
@@ -1004,8 +1050,8 @@ function renderDetailPage(productId) {
     if (detailMaterial) detailMaterial.textContent = product.material || '';
     if (detailSize) detailSize.textContent = product.size || '';
     if (detailMOQ) detailMOQ.textContent = product.moq || '';
-    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
-    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
+    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? formatPrice(product.priceMin) : '';
+    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? formatPrice(product.priceMax) : '';
     if (detailDesc) detailDesc.textContent = product.description || '';
 
     let defaultPriceText;
@@ -1016,15 +1062,15 @@ function renderDetailPage(productId) {
             const vMin = Math.min(...prices);
             const vMax = Math.max(...prices);
             if (vMin === vMax) {
-                defaultPriceText = '$' + vMin;
+                defaultPriceText = formatPrice(vMin);
             } else {
-                defaultPriceText = '$' + vMin + ' - $' + vMax;
+                defaultPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
             }
         } else {
-            defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+            defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
         }
     } else {
-        defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
+        defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
     }
     if (detailPriceBig) detailPriceBig.textContent = defaultPriceText;
 
@@ -1144,11 +1190,10 @@ function commitSave() {
         document.getElementById('detailMaterial').textContent = p.material;
         document.getElementById('detailSize').textContent = p.size;
         document.getElementById('detailMOQ').textContent = p.moq;
-        document.getElementById('detailPriceMin').textContent = p.priceMin;
-        document.getElementById('detailPriceMax').textContent = p.priceMax;
+        document.getElementById('detailPriceMin').textContent = formatPrice(p.priceMin);
+        document.getElementById('detailPriceMax').textContent = formatPrice(p.priceMax);
         document.getElementById('detailDesc').textContent = p.description;
 
-        // 保存后重新计算默认价格显示
         let savedPriceText;
         if (p.variations && p.variations.length > 0) {
             const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
@@ -1157,15 +1202,15 @@ function commitSave() {
                 const vMin = Math.min(...prices);
                 const vMax = Math.max(...prices);
                 if (vMin === vMax) {
-                    savedPriceText = '$' + vMin;
+                    savedPriceText = formatPrice(vMin);
                 } else {
-                    savedPriceText = '$' + vMin + ' - $' + vMax;
+                    savedPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
                 }
             } else {
-                savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
+                savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
             }
         } else {
-            savedPriceText = '$' + (p.priceMin || 0) + ' - $' + (p.priceMax || 0);
+            savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
         }
         document.getElementById('detailPriceBig').textContent = savedPriceText;
         setSaveStatus('saved');

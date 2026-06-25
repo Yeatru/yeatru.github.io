@@ -413,7 +413,7 @@
                 </div>
                 
                 <!-- Category Icons -->
-                <div class="row g-3" id="indexCategoryList">
+                <div id="indexCategoryList" class="index-category-list">
                 </div>
                 
                 <!-- Product Cards -->
@@ -1365,28 +1365,6 @@
                         item.classList.add('hidden');
                     }
                 });
-            });
-        });
-        
-        // ===== Phase 5: Currency Selector =====
-        const currencyItems = document.querySelectorAll('[data-currency]');
-        const currentCurrencyEl = document.getElementById('current-currency');
-        const savedCurrency = localStorage.getItem('yeatru_currency') || 'USD';
-        
-        if (currentCurrencyEl) {
-            currentCurrencyEl.textContent = savedCurrency;
-        }
-        
-        currencyItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const currency = this.dataset.currency;
-                localStorage.setItem('yeatru_currency', currency);
-                if (currentCurrencyEl) {
-                    currentCurrencyEl.textContent = currency;
-                }
-                // Trigger currency change event for any listeners
-                document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
             });
         });
         
