@@ -2897,12 +2897,102 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .footer-brand { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
 .footer-desc { color: #adb5bd; margin-bottom: 2rem; line-height: 1.8; }
 .footer-social { display: flex; gap: 1rem; }
-.footer-social-icon { color: #adb5bd; text-decoration: none; font-size: 1.2rem; }
-.footer-social-icon:hover { color: white; }
+.footer-social-icon { color: #adb5bd; text-decoration: none; font-size: 1.2rem; transition: color 0.2s ease; }
+.footer-social-icon:hover { color: var(--cta); }
 .footer-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
-.footer-link { display: block; color: #adb5bd; text-decoration: none; margin-bottom: 0.75rem; }
+.footer-link { display: block; color: #adb5bd; text-decoration: none; margin-bottom: 0.75rem; transition: color 0.2s ease; }
 .footer-link:hover { color: white; }
 .footer-bottom { border-top: 1px solid #343a40; padding-top: 2rem; margin-top: 2rem; color: #adb5bd; text-align: center; }
+
+/* Footer Trust Badges */
+.footer-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #343a40;
+    flex-wrap: wrap;
+}
+
+.trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+}
+
+.trust-badge-item i {
+    font-size: 2rem;
+    color: var(--cta);
+}
+
+.trust-badge-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust-badge-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+
+.trust-badge-label {
+    font-size: 0.8rem;
+    color: #adb5bd;
+    margin-top: 0.25rem;
+}
+
+/* Footer Payment Row */
+.footer-payment-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    margin-top: 1rem;
+    border-top: 1px solid #343a40;
+    flex-wrap: wrap;
+}
+
+.footer-payment-label {
+    font-size: 0.85rem;
+    color: #adb5bd;
+}
+
+.footer-payment-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.payment-icon {
+    font-size: 1.75rem;
+    color: #adb5bd;
+    transition: color 0.2s ease;
+}
+
+.payment-icon:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .footer-trust-badges {
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+    .trust-badge-item i {
+        font-size: 1.5rem;
+    }
+    .trust-badge-number {
+        font-size: 1.25rem;
+    }
+    .footer-payment-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
 
 .modal-title { color: var(--primary-dark); font-weight: 600; }
 .modal-footer .btn-primary { background-color: var(--primary); border-color: var(--primary); }
