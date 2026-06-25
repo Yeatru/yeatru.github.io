@@ -102,6 +102,25 @@ a:hover {
     box-shadow: 0 6px 16px rgba(255, 125, 48, 0.35);
 }
 
+/* Compact CTA button for navigation bar */
+.btn-nav-cta {
+    padding: 0.45rem 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(255, 125, 48, 0.25) !important;
+}
+
+.btn-nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(255, 125, 48, 0.35) !important;
+}
+
+.btn-nav-cta i {
+    font-size: 0.8rem;
+}
+
 .btn {
     border-radius: var(--radius) !important;
 }
@@ -1323,12 +1342,18 @@ body.edit-mode [contenteditable="true"]:focus {
 
 .lang-dropdown-btn {
     color: var(--text-primary) !important;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--border);
     white-space: nowrap;
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 6px !important;
+    background-color: #fff;
 }
 
 .lang-dropdown-btn:hover {
     background-color: var(--bg-light);
+    border-color: var(--primary);
+    color: var(--primary) !important;
 }
 
 .login-btn, .logout-btn {
