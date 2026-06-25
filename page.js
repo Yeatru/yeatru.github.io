@@ -663,7 +663,7 @@ function addProcessStep() {
 }
 
 function renderPlansPage(data) {
-    const container = document.getElementById('plansGrid');
+    const container = document.getElementById('plansContainer') || document.getElementById('plansGrid');
     if (!container) return;
     container.innerHTML = '';
     (data.plans || []).forEach((plan, idx) => {
