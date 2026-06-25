@@ -27,10 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
-                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
@@ -85,8 +82,12 @@
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
-                    <button id="loginBtn" class="btn btn-outline-primary d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Admin</button>
-                    <button id="logoutBtn" class="btn btn-outline-primary d-none">Logout</button>
+                    <button id="loginBtn" class="btn admin-nav-btn d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+                        <i class="fas fa-user-shield"></i>
+                    </button>
+                    <button id="logoutBtn" class="btn admin-nav-btn d-none">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
                 </div>
             </div>
         </div>

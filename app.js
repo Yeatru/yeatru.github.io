@@ -509,6 +509,9 @@ async function loadRemoteSiteData() {
         const response = await fetch(REMOTE_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
         if (!response.ok) throw new Error('site-data.json not found');
         const data = await response.json();
+        try {
+            localStorage.setItem('yeatruSiteDataCache', JSON.stringify(data));
+        } catch (e) {}
         applySiteData(data, { silent: true });
         console.info('已从 site-data.json 读取公开数据');
     } catch (error) {
@@ -1100,13 +1103,23 @@ function collectAplusBlocks() {
 }
 
 function renderBrandLogo() {
-    const url = localStorage.getItem('yeatruBrandLogo');
+    let url = localStorage.getItem('yeatruBrandLogo');
     const img = document.getElementById('brandLogoImg');
     const fallback = document.getElementById('brandLogoFallback');
     const footerImg = document.getElementById('footerLogoImg');
     const footerFallback = document.getElementById('footerLogoFallback');
     
     if (!img || !fallback) return;
+    
+    if (!url) {
+        try {
+            const data = localStorage.getItem('yeatruSiteDataCache');
+            if (data) {
+                const parsed = JSON.parse(data);
+                if (parsed.logo) url = parsed.logo;
+            }
+        } catch (e) {}
+    }
     
     if (url) {
         img.src = url;
