@@ -1973,6 +1973,93 @@
                 }
             }
         }
+        
+        // ===== Phase 5: Multi-language (i18n) =====
+        const translations = {
+            en: {
+                nav: { home: 'Home', products: 'Products', services: 'Sourcing Service', about: 'About Us', blog: 'Blog', contact: 'Contact' },
+                hero: { tag1: 'Popular for Amazon Sellers', title1: 'Small MOQ One-Stop Sourcing for Amazon & TikTok Sellers' },
+                searchPlaceholder: 'Search products, services, guides...',
+                contactTitle: 'Request a Free Quote',
+                contactBtn: 'Send Request',
+                inquiryHeader: 'Contact Us',
+                inquirySub: 'Choose your preferred channel'
+            },
+            zh: {
+                nav: { home: '首页', products: '产品', services: '采购服务', about: '关于我们', blog: '博客', contact: '联系我们' },
+                hero: { tag1: '亚马逊卖家首选', title1: '低起订量一站式采购服务，助力亚马逊与 TikTok 卖家' },
+                searchPlaceholder: '搜索产品、服务、指南...',
+                contactTitle: '免费询价',
+                contactBtn: '发送询价',
+                inquiryHeader: '联系我们',
+                inquirySub: '选择您的联系方式'
+            }
+        };
+        
+        const langItems = document.querySelectorAll('[data-lang]');
+        const currentLangSpan = document.getElementById('current-lang');
+        const savedLang = localStorage.getItem('yeatru_lang') || 'en';
+        
+        function applyLanguage(lang) {
+            const t = translations[lang] || translations.en;
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === 'index.html' && t.nav.home) link.textContent = t.nav.home;
+                if (href === 'products.html' && t.nav.products) link.textContent = t.nav.products;
+                if (href === 'about.html' && t.nav.about) link.textContent = t.nav.about;
+                if (href === 'blog.html' && t.nav.blog) link.textContent = t.nav.blog;
+                if (href === 'contact.html' && t.nav.contact) link.textContent = t.nav.contact;
+            });
+            
+            // Update search placeholder
+            const searchInputEl = document.getElementById('navSearchInput');
+            if (searchInputEl && t.searchPlaceholder) {
+                searchInputEl.placeholder = t.searchPlaceholder;
+            }
+            
+            // Update contact form
+            const contactTitleEl = document.querySelector('.form-title');
+            if (contactTitleEl && t.contactTitle) {
+                contactTitleEl.textContent = t.contactTitle;
+            }
+            
+            const contactBtnEl = document.querySelector('.contact-form button[type="submit"]');
+            if (contactBtnEl && t.contactBtn) {
+                contactBtnEl.innerHTML = '<i class="fas fa-paper-plane me-2"></i>' + t.contactBtn;
+            }
+            
+            // Update inquiry panel
+            const inquiryHeaderEl = document.querySelector('.float-inquiry-header h4');
+            if (inquiryHeaderEl && t.inquiryHeader) {
+                inquiryHeaderEl.textContent = t.inquiryHeader;
+            }
+            
+            const inquirySubEl = document.querySelector('.float-inquiry-header p');
+            if (inquirySubEl && t.inquirySub) {
+                inquirySubEl.textContent = t.inquirySub;
+            }
+        }
+        
+        // Apply saved language on load
+        if (savedLang === 'zh') {
+            applyLanguage('zh');
+            if (currentLangSpan) currentLangSpan.textContent = '中文';
+        }
+        
+        langItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.dataset.lang;
+                localStorage.setItem('yeatru_lang', lang);
+                if (currentLangSpan) {
+                    currentLangSpan.textContent = lang === 'zh' ? '中文' : lang.toUpperCase();
+                }
+                applyLanguage(lang);
+            });
+        });
     });
     </script>
     
