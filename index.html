@@ -1984,14 +1984,32 @@
                 inquiryHeader: 'Contact Us',
                 inquirySub: 'Choose your preferred channel'
             },
-            zh: {
-                nav: { home: '首页', products: '产品', services: '采购服务', about: '关于我们', blog: '博客', contact: '联系我们' },
-                hero: { tag1: '亚马逊卖家首选', title1: '低起订量一站式采购服务，助力亚马逊与 TikTok 卖家' },
-                searchPlaceholder: '搜索产品、服务、指南...',
-                contactTitle: '免费询价',
-                contactBtn: '发送询价',
-                inquiryHeader: '联系我们',
-                inquirySub: '选择您的联系方式'
+            es: {
+                nav: { home: 'Inicio', products: 'Productos', services: 'Servicios de Compras', about: 'Nosotros', blog: 'Blog', contact: 'Contacto' },
+                hero: { tag1: 'Popular para Vendedores Amazon', title1: 'Compras con MOQ Bajo para Vendedores Amazon y TikTok' },
+                searchPlaceholder: 'Buscar productos, servicios, guías...',
+                contactTitle: 'Solicitar Cotización Gratis',
+                contactBtn: 'Enviar Solicitud',
+                inquiryHeader: 'Contáctenos',
+                inquirySub: 'Elija su canal preferido'
+            },
+            fr: {
+                nav: { home: 'Accueil', products: 'Produits', services: 'Services d\'Approvisionnement', about: 'À Propos', blog: 'Blog', contact: 'Contact' },
+                hero: { tag1: 'Populaire pour Vendeurs Amazon', title1: 'Approvisionnement MOQ Bas pour Vendeurs Amazon et TikTok' },
+                searchPlaceholder: 'Rechercher produits, services, guides...',
+                contactTitle: 'Demande de Devis Gratuit',
+                contactBtn: 'Envoyer Demande',
+                inquiryHeader: 'Contactez-nous',
+                inquirySub: 'Choisissez votre canal préféré'
+            },
+            ru: {
+                nav: { home: 'Главная', products: 'Продукты', services: 'Услуги Закупок', about: 'О Нас', blog: 'Блог', contact: 'Контакты' },
+                hero: { tag1: 'Популярно для Amazon Sellers', title1: 'Закупки с Низким MOQ для Amazon и TikTok Sellers' },
+                searchPlaceholder: 'Поиск продуктов, услуг, руководств...',
+                contactTitle: 'Запросить Бесплатную Цену',
+                contactBtn: 'Отправить Запрос',
+                inquiryHeader: 'Свяжитесь с нами',
+                inquirySub: 'Выберите предпочтительный канал'
             }
         };
         
@@ -2043,9 +2061,10 @@
         }
         
         // Apply saved language on load
-        if (savedLang === 'zh') {
-            applyLanguage('zh');
-            if (currentLangSpan) currentLangSpan.textContent = '中文';
+        applyLanguage(savedLang);
+        if (currentLangSpan) {
+            const langLabels = { en: 'EN', es: 'ES', fr: 'FR', ru: 'RU' };
+            currentLangSpan.textContent = langLabels[savedLang] || 'EN';
         }
         
         langItems.forEach(item => {
@@ -2054,7 +2073,8 @@
                 const lang = this.dataset.lang;
                 localStorage.setItem('yeatru_lang', lang);
                 if (currentLangSpan) {
-                    currentLangSpan.textContent = lang === 'zh' ? '中文' : lang.toUpperCase();
+                    const langLabels = { en: 'EN', es: 'ES', fr: 'FR', ru: 'RU' };
+                    currentLangSpan.textContent = langLabels[lang] || 'EN';
                 }
                 applyLanguage(lang);
             });
