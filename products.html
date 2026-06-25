@@ -97,7 +97,7 @@
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
-                    <button id="loginBtn" class="btn admin-nav-btn d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+                    <button id="loginBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
                         <i class="fas fa-user-shield"></i>
                     </button>
                     <button id="logoutBtn" class="btn admin-nav-btn d-none">
@@ -122,27 +122,27 @@
         <!-- Category Management Section (Admin Only) -->
         <section id="categoryManagement" class="py-4 bg-admin-panel" style="display:none;">
             <div class="container">
-                <h5 class="text-admin mb-3"><i class="fas fa-tags me-2"></i><span data-i18n="products.categoryManagement">Category Management</span></h5>
-                <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                    <h5 class="text-admin mb-0"><i class="fas fa-tags me-2"></i><span data-i18n="products.categoryManagement">Category Management</span></h5>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="small text-muted"><i class="fas fa-shield-alt me-1"></i>Admin Mode</span>
+                        <button class="btn btn-sm btn-primary" id="addProductBtn" data-bs-toggle="modal" data-bs-target="#productModal" title="Add New Product">
+                            <i class="fas fa-plus me-1"></i><span data-i18n="products.addProduct">Add Product</span>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" id="exportDataBtn" title="Export Data">
+                            <i class="fas fa-download me-1"></i>Export
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center gap-3">
                     <div id="categoryList" class="d-flex flex-wrap gap-2"></div>
-                    <div class="input-group input-group-sm" style="max-width: 250px;">
+                    <div class="input-group" style="flex: 1; min-width: 200px; max-width: 300px;">
                         <input type="text" class="form-control" id="newCategory" placeholder="Enter new category name" data-i18n-placeholder="products.enterCategory">
-                        <button class="btn btn-outline-primary" id="addCategoryBtn" data-i18n="products.addCategory">Add Category</button>
+                        <button class="btn btn-primary" id="addCategoryBtn" data-i18n="products.addCategory">Add Category</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Admin Data Tools (Admin Only) -->
-        <div id="adminDataTools" class="admin-toolbar d-none align-items-center gap-2 p-2 bg-dark text-white">
-            <span class="me-auto small"><i class="fas fa-shield-alt me-1"></i>Admin Mode</span>
-            <button class="btn btn-sm btn-outline-light" id="addProductBtn" data-bs-toggle="modal" data-bs-target="#productModal" title="Add New Product">
-                <i class="fas fa-plus me-1"></i><span data-i18n="products.addProduct">Add Product</span>
-            </button>
-            <button class="btn btn-sm btn-outline-light" id="exportDataBtn" title="Export Data">
-                <i class="fas fa-download me-1"></i>Export
-            </button>
-        </div>
 
         <section class="py-5 bg-white">
             <div class="container">

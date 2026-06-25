@@ -1529,6 +1529,7 @@ body.edit-mode [contenteditable="true"]:focus {
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
 }
 
 .banner-image {
@@ -4352,7 +4353,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
    ============================================ */
 .page-hero {
     background: linear-gradient(135deg, var(--primary-50) 0%, #FFFFFF 100%);
-    padding: 3rem 0 4rem;
+    padding: 2rem 0 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -6867,4 +6868,19 @@ section:first-of-type {
     outline: 2px dashed var(--primary);
     outline-offset: 4px;
     background-color: rgba(0,123,255,0.05);
+}
+
+/* Category Management Layout */
+#categoryList .badge {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#categoryList .badge .btn-close {
+    margin-left: 0.5rem;
+    padding: 0.25rem;
 }
