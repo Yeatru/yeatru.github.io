@@ -119,6 +119,31 @@
             </div>
         </section>
 
+        <!-- Category Management Section (Admin Only) -->
+        <section id="categoryManagement" class="py-4 bg-admin-panel" style="display:none;">
+            <div class="container">
+                <h5 class="text-admin mb-3"><i class="fas fa-tags me-2"></i><span data-i18n="products.categoryManagement">Category Management</span></h5>
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                    <div id="categoryList" class="d-flex flex-wrap gap-2"></div>
+                    <div class="input-group input-group-sm" style="max-width: 250px;">
+                        <input type="text" class="form-control" id="newCategory" placeholder="Enter new category name" data-i18n-placeholder="products.enterCategory">
+                        <button class="btn btn-outline-primary" id="addCategoryBtn" data-i18n="products.addCategory">Add Category</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Data Tools (Admin Only) -->
+        <div id="adminDataTools" class="admin-toolbar d-none align-items-center gap-2 p-2 bg-dark text-white">
+            <span class="me-auto small"><i class="fas fa-shield-alt me-1"></i>Admin Mode</span>
+            <button class="btn btn-sm btn-outline-light" id="addProductBtn" data-bs-toggle="modal" data-bs-target="#productModal" title="Add New Product">
+                <i class="fas fa-plus me-1"></i><span data-i18n="products.addProduct">Add Product</span>
+            </button>
+            <button class="btn btn-sm btn-outline-light" id="exportDataBtn" title="Export Data">
+                <i class="fas fa-download me-1"></i>Export
+            </button>
+        </div>
+
         <section class="py-5 bg-white">
             <div class="container">
                 <div class="product-filter-bar mb-4">
@@ -131,6 +156,65 @@
             </div>
         </section>
     </div>
+
+    <section id="productDetailPage" class="product-detail-page" style="display:none;">
+        <div class="container">
+            <button class="detail-back-btn" id="detailBackBtn"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.back">Back to Products</span></button>
+
+            <div class="detail-toolbar">
+                <div class="detail-mode-toggle" id="detailModeToggle" style="display:none;">
+                    <button type="button" data-mode="preview" class="active" data-i18n="detail.preview">Preview</button>
+                    <button type="button" data-mode="edit" data-i18n="detail.edit">Edit</button>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary" id="detailQuoteBtn"><i class="fas fa-file-invoice-dollar me-1"></i> <span data-i18n="products.quote">Get a Quote</span></button>
+                <span class="save-status-badge" id="saveStatusBadge" style="display:none;"><i class="fas fa-circle"></i> <span></span></span>
+            </div>
+
+            <div class="detail-main">
+                <div>
+                    <img id="detailImage" class="detail-image" src="" alt="Product image">
+                    <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
+                </div>
+                <div class="detail-info">
+                    <h1 id="detailName">—</h1>
+                    <input type="text" class="form-control mb-2 detail-edit-only" id="detailNameInput" placeholder="Product name" style="display:none;">
+                    <div class="detail-meta">
+                        <span data-i18n="products.category">Category</span>: <strong id="detailCategory">—</strong>
+                        &nbsp;|&nbsp;
+                        <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
+                    </div>
+                    <table class="detail-spec-table">
+                        <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
+                        <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
+                    </table>
+                    <div class="detail-price-big" id="detailPriceBig">—</div>
+                    <p class="text-muted" id="detailDesc">—</p>
+                    <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
+
+                    <div id="variationsDisplay" class="variations-display" style="display:none;">
+                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div id="variationsList" class="variations-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aplus-section">
+                <h3 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i><span data-i18n="aplus.title">A+ Content</span></h3>
+                <div class="aplus-blocks" id="aplusBlocks"></div>
+                <div class="aplus-add-block-bar" id="aplusAddBar">
+                    <span class="me-2 small text-muted" data-i18n="aplus.addBlock">Add a content block:</span>
+                    <button type="button" data-add-type="hero"><i class="fas fa-image"></i> <span data-i18n="aplus.blockHero">Hero Banner</span></button>
+                    <button type="button" data-add-type="text"><i class="fas fa-paragraph"></i> <span data-i18n="aplus.blockText">Text</span></button>
+                    <button type="button" data-add-type="textImage"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockTextImage">Text + Image</span></button>
+                    <button type="button" data-add-type="imageText"><i class="fas fa-columns"></i> <span data-i18n="aplus.blockImageText">Image + Text</span></button>
+                    <button type="button" data-add-type="features"><i class="fas fa-list"></i> <span data-i18n="aplus.blockFeatures">Feature Grid</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="float-inquiry-widget" id="floatInquiryWidget">
         <button class="float-inquiry-toggle" id="floatInquiryToggle" aria-label="Contact options">

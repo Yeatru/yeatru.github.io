@@ -6801,3 +6801,70 @@ section:first-of-type {
 .final-cta-box {
     padding: 40px 32px !important;
 }
+
+/* ========== Admin Toolbar & Export Panel ========== */
+.admin-toolbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.admin-export-panel {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1050;
+    width: 220px;
+    background: var(--gray-900);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.admin-export-header {
+    background: var(--gray-800);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-export-header h6 {
+    margin: 0;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.admin-export-body {
+    padding: 12px;
+}
+
+.admin-export-body .btn {
+    font-size: 0.8rem;
+}
+
+/* Admin Panel Colors */
+.bg-admin-panel {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary);
+}
+
+.text-admin {
+    color: var(--primary);
+}
+
+/* Editable Content Indicator */
+[data-editable="true"] {
+    outline: 2px dashed var(--primary);
+    outline-offset: 4px;
+    cursor: text;
+}
+
+.edit-mode-active [contenteditable="true"] {
+    outline: 2px dashed var(--primary);
+    outline-offset: 4px;
+    background-color: rgba(0,123,255,0.05);
+}
