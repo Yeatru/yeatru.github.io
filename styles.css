@@ -1444,20 +1444,30 @@ body.edit-mode [contenteditable="true"]:focus {
     color: var(--text-primary);
     margin-bottom: 1rem;
     line-height: 1.2;
+    min-height: 3.6em; /* Ensures consistent title area */
+    display: flex;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
     .banner-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-title {
+        font-size: 2.8rem;
     }
 }
 
 .banner-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     max-width: 500px;
     line-height: 1.7;
+    min-height: 4.5em; /* Ensures consistent subtitle area */
 }
 
 .banner-features {
@@ -1465,6 +1475,7 @@ body.edit-mode [contenteditable="true"]:focus {
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 2rem;
+    min-height: 1.7em;
 }
 
 .banner-feature {
@@ -1490,19 +1501,59 @@ body.edit-mode [contenteditable="true"]:focus {
 .banner-image {
     position: relative;
     display: none;
+    width: 100%;
 }
 
 @media (min-width: 992px) {
     .banner-image {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+}
+
+.banner-image-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4 / 3; /* Unified image ratio */
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    background: var(--bg-light);
 }
 
 .banner-image img {
     width: 100%;
-    max-width: 500px;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    height: 100%;
+    object-fit: cover; /* Unified image display */
+    object-position: center;
+    display: block;
+}
+
+.banner-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #E8F0FE 100%);
+    color: var(--primary);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.banner-image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.4;
+}
+
+.banner-image-placeholder span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.6;
 }
 
 .banner-indicators {
