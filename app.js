@@ -207,12 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    safeAddEventListener('logoutBtn', 'click', function () {
-        localStorage.removeItem('yeatruAdminLoggedIn');
-        updateLoginUI(false);
-        const detailPage = document.getElementById('productDetailPage');
-        if (detailPage && detailPage.classList.contains('active') && currentDetailMode === 'edit') {
-            setDetailMode('preview');
+    safeAddEventListener('authBtn', 'click', function () {
+        if (isAdmin()) {
+            localStorage.removeItem('yeatruAdminLoggedIn');
+            updateLoginUI(false);
+            const detailPage = document.getElementById('productDetailPage');
+            if (detailPage && detailPage.classList.contains('active') && currentDetailMode === 'edit') {
+                setDetailMode('preview');
+            }
         }
     });
 
@@ -425,27 +427,29 @@ function bindLanguageEvents() {
 }
 
 function updateLoginUI(loggedIn) {
-    const loginBtn = document.getElementById('loginBtn');
-    const logoutBtn = document.getElementById('logoutBtn');
+    const authBtn = document.getElementById('authBtn');
     const addProductBtn = document.getElementById('addProductBtn');
     const categoryManagement = document.getElementById('categoryManagement');
     const brandLogoEdit = document.getElementById('brandLogoEdit');
     const adminExportPanel = document.getElementById('adminExportPanel');
-    if (loggedIn) {
-        if (loginBtn) loginBtn.classList.add('d-none');
-        if (logoutBtn) logoutBtn.classList.remove('d-none');
-        if (addProductBtn) addProductBtn.classList.remove('d-none');
-        if (categoryManagement) categoryManagement.style.display = 'block';
-        if (brandLogoEdit) brandLogoEdit.classList.add('admin-visible');
-        if (adminExportPanel) adminExportPanel.classList.remove('d-none');
-    } else {
-        if (loginBtn) loginBtn.classList.remove('d-none');
-        if (logoutBtn) logoutBtn.classList.add('d-none');
-        if (addProductBtn) addProductBtn.classList.add('d-none');
-        if (categoryManagement) categoryManagement.style.display = 'none';
-        if (brandLogoEdit) brandLogoEdit.classList.remove('admin-visible');
-        if (adminExportPanel) adminExportPanel.classList.add('d-none');
+    if (authBtn) {
+        const icon = authBtn.querySelector('i');
+        if (loggedIn) {
+            if (icon) icon.className = 'fas fa-sign-out-alt';
+            authBtn.title = 'Admin Logout';
+            authBtn.setAttribute('data-bs-toggle', '');
+            authBtn.setAttribute('data-bs-target', '');
+        } else {
+            if (icon) icon.className = 'fas fa-user-shield';
+            authBtn.title = 'Admin Login';
+            authBtn.setAttribute('data-bs-toggle', 'modal');
+            authBtn.setAttribute('data-bs-target', '#loginModal');
+        }
     }
+    if (addProductBtn) addProductBtn.classList.toggle('d-none', !loggedIn);
+    if (categoryManagement) categoryManagement.style.display = loggedIn ? 'block' : 'none';
+    if (brandLogoEdit) brandLogoEdit.classList.toggle('admin-visible', loggedIn);
+    if (adminExportPanel) adminExportPanel.classList.toggle('d-none', !loggedIn);
     renderCategories();
     renderProducts();
     renderIndexHotProducts();

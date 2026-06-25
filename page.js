@@ -1043,11 +1043,22 @@ function importPageData(file) {
 }
 
 function updateLoginUI(loggedIn) {
-    const loginBtn = document.getElementById('loginBtn');
-    const logoutBtn = document.getElementById('logoutBtn');
+    const authBtn = document.getElementById('authBtn');
     const pageEditBtn = document.getElementById('pageEditBtn');
-    if (loginBtn) loginBtn.classList.toggle('d-none', loggedIn);
-    if (logoutBtn) logoutBtn.classList.toggle('d-none', !loggedIn);
+    if (authBtn) {
+        const icon = authBtn.querySelector('i');
+        if (loggedIn) {
+            if (icon) icon.className = 'fas fa-sign-out-alt';
+            authBtn.title = 'Admin Logout';
+            authBtn.setAttribute('data-bs-toggle', '');
+            authBtn.setAttribute('data-bs-target', '');
+        } else {
+            if (icon) icon.className = 'fas fa-user-shield';
+            authBtn.title = 'Admin Login';
+            authBtn.setAttribute('data-bs-toggle', 'modal');
+            authBtn.setAttribute('data-bs-target', '#loginModal');
+        }
+    }
     if (pageEditBtn) pageEditBtn.style.display = loggedIn ? 'inline-block' : 'none';
 }
 
@@ -1078,12 +1089,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', function () {
-            localStorage.removeItem('yeatruAdminLoggedIn');
-            updateLoginUI(false);
-            setPageMode('preview');
+    const authBtn = document.getElementById('authBtn');
+    if (authBtn) {
+        authBtn.addEventListener('click', function () {
+            if (localStorage.getItem('yeatruAdminLoggedIn') === 'true') {
+                localStorage.removeItem('yeatruAdminLoggedIn');
+                updateLoginUI(false);
+                setPageMode('preview');
+            }
         });
     }
 
