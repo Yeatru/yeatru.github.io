@@ -157,6 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Admin Export Panel close button
+    document.getElementById('closeExportPanel') && document.getElementById('closeExportPanel').addEventListener('click', function () {
+        const panel = document.getElementById('adminExportPanel');
+        if (panel) panel.classList.add('d-none');
+    });
+
     document.getElementById('addCategoryBtn').addEventListener('click', function () {
         const newCategory = document.getElementById('newCategory').value.trim();
         if (newCategory && !getCategories().includes(newCategory)) {
@@ -338,22 +344,29 @@ function updateLoginUI(loggedIn) {
     const adminDataTools = document.getElementById('adminDataTools');
     const categoryManagement = document.getElementById('categoryManagement');
     const brandLogoEdit = document.getElementById('brandLogoEdit');
+    const adminExportPanel = document.getElementById('adminExportPanel');
     if (loggedIn) {
         loginBtn.classList.add('d-none');
         logoutBtn.classList.remove('d-none');
         addProductBtn.classList.remove('d-none');
-        adminDataTools.classList.remove('d-none');
-        adminDataTools.classList.add('d-flex');
-        categoryManagement.style.display = 'block';
-        brandLogoEdit.classList.add('admin-visible');
+        if (adminDataTools) {
+            adminDataTools.classList.remove('d-none');
+            adminDataTools.classList.add('d-flex');
+        }
+        if (categoryManagement) categoryManagement.style.display = 'block';
+        if (brandLogoEdit) brandLogoEdit.classList.add('admin-visible');
+        if (adminExportPanel) adminExportPanel.classList.remove('d-none');
     } else {
         loginBtn.classList.remove('d-none');
         logoutBtn.classList.add('d-none');
         addProductBtn.classList.add('d-none');
-        adminDataTools.classList.add('d-none');
-        adminDataTools.classList.remove('d-flex');
-        categoryManagement.style.display = 'none';
-        brandLogoEdit.classList.remove('admin-visible');
+        if (adminDataTools) {
+            adminDataTools.classList.add('d-none');
+            adminDataTools.classList.remove('d-flex');
+        }
+        if (categoryManagement) categoryManagement.style.display = 'none';
+        if (brandLogoEdit) brandLogoEdit.classList.remove('admin-visible');
+        if (adminExportPanel) adminExportPanel.classList.add('d-none');
     }
     renderCategories();
     renderProducts();
