@@ -472,26 +472,6 @@
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
     document.addEventListener('DOMContentLoaded', function() {
-        const currencyItems = document.querySelectorAll('[data-currency]');
-        const currentCurrencyEl = document.getElementById('current-currency');
-        const savedCurrency = localStorage.getItem('yeatru_currency') || 'USD';
-        
-        if (currentCurrencyEl) {
-            currentCurrencyEl.textContent = savedCurrency;
-        }
-        
-        currencyItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const currency = this.dataset.currency;
-                localStorage.setItem('yeatru_currency', currency);
-                if (currentCurrencyEl) {
-                    currentCurrencyEl.textContent = currency;
-                }
-                document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
-            });
-        });
-        
         const searchToggle = document.getElementById('navSearchToggle');
         const searchDropdown = document.getElementById('navSearchDropdown');
         const searchInput = document.getElementById('navSearchInput');
