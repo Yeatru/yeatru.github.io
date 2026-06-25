@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logistics & Warehousing Service | Yeatru Sourcing - China Sourcing Agent</title>
-    <meta name="description" content="Complete logistics and warehousing solutions including sea freight, air freight, express delivery, and free storage with goods consolidation services.">
+    <title>Logistics & Warehousing | Yeatru Sourcing - China Shipping Service</title>
+    <meta name="description" content="Free warehousing, goods consolidation, and competitive door-to-door shipping from China. FBA prep, sea freight, air freight, express delivery.">
     <link rel="canonical" href="https://www.yeatru.com/logistics-shipping.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,338 +14,344 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
-                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
-                </span>
+                <span class="brand-logo-box" title="Yeatru Sourcing Logo">YC</span>
+                <span>Yeatru Sourcing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
-                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?category=Home+Decor">Home Decor</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Kitchen">Kitchen</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Silicone">Silicone</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Packaging">Packaging</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Bags">Bags &amp; Cases</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Electronics">Electronics</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
                             <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
-                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics & Warehousing</a></li>
+                            <li><a class="dropdown-item active" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
                             <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
-                            <li><a class="dropdown-item" href="design-photography.html">Design & Photography</a></li>
+                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Service Plans</a></li>
-                    <li class="nav-item"><a class="nav-link" href="payment.html">Payment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="dropdown lang-selector">
-                    <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-globe"></i> <span id="current-lang">English</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                        <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
-                    </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="dropdown lang-selector">
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span>EN</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Русский</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
+                        <i class="fas fa-comment-dots me-1"></i>Get Quote
+                    </a>
                 </div>
-                <button id="loginBtn" class="btn login-btn ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button id="logoutBtn" class="btn logout-btn ms-2 d-none">Logout</button>
             </div>
         </div>
     </nav>
 
-    <section class="page-header-gradient py-8">
+    <!-- Page Hero -->
+    <section class="page-hero">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <span class="section-eyebrow-custom">OUR SERVICES</span>
-                    <div class="section-divider-custom mx-auto mb-4"></div>
-                    <h1 class="page-title">Logistics & Warehousing</h1>
-                    <p class="page-subtitle">Complete logistics and warehousing solutions to streamline your supply chain from China to worldwide.</p>
+            <nav class="breadcrumb-bar" aria-label="breadcrumb">
+                <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span>
+                <a href="#">Sourcing Service</a> <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current">Logistics &amp; Shipping</span>
+            </nav>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <span class="hero-tag"><i class="fas fa-shipping-fast me-2"></i>Logistics &amp; Warehousing</span>
+                    <h1 class="page-hero-title">Door-to-Door Shipping from China — At the Best Rates</h1>
+                    <p class="page-hero-subtitle">Free warehousing, goods consolidation, FBA prep, and global shipping. We handle the paperwork; you track the deliveries.</p>
+                    <div class="banner-features">
+                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Free 60-Day Storage</span>
+                        <span class="banner-feature"><i class="fas fa-check-circle"></i> DHL/FedEx/Sea/Air</span>
+                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Door-to-Door Service</span>
+                    </div>
+                    <div class="banner-cta">
+                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Get Shipping Quote</a>
+                        <a href="#process" class="btn btn-outline-primary">See Process</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="page-hero-image">
+                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Global Shipping" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                        <div class="page-hero-image-placeholder">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Global Shipping</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Why Choose Us -->
+    <section id="why" class="py-5 bg-white">
+        <div class="container">
+            <div class="section-title-wrap text-center mb-5">
+                <span class="section-eyebrow">Why Our Logistics</span>
+                <div class="section-divider"></div>
+                <h2 class="section-title">One Partner for Storage, Consolidation &amp; Shipping</h2>
+                <p class="section-subtitle">Save 30-50% on shipping by consolidating multiple orders into one shipment. We handle customs, paperwork, and last-mile delivery.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-warehouse"></i></div>
+                        <h3 class="advantage-title">Free Warehousing</h3>
+                        <p class="advantage-desc">60 days free storage for all sourcing clients. Real-time inventory tracking online.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-boxes-packing"></i></div>
+                        <h3 class="advantage-title">Goods Consolidation</h3>
+                        <p class="advantage-desc">Combine orders from multiple suppliers into one shipment — save 40% on shipping costs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-plane-departure"></i></div>
+                        <h3 class="advantage-title">Multi-Modal Shipping</h3>
+                        <p class="advantage-desc">Express (DHL/FedEx), Air Freight, Sea Freight, and combined Sea+Express for best value.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-amazon"></i></div>
+                        <h3 class="advantage-title">Amazon FBA Prep</h3>
+                        <p class="advantage-desc">FNSKU labeling, poly bagging, bundling, and direct delivery to Amazon warehouses.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3 class="advantage-title">Customs &amp; Clearance</h3>
+                        <p class="advantage-desc">Export declaration, customs clearance, duty/tax estimation, and HS code optimization.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-door-open"></i></div>
+                        <h3 class="advantage-title">Door-to-Door</h3>
+                        <p class="advantage-desc">Full DDP/DDU options to USA, EU, UK, AU, MX, CA, and 50+ other countries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Process -->
+    <section id="process" class="py-5" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title-wrap text-center mb-5">
+                <span class="section-eyebrow">Shipping Process</span>
+                <div class="section-divider"></div>
+                <h2 class="section-title">4-Step Shipping Workflow</h2>
+                <p class="section-subtitle">From factory pickup to your warehouse — typically 7-45 days.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Pickup &amp; Warehouse</h3>
+                        <p class="step-desc">We collect from your suppliers, inspect, and store in our Yiwu warehouse.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Consolidation</h3>
+                        <p class="step-desc">Combine multiple orders into one shipment. Free photo of consolidated cargo before shipping.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Shipping &amp; Customs</h3>
+                        <p class="step-desc">We book space, handle export declaration, and clear destination customs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Last-Mile Delivery</h3>
+                        <p class="step-desc">Door-to-door delivery to your address or Amazon FBA warehouse with tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Options -->
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Logistics & Warehousing" class="img-fluid rounded shadow">
+                    <span class="section-eyebrow">Shipping Options</span>
+                    <div class="section-divider" style="margin: 0.75rem 0 1.5rem;"></div>
+                    <h2 class="section-title mb-3">Choose Your Speed &amp; Cost</h2>
+                    <p class="section-subtitle text-start" style="margin: 0 0 1.5rem;">Compare methods for your shipment.</p>
+                    <div class="check-list">
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Express (DHL/FedEx/UPS):</strong> 5-10 days, $5-15/kg — best for samples and small orders</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Air Freight:</strong> 7-15 days, $3-8/kg — best for 100-500kg shipments</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Sea Freight (LCL):</strong> 25-40 days, $0.5-1.5/kg — best for 1-15 CBM</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Sea Freight (FCL):</strong> 25-35 days, full container — best for 15+ CBM</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Sea+Express Combined:</strong> 18-25 days, cost-effective for 0.5-3 CBM</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>DDP (Delivered Duty Paid):</strong> All duties and taxes included in shipping cost</div></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i><div><strong>Amazon FBA Direct:</strong> We deliver directly to Amazon warehouses (US, EU, JP)</div></div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="section-title mb-4">One-Stop Logistics & Storage</h2>
-                    <p class="text-muted mb-4">We offer comprehensive logistics and warehousing solutions to get your goods from China to your destination safely and cost-effectively. From free storage and goods consolidation to sea freight, air freight, and express delivery, we've got you covered with competitive rates and reliable service.</p>
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-3">
-                            <div class="me-3 text-primary"><i class="fas fa-warehouse fa-lg"></i></div>
-                            <div>
-                                <h5>Free Warehousing</h5>
-                                <p class="text-muted mb-0">1-2 months free storage in our Yiwu warehouse for goods consolidation.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start mb-3">
-                            <div class="me-3 text-primary"><i class="fas fa-ship fa-lg"></i></div>
-                            <div>
-                                <h5>Sea Freight</h5>
-                                <p class="text-muted mb-0">Cost-effective for large shipments, FCL and LCL options available worldwide.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start mb-3">
-                            <div class="me-3 text-primary"><i class="fas fa-plane fa-lg"></i></div>
-                            <div>
-                                <h5>Air Freight</h5>
-                                <p class="text-muted mb-0">Fast delivery for urgent orders, ideal for smaller high-value goods.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start">
-                            <div class="me-3 text-primary"><i class="fas fa-truck fa-lg"></i></div>
-                            <div>
-                                <h5>Express Delivery</h5>
-                                <p class="text-muted mb-0">Door-to-door via DHL/FedEx/UPS, perfect for samples and small parcels.</p>
-                            </div>
+                    <div class="page-hero-image">
+                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Yiwu Warehouse" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                        <div class="page-hero-image-placeholder">
+                            <i class="fas fa-warehouse"></i>
+                            <span>Yiwu Warehouse</span>
                         </div>
                     </div>
-                    <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
+    <!-- FAQ -->
+    <section class="py-5" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow-custom">WAREHOUSE SERVICES</span>
-                <div class="section-divider mx-auto"></div>
-                <h2 class="section-title">Our Warehousing Solutions</h2>
-                <p class="page-subtitle">Safe, secure, and flexible storage options for your goods</p>
+                <span class="section-eyebrow">FAQ</span>
+                <div class="section-divider"></div>
+                <h2 class="section-title">Logistics &amp; Shipping FAQs</h2>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">01</div>
-                        <h4>Goods Consolidation</h4>
-                        <p>Combine orders from multiple suppliers into one shipment to save shipping costs.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item active">
+                        <button class="faq-question"><span>How long does shipping take from China?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Express: 5-10 days. Air: 7-15 days. Sea: 25-40 days. Door-to-door includes customs clearance, which adds 2-5 days.</p></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">02</div>
-                        <h4>Free Storage</h4>
-                        <p>1-2 months of free warehousing while you collect goods from different suppliers.</p>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>What are your shipping rates?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Rates depend on destination, weight, and volume. We provide free quotes within 24 hours. Our rates are 15-30% below retail shipping platforms.</p></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">03</div>
-                        <h4>Inventory Management</h4>
-                        <p>Real-time stock tracking and inventory reports to keep you informed.</p>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Do you offer free warehousing?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Yes. All sourcing clients get 60 days free storage. Extended storage is $0.5/CBM/day. Real-time inventory dashboard included.</p></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">04</div>
-                        <h4>Repackaging & Labeling</h4>
-                        <p>Custom packaging, labeling, and re-boxing services to meet your requirements.</p>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Can you ship to Amazon FBA?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Yes. We offer FBA Prep service: 100% inspection, FNSKU labels, poly bagging, bubble wrap, and direct delivery to Amazon warehouses in US, EU, and Japan.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>What about customs duties and taxes?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>We offer DDP (Delivered Duty Paid) options where we estimate and prepay duties. Otherwise, you handle import duties in your country. We provide HS codes and commercial invoices.</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Final CTA -->
     <section class="py-5 bg-white">
         <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow-custom">SHIPPING OPTIONS</span>
-                <div class="section-divider mx-auto"></div>
-                <h2 class="section-title">Flexible Shipping Methods</h2>
-                <p class="page-subtitle">Choose the shipping method that best fits your needs</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-process-card text-center h-100">
-                        <div class="mb-3 text-primary" style="font-size: 3rem;"><i class="fas fa-ship"></i></div>
-                        <h4>Sea Freight</h4>
-                        <p class="mb-3">Most economical for large volume shipments. FCL and LCL options available to all major ports worldwide.</p>
-                        <ul class="list-unstyled text-start">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cost-effective for bulk</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>FCL & LCL options</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Global port coverage</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-process-card text-center h-100">
-                        <div class="mb-3 text-primary" style="font-size: 3rem;"><i class="fas fa-plane"></i></div>
-                        <h4>Air Freight</h4>
-                        <p class="mb-3">Fast and reliable for time-sensitive shipments. Perfect for medium to high-value goods that need quick delivery.</p>
-                        <ul class="list-unstyled text-start">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Fast delivery (3-7 days)</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Secure handling</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Global airport network</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-process-card text-center h-100">
-                        <div class="mb-3 text-primary" style="font-size: 3rem;"><i class="fas fa-box"></i></div>
-                        <h4>Express Delivery</h4>
-                        <p class="mb-3">Door-to-door courier service via DHL, FedEx, UPS. Ideal for samples, prototypes, and small urgent orders.</p>
-                        <ul class="list-unstyled text-start">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Door-to-door service</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>3-5 day delivery</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Full tracking</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="final-cta-box text-center">
+                <span class="section-eyebrow">Get Started</span>
+                <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
+                <h2 class="section-title">Ship from China Hassle-Free</h2>
+                <p class="section-subtitle mb-4">Get a free shipping quote within 24 hours. Save 30% with consolidation.</p>
+                <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-shipping-fast me-2"></i>Get Shipping Quote</a>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow-custom">VALUE-ADDED</span>
-                <div class="section-divider mx-auto"></div>
-                <h2 class="section-title">More Than Just Shipping</h2>
-                <p class="page-subtitle">Complete end-to-end logistics support</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">01</div>
-                        <h4>Customs Clearance</h4>
-                        <p>Handle all export and import documentation and procedures for smooth customs clearance.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">02</div>
-                        <h4>Cargo Insurance</h4>
-                        <p>Protect your shipment against damage or loss during transit with comprehensive insurance.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">03</div>
-                        <h4>Quality Check Before Ship</h4>
-                        <p>Final inspection and photo verification before your goods leave the warehouse.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-process-card text-center">
-                        <div class="process-number">04</div>
-                        <h4>Door-to-Door</h4>
-                        <p>Complete end-to-end solution from factory floor to your doorstep with tracking.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a href="https://wa.me/+8615988516408" target="_blank" class="whatsapp-float-btn" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Contact Us on WhatsApp</span>
+    </a>
 
-    <section class="py-5 bg-white">
+    <footer class="footer">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-8 text-center">
-            <h2 class="section-title mb-3">Ready to Ship Your Goods?</h2>
-            <p class="section-subtitle mb-4">Contact us today for a competitive logistics and warehousing quote</p>
-            <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="footer-brand d-flex align-items-center mb-3">
-                        <span class="brand-logo-box me-3" id="footerLogoBox">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none; width:40px; height:40px;" />
-                            <span class="brand-logo-fallback" id="footerLogoFallback">YC</span>
-                        </span>
-                    </div>
-                    <p class="text-light opacity-75">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
-                    <div class="social-links">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/8615988516408" class="text-light"><i class="fab fa-whatsapp"></i></a>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-brand">
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">YC</span>
+                        Yeatru Sourcing
+                    </a>
+                    <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="text-light mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light opacity-75">Home</a></li>
-                        <li><a href="products.html" class="text-light opacity-75">Products</a></li>
-                        <li><a href="services.html" class="text-light opacity-75">Services</a></li>
-                        <li><a href="service-plans.html" class="text-light opacity-75">Service Plans</a></li>
-                        <li><a href="about.html" class="text-light opacity-75">About Us</a></li>
-                        <li><a href="contact.html" class="text-light opacity-75">Contact Us</a></li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="products.html" class="footer-link">Products</a>
+                    <a href="service-plans.html" class="footer-link">Service Plans</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-light mb-3">Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="supplier-verification.html" class="text-light opacity-75">Supplier Verification</a></li>
-                        <li><a href="product-sourcing.html" class="text-light opacity-75">Product Sourcing</a></li>
-                        <li><a href="quality-control.html" class="text-light opacity-75">Quality Control</a></li>
-                        <li><a href="logistics-shipping.html" class="text-light opacity-75">Logistics & Warehousing</a></li>
-                        <li><a href="price-negotiation.html" class="text-light opacity-75">Price Negotiation</a></li>
-                        <li><a href="design-photography.html" class="text-light opacity-75">Design & Photography</a></li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Services</h3>
+                    <a href="supplier-verification.html" class="footer-link">Supplier Verification</a>
+                    <a href="product-sourcing.html" class="footer-link">Product Sourcing</a>
+                    <a href="quality-control.html" class="footer-link">Quality Control</a>
+                    <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
+                    <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
+                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-light mb-3">Contact Us</h5>
-                    <ul class="list-unstyled text-light opacity-75">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Yiwu City, Zhejiang Province, China</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+86 15988516408 (WhatsApp)</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@yeatru.com</li>
-                        <li><i class="fas fa-clock me-2"></i>24/7 Available</li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang, China</a>
+                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
+                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
+                    <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
                 </div>
             </div>
-            <hr class="my-4 opacity-25">
-            <div class="text-center">
-                <p class="text-light opacity-75 mb-0">&copy; 2026 Yeatru Sourcing. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
+                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
+                    <a href="#" class="footer-link d-inline">Terms of Service</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" id="adminUsername">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="adminPassword">
-                    </div>
-                    <div class="alert alert-danger d-none" id="loginError">Incorrect username or password!</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="submitLogin">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.16/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/dist/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                if (!isActive) faqItem.classList.add('active');
+            });
+        });
+    });
+    </script>
 </body>
 </html>
