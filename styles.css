@@ -1423,7 +1423,7 @@ body.edit-mode [contenteditable="true"]:focus {
 
 .banner-slide {
     min-width: 100%;
-    padding: 5rem 0 4rem;
+    padding: 2rem 0 3rem;
     position: relative;
     display: none;
 }
@@ -1434,7 +1434,7 @@ body.edit-mode [contenteditable="true"]:focus {
 
 @media (min-width: 992px) {
     .banner-slide {
-        padding: 6rem 0 5rem;
+        padding: 2.5rem 0 3.5rem;
     }
 }
 
@@ -3038,7 +3038,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .product-detail-page {
     display: none;
-    padding: 3rem 0;
+    padding: 1.5rem 0 3rem;
     background-color: #fff;
     min-height: 70vh;
 }
@@ -4353,7 +4353,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
    ============================================ */
 .page-hero {
     background: linear-gradient(135deg, var(--primary-50) 0%, #FFFFFF 100%);
-    padding: 2rem 0 3rem;
+    padding: 1.5rem 0 2.5rem;
     position: relative;
     overflow: hidden;
 }
@@ -4459,7 +4459,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 @media (max-width: 768px) {
     .page-hero {
-        padding: 2rem 0 2.5rem;
+        padding: 1.5rem 0 2rem;
     }
     .page-hero-title {
         font-size: 1.75rem;
@@ -5327,11 +5327,23 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .page-header-section {
     background: linear-gradient(135deg, var(--primary-50) 0%, var(--bg-light) 100%);
     border-bottom: 1px solid var(--border-light);
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.page-header-section.py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+#mainContent > section:first-of-type {
+    padding-top: 1.5rem !important;
 }
 
 .page-header-section .section-title {
     font-size: 2rem;
     font-weight: 700;
+    margin-top: 0.25rem !important;
 }
 
 @media (max-width: 768px) {
@@ -6111,6 +6123,13 @@ p {
     border-bottom: 1px solid var(--gray-100);
     position: relative;
     overflow: hidden;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.page-header-section.py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
 
 .page-header-section::before {

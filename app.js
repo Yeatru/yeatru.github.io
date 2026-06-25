@@ -102,7 +102,19 @@ function tt(key, fallback) {
     return fallback || key;
 }
 
+function safeAddEventListener(id, event, handler) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener(event, handler);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    renderBrandLogo();
+    renderProductsDropdown();
+    renderIndexCategories();
+    renderIndexHotProducts();
+    renderCategories();
+    renderProducts();
+
     i18next
         .use(i18nextBrowserLanguageDetector)
         .init({
@@ -119,19 +131,13 @@ document.addEventListener('DOMContentLoaded', function () {
             updateContent();
             bindLanguageEvents();
             loadRemoteSiteData();
-            renderCategoryFilter();
-            renderProducts();
+            updateLoginUI(isAdmin());
+        }).catch(function (err) {
+            console.error('i18next init error:', err);
             updateLoginUI(isAdmin());
         });
 
-    renderCategories();
-    renderProducts();
-    renderBrandLogo();
-    renderProductsDropdown();
-    renderIndexCategories();
-    renderIndexHotProducts();
-
-    document.getElementById('submitLogin').addEventListener('click', function () {
+    safeAddEventListener('submitLogin', 'click', function () {
         const username = document.getElementById('adminUsername').value.trim();
         const password = document.getElementById('adminPassword').value.trim();
         const errorEl = document.getElementById('loginError');
@@ -139,46 +145,53 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('yeatruAdminLoggedIn', 'true');
             updateLoginUI(true);
             const loginModal = document.getElementById('loginModal');
-            const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
-            modalInstance.hide();
-            errorEl.classList.add('d-none');
-            document.getElementById('adminUsername').value = '';
-            document.getElementById('adminPassword').value = '';
+            if (loginModal) {
+                const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
+                modalInstance.hide();
+            }
+            if (errorEl) errorEl.classList.add('d-none');
+            const adminUser = document.getElementById('adminUsername');
+            const adminPass = document.getElementById('adminPassword');
+            if (adminUser) adminUser.value = '';
+            if (adminPass) adminPass.value = '';
         } else {
-            errorEl.classList.remove('d-none');
+            if (errorEl) errorEl.classList.remove('d-none');
         }
     });
 
-    document.getElementById('logoutBtn').addEventListener('click', function () {
+    safeAddEventListener('logoutBtn', 'click', function () {
         localStorage.removeItem('yeatruAdminLoggedIn');
         updateLoginUI(false);
-        if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailMode === 'edit') {
+        const detailPage = document.getElementById('productDetailPage');
+        if (detailPage && detailPage.classList.contains('active') && currentDetailMode === 'edit') {
             setDetailMode('preview');
         }
     });
 
-    // Admin Export Panel close button
-    document.getElementById('closeExportPanel') && document.getElementById('closeExportPanel').addEventListener('click', function () {
+    safeAddEventListener('closeExportPanel', 'click', function () {
         const panel = document.getElementById('adminExportPanel');
         if (panel) panel.classList.add('d-none');
     });
 
-    document.getElementById('addCategoryBtn').addEventListener('click', function () {
-        const newCategory = document.getElementById('newCategory').value.trim();
+    safeAddEventListener('addCategoryBtn', 'click', function () {
+        const newCatInput = document.getElementById('newCategory');
+        if (!newCatInput) return;
+        const newCategory = newCatInput.value.trim();
         if (newCategory && !getCategories().includes(newCategory)) {
             saveCategories([...getCategories(), newCategory]);
-            document.getElementById('newCategory').value = '';
+            newCatInput.value = '';
         }
     });
 
-    document.getElementById('addVariationBtn').addEventListener('click', function () {
+    safeAddEventListener('addVariationBtn', 'click', function () {
         addVariationItem();
     });
 
-    document.getElementById('saveProduct').addEventListener('click', function () {
-        const productId = document.getElementById('productId').value;
+    safeAddEventListener('saveProduct', 'click', function () {
+        const productIdEl = document.getElementById('productId');
+        if (!productIdEl) return;
+        const productId = productIdEl.value;
         const variations = collectVariations();
-        // 从变体中计算 priceMin 和 priceMax
         let priceMin = null;
         let priceMax = null;
         const pricedVariations = variations.filter(v => v.price !== null && v.price !== undefined && !isNaN(v.price));
@@ -192,16 +205,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const product = {
             id: productId ? parseInt(productId) : Date.now(),
-            image: document.getElementById('productImage').value,
-            category: document.getElementById('productCategory').value,
-            name: document.getElementById('productName').value,
-            sku: document.getElementById('productSKU').value,
-            material: document.getElementById('productMaterial').value,
-            size: document.getElementById('productSize').value,
-            moq: parseInt(document.getElementById('productMOQ').value),
+            image: document.getElementById('productImage') ? document.getElementById('productImage').value : '',
+            category: document.getElementById('productCategory') ? document.getElementById('productCategory').value : '',
+            name: document.getElementById('productName') ? document.getElementById('productName').value : '',
+            sku: document.getElementById('productSKU') ? document.getElementById('productSKU').value : '',
+            material: document.getElementById('productMaterial') ? document.getElementById('productMaterial').value : '',
+            size: document.getElementById('productSize') ? document.getElementById('productSize').value : '',
+            moq: document.getElementById('productMOQ') ? parseInt(document.getElementById('productMOQ').value) : 0,
             priceMin: priceMin,
             priceMax: priceMax,
-            description: document.getElementById('productDescription').value,
+            description: document.getElementById('productDescription') ? document.getElementById('productDescription').value : '',
             variations: variations
         };
         const products = getProducts();
@@ -216,27 +229,37 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         saveProducts(products);
         const productModal = document.getElementById('productModal');
-        bootstrap.Modal.getInstance(productModal).hide();
-        document.getElementById('productForm').reset();
-        document.getElementById('variationsContainer').innerHTML = '';
-        document.getElementById('productId').value = '';
-        document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
+        if (productModal) {
+            bootstrap.Modal.getInstance(productModal).hide();
+        }
+        const productForm = document.getElementById('productForm');
+        if (productForm) productForm.reset();
+        const variationsContainer = document.getElementById('variationsContainer');
+        if (variationsContainer) variationsContainer.innerHTML = '';
+        if (productIdEl) productIdEl.value = '';
+        const modalLabel = document.getElementById('productModalLabel');
+        if (modalLabel) modalLabel.textContent = tt('products.addProduct', 'Add New Product');
     });
 
-    document.getElementById('addProductBtn').addEventListener('click', function () {
-        document.getElementById('productForm').reset();
-        document.getElementById('productId').value = '';
-        document.getElementById('variationsContainer').innerHTML = '';
-        document.getElementById('productModalLabel').textContent = tt('products.addProduct', 'Add New Product');
+    safeAddEventListener('addProductBtn', 'click', function () {
+        const productForm = document.getElementById('productForm');
+        if (productForm) productForm.reset();
+        const productIdEl = document.getElementById('productId');
+        if (productIdEl) productIdEl.value = '';
+        const variationsContainer = document.getElementById('variationsContainer');
+        if (variationsContainer) variationsContainer.innerHTML = '';
+        const modalLabel = document.getElementById('productModalLabel');
+        if (modalLabel) modalLabel.textContent = tt('products.addProduct', 'Add New Product');
     });
 
-    document.getElementById('exportDataBtn').addEventListener('click', exportSiteData);
-    document.getElementById('importDataBtn').addEventListener('click', function () {
-        document.getElementById('importDataFile').click();
+    safeAddEventListener('exportDataBtn', 'click', exportSiteData);
+    safeAddEventListener('importDataBtn', 'click', function () {
+        const importFile = document.getElementById('importDataFile');
+        if (importFile) importFile.click();
     });
-    document.getElementById('importDataFile').addEventListener('change', importSiteDataFromFile);
+    safeAddEventListener('importDataFile', 'change', importSiteDataFromFile);
 
-    document.getElementById('detailBackBtn').addEventListener('click', function () {
+    safeAddEventListener('detailBackBtn', 'click', function () {
         hideDetailPage();
     });
 
@@ -246,12 +269,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.getElementById('detailQuoteBtn').addEventListener('click', function () {
+    safeAddEventListener('detailQuoteBtn', 'click', function () {
         if (!currentDetailProductId) return;
         const p = getProducts().find(x => x.id === currentDetailProductId);
         if (!p) return;
-        document.getElementById('quoteProductName').value = p.name;
-        new bootstrap.Modal(document.getElementById('quoteModal')).show();
+        const quoteProductName = document.getElementById('quoteProductName');
+        if (quoteProductName) quoteProductName.value = p.name;
+        const quoteModal = document.getElementById('quoteModal');
+        if (quoteModal) new bootstrap.Modal(quoteModal).show();
     });
 
     document.querySelectorAll('#aplusAddBar button').forEach(btn => {
@@ -265,18 +290,21 @@ document.addEventListener('DOMContentLoaded', function () {
         if (el) el.addEventListener('input', scheduleAutoSave);
     });
 
-    document.getElementById('brandLogoEdit').addEventListener('click', function (e) {
+    safeAddEventListener('brandLogoEdit', 'click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         if (!isAdmin()) return;
-        document.getElementById('logoUrlInput').value = localStorage.getItem('yeatruBrandLogo') || '';
-        new bootstrap.Modal(document.getElementById('logoModal')).show();
+        const logoUrlInput = document.getElementById('logoUrlInput');
+        if (logoUrlInput) logoUrlInput.value = localStorage.getItem('yeatruBrandLogo') || '';
+        const logoModal = document.getElementById('logoModal');
+        if (logoModal) new bootstrap.Modal(logoModal).show();
     });
-    document.getElementById('logoSaveBtn').addEventListener('click', saveLogoFromModal);
-    document.getElementById('logoResetBtn').addEventListener('click', function () {
+    safeAddEventListener('logoSaveBtn', 'click', saveLogoFromModal);
+    safeAddEventListener('logoResetBtn', 'click', function () {
         localStorage.removeItem('yeatruBrandLogo');
         renderBrandLogo();
-        bootstrap.Modal.getInstance(document.getElementById('logoModal')).hide();
+        const logoModal = document.getElementById('logoModal');
+        if (logoModal) bootstrap.Modal.getInstance(logoModal).hide();
     });
 
     window.addEventListener('hashchange', handleHashRoute);
@@ -307,22 +335,33 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        const v = i18next.t(key);
-        if (v && v !== key) el.textContent = v;
+        try {
+            const v = i18next.t(key);
+            if (v && v !== key) el.textContent = v;
+        } catch (e) {}
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
-        const v = i18next.t(key);
-        if (v && v !== key) el.placeholder = v;
+        try {
+            const v = i18next.t(key);
+            if (v && v !== key) el.placeholder = v;
+        } catch (e) {}
     });
     const langNames = { en: 'English', es: 'Español', fr: 'Français', ru: 'Русский' };
     const cur = document.getElementById('current-lang');
-    if (cur) cur.textContent = langNames[i18next.language] || 'English';
+    if (cur) {
+        try {
+            cur.textContent = langNames[i18next.language] || 'English';
+        } catch (e) {
+            cur.textContent = 'English';
+        }
+    }
 
     renderCategoryFilter();
     renderProducts();
     renderProductsDropdown();
-    if (document.getElementById('productDetailPage').classList.contains('active') && currentDetailProductId) {
+    const detailPage = document.getElementById('productDetailPage');
+    if (detailPage && detailPage.classList.contains('active') && currentDetailProductId) {
         renderDetailPage(currentDetailProductId);
     }
 }
@@ -345,22 +384,23 @@ function updateLoginUI(loggedIn) {
     const brandLogoEdit = document.getElementById('brandLogoEdit');
     const adminExportPanel = document.getElementById('adminExportPanel');
     if (loggedIn) {
-        loginBtn.classList.add('d-none');
-        logoutBtn.classList.remove('d-none');
-        addProductBtn.classList.remove('d-none');
+        if (loginBtn) loginBtn.classList.add('d-none');
+        if (logoutBtn) logoutBtn.classList.remove('d-none');
+        if (addProductBtn) addProductBtn.classList.remove('d-none');
         if (categoryManagement) categoryManagement.style.display = 'block';
         if (brandLogoEdit) brandLogoEdit.classList.add('admin-visible');
         if (adminExportPanel) adminExportPanel.classList.remove('d-none');
     } else {
-        loginBtn.classList.remove('d-none');
-        logoutBtn.classList.add('d-none');
-        addProductBtn.classList.add('d-none');
+        if (loginBtn) loginBtn.classList.remove('d-none');
+        if (logoutBtn) logoutBtn.classList.add('d-none');
+        if (addProductBtn) addProductBtn.classList.add('d-none');
         if (categoryManagement) categoryManagement.style.display = 'none';
         if (brandLogoEdit) brandLogoEdit.classList.remove('admin-visible');
         if (adminExportPanel) adminExportPanel.classList.add('d-none');
     }
     renderCategories();
     renderProducts();
+    renderIndexHotProducts();
     if (!loggedIn && currentDetailMode === 'edit') setDetailMode('preview');
     const toggle = document.getElementById('detailModeToggle');
     if (toggle) toggle.style.display = loggedIn ? 'inline-flex' : 'none';
@@ -583,10 +623,22 @@ function applySiteData(data, options = {}) {
     renderIndexCategories();
     renderIndexHotProducts();
 
-    if (currentDetailProductId) {
-        const exists = getProducts().some(p => p.id === currentDetailProductId);
-        if (exists) renderDetailPage(currentDetailProductId);
-        else hideDetailPage();
+    const detailPage = document.getElementById('productDetailPage');
+    const mainContent = document.getElementById('mainContent');
+    if (detailPage && mainContent) {
+        if (currentDetailProductId) {
+            const exists = getProducts().some(p => p.id === currentDetailProductId);
+            if (exists) renderDetailPage(currentDetailProductId);
+            else hideDetailPage();
+        } else {
+            const hash = location.hash || '';
+            const m = hash.match(/^#product\/(\d+)/);
+            if (m) {
+                const id = parseInt(m[1]);
+                const exists = getProducts().some(p => p.id === id);
+                if (exists) showDetailPage(id);
+            }
+        }
     }
 
     if (!options.silent) {
@@ -751,6 +803,9 @@ function renderProducts() {
 function handleHashRoute() {
     const hash = location.hash || '';
     const m = hash.match(/^#product\/(\d+)/);
+    const detailPage = document.getElementById('productDetailPage');
+    const mainContent = document.getElementById('mainContent');
+    if (!detailPage || !mainContent) return;
     if (m) {
         const id = parseInt(m[1]);
         showDetailPage(id);
@@ -888,14 +943,17 @@ function collectDetailVariations() {
 }
 
 function showDetailPage(productId) {
+    const mainContent = document.getElementById('mainContent');
+    const page = document.getElementById('productDetailPage');
+    if (!mainContent || !page) return;
     const product = getProducts().find(p => p.id === productId);
     if (!product) {
         hideDetailPage();
         return;
     }
     currentDetailProductId = productId;
-    document.getElementById('mainContent').style.display = 'none';
-    const page = document.getElementById('productDetailPage');
+    mainContent.style.display = 'none';
+    page.style.display = 'block';
     page.classList.add('active');
     setDetailMode('preview');
     renderDetailPage(productId);
@@ -904,8 +962,13 @@ function showDetailPage(productId) {
 
 function hideDetailPage() {
     currentDetailProductId = null;
-    document.getElementById('mainContent').style.display = '';
-    document.getElementById('productDetailPage').classList.remove('active');
+    const mainContent = document.getElementById('mainContent');
+    const page = document.getElementById('productDetailPage');
+    if (mainContent) mainContent.style.display = '';
+    if (page) {
+        page.classList.remove('active');
+        page.style.display = 'none';
+    }
     if (location.hash.startsWith('#product/')) {
         history.replaceState(null, '', '#products');
     }
@@ -914,19 +977,37 @@ function hideDetailPage() {
 function renderDetailPage(productId) {
     const product = getProducts().find(p => p.id === productId);
     if (!product) return;
-    document.getElementById('detailImage').src = product.image || 'https://picsum.photos/600/400';
-    document.getElementById('detailImage').alt = product.name || '';
-    document.getElementById('detailName').textContent = product.name || '';
-    document.getElementById('detailCategory').textContent = product.category || '';
-    document.getElementById('detailSKU').textContent = product.sku || '';
-    document.getElementById('detailMaterial').textContent = product.material || '';
-    document.getElementById('detailSize').textContent = product.size || '';
-    document.getElementById('detailMOQ').textContent = product.moq || '';
-    document.getElementById('detailPriceMin').textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
-    document.getElementById('detailPriceMax').textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
-    document.getElementById('detailDesc').textContent = product.description || '';
+    const detailImage = document.getElementById('detailImage');
+    const detailName = document.getElementById('detailName');
+    const detailCategory = document.getElementById('detailCategory');
+    const detailSKU = document.getElementById('detailSKU');
+    const detailMaterial = document.getElementById('detailMaterial');
+    const detailSize = document.getElementById('detailSize');
+    const detailMOQ = document.getElementById('detailMOQ');
+    const detailPriceMin = document.getElementById('detailPriceMin');
+    const detailPriceMax = document.getElementById('detailPriceMax');
+    const detailDesc = document.getElementById('detailDesc');
+    const detailPriceBig = document.getElementById('detailPriceBig');
+    const detailNameInput = document.getElementById('detailNameInput');
+    const detailImageInput = document.getElementById('detailImageInput');
+    const detailMaterialInput = document.getElementById('detailMaterialInput');
+    const detailSizeInput = document.getElementById('detailSizeInput');
+    const detailMOQInput = document.getElementById('detailMOQInput');
+    const detailPriceMinInput = document.getElementById('detailPriceMinInput');
+    const detailPriceMaxInput = document.getElementById('detailPriceMaxInput');
+    const detailDescInput = document.getElementById('detailDescInput');
 
-    // 计算默认价格显示：优先使用变体价格区间，其次使用产品 priceMin-priceMax
+    if (detailImage) { detailImage.src = product.image || 'https://picsum.photos/600/400'; detailImage.alt = product.name || ''; }
+    if (detailName) detailName.textContent = product.name || '';
+    if (detailCategory) detailCategory.textContent = product.category || '';
+    if (detailSKU) detailSKU.textContent = product.sku || '';
+    if (detailMaterial) detailMaterial.textContent = product.material || '';
+    if (detailSize) detailSize.textContent = product.size || '';
+    if (detailMOQ) detailMOQ.textContent = product.moq || '';
+    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? product.priceMin : '';
+    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? product.priceMax : '';
+    if (detailDesc) detailDesc.textContent = product.description || '';
+
     let defaultPriceText;
     if (product.variations && product.variations.length > 0) {
         const pricedVariations = product.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '');
@@ -945,16 +1026,16 @@ function renderDetailPage(productId) {
     } else {
         defaultPriceText = '$' + (product.priceMin || 0) + ' - $' + (product.priceMax || 0);
     }
-    document.getElementById('detailPriceBig').textContent = defaultPriceText;
+    if (detailPriceBig) detailPriceBig.textContent = defaultPriceText;
 
-    document.getElementById('detailNameInput').value = product.name || '';
-    document.getElementById('detailImageInput').value = product.image || '';
-    document.getElementById('detailMaterialInput').value = product.material || '';
-    document.getElementById('detailSizeInput').value = product.size || '';
-    document.getElementById('detailMOQInput').value = product.moq || '';
-    document.getElementById('detailPriceMinInput').value = product.priceMin || '';
-    document.getElementById('detailPriceMaxInput').value = product.priceMax || '';
-    document.getElementById('detailDescInput').value = product.description || '';
+    if (detailNameInput) detailNameInput.value = product.name || '';
+    if (detailImageInput) detailImageInput.value = product.image || '';
+    if (detailMaterialInput) detailMaterialInput.value = product.material || '';
+    if (detailSizeInput) detailSizeInput.value = product.size || '';
+    if (detailMOQInput) detailMOQInput.value = product.moq || '';
+    if (detailPriceMinInput) detailPriceMinInput.value = product.priceMin || '';
+    if (detailPriceMaxInput) detailPriceMaxInput.value = product.priceMax || '';
+    if (detailDescInput) detailDescInput.value = product.description || '';
 
     renderVariationsDisplay(product.variations);
     renderAplusBlocks(product);
@@ -981,7 +1062,8 @@ function setDetailMode(mode) {
         b.classList.toggle('edit-mode', isEdit);
         b.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = isEdit ? 'true' : 'false');
     });
-    document.getElementById('aplusAddBar').classList.toggle('visible', isEdit);
+    const aplusAddBar = document.getElementById('aplusAddBar');
+    if (aplusAddBar) aplusAddBar.classList.toggle('visible', isEdit);
 
     // 变体编辑区域切换
     const variationsList = document.getElementById('variationsList');
@@ -1004,17 +1086,18 @@ function setDetailMode(mode) {
 
 function setSaveStatus(state) {
     const badge = document.getElementById('saveStatusBadge');
+    if (!badge) return;
     const span = badge.querySelector('span');
     badge.classList.remove('saving', 'saved', 'error');
     if (state === 'saving') {
         badge.classList.add('saving');
-        span.textContent = tt('detail.saving', 'Saving...');
+        if (span) span.textContent = tt('detail.saving', 'Saving...');
     } else if (state === 'saved') {
         badge.classList.add('saved');
-        span.textContent = tt('detail.saved', 'Saved');
+        if (span) span.textContent = tt('detail.saved', 'Saved');
     } else if (state === 'error') {
         badge.classList.add('error');
-        span.textContent = tt('detail.error', 'Save failed');
+        if (span) span.textContent = tt('detail.error', 'Save failed');
     }
 }
 
