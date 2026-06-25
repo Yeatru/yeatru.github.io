@@ -6972,11 +6972,13 @@ section:first-of-type {
 #categoryManagement .text-admin {
     font-size: 1rem;
     font-weight: 600;
+    color: #1e3a8a;
 }
 
 #categoryManagement .text-muted small {
     font-size: 0.85rem;
-    color: #64748b;
+    color: #1e3a8a;
+    font-weight: 500;
 }
 
 #categoryManagement .d-flex.align-items-center.gap-2 button {
@@ -6987,7 +6989,7 @@ section:first-of-type {
 #categoryManagement .d-flex.flex-wrap.align-items-center.gap-3 {
     flex-direction: column;
     align-items: stretch !important;
-    gap: 1rem !important;
+    gap: 0.75rem !important;
 }
 
 #categoryList {
@@ -7035,16 +7037,29 @@ section:first-of-type {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #categoryManagement .input-group .form-control {
-    font-size: 0.88rem;
-    padding: 0.6rem 1rem;
-    border-radius: 8px 0 0 8px;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+    height: 34px;
+    line-height: 1.2;
+    border-radius: 8px;
+    flex: 1;
 }
 
 #categoryManagement .input-group .btn-primary {
-    border-radius: 0 8px 8px 0;
-    font-size: 0.88rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    height: 34px;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
