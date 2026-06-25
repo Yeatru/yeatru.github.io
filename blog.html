@@ -14,22 +14,28 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
-                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
-                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
-                </span>
+                <span class="brand-logo-box" title="Yeatru Sourcing Logo">YC</span>
                 <span>Yeatru Sourcing</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?category=Home+Decor">Home Decor</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Kitchen">Kitchen</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Silicone">Silicone</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Packaging">Packaging</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Bags">Bags &amp; Cases</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Electronics">Electronics</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
@@ -37,58 +43,27 @@
                             <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
                             <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
                             <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
-                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
-                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="nav-search-wrapper">
-                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <div class="nav-search-dropdown" id="navSearchDropdown">
-                            <form class="nav-search-form" id="navSearchForm">
-                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
-                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
-                            </form>
-                            <div class="nav-search-results" id="navSearchResults"></div>
-                        </div>
-                    </div>
-                    <div class="dropdown currency-selector">
-                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span id="current-currency">USD</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
-                        </ul>
-                    </div>
                     <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span>EN</span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Русский</a></li>
                         </ul>
                     </div>
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
-                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
-                        <i class="fas fa-user-shield"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -126,7 +101,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-amazon-supplier-guide.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/FBA.jpg" alt="Amazon FBA" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Amazon FBA Supplier Guide">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-amazon"></i>
                                 <span>Amazon Sourcing Guide</span>
@@ -149,7 +124,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-product-certifications.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Compliance.jpg" alt="Product Certifications" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png" alt="Product Certifications">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-certificate"></i>
                                 <span>Product Certifications</span>
@@ -172,7 +147,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-private-mold-packaging.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/logo%20and%20mold.png" alt="Private Mold Packaging" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(5).jpg" alt="Private Mold Packaging">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-palette"></i>
                                 <span>Private Mold Packaging</span>
@@ -195,7 +170,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-yiwu-market-guide.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/yiwu%20Market.jpg" alt="Yiwu Market Guide" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Yiwu Market Guide">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-store"></i>
                                 <span>Yiwu Market Guide</span>
@@ -218,7 +193,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-sea-freight-guide.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading.png" alt="Sea Freight Guide" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/loading%20containers.jpg" alt="Sea Freight Guide">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-ship"></i>
                                 <span>Sea Freight Guide</span>
@@ -241,7 +216,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-alibaba-vs-agent.html" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/price%20nego%201.jpg" alt="Alibaba vs Agent" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Alibaba vs Agent">
                             <div class="blog-card-placeholder">
                                 <i class="fas fa-balance-scale"></i>
                                 <span>Alibaba vs Agent</span>
@@ -297,18 +272,14 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
-                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
-                        </span>
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">YC</span>
                         Yeatru Sourcing
                     </a>
                     <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
                     <div class="footer-social">
-                        <a href="https://facebook.com/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://linkedin.com/company/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/+8615988516408" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://instagram.com/yeatru_sourcing" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -327,7 +298,7 @@
                     <a href="quality-control.html" class="footer-link">Quality Control</a>
                     <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
                     <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
-                    <a href="oem.html" class="footer-link">OEM Customization</a>
+                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Contact Us</h3>
@@ -335,18 +306,8 @@
                     <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
                     <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
                     <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
-                    <div class="footer-payment-section mt-3">
-                        <h4 class="footer-payment-label">Payment Methods</h4>
-                        <div class="footer-payment-icons-vertical">
-                            <span class="payment-icon"><i class="fab fa-cc-paypal"></i><span>PayPal</span></span>
-                            <span class="payment-icon"><i class="fab fa-cc-visa"></i><span>Visa</span></span>
-                            <span class="payment-icon"><i class="fab fa-cc-mastercard"></i><span>MasterCard</span></span>
-                            <span class="payment-icon"><i class="fas fa-university"></i><span>Bank Transfer</span></span>
-                        </div>
-                    </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
                     <a href="#" class="footer-link d-inline">Privacy Policy</a> |
@@ -356,52 +317,7 @@
         </div>
     </footer>
 
-    <!-- Logo Modal -->
-    <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" data-i18n="logo.title">Change Logo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted small mb-3">Upload an image file or paste an image URL:</p>
-                    <input type="file" id="logoFileInput" class="form-control mb-3" accept="image/*">
-                    <div class="text-center mb-3"><small class="text-muted">— or —</small></div>
-                    <input type="url" id="logoUrlInput" class="form-control" placeholder="https://...">
-                    <button type="button" class="btn btn-outline-danger me-auto mt-3" id="logoResetBtn" data-i18n="logo.reset">Reset to Default</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="logoSaveBtn" data-i18n="logo.save">Save Logo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Export Panel -->
-    <div id="adminExportPanel" class="admin-export-panel d-none">
-        <div class="admin-export-header">
-            <h6><i class="fas fa-database me-2"></i>Data Management</h6>
-            <button type="button" class="btn-close btn-close-white" id="closeExportPanel"></button>
-        </div>
-        <div class="admin-export-body">
-            <button class="btn btn-light btn-sm w-100 mb-2" id="exportDataBtn">
-                <i class="fas fa-download me-1"></i> Export site-data.json
-            </button>
-            <button class="btn btn-light btn-sm w-100 mb-2" id="syncGithubBtn">
-                <i class="fab fa-github me-1"></i> Sync to GitHub
-            </button>
-            <button class="btn btn-light btn-sm w-100" id="importDataBtn">
-                <i class="fas fa-upload me-1"></i> Import from JSON
-            </button>
-            <input type="file" id="importFileInput" accept=".json" style="display:none;">
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -14,11 +14,7 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
-                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
-                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
-                </span>
+                <span class="brand-logo-box" title="Yeatru Sourcing Logo">YC</span>
                 <span>Yeatru Sourcing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,7 +23,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?category=Home+Decor">Home Decor</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Kitchen">Kitchen</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Silicone">Silicone</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Packaging">Packaging</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Bags">Bags &amp; Cases</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=Electronics">Electronics</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
@@ -37,10 +43,6 @@
                             <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
                             <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
                             <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
-                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
-                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -48,47 +50,20 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="nav-search-wrapper">
-                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <div class="nav-search-dropdown" id="navSearchDropdown">
-                            <form class="nav-search-form" id="navSearchForm">
-                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
-                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
-                            </form>
-                            <div class="nav-search-results" id="navSearchResults"></div>
-                        </div>
-                    </div>
-                    <div class="dropdown currency-selector">
-                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span id="current-currency">USD</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
-                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
-                        </ul>
-                    </div>
                     <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span>EN</span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Русский</a></li>
                         </ul>
                     </div>
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
-                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
-                        <i class="fas fa-user-shield"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -112,7 +87,7 @@
                 </div>
             </div>
             <div class="article-featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Compliance.jpg" alt="CE, FCC, CPC, FDA">
+                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png" alt="QC Meeting on site">
             </div>
         </div>
     </section>
@@ -189,7 +164,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-amazon-supplier-guide.html" class="related-article-card">
                         <div class="related-article-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Cargo.jpg" alt="Amazon FBA Supplier Guide">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Amazon FBA Supplier Guide">
                         </div>
                         <div class="related-article-content">
                             <span class="related-article-category">Amazon FBA</span>
@@ -201,7 +176,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="blog-private-mold-packaging.html" class="related-article-card">
                         <div class="related-article-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/oem-private-label.jpg" alt="Private Mold Packaging">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(5).jpg" alt="Private Mold Packaging">
                         </div>
                         <div class="related-article-content">
                             <span class="related-article-category">OEM / Branding</span>
@@ -211,14 +186,14 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="blog-sea-freight-guide.html" class="related-article-card">
+                    <a href="blog.html" class="related-article-card">
                         <div class="related-article-image">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/global-logistics.jpg" alt="Sea Freight Guide">
+                            <div class="related-article-placeholder"><i class="fas fa-blog"></i></div>
                         </div>
                         <div class="related-article-content">
-                            <span class="related-article-category">Logistics</span>
-                            <h3 class="related-article-title">Sea Freight from China: LCL vs. FCL — Complete Cost Comparison (2026)</h3>
-                            <span class="related-article-meta">May 18, 2026 · 9 min read</span>
+                            <span class="related-article-category">Blog</span>
+                            <h3 class="related-article-title">View All Articles on Our Blog</h3>
+                            <span class="related-article-meta">More guides and resources</span>
                         </div>
                     </a>
                 </div>
@@ -236,10 +211,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
-                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
-                        </span>
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">YC</span>
                         Yeatru Sourcing
                     </a>
                     <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
@@ -284,190 +256,7 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
-                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
-                    </div>
-                    <div class="mb-3">
-                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
-                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
-                    </div>
-                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Logo Modal -->
-    <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" data-i18n="logo.title">Change Logo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted small mb-3">Upload an image file or paste an image URL:</p>
-                    <input type="file" id="logoFileInput" class="form-control mb-3" accept="image/*">
-                    <div class="text-center mb-3"><small class="text-muted">— or —</small></div>
-                    <input type="url" id="logoUrlInput" class="form-control" placeholder="https://...">
-                    <button type="button" class="btn btn-outline-danger me-auto mt-3" id="logoResetBtn" data-i18n="logo.reset">Reset to Default</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="logoSaveBtn" data-i18n="logo.save">Save Logo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Export Panel -->
-    <div id="adminExportPanel" class="admin-export-panel d-none">
-        <div class="admin-export-header">
-            <h6><i class="fas fa-database me-2"></i>Data Management</h6>
-            <button type="button" class="btn-close btn-close-white" id="closeExportPanel"></button>
-        </div>
-        <div class="admin-export-body">
-            <button class="btn btn-light btn-sm w-100 mb-2" id="exportDataBtn">
-                <i class="fas fa-download me-1"></i> Export site-data.json
-            </button>
-            <button class="btn btn-light btn-sm w-100 mb-2" id="syncGithubBtn">
-                <i class="fab fa-github me-1"></i> Sync to GitHub
-            </button>
-            <button class="btn btn-light btn-sm w-100" id="importDataBtn">
-                <i class="fas fa-upload me-1"></i> Import from JSON
-            </button>
-            <input type="file" id="importFileInput" accept=".json" style="display:none;">
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchToggle = document.getElementById('navSearchToggle');
-        const searchDropdown = document.getElementById('navSearchDropdown');
-        const searchInput = document.getElementById('navSearchInput');
-        const searchResults = document.getElementById('navSearchResults');
-        const searchForm = document.getElementById('navSearchForm');
-        
-        const searchData = [
-            { title: 'Product Sourcing', type: 'Service', url: 'product-sourcing.html', icon: 'fa-search' },
-            { title: 'Supplier Verification', type: 'Service', url: 'supplier-verification.html', icon: 'fa-shield-halved' },
-            { title: 'Quality Control', type: 'Service', url: 'quality-control.html', icon: 'fa-clipboard-check' },
-            { title: 'Logistics & Shipping', type: 'Service', url: 'logistics-shipping.html', icon: 'fa-shipping-fast' },
-            { title: 'Price Negotiation', type: 'Service', url: 'price-negotiation.html', icon: 'fa-hand-holding-usd' },
-            { title: 'Factory Audit', type: 'Service', url: 'factory-audit.html', icon: 'fa-industry' },
-            { title: 'OEM Customization', type: 'Service', url: 'oem.html', icon: 'fa-magic' },
-            { title: 'Sample Order', type: 'Service', url: 'sample-order.html', icon: 'fa-box-open' },
-            { title: 'Home Decor', type: 'Category', url: 'products.html?category=Home+Decor', icon: 'fa-home' },
-            { title: 'Kitchenware', type: 'Category', url: 'products.html?category=Kitchen', icon: 'fa-utensils' },
-            { title: 'Silicone Products', type: 'Category', url: 'products.html?category=Silicone', icon: 'fa-grip-lines' },
-            { title: 'Packaging', type: 'Category', url: 'products.html?category=Packaging', icon: 'fa-box' },
-            { title: 'Bags & Cases', type: 'Category', url: 'products.html?category=Bags', icon: 'fa-shopping-bag' },
-            { title: 'Electronics', type: 'Category', url: 'products.html?category=Electronics', icon: 'fa-mobile-alt' },
-            { title: 'Amazon FBA Supplier Guide', type: 'Blog', url: 'blog-amazon-supplier-guide.html', icon: 'fa-amazon' },
-            { title: 'EU/US Certifications Guide', type: 'Blog', url: 'blog-product-certifications.html', icon: 'fa-certificate' },
-            { title: 'Private Mold vs Logo Printing', type: 'Blog', url: 'blog-private-mold-packaging.html', icon: 'fa-palette' },
-            { title: 'Yiwu Market Guide', type: 'Blog', url: 'blog-yiwu-market-guide.html', icon: 'fa-store' },
-            { title: 'Sea Freight Guide', type: 'Blog', url: 'blog-sea-freight-guide.html', icon: 'fa-ship' },
-            { title: 'Alibaba vs Agent', type: 'Blog', url: 'blog-alibaba-vs-agent.html', icon: 'fa-balance-scale' },
-            { title: 'About Yeatru', type: 'Page', url: 'about.html', icon: 'fa-users' },
-            { title: 'Contact Us', type: 'Page', url: 'contact.html', icon: 'fa-envelope' },
-            { title: 'Service Plans', type: 'Page', url: 'service-plans.html', icon: 'fa-list' },
-            { title: 'Blog', type: 'Page', url: 'blog.html', icon: 'fa-book-open' },
-            { title: 'Products', type: 'Page', url: 'products.html', icon: 'fa-th' }
-        ];
-        
-        if (searchToggle && searchDropdown) {
-            searchToggle.addEventListener('click', function() {
-                searchDropdown.classList.toggle('active');
-                if (searchDropdown.classList.contains('active') && searchInput) {
-                    searchInput.focus();
-                }
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.nav-search-wrapper')) {
-                    searchDropdown.classList.remove('active');
-                }
-            });
-            
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    const query = this.value.toLowerCase().trim();
-                    if (query.length < 2) {
-                        searchResults.innerHTML = '';
-                        return;
-                    }
-                    
-                    const matches = searchData.filter(item => 
-                        item.title.toLowerCase().includes(query) || 
-                        item.type.toLowerCase().includes(query)
-                    ).slice(0, 8);
-                    
-                    if (matches.length === 0) {
-                        searchResults.innerHTML = '<div class="nav-search-empty">No results found</div>';
-                    } else {
-                        searchResults.innerHTML = matches.map(item => `
-                            <a href="${item.url}" class="nav-search-result-item">
-                                <div class="nav-search-result-icon"><i class="fas ${item.icon}"></i></div>
-                                <div class="nav-search-result-content">
-                                    <p class="nav-search-result-title">${item.title}</p>
-                                    <p class="nav-search-result-type">${item.type}</p>
-                                </div>
-                            </a>
-                        `).join('');
-                    }
-                });
-            }
-            
-            if (searchForm) {
-                searchForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const query = searchInput.value.trim();
-                    if (query) {
-                        window.location.href = 'products.html?search=' + encodeURIComponent(query);
-                    }
-                });
-            }
-        }
-
-        const langItems = document.querySelectorAll('[data-lang]');
-        const currentLangEl = document.getElementById('current-lang');
-        const savedLang = localStorage.getItem('yeatru_lang') || 'en';
-        
-        if (currentLangEl) {
-            currentLangEl.textContent = savedLang.toUpperCase();
-        }
-        
-        langItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const lang = this.dataset.lang;
-                localStorage.setItem('yeatru_lang', lang);
-                if (currentLangEl) {
-                    currentLangEl.textContent = lang.toUpperCase();
-                }
-                document.dispatchEvent(new CustomEvent('langChanged', { detail: { lang } }));
-            });
-        });
-    });
-    </script>
 </body>
 </html>
