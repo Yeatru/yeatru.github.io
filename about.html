@@ -14,28 +14,25 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" title="Yeatru Sourcing Logo">YC</span>
+                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
+                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
+                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
+                </span>
                 <span>Yeatru Sourcing</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="products.html?category=Home+Decor">Home Decor</a></li>
-                            <li><a class="dropdown-item" href="products.html?category=Kitchen">Kitchen</a></li>
-                            <li><a class="dropdown-item" href="products.html?category=Silicone">Silicone</a></li>
-                            <li><a class="dropdown-item" href="products.html?category=Packaging">Packaging</a></li>
-                            <li><a class="dropdown-item" href="products.html?category=Bags">Bags &amp; Cases</a></li>
-                            <li><a class="dropdown-item" href="products.html?category=Electronics">Electronics</a></li>
-                        </ul>
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu" id="productsDropdownMenu"></ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
@@ -50,20 +47,46 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe"></i> <span>EN</span>
+                    <div class="nav-search-wrapper">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
+                            <i class="fas fa-search"></i>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Español</a></li>
-                            <li><a class="dropdown-item" href="#">Français</a></li>
-                            <li><a class="dropdown-item" href="#">Русский</a></li>
+                        <div class="nav-search-dropdown" id="navSearchDropdown">
+                            <form class="nav-search-form" id="navSearchForm">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="nav-search-results" id="navSearchResults"></div>
+                        </div>
+                    </div>
+                    <div class="dropdown currency-selector">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="current-currency">USD</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown lang-selector">
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
                         </ul>
                     </div>
                     <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
+                    <button id="loginBtn" class="btn btn-outline-primary d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Admin</button>
+                    <button id="logoutBtn" class="btn btn-outline-primary d-none">Logout</button>
                 </div>
             </div>
         </div>
@@ -321,17 +344,52 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="footer-trust-badges">
+                <div class="trust-badge-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="trust-badge-content">
+                        <span class="trust-badge-number">14+</span>
+                        <span class="trust-badge-label">Years Experience</span>
+                    </div>
+                </div>
+                <div class="trust-badge-item">
+                    <i class="fas fa-users"></i>
+                    <div class="trust-badge-content">
+                        <span class="trust-badge-number">200+</span>
+                        <span class="trust-badge-label">Global Clients</span>
+                    </div>
+                </div>
+                <div class="trust-badge-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <div class="trust-badge-content">
+                        <span class="trust-badge-number">50+</span>
+                        <span class="trust-badge-label">Countries Served</span>
+                    </div>
+                </div>
+                <div class="trust-badge-item">
+                    <i class="fas fa-award"></i>
+                    <div class="trust-badge-content">
+                        <span class="trust-badge-number">ISO</span>
+                        <span class="trust-badge-label">9001 Partner</span>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">YC</span>
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
+                        </span>
                         Yeatru Sourcing
                     </a>
                     <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
                     <div class="footer-social">
-                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://linkedin.com/company/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/+8615988516408" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/yeatru_sourcing" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -350,7 +408,7 @@
                     <a href="quality-control.html" class="footer-link">Quality Control</a>
                     <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
                     <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
-                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
+                    <a href="oem.html" class="footer-link">OEM Customization</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Contact Us</h3>
@@ -360,6 +418,17 @@
                     <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
                 </div>
             </div>
+            
+            <div class="footer-payment-row">
+                <span class="footer-payment-label">Accepted Payment Methods:</span>
+                <div class="footer-payment-icons">
+                    <span class="payment-icon"><i class="fab fa-cc-paypal"></i></span>
+                    <span class="payment-icon"><i class="fab fa-cc-visa"></i></span>
+                    <span class="payment-icon"><i class="fab fa-cc-mastercard"></i></span>
+                    <span class="payment-icon"><i class="fas fa-university"></i></span>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
                     <a href="#" class="footer-link d-inline">Privacy Policy</a> |

@@ -855,37 +855,39 @@ body.edit-mode .page-block [data-block-field]:hover {
 
 .section-eyebrow {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .section-divider {
-    width: 60px;
-    height: 3px;
+    width: 50px;
+    height: 2.5px;
     background: var(--primary);
-    margin: 0.5rem auto 1rem;
+    margin: 0.4rem auto 0.75rem;
     border-radius: 2px;
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
 }
 
 .section-subtitle {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: #6c757d;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .section-title-wrap {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 body.edit-mode [contenteditable="true"]:hover {
@@ -2187,7 +2189,7 @@ body.edit-mode [contenteditable="true"]:focus {
 .advantage-card {
     background: #fff;
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.5rem;
     height: 100%;
     border: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -2196,8 +2198,8 @@ body.edit-mode [contenteditable="true"]:focus {
 }
 
 .advantage-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
     border-color: var(--primary);
 }
 
@@ -2207,7 +2209,7 @@ body.edit-mode [contenteditable="true"]:focus {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary), var(--cta));
     transform: scaleX(0);
     transition: transform 0.3s ease;
@@ -2218,33 +2220,33 @@ body.edit-mode [contenteditable="true"]:focus {
 }
 
 .advantage-icon {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--mint);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .advantage-icon i {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--primary);
 }
 
 .advantage-title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .advantage-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
 /* ========== Category & Product Cards ========== */
@@ -2357,7 +2359,7 @@ body.edit-mode [contenteditable="true"]:focus {
 .step-card {
     background: #fff;
     border-radius: var(--radius-lg);
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.25rem;
     text-align: center;
     border: 1px solid var(--border);
     height: 100%;
@@ -2366,36 +2368,36 @@ body.edit-mode [contenteditable="true"]:focus {
 }
 
 .step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
     border-color: var(--primary);
 }
 
 .step-number {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary), var(--cta));
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.25rem;
+    margin: 0 auto 1rem;
 }
 
 .step-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .step-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 /* ========== FAQ Section ========== */
@@ -4257,6 +4259,57 @@ textarea.form-control { min-height: 120px; resize: vertical; }
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
     }
+}
+
+/* ============================================
+   Compact Service Quick Links (Index)
+   ============================================ */
+.service-quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.75rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+}
+
+.service-quick-link:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    color: var(--primary);
+}
+
+.service-quick-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--mint);
+}
+
+.service-quick-link span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .service-quick-link { padding: 1rem 0.5rem; }
+    .service-quick-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+    .service-quick-link span { font-size: 0.8rem; }
 }
 
 /* ============================================
