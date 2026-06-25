@@ -405,7 +405,7 @@
         <!-- Product Categories -->
         <section id="products" class="py-5" style="background-color: var(--bg-light);">
             <div class="container">
-                <div class="section-title-wrap text-center mb-5">
+                <div class="section-title-wrap text-center">
                     <span class="section-eyebrow">Popular Categories</span>
                     <div class="section-divider"></div>
                     <h2 class="section-title">Hot Selling Products</h2>
@@ -413,111 +413,11 @@
                 </div>
                 
                 <!-- Category Icons -->
-                <div class="row g-3 mb-5">
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Home+Decor" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <span class="category-name">Home Decor</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Kitchen" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="category-name">Kitchen</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Silicone" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-grip-lines"></i>
-                            </div>
-                            <span class="category-name">Silicone</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Packaging" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-box"></i>
-                            </div>
-                            <span class="category-name">Packaging</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Bags" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-shopping-bag"></i>
-                            </div>
-                            <span class="category-name">Bags & Cases</span>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="products.html?category=Electronics" class="category-icon-card">
-                            <div class="category-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <span class="category-name">Electronics</span>
-                        </a>
-                    </div>
+                <div class="row g-3" id="indexCategoryList">
                 </div>
                 
                 <!-- Product Cards -->
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(3).jpg" alt="Plastic Storage Box Set" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400'">
-                                <span class="product-mini-tag tag">Stock Available</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Plastic Storage Box Set</h4>
-                                <p class="product-mini-moq">From $4.99 / 100 pcs MOQ</p>
-                                <a href="products.html?search=storage+box" class="btn btn-outline-primary btn-sm w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/PP%20sample%20pending%20veridation.jpg" alt="Stainless Steel Water Bottle" onerror="this.src='https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400'">
-                                <span class="product-mini-tag tag">Customizable</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Stainless Steel Water Bottle</h4>
-                                <p class="product-mini-moq">From $3.49 / 200 pcs MOQ</p>
-                                <a href="products.html?search=bottle" class="btn btn-outline-primary btn-sm w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Silicone Kitchen Utensil Set" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'">
-                                <span class="product-mini-tag tag">Best Seller</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Silicone Kitchen Utensil Set</h4>
-                                <p class="product-mini-moq">From $6.99 / 100 pcs MOQ</p>
-                                <a href="products.html?search=silicone" class="btn btn-outline-primary btn-sm w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-mini-card">
-                            <div class="product-mini-image">
-                                <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/shopdisplay.jpg" alt="Custom Printed Packaging Box" onerror="this.src='https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400'">
-                                <span class="product-mini-tag tag">Custom OEM</span>
-                            </div>
-                            <div class="product-mini-content">
-                                <h4 class="product-mini-title">Custom Printed Packaging Box</h4>
-                                <p class="product-mini-moq">From $0.35 / 500 pcs MOQ</p>
-                                <a href="products.html?search=packaging" class="btn btn-outline-primary btn-sm w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row g-4 mt-4" id="indexHotProducts">
                 </div>
                 
                 <div class="text-center mt-5">

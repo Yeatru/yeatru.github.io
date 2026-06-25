@@ -6678,3 +6678,126 @@ p {
     background: var(--gray-50) !important;
     color: var(--primary-800) !important;
 }
+
+/* Compact Layout Optimization */
+section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+}
+
+section:first-of-type {
+    padding-top: 32px !important;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+    section:first-of-type {
+        padding-top: 24px !important;
+    }
+}
+
+.section-title-wrap {
+    margin-bottom: var(--space-8) !important;
+}
+
+.service-card {
+    padding: 20px 18px !important;
+}
+
+.service-card-image {
+    margin-bottom: 14px !important;
+}
+
+.service-title {
+    margin-bottom: 6px !important;
+}
+
+.product-card .card-body {
+    padding: 16px !important;
+}
+
+.product-category {
+    margin-bottom: 8px !important;
+}
+
+.product-title {
+    margin-bottom: 6px !important;
+}
+
+.product-desc {
+    margin-bottom: 10px !important;
+}
+
+.product-price {
+    margin-bottom: 10px !important;
+}
+
+.footer {
+    padding-top: 48px !important;
+}
+
+.footer-brand {
+    margin-bottom: 12px !important;
+}
+
+.footer-desc {
+    margin-bottom: 14px !important;
+}
+
+.footer-title {
+    margin-bottom: 14px !important;
+}
+
+.footer-link {
+    margin-bottom: 7px !important;
+}
+
+.footer-social {
+    margin-top: 14px !important;
+}
+
+.footer-trust-badges {
+    padding-bottom: 28px !important;
+    margin-bottom: 28px !important;
+    gap: 36px !important;
+}
+
+.footer-payment-row {
+    padding: 18px 0 !important;
+    margin-top: 24px !important;
+}
+
+.footer-bottom {
+    padding-top: 18px !important;
+}
+
+.carousel-title,
+.hero-section h1,
+.banner-title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+    .carousel-title,
+    .hero-section h1,
+    .banner-title {
+        font-size: 1.5rem !important;
+    }
+}
+
+.product-filter-bar {
+    padding: 14px 18px !important;
+    margin-bottom: 24px !important;
+}
+
+.final-cta-box {
+    padding: 40px 32px !important;
+}

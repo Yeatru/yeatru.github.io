@@ -14,7 +14,11 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" title="Yeatru Sourcing Logo">YC</span>
+                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
+                    <img id="brandLogoImg" src="" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
+                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
+                </span>
                 <span>Yeatru Sourcing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -201,7 +205,10 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
-                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">YC</span>
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
+                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
+                        </span>
                         Yeatru Sourcing
                     </a>
                     <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
