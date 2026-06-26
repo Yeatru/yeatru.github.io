@@ -6085,34 +6085,35 @@ p {
 
 /* Category icon card */
 .category-icon-card {
-    padding: 28px 20px !important;
+    padding: 8px 6px !important;
     background: #fff !important;
-    border-radius: var(--radius-xl) !important;
+    border-radius: var(--radius) !important;
     border: 1px solid var(--gray-200) !important;
     transition: all var(--transition-base) !important;
     text-decoration: none;
+    min-width: 70px !important;
 }
 
 .category-icon-card:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: var(--shadow-lg) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
     border-color: var(--primary-300) !important;
 }
 
 .category-icon {
-    width: 64px !important;
-    height: 64px !important;
-    border-radius: 16px !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 8px !important;
     background: linear-gradient(135deg, var(--primary-50), var(--primary-100)) !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 14px !important;
+    margin-bottom: 4px !important;
     transition: all var(--transition-base);
 }
 
 .category-icon i {
-    font-size: 1.5rem !important;
+    font-size: 0.7rem !important;
     color: var(--primary-600) !important;
     transition: all var(--transition-base);
 }
@@ -6127,11 +6128,13 @@ p {
 }
 
 .category-name {
-    font-size: var(--text-sm) !important;
-    font-weight: 600 !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
     color: var(--gray-800) !important;
     text-align: center;
     letter-spacing: -0.005em;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
 }
 
 /* ---------- 6. Category Filter ---------- */
