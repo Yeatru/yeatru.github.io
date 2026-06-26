@@ -854,6 +854,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     display: flex;
     gap: 1rem;
     flex-wrap: nowrap;
+    align-items: stretch;
 }
 
 .contact-cards-row .contact-card {
@@ -863,6 +864,13 @@ body.edit-mode .page-block [data-block-field]:hover {
     align-items: center;
     text-align: center;
     padding: 1.5rem 1rem;
+}
+
+.contact-cards-row .contact-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
 .contact-cards-row .contact-card-icon {
