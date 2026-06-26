@@ -6083,55 +6083,38 @@ p {
     text-decoration: underline !important;
 }
 
-/* Category icon card */
-.category-icon-card {
-    padding: 28px 20px !important;
+/* Category text card - minimal style */
+.category-text-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px !important;
     background: #fff !important;
-    border-radius: var(--radius-xl) !important;
+    border-radius: var(--radius) !important;
     border: 1px solid var(--gray-200) !important;
     transition: all var(--transition-base) !important;
     text-decoration: none;
 }
 
-.category-icon-card:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: var(--shadow-lg) !important;
-    border-color: var(--primary-300) !important;
+.category-text-card:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border-color: var(--primary) !important;
+    background: var(--primary-50) !important;
+    text-decoration: none !important;
 }
 
-.category-icon {
-    width: 64px !important;
-    height: 64px !important;
-    border-radius: 16px !important;
-    background: linear-gradient(135deg, var(--primary-50), var(--primary-100)) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px !important;
-    transition: all var(--transition-base);
-}
-
-.category-icon i {
-    font-size: 1.5rem !important;
-    color: var(--primary-600) !important;
-    transition: all var(--transition-base);
-}
-
-.category-icon-card:hover .category-icon {
-    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
-    transform: scale(1.05);
-}
-
-.category-icon-card:hover .category-icon i {
-    color: #fff !important;
-}
-
-.category-name {
-    font-size: var(--text-sm) !important;
-    font-weight: 600 !important;
-    color: var(--gray-800) !important;
+.category-text {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
     text-align: center;
-    letter-spacing: -0.005em;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+}
+
+.category-text-card:hover .category-text {
+    color: var(--primary) !important;
 }
 
 /* ---------- 6. Category Filter ---------- */
