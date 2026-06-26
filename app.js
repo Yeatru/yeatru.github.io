@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     safeAddEventListener('authBtn', 'click', function () {
-        if (isAdmin()) {
+        if (this.classList.contains('logged-in')) {
             localStorage.removeItem('yeatruAdminLoggedIn');
             updateLoginUI(false);
             const detailPage = document.getElementById('productDetailPage');
@@ -433,6 +433,7 @@ function updateLoginUI(loggedIn) {
     const brandLogoEdit = document.getElementById('brandLogoEdit');
     const adminExportPanel = document.getElementById('adminExportPanel');
     if (authBtn) {
+        authBtn.classList.toggle('logged-in', loggedIn);
         const icon = authBtn.querySelector('i');
         if (loggedIn) {
             if (icon) icon.className = 'fas fa-sign-out-alt';
