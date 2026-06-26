@@ -585,11 +585,8 @@ function renderIndexCategories() {
         const col = document.createElement('div');
         col.className = 'col-auto';
         col.innerHTML = `
-            <a href="products.html?category=${encodeURIComponent(cat)}" class="category-icon-card">
-                <div class="category-icon">
-                    <i class="fas ${getCategoryIcon(cat)}"></i>
-                </div>
-                <span class="category-name">${escapeHtml(cat)}</span>
+            <a href="products.html?category=${encodeURIComponent(cat)}" class="category-text-card">
+                <span class="category-text">${escapeHtml(cat)}</span>
             </a>
         `;
         list.appendChild(col);
