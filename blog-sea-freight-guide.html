@@ -48,9 +48,33 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
+                    <div class="nav-search-wrapper">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="nav-search-dropdown" id="navSearchDropdown">
+                            <form class="nav-search-form" id="navSearchForm">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="nav-search-results" id="navSearchResults"></div>
+                        </div>
+                    </div>
+                    <div class="dropdown currency-selector">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="current-currency">USD</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
+                        </ul>
+                    </div>
                     <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe"></i> <span>EN</span>
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
@@ -392,5 +416,139 @@
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="app.js"></script>
+    <script>
+        const blogSearchData = [
+            {
+                title: "Sea Freight from China: LCL vs. FCL — Complete Cost Comparison (2026)",
+                category: "Logistics",
+                url: "blog-sea-freight-guide.html",
+                description: "Should you ship LCL (shared container) or FCL (full container)? Updated rates, transit times, and a calculator to find the cheapest option for your volume."
+            },
+            {
+                title: "Yiwu International Trade City: A Complete Buyer's Guide (2026)",
+                category: "Market Guide",
+                url: "blog-yiwu-market-guide.html",
+                description: "Everything you need to know about Yiwu International Trade City — the world's largest wholesale market."
+            },
+            {
+                title: "How to Find Reliable Amazon FBA Suppliers in China: 7 Proven Methods",
+                category: "Amazon FBA",
+                url: "blog-amazon-supplier-guide.html",
+                description: "Learn 7 proven methods to find reliable Amazon FBA suppliers in China for your business."
+            },
+            {
+                title: "Sourcing Agent vs. Alibaba: Which Is Better for Amazon FBA in 2026?",
+                category: "Strategy",
+                url: "blog-alibaba-vs-agent.html",
+                description: "Compare sourcing agents vs Alibaba for Amazon FBA sellers — pros, cons, and which is right for you."
+            },
+            {
+                title: "EU & US Product Certifications Explained: CE, FCC, CPC, FDA — What You Actually Need",
+                category: "Compliance",
+                url: "blog-product-certifications.html",
+                description: "Understanding CE, FCC, CPC, FDA and other product certifications required for EU and US markets."
+            },
+            {
+                title: "Private Mold vs. Logo Printing: Which OEM Path Fits Your Brand Budget?",
+                category: "OEM / Branding",
+                url: "blog-private-mold-packaging.html",
+                description: "Compare private mold vs logo printing for OEM branding — costs, lead times, and brand differentiation."
+            }
+        ];
+
+        const navSearchToggle = document.getElementById('navSearchToggle');
+        const navSearchDropdown = document.getElementById('navSearchDropdown');
+        const navSearchInput = document.getElementById('navSearchInput');
+        const navSearchResults = document.getElementById('navSearchResults');
+        const navSearchForm = document.getElementById('navSearchForm');
+
+        if (navSearchToggle && navSearchDropdown) {
+            navSearchToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navSearchDropdown.classList.toggle('show');
+                if (navSearchDropdown.classList.contains('show')) {
+                    navSearchInput.focus();
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navSearchDropdown.contains(e.target) && !navSearchToggle.contains(e.target)) {
+                    navSearchDropdown.classList.remove('show');
+                }
+            });
+        }
+
+        function performSearch(query) {
+            if (!query || query.trim().length < 2) {
+                navSearchResults.innerHTML = '';
+                return;
+            }
+
+            const q = query.toLowerCase();
+            const results = blogSearchData.filter(post => 
+                post.title.toLowerCase().includes(q) ||
+                post.category.toLowerCase().includes(q) ||
+                post.description.toLowerCase().includes(q)
+            );
+
+            if (results.length === 0) {
+                navSearchResults.innerHTML = '<div class="nav-search-no-results">No results found</div>';
+                return;
+            }
+
+            navSearchResults.innerHTML = results.map(post => `
+                <a href="${post.url}" class="nav-search-result-item">
+                    <span class="nav-search-result-category">${post.category}</span>
+                    <div class="nav-search-result-title">${post.title}</div>
+                    <div class="nav-search-result-desc">${post.description}</div>
+                </a>
+            `).join('');
+        }
+
+        if (navSearchInput) {
+            navSearchInput.addEventListener('input', function() {
+                performSearch(this.value);
+            });
+        }
+
+        if (navSearchForm) {
+            navSearchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const query = navSearchInput.value.trim();
+                if (query) {
+                    performSearch(query);
+                }
+            });
+        }
+
+        const langNames = { en: 'EN', es: 'ES', fr: 'FR', ru: 'RU' };
+
+        function updateLangDisplay() {
+            const currentLangEl = document.getElementById('current-lang');
+            if (currentLangEl && typeof i18next !== 'undefined') {
+                const lang = i18next.language || 'en';
+                currentLangEl.textContent = langNames[lang] || 'EN';
+            }
+        }
+
+        document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                if (typeof i18next !== 'undefined') {
+                    i18next.changeLanguage(lang).then(function() {
+                        updateLangDisplay();
+                        if (typeof updateContent === 'function') {
+                            updateContent();
+                        }
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLangDisplay();
+        });
+    </script>
 </body>
 </html>
