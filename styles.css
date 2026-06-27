@@ -3069,12 +3069,11 @@ body.edit-mode [contenteditable="true"]:focus {
 
 .contact-section { padding: 5rem 0; background-color: var(--bg-light); }
 
-.contact-card {
+.contact-section .contact-card {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    display: flex;
-    flex-wrap: wrap;
+    display: block !important;
 }
 
 .contact-info {
@@ -3922,7 +3921,6 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .btn-primary-custom, .btn-outline-custom { display: block; width: 100%; margin: 0 0 1rem 0; }
     .section-title { font-size: 1.8rem; }
     .yiwu-img { height: 250px; }
-    .contact-card { flex-direction: column; }
     .service-card { padding: 2rem 1.5rem; }
     .process-timeline { flex-direction: column; align-items: center; gap: 2rem; }
     .process-timeline::before { display: none; }
