@@ -854,82 +854,84 @@
 
         <section id="contact-us" class="contact-section">
             <div class="container">
-                <div class="contact-card row">
-                    <div class="col-lg-5">
-                        <div class="contact-info">
-                            <h2 class="contact-info-title" data-i18n="contact.getInTouch">Get In Touch With Us</h2>
-                            <p class="mb-4" data-i18n="contact.desc">Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.</p>
-                            <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-info-text">Yiwu City, Zhejiang Province, China</div></div>
-                            <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-phone"></i></div><div class="contact-info-text">+86 15988516408 (WhatsApp)</div></div>
-                            <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-envelope"></i></div><div class="contact-info-text">info@yeatru.com</div></div>
-                            <div class="contact-social">
-                                <a href="#" class="contact-social-icon"><i class="fab fa-whatsapp"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-facebook"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-linkedin"></i></a>
+                <div class="contact-card">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="contact-info">
+                                <h2 class="contact-info-title" data-i18n="contact.getInTouch">Get In Touch With Us</h2>
+                                <p class="mb-4" data-i18n="contact.desc">Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.</p>
+                                <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-info-text">Yiwu City, Zhejiang Province, China</div></div>
+                                <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-phone"></i></div><div class="contact-info-text">+86 15988516408 (WhatsApp)</div></div>
+                                <div class="contact-info-item"><div class="contact-info-icon"><i class="fas fa-envelope"></i></div><div class="contact-info-text">info@yeatru.com</div></div>
+                                <div class="contact-social">
+                                    <a href="#" class="contact-social-icon"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#" class="contact-social-icon"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="contact-social-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="contact-form">
-                            <h2 class="form-title" data-i18n="contact.requestQuote">Request a Free Quote</h2>
-                            <form action="https://formsubmit.co/info@yeatru.com" method="POST" id="contactQuoteForm">
-                                <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
-                                <div class="row">
-                                    <div class="col-md-6"><input type="text" class="form-control" name="name" placeholder="Your Name *" required></div>
-                                    <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email Address *" required></div>
-                                </div>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone Number / WhatsApp *" required>
-                                
-                                <!-- Product Category Dropdown -->
-                                <select class="form-control form-select" name="category" id="quoteCategory">
-                                    <option value="">Select Product Category *</option>
-                                    <option value="Home Decor">Home Decor &amp; Storage</option>
-                                    <option value="Kitchenware">Kitchenware &amp; Utensils</option>
-                                    <option value="Silicone">Silicone Products</option>
-                                    <option value="Packaging">Packaging &amp; Boxes</option>
-                                    <option value="Bags">Bags &amp; Cases</option>
-                                    <option value="Electronics">Electronics &amp; Accessories</option>
-                                    <option value="Beauty">Beauty &amp; Personal Care</option>
-                                    <option value="Fashion">Fashion &amp; Jewelry</option>
-                                    <option value="Toys">Toys &amp; Gifts</option>
-                                    <option value="Sports">Sports &amp; Outdoors</option>
-                                    <option value="Other">Other (specify below)</option>
-                                </select>
-                                
-                                <input type="text" class="form-control" name="product" placeholder="Product Name / SKU (e.g. Storage Box 500ml)" id="quoteProduct">
-                                
-                                <!-- Quantity & MOQ Row -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="number" class="form-control" name="quantity" placeholder="Quantity Needed *" min="1" id="quoteQuantity" required>
+                        <div class="col-lg-7">
+                            <div class="contact-form">
+                                <h2 class="form-title" data-i18n="contact.requestQuote">Request a Free Quote</h2>
+                                <form action="https://formsubmit.co/info@yeatru.com" method="POST" id="contactQuoteForm">
+                                    <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_template" value="table">
+                                    <div class="row">
+                                        <div class="col-md-6"><input type="text" class="form-control" name="name" placeholder="Your Name *" required></div>
+                                        <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email Address *" required></div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control form-select" name="moq_preference" id="quoteMOQ">
-                                            <option value="">MOQ Preference</option>
-                                            <option value="Low (50-200 pcs)">Low MOQ (50-200 pcs)</option>
-                                            <option value="Medium (200-1000 pcs)">Medium MOQ (200-1000 pcs)</option>
-                                            <option value="Standard (1000+ pcs)">Standard MOQ (1000+ pcs)</option>
-                                            <option value="Flexible">Flexible / Not Sure</option>
-                                        </select>
+                                    <input type="tel" class="form-control" name="phone" placeholder="Phone Number / WhatsApp *" required>
+                                    
+                                    <!-- Product Category Dropdown -->
+                                    <select class="form-control form-select" name="category" id="quoteCategory">
+                                        <option value="">Select Product Category *</option>
+                                        <option value="Home Decor">Home Decor &amp; Storage</option>
+                                        <option value="Kitchenware">Kitchenware &amp; Utensils</option>
+                                        <option value="Silicone">Silicone Products</option>
+                                        <option value="Packaging">Packaging &amp; Boxes</option>
+                                        <option value="Bags">Bags &amp; Cases</option>
+                                        <option value="Electronics">Electronics &amp; Accessories</option>
+                                        <option value="Beauty">Beauty &amp; Personal Care</option>
+                                        <option value="Fashion">Fashion &amp; Jewelry</option>
+                                        <option value="Toys">Toys &amp; Gifts</option>
+                                        <option value="Sports">Sports &amp; Outdoors</option>
+                                        <option value="Other">Other (specify below)</option>
+                                    </select>
+                                    
+                                    <input type="text" class="form-control" name="product" placeholder="Product Name / SKU (e.g. Storage Box 500ml)" id="quoteProduct">
+                                    
+                                    <!-- Quantity & MOQ Row -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control" name="quantity" placeholder="Quantity Needed *" min="1" id="quoteQuantity" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-control form-select" name="moq_preference" id="quoteMOQ">
+                                                <option value="">MOQ Preference</option>
+                                                <option value="Low (50-200 pcs)">Low MOQ (50-200 pcs)</option>
+                                                <option value="Medium (200-1000 pcs)">Medium MOQ (200-1000 pcs)</option>
+                                                <option value="Standard (1000+ pcs)">Standard MOQ (1000+ pcs)</option>
+                                                <option value="Flexible">Flexible / Not Sure</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <!-- Service Type -->
-                                <select class="form-control form-select" name="service_type" id="quoteServiceType">
-                                    <option value="">Service Type Needed *</option>
-                                    <option value="Product Sourcing">Product Sourcing (find suppliers)</option>
-                                    <option value="OEM Customization">OEM / Private Label</option>
-                                    <option value="Quality Control">Quality Control / Inspection</option>
-                                    <option value="Logistics">Logistics &amp; Shipping</option>
-                                    <option value="Full Service">Full One-Stop Service</option>
-                                </select>
-                                
-                                <textarea class="form-control" name="message" placeholder="Additional requirements (specs, target price, timeline, etc.)" rows="3"></textarea>
-                                
-                                <button type="submit" class="btn btn-cta w-100"><i class="fas fa-paper-plane me-2"></i>Send Request</button>
-                            </form>
+                                    
+                                    <!-- Service Type -->
+                                    <select class="form-control form-select" name="service_type" id="quoteServiceType">
+                                        <option value="">Service Type Needed *</option>
+                                        <option value="Product Sourcing">Product Sourcing (find suppliers)</option>
+                                        <option value="OEM Customization">OEM / Private Label</option>
+                                        <option value="Quality Control">Quality Control / Inspection</option>
+                                        <option value="Logistics">Logistics &amp; Shipping</option>
+                                        <option value="Full Service">Full One-Stop Service</option>
+                                    </select>
+                                    
+                                    <textarea class="form-control" name="message" placeholder="Additional requirements (specs, target price, timeline, etc.)" rows="3"></textarea>
+                                    
+                                    <button type="submit" class="btn btn-cta w-100"><i class="fas fa-paper-plane me-2"></i>Send Request</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
