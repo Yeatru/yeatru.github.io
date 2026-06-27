@@ -3074,7 +3074,7 @@ body.edit-mode [contenteditable="true"]:focus {
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     display: flex;
-    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .contact-info {
