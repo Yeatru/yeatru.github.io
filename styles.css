@@ -4666,6 +4666,10 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     display: none;
 }
 
+.blog-card-image.image-loaded .blog-card-placeholder {
+    display: none;
+}
+
 .blog-card-placeholder {
     position: absolute;
     inset: 0;

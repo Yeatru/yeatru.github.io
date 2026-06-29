@@ -1667,3 +1667,23 @@ function resetDefaultMeta() {
     const existingLd = document.getElementById('product-jsonld');
     if (existingLd) existingLd.remove();
 }
+
+function initBlogCardImages() {
+    document.querySelectorAll('.blog-card-image').forEach(function (wrapper) {
+        const img = wrapper.querySelector('img');
+        if (!img) return;
+        if (img.complete && img.naturalWidth > 0) {
+            wrapper.classList.add('image-loaded');
+        } else {
+            img.addEventListener('load', function () {
+                wrapper.classList.add('image-loaded');
+            });
+            img.addEventListener('error', function () {
+                wrapper.classList.add('image-error');
+                img.style.display = 'none';
+            });
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initBlogCardImages);
