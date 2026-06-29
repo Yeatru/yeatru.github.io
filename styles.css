@@ -4730,6 +4730,8 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     background: linear-gradient(135deg, var(--primary-50) 0%, #fff 100%);
     font-size: 0.95rem;
     font-weight: 500;
+    opacity: 0;
+    z-index: 2;
 }
 
 .page-hero-image-placeholder i {
