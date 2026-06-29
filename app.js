@@ -964,6 +964,7 @@ function showDetailPage(productId) {
     page.classList.add('active');
     setDetailMode('preview');
     renderDetailPage(productId);
+    setProductMeta(product);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -976,6 +977,7 @@ function hideDetailPage() {
         page.classList.remove('active');
         page.style.display = 'none';
     }
+    resetDefaultMeta();
     if (location.hash.startsWith('#product/')) {
         history.replaceState(null, '', '#products');
     }
@@ -1527,4 +1529,141 @@ function saveLogoFromModal() {
     } else {
         finalize(null);
     }
+}
+
+let defaultMeta = {};
+
+function saveDefaultMeta() {
+    const titleEl = document.querySelector('title');
+    const descEl = document.querySelector('meta[name="description"]');
+    const ogTitleEl = document.querySelector('meta[property="og:title"]');
+    const ogDescEl = document.querySelector('meta[property="og:description"]');
+    const ogImageEl = document.querySelector('meta[property="og:image"]');
+    const ogUrlEl = document.querySelector('meta[property="og:url"]');
+    const ogTypeEl = document.querySelector('meta[property="og:type"]');
+    const twitterTitleEl = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescEl = document.querySelector('meta[name="twitter:description"]');
+    const twitterImageEl = document.querySelector('meta[name="twitter:image"]');
+    const twitterUrlEl = document.querySelector('meta[name="twitter:url"]');
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+
+    defaultMeta = {
+        title: titleEl ? titleEl.textContent : '',
+        description: descEl ? descEl.content : '',
+        ogTitle: ogTitleEl ? ogTitleEl.content : '',
+        ogDescription: ogDescEl ? ogDescEl.content : '',
+        ogImage: ogImageEl ? ogImageEl.content : '',
+        ogUrl: ogUrlEl ? ogUrlEl.content : '',
+        ogType: ogTypeEl ? ogTypeEl.content : '',
+        twitterTitle: twitterTitleEl ? twitterTitleEl.content : '',
+        twitterDescription: twitterDescEl ? twitterDescEl.content : '',
+        twitterImage: twitterImageEl ? twitterImageEl.content : '',
+        twitterUrl: twitterUrlEl ? twitterUrlEl.content : '',
+        canonical: canonicalEl ? canonicalEl.href : ''
+    };
+}
+
+function updateMetaTag(selector, attribute, value) {
+    let el = document.querySelector(selector);
+    if (!el) {
+        if (selector.startsWith('meta[property=')) {
+            const prop = selector.match(/meta\[property="([^"]+)"\]/);
+            if (prop) {
+                el = document.createElement('meta');
+                el.setAttribute('property', prop[1]);
+                document.head.appendChild(el);
+            }
+        } else if (selector.startsWith('meta[name=')) {
+            const name = selector.match(/meta\[name="([^"]+)"\]/);
+            if (name) {
+                el = document.createElement('meta');
+                el.setAttribute('name', name[1]);
+                document.head.appendChild(el);
+            }
+        } else if (selector.startsWith('link[rel=')) {
+            const rel = selector.match(/link\[rel="([^"]+)"\]/);
+            if (rel) {
+                el = document.createElement('link');
+                el.setAttribute('rel', rel[1]);
+                document.head.appendChild(el);
+            }
+        }
+    }
+    if (el) {
+        el.setAttribute(attribute, value);
+    }
+}
+
+function setProductMeta(product) {
+    if (!product) return;
+    if (Object.keys(defaultMeta).length === 0) saveDefaultMeta();
+
+    const productUrl = window.location.origin + window.location.pathname + '#product/' + product.id;
+    const productImage = product.image || 'https://www.yeatru.com/og-image.svg';
+    const productDesc = product.description ? product.description.substring(0, 160) : defaultMeta.description;
+    const productTitle = product.name + ' | Yeatru Sourcing - China Wholesale Products';
+
+    document.title = productTitle;
+    updateMetaTag('meta[name="description"]', 'content', productDesc);
+    updateMetaTag('link[rel="canonical"]', 'href', productUrl);
+    updateMetaTag('meta[property="og:title"]', 'content', productTitle);
+    updateMetaTag('meta[property="og:description"]', 'content', productDesc);
+    updateMetaTag('meta[property="og:image"]', 'content', productImage);
+    updateMetaTag('meta[property="og:url"]', 'content', productUrl);
+    updateMetaTag('meta[property="og:type"]', 'content', 'product');
+    updateMetaTag('meta[name="twitter:title"]', 'content', productTitle);
+    updateMetaTag('meta[name="twitter:description"]', 'content', productDesc);
+    updateMetaTag('meta[name="twitter:image"]', 'content', productImage);
+    updateMetaTag('meta[name="twitter:url"]', 'content', productUrl);
+
+    let existingLd = document.getElementById('product-jsonld');
+    if (!existingLd) {
+        existingLd = document.createElement('script');
+        existingLd.type = 'application/ld+json';
+        existingLd.id = 'product-jsonld';
+        document.head.appendChild(existingLd);
+    }
+    existingLd.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": product.name,
+        "image": productImage,
+        "description": product.description || '',
+        "sku": product.sku || '',
+        "brand": {
+            "@type": "Brand",
+            "name": "Yeatru Sourcing"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": product.priceMin || 0,
+            "highPrice": product.priceMax || 0,
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Yeatru Sourcing"
+            }
+        }
+    });
+}
+
+function resetDefaultMeta() {
+    if (Object.keys(defaultMeta).length === 0) return;
+
+    document.title = defaultMeta.title;
+    updateMetaTag('meta[name="description"]', 'content', defaultMeta.description);
+    updateMetaTag('link[rel="canonical"]', 'href', defaultMeta.canonical);
+    updateMetaTag('meta[property="og:title"]', 'content', defaultMeta.ogTitle);
+    updateMetaTag('meta[property="og:description"]', 'content', defaultMeta.ogDescription);
+    updateMetaTag('meta[property="og:image"]', 'content', defaultMeta.ogImage);
+    updateMetaTag('meta[property="og:url"]', 'content', defaultMeta.ogUrl);
+    updateMetaTag('meta[property="og:type"]', 'content', defaultMeta.ogType);
+    updateMetaTag('meta[name="twitter:title"]', 'content', defaultMeta.twitterTitle);
+    updateMetaTag('meta[name="twitter:description"]', 'content', defaultMeta.twitterDescription);
+    updateMetaTag('meta[name="twitter:image"]', 'content', defaultMeta.twitterImage);
+    updateMetaTag('meta[name="twitter:url"]', 'content', defaultMeta.twitterUrl);
+
+    const existingLd = document.getElementById('product-jsonld');
+    if (existingLd) existingLd.remove();
 }
