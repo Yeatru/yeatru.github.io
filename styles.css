@@ -1763,7 +1763,42 @@ body.edit-mode [contenteditable="true"]:focus {
 .banner-image-placeholder i {
     font-size: 3rem;
     margin-bottom: 0.75rem;
-    opacity: 0.4;
+}
+
+/* Trust Badges in Banner */
+.banner-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    min-width: 90px;
+    text-align: center;
+}
+
+.trust-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.trust-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.25rem;
 }
 
 .banner-image-placeholder span {
