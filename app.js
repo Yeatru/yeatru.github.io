@@ -1221,6 +1221,8 @@ function buildAplusBlockEl(b, idx) {
         <button type="button" data-format="insertUnorderedList" title="Unordered List"><i class="fas fa-list-ul"></i></button>
         <button type="button" data-format="insertOrderedList" title="Ordered List"><i class="fas fa-list-ol"></i></button>
         <button type="button" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
+        <button type="button" data-format="insertRow" title="Insert Row"><i class="fas fa-plus"></i></button>
+        <button type="button" data-format="deleteRow" title="Delete Row"><i class="fas fa-minus"></i></button>
         <button type="button" data-format="deleteTable" title="Delete Table"><i class="fas fa-trash-alt"></i></button>
     `;
     wrap.appendChild(textToolbar);
@@ -1309,14 +1311,72 @@ function buildAplusBlockEl(b, idx) {
             if (textEl) {
                 textEl.focus();
                 if (format === 'insertTable') {
-                    document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">Header 1</td><td style="padding:6px;border:1px solid #ccc;">Header 2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">Content 1</td><td style="padding:6px;border:1px solid #ccc;">Content 2</td></tr></table>');
+                    const rows = prompt('Enter number of rows (1-10):', '3');
+                    const cols = prompt('Enter number of columns (1-10):', '2');
+                    const numRows = Math.min(10, Math.max(1, parseInt(rows) || 3));
+                    const numCols = Math.min(10, Math.max(1, parseInt(cols) || 2));
+                    let tableHtml = '<table border="1" style="border-collapse:collapse;margin:10px 0;width:100%;">';
+                    // Header row
+                    tableHtml += '<tr>';
+                    for (let c = 0; c < numCols; c++) {
+                        tableHtml += `<th style="padding:8px;border:1px solid #ccc;background:#0b7b94;color:#fff;">Header ${c + 1}</th>`;
+                    }
+                    tableHtml += '</tr>';
+                    // Data rows
+                    for (let r = 1; r < numRows; r++) {
+                        tableHtml += '<tr>';
+                        for (let c = 0; c < numCols; c++) {
+                            tableHtml += `<td style="padding:8px;border:1px solid #ccc;">Cell ${r}-${c + 1}</td>`;
+                        }
+                        tableHtml += '</tr>';
+                    }
+                    tableHtml += '</table>';
+                    document.execCommand('insertHTML', false, tableHtml);
                 } else if (format === 'deleteTable') {
                     const selection = window.getSelection();
                     if (selection.rangeCount > 0) {
                         const range = selection.getRangeAt(0);
-                        const table = range.commonAncestorContainer.closest('table');
-                        if (table) {
-                            table.remove();
+                        let node = range.commonAncestorContainer;
+                        while (node && node !== textEl) {
+                            if (node.tagName === 'TABLE') {
+                                node.remove();
+                                break;
+                            }
+                            node = node.parentNode;
+                        }
+                    }
+                } else if (format === 'insertRow') {
+                    const selection = window.getSelection();
+                    if (selection.rangeCount > 0) {
+                        let node = selection.anchorNode;
+                        while (node && node !== textEl) {
+                            if (node.tagName === 'TR') {
+                                const newRow = node.cloneNode(true);
+                                newRow.querySelectorAll('th, td').forEach(cell => {
+                                    if (cell.tagName === 'TH') {
+                                        cell.tagName = 'TD';
+                                    }
+                                    cell.textContent = 'New Cell';
+                                });
+                                node.parentNode.insertBefore(newRow, node.nextSibling);
+                                break;
+                            }
+                            node = node.parentNode;
+                        }
+                    }
+                } else if (format === 'deleteRow') {
+                    const selection = window.getSelection();
+                    if (selection.rangeCount > 0) {
+                        let node = selection.anchorNode;
+                        while (node && node !== textEl) {
+                            if (node.tagName === 'TR') {
+                                const table = node.closest('table');
+                                if (table && table.rows.length > 1) {
+                                    node.remove();
+                                }
+                                break;
+                            }
+                            node = node.parentNode;
                         }
                     }
                 } else if (format === 'insertUnorderedList') {
