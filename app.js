@@ -1221,6 +1221,7 @@ function buildAplusBlockEl(b, idx) {
         <button type="button" data-format="insertUnorderedList" title="Unordered List"><i class="fas fa-list-ul"></i></button>
         <button type="button" data-format="insertOrderedList" title="Ordered List"><i class="fas fa-list-ol"></i></button>
         <button type="button" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
+        <button type="button" data-format="deleteTable" title="Delete Table"><i class="fas fa-trash-alt"></i></button>
     `;
     wrap.appendChild(textToolbar);
 
@@ -1309,10 +1310,19 @@ function buildAplusBlockEl(b, idx) {
                 textEl.focus();
                 if (format === 'insertTable') {
                     document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">Header 1</td><td style="padding:6px;border:1px solid #ccc;">Header 2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">Content 1</td><td style="padding:6px;border:1px solid #ccc;">Content 2</td></tr></table>');
+                } else if (format === 'deleteTable') {
+                    const selection = window.getSelection();
+                    if (selection.rangeCount > 0) {
+                        const range = selection.getRangeAt(0);
+                        const table = range.commonAncestorContainer.closest('table');
+                        if (table) {
+                            table.remove();
+                        }
+                    }
                 } else if (format === 'insertUnorderedList') {
-                    document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>');
+                    document.execCommand('insertUnorderedList', false, null);
                 } else if (format === 'insertOrderedList') {
-                    document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>First</li><li>Second</li><li>Third</li></ol>');
+                    document.execCommand('insertOrderedList', false, null);
                 } else {
                     document.execCommand(format, false, null);
                 }
