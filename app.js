@@ -400,7 +400,7 @@ function updateContent() {
     console.log('[i18n] Found', elements.length, 'elements with data-i18n attribute');
     let updatedCount = 0;
     let failedCount = 0;
-    elements.forEach(el => {
+    elements.forEach((el, index) => {
         const key = el.getAttribute('data-i18n');
         try {
             const v = i18next.t(key);
@@ -408,7 +408,9 @@ function updateContent() {
                 el.textContent = v;
                 updatedCount++;
             } else {
-                console.warn('[i18n] No translation found for key:', key);
+                if (index < 20) {
+                    console.warn('[i18n] No translation for key:', key, 'element:', el.tagName, el.className);
+                }
                 failedCount++;
             }
         } catch (e) {
