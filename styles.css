@@ -3573,6 +3573,35 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .aplus-block-toolbar button:hover { background-color: var(--bg-light); }
 .aplus-block-toolbar button.danger { color: #dc3545; border-color: #dc3545; }
 
+.aplus-text-toolbar {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e9ecef;
+}
+
+.aplus-block.edit-mode .aplus-text-toolbar { display: flex; }
+
+.aplus-text-toolbar button {
+    border: 1px solid #ced4da;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+}
+
+.aplus-text-toolbar button:hover { background-color: var(--primary); color: #fff; border-color: var(--primary); }
+
 .aplus-block.edit-mode [contenteditable=true] {
     outline: 1px dashed #b8d8e2;
     outline-offset: 2px;

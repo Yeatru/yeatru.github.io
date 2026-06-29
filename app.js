@@ -1212,6 +1212,18 @@ function buildAplusBlockEl(b, idx) {
     `;
     wrap.appendChild(toolbar);
 
+    const textToolbar = document.createElement('div');
+    textToolbar.className = 'aplus-text-toolbar';
+    textToolbar.innerHTML = `
+        <button type="button" data-format="bold" title="Bold"><i class="fas fa-bold"></i></button>
+        <button type="button" data-format="italic" title="Italic"><i class="fas fa-italic"></i></button>
+        <button type="button" data-format="underline" title="Underline"><i class="fas fa-underline"></i></button>
+        <button type="button" data-format="insertUnorderedList" title="Unordered List"><i class="fas fa-list-ul"></i></button>
+        <button type="button" data-format="insertOrderedList" title="Ordered List"><i class="fas fa-list-ol"></i></button>
+        <button type="button" data-format="insertTable" title="Insert Table"><i class="fas fa-table"></i></button>
+    `;
+    wrap.appendChild(textToolbar);
+
     const content = document.createElement('div');
     content.className = 'aplus-block-content';
     if (b.type === 'hero') {
@@ -1288,6 +1300,26 @@ function buildAplusBlockEl(b, idx) {
             scheduleAutoSave();
         });
     }
+    wrap.querySelectorAll('[data-format]').forEach(btn => {
+        btn.addEventListener('mousedown', function (e) {
+            e.preventDefault();
+            const format = this.dataset.format;
+            const textEl = wrap.querySelector('[data-editable="text"]');
+            if (textEl) {
+                textEl.focus();
+                if (format === 'insertTable') {
+                    document.execCommand('insertHTML', false, '<table border="1" style="border-collapse:collapse;margin:10px 0;"><tr><td style="padding:6px;border:1px solid #ccc;">Header 1</td><td style="padding:6px;border:1px solid #ccc;">Header 2</td></tr><tr><td style="padding:6px;border:1px solid #ccc;">Content 1</td><td style="padding:6px;border:1px solid #ccc;">Content 2</td></tr></table>');
+                } else if (format === 'insertUnorderedList') {
+                    document.execCommand('insertHTML', false, '<ul style="margin:8px 0;padding-left:24px;"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>');
+                } else if (format === 'insertOrderedList') {
+                    document.execCommand('insertHTML', false, '<ol style="margin:8px 0;padding-left:24px;"><li>First</li><li>Second</li><li>Third</li></ol>');
+                } else {
+                    document.execCommand(format, false, null);
+                }
+                scheduleAutoSave();
+            }
+        });
+    });
     return wrap;
 }
 
