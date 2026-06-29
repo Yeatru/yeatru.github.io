@@ -4710,6 +4710,14 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     object-fit: cover;
 }
 
+.page-hero-image.image-error img {
+    display: none;
+}
+
+.page-hero-image.image-error .page-hero-image-placeholder {
+    opacity: 1;
+}
+
 .page-hero-image-placeholder {
     position: absolute;
     inset: 0;
