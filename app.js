@@ -176,12 +176,14 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             interpolation: { escapeValue: false }
         }).then(function () {
+            console.log('[i18n] i18next initialized successfully');
+            console.log('[i18n] Current language:', i18next.language);
             updateContent();
             bindLanguageEvents();
             loadRemoteSiteData();
             updateLoginUI(isAdmin());
         }).catch(function (err) {
-            console.error('i18next init error:', err);
+            console.error('[i18n] i18next init error:', err);
             updateLoginUI(isAdmin());
         });
 
@@ -383,19 +385,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updateContent() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
+    console.log('[i18n] Updating content for language:', i18next.language);
+    const elements = document.querySelectorAll('[data-i18n]');
+    console.log('[i18n] Found', elements.length, 'elements with data-i18n attribute');
+    let updatedCount = 0;
+    let failedCount = 0;
+    elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
         try {
             const v = i18next.t(key);
-            if (v && v !== key) el.textContent = v;
-        } catch (e) {}
+            if (v && v !== key) {
+                el.textContent = v;
+                updatedCount++;
+            } else {
+                console.warn('[i18n] No translation found for key:', key);
+                failedCount++;
+            }
+        } catch (e) {
+            console.error('[i18n] Error translating key:', key, e);
+            failedCount++;
+        }
     });
+    console.log('[i18n] Updated:', updatedCount, 'Failed:', failedCount);
+    
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         try {
             const v = i18next.t(key);
             if (v && v !== key) el.placeholder = v;
-        } catch (e) {}
+        } catch (e) {
+            console.error('[i18n] Error translating placeholder key:', key, e);
+        }
     });
     const langNames = { en: 'English', es: 'Español', fr: 'Français', ru: 'Русский' };
     const cur = document.getElementById('current-lang');
@@ -403,6 +423,7 @@ function updateContent() {
         try {
             cur.textContent = langNames[i18next.language] || 'English';
         } catch (e) {
+            console.error('[i18n] Error updating lang indicator:', e);
             cur.textContent = 'English';
         }
     }
