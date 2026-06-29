@@ -155,37 +155,47 @@ function safeAddEventListener(id, event, handler) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    initCurrencySelector();
-    renderBrandLogo();
-    renderProductsDropdown();
-    renderIndexCategories();
-    renderIndexHotProducts();
-    renderCategories();
-    renderProducts();
+    console.log('[i18n] DOMContentLoaded fired, starting i18next init...');
+    
+    try {
+        i18next
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                fallbackLng: 'en',
+                resources: translationResources,
+                supportedLngs: ['en', 'es', 'fr', 'ru'],
+                nonExplicitSupportedLngs: false,
+                detection: {
+                    order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+                    caches: ['localStorage', 'cookie']
+                },
+                interpolation: { escapeValue: false }
+            }).then(function () {
+                console.log('[i18n] i18next initialized successfully');
+                console.log('[i18n] Current language:', i18next.language);
+                updateContent();
+                bindLanguageEvents();
+                loadRemoteSiteData();
+                updateLoginUI(isAdmin());
+            }).catch(function (err) {
+                console.error('[i18n] i18next init error:', err);
+                updateLoginUI(isAdmin());
+            });
+    } catch (e) {
+        console.error('[i18n] Exception during i18next setup:', e);
+    }
 
-    i18next
-        .use(i18nextBrowserLanguageDetector)
-        .init({
-            fallbackLng: 'en',
-            resources: translationResources,
-            supportedLngs: ['en', 'es', 'fr', 'ru'],
-            nonExplicitSupportedLngs: false,
-            detection: {
-                order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
-                caches: ['localStorage', 'cookie']
-            },
-            interpolation: { escapeValue: false }
-        }).then(function () {
-            console.log('[i18n] i18next initialized successfully');
-            console.log('[i18n] Current language:', i18next.language);
-            updateContent();
-            bindLanguageEvents();
-            loadRemoteSiteData();
-            updateLoginUI(isAdmin());
-        }).catch(function (err) {
-            console.error('[i18n] i18next init error:', err);
-            updateLoginUI(isAdmin());
-        });
+    try {
+        initCurrencySelector();
+        renderBrandLogo();
+        renderProductsDropdown();
+        renderIndexCategories();
+        renderIndexHotProducts();
+        renderCategories();
+        renderProducts();
+    } catch (e) {
+        console.error('[init] Error during initial render:', e);
+    }
 
     safeAddEventListener('submitLogin', 'click', function () {
         const username = document.getElementById('adminUsername').value.trim();
