@@ -68,27 +68,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" data-i18n="nav.services">Sourcing Service</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
-                            <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
-                            <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
-                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
-                            <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
-                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
+                            <li><a class="dropdown-item" href="supplier-verification.html" data-i18n="services.supplierVerification">Supplier Verification</a></li>
+                            <li><a class="dropdown-item" href="product-sourcing.html" data-i18n="services.productSourcing">Product Sourcing</a></li>
+                            <li><a class="dropdown-item" href="quality-control.html" data-i18n="services.qualityControl">Quality Control</a></li>
+                            <li><a class="dropdown-item" href="logistics-shipping.html" data-i18n="services.logistics">Logistics &amp; Warehousing</a></li>
+                            <li><a class="dropdown-item" href="price-negotiation.html" data-i18n="services.priceNegotiation">Price Negotiation</a></li>
+                            <li><a class="dropdown-item" href="factory-audit.html" data-i18n="nav.factoryAudit">Factory Audit</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
-                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
-                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
+                            <li><a class="dropdown-item" href="oem.html" data-i18n="nav.oem">OEM Customization</a></li>
+                            <li><a class="dropdown-item" href="sample-order.html" data-i18n="nav.sampleOrder">Sample Order</a></li>
+                            <li><a class="dropdown-item" href="service-plans.html" data-i18n="nav.servicePlans">Service Plans</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="payment.html">Payment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment.html" data-i18n="nav.payment">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
                     <div class="nav-search-wrapper">
@@ -97,7 +97,7 @@
                         </button>
                         <div class="nav-search-dropdown" id="navSearchDropdown">
                             <form class="nav-search-form" id="navSearchForm">
-                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." data-i18n-placeholder="searchPlaceholder" autocomplete="off">
                                 <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
                             </form>
                             <div class="nav-search-results" id="navSearchResults"></div>
@@ -126,7 +126,7 @@
                             <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
                         </ul>
                     </div>
-                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
+                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex" data-i18n="common.getQuote">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
                     <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
@@ -141,22 +141,22 @@
     <section class="page-hero">
         <div class="container">
             <nav class="breadcrumb-bar" aria-label="breadcrumb">
-                <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span>
-                <span class="breadcrumb-current">About Us</span>
+                <a href="index.html" data-i18n="nav.home">Home</a> <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current" data-i18n="nav.aboutUs">About Us</span>
             </nav>
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
-                    <span class="hero-tag"><i class="fas fa-users me-2"></i>About Us</span>
-                    <h1 class="page-hero-title">Your Trusted China Sourcing Partner</h1>
-                    <p class="page-hero-subtitle">Founded in Yiwu — the world's largest small commodity market — we connect global buyers with reliable Chinese manufacturers.</p>
+                    <span class="hero-tag" data-i18n="aboutPage.heroTag"><i class="fas fa-users me-2"></i>About Us</span>
+                    <h1 class="page-hero-title" data-i18n="aboutPage.heroTitle">Your Trusted China Sourcing Partner</h1>
+                    <p class="page-hero-subtitle" data-i18n="aboutPage.heroSubtitle">Founded in Yiwu — the world's largest small commodity market — we connect global buyers with reliable Chinese manufacturers.</p>
                     <div class="banner-features">
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 14+ Years Combined Experience</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 200+ Global Clients</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 50+ Countries Served</span>
+                        <span class="banner-feature" data-i18n="aboutPage.feat1"><i class="fas fa-check-circle"></i> 14+ Years Combined Experience</span>
+                        <span class="banner-feature" data-i18n="aboutPage.feat2"><i class="fas fa-check-circle"></i> 200+ Global Clients</span>
+                        <span class="banner-feature" data-i18n="aboutPage.feat3"><i class="fas fa-check-circle"></i> 50+ Countries Served</span>
                     </div>
                     <div class="banner-cta">
-                        <a href="contact.html" class="btn btn-cta"><i class="fas fa-comment-dots me-2"></i>Contact Us</a>
-                        <a href="#story" class="btn btn-outline-primary">Learn More</a>
+                        <a href="contact.html" class="btn btn-cta" data-i18n="aboutPage.btnContact"><i class="fas fa-comment-dots me-2"></i>Contact Us</a>
+                        <a href="#story" class="btn btn-outline-primary" data-i18n="aboutPage.btnLearnMore">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -186,13 +186,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <span class="section-eyebrow">Our Story</span>
+                    <span class="section-eyebrow" data-i18n="aboutPage.storyEyebrow">Our Story</span>
                     <div class="section-divider" style="margin: 0.75rem 0 1.5rem;"></div>
-                    <h2 class="section-title mb-3">From Yiwu to the World</h2>
-                    <h3 class="mb-4" style="font-size: 1.25rem; color: var(--text-secondary); font-weight: 600;">Founded Where the World's Best Products Are Made</h3>
-                    <p class="section-subtitle text-start">Yeatru Sourcing was founded in Yiwu, Zhejiang Province — home to the Yiwu International Trade City, the world's largest small commodity wholesale market with over 75,000 booths and products in 26 categories.</p>
-                    <p class="section-subtitle text-start">Our founding team brings over 14 years of combined experience in China manufacturing, supplier management, quality control, and international logistics. We've helped Amazon FBA sellers launch private-label products, local retailers source cost-competitive inventory, and wholesale buyers build long-term supplier partnerships.</p>
-                    <p class="section-subtitle text-start">Our mission is simple: make sourcing from China transparent, affordable, and risk-free — one order at a time.</p>
+                    <h2 class="section-title mb-3" data-i18n="aboutPage.storyTitle">From Yiwu to the World</h2>
+                    <h3 class="mb-4" style="font-size: 1.25rem; color: var(--text-secondary); font-weight: 600;" data-i18n="aboutPage.storySubtitle">Founded Where the World's Best Products Are Made</h3>
+                    <p class="section-subtitle text-start" data-i18n="aboutPage.storyPara1">Yeatru Sourcing was founded in Yiwu, Zhejiang Province — home to the Yiwu International Trade City, the world's largest small commodity wholesale market with over 75,000 booths and products in 26 categories.</p>
+                    <p class="section-subtitle text-start" data-i18n="aboutPage.storyPara2">Our founding team brings over 14 years of combined experience in China manufacturing, supplier management, quality control, and international logistics. We've helped Amazon FBA sellers launch private-label products, local retailers source cost-competitive inventory, and wholesale buyers build long-term supplier partnerships.</p>
+                    <p class="section-subtitle text-start" data-i18n="aboutPage.storyPara3">Our mission is simple: make sourcing from China transparent, affordable, and risk-free — one order at a time.</p>
                 </div>
             </div>
         </div>
@@ -202,37 +202,37 @@
     <section class="py-5" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Our Values</span>
+                <span class="section-eyebrow" data-i18n="aboutPage.valuesEyebrow">Our Values</span>
                 <div class="section-divider"></div>
-                <h2 class="section-title">What We Stand For</h2>
+                <h2 class="section-title" data-i18n="aboutPage.valuesTitle">What We Stand For</h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="advantage-card">
                         <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="advantage-title">Transparency</h3>
-                        <p class="advantage-desc">Full cost breakdowns, no hidden fees, and honest communication at every step. You'll always know where your money goes.</p>
+                        <h3 class="advantage-title" data-i18n="aboutPage.transparency">Transparency</h3>
+                        <p class="advantage-desc" data-i18n="aboutPage.transparencyDesc">Full cost breakdowns, no hidden fees, and honest communication at every step. You'll always know where your money goes.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="advantage-card">
                         <div class="advantage-icon"><i class="fas fa-heart"></i></div>
-                        <h3 class="advantage-title">Integrity</h3>
-                        <p class="advantage-desc">We act in your best interest — not the factory's. NDA-signed confidentiality, no commissions from suppliers on your order.</p>
+                        <h3 class="advantage-title" data-i18n="aboutPage.integrity">Integrity</h3>
+                        <p class="advantage-desc" data-i18n="aboutPage.integrityDesc">We act in your best interest — not the factory's. NDA-signed confidentiality, no commissions from suppliers on your order.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="advantage-card">
                         <div class="advantage-icon"><i class="fas fa-check-circle"></i></div>
-                        <h3 class="advantage-title">Verification First</h3>
-                        <p class="advantage-desc">We don't take risks with your business. Every supplier we recommend has been vetted, visited, or audited by our team.</p>
+                        <h3 class="advantage-title" data-i18n="aboutPage.verification">Verification First</h3>
+                        <p class="advantage-desc" data-i18n="aboutPage.verificationDesc">We don't take risks with your business. Every supplier we recommend has been vetted, visited, or audited by our team.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="advantage-card">
                         <div class="advantage-icon"><i class="fas fa-target"></i></div>
-                        <h3 class="advantage-title">Results-Driven</h3>
-                        <p class="advantage-desc">We measure success by your results: lower costs, better quality, faster delivery. Your growth is our growth.</p>
+                        <h3 class="advantage-title" data-i18n="aboutPage.results">Results-Driven</h3>
+                        <p class="advantage-desc" data-i18n="aboutPage.resultsDesc">We measure success by your results: lower costs, better quality, faster delivery. Your growth is our growth.</p>
                     </div>
                 </div>
             </div>
@@ -243,9 +243,9 @@
     <section class="py-5 bg-white">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Why Yeatru</span>
+                <span class="section-eyebrow" data-i18n="aboutPage.whyEyebrow">Why Yeatru</span>
                 <div class="section-divider"></div>
-                <h2 class="section-title">What Makes Us Different</h2>
+                <h2 class="section-title" data-i18n="aboutPage.whyTitle">What Makes Us Different</h2>
             </div>
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
@@ -253,33 +253,33 @@
                         <div class="col-6">
                             <div class="stat-card text-center">
                                 <div class="stat-number">200+</div>
-                                <div class="stat-label">Global Clients</div>
+                                <div class="stat-label" data-i18n="aboutPage.statClients">Global Clients</div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="stat-card text-center">
                                 <div class="stat-number">50+</div>
-                                <div class="stat-label">Countries Served</div>
+                                <div class="stat-label" data-i18n="aboutPage.statCountries">Countries Served</div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="stat-card text-center">
                                 <div class="stat-number">14+</div>
-                                <div class="stat-label">Years Combined Experience</div>
+                                <div class="stat-label" data-i18n="aboutPage.statYears">Years Combined Experience</div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="stat-card text-center">
                                 <div class="stat-number">75,000+</div>
-                                <div class="stat-label">Factory Network</div>
+                                <div class="stat-label" data-i18n="aboutPage.statFactories">Factory Network</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="mb-4" style="font-size: 1.5rem; color: var(--text-primary); font-weight: 700;">Local Expertise, Global Standards</h3>
-                    <p class="section-subtitle text-start">We combine deep local market knowledge with international business standards. Our team speaks English, Mandarin, and Spanish. We bridge the gap between Chinese factories and global buyers.</p>
-                    <p class="section-subtitle text-start">Unlike trading companies, we don't mark up product prices. Our fee structure is transparent — and our incentive is aligned with yours: better outcomes mean more repeat business.</p>
+                    <h3 class="mb-4" style="font-size: 1.5rem; color: var(--text-primary); font-weight: 700;" data-i18n="aboutPage.whyHeading">Local Expertise, Global Standards</h3>
+                    <p class="section-subtitle text-start" data-i18n="aboutPage.whyPara1">We combine deep local market knowledge with international business standards. Our team speaks English, Mandarin, and Spanish. We bridge the gap between Chinese factories and global buyers.</p>
+                    <p class="section-subtitle text-start" data-i18n="aboutPage.whyPara2">Unlike trading companies, we don't mark up product prices. Our fee structure is transparent — and our incentive is aligned with yours: better outcomes mean more repeat business.</p>
                 </div>
             </div>
         </div>
@@ -289,45 +289,45 @@
     <section class="py-5" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">What We Do</span>
+                <span class="section-eyebrow" data-i18n="aboutPage.servicesEyebrow">What We Do</span>
                 <div class="section-divider"></div>
-                <h2 class="section-title">End-to-End Sourcing Services</h2>
+                <h2 class="section-title" data-i18n="aboutPage.servicesTitle">End-to-End Sourcing Services</h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <a href="product-sourcing.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-search"></i></div>
-                        <h3 class="service-title">Product Sourcing</h3>
+                        <h3 class="service-title" data-i18n="services.productSourcing">Product Sourcing</h3>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="supplier-verification.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-user-check"></i></div>
-                        <h3 class="service-title">Supplier Verification</h3>
+                        <h3 class="service-title" data-i18n="services.supplierVerification">Supplier Verification</h3>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="quality-control.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
-                        <h3 class="service-title">Quality Control</h3>
+                        <h3 class="service-title" data-i18n="services.qualityControl">Quality Control</h3>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="logistics-shipping.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
-                        <h3 class="service-title">Logistics & Shipping</h3>
+                        <h3 class="service-title" data-i18n="services.logistics">Logistics & Shipping</h3>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="price-negotiation.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                        <h3 class="service-title">Price Negotiation</h3>
+                        <h3 class="service-title" data-i18n="services.priceNegotiation">Price Negotiation</h3>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="oem.html" class="service-link-card">
                         <div class="service-icon"><i class="fas fa-industry"></i></div>
-                        <h3 class="service-title">OEM & Customization</h3>
+                        <h3 class="service-title" data-i18n="nav.oem">OEM & Customization</h3>
                     </a>
                 </div>
             </div>
@@ -338,31 +338,31 @@
     <section class="py-5 bg-white">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Common Questions</span>
+                <span class="section-eyebrow" data-i18n="aboutPage.faqEyebrow">Common Questions</span>
                 <div class="section-divider"></div>
-                <h2 class="section-title">About Working with Yeatru</h2>
+                <h2 class="section-title" data-i18n="aboutPage.faqTitle">About Working with Yeatru</h2>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="faq-item active">
-                        <button class="faq-question"><span>What types of buyers do you work with?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>We serve Amazon FBA sellers, TikTok Shop sellers, local retailers, wholesale distributors, and e-commerce entrepreneurs. From first-time importers to established brands expanding their China supply chain.</p></div>
+                        <button class="faq-question"><span data-i18n="aboutPage.faq1Q">What types of buyers do you work with?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p data-i18n="aboutPage.faq1A">We serve Amazon FBA sellers, TikTok Shop sellers, local retailers, wholesale distributors, and e-commerce entrepreneurs. From first-time importers to established brands expanding their China supply chain.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question"><span>How is Yeatru different from a trading company?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Trading companies mark up product prices 15-30% above factory cost. We charge a transparent flat fee or percentage — and our fee is disclosed upfront. You always get the factory-direct price.</p></div>
+                        <button class="faq-question"><span data-i18n="aboutPage.faq2Q">How is Yeatru different from a trading company?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p data-i18n="aboutPage.faq2A">Trading companies mark up product prices 15-30% above factory cost. We charge a transparent flat fee or percentage — and our fee is disclosed upfront. You always get the factory-direct price.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question"><span>Do you work with small orders?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>Yes. We're built for small-to-medium buyers. Many of our suppliers accept MOQs as low as 50-100 pieces. We help you start small and scale up.</p></div>
+                        <button class="faq-question"><span data-i18n="aboutPage.faq3Q">Do you work with small orders?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p data-i18n="aboutPage.faq3A">Yes. We're built for small-to-medium buyers. Many of our suppliers accept MOQs as low as 50-100 pieces. We help you start small and scale up.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question"><span>What happens if a supplier fails to deliver?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>We mediate between you and the supplier. If the supplier is at fault, we negotiate compensation, source alternative factories, and cover the difference in costs if applicable under our service guarantee.</p></div>
+                        <button class="faq-question"><span data-i18n="aboutPage.faq4Q">What happens if a supplier fails to deliver?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p data-i18n="aboutPage.faq4A">We mediate between you and the supplier. If the supplier is at fault, we negotiate compensation, source alternative factories, and cover the difference in costs if applicable under our service guarantee.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question"><span>How do I get started?</span><i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer"><p>The easiest way: send us your product requirements via our contact form or WhatsApp. We'll reply within 4 hours with initial quotes and a sourcing plan.</p></div>
+                        <button class="faq-question"><span data-i18n="aboutPage.faq5Q">How do I get started?</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p data-i18n="aboutPage.faq5A">The easiest way: send us your product requirements via our contact form or WhatsApp. We'll reply within 4 hours with initial quotes and a sourcing plan.</p></div>
                     </div>
                 </div>
             </div>
@@ -373,11 +373,11 @@
     <section class="py-5" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="final-cta-box text-center">
-                <span class="section-eyebrow">Let's Work Together</span>
+                <span class="section-eyebrow" data-i18n="aboutPage.ctaEyebrow">Let's Work Together</span>
                 <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
-                <h2 class="section-title">Start Your Sourcing Journey Today</h2>
-                <p class="section-subtitle mb-4">No commitment required. Get a free consultation and initial quote within 24 hours.</p>
-                <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-comment-dots me-2"></i>Contact Us Now</a>
+                <h2 class="section-title" data-i18n="aboutPage.ctaTitle">Start Your Sourcing Journey Today</h2>
+                <p class="section-subtitle mb-4" data-i18n="aboutPage.ctaSubtitle">No commitment required. Get a free consultation and initial quote within 24 hours.</p>
+                <a href="contact.html" class="btn btn-cta btn-lg" data-i18n="aboutPage.ctaBtn"><i class="fas fa-comment-dots me-2"></i>Contact Us Now</a>
             </div>
         </div>
     </section>
@@ -398,7 +398,7 @@
                         </span>
                         Yeatru Sourcing
                     </a>
-                    <p class="footer-desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <p class="footer-desc" data-i18n="footer.desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
                     <div class="footer-social">
                         <a href="https://facebook.com/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://linkedin.com/company/yeatru" target="_blank" class="footer-social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
@@ -407,31 +407,31 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="products.html" class="footer-link">Products</a>
-                    <a href="service-plans.html" class="footer-link">Service Plans</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="blog.html" class="footer-link">Blog</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
+                    <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+                    <a href="products.html" class="footer-link" data-i18n="nav.products">Products</a>
+                    <a href="service-plans.html" class="footer-link" data-i18n="nav.servicePlans">Service Plans</a>
+                    <a href="about.html" class="footer-link" data-i18n="nav.aboutUs">About Us</a>
+                    <a href="blog.html" class="footer-link" data-i18n="nav.blog">Blog</a>
+                    <a href="contact.html" class="footer-link" data-i18n="nav.contactUs">Contact Us</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Services</h3>
-                    <a href="supplier-verification.html" class="footer-link">Supplier Verification</a>
-                    <a href="product-sourcing.html" class="footer-link">Product Sourcing</a>
-                    <a href="quality-control.html" class="footer-link">Quality Control</a>
-                    <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
-                    <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
-                    <a href="oem.html" class="footer-link">OEM Customization</a>
+                    <h3 class="footer-title" data-i18n="footer.services">Our Services</h3>
+                    <a href="supplier-verification.html" class="footer-link" data-i18n="services.supplierVerification">Supplier Verification</a>
+                    <a href="product-sourcing.html" class="footer-link" data-i18n="services.productSourcing">Product Sourcing</a>
+                    <a href="quality-control.html" class="footer-link" data-i18n="services.qualityControl">Quality Control</a>
+                    <a href="logistics-shipping.html" class="footer-link" data-i18n="services.logistics">Logistics &amp; Warehousing</a>
+                    <a href="price-negotiation.html" class="footer-link" data-i18n="services.priceNegotiation">Price Negotiation</a>
+                    <a href="oem.html" class="footer-link" data-i18n="nav.oem">OEM Customization</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Us</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact">Contact Us</h3>
                     <a href="#" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> Yiwu City, Zhejiang, China</a>
                     <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
                     <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
                     <a href="#" class="footer-link"><i class="fas fa-clock me-2"></i> 24/7 Available</a>
                     <div class="footer-payment-section mt-3">
-                        <h4 class="footer-payment-label">Payment Methods</h4>
+                        <h4 class="footer-payment-label" data-i18n="footer.paymentMethods">Payment Methods</h4>
                         <div class="footer-payment-icons-vertical">
                             <span class="payment-icon"><i class="fab fa-cc-paypal"></i><span>PayPal</span></span>
                             <span class="payment-icon"><i class="fab fa-cc-visa"></i><span>Visa</span></span>
@@ -443,9 +443,9 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Yeatru Sourcing. All rights reserved. |
-                    <a href="#" class="footer-link d-inline">Privacy Policy</a> |
-                    <a href="#" class="footer-link d-inline">Terms of Service</a>
+                <p>&copy; 2026 Yeatru Sourcing. <span data-i18n="footer.allRightsReserved">All rights reserved.</span> |
+                    <a href="#" class="footer-link d-inline" data-i18n="footer.privacyPolicy">Privacy Policy</a> |
+                    <a href="#" class="footer-link d-inline" data-i18n="footer.termsOfService">Terms of Service</a>
                 </p>
             </div>
         </div>
