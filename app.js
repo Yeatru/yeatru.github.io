@@ -1255,6 +1255,7 @@ function commitSave() {
         p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
+        p.variations = collectDetailVariations();
 
         if (p.variations && Array.isArray(p.variations) && p.variations.length > 0) {
             const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '' && !isNaN(parseFloat(v.price)));
