@@ -7449,17 +7449,17 @@ section:first-of-type {
     max-width: 1200px;
 }
 
-#categoryManagement > .container > .d-flex:first-of-type {
+#categoryManagement > .container > div:first-child {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: space-between !important;
     align-items: center !important;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
 }
 
-#categoryManagement > .container > .d-flex:first-of-type > div:first-child {
+#categoryManagement > .container > div:first-child > div:first-child {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -7467,7 +7467,7 @@ section:first-of-type {
     gap: 0.75rem;
 }
 
-#categoryManagement > .container > .d-flex:first-of-type > div:last-child {
+#categoryManagement > .container > div:first-child > div:last-child {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -7476,69 +7476,84 @@ section:first-of-type {
     flex-shrink: 0;
 }
 
-#categoryManagement .text-admin {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1e3a8a;
-    margin: 0;
-    line-height: 34px;
-    white-space: nowrap;
+#categoryManagement h5.text-admin {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #1e3a8a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 34px !important;
+    height: 34px !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
-#categoryManagement .text-muted.small {
-    font-size: 0.85rem;
-    color: #1e3a8a;
-    font-weight: 500;
-    line-height: 34px;
-    white-space: nowrap;
-    margin: 0;
+#categoryManagement span.text-muted.small {
+    font-size: 0.85rem !important;
+    color: #1e3a8a !important;
+    font-weight: 500 !important;
+    line-height: 34px !important;
+    height: 34px !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 #categoryManagement .input-group {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 0.5rem;
-    flex: 0 0 auto;
-    width: auto;
+    gap: 0.5rem !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-#categoryManagement .input-group .form-control {
-    font-size: 0.85rem;
-    padding: 0 0.75rem;
-    height: 34px;
-    line-height: 34px;
-    border-radius: 8px;
-    width: 220px;
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    vertical-align: middle;
+#categoryManagement .input-group input.form-control {
+    font-size: 0.85rem !important;
+    padding: 0 0.75rem !important;
+    margin: 0 !important;
+    height: 34px !important;
+    line-height: 34px !important;
+    border-radius: 8px !important;
+    width: 220px !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
 }
 
-#categoryManagement .input-group .btn-primary {
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0 0.85rem;
-    height: 34px;
-    line-height: 34px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    flex: 0 0 auto;
-    box-sizing: border-box;
+#categoryManagement .input-group button.btn-primary {
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    padding: 0 0.85rem !important;
+    margin: 0 !important;
+    height: 34px !important;
+    line-height: 34px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
 }
 
-#categoryManagement .d-flex.align-items-center.gap-2 .btn {
-    height: 34px;
-    line-height: 34px;
-    padding: 0 0.85rem;
-    font-size: 0.85rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+#categoryManagement > .container > div:first-child > div:last-child .btn {
+    height: 34px !important;
+    line-height: 34px !important;
+    padding: 0 0.85rem !important;
+    margin: 0 !important;
+    font-size: 0.85rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
 }
 
 #categoryList {
