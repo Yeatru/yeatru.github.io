@@ -197,8 +197,17 @@
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
 
                     <div id="variationsDisplay" class="variations-display" style="display:none;">
-                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors & Sizes</div>
+                        <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Colors &amp; Sizes</div>
                         <div id="variationsList" class="variations-list"></div>
+                    </div>
+
+                    <!-- Variations Editor (Edit mode only) -->
+                    <div id="detailVariationsEditor" class="detail-edit-only" style="display:none; margin-top: 1.5rem;">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="addDetailVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
+                        </div>
+                        <div id="detailVariationsContainer" class="variations-container"></div>
                     </div>
                 </div>
             </div>

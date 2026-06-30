@@ -4236,6 +4236,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 .variation-item input {
     font-size: 0.9rem;
+    min-width: 0;
 }
 .variation-remove {
     background-color: #dc3545;
@@ -4334,6 +4335,16 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     }
     .variation-price {
         font-size: 0.72rem;
+    }
+    .variation-item {
+        grid-template-columns: 1fr 1fr;
+    }
+    .variation-item .variation-image {
+        grid-column: span 2;
+    }
+    .variation-item .variation-remove {
+        grid-column: span 2;
+        justify-self: stretch;
     }
 }
 

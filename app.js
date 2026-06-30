@@ -273,6 +273,10 @@ document.addEventListener('DOMContentLoaded', function () {
         addVariationItem();
     });
 
+    safeAddEventListener('addDetailVariationBtn', 'click', function () {
+        addDetailVariationItem();
+    });
+
     safeAddEventListener('saveProduct', 'click', function () {
         const productIdEl = document.getElementById('productId');
         if (!productIdEl) return;
@@ -1136,11 +1140,12 @@ function setDetailMode(mode) {
     const detailVariationsContainer = document.getElementById('detailVariationsContainer');
     if (variationsList) variationsList.style.display = isEdit ? 'none' : '';
     if (detailVariationsContainer) {
-        detailVariationsContainer.style.display = isEdit ? 'block' : 'none';
         if (isEdit && currentDetailProductId) {
             const product = getProducts().find(p => p.id === currentDetailProductId);
             if (product && product.variations) {
                 renderDetailVariationsEditor(product.variations);
+            } else {
+                renderDetailVariationsEditor([]);
             }
         }
     }
