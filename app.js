@@ -715,6 +715,16 @@ function applySiteData(data, options = {}) {
         localStorage.setItem('yeatruCategories', JSON.stringify(data.categories));
     }
     if (Array.isArray(data.products)) {
+        data.products.forEach(p => {
+            if (p.variations && Array.isArray(p.variations)) {
+                const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '' && !isNaN(parseFloat(v.price)));
+                if (pricedVariations.length > 0) {
+                    const prices = pricedVariations.map(v => parseFloat(v.price));
+                    p.priceMin = Math.min(...prices);
+                    p.priceMax = Math.max(...prices);
+                }
+            }
+        });
         localStorage.setItem('yeatruProducts', JSON.stringify(data.products));
     }
     if (Object.prototype.hasOwnProperty.call(data, 'logo')) {
