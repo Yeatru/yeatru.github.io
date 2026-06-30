@@ -1079,6 +1079,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     margin: 0 auto 0.75rem;
     border-radius: 2px;
     position: relative;
+    display: block;
 }
 
 .section-divider::before {
@@ -1101,6 +1102,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     margin-bottom: 0.5rem;
     line-height: 1.25;
     letter-spacing: -0.01em;
+    text-align: center;
 }
 
 .section-subtitle {
@@ -1111,6 +1113,8 @@ body.edit-mode .page-block [data-block-field]:hover {
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    display: block;
 }
 
 .section-title-wrap {
@@ -1120,6 +1124,20 @@ body.edit-mode .page-block [data-block-field]:hover {
 
 .section-title-wrap.text-center {
     text-align: center;
+}
+
+.section-title-wrap.text-center .section-eyebrow,
+.section-title-wrap .section-eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.section-title-wrap.text-center .section-divider,
+.section-title-wrap .section-divider {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none;
 }
 
 body.edit-mode [contenteditable="true"]:hover {
@@ -7361,6 +7379,9 @@ body .section-eyebrow {
     font-size: 0.72rem !important;
     padding: 0.25rem 0.75rem !important;
     letter-spacing: 0.1em !important;
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 body .section-divider {
@@ -7369,6 +7390,8 @@ body .section-divider {
     margin: 0 auto 0.6rem !important;
     background: linear-gradient(90deg, transparent, var(--primary), transparent) !important;
     position: relative !important;
+    display: block !important;
+    float: none !important;
 }
 
 body .section-divider::before {
