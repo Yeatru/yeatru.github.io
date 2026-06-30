@@ -699,12 +699,22 @@ function saveProducts(products) {
 }
 
 function buildSiteDataObject() {
+    const products = getProducts().map(p => {
+        if (p.variations && Array.isArray(p.variations) && p.variations.length > 0) {
+            const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '' && !isNaN(parseFloat(v.price)));
+            if (pricedVariations.length > 0) {
+                const prices = pricedVariations.map(v => parseFloat(v.price));
+                return { ...p, priceMin: Math.min(...prices), priceMax: Math.max(...prices) };
+            }
+        }
+        return p;
+    });
     return {
         version: 1,
         updatedAt: new Date().toISOString(),
         logo: localStorage.getItem('yeatruBrandLogo') || '',
         categories: getCategories(),
-        products: getProducts()
+        products: products
     };
 }
 
@@ -1242,13 +1252,23 @@ function commitSave() {
         p.size = document.getElementById('detailSizeInput').value || p.size;
         const moqV = document.getElementById('detailMOQInput').value;
         if (moqV) p.moq = parseInt(moqV);
-        const minV = document.getElementById('detailPriceMinInput').value;
-        if (minV) p.priceMin = parseFloat(minV);
-        const maxV = document.getElementById('detailPriceMaxInput').value;
-        if (maxV) p.priceMax = parseFloat(maxV);
         p.description = document.getElementById('detailDescInput').value || p.description;
 
         p.aplus = collectAplusBlocks();
+
+        if (p.variations && Array.isArray(p.variations) && p.variations.length > 0) {
+            const pricedVariations = p.variations.filter(v => v.price !== undefined && v.price !== null && v.price !== '' && !isNaN(parseFloat(v.price)));
+            if (pricedVariations.length > 0) {
+                const prices = pricedVariations.map(v => parseFloat(v.price));
+                p.priceMin = Math.min(...prices);
+                p.priceMax = Math.max(...prices);
+            }
+        } else {
+            const minV = document.getElementById('detailPriceMinInput').value;
+            if (minV) p.priceMin = parseFloat(minV);
+            const maxV = document.getElementById('detailPriceMaxInput').value;
+            if (maxV) p.priceMax = parseFloat(maxV);
+        }
         products[idx] = p;
         localStorage.setItem('yeatruProducts', JSON.stringify(products));
         document.getElementById('detailName').textContent = p.name;
