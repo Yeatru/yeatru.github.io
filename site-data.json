@@ -1304,7 +1304,80 @@
       "priceMin": 1,
       "priceMax": 1,
       "description": "Men's Breathable Mesh Running Shoes, Lightweight Air Cushion Athletic Sneakers, Non Slip PVC Sole Walking Trainers for Spring Summer Fall Daily Sports",
-      "variations": [],
+      "variations": [
+        {
+          "color": "Black",
+          "size": "EU 39",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "Black",
+          "size": "EU 40",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "Black",
+          "size": "EU 41",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "Black",
+          "size": "EU 42",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "Black",
+          "size": "EU 43",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "Black",
+          "size": "EU 44",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 39",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 40",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 41",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 42",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 43",
+          "image": "",
+          "price": "1.20"
+        },
+        {
+          "color": "White",
+          "size": "EU 44",
+          "image": "",
+          "price": "1.20"
+        }
+      ],
       "aplus": [
         {
           "type": "hero",
