@@ -7518,12 +7518,13 @@ section:first-of-type {
 }
 
 #categoryManagement .input-group {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    width: auto;
+    max-width: none;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex: 0 0 auto;
 }
 
 #categoryManagement .input-group .form-control {
@@ -7532,18 +7533,24 @@ section:first-of-type {
     height: 34px;
     line-height: 1.2;
     border-radius: 8px;
-    flex: 1;
+    width: 200px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 #categoryManagement .input-group .btn-primary {
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 500;
-    padding: 0.35rem 0.85rem;
+    padding: 0 0.85rem;
     height: 34px;
-    line-height: 1.2;
+    line-height: 34px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    flex: 0 0 auto;
+    box-sizing: border-box;
 }
