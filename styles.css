@@ -1059,85 +1059,39 @@ body.edit-mode .page-block [data-block-field]:hover {
 
 .section-eyebrow {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.6rem;
-    position: relative;
-    padding: 0.3rem 0.9rem;
-    background: linear-gradient(135deg, rgba(11, 123, 148, 0.08), rgba(11, 123, 148, 0.03));
-    border-radius: 4px;
-    border-left: 2px solid var(--primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
 }
 
 .section-divider {
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    margin: 0 auto 0.75rem;
-    border-radius: 2px;
-    position: relative;
-    display: block;
-}
-
-.section-divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
+    width: 36px;
+    height: 2.5px;
     background: var(--primary);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(11, 123, 148, 0.1);
+    margin: 0.25rem auto 0.4rem;
+    border-radius: 2px;
 }
 
 .section-title {
-    font-size: 1.65rem;
+    font-size: 1.45rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    text-align: center;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
 }
 
 .section-subtitle {
     font-size: 0.9rem;
     color: #6c757d;
     margin-bottom: 0.75rem;
-    line-height: 1.6;
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
+    line-height: 1.55;
 }
 
 .section-title-wrap {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.section-title-wrap.text-center {
-    text-align: center;
-}
-
-.section-title-wrap.text-center .section-eyebrow,
-.section-title-wrap .section-eyebrow {
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-}
-
-.section-title-wrap.text-center .section-divider,
-.section-title-wrap .section-divider {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    float: none;
+    margin-bottom: 1.25rem;
 }
 
 body.edit-mode [contenteditable="true"]:hover {
@@ -2819,64 +2773,36 @@ body.edit-mode [contenteditable="true"]:focus {
 .section-eyebrow {
     display: inline-block;
     font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.6rem;
-    position: relative;
-    padding: 0.3rem 0.9rem;
-    background: linear-gradient(135deg, rgba(11, 123, 148, 0.08), rgba(11, 123, 148, 0.03));
-    border-radius: 4px;
-    border-left: 2px solid var(--primary);
+    letter-spacing: 1.5px;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
 }
 
 .section-title {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--primary-dark);
     text-align: center;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
 }
 
 .section-subtitle {
     text-align: center;
     color: #6c757d;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     font-size: 0.92rem;
-    line-height: 1.6;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.section-title-wrap { 
-    margin-bottom: 1.5rem; 
-    text-align: center;
-}
+.section-title-wrap { margin-bottom: 1.25rem; }
 
 .section-divider {
-    width: 60px;
+    width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     border-radius: 2px;
     margin: 0 auto 0.75rem;
-    position: relative;
-}
-
-.section-divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
-    border-radius: 50%;
-    box-shadow: 0 0 0 5px rgba(11, 123, 148, 0.1);
 }
 
 .product-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -7355,56 +7281,28 @@ body section:first-of-type {
 }
 
 .section-title-wrap {
-    margin-bottom: 1.1rem !important;
-    text-align: center !important;
+    margin-bottom: 1rem !important;
 }
 
 body .section-title {
-    font-size: 1.5rem !important;
-    margin-bottom: 0.4rem !important;
-    text-align: center !important;
+    font-size: 1.45rem !important;
+    margin-bottom: 0.3rem !important;
 }
 
 body .section-subtitle {
-    margin-bottom: 0.6rem !important;
-    font-size: 0.88rem !important;
-    text-align: center !important;
-    max-width: 520px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.9rem !important;
 }
 
 body .section-eyebrow {
-    margin-bottom: 0.5rem !important;
-    font-size: 0.72rem !important;
-    padding: 0.25rem 0.75rem !important;
-    letter-spacing: 0.1em !important;
-    display: inline-block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-bottom: 0.25rem !important;
+    font-size: 0.75rem !important;
 }
 
 body .section-divider {
-    width: 48px !important;
-    height: 3px !important;
-    margin: 0 auto 0.6rem !important;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent) !important;
-    position: relative !important;
-    display: block !important;
-    float: none !important;
-}
-
-body .section-divider::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 8px !important;
-    height: 8px !important;
-    background: var(--primary) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 0 0 4px rgba(11, 123, 148, 0.1) !important;
+    width: 36px !important;
+    height: 2.5px !important;
+    margin: 0.25rem auto 0.4rem !important;
 }
 
 body .hero-section {
