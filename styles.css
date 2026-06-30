@@ -7449,31 +7449,96 @@ section:first-of-type {
     max-width: 1200px;
 }
 
-#categoryManagement .d-flex.flex-wrap.justify-content-between.align-items-center {
+#categoryManagement > .container > .d-flex:first-of-type {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#categoryManagement > .container > .d-flex:first-of-type > div:first-child {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.75rem;
+}
+
+#categoryManagement > .container > .d-flex:first-of-type > div:last-child {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 #categoryManagement .text-admin {
     font-size: 1rem;
     font-weight: 600;
     color: #1e3a8a;
+    margin: 0;
+    line-height: 34px;
+    white-space: nowrap;
 }
 
-#categoryManagement .text-muted small {
+#categoryManagement .text-muted.small {
     font-size: 0.85rem;
     color: #1e3a8a;
     font-weight: 500;
+    line-height: 34px;
+    white-space: nowrap;
+    margin: 0;
 }
 
-#categoryManagement .d-flex.align-items-center.gap-2 button {
+#categoryManagement .input-group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+#categoryManagement .input-group .form-control {
     font-size: 0.85rem;
-    padding: 0.45rem 0.85rem;
+    padding: 0 0.75rem;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 8px;
+    width: 220px;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    vertical-align: middle;
 }
 
-#categoryManagement .d-flex.flex-wrap.align-items-center.gap-3 {
-    flex-direction: row;
+#categoryManagement .input-group .btn-primary {
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0 0.85rem;
+    height: 34px;
+    line-height: 34px;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+#categoryManagement .d-flex.align-items-center.gap-2 .btn {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 0.85rem;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 #categoryList {
@@ -7515,42 +7580,4 @@ section:first-of-type {
 
 #categoryList .badge .btn-close:hover {
     opacity: 1;
-}
-
-#categoryManagement .input-group {
-    width: auto;
-    max-width: none;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex: 0 0 auto;
-}
-
-#categoryManagement .input-group .form-control {
-    font-size: 0.85rem;
-    padding: 0.35rem 0.75rem;
-    height: 34px;
-    line-height: 1.2;
-    border-radius: 8px;
-    width: 200px;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-#categoryManagement .input-group .btn-primary {
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0 0.85rem;
-    height: 34px;
-    line-height: 34px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    flex: 0 0 auto;
-    box-sizing: border-box;
 }
