@@ -936,12 +936,13 @@ function renderVariationsModal(variations) {
 function addVariationItem(data) {
     const container = document.getElementById('variationsContainer');
     if (!container) return;
-    const v = data || { color: '', size: '', image: '' };
+    const v = data || { color: '', size: '', image: '', price: '' };
     const item = document.createElement('div');
     item.className = 'variation-item';
     item.innerHTML = `
         <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
         <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
         <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
         <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
     `;
@@ -954,7 +955,47 @@ function collectVariations() {
         const color = item.querySelector('.variation-color').value.trim();
         const size = item.querySelector('.variation-size').value.trim();
         const image = item.querySelector('.variation-image').value.trim();
-        if (color || size) variations.push({ color, size, image });
+        const priceVal = item.querySelector('.variation-price').value.trim();
+        const price = priceVal ? parseFloat(priceVal) : null;
+        if (color || size) variations.push({ color, size, image, price });
+    });
+    return variations;
+}
+function renderDetailVariationsEditor(variations) {
+    const container = document.getElementById('detailVariationsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    if (variations && variations.length > 0) {
+        variations.forEach(v => addDetailVariationItem(v));
+    } else {
+        addDetailVariationItem();
+    }
+}
+function addDetailVariationItem(data) {
+    const container = document.getElementById('detailVariationsContainer');
+    if (!container) return;
+    const v = data || { color: '', size: '', price: '', image: '' };
+    const item = document.createElement('div');
+    item.className = 'variation-item';
+    item.innerHTML = `
+        <input type="text" class="form-control variation-color" placeholder="Color (e.g. Red)" value="${escapeHtml(v.color || '')}">
+        <input type="text" class="form-control variation-size" placeholder="Size (e.g. L)" value="${escapeHtml(v.size || '')}">
+        <input type="number" step="0.01" class="form-control variation-price" placeholder="Price ($)" value="${escapeHtml(v.price !== undefined && v.price !== null ? v.price : '')}">
+        <input type="url" class="form-control variation-image" placeholder="Image URL (optional)" value="${escapeHtml(v.image || '')}">
+        <button type="button" class="variation-remove"><i class="fas fa-trash"></i></button>
+    `;
+    item.querySelector('.variation-remove').addEventListener('click', function () { item.remove(); });
+    container.appendChild(item);
+}
+function collectDetailVariations() {
+    const variations = [];
+    document.querySelectorAll('#detailVariationsContainer .variation-item').forEach(item => {
+        const color = item.querySelector('.variation-color').value.trim();
+        const size = item.querySelector('.variation-size').value.trim();
+        const image = item.querySelector('.variation-image').value.trim();
+        const priceVal = item.querySelector('.variation-price').value.trim();
+        const price = priceVal ? parseFloat(priceVal) : null;
+        if (color || size) variations.push({ color, size, image, price });
     });
     return variations;
 }
