@@ -7335,6 +7335,83 @@ body .process-section-alt {
     padding: 1.75rem 0 !important;
 }
 
+body .process-desc {
+    max-width: 280px !important;
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+}
+
+body .section-subtitle {
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body .page-header .section-subtitle {
+    max-width: 720px !important;
+}
+
+body .banner-subtitle {
+    max-width: 620px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+}
+
+body .service-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+}
+
+body .testimonial-text {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+}
+
+body .advantage-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+}
+
+body .product-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    -webkit-line-clamp: 2 !important;
+}
+
+body .faq-answer p {
+    font-size: 0.85rem !important;
+    line-height: 1.55 !important;
+}
+
+@media (min-width: 1200px) {
+    body .container,
+    body .container-lg,
+    body .container-md,
+    body .container-sm,
+    body .container-xl {
+        max-width: 1280px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body .container,
+    body .container-lg,
+    body .container-md,
+    body .container-sm {
+        max-width: 960px !important;
+    }
+}
+
+body p {
+    line-height: 1.55 !important;
+}
+
+body .section-title-wrap.text-center .section-subtitle {
+    max-width: 640px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .service-card {
     padding: 14px 12px !important;
 }
