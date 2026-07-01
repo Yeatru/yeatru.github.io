@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T03:35:48.882Z",
+  "updatedAt": "2026-07-01T04:09:03.073Z",
   "logo": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260616164504_121_8.png",
   "categories": [
     "Kitchenware",
@@ -88,7 +88,7 @@
       "id": 2,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL102WS.jpg",
       "category": "Apparel",
-      "name": "Islamic Women Modest Burkini Swimsuit",
+      "name": "Islamic Modest Burkini Swimsuit",
       "sku": "YS-CL-102WS",
       "material": "Polyester",
       "size": "S/M/L/XL",
@@ -236,8 +236,8 @@
       "id": 1781666116700,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHB1002A2.jpg",
       "category": "Hand Bag",
-      "name": "Mini Flap Square Crossbody Bag for Women",
-      "sku": "",
+      "name": "Mini Flap Square Crossbody Bag",
+      "sku": "YS-HB-1002A",
       "material": "Soft PU Leather",
       "size": "Small",
       "moq": 1,
@@ -301,7 +301,7 @@
       "id": 1781680522475,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/earphone610.png",
       "category": "Electronics",
-      "name": "In-Ear Sleep Wireless Bluetooth Earbuds V6.0",
+      "name": "In-Ear Wireless Bluetooth Earbuds",
       "sku": "YS-ET-1001S",
       "material": "ABS",
       "size": "S16 Sleep Earbuds",
@@ -406,7 +406,7 @@
       "id": 1781767772101,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW2001P.png",
       "category": "Kitchenware",
-      "name": "Stainless Steel Milk Pitcher Coffee Frothing Pot",
+      "name": "Stainless Steel Coffee Frothing Pot",
       "sku": "YS-KW-2001P",
       "material": "SS201 Stainless Steel ",
       "size": "250ml to 720ml",
@@ -477,7 +477,7 @@
       "id": 1781769285225,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHD1007M%20(1).png",
       "category": "Home",
-      "name": "12L Slim Press-Top Plastic Trash Can for Home",
+      "name": "Slim Press-Top Plastic Trash Can",
       "sku": "YS-HD-1007M",
       "material": "PP Plastic",
       "size": "25.5*17.5*34.5 cm",
@@ -572,8 +572,8 @@
       "id": 1781838654950,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHD2008B1.png",
       "category": "Home",
-      "name": "5 Pack Corner Shower Caddy Shelves, No Drilling",
-      "sku": "YSHD2008B",
+      "name": "No Drilling Corner Caddy Shelves",
+      "sku": "YS-HD-2008B",
       "material": "Iron with painting (White/Black)",
       "size": "9cm to 26cm",
       "moq": 1,
@@ -625,8 +625,8 @@
       "id": 1781839317334,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSHD2008S1.png",
       "category": "Home",
-      "name": "5 Pack Straight Wall Mount Shower Caddy Set",
-      "sku": "YSHD2008S",
+      "name": "Straight Wall Shower Caddy Set",
+      "sku": "YS-HD-2008S",
       "material": "Iron",
       "size": "33*9.8*15.2cm",
       "moq": 1,
@@ -720,8 +720,8 @@
       "id": 1781938167021,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSKW1002R.jpg",
       "category": "Kitchenware",
-      "name": "Silicone Baking Mold Multi Shape Cake Bread",
-      "sku": "YSKW1002R",
+      "name": "Silicone Baking Mold Multi Shape",
+      "sku": "YS-KW-1002R",
       "material": "Food Grade Silicone",
       "size": "Multi-Shape",
       "moq": 1,
@@ -839,7 +839,7 @@
       "id": 1781939184987,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSTY1002T.jpg",
       "category": "Toys",
-      "name": "Foldable XPE Baby Play Mat 78.7x70.9 inches Extra Large",
+      "name": "Foldable XPE Baby Play Mat",
       "sku": "YS-TY-1002T",
       "material": "XPE",
       "size": "200*180*1.0cm",
@@ -886,7 +886,7 @@
       "id": 1782111772835,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSNV1000A%20(1).png",
       "category": "Material",
-      "name": "Standard Solid Color PLA 3D Printer Filament 1.75mm 1KG",
+      "name": "PLA 3D Printer Filament 1.75mm 1KG",
       "sku": "YS-NV-1000A",
       "material": "PLA",
       "size": "1.75mm,1kg",
@@ -1005,7 +1005,7 @@
       "id": 1782114188919,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSNV1001W6.png",
       "category": "Material",
-      "name": "Glow in The Dark Color Changing PLA Filament 1.75mm 1KG",
+      "name": "Color Changing PLA Filament 1.75mm",
       "sku": "YSNV1001W",
       "material": "FLA",
       "size": "1kg",
@@ -1195,7 +1195,7 @@
       "id": 1782716951247,
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSST1001A9.jpg",
       "category": "Storage",
-      "name": "Supermarket Metal Shopping Cart, Heavy Duty Grocery Trolley",
+      "name": "Supermarket Metal Shopping Cart",
       "sku": "YS-ST-1001A",
       "material": "Iron",
       "size": "100*100*58 cm",
@@ -1208,61 +1208,61 @@
           "color": "60L",
           "size": "",
           "image": "",
-          "price": "21.4"
+          "price": 21.4
         },
         {
           "color": "80L",
           "size": "",
           "image": "",
-          "price": "25.0"
+          "price": 25
         },
         {
           "color": "100L",
           "size": "",
           "image": "",
-          "price": "26.8"
+          "price": 26.8
         },
         {
           "color": "125L",
           "size": "",
           "image": "",
-          "price": "39.3"
+          "price": 39.3
         },
         {
           "color": "150L",
           "size": "",
           "image": "",
-          "price": "44.6"
+          "price": 44.6
         },
         {
           "color": "180L",
           "size": "",
           "image": "",
-          "price": "46.4"
+          "price": 46.4
         },
         {
           "color": "210L",
           "size": "",
           "image": "",
-          "price": "51.8"
+          "price": 51.8
         },
         {
           "color": "240L",
           "size": "",
           "image": "",
-          "price": "53.6"
+          "price": 53.6
         },
         {
           "color": "280L",
           "size": "",
           "image": "",
-          "price": "57.1"
+          "price": 57.1
         },
         {
           "color": "340L",
           "size": "",
           "image": "",
-          "price": "66.1"
+          "price": 66.1
         }
       ],
       "aplus": [
