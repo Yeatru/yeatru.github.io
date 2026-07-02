@@ -1833,4 +1833,94 @@ function initBlogCardImages() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initBlogCardImages);
+function initGlobalSearch() {
+    const searchToggle = document.getElementById('navSearchToggle');
+    const searchDropdown = document.getElementById('navSearchDropdown');
+    const searchInput = document.getElementById('navSearchInput');
+    const searchResults = document.getElementById('navSearchResults');
+    const searchForm = document.getElementById('navSearchForm');
+
+    const searchData = [
+        { title: 'Product Sourcing', type: 'Service', url: 'product-sourcing.html', icon: 'fa-search' },
+        { title: 'Supplier Verification', type: 'Service', url: 'supplier-verification.html', icon: 'fa-shield-alt' },
+        { title: 'Quality Control', type: 'Service', url: 'quality-control.html', icon: 'fa-clipboard-check' },
+        { title: 'Logistics & Shipping', type: 'Service', url: 'logistics-shipping.html', icon: 'fa-shipping-fast' },
+        { title: 'Price Negotiation', type: 'Service', url: 'price-negotiation.html', icon: 'fa-hand-holding-usd' },
+        { title: 'Factory Audit', type: 'Service', url: 'factory-audit.html', icon: 'fa-industry' },
+        { title: 'OEM Customization', type: 'Service', url: 'oem.html', icon: 'fa-magic' },
+        { title: 'Sample Order', type: 'Service', url: 'sample-order.html', icon: 'fa-box-open' },
+        { title: 'Home Decor', type: 'Category', url: 'products.html?category=Home+Decor', icon: 'fa-home' },
+        { title: 'Kitchenware', type: 'Category', url: 'products.html?category=Kitchen', icon: 'fa-utensils' },
+        { title: 'Silicone Products', type: 'Category', url: 'products.html?category=Silicone', icon: 'fa-grip-lines' },
+        { title: 'Packaging', type: 'Category', url: 'products.html?category=Packaging', icon: 'fa-box' },
+        { title: 'Bags & Cases', type: 'Category', url: 'products.html?category=Bags', icon: 'fa-shopping-bag' },
+        { title: 'Electronics', type: 'Category', url: 'products.html?category=Electronics', icon: 'fa-mobile-alt' },
+        { title: 'Amazon FBA Supplier Guide', type: 'Blog', url: 'blog-amazon-supplier-guide.html', icon: 'fa-amazon' },
+        { title: 'EU/US Certifications Guide', type: 'Blog', url: 'blog-product-certifications.html', icon: 'fa-certificate' },
+        { title: 'Private Mold vs Logo Printing', type: 'Blog', url: 'blog-private-mold-packaging.html', icon: 'fa-palette' },
+        { title: 'Yiwu Market Guide', type: 'Blog', url: 'blog-yiwu-market-guide.html', icon: 'fa-store' },
+        { title: 'Sea Freight Guide', type: 'Blog', url: 'blog-sea-freight-guide.html', icon: 'fa-ship' },
+        { title: 'Sourcing Agent vs Alibaba', type: 'Blog', url: 'blog-alibaba-vs-agent.html', icon: 'fa-balance-scale' },
+        { title: 'About Yeatru', type: 'Page', url: 'about.html', icon: 'fa-users' },
+        { title: 'Contact Us', type: 'Page', url: 'contact.html', icon: 'fa-envelope' },
+        { title: 'Service Plans', type: 'Page', url: 'service-plans.html', icon: 'fa-list' },
+        { title: 'Blog', type: 'Page', url: 'blog.html', icon: 'fa-book-open' },
+        { title: 'Products', type: 'Page', url: 'products.html', icon: 'fa-th' }
+    ];
+
+    if (searchToggle && searchDropdown) {
+        searchToggle.addEventListener('click', function() {
+            searchDropdown.classList.toggle('active');
+            if (searchDropdown.classList.contains('active') && searchInput) {
+                searchInput.focus();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-search-wrapper')) {
+                searchDropdown.classList.remove('active');
+            }
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                if (query.length < 2) {
+                    searchResults.innerHTML = '';
+                    return;
+                }
+
+                const matches = searchData.filter(item => 
+                    item.title.toLowerCase().includes(query) || 
+                    item.type.toLowerCase().includes(query)
+                ).slice(0, 8);
+
+                if (matches.length === 0) {
+                    searchResults.innerHTML = '<div class="nav-search-empty">No results found</div>';
+                } else {
+                    searchResults.innerHTML = matches.map(item => `
+                        <a href="${item.url}" class="nav-search-result-item">
+                            <div class="nav-search-result-icon"><i class="fas ${item.icon}"></i></div>
+                            <div class="nav-search-result-content">
+                                <p class="nav-search-result-title">${item.title}</p>
+                                <p class="nav-search-result-type">${item.type}</p>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+            });
+        }
+
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                searchDropdown.classList.remove('active');
+            });
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initBlogCardImages();
+    initGlobalSearch();
+});
