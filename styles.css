@@ -2807,7 +2807,8 @@ body.edit-mode [contenteditable="true"]:focus {
 
 .product-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
-.product-card img { height: 160px; object-fit: cover; background-color: #f1f1f1; display: block; width: 100%; }
+.product-card img { height: 160px; object-fit: cover; background-color: #f1f1f1; display: block; width: 100%; opacity: 0; transition: opacity 0.3s ease; }
+.product-card img.loaded { opacity: 1; }
 .product-category { color: var(--primary); font-size: 0.82rem; margin-bottom: 0.35rem; }
 .product-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem; font-size: 0.95rem; }
 .product-desc { color: #6c757d; font-size: 0.85rem; margin-bottom: 0.6rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
@@ -3418,6 +3419,12 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     object-fit: cover;
     max-height: 480px;
     box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.detail-image.loaded {
+    opacity: 1;
 }
 
 .detail-specs {
