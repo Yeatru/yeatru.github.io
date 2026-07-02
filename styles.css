@@ -2811,6 +2811,10 @@ body.edit-mode [contenteditable="true"]:focus {
 .product-card img.loaded { opacity: 1; }
 .product-category { color: var(--primary); font-size: 0.82rem; margin-bottom: 0.35rem; }
 .product-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem; font-size: 0.95rem; }
+.product-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.4rem; font-size: 0.82rem; }
+.product-sku { color: #495057; }
+.product-moq { color: var(--primary); font-weight: 600; }
+.action-separator { margin: 0 0.4rem; }
 .product-desc { color: #6c757d; font-size: 0.85rem; margin-bottom: 0.6rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
 .product-price { font-weight: 700; color: var(--primary-dark); margin-bottom: 0.6rem; font-size: 0.95rem; }
 .product-action-btn { color: var(--primary); text-decoration: none; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
