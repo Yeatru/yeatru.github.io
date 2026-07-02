@@ -118,6 +118,15 @@ function escapeHtml(str) {
     });
 }
 
+// 图片优化：通过 wsrv.nl 代理实时转 WebP + 缩放，大幅减小传输体积
+// width: 目标宽度（卡片400, 详情800, A+1000）
+function optimizeImageUrl(url, width) {
+    if (!url) return url;
+    // 只对 cdn.jsdelivr.net 的图片做优化，其他URL原样返回
+    if (url.indexOf('cdn.jsdelivr.net') === -1) return url;
+    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
+}
+
 function tt(key, fallback) {
     try {
         const v = i18next.t(key);
@@ -667,7 +676,7 @@ function renderIndexHotProducts() {
         col.className = 'col-lg-3 col-md-6';
         col.innerHTML = `
             <div class="product-card">
-                <img src="${escapeHtml(product.image)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.src='https://picsum.photos/600/400'; this.alt='${escapeHtml(product.name)}'; this.classList.add('loaded');">
+                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null;this.src='${escapeHtml(product.image)}';this.classList.add('loaded');">
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
                     <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
@@ -856,7 +865,7 @@ function renderProducts() {
         card.className = 'col-lg-3 col-md-6';
         card.innerHTML = `
             <div class="product-card">
-                <img src="${escapeHtml(product.image)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.src='https://picsum.photos/600/400'; this.alt='${escapeHtml(product.name)}'; this.classList.add('loaded');">
+                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null;this.src='${escapeHtml(product.image)}';this.classList.add('loaded');">
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
                     <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
@@ -1128,7 +1137,7 @@ function renderDetailPage(productId) {
     const detailPriceMaxInput = document.getElementById('detailPriceMaxInput');
     const detailDescInput = document.getElementById('detailDescInput');
 
-    if (detailImage) { detailImage.src = product.image || 'https://picsum.photos/600/400'; detailImage.alt = product.name || ''; }
+    if (detailImage) { detailImage.src = optimizeImageUrl(product.image || 'https://picsum.photos/600/400', 800); detailImage.alt = product.name || ''; }
     if (detailName) detailName.textContent = product.name || '';
     if (detailCategory) detailCategory.textContent = product.category || '';
     if (detailSKU) detailSKU.textContent = product.sku || '';
@@ -1369,7 +1378,7 @@ function buildAplusBlockEl(b, idx) {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
             <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
-            <img src="${escapeHtml(b.image || '')}" alt="hero" style="width:100%;height:auto;border-radius:8px;" loading="lazy" decoding="async" onerror="this.src='https://picsum.photos/1200/420'">
+            <img src="${optimizeImageUrl(escapeHtml(b.image || ''), 1000)}" alt="hero" style="width:100%;height:auto;border-radius:8px;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || '')}';">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
@@ -1385,7 +1394,7 @@ function buildAplusBlockEl(b, idx) {
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
                     <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
                 </div>
-                <img src="${b.image || 'https://picsum.photos/600/400'}" alt="block" loading="lazy" decoding="async" onerror="this.src='https://picsum.photos/600/400'">
+                <img src="${optimizeImageUrl(b.image || 'https://picsum.photos/600/400', 800)}" alt="block" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || 'https://picsum.photos/600/400')}';">
             </div>
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
