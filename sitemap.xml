@@ -5,7 +5,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://www.yeatru.com/</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/"/>
@@ -18,7 +18,7 @@
     <!-- Products Page -->
     <url>
         <loc>https://www.yeatru.com/products.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/products.html"/>
@@ -27,59 +27,96 @@
         <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/products.html"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/products.html"/>
     </url>
+    <!-- Product Categories -->
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Home+Decor</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Kitchen</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Silicone</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Packaging</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Bags</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/products.html?category=Electronics</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 
     <!-- Service Pages -->
     <url>
         <loc>https://www.yeatru.com/product-sourcing.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/supplier-verification.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/quality-control.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/logistics-shipping.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/price-negotiation.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/factory-audit.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/oem.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/sample-order.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/service-plans.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -87,13 +124,13 @@
     <!-- About & Contact -->
     <url>
         <loc>https://www.yeatru.com/about.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/contact.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -101,43 +138,43 @@
     <!-- Blog Pages -->
     <url>
         <loc>https://www.yeatru.com/blog.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-alibaba-vs-agent.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-amazon-supplier-guide.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-yiwu-market-guide.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-product-certifications.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-sea-freight-guide.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-private-mold-packaging.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -145,19 +182,19 @@
     <!-- Other Pages -->
     <url>
         <loc>https://www.yeatru.com/services.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/process.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/testimonials.html</loc>
-        <lastmod>2026-06-29</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
