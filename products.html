@@ -605,14 +605,6 @@
         const category = urlParams.get('category');
         const search = urlParams.get('search');
         
-        const canonicalLink = document.querySelector('link[rel="canonical"]');
-        if (canonicalLink && (category || search)) {
-            const canonicalUrl = new URL(canonicalLink.href);
-            if (category) canonicalUrl.searchParams.set('category', category);
-            if (search) canonicalUrl.searchParams.set('search', search);
-            canonicalLink.href = canonicalUrl.toString();
-        }
-        
         if (category) {
             const titleEl = document.querySelector('.page-header-section .section-title');
             if (titleEl) {

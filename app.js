@@ -124,7 +124,12 @@ function optimizeImageUrl(url, width) {
     if (!url) return url;
     // 只对 cdn.jsdelivr.net 的图片做优化，其他URL原样返回
     if (url.indexOf('cdn.jsdelivr.net') === -1) return url;
-    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
+    try {
+        const decodedUrl = decodeURIComponent(url);
+        return 'https://wsrv.nl/?url=' + encodeURIComponent(decodedUrl) + '&w=' + (width || 600) + '&output=webp&q=80';
+    } catch (e) {
+        return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
+    }
 }
 
 function tt(key, fallback) {
