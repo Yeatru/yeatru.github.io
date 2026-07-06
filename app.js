@@ -124,12 +124,7 @@ function optimizeImageUrl(url, width) {
     if (!url) return url;
     // 只对 cdn.jsdelivr.net 的图片做优化，其他URL原样返回
     if (url.indexOf('cdn.jsdelivr.net') === -1) return url;
-    try {
-        const decodedUrl = decodeURIComponent(url);
-        return 'https://wsrv.nl/?url=' + encodeURIComponent(decodedUrl) + '&w=' + (width || 600) + '&output=webp&q=80';
-    } catch (e) {
-        return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
-    }
+    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
 }
 
 function tt(key, fallback) {
@@ -878,11 +873,15 @@ function renderProducts() {
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
                     <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
+                    <div class="product-meta">
+                        ${product.sku ? `<span class="product-sku"><i class="fas fa-barcode me-1"></i>${escapeHtml(product.sku)}</span>` : ''}
+                        ${product.moq ? `<span class="product-moq"><i class="fas fa-box me-1"></i>MOQ: ${escapeHtml(product.moq)}</span>` : ''}
+                    </div>
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
                         <a href="#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
-                        <span class="text-muted">|</span>
+                        <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
                     ${isAdmin() ? `
