@@ -1,14 +1,35 @@
 # robots.txt for Yeatru Sourcing Website
 # https://www.yeatru.com/
 
+# Global rules
 User-agent: *
 Allow: /
-
-# Disallow admin-related paths (optional, for security)
 Disallow: /admin/
+Disallow: /*.json$
+Disallow: /app.js
+Disallow: /page.js
+
+# Specific search engine rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://www.yeatru.com/sitemap.xml
 
-# Crawl delay (optional, be nice to servers)
-Crawl-delay: 1
+# IndexNow API key location (for Bing)
+# https://www.bing.com/indexnow
+User-agent: *
+Allow: /BingSiteAuth.xml
