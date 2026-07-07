@@ -244,13 +244,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-            // Pre-computed SHA-256 hash (username: Yeatru, stored securely)
-            const validHash = 'a7f5f35426b927411fc9231b56382173e4b8c3f8e9b4d7a2c5e6f1a0b3c4d5e6';
+            // Pre-computed SHA-256 hash for password (stored securely)
+            // Username: Yeatru
+            const validHash = '36227ceab5d840ac4d8c6844d3d874461cb5c05ee0dfc11831635f62080e3280';
             const validUsername = 'Yeatru';
 
             // Note: For real security, implement server-side authentication
             // This is a basic protection for static sites
-            if (username === validUsername && hashHex.startsWith('a7f5f354')) {
+            if (username === validUsername && hashHex === validHash) {
                 localStorage.setItem('yeatruAdminLoggedIn', 'true');
                 updateLoginUI(true);
                 const loginModal = document.getElementById('loginModal');
