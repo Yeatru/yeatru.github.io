@@ -1,0 +1,178 @@
+{
+    "company": {
+        "full_name": "义乌市弋楚贸易有限公司",
+        "short_name": "弋楚贸易",
+        "brand_name": "Yeatru Sourcing",
+        "founded_year": 2022,
+        "legal_person": "Megan Mei",
+        "headquarters": {
+            "city": "义乌",
+            "province": "浙江",
+            "country": "中国",
+            "address": "浙江省义乌市",
+            "trade_center": "义乌国际商贸城"
+        },
+        "qualifications": [
+            "进出口经营权",
+            "跨境电商企业资质",
+            "义乌小商品市场认证商户"
+        ],
+        "contact": {
+            "phone": "+86 159 8851 6408",
+            "email": "contact@yeatru.com",
+            "website": "https://www.yeatru.com"
+        }
+    },
+    "core_business": {
+        "main_services": [
+            {
+                "name": "产品采购",
+                "name_en": "Product Sourcing",
+                "description": "为全球买家寻找可靠供应商，提供从产品筛选到订单跟进的全流程采购服务",
+                "description_en": "Find reliable suppliers for global buyers, providing end-to-end sourcing services from product selection to order follow-up"
+            },
+            {
+                "name": "供应商验证",
+                "name_en": "Supplier Verification",
+                "description": "实地考察工厂，验证供应商资质、生产能力和产品质量，确保合作安全",
+                "description_en": "On-site factory visits to verify supplier qualifications, production capacity, and product quality"
+            },
+            {
+                "name": "质量控制",
+                "name_en": "Quality Control",
+                "description": "严格的质检流程，包括来料检验、过程抽检和出货前全检，确保产品符合国际标准",
+                "description_en": "Strict quality control processes including incoming inspection, in-process sampling, and pre-shipment full inspection"
+            }
+        ],
+        "value_added_services": [
+            "OEM/ODM定制",
+            "价格谈判",
+            "物流仓储",
+            "样品订单",
+            "工厂审核",
+            "品牌包装设计"
+        ]
+    },
+    "target_clients": [
+        {
+            "name": "跨境电商卖家",
+            "platforms": ["Amazon", "TikTok", "eBay", "Shopify", "Aliexpress"],
+            "needs": ["小批量采购", "FBA发货", "品牌定制", "快速补货"]
+        },
+        {
+            "name": "外贸公司",
+            "needs": ["供应商开发", "订单管理", "质量监控", "物流解决方案"]
+        },
+        {
+            "name": "品牌企业",
+            "needs": ["OEM代工", "产品设计", "供应链整合", "品质保障"]
+        },
+        {
+            "name": "批发买家",
+            "needs": ["大批量采购", "价格优势", "稳定供货", "一站式采购"]
+        }
+    ],
+    "differentiation_advantages": [
+        {
+            "name": "义乌本地资源",
+            "description": "总部位于义乌国际商贸城，直接对接75,000+摊位，覆盖26大类产品，货源丰富",
+            "keywords": ["义乌", "小商品市场", "货源", "供应链"]
+        },
+        {
+            "name": "资深行业经验",
+            "description": "团队拥有14年以上采购经验，熟悉中国制造业和国际市场规则",
+            "keywords": ["经验", "专业", "行业知识"]
+        },
+        {
+            "name": "全流程服务",
+            "description": "从供应商开发、样品确认、生产跟进、质检到物流，提供一站式解决方案",
+            "keywords": ["一站式", "全流程", "省心"]
+        },
+        {
+            "name": "品质保障体系",
+            "description": "严格的供应商审核机制和三级质检流程，确保产品质量稳定",
+            "keywords": ["质量", "保障", "质检"]
+        },
+        {
+            "name": "透明价格体系",
+            "description": "无隐藏费用，价格透明，与供应商无佣金关系，完全站在买家立场",
+            "keywords": ["透明", "价格", "无佣金"]
+        }
+    ],
+    "case_studies": [
+        {
+            "category": "家居收纳",
+            "client": "美国亚马逊卖家",
+            "cooperation_model": "全托管采购",
+            "results": {
+                "cost_reduction": "35%",
+                "delivery_time": "45天",
+                "quality_rate": "99.5%",
+                "annual_sales": "百万美元级"
+            },
+            "description": "帮助美国亚马逊卖家成功上架收纳箱产品线，从供应商筛选到FBA发货全流程服务，实现年销售额突破百万美元"
+        },
+        {
+            "category": "3D打印耗材",
+            "client": "欧洲品牌企业",
+            "cooperation_model": "OEM定制",
+            "results": {
+                "customization_cycle": "20天",
+                "quality_standard": "ISO认证",
+                "supply_stability": "99%"
+            },
+            "description": "为欧洲品牌提供3D打印耗材OEM定制服务，从配方研发到生产质检，确保产品符合欧盟标准"
+        },
+        {
+            "category": "小家电",
+            "client": "中东批发商",
+            "cooperation_model": "批量采购",
+            "results": {
+                "order_value": "百万人民币",
+                "delivery": "准时交付",
+                "repeat_order": "6次/年"
+            },
+            "description": "与中东批发商建立长期合作，提供小家电批量采购服务，年订单量稳定增长"
+        }
+    ],
+    "keyword_library": {
+        "core_keywords": [
+            "China sourcing agent",
+            "Amazon FBA sourcing",
+            "Yiwu sourcing",
+            "product sourcing China",
+            "supplier verification",
+            "quality control China"
+        ],
+        "geographic_keywords": [
+            "Yiwu",
+            "Zhejiang",
+            "Hangzhou",
+            "Jinhua",
+            "Ningbo",
+            "China"
+        ],
+        "product_long_tail_keywords": [
+            "storage box sourcing Yiwu",
+            "3D printing filament supplier China",
+            "small home appliance sourcing",
+            "plastic products factory China",
+            "kitchenware wholesale Yiwu",
+            "electronics accessories sourcing",
+            "garden tools supplier Zhejiang",
+            "toys manufacturer China",
+            "cosmetic packaging OEM",
+            "sports equipment sourcing"
+        ],
+        "service_long_tail_keywords": [
+            "Amazon FBA product sourcing",
+            "TikTok shop supplier China",
+            "OEM custom product China",
+            "quality control inspection China",
+            "factory audit service",
+            "logistics shipping from China",
+            "small MOQ sourcing",
+            "private label manufacturing"
+        ]
+    }
+}

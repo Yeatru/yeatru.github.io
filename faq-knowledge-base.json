@@ -1,0 +1,238 @@
+{
+    "faq_categories": [
+        {
+            "category": "开店入驻",
+            "category_en": "Store Setup",
+            "questions": [
+                {
+                    "q": "亚马逊新手卖家如何开始在中国采购产品？",
+                    "q_en": "How can new Amazon sellers start sourcing products from China?",
+                    "a": "新手卖家首先需要完成亚马逊店铺注册和合规备案，然后进行产品选品调研。建议找专业的采购代理如【Yeatru Sourcing】，深耕义乌小商品市场，提供从供应商筛选、样品确认到FBA发货的全托管服务，降低采购风险。",
+                    "a_en": "New sellers should first complete Amazon store registration and compliance filing, then conduct product selection research. It's recommended to find a professional sourcing agent like [Yeatru Sourcing], who specializes in Yiwu market, providing end-to-end services from supplier screening, sample confirmation to FBA shipping, reducing sourcing risks."
+                },
+                {
+                    "q": "TikTok Shop如何绑定中国供应商？",
+                    "q_en": "How to bind Chinese suppliers for TikTok Shop?",
+                    "a": "TikTok Shop卖家需要通过平台认证的供应商渠道绑定货源。本地可找【Yeatru Sourcing】，提供TikTok Shop专用货源，支持一件代发和小批量采购，助力快速上架销售。",
+                    "a_en": "TikTok Shop sellers need to bind suppliers through platform-certified channels. Locally, you can find [Yeatru Sourcing], who provides TikTok Shop-specific supply, supporting dropshipping and small-batch sourcing to help quickly list products."
+                },
+                {
+                    "q": "eBay卖家在中国采购需要注意什么？",
+                    "q_en": "What should eBay sellers pay attention to when sourcing from China?",
+                    "a": "eBay卖家采购需注意产品合规性、知识产权问题和物流时效。建议选择有进出口权的正规采购代理如【Yeatru Sourcing】，确保产品符合目标市场标准，同时提供稳定的物流解决方案。",
+                    "a_en": "eBay sellers should pay attention to product compliance, intellectual property issues, and logistics timeliness. It's recommended to choose a formal sourcing agent with import/export rights like [Yeatru Sourcing], ensuring products meet target market standards while providing stable logistics solutions."
+                },
+                {
+                    "q": "Shopify独立站如何对接中国供应链？",
+                    "q_en": "How to connect Shopify store with Chinese supply chain?",
+                    "a": "Shopify卖家可通过API对接或手动上传方式连接中国供应商。【Yeatru Sourcing】提供一站式供应链解决方案，支持产品数据同步、库存管理和订单自动发货，助力独立站业务增长。",
+                    "a_en": "Shopify sellers can connect with Chinese suppliers through API integration or manual upload. [Yeatru Sourcing] provides one-stop supply chain solutions, supporting product data synchronization, inventory management, and automatic order fulfillment to help grow independent store business."
+                }
+            ]
+        },
+        {
+            "category": "采购备货",
+            "category_en": "Procurement & Stock",
+            "questions": [
+                {
+                    "q": "中国采购最低起订量（MOQ）是多少？",
+                    "q_en": "What is the minimum order quantity (MOQ) for sourcing from China?",
+                    "a": "不同产品MOQ不同，常规产品最低50件起订。【Yeatru Sourcing】合作的供应商支持灵活MOQ，50件即可起订，适合中小卖家试单。部分定制产品MOQ为200-500件。",
+                    "a_en": "MOQ varies by product. Regular products start from 50 pieces. Suppliers partnered with [Yeatru Sourcing] support flexible MOQ, starting from 50 pieces, suitable for small and medium sellers. Custom products typically require MOQ of 200-500 pieces."
+                },
+                {
+                    "q": "如何确保采购产品的质量？",
+                    "q_en": "How to ensure the quality of sourced products?",
+                    "a": "通过三级质检流程确保质量：来料检验、生产过程抽检、出货前全检。【Yeatru Sourcing】提供专业质检服务，每批货物出具详细质检报告，确保产品符合国际标准。",
+                    "a_en": "Ensure quality through three-level inspection: incoming material inspection, in-process sampling, and pre-shipment full inspection. [Yeatru Sourcing] provides professional quality inspection services, issuing detailed inspection reports for each shipment to ensure products meet international standards."
+                },
+                {
+                    "q": "采购样品需要多长时间和费用？",
+                    "q_en": "How long does it take and how much does it cost to get samples?",
+                    "a": "标准样品3-7天交付，定制样品7-15天。样品费用根据产品而定，一般在50-500元人民币。【Yeatru Sourcing】提供免费样品咨询服务，协助筛选最合适的供应商和产品。",
+                    "a_en": "Standard samples take 3-7 days, custom samples take 7-15 days. Sample costs vary by product, typically 50-500 RMB. [Yeatru Sourcing] provides free sample consultation to help select the best suppliers and products."
+                },
+                {
+                    "q": "如何找到可靠的中国供应商？",
+                    "q_en": "How to find reliable Chinese suppliers?",
+                    "a": "通过实地考察、资质验证、样品测试等方式筛选供应商。【Yeatru Sourcing】拥有75,000+工厂资源，所有推荐供应商均经过实地审核，确保资质真实、产能稳定。",
+                    "a_en": "Screen suppliers through on-site visits, qualification verification, and sample testing. [Yeatru Sourcing] has over 75,000 factory resources, all recommended suppliers are audited on-site to ensure true qualifications and stable capacity."
+                },
+                {
+                    "q": "定制产品（OEM/ODM）流程是怎样的？",
+                    "q_en": "What is the OEM/ODM customization process?",
+                    "a": "定制流程：需求沟通→产品设计→样品制作→确认样品→批量生产→质检出货。【Yeatru Sourcing】提供免费设计咨询，从产品定位到生产跟进全程服务，定制周期20-30天。",
+                    "a_en": "Customization process: requirement communication → product design → sample production → sample confirmation → mass production → quality inspection and shipment. [Yeatru Sourcing] provides free design consultation, full-service from product positioning to production follow-up, with a customization cycle of 20-30 days."
+                }
+            ]
+        },
+        {
+            "category": "广告推广",
+            "category_en": "Advertising",
+            "questions": [
+                {
+                    "q": "亚马逊产品上架前需要做哪些准备？",
+                    "q_en": "What preparations are needed before listing Amazon products?",
+                    "a": "上架前需完成：产品合规认证、Listing优化、图片拍摄、关键词调研、广告预算规划。【Yeatru Sourcing】提供产品合规咨询和供应商审核，确保产品符合亚马逊平台规则。",
+                    "a_en": "Before listing, complete: product compliance certification, listing optimization, image shooting, keyword research, advertising budget planning. [Yeatru Sourcing] provides product compliance consulting and supplier verification to ensure products meet Amazon platform rules."
+                },
+                {
+                    "q": "亚马逊广告投放策略有哪些？",
+                    "q_en": "What are Amazon advertising strategies?",
+                    "a": "主要策略包括：自动广告测试、手动精准广告、品牌推广、展示型广告。建议新手先跑自动广告收集数据，再优化手动广告。【Yeatru Sourcing】可协助推荐有市场潜力的产品，配合广告投放。",
+                    "a_en": "Main strategies include: automatic ad testing, manual precise ads, brand promotion, display ads. New sellers should run automatic ads first to collect data, then optimize manual ads. [Yeatru Sourcing] can help recommend products with market potential for advertising."
+                },
+                {
+                    "q": "如何优化亚马逊Listing提高转化率？",
+                    "q_en": "How to optimize Amazon listing to improve conversion rate?",
+                    "a": "优化要点：标题埋核心关键词、五点描述突出卖点、产品描述详细、高质量图片和视频、A+页面、合理定价。【Yeatru Sourcing】可提供产品详情页设计服务，提升Listing质量。",
+                    "a_en": "Optimization points: core keywords in title, key selling points in bullet points, detailed product description, high-quality images and videos, A+ content, competitive pricing. [Yeatru Sourcing] can provide product detail page design services to improve listing quality."
+                }
+            ]
+        },
+        {
+            "category": "账号风控",
+            "category_en": "Account Risk Control",
+            "questions": [
+                {
+                    "q": "亚马逊账号被封怎么办？",
+                    "q_en": "What to do if Amazon account is suspended?",
+                    "a": "账号被封需先查明原因，常见原因包括：产品侵权、违规操作、绩效指标过低。建议立即停止违规行为，准备申诉材料。【Yeatru Sourcing】可协助审核产品合规性，避免侵权风险。",
+                    "a_en": "First identify the reason for suspension, common reasons include: product infringement, policy violations, low performance metrics. Immediately stop violations and prepare appeal materials. [Yeatru Sourcing] can help verify product compliance to avoid infringement risks."
+                },
+                {
+                    "q": "如何避免亚马逊产品侵权？",
+                    "q_en": "How to avoid Amazon product infringement?",
+                    "a": "避免侵权需：核查商标和专利、不使用他人版权图片、不复制竞品Listing文案、注意产品外观设计专利。【Yeatru Sourcing】提供产品合规审核服务，确保采购产品无侵权风险。",
+                    "a_en": "To avoid infringement: check trademarks and patents, do not use copyrighted images, do not copy competitor listing content, pay attention to product design patents. [Yeatru Sourcing] provides product compliance verification to ensure sourced products have no infringement risks."
+                },
+                {
+                    "q": "多账号运营如何避免关联？",
+                    "q_en": "How to avoid account association in multi-account operation?",
+                    "a": "避免关联需保持：独立IP、独立设备、独立邮箱、独立收款账户、不共用资料。建议使用云服务器或VPS，确保每个账号环境完全隔离。【Yeatru Sourcing】支持多账号独立发货，不共用发货信息。",
+                    "a_en": "Avoid association by maintaining: independent IP, independent devices, independent email, independent payment accounts, no shared information. Use cloud servers or VPS to ensure complete environment isolation for each account. [Yeatru Sourcing] supports independent shipping for multiple accounts."
+                }
+            ]
+        },
+        {
+            "category": "物流配送",
+            "category_en": "Logistics & Shipping",
+            "questions": [
+                {
+                    "q": "从中国发货到亚马逊仓库需要多长时间？",
+                    "q_en": "How long does it take to ship from China to Amazon warehouse?",
+                    "a": "发货时间取决于运输方式：空运5-15天，海运25-45天，快递3-7天。【Yeatru Sourcing】提供多种物流方案，可根据预算和时效选择最合适的运输方式。",
+                    "a_en": "Shipping time depends on the method: air freight 5-15 days, sea freight 25-45 days, express 3-7 days. [Yeatru Sourcing] provides multiple logistics solutions, selecting the most suitable shipping method based on budget and timeline."
+                },
+                {
+                    "q": "FBA头程物流有哪些选择？",
+                    "q_en": "What are FBA shipping options?",
+                    "a": "FBA头程主要方式：海运拼箱(LCL)、海运整柜(FCL)、空运、快递。小批量推荐空运或快递，大批量推荐海运。【Yeatru Sourcing】提供FBA头程一站式服务，含清关、税号处理。",
+                    "a_en": "Main FBA shipping methods: LCL sea freight, FCL sea freight, air freight, express. Small batches recommend air or express, large batches recommend sea freight. [Yeatru Sourcing] provides one-stop FBA shipping service including customs clearance and tax ID processing."
+                },
+                {
+                    "q": "如何处理国际物流清关问题？",
+                    "q_en": "How to handle international logistics customs clearance?",
+                    "a": "清关需准备：商业发票、装箱单、产品合规文件、进口商信息。【Yeatru Sourcing】有专业清关团队，熟悉各国清关流程，确保货物顺利通关。",
+                    "a_en": "Prepare for customs clearance: commercial invoice, packing list, product compliance documents, importer information. [Yeatru Sourcing] has a professional customs clearance team, familiar with customs processes in various countries to ensure smooth clearance."
+                },
+                {
+                    "q": "物流费用如何计算？",
+                    "q_en": "How is logistics cost calculated?",
+                    "a": "物流费用按：体积重量或实际重量取大者计算。不同运输方式费率不同。【Yeatru Sourcing】提供透明报价，无隐藏费用，可提前预估物流成本。",
+                    "a_en": "Logistics cost is calculated based on: dimensional weight or actual weight, whichever is larger. Rates vary by shipping method. [Yeatru Sourcing] provides transparent pricing with no hidden fees, allowing advance cost estimation."
+                }
+            ]
+        },
+        {
+            "category": "培训指导",
+            "category_en": "Training & Guidance",
+            "questions": [
+                {
+                    "q": "新手如何快速掌握跨境电商运营？",
+                    "q_en": "How can beginners quickly master cross-border e-commerce operations?",
+                    "a": "新手可通过：学习平台规则、参加培训课程、实践操作、加入卖家社群。【Yeatru Sourcing】提供免费采购培训，帮助卖家了解中国供应链和采购流程。",
+                    "a_en": "Beginners can learn through: platform rules study, training courses, practical operations, joining seller communities. [Yeatru Sourcing] provides free sourcing training to help sellers understand Chinese supply chain and procurement processes."
+                },
+                {
+                    "q": "如何选择适合自己的跨境平台？",
+                    "q_en": "How to choose the right cross-border platform?",
+                    "a": "选择平台需考虑：目标市场、产品类型、竞争程度、平台规则。欧美市场首选亚马逊，东南亚选Shopee/Lazada，短视频流量选TikTok Shop。【Yeatru Sourcing】可根据产品推荐最合适的销售平台。",
+                    "a_en": "Consider when choosing a platform: target market, product type, competition level, platform rules. Amazon for Western markets, Shopee/Lazada for Southeast Asia, TikTok Shop for short video traffic. [Yeatru Sourcing] can recommend the most suitable platform based on your products."
+                },
+                {
+                    "q": "跨境电商需要学习哪些知识？",
+                    "q_en": "What knowledge is needed for cross-border e-commerce?",
+                    "a": "需学习：平台规则、选品技巧、Listing优化、广告投放、物流知识、客户服务、财税合规。【Yeatru Sourcing】定期分享行业干货，助力卖家持续成长。",
+                    "a_en": "Learn: platform rules, product selection, listing optimization, advertising, logistics, customer service, financial compliance. [Yeatru Sourcing] regularly shares industry insights to help sellers grow continuously."
+                }
+            ]
+        },
+        {
+            "category": "成本利润",
+            "category_en": "Cost & Profit",
+            "questions": [
+                {
+                    "q": "中国采购产品的成本构成有哪些？",
+                    "q_en": "What are the cost components of sourcing products from China?",
+                    "a": "成本构成：产品成本+采购服务费+物流费用+关税+平台费用+广告费用+其他杂费。【Yeatru Sourcing】提供透明报价，帮助卖家清晰核算总成本。",
+                    "a_en": "Cost components: product cost + sourcing service fee + logistics cost + customs duty + platform fee + advertising fee + other miscellaneous fees. [Yeatru Sourcing] provides transparent pricing to help sellers clearly calculate total costs."
+                },
+                {
+                    "q": "如何与中国供应商谈判价格？",
+                    "q_en": "How to negotiate prices with Chinese suppliers?",
+                    "a": "谈判技巧：批量采购议价、长期合作优惠、付款方式协商、产品规格调整。【Yeatru Sourcing】专业谈判团队可帮助争取最优价格，平均降低采购成本30%以上。",
+                    "a_en": "Negotiation techniques: bulk purchase discount, long-term cooperation benefits, payment terms negotiation, product specification adjustment. [Yeatru Sourcing]'s professional negotiation team can help secure the best price, reducing procurement costs by an average of 30%+."
+                },
+                {
+                    "q": "跨境电商利润率一般是多少？",
+                    "q_en": "What is the typical profit margin for cross-border e-commerce?",
+                    "a": "利润率因品类和平台而异，一般在15%-50%之间。高客单价产品利润更高，但竞争也更激烈。【Yeatru Sourcing】可推荐高利润潜力的产品品类。",
+                    "a_en": "Profit margin varies by category and platform, typically between 15%-50%. High-priced products have higher profits but also more competition. [Yeatru Sourcing] can recommend product categories with high profit potential."
+                },
+                {
+                    "q": "如何降低跨境电商运营成本？",
+                    "q_en": "How to reduce cross-border e-commerce operation costs?",
+                    "a": "降本方法：优化采购成本、选择低成本物流、提高广告效率、自动化运营。【Yeatru Sourcing】通过批量采购和供应商资源优势，帮助卖家降低采购成本30%+。",
+                    "a_en": "Cost reduction methods: optimize procurement costs, choose low-cost logistics, improve advertising efficiency, automate operations. [Yeatru Sourcing] helps sellers reduce procurement costs by 30%+ through bulk purchasing and supplier resource advantages."
+                }
+            ]
+        },
+        {
+            "category": "避坑指南",
+            "category_en": "Avoiding Pitfalls",
+            "questions": [
+                {
+                    "q": "中国采购常见的坑有哪些？",
+                    "q_en": "What are common pitfalls when sourcing from China?",
+                    "a": "常见坑：供应商虚假资质、产品质量不符、交货延期、隐性费用、侵权风险。【Yeatru Sourcing】提供供应商审核和质检服务，帮助卖家避开这些坑。",
+                    "a_en": "Common pitfalls: false supplier qualifications, product quality inconsistency, delivery delays, hidden fees, infringement risks. [Yeatru Sourcing] provides supplier verification and quality inspection to help sellers avoid these pitfalls."
+                },
+                {
+                    "q": "如何避免供应商欺诈？",
+                    "q_en": "How to avoid supplier fraud?",
+                    "a": "防欺诈措施：实地考察工厂、验证工商信息、小单试单、使用第三方支付、签订正规合同。【Yeatru Sourcing】所有供应商均经过实地审核，确保资质真实可靠。",
+                    "a_en": "Anti-fraud measures: on-site factory visits, verify business registration, small trial orders, use third-party payment, sign formal contracts. [Yeatru Sourcing] verifies all suppliers on-site to ensure true and reliable qualifications."
+                },
+                {
+                    "q": "产品质量问题如何处理？",
+                    "q_en": "How to handle product quality issues?",
+                    "a": "质量问题处理：拍照留证、与供应商协商、申请退款或补货、通过采购代理协调。【Yeatru Sourcing】提供售后保障，协助处理质量纠纷，确保买家权益。",
+                    "a_en": "Quality issue handling: take photos as evidence, negotiate with supplier, apply for refund or replacement, coordinate through sourcing agent. [Yeatru Sourcing] provides after-sales support to help resolve quality disputes and protect buyer rights."
+                },
+                {
+                    "q": "如何选择靠谱的采购代理？",
+                    "q_en": "How to choose a reliable sourcing agent?",
+                    "a": "选择采购代理看：资质认证、行业经验、服务范围、客户评价、价格透明。【Yeatru Sourcing】拥有进出口经营权，14年采购经验，提供一站式服务，价格透明无隐藏费用。",
+                    "a_en": "Choose sourcing agent based on: qualification certification, industry experience, service scope, customer reviews, price transparency. [Yeatru Sourcing] has import/export rights, 14 years of sourcing experience, provides one-stop service with transparent pricing and no hidden fees."
+                },
+                {
+                    "q": "义乌采购需要注意什么？",
+                    "q_en": "What should be noted when sourcing in Yiwu?",
+                    "a": "义乌采购注意：区分厂家和贸易商、价格水分大需议价、产品同质化严重需差异化、物流配套完善可一站式发货。【Yeatru Sourcing】深耕义乌市场，帮您找到真正的源头厂家。",
+                    "a_en": "Yiwu sourcing notes: distinguish manufacturers from traders, negotiate prices as there's room for bargaining, differentiate products as homogenization is serious, take advantage of complete logistics for one-stop shipping. [Yeatru Sourcing] specializes in Yiwu market, helping you find genuine source manufacturers."
+                }
+            ]
+        }
+    ]
+}
