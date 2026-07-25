@@ -685,6 +685,82 @@ body.edit-mode .page-block [data-block-field]:hover {
     margin-right: 0.5rem;
 }
 
+/* Tier Pricing Table */
+.tier-pricing-table {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.tier-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.tier-row:last-child {
+    border-bottom: none;
+}
+
+.tier-row.tier-best {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+}
+
+.tier-range {
+    color: #495057;
+    font-weight: 500;
+}
+
+.tier-rate {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.tier-row.tier-best .tier-rate {
+    color: #155724;
+}
+
+/* Plan Description and Note */
+.plan-description {
+    font-size: 0.875rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.plan-note {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Plan Guide List */
+.plan-guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.plan-guide-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    color: #495057;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.plan-guide-list li::before {
+    content: "\f105";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
 .testimonial-card {
     background: #fff;
     border: 1px solid #e9ecef;

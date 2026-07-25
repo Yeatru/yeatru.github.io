@@ -164,6 +164,26 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Blog Articles -->
+    <url>
+        <loc>https://www.yeatru.com/blog-first-time-china-sourcing.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/blog-sourcing-preparation-checklist.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/blog-choosing-sourcing-service-model.html</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Other Pages (redirect pages - lower priority) -->
     <url>
         <loc>https://www.yeatru.com/services.html</loc>
