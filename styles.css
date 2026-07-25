@@ -3317,6 +3317,21 @@ body.edit-mode [contenteditable="true"]:focus {
     position: relative;
 }
 
+.plan-card-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg-light);
+}
+
+.plan-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .plan-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
 .plan-card.featured { border: 2px solid var(--primary); }
 
@@ -5320,6 +5335,203 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .page-hero-image {
         aspect-ratio: 16 / 10;
     }
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(22, 93, 255, 0.1);
+    color: var(--primary);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-plan-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-plan-card.featured {
+    border-color: var(--primary);
+    box-shadow: 0 8px 30px rgba(22, 93, 255, 0.18);
+}
+
+.hero-plan-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+
+.hero-plan-badge.popular {
+    background: var(--cta);
+    right: 1rem;
+    left: auto;
+}
+
+.hero-plan-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-light);
+}
+
+.hero-plan-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-plan-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-plan-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-plan-body h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.hero-plan-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.hero-plan-price span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.hero-plan-2 .hero-plan-price {
+    color: var(--cta);
+}
+
+.hero-plan-min {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.hero-plan-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-plan-body {
+        padding: 1.25rem;
+    }
+    .hero-plan-body h3 {
+        font-size: 1.15rem;
+    }
+    .hero-plan-price {
+        font-size: 1.75rem;
+    }
+}
+
+.plan-guide-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.plan-guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.plan-guide-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+}
+
+.plan-c-guide .plan-guide-icon {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.plan-b-guide .plan-guide-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.plan-guide-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.plan-price-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 .check-list {

@@ -203,23 +203,45 @@
                 <a href="index.html" data-i18n="nav.home">Home</a> <span class="breadcrumb-sep">/</span>
                 <span class="breadcrumb-current">Service Plans</span>
             </nav>
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <span class="hero-tag"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
-                    <h1 class="page-hero-title">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
-                    <p class="page-hero-subtitle">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
-                    <div class="banner-features">
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> 100% Transparent Pricing</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> No Hidden Commission</span>
-                        <span class="banner-feature"><i class="fas fa-check-circle"></i> Tiered Rates for Volume</span>
+            <div class="text-center mb-5">
+                <span class="hero-tag"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
+                <h1 class="page-hero-title mt-3">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
+                <p class="page-hero-subtitle mx-auto" style="max-width: 700px;">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
+                <div class="banner-features justify-content-center">
+                    <span class="banner-feature"><i class="fas fa-check-circle"></i> 100% Transparent Pricing</span>
+                    <span class="banner-feature"><i class="fas fa-check-circle"></i> No Hidden Commission</span>
+                    <span class="banner-feature"><i class="fas fa-check-circle"></i> Tiered Rates for Volume</span>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="hero-plan-card hero-plan-1">
+                        <div class="hero-plan-badge">Plan 1</div>
+                        <div class="hero-plan-img">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20order%20management%20service%20illustration%2C%20order%20tracking%2C%20production%20follow-up%2C%20quality%20inspection%2C%20clean%20flat%20design%2C%20blue%20and%20white%20color%20scheme%2C%20business%20style&image_size=landscape_16_9" alt="Order Management Service" class="w-100">
+                        </div>
+                        <div class="hero-plan-body">
+                            <h3>Order Management Service</h3>
+                            <div class="hero-plan-price">3% ~ 4% <span>commission</span></div>
+                            <p class="hero-plan-min">Minimum USD 150 per order</p>
+                            <p class="hero-plan-desc">You have ready supplier links. We arrange orders, follow production, and conduct basic inspection.</p>
+                            <a href="#plan-section" class="btn btn-outline-primary w-100">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Service%20Plans.png" alt="China Sourcing Service Plans and Pricing" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
-                        <div class="page-hero-image-placeholder">
-                            <i class="fas fa-tags"></i>
-                            <span>Service Plans</span>
+                <div class="col-lg-6">
+                    <div class="hero-plan-card hero-plan-2 featured">
+                        <div class="hero-plan-badge">Plan 2</div>
+                        <div class="hero-plan-badge popular">Most Popular</div>
+                        <div class="hero-plan-img">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Full%20sourcing%20service%20illustration%2C%20factory%20search%2C%20price%20comparison%2C%20supplier%20verification%2C%20manufacturing%2C%20orange%20and%20blue%20color%20scheme%2C%20professional%20business%20style&image_size=landscape_16_9" alt="Full Sourcing Service" class="w-100">
+                        </div>
+                        <div class="hero-plan-body">
+                            <h3>Full Sourcing Service</h3>
+                            <div class="hero-plan-price">4% ~ 8% <span>tiered</span></div>
+                            <p class="hero-plan-min">Minimum USD 300 per order</p>
+                            <p class="hero-plan-desc">From photos to factory — we source, compare prices, verify specs, and handle everything end-to-end.</p>
+                            <a href="#plan-section" class="btn btn-cta w-100">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -227,7 +249,7 @@
         </div>
     </section>
 
-    <section class="plan-section py-5 bg-white">
+    <section id="plan-section" class="plan-section py-5 bg-white">
         <div class="container">
             <div class="section-title-wrap text-center mb-5">
                 <span class="section-eyebrow">Two Service Models</span>
@@ -239,10 +261,13 @@
                 <!-- Plan 1: Order Management Service -->
                 <div class="col-lg-6">
                     <div class="plan-card h-100">
+                        <div class="plan-card-img">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20order%20management%20service%20illustration%2C%20order%20tracking%2C%20production%20follow-up%2C%20quality%20inspection%2C%20clean%20flat%20design%2C%20blue%20and%20white%20color%20scheme%2C%20business%20style&image_size=landscape_16_9" alt="Order Management Service" class="w-100">
+                        </div>
                         <div class="plan-card-header plan-c">
                             <div class="plan-name">Plan 1</div>
                             <div class="plan-title">Order Management Service</div>
-                            <div class="plan-price">3% ~ 4% <span class="plan-price-unit">commission</span></div>
+                            <div class="plan-percent">3% ~ 4% <span class="plan-price-unit">commission</span></div>
                             <div class="plan-subtitle">Minimum USD 150 per order</div>
                         </div>
                         <div class="plan-card-body">
@@ -265,6 +290,9 @@
                 <!-- Plan 2: Full Sourcing Service -->
                 <div class="col-lg-6">
                     <div class="plan-card featured h-100">
+                        <div class="plan-card-img">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Full%20sourcing%20service%20illustration%2C%20factory%20search%2C%20price%20comparison%2C%20supplier%20verification%2C%20manufacturing%2C%20orange%20and%20blue%20color%20scheme%2C%20professional%20business%20style&image_size=landscape_16_9" alt="Full Sourcing Service" class="w-100">
+                        </div>
                         <div class="plan-card-header plan-b">
                             <div class="plan-name">Plan 2</div>
                             <div class="plan-title">Full Sourcing Service</div>
