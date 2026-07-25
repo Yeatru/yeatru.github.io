@@ -197,51 +197,63 @@
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="container">
+    <section class="page-hero" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); padding: 4rem 0 5rem; position: relative; overflow: hidden;">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-cta rounded-full blur-3xl"></div>
+        </div>
+        <div class="container relative z-10">
             <nav class="breadcrumb-bar" aria-label="breadcrumb">
                 <a href="index.html" data-i18n="nav.home">Home</a> <span class="breadcrumb-sep">/</span>
                 <span class="breadcrumb-current">Service Plans</span>
             </nav>
-            <div class="text-center mb-5">
-                <span class="hero-tag"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
-                <h1 class="page-hero-title mt-3">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
-                <p class="page-hero-subtitle mx-auto" style="max-width: 700px;">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
-                <div class="banner-features justify-content-center">
-                    <span class="banner-feature"><i class="fas fa-check-circle"></i> 100% Transparent Pricing</span>
-                    <span class="banner-feature"><i class="fas fa-check-circle"></i> No Hidden Commission</span>
-                    <span class="banner-feature"><i class="fas fa-check-circle"></i> Tiered Rates for Volume</span>
+            <div class="text-center mb-8">
+                <span class="hero-tag" style="background: rgba(22, 93, 255, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3);"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
+                <h1 class="page-hero-title mt-3" style="color: #fff; font-size: 2.5rem; font-weight: 800; line-height: 1.2;">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
+                <p class="page-hero-subtitle mx-auto" style="max-width: 700px; color: #94a3b8; font-size: 1.1rem;">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
+                <div class="banner-features justify-content-center mt-4 flex-wrap gap-3">
+                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> 100% Transparent Pricing</span>
+                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> No Hidden Commission</span>
+                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> Tiered Rates for Volume</span>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-6">
                 <div class="col-lg-6">
-                    <div class="hero-plan-card hero-plan-1">
-                        <div class="hero-plan-badge">Plan 1</div>
-                        <div class="hero-plan-img">
-                            <img src="https://picsum.photos/seed/order-management/800/500" alt="Order Management Service" class="w-100">
+                    <div class="hero-plan-card hero-plan-1" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="hero-plan-badge" style="position: absolute; top: 1rem; left: 1rem; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; z-index: 2;">Plan 1</div>
+                        <div class="hero-plan-img" style="position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                            <img src="https://picsum.photos/seed/order-management/800/500" alt="Order Management Service" class="w-100 h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <i class="fas fa-shopping-cart fa-3x mb-2"></i>
+                            </div>
                         </div>
-                        <div class="hero-plan-body">
-                            <h3>Order Management Service</h3>
-                            <div class="hero-plan-price">3% ~ 4% <span>commission</span></div>
-                            <p class="hero-plan-min">Minimum USD 150 per order</p>
-                            <p class="hero-plan-desc">You have ready supplier links. We arrange orders, follow production, and conduct basic inspection.</p>
-                            <a href="#plan-section" class="btn btn-outline-primary w-100">Learn More</a>
+                        <div class="hero-plan-body p-5">
+                            <h3 style="color: #fff; font-size: 1.25rem; font-weight: 700;">Order Management Service</h3>
+                            <div class="hero-plan-price mt-2" style="font-size: 2rem; font-weight: 800; color: #60a5fa;">3% ~ 4% <span style="font-size: 1rem; font-weight: 500; color: #94a3b8;">commission</span></div>
+                            <p class="hero-plan-min" style="color: #94a3b8; font-size: 0.9rem;">Minimum USD 150 per order</p>
+                            <p class="hero-plan-desc mt-3" style="color: #cbd5e1; font-size: 0.9rem;">You have ready supplier links. We arrange orders, follow production, and conduct basic inspection.</p>
+                            <a href="#plan-section" class="btn btn-outline-primary w-100 mt-4" style="border-color: rgba(96, 165, 250, 0.5); color: #60a5fa;">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="hero-plan-card hero-plan-2 featured">
-                        <div class="hero-plan-badge">Plan 2</div>
-                        <div class="hero-plan-badge popular">Most Popular</div>
-                        <div class="hero-plan-img">
-                            <img src="https://picsum.photos/seed/full-sourcing/800/500" alt="Full Sourcing Service" class="w-100">
+                    <div class="hero-plan-card hero-plan-2 featured" style="background: rgba(255,255,255,0.05); border: 2px solid rgba(255, 125, 48, 0.5); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 0 30px rgba(255, 125, 48, 0.2);">
+                        <div class="hero-plan-badge" style="position: absolute; top: 1rem; left: 1rem; background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; z-index: 2;">Plan 2</div>
+                        <div class="hero-plan-badge popular" style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; z-index: 2;">Most Popular</div>
+                        <div class="hero-plan-img" style="position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #f97316, #ea580c);">
+                            <img src="https://picsum.photos/seed/full-sourcing/800/500" alt="Full Sourcing Service" class="w-100 h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <i class="fas fa-rocket fa-3x mb-2"></i>
+                            </div>
                         </div>
-                        <div class="hero-plan-body">
-                            <h3>Full Sourcing Service</h3>
-                            <div class="hero-plan-price">4% ~ 8% <span>tiered</span></div>
-                            <p class="hero-plan-min">Minimum USD 300 per order</p>
-                            <p class="hero-plan-desc">From photos to factory — we source, compare prices, verify specs, and handle everything end-to-end.</p>
-                            <a href="#plan-section" class="btn btn-cta w-100">Learn More</a>
+                        <div class="hero-plan-body p-5">
+                            <h3 style="color: #fff; font-size: 1.25rem; font-weight: 700;">Full Sourcing Service</h3>
+                            <div class="hero-plan-price mt-2" style="font-size: 2rem; font-weight: 800; color: #fb923c;">4% ~ 8% <span style="font-size: 1rem; font-weight: 500; color: #94a3b8;">tiered</span></div>
+                            <p class="hero-plan-min" style="color: #94a3b8; font-size: 0.9rem;">Minimum USD 300 per order</p>
+                            <p class="hero-plan-desc mt-3" style="color: #cbd5e1; font-size: 0.9rem;">From photos to factory — we source, compare prices, verify specs, and handle everything end-to-end.</p>
+                            <a href="#plan-section" class="btn btn-cta w-100 mt-4">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -249,83 +261,98 @@
         </div>
     </section>
 
-    <section id="plan-section" class="plan-section py-5 bg-white">
+    <section id="plan-section" class="plan-section py-10" style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
         <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Two Service Models</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Choose Based on Your Workload</h2>
-                <p class="section-subtitle">We have two service charge standards based on different workloads, to keep everything transparent.</p>
+            <div class="section-title-wrap text-center mb-10">
+                <span class="section-eyebrow" style="color: #2563eb;">Two Service Models</span>
+                <div class="section-divider" style="background: #2563eb;"></div>
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #0f172a;">Choose Based on Your Workload</h2>
+                <p class="section-subtitle" style="color: #64748b; font-size: 1.05rem;">We have two service charge standards based on different workloads, to keep everything transparent.</p>
             </div>
-            <div class="row g-4 justify-content-center">
+            <div class="row g-8 justify-content-center">
                 <!-- Plan 1: Order Management Service -->
-                <div class="col-lg-6">
-                    <div class="plan-card h-100">
-                        <div class="plan-card-img">
-                            <img src="https://picsum.photos/seed/order-plan/800/450" alt="Order Management Service" class="w-100">
-                        </div>
-                        <div class="plan-card-header plan-c">
-                            <div class="plan-name">Plan 1</div>
-                            <div class="plan-title">Order Management Service</div>
-                            <div class="plan-percent">3% ~ 4% <span class="plan-price-unit">commission</span></div>
-                            <div class="plan-subtitle">Minimum USD 150 per order</div>
-                        </div>
-                        <div class="plan-card-body">
-                            <p class="plan-description mb-3"><strong>Best for:</strong> You already have ready supplier links and just need someone to arrange orders, follow production, and conduct basic inspection.</p>
-                            <h6 class="fw-bold mb-2"><i class="fas fa-check-circle text-success me-2"></i>What's Included:</h6>
-                            <ul class="plan-feature-list">
-                                <li>Order arrangement & placement</li>
-                                <li>Production follow-up & timeline tracking</li>
-                                <li>Basic quality inspection (AQL 2.5)</li>
-                                <li>Pre-shipment photo documentation</li>
-                                <li>Shipping coordination</li>
-                            </ul>
-                            <div class="plan-note mt-3">
-                                <p class="small text-muted mb-0"><i class="fas fa-info-circle me-1"></i>You provide the supplier. We handle the rest.</p>
+                <div class="col-lg-5">
+                    <div class="plan-card h-100" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; transition: all 0.3s ease;">
+                        <div class="plan-card-img" style="position: relative; height: 180px; overflow: hidden; background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                            <img src="https://picsum.photos/seed/order-plan/800/450" alt="Order Management Service" class="w-100 h-full object-cover opacity-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-3 left-3">
+                                <span style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;">Plan 1</span>
                             </div>
-                            <a href="contact.html" class="btn btn-outline-primary btn-sm w-100 mt-3">Select Plan 1</a>
+                            <div class="absolute bottom-3 left-3">
+                                <i class="fas fa-shopping-cart text-white fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="plan-card-header p-6 text-center" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">
+                            <div class="plan-title" style="font-size: 1.3rem; font-weight: 700; color: #fff;">Order Management Service</div>
+                            <div class="plan-percent mt-2" style="font-size: 3rem; font-weight: 800; color: #fff;">3% ~ 4% <span class="plan-price-unit" style="font-size: 1rem; font-weight: 500;">commission</span></div>
+                            <div class="plan-subtitle" style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Minimum USD 150 per order</div>
+                        </div>
+                        <div class="plan-card-body p-6">
+                            <p class="plan-description mb-4" style="font-size: 0.9rem; color: #64748b;"><strong>Best for:</strong> You already have ready supplier links and just need someone to arrange orders, follow production, and conduct basic inspection.</p>
+                            <h6 class="fw-bold mb-3" style="color: #0f172a;"><i class="fas fa-check-circle text-green-500 me-2"></i>What's Included:</h6>
+                            <ul class="plan-feature-list" style="list-style: none; padding: 0;">
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-green-500 me-2 flex-shrink-0"></i>Order arrangement & placement</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-green-500 me-2 flex-shrink-0"></i>Production follow-up & timeline tracking</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-green-500 me-2 flex-shrink-0"></i>Basic quality inspection (AQL 2.5)</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-green-500 me-2 flex-shrink-0"></i>Pre-shipment photo documentation</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; display: flex; align-items: center;"><i class="fas fa-check-circle text-green-500 me-2 flex-shrink-0"></i>Shipping coordination</li>
+                            </ul>
+                            <div class="plan-note mt-4 p-4 rounded-xl" style="background: #f0f9ff;">
+                                <p class="small text-muted mb-0"><i class="fas fa-info-circle text-blue-500 me-1"></i>You provide the supplier. We handle the rest.</p>
+                            </div>
+                            <a href="contact.html" class="btn btn-outline-primary btn-sm w-100 mt-4" style="border-color: #2563eb; color: #2563eb;">Select Plan 1</a>
                         </div>
                     </div>
                 </div>
                 <!-- Plan 2: Full Sourcing Service -->
-                <div class="col-lg-6">
-                    <div class="plan-card featured h-100">
-                        <div class="plan-card-img">
-                            <img src="https://picsum.photos/seed/sourcing-plan/800/450" alt="Full Sourcing Service" class="w-100">
+                <div class="col-lg-5">
+                    <div class="plan-card featured h-100" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(249, 115, 22, 0.15); border: 2px solid #fb923c; transition: all 0.3s ease; transform: scale(1.02);">
+                        <div class="plan-card-img" style="position: relative; height: 180px; overflow: hidden; background: linear-gradient(135deg, #fed7aa, #fdba74);">
+                            <img src="https://picsum.photos/seed/sourcing-plan/800/450" alt="Full Sourcing Service" class="w-100 h-full object-cover opacity-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-3 left-3">
+                                <span style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;">Plan 2</span>
+                            </div>
+                            <div class="absolute top-3 right-3">
+                                <span style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;">Most Popular</span>
+                            </div>
+                            <div class="absolute bottom-3 left-3">
+                                <i class="fas fa-rocket text-white fa-2x"></i>
+                            </div>
                         </div>
-                        <div class="plan-card-header plan-b">
-                            <div class="plan-name">Plan 2</div>
-                            <div class="plan-title">Full Sourcing Service</div>
-                            <div class="plan-percent">4% ~ 8% <span class="plan-price-unit">tiered commission</span></div>
-                            <div class="plan-subtitle">Minimum USD 300 per formal order</div>
+                        <div class="plan-card-header p-6 text-center" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                            <div class="plan-title" style="font-size: 1.3rem; font-weight: 700; color: #fff;">Full Sourcing Service</div>
+                            <div class="plan-percent mt-2" style="font-size: 3rem; font-weight: 800; color: #fff;">4% ~ 8% <span class="plan-price-unit" style="font-size: 1rem; font-weight: 500;">tiered commission</span></div>
+                            <div class="plan-subtitle" style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Minimum USD 300 per formal order</div>
                         </div>
-                        <div class="plan-card-body">
-                            <p class="plan-description mb-3"><strong>Best for:</strong> You only have photos or model names. We need to source suitable manufacturers from scratch, compare prices, and verify specifications.</p>
-                            <h6 class="fw-bold mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tiered Commission Rates:</h6>
-                            <div class="tier-pricing-table mb-3">
-                                <div class="tier-row">
-                                    <span class="tier-range">Below USD 5,000</span>
-                                    <span class="tier-rate">7% ~ 8%</span>
+                        <div class="plan-card-body p-6">
+                            <p class="plan-description mb-4" style="font-size: 0.9rem; color: #64748b;"><strong>Best for:</strong> You only have photos or model names. We need to source suitable manufacturers from scratch, compare prices, and verify specifications.</p>
+                            <h6 class="fw-bold mb-3" style="color: #0f172a;"><i class="fas fa-check-circle text-orange-500 me-2"></i>Tiered Commission Rates:</h6>
+                            <div class="tier-pricing-table mb-4" style="border-radius: 12px; overflow: hidden; border: 1px solid #f1f5f9;">
+                                <div class="tier-row" style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; font-size: 0.9rem; background: #f8fafc;">
+                                    <span class="tier-range" style="color: #475569; font-weight: 500;">Below USD 5,000</span>
+                                    <span class="tier-rate" style="font-weight: 700; color: #f97316;">7% ~ 8%</span>
                                 </div>
-                                <div class="tier-row">
-                                    <span class="tier-range">USD 5,000 – 20,000</span>
-                                    <span class="tier-rate">5% ~ 6%</span>
+                                <div class="tier-row" style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; font-size: 0.9rem; background: #fff; border-top: 1px solid #f1f5f9;">
+                                    <span class="tier-range" style="color: #475569; font-weight: 500;">USD 5,000 – 20,000</span>
+                                    <span class="tier-rate" style="font-weight: 700; color: #f97316;">5% ~ 6%</span>
                                 </div>
-                                <div class="tier-row tier-best">
-                                    <span class="tier-range">Over USD 20,000</span>
-                                    <span class="tier-rate">4%</span>
+                                <div class="tier-row tier-best" style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; font-size: 0.9rem; background: linear-gradient(135deg, #fef3c7, #fde68a); border-top: 1px solid #f1f5f9;">
+                                    <span class="tier-range" style="color: #92400e; font-weight: 600;">Over USD 20,000</span>
+                                    <span class="tier-rate" style="font-weight: 700; color: #b45309;">4%</span>
                                 </div>
                             </div>
-                            <h6 class="fw-bold mb-2"><i class="fas fa-check-circle text-success me-2"></i>What's Included:</h6>
-                            <ul class="plan-feature-list">
-                                <li>Manufacturer sourcing from scratch</li>
-                                <li>Price comparison & negotiation</li>
-                                <li>Specification verification</li>
-                                <li>Factory audit & qualification check</li>
-                                <li>Full quality control (3-level inspection)</li>
-                                <li>Logistics & shipping arrangement</li>
+                            <h6 class="fw-bold mb-3" style="color: #0f172a;"><i class="fas fa-check-circle text-orange-500 me-2"></i>What's Included:</h6>
+                            <ul class="plan-feature-list" style="list-style: none; padding: 0;">
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Manufacturer sourcing from scratch</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Price comparison & negotiation</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Specification verification</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Factory audit & qualification check</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Full quality control (3-level inspection)</li>
+                                <li style="padding: 0.6rem 0; font-size: 0.9rem; color: #475569; display: flex; align-items: center;"><i class="fas fa-check-circle text-orange-500 me-2 flex-shrink-0"></i>Logistics & shipping arrangement</li>
                             </ul>
-                            <a href="contact.html" class="btn btn-cta btn-sm w-100 mt-3">Get Started with Plan 2</a>
+                            <a href="contact.html" class="btn btn-cta btn-sm w-100 mt-4">Get Started with Plan 2</a>
                         </div>
                     </div>
                 </div>
@@ -361,75 +388,79 @@
     </section>
 
     <!-- Comparison Guide -->
-    <section class="py-5 bg-white">
+    <section class="py-10" style="background: #ffffff;">
         <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">Quick Guide</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Which Plan Fits You?</h2>
-                <p class="section-subtitle">A quick comparison to help you decide</p>
+            <div class="section-title-wrap text-center mb-10">
+                <span class="section-eyebrow" style="color: #2563eb;">Quick Guide</span>
+                <div class="section-divider" style="background: #2563eb;"></div>
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #0f172a;">Which Plan Fits You?</h2>
+                <p class="section-subtitle" style="color: #64748b; font-size: 1.05rem;">A quick comparison to help you decide</p>
             </div>
-            <div class="row g-4">
+            <div class="row g-6">
                 <div class="col-lg-6">
-                    <div class="plan-guide-card plan-c-guide">
-                        <div class="plan-guide-icon"><i class="fas fa-handshake"></i></div>
-                        <h4>Choose Plan 1 If...</h4>
-                        <ul class="plan-guide-list">
-                            <li>You already have supplier contacts or factory links</li>
-                            <li>You've done business with the factory before</li>
-                            <li>You need someone to coordinate orders and inspect quality</li>
-                            <li>Your order value is relatively small</li>
-                            <li>You want lower commission rates (3-4%)</li>
+                    <div class="plan-guide-card plan-c-guide" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 16px; padding: 2rem; border: 1px solid #bfdbfe; transition: all 0.3s ease;">
+                        <div class="plan-guide-icon" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">Choose Plan 1 If...</h4>
+                        <ul class="plan-guide-list" style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-blue-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You already have supplier contacts or factory links</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-blue-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You've done business with the factory before</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-blue-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You need someone to coordinate orders and inspect quality</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-blue-500 absolute left-0 top-1/2 -translate-y-1/2"></i>Your order value is relatively small</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-blue-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You want lower commission rates (3-4%)</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Start with Plan 1</a>
+                        <a href="contact.html" class="btn btn-outline-primary btn-sm mt-4 w-100" style="border-color: #2563eb; color: #2563eb;">Start with Plan 1</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="plan-guide-card plan-b-guide">
-                        <div class="plan-guide-icon"><i class="fas fa-rocket"></i></div>
-                        <h4>Choose Plan 2 If...</h4>
-                        <ul class="plan-guide-list">
-                            <li>You only have product photos or model names</li>
-                            <li>You need help finding the right manufacturer</li>
-                            <li>You want factory audits and price comparisons</li>
-                            <li>You're sourcing a new product category</li>
-                            <li>You want full-service end-to-end sourcing</li>
+                    <div class="plan-guide-card plan-b-guide" style="background: linear-gradient(135deg, #fff7ed, #ffedd5); border-radius: 16px; padding: 2rem; border: 1px solid #fed7aa; transition: all 0.3s ease;">
+                        <div class="plan-guide-icon" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #f97316, #ea580c); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">Choose Plan 2 If...</h4>
+                        <ul class="plan-guide-list" style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-orange-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You only have product photos or model names</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-orange-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You need help finding the right manufacturer</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-orange-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You want factory audits and price comparisons</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-orange-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You're sourcing a new product category</li>
+                            <li style="padding: 0.5rem 0; font-size: 0.95rem; color: #475569; position: relative; padding-left: 1.75rem;"><i class="fas fa-check-circle text-orange-500 absolute left-0 top-1/2 -translate-y-1/2"></i>You want full-service end-to-end sourcing</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-cta btn-sm mt-3">Start with Plan 2</a>
+                        <a href="contact.html" class="btn btn-cta btn-sm mt-4 w-100">Start with Plan 2</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-10" style="background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
         <div class="container">
-            <div class="section-title-wrap text-center mb-5">
-                <span class="section-eyebrow">FAQ</span>
-                <div class="section-divider"></div>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Quick answers about our service plans and pricing</p>
+            <div class="section-title-wrap text-center mb-10">
+                <span class="section-eyebrow" style="color: #2563eb;">FAQ</span>
+                <div class="section-divider" style="background: #2563eb;"></div>
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #0f172a;">Frequently Asked Questions</h2>
+                <p class="section-subtitle" style="color: #64748b; font-size: 1.05rem;">Quick answers about our service plans and pricing</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="faq-item active">
-                        <button class="faq-question">
+                    <div class="faq-item active" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>What's the difference between Plan 1 and Plan 2?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6;">
                             <p><strong>Plan 1 (Order Management Service, 3-4%):</strong> You already have supplier links. We arrange orders, follow production, and conduct basic inspection. Minimum USD 150 per order.</p>
                             <p class="mb-0"><strong>Plan 2 (Full Sourcing Service, 4-8% tiered):</strong> You only have photos or model names. We source manufacturers from scratch, compare prices, verify specifications, and handle everything end-to-end. Minimum USD 300 per formal order.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <div class="faq-item" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>How is the commission calculated for Plan 2?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6; display: none;">
                             <p>Plan 2 uses a tiered commission structure based on order value:</p>
-                            <ul>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
                                 <li><strong>7% ~ 8%</strong> for order value below USD 5,000</li>
                                 <li><strong>5% ~ 6%</strong> for orders between USD 5,000 – 20,000</li>
                                 <li><strong>4%</strong> for orders over USD 20,000</li>
@@ -437,24 +468,24 @@
                             <p class="mb-0">The minimum service fee is USD 300 per formal order. Larger orders benefit from lower commission rates.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <div class="faq-item" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>Why can't I get quotes for my entire product catalogue at once?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6; display: none;">
                             <p>Continuous full-catalogue inquiry for dozens or hundreds of items consumes massive manpower. More importantly, factories will treat us as "price shoppers" without real orders, which means they won't offer their best pricing.</p>
                             <p class="mb-0">To provide you with accurate, competitive quotes, we need you to first <strong>select target items</strong> and <strong>confirm estimated order quantities</strong> for each model. This ensures factories take the inquiry seriously and offer their best rates.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <div class="faq-item" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>What information should I prepare before contacting you?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6; display: none;">
                             <p>To help us serve you efficiently, please prepare:</p>
-                            <ol>
+                            <ol style="margin: 0; padding-left: 1.5rem;">
                                 <li>Product styles/models — clear photos, reference links, or design files</li>
                                 <li>Estimated order quantity for each item (MOQ-related)</li>
                                 <li>Specification requirements — material, size, color, packaging</li>
@@ -464,23 +495,23 @@
                             <p class="mb-0">Check our detailed <a href="blog-sourcing-preparation-checklist.html">sourcing preparation checklist</a> for more guidance.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <div class="faq-item" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>Can I switch between plans?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6; display: none;">
                             <p>Yes, you can switch between Plan 1 and Plan 2 based on your project needs. Some clients use Plan 2 for initial product sourcing, then switch to Plan 1 for repeat orders once the supplier is established. There are no lock-in contracts.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <div class="faq-item" style="background: #fff; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #e2e8f0; overflow: hidden;">
+                        <button class="faq-question" style="width: 100%; padding: 1.25rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer;">
                             <span>Are there any hidden fees besides the commission?</span>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" style="color: #2563eb;"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="padding: 0 1.5rem 1.25rem; color: #64748b; font-size: 0.9rem; line-height: 1.6; display: none;">
                             <p>No hidden fees. The commission covers our core service. The only additional costs are third-party expenses passed through at cost, such as:</p>
-                            <ul>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
                                 <li>Lab testing fees (if certification is required)</li>
                                 <li>Specialized third-party inspection (beyond standard AQL 2.5)</li>
                                 <li>Express shipping for samples (if requested)</li>
@@ -493,14 +524,18 @@
         </div>
     </section>
 
-    <section class="py-5" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div class="final-cta-box text-center">
-                <span class="section-eyebrow">Still Unsure?</span>
-                <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
-                <h2 class="section-title">Not sure which plan?</h2>
-                <p class="section-subtitle mb-4">Talk to our team and we'll recommend the right plan.</p>
-                <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-comment-dots me-2"></i>Get Free Consultation</a>
+    <section class="py-12" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); position: relative; overflow: hidden;">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-cta rounded-full blur-3xl"></div>
+        </div>
+        <div class="container relative z-10">
+            <div class="final-cta-box text-center" style="max-width: 700px; margin: 0 auto;">
+                <span class="section-eyebrow" style="color: #60a5fa;">Still Unsure?</span>
+                <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem; background: #60a5fa;"></div>
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #fff;">Not sure which plan?</h2>
+                <p class="section-subtitle mb-6" style="color: #94a3b8; font-size: 1.05rem;">Talk to our team and we'll recommend the right plan for your business.</p>
+                <a href="contact.html" class="btn btn-cta btn-lg" style="padding: 0.85rem 2.5rem; font-size: 1.1rem;"><i class="fas fa-comment-dots me-2"></i>Get Free Consultation</a>
             </div>
         </div>
     </section>

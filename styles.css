@@ -2944,7 +2944,107 @@ body.edit-mode [contenteditable="true"]:focus {
     line-height: 1.6;
 }
 
-/* ========== FAQ Section ========== */
+/* ========== Service Plans Custom Styles ========== */
+.hero-plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.hero-plan-card.featured:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(249, 115, 22, 0.3);
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+.plan-card.featured:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(249, 115, 22, 0.2);
+}
+
+.plan-guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.faq-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(22, 93, 255, 0.08);
+}
+
+.faq-question:hover + .faq-answer {
+    max-height: 500px;
+}
+
+/* Smooth transitions */
+.hero-plan-card, .plan-card, .plan-guide-card, .faq-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated gradient backgrounds */
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-plan-card, .plan-card-header, .plan-guide-icon {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+/* Glow effects for featured cards */
+.hero-plan-card.featured {
+    position: relative;
+}
+
+.hero-plan-card.featured::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #f97316, #fb923c, #f97316);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-plan-card.featured:hover::before {
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-plan-card, .plan-card {
+        border-radius: 12px;
+    }
+    
+    .plan-card.featured {
+        transform: scale(1);
+    }
+}
+
+/* Breadcrumb styling for dark backgrounds */
+.page-hero .breadcrumb-bar a {
+    color: #94a3b8 !important;
+}
+
+.page-hero .breadcrumb-bar a:hover {
+    color: #fff !important;
+}
+
+.page-hero .breadcrumb-sep {
+    color: #475569;
+}
+
+.page-hero .breadcrumb-current {
+    color: #cbd5e1;
+}
 .faq-category-tabs {
     display: flex;
     flex-wrap: wrap;
