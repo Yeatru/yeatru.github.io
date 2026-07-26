@@ -56,3 +56,4 @@ Sitemap: https://www.yeatru.com/sitemap.xml
 # https://www.bing.com/indexnow
 User-agent: *
 Allow: /BingSiteAuth.xml
+Allow: /indexnow.txt
