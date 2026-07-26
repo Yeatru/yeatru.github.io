@@ -5,7 +5,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /*.json$
 Disallow: /app.js
 Disallow: /page.js
 
