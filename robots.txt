@@ -26,6 +26,29 @@ User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
+# AI Crawlers (ChatGPT / OpenAI)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Other AI Crawlers
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://www.yeatru.com/sitemap.xml
 
