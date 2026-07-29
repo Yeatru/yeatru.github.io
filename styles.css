@@ -4160,6 +4160,12 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     max-width: 50%;
 }
 
+@media (max-width: 767.98px) {
+    .article-featured-image {
+        max-width: 100%;
+    }
+}
+
 .article-featured-image img {
     width: 100%;
     height: auto;
