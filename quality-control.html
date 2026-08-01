@@ -34,6 +34,15 @@
     <meta name="twitter:description" content="AQL 2.5 quality inspection and pre-shipment QC for Amazon FBA and wholesale buyers. On-site inspections, photo reports, and quality guarantees.">
     <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png">
     <meta name="twitter:url" content="https://www.yeatru.com/quality-control.html">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -46,11 +55,76 @@
       "provider": {
         "@type": "Organization",
         "name": "Yeatru Sourcing",
-        "url": "https://www.yeatru.com"
+        "url": "https://www.yeatru.com",
+        "telephone": "+86 159 8851 6408",
+        "email": "contact@yeatru.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Yiwu International Trade City",
+          "addressLocality": "Yiwu",
+          "addressRegion": "Zhejiang Province",
+          "postalCode": "322000",
+          "addressCountry": "CN"
+        }
       },
       "areaServed": "Worldwide",
       "serviceType": "Quality Control",
-      "url": "https://www.yeatru.com/quality-control.html"
+      "url": "https://www.yeatru.com/quality-control.html",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "100",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "100"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.yeatru.com/quality-control.html"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "32",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Quality Control Inspection Service Sub-services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Incoming Material Inspection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "In-Process Sampling Inspection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pre-Shipment Full Inspection"
+            }
+          }
+        ]
+      },
+      "keywords": "AQL 2.5 inspection, pre-shipment inspection, China QC, third-party quality control",
+      "brand": {
+        "@type": "Brand",
+        "name": "Yeatru Sourcing"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Amazon FBA sellers, TikTok Shop owners, e-commerce brands, wholesale buyers, Russian and Arabic speaking importers"
+      }
     }
     </script>
     <!-- Google Analytics (GA4) -->
@@ -167,7 +241,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Quality Inspection" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                        <img loading="lazy" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/sample%20checking.jpg" alt="Quality Inspection" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
                         <div class="page-hero-image-placeholder">
                             <i class="fas fa-clipboard-check"></i>
                             <span>Quality Inspection</span>
@@ -287,7 +361,7 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <div class="page-hero-image">
-                        <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E8%B1%86%E5%8C%85.png" alt="Inspection Standards" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                        <img loading="lazy" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E8%B1%86%E5%8C%85.png" alt="Inspection Standards" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
                         <div class="page-hero-image-placeholder">
                             <i class="fas fa-clipboard-check"></i>
                             <span>Inspection</span>
@@ -363,7 +437,7 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
                             <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing

@@ -37,6 +37,15 @@
     <meta name="twitter:description" content="Transparent China sourcing agent pricing. Two service models: Order Management (3-4%) and Full Sourcing (4-8% tiered). No hidden fees.">
     <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Service%20Plans.png">
     <meta name="twitter:url" content="https://www.yeatru.com/service-plans.html">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -54,43 +63,79 @@
         "telephone": "+86 159 8851 6408",
         "email": "contact@yeatru.com",
         "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Yiwu International Trade City",
-            "addressLocality": "Yiwu",
-            "addressRegion": "Zhejiang Province",
-            "postalCode": "322000",
-            "addressCountry": "CN"
+          "@type": "PostalAddress",
+          "streetAddress": "Yiwu International Trade City",
+          "addressLocality": "Yiwu",
+          "addressRegion": "Zhejiang Province",
+          "postalCode": "322000",
+          "addressCountry": "CN"
         }
       },
       "areaServed": "Worldwide",
       "serviceType": "China Sourcing Agent Services",
       "url": "https://www.yeatru.com/service-plans.html",
       "offers": [
+        {
+          "@type": "Offer",
+          "name": "Order Management Service",
+          "description": "For buyers with ready supplier links. We arrange orders, follow production, and conduct basic inspection.",
+          "priceCurrency": "USD",
+          "price": "150",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "150",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Full Sourcing Service",
+          "description": "For buyers who need sourcing from scratch. We find manufacturers, compare prices, and verify specifications.",
+          "priceCurrency": "USD",
+          "price": "300",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "300",
+            "priceCurrency": "USD"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "32",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sourcing Service Plans & Pricing Sub-services",
+        "itemListElement": [
           {
-              "@type": "Offer",
-              "name": "Order Management Service",
-              "description": "For buyers with ready supplier links. We arrange orders, follow production, and conduct basic inspection.",
-              "priceCurrency": "USD",
-              "price": "150",
-              "priceSpecification": {
-                  "@type": "PriceSpecification",
-                  "minPrice": "150",
-                  "priceCurrency": "USD"
-              }
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Order Management Service (3-4%)"
+            }
           },
           {
-              "@type": "Offer",
-              "name": "Full Sourcing Service",
-              "description": "For buyers who need sourcing from scratch. We find manufacturers, compare prices, and verify specifications.",
-              "priceCurrency": "USD",
-              "price": "300",
-              "priceSpecification": {
-                  "@type": "PriceSpecification",
-                  "minPrice": "300",
-                  "priceCurrency": "USD"
-              }
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Sourcing Service (4-8% tiered)"
+            }
           }
-      ]
+        ]
+      },
+      "keywords": "China sourcing agent pricing, sourcing commission, service fee structure",
+      "brand": {
+        "@type": "Brand",
+        "name": "Yeatru Sourcing"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Amazon FBA sellers, TikTok Shop owners, e-commerce brands, wholesale buyers, Russian and Arabic speaking importers"
+      }
     }
     </script>
     <script type="application/ld+json">
@@ -686,7 +731,7 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
                             <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing
