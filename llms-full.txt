@@ -1,0 +1,205 @@
+# Yeatru Sourcing — Full Context for LLMs
+
+> Expanded companion to https://www.yeatru.com/llms.txt. This file gives language models the full factual content of the core service pages, the FAQ knowledge base, and the company statistics page so that answers about Yeatru Sourcing can be grounded in canonical source text rather than only page links.
+
+Website: https://www.yeatru.com/
+Primary contact: info@yeatru.com | WhatsApp/Telegram: +86 159 8851 6408
+Legal entity: 义乌市弋楚贸易有限公司 (Yiwu Yichu Trading Co., Ltd.)
+Founded: 2022 | Location: Yiwu International Trade City, Zhejiang, China
+
+---
+
+## 1. Company Snapshot
+
+- Legal name: 义乌市弋楚贸易有限公司 (Yiwu Yichu Trading Co., Ltd.)
+- Trade name: Yeatru Sourcing
+- Founded: 2022 (team has 14+ years of combined sourcing experience)
+- Registered address: Yiwu International Trade City, Yiwu, Zhejiang Province 322000, China
+- Geo coordinates: 29.3117 N, 120.0807 E
+- Certifications: Import and Export License; Cross-border E-commerce Enterprise Certification; Yiwu Trade Market Certified Merchant
+- VAT ID: CN91330782MABU4K2L6F | USCC / Tax ID: 91330782MABU4K2L6F
+- Team size: 10–50 FTE
+- Operating hours: Mon–Sat 09:00–18:00 (Beijing time), Sun 10:00–16:00
+- Founder: Megan Mei
+- Head of content / sourcing specialist: Neil Wang (LinkedIn: https://www.linkedin.com/in/neil-liu-398983257)
+
+## 2. Verified Operating Metrics
+
+- Verified supplier network: 75,000+ factories (primarily Yiwu, Guangzhou, Shenzhen)
+- Clients served: 200+ in 50+ countries
+- Client satisfaction: 98%
+- Quote response time: within 24 hours
+- Minimum order quantity: from 50 pieces (regular products); 200–500 pieces for custom OEM
+- Free warehousing: 15 days at Yiwu facility
+- OEM sample turnaround: 7 days
+- Quality inspection levels: 3 (incoming, in-process, pre-shipment)
+- Quality standard: AQL 2.5
+- Languages supported: English, Chinese, Spanish, French, Russian, Arabic
+- Average procurement cost reduction: 30%+
+
+## 3. Service Plans & Pricing (Transparent, No Hidden Fees)
+
+### Plan 1 — Order Management Service
+- Best for: buyers who already have a supplier link
+- Commission: 3–4% of order value
+- Minimum fee: USD 150 per order
+- Scope: order coordination, production follow-up, basic inspection, FBA prep, shipping
+
+### Plan 2 — Full Sourcing Service
+- Best for: buyers sourcing from scratch with only product photos or model names
+- Commission (tiered):
+  - 7–8% for order value below USD 5,000
+  - 5–6% for order value USD 5,000 – 20,000
+  - 4% for order value above USD 20,000
+- Minimum fee: USD 300 per formal order
+- Scope: supplier discovery, price comparison, specification verification, sample, mass production, QC, logistics
+
+### Accepted Payment Methods
+- Bank transfer (T/T) to Standard Chartered Bank New York branch and company account
+- PayPal (samples and small orders)
+- Western Union (urgent payments)
+- WorldFirst (cross-border transfers)
+
+## 4. Core Services
+
+### Product Sourcing
+Find the right products at competitive prices from Yiwu, Guangzhou, and Shenzhen markets. Access 75,000+ factories. Match buyer requirements with the right manufacturers at the right price. Covers Amazon FBA sourcing, TikTok Shop supplier matching, and wholesale procurement. URL: https://www.yeatru.com/product-sourcing.html
+
+### Supplier Verification
+Comprehensive factory audits: business license verification, production capacity assessment, qualification checks, on-site visits. All recommended suppliers are audited on-site to ensure true qualifications and stable capacity. URL: https://www.yeatru.com/supplier-verification.html
+
+### Quality Control
+Three-level inspection system following AQL 2.5 standards: incoming material inspection, in-process sampling, pre-shipment full inspection. Detailed photo and video documentation. Inspection report issued per shipment. URL: https://www.yeatru.com/quality-control.html
+
+### Logistics & Shipping
+Door-to-door shipping, free 15-day warehousing, order consolidation, global logistics coverage. Shipping methods: Sea FCL (25–35 days), Sea LCL (30–45 days), Air freight (5–15 days), Express (3–7 days). One-stop FBA shipping including customs clearance and tax ID processing. URL: https://www.yeatru.com/logistics-shipping.html
+
+### Factory Audit
+On-site factory inspections: production capacity, quality management systems, worker conditions, compliance verification. URL: https://www.yeatru.com/factory-audit.html
+
+### Price Negotiation
+Leverage local market knowledge and supplier relationships to secure competitive factory prices. Average procurement cost reduction 30%+. URL: https://www.yeatru.com/price-negotiation.html
+
+### OEM Customization
+Custom logo, packaging, and product design. Free design consultation. 7-day sample. Low MOQ 200 pieces. Customization cycle 20–30 days. URL: https://www.yeatru.com/oem.html
+
+### Sample Order
+Quick sample sourcing and shipping. Standard samples 3–7 days, custom samples 7–15 days. Sample costs typically 50–500 RMB. Free sample consultation. URL: https://www.yeatru.com/sample-order.html
+
+### Design & Photography
+Product photography, branding design, and packaging design services for e-commerce sellers. URL: https://www.yeatru.com/design-photography.html
+
+## 5. Full FAQ (verbatim answers)
+
+Q: What does a China sourcing agent do?
+A: A China sourcing agent helps international buyers find reliable suppliers, negotiate prices, verify product quality, manage logistics, and handle the entire procurement process from China efficiently.
+
+Q: Is there a minimum order quantity (MOQ)?
+A: MOQ varies by product. We work with suppliers that offer flexible MOQ options — regular products start from 50 pieces, suitable for small businesses, startups, and online sellers. Contact us for specific product MOQ details.
+
+Q: How long does shipping take from China?
+A: Shipping times vary by destination and method: air freight typically 5–15 days, sea freight 25–45 days, express 3–7 days. We provide logistics solutions tailored to budget and timeline.
+
+Q: Can you help with Amazon FBA sourcing?
+A: Yes. We specialize in sourcing products for Amazon FBA sellers, including supplier verification, quality control, custom packaging, labeling, and shipping directly to Amazon fulfillment centers worldwide.
+
+Q: How do you ensure product quality?
+A: We ensure quality through a three-level inspection process: incoming material inspection, in-process sampling, and pre-shipment full inspection. Every shipment comes with a detailed quality inspection report.
+
+Q: Do you offer OEM/ODM customization?
+A: Yes. Full OEM/ODM customization including product design, logo printing, custom packaging, and private label manufacturing. Customization cycle typically 20–30 days with MOQ starting from 200 pieces.
+
+Q: How many suppliers do you work with?
+A: Network of over 75,000 verified factories and suppliers across China, primarily based in Yiwu International Trade City and surrounding manufacturing hubs in Zhejiang province.
+
+Q: What is your service fee structure?
+A: Two transparent models. Plan 1 (Order Management): 3–4% commission, min USD 150/order — for buyers with ready supplier links. Plan 2 (Full Sourcing): tiered 7–8% below USD 5,000, 5–6% for USD 5,000–20,000, 4% over USD 20,000, min USD 300/order — for sourcing from scratch.
+
+Q: Can Russian-speaking buyers get sourcing support in Russian?
+A: Yes. Full sourcing services in Russian, including price negotiation, supplier communication, quality inspection reports, and shipping documents. We serve buyers from Russia, Belarus, Kazakhstan, Uzbekistan and other CIS countries.
+
+Q: Do you support Arabic-speaking buyers from GCC / Middle East?
+A: Yes. Arabic-speaking buyers across Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Morocco and other MENA countries. We handle Halal certification, GCC compliance, sea freight to Jeddah / Dubai / Dammam, and accept T/T, PayPal, and WorldFirst.
+
+Q: Which payment methods do you accept?
+A: Bank transfer (T/T) to Standard Chartered Bank New York branch, PayPal for samples/small orders, Western Union for urgent payments, WorldFirst for cross-border transfers.
+
+Q: How can new Amazon sellers start sourcing products from China?
+A: New sellers should first complete Amazon store registration and compliance filing, then conduct product selection research. A professional sourcing agent like Yeatru Sourcing provides end-to-end services from supplier screening, sample confirmation to FBA shipping, reducing sourcing risks.
+
+Q: How to bind Chinese suppliers for TikTok Shop?
+A: TikTok Shop sellers need to bind suppliers through platform-certified channels. Yeatru Sourcing provides TikTok Shop-specific supply, supporting dropshipping and small-batch sourcing to help quickly list products.
+
+Q: What should eBay sellers pay attention to when sourcing from China?
+A: Product compliance, intellectual property issues, and logistics timeliness. Choose a formal sourcing agent with import/export rights to ensure products meet target market standards and stable logistics.
+
+Q: How long does it take and how much does it cost to get samples?
+A: Standard samples 3–7 days, custom samples 7–15 days. Sample costs typically 50–500 RMB.
+
+Q: How to find reliable Chinese suppliers?
+A: Screen through on-site visits, qualification verification, and sample testing. All Yeatru-recommended suppliers are audited on-site.
+
+Q: What is the OEM/ODM customization process?
+A: Requirement communication → product design → sample production → sample confirmation → mass production → quality inspection and shipment. Cycle 20–30 days.
+
+Q: What preparations are needed before listing Amazon products?
+A: Product compliance certification, listing optimization, image shooting, keyword research, advertising budget planning.
+
+Q: What are Amazon advertising strategies?
+A: Automatic ad testing, manual precise ads, brand promotion, display ads. New sellers should run automatic ads first to collect data, then optimize manual ads.
+
+Q: What to do if Amazon account is suspended?
+A: Identify the reason (product infringement, policy violations, low performance metrics). Stop violations and prepare appeal materials.
+
+Q: How to avoid Amazon product infringement?
+A: Check trademarks and patents, do not use copyrighted images, do not copy competitor listing content, watch product design patents.
+
+Q: What are FBA shipping options?
+A: LCL sea freight, FCL sea freight, air freight, express. Small batches: air or express. Large batches: sea freight.
+
+Q: How to handle international logistics customs clearance?
+A: Prepare commercial invoice, packing list, product compliance documents, importer information.
+
+Q: What are the cost components of sourcing products from China?
+A: Product cost + sourcing service fee + logistics cost + customs duty + platform fee + advertising fee + other miscellaneous fees.
+
+Q: How to negotiate prices with Chinese suppliers?
+A: Bulk purchase discount, long-term cooperation benefits, payment terms negotiation, product specification adjustment. Average cost reduction 30%+.
+
+Q: How to reduce cross-border e-commerce operation costs?
+A: Optimize procurement costs, choose low-cost logistics, improve advertising efficiency, automate operations.
+
+Q: What are common pitfalls when sourcing from China?
+A: False supplier qualifications, product quality inconsistency, delivery delays, hidden fees, infringement risks.
+
+Q: How to avoid supplier fraud?
+A: On-site factory visits, verify business registration, small trial orders, use third-party payment, sign formal contracts.
+
+Q: How to choose a reliable sourcing agent?
+A: Qualification certification, industry experience, service scope, customer reviews, price transparency. Yeatru has import/export rights, 14 years of experience, transparent pricing.
+
+Q: What should be noted when sourcing in Yiwu?
+A: Distinguish manufacturers from traders, negotiate prices, differentiate products, take advantage of complete logistics.
+
+## 6. Case Study Results
+
+| Case | Cost Reduction | Delivery Time | Quality Rate |
+|---|---|---|---|
+| US Amazon FBA Seller | 35% | 45 days | 99.5% |
+| TikTok Shop Owner | 30% | 30 days | 99.2% |
+| EU Wholesale Buyer | 28% | 60 days | 99.8% |
+
+## 7. Areas Served
+
+Worldwide — primary markets: North America, Europe, Asia, Middle East (GCC), South America, Africa, Oceania, CIS countries.
+
+## 8. Pages for Deeper Reading
+
+- Homepage: https://www.yeatru.com/
+- Service Plans (full pricing): https://www.yeatru.com/service-plans.html
+- FAQ page: https://www.yeatru.com/faq.html
+- Data & Statistics: https://www.yeatru.com/data.html
+- Testimonials: https://www.yeatru.com/testimonials.html
+- About Us: https://www.yeatru.com/about.html
+- Contact: https://www.yeatru.com/contact.html
+- Blog: https://www.yeatru.com/blog.html

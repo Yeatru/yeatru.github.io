@@ -61,7 +61,7 @@
         "legalName": "义乌市弋楚贸易有限公司",
         "url": "https://www.yeatru.com",
         "telephone": "+86 159 8851 6408",
-        "email": "contact@yeatru.com",
+        "email": "info@yeatru.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Yiwu International Trade City",
@@ -100,29 +100,65 @@
           }
         }
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "32",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Sourcing Service Plans & Pricing Sub-services",
         "itemListElement": [
           {
             "@type": "Offer",
+            "name": "Order Management Service — Plan 1",
+            "description": "For buyers with ready supplier links. Order coordination, production follow-up, basic inspection, FBA prep, shipping.",
+            "priceCurrency": "USD",
+            "price": "150",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "minPrice": "150",
+              "referenceQuantity": {"@type": "QuantitativeValue", "value": "1", "unitText": "ORDER"},
+              "billingIncrement": "0.035"
+            },
+            "eligibleCustomerType": "Buyers with existing supplier contact",
+            "url": "https://www.yeatru.com/service-plans.html#plan-1",
             "itemOffered": {
               "@type": "Service",
-              "name": "Order Management Service (3-4%)"
+              "name": "Order Management Service",
+              "description": "3-4% commission, minimum USD 150 per order."
             }
           },
           {
             "@type": "Offer",
+            "name": "Full Sourcing Service — Plan 2 (tiered)",
+            "description": "For buyers sourcing from scratch. Supplier discovery, price comparison, specification verification, sample, mass production, QC, logistics.",
+            "priceCurrency": "USD",
+            "price": "300",
+            "priceSpecification": [
+              {
+                "@type": "UnitPriceSpecification",
+                "priceCurrency": "USD",
+                "minPrice": "300",
+                "referenceQuantity": {"@type": "QuantitativeValue", "value": "1", "unitText": "ORDER"},
+                "billingIncrement": "0.08",
+                "name": "Tier 1 — order value below USD 5,000 (7-8% commission)"
+              },
+              {
+                "@type": "UnitPriceSpecification",
+                "priceCurrency": "USD",
+                "billingIncrement": "0.06",
+                "name": "Tier 2 — order value USD 5,000-20,000 (5-6% commission)"
+              },
+              {
+                "@type": "UnitPriceSpecification",
+                "priceCurrency": "USD",
+                "billingIncrement": "0.04",
+                "name": "Tier 3 — order value above USD 20,000 (4% commission)"
+              }
+            ],
+            "eligibleCustomerType": "Buyers needing end-to-end sourcing from scratch",
+            "url": "https://www.yeatru.com/service-plans.html#plan-2",
             "itemOffered": {
               "@type": "Service",
-              "name": "Full Sourcing Service (4-8% tiered)"
+              "name": "Full Sourcing Service",
+              "description": "Tiered commission 4-8%, minimum USD 300 per formal order."
             }
           }
         ]
