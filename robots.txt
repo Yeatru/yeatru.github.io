@@ -13,6 +13,18 @@ User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
@@ -25,7 +37,36 @@ User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
-# AI Crawlers (ChatGPT / OpenAI)
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexMobileBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# =====================================================================
+# AI Crawlers / Generative Engine Optimization (GEO) Friendly
+# Allow all major AI search crawlers to read full content for better
+# citations and answers in ChatGPT, Perplexity, Claude, Google SGE, etc.
+# =====================================================================
+
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
@@ -35,24 +76,58 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Other AI Crawlers
-User-agent: PerplexityBot
-Allow: /
-
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: PerplexityRender
+Allow: /
+
+# Google SGE / AI Overviews
 User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta / Facebook AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Common Crawl (training data source for many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Semrush / Ahrefs (SEO tools - allow for audit)
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
 Allow: /
 
 # Sitemap location
 Sitemap: https://www.yeatru.com/sitemap.xml
 
-# IndexNow API key location (for Bing)
-# https://www.bing.com/indexnow
+# IndexNow API key location (for Bing / Yandex instant indexing)
 User-agent: *
 Allow: /BingSiteAuth.xml
 Allow: /indexnow.txt

@@ -1,189 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Hreflang language alternates helper:
+         en_US = English (default)
+         es_ES = Spanish
+         fr_FR = French
+         ru_RU = Russian
+         ar_SA = Arabic (GCC/Middle East)
+         x-default = fallback for any locale -->
 
     <!-- Homepage -->
     <url>
         <loc>https://www.yeatru.com/</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/"/>
     </url>
 
     <!-- Products Page -->
     <url>
         <loc>https://www.yeatru.com/products.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/products.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/products.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/products.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/products.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/products.html"/>
     </url>
 
     <!-- Service Pages -->
     <url>
         <loc>https://www.yeatru.com/product-sourcing.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/product-sourcing.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/product-sourcing.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/product-sourcing.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/product-sourcing.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/product-sourcing.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/product-sourcing.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/supplier-verification.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/supplier-verification.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/supplier-verification.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/supplier-verification.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/supplier-verification.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/supplier-verification.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/supplier-verification.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/quality-control.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/quality-control.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/quality-control.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/quality-control.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/quality-control.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/quality-control.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/quality-control.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/logistics-shipping.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/logistics-shipping.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/logistics-shipping.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/logistics-shipping.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/logistics-shipping.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/logistics-shipping.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/logistics-shipping.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/price-negotiation.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/price-negotiation.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/price-negotiation.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/price-negotiation.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/price-negotiation.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/price-negotiation.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/price-negotiation.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/factory-audit.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/factory-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/factory-audit.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/factory-audit.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/factory-audit.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/factory-audit.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/factory-audit.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/oem.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/oem.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/oem.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/oem.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/oem.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/oem.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/oem.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/sample-order.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/sample-order.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/sample-order.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/sample-order.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/sample-order.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/sample-order.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/sample-order.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/service-plans.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/service-plans.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/service-plans.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/service-plans.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/service-plans.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/service-plans.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/service-plans.html"/>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/design-photography.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/design-photography.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/design-photography.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/design-photography.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/design-photography.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/design-photography.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/design-photography.html"/>
     </url>
 
     <!-- About & Contact -->
     <url>
         <loc>https://www.yeatru.com/about.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/about.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/about.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/about.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/about.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/about.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/contact.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/contact.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/contact.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/contact.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/contact.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/contact.html"/>
     </url>
-
-    <!-- Additional Service Pages -->
     <url>
         <loc>https://www.yeatru.com/payment.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/design-photography.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/payment.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/payment.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/payment.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/payment.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/payment.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/payment.html"/>
     </url>
 
-    <!-- Blog Pages -->
+    <!-- FAQ & Data -->
+    <url>
+        <loc>https://www.yeatru.com/faq.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/faq.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/faq.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/faq.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/faq.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/faq.html"/>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/data.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/data.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/data.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/data.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/data.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/data.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/data.html"/>
+    </url>
+
+    <!-- Testimonials (now indexable) -->
+    <url>
+        <loc>https://www.yeatru.com/testimonials.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/testimonials.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/testimonials.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/testimonials.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/testimonials.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/testimonials.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/testimonials.html"/>
+    </url>
+
+    <!-- Blog List Page -->
     <url>
         <loc>https://www.yeatru.com/blog.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog.html"/>
+    </url>
+
+    <!-- Blog Articles (High Priority / GEO Content) -->
+    <url>
+        <loc>https://www.yeatru.com/blog-first-time-china-sourcing.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blog/first-time-sourcing.jpg</image:loc>
+            <image:title>First Time China Sourcing Guide</image:title>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-first-time-china-sourcing.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-first-time-china-sourcing.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-first-time-china-sourcing.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-first-time-china-sourcing.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-first-time-china-sourcing.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-first-time-china-sourcing.html"/>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/blog-sourcing-preparation-checklist.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html"/>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/blog-choosing-sourcing-service-model.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-alibaba-vs-agent.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
         <image:image>
             <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/blog/alibaba-vs-agent.jpg</image:loc>
             <image:title>Sourcing Agent vs Alibaba Comparison</image:title>
         </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-alibaba-vs-agent.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-alibaba-vs-agent.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-alibaba-vs-agent.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-alibaba-vs-agent.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-alibaba-vs-agent.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-alibaba-vs-agent.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-amazon-supplier-guide.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-amazon-supplier-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-amazon-supplier-guide.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-yiwu-market-guide.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-yiwu-market-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-yiwu-market-guide.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-product-certifications.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-product-certifications.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-product-certifications.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-product-certifications.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-product-certifications.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-product-certifications.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-product-certifications.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-sea-freight-guide.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-sea-freight-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-sea-freight-guide.html"/>
     </url>
     <url>
         <loc>https://www.yeatru.com/blog-private-mold-packaging.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- FAQ Page -->
-    <url>
-        <loc>https://www.yeatru.com/faq.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Data & Statistics Page -->
-    <url>
-        <loc>https://www.yeatru.com/data.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Blog Articles (High Priority) -->
-    <url>
-        <loc>https://www.yeatru.com/blog-first-time-china-sourcing.html</loc>
-        <lastmod>2026-07-26</lastmod>
+        <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/blog-sourcing-preparation-checklist.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.yeatru.com/blog-choosing-sourcing-service-model.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-private-mold-packaging.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=ar"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-private-mold-packaging.html"/>
     </url>
 
 </urlset>

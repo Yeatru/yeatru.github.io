@@ -8346,3 +8346,132 @@ body .section-title-wrap.text-center .section-subtitle {
 #categoryList .badge .btn-close:hover {
     opacity: 1;
 }
+
+/* ================================================================
+   SEO/GEO ENHANCEMENTS — RTL + WhatsApp Floating Button + i18n
+   ================================================================ */
+
+/* ---- RTL (Right-To-Left) layout support for Arabic ---- */
+html[dir="rtl"],
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+html[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before,
+body.rtl .breadcrumb-item + .breadcrumb-item::before {
+    float: right;
+    padding-left: 0.5rem;
+    padding-right: 0;
+    content: var(--bs-breadcrumb-divider, "\2039");
+}
+html[dir="rtl"] .me-1, html[dir="rtl"] .me-2, html[dir="rtl"] .me-3, html[dir="rtl"] .me-4,
+html[dir="rtl"] .me-5, html[dir="rtl"] .me-auto, html[dir="rtl"] .ms-1,
+body.rtl .me-1, body.rtl .me-2, body.rtl .me-3, body.rtl .me-4,
+body.rtl .me-5, body.rtl .me-auto, body.rtl .ms-1 {
+    /* Bootstrap utility overrides for RTL; precise flipping handled by classes below */
+}
+html[dir="rtl"] .text-end, body.rtl .text-end { text-align: left !important; }
+html[dir="rtl"] .text-start, body.rtl .text-start { text-align: right !important; }
+html[dir="rtl"] .float-end, body.rtl .float-end { float: left !important; }
+html[dir="rtl"] .float-start, body.rtl .float-start { float: right !important; }
+html[dir="rtl"] .dropdown-menu, body.rtl .dropdown-menu { text-align: right; }
+html[dir="rtl"] .dropdown-menu-end, body.rtl .dropdown-menu-end { right: auto !important; left: 0 !important; }
+html[dir="rtl"] .navbar-nav, body.rtl .navbar-nav {
+    padding-right: 0;
+}
+html[dir="rtl"] .nav-search-dropdown, body.rtl .nav-search-dropdown {
+    left: 0;
+    right: auto;
+}
+html[dir="rtl"] .d-flex.flex-row-reverse > *, body.rtl .d-flex.flex-row-reverse > * {
+    /* keep explicit row-reverse intact */
+}
+@media (max-width: 991.98px) {
+    html[dir="rtl"] .navbar-nav, body.rtl .navbar-nav {
+        text-align: right;
+    }
+}
+
+/* ---- Floating WhatsApp Contact Button (sticky bottom-right) ---- */
+.whatsapp-float {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    bottom: 28px;
+    right: 28px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 56px;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.whatsapp-float:hover {
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+    background-color: #20bd5c;
+}
+.whatsapp-float::after {
+    content: "WhatsApp";
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.whatsapp-float:hover::after { opacity: 1; }
+html[dir="rtl"] .whatsapp-float,
+body.rtl .whatsapp-float {
+    right: auto;
+    left: 28px;
+}
+html[dir="rtl"] .whatsapp-float::after,
+body.rtl .whatsapp-float::after {
+    right: auto;
+    left: calc(100% + 10px);
+}
+@media (max-width: 575.98px) {
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 26px;
+        line-height: 52px;
+    }
+    .whatsapp-float::after { display: none; }
+}
+
+/* ---- Currency / Language selector RTL tweaks ---- */
+html[dir="rtl"] .currency-dropdown-btn .dropdown-toggle::after,
+html[dir="rtl"] .lang-dropdown-btn .dropdown-toggle::after,
+body.rtl .currency-dropdown-btn .dropdown-toggle::after,
+body.rtl .lang-dropdown-btn .dropdown-toggle::after {
+    margin-left: 0;
+    margin-right: 0.35em;
+}
+
+/* ---- Structured-data helper: visually-hidden text for AI-readability + GEO ----
+   These classes hide content visually but keep it readable by search engines and AI crawlers.
+   Use sparingly to add context sentences to schema-backed sections. */
+.ai-sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+}
