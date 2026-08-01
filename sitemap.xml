@@ -266,6 +266,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <url>
+        <loc>https://www.yeatru.com/atom.xml</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
 
     <!-- Blog Articles (High Priority / GEO Content) -->
     <url>
@@ -289,6 +295,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg</image:loc>
+            <image:title>Sourcing Preparation Checklist</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-sourcing-preparation-checklist.html?lang=fr"/>
@@ -301,6 +311,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Service%20Plans.png</image:loc>
+            <image:title>Choosing Sourcing Service Model</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-choosing-sourcing-service-model.html?lang=fr"/>
@@ -329,6 +343,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Cargo.jpg</image:loc>
+            <image:title>Amazon FBA Supplier Guide</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-amazon-supplier-guide.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-amazon-supplier-guide.html?lang=fr"/>
@@ -341,6 +359,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/yiwu%20Market.jpg</image:loc>
+            <image:title>Yiwu Market Guide</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-yiwu-market-guide.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-yiwu-market-guide.html?lang=fr"/>
@@ -353,6 +375,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/QC%20Meeting%20on%20site.png</image:loc>
+            <image:title>Product Certifications Guide</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-product-certifications.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-product-certifications.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-product-certifications.html?lang=fr"/>
@@ -365,6 +391,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/global-logistics.jpg</image:loc>
+            <image:title>Sea Freight Guide</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-sea-freight-guide.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-sea-freight-guide.html?lang=fr"/>
@@ -377,6 +407,10 @@
         <lastmod>2026-08-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/products%20(5).jpg</image:loc>
+            <image:title>Private Mold and Packaging</image:title>
+        </image:image>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-private-mold-packaging.html"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/blog-private-mold-packaging.html?lang=fr"/>
