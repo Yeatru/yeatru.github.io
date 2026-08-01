@@ -1861,7 +1861,7 @@ function setProductMeta(product) {
     if (Object.keys(defaultMeta).length === 0) saveDefaultMeta();
 
     const productUrl = window.location.origin + window.location.pathname + '#product/' + product.id;
-    const productImage = product.image || 'https://www.yeatru.com/og-image.svg';
+    const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
     const productDesc = product.description ? product.description.substring(0, 160) : defaultMeta.description;
     const productTitle = product.name + ' | Yeatru Sourcing - China Wholesale Products';
 

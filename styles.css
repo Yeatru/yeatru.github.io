@@ -4177,6 +4177,56 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     margin: 0 auto;
 }
 
+/* Key Takeaways block — GEO-friendly summary for AI engines */
+.article-takeaways {
+    background: #f4f8fb;
+    border-left: 4px solid #0b7b94;
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 2rem 0;
+    border-radius: 6px;
+}
+.article-takeaways h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0b7b94;
+    margin: 0 0 0.6rem 0;
+}
+.article-takeaways ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+.article-takeaways li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+}
+
+/* Data page stats summary — semantic <dl> styled as cards */
+.data-stats-summary {
+    background: #f4f8fb;
+    border-left: 4px solid #0b7b94;
+    padding: 1.5rem 1.75rem;
+    border-radius: 6px;
+}
+.data-stats-summary h2 {
+    color: #0b7b94;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.stats-grid dt {
+    font-weight: 600;
+    color: #555;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e3eaf0;
+}
+.stats-grid dd {
+    color: #0b3a52;
+    font-weight: 600;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e3eaf0;
+}
+
 .article-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
