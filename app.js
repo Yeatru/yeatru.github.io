@@ -535,6 +535,59 @@ function updateContent() {
         }
     }
 
+    // SEO: translate <title> and <meta name="description"> per page based on pathname
+    try {
+        const pageMetaMap = {
+            // path: [titleKey, descriptionKey or fallback text]
+            '/index.html': ['hero.title', 'hero.desc'],
+            '/': ['hero.title', 'hero.desc'],
+            '/products.html': ['products.title', 'products.subtitle'],
+            '/about.html': ['aboutPage.heroTitle', 'aboutPage.heroSubtitle'],
+            '/contact.html': ['contactPage.heroTitle', 'contactPage.heroSubtitle'],
+            '/service-plans.html': ['nav.servicePlans', 'common.oneStopServices'],
+            '/payment.html': ['nav.payment', 'footer.paymentMethods'],
+            '/testimonials.html': ['testimonials.title', 'common.trustedBySubtitle'],
+            '/blog.html': ['nav.blog', 'common.sourcingInsightsSubtitle'],
+            '/supplier-verification.html': ['services.supplierVerification', 'services.supplierVerificationDesc'],
+            '/product-sourcing.html': ['services.productSourcing', 'services.productSourcingDesc'],
+            '/quality-control.html': ['services.qualityControl', 'services.qualityControlDesc'],
+            '/logistics-shipping.html': ['services.logistics', 'services.logisticsDesc'],
+            '/price-negotiation.html': ['services.priceNegotiation', 'services.priceNegotiationDesc'],
+            '/factory-audit.html': ['nav.factoryAudit', 'services.supplierVerificationDesc'],
+            '/oem.html': ['nav.oem', 'advantages.oemDesc'],
+            '/sample-order.html': ['nav.sampleOrder', 'advantages.fastSampleDesc'],
+            '/design-photography.html': ['services.designPhotography', 'services.designPhotographyDesc'],
+            '/faq.html': ['common.faq', 'common.faqSubtitle'],
+            '/data.html': ['common.globalClients', 'common.trustedBySubtitle'],
+        };
+        const path = (location.pathname.substring(location.pathname.lastIndexOf('/')) || '/index.html');
+        const meta = pageMetaMap[path] || pageMetaMap['/index.html'];
+        if (meta) {
+            const tTitle = i18next.t(meta[0]);
+            const tDesc = i18next.t(meta[1]);
+            if (tTitle && tTitle !== meta[0]) {
+                const brand = 'Yeatru Sourcing — China Sourcing Agent';
+                // Avoid repeating the brand if already in the translated title
+                document.title = tTitle.indexOf('Yeatru') !== -1 ? tTitle : (tTitle + ' | ' + brand);
+            }
+            if (tDesc && tDesc !== meta[1]) {
+                const descMeta = document.querySelector('meta[name="description"]');
+                if (descMeta) descMeta.setAttribute('content', tDesc);
+            }
+        }
+        // Also update og:title and og:description if present for social share consistency
+        try {
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            const currentTitle = document.title;
+            const currentDesc = document.querySelector('meta[name="description"]');
+            if (ogTitle && currentTitle) ogTitle.setAttribute('content', currentTitle);
+            if (ogDesc && currentDesc) ogDesc.setAttribute('content', currentDesc.getAttribute('content'));
+        } catch (e) { /* ignore */ }
+    } catch (e) {
+        console.error('[i18n] Error translating meta title/description:', e);
+    }
+
     renderCategoryFilter();
     renderProducts();
     renderProductsDropdown();
