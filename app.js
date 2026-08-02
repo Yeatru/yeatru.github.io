@@ -125,6 +125,28 @@ const translationResources = {
     }}
 };
 
+// Merge page-specific translations from external files (i18n-*.js)
+// Each file defines a global like I18N_SERVICES, I18N_INFO, I18N_BLOG, I18N_MISC
+(function mergePageTranslations() {
+    var sources = [
+        typeof I18N_SVC1 !== 'undefined' ? I18N_SVC1 : null,
+        typeof I18N_SVC2 !== 'undefined' ? I18N_SVC2 : null,
+        typeof I18N_SVC3 !== 'undefined' ? I18N_SVC3 : null,
+        typeof I18N_MISC !== 'undefined' ? I18N_MISC : null
+    ];
+    sources.forEach(function(src) {
+        if (!src) return;
+        Object.keys(src).forEach(function(lang) {
+            if (!translationResources[lang]) translationResources[lang] = { translation: {} };
+            if (!translationResources[lang].translation) translationResources[lang].translation = {};
+            var pageKeys = src[lang];
+            Object.keys(pageKeys).forEach(function(pageKey) {
+                translationResources[lang].translation[pageKey] = pageKeys[pageKey];
+            });
+        });
+    });
+})();
+
 let currentFilterCategory = 'all';
 let currentDetailMode = 'preview';
 let saveTimer = null;
