@@ -253,24 +253,52 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog.html"/>
     </url>
 
-    <!-- LLM-readable context files (GEO) -->
-    <url>
-        <loc>https://www.yeatru.com/llms.txt</loc>
-        <lastmod>2026-08-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
+    <!-- LLM-readable context files (GEO / AI Search Core Assets) -->
+    <!-- NOTE: Priority set HIGH (0.9-1.0) because these are the PRIMARY source
+         content for Google SGE, Perplexity, ChatGPT, Claude when answering
+         "sourcing agent China Yiwu Amazon FBA" queries. Crawl frequency = weekly
+         so AI engines always get the latest FAQ answers & pricing tiers. -->
     <url>
         <loc>https://www.yeatru.com/llms-full.txt</loc>
-        <lastmod>2026-08-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/llms.txt</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/faq-knowledge-base.json</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/brand-knowledge-base.json</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.yeatru.com/atom.xml</loc>
-        <lastmod>2026-08-01</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/page-data.json</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.yeatru.com/site-data.json</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <!-- Blog Articles (High Priority / GEO Content) -->
