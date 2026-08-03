@@ -1154,7 +1154,13 @@
                         <div class="faq-categories mb-4">
                             <div class="faq-category-tabs">
                                 <button class="faq-tab active" data-category="all" data-i18n="common.all">All</button>
-                                <button class="faq-tab" data-category="moq">MOQ & Price</button>
+                                <!-- Business-critical (high-intent, drives RFQ) -->
+                                <button class="faq-tab" data-category="platform" data-i18n="homeFaq.catPlatform">Platforms</button>
+                                <button class="faq-tab" data-category="language" data-i18n="homeFaq.catLanguage">Language Support</button>
+                                <button class="faq-tab" data-category="payment" data-i18n="homeFaq.catPayment">Payment & Fees</button>
+                                <button class="faq-tab" data-category="agent-advice" data-i18n="homeFaq.catAgent">Partner Guide</button>
+                                <!-- Operational basics -->
+                                <button class="faq-tab" data-category="moq">MOQ</button>
                                 <button class="faq-tab" data-category="sample">Sample</button>
                                 <button class="faq-tab" data-category="oem">OEM</button>
                                 <button class="faq-tab" data-category="logistics">Logistics</button>
@@ -1163,108 +1169,202 @@
                         </div>
                         
                         <div class="faq-list" id="faqList">
-                            <!-- MOQ & Price -->
+                            <!-- =============================================================
+                                 HOME FAQ (17 items) - ORDER 100% MATCHES FAQPage JSON-LD SCHEMA
+                                 Priority order for AI search / conversion:
+                                   [1-11]  Business-critical (platform onboarding, language support,
+                                           payments, service fees, partner selection, risk/avoidance)
+                                   [12-17] Operational basics (MOQ, sample, OEM, logistics, QC)
+                                 Every Q/A pair has data-i18n = homeFaq.qN / homeFaq.aN so the
+                                 ES/FR/RU/AR translations fire when the user switches language.
+                                 ============================================================= -->
+
+                            <!-- [1] What does a China sourcing agent do? -->
+                            <div class="faq-item" data-category="agent-advice">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q1">What does a China sourcing agent do?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a1">A China sourcing agent helps international buyers find reliable suppliers, negotiate prices, verify product quality, manage logistics, and handle the entire procurement process from China efficiently.</p>
+                                </div>
+                            </div>
+
+                            <!-- [2] Russian-speaking support (RU / CIS → historically top RFQ source) -->
+                            <div class="faq-item" data-category="language">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q2">Can Russian-speaking buyers get sourcing support in Russian?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a2">Yes. Yeatru Sourcing provides full sourcing services in Russian, including price negotiation, supplier communication, quality inspection reports, and shipping documents. We serve buyers from Russia, Belarus, Kazakhstan, Uzbekistan and other CIS countries. Contact us on WhatsApp or Telegram at +86 159 8851 6408.</p>
+                                </div>
+                            </div>
+
+                            <!-- [3] Arabic-speaking support (GCC / MENA → second largest RFQ source) -->
+                            <div class="faq-item" data-category="language">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q3">Do you support Arabic-speaking buyers from GCC / Middle East?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a3">Yes. We support Arabic-speaking buyers across Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Morocco and other Middle East / North Africa countries. Our team handles Halal certification requirements, GCC compliance, sea freight to Jeddah / Dubai / Dammam, and accepts payments via bank transfer (T/T), PayPal, and WorldFirst. WhatsApp support available in Arabic.</p>
+                                </div>
+                            </div>
+
+                            <!-- [4] Payment methods (eliminates #1 objection before contact form) -->
+                            <div class="faq-item" data-category="payment">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q4">Which payment methods do you accept for cross-border sourcing orders?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a4">We accept bank transfer (T/T) to our Standard Chartered Bank New York branch and company account, PayPal for samples and small orders, Western Union for urgent payments, and WorldFirst for cross-border transfers. Bank details are listed on our Payment page. All transactions are secure with import/export license documentation provided.</p>
+                                </div>
+                            </div>
+
+                            <!-- [5] Service fee structure (transparent pricing = trust signal) -->
+                            <div class="faq-item" data-category="payment">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q5">What is your service fee structure?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a5">We have two transparent service models. Plan 1 (Order Management): 3-4% commission, minimum USD 150 per order — for buyers with ready supplier links. Plan 2 (Full Sourcing): tiered commission 7-8% below USD 5,000, 5-6% for USD 5,000-20,000, 4% over USD 20,000, minimum USD 300 per order — for buyers who need sourcing from scratch.</p>
+                                </div>
+                            </div>
+
+                            <!-- [6] How can new Amazon sellers start (Amazon = #1 seller segment) -->
+                            <div class="faq-item" data-category="platform">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q6">How can new Amazon sellers start sourcing products from China?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a6">New sellers should first complete Amazon store registration and compliance filing, then conduct product selection research. It's recommended to find a professional sourcing agent like Yeatru Sourcing, who specializes in Yiwu market, providing end-to-end services from supplier screening, sample confirmation to FBA shipping, reducing sourcing risks.</p>
+                                </div>
+                            </div>
+
+                            <!-- [7] TikTok Shop (fastest growing platform among Yeatru buyers) -->
+                            <div class="faq-item" data-category="platform">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q7">How to bind Chinese suppliers for TikTok Shop?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a7">TikTok Shop sellers need to bind suppliers through platform-certified channels. Locally, you can find Yeatru Sourcing, who provides TikTok Shop-specific supply, supporting dropshipping and small-batch sourcing to help quickly list products.</p>
+                                </div>
+                            </div>
+
+                            <!-- [8] eBay sellers -->
+                            <div class="faq-item" data-category="platform">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q8">What should eBay sellers pay attention to when sourcing from China?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a8">eBay sellers should pay attention to product compliance, intellectual property issues, and logistics timeliness. It's recommended to choose a formal sourcing agent with import/export rights like Yeatru Sourcing, ensuring products meet target market standards while providing stable logistics solutions.</p>
+                                </div>
+                            </div>
+
+                            <!-- [9] Amazon account suspended (top worry for sellers → drives RFQ) -->
+                            <div class="faq-item" data-category="platform">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q9">What to do if Amazon account is suspended?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a9">First identify the reason for suspension, common reasons include: product infringement, policy violations, low performance metrics. Immediately stop violations and prepare appeal materials. Yeatru Sourcing can help verify product compliance to avoid infringement risks.</p>
+                                </div>
+                            </div>
+
+                            <!-- [10] Choose reliable sourcing agent (direct conversion → contact for RFQ) -->
+                            <div class="faq-item" data-category="agent-advice">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q10">How to choose a reliable sourcing agent?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a10">Choose sourcing agent based on: qualification certification, industry experience, service scope, customer reviews, price transparency. Yeatru Sourcing has import/export rights, 14 years of sourcing experience, provides one-stop service with transparent pricing and no hidden fees.</p>
+                                </div>
+                            </div>
+
+                            <!-- [11] Avoid supplier fraud (top 3 worry → validates Yeatru's on-site audit) -->
+                            <div class="faq-item" data-category="agent-advice">
+                                <button class="faq-question">
+                                    <span data-i18n="homeFaq.q11">How to avoid supplier fraud?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="homeFaq.a11">Anti-fraud measures: on-site factory visits, verify business registration, small trial orders, use third-party payment, sign formal contracts. Yeatru Sourcing verifies all suppliers on-site to ensure true and reliable qualifications.</p>
+                                </div>
+                            </div>
+
+                            <!-- ========= OPERATIONAL BASICS (kept but reordered to last 6 items) ====== -->
+
+                            <!-- [12] MOQ (was item #1, now after business Qs) -->
                             <div class="faq-item" data-category="moq">
                                 <button class="faq-question">
-                                    <span>What is your minimum order quantity (MOQ)?</span>
+                                    <span data-i18n="homeFaq.q12">Is there a minimum order quantity (MOQ)?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>MOQ varies by product type. We work with suppliers who offer flexible MOQs starting from as low as 50-100 pieces for many items. For customized OEM products, MOQ typically starts at 200-500 pieces. Contact us with your specific product requirements for accurate MOQ information.</p>
+                                    <p data-i18n="homeFaq.a12">MOQ varies by product. We work with suppliers that offer flexible MOQ options - regular products start from 50 pieces, suitable for small businesses, startups, and online sellers. Custom OEM products typically require MOQ of 200-500 pieces. Contact us for specific product MOQ details.</p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" data-category="moq">
-                                <button class="faq-question">
-                                    <span>How do you ensure competitive pricing?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>With 14+ years of local experience and established supplier relationships, we negotiate the best prices on your behalf. We provide transparent quotes with detailed cost breakdowns and compare multiple suppliers to ensure you get competitive rates.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Sample -->
+
+                            <!-- [13] Sample cost & lead time -->
                             <div class="faq-item" data-category="sample">
                                 <button class="faq-question">
-                                    <span>How long does it take to get samples?</span>
+                                    <span data-i18n="homeFaq.q13">How long does it take and how much does it cost to get samples?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Sample production typically takes 3-7 days depending on product complexity. Shipping time varies by destination (7-15 days by express). We recommend requesting samples 2-3 weeks before your planned order to allow for review and decision-making.</p>
+                                    <p data-i18n="homeFaq.a13">Standard samples take 3-7 days, custom samples take 7-15 days. Sample costs vary by product, typically 50-500 RMB. Sample fees are fully refundable for bulk orders over 1,000 pieces. Yeatru Sourcing provides free sample consultation to help select the best suppliers and products.</p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" data-category="sample">
-                                <button class="faq-question">
-                                    <span>Is the sample fee refundable?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Yes! For most products, sample fees are fully refundable when you place a bulk order of 1,000+ pieces with the same supplier. This allows you to test product quality risk-free before committing to larger quantities.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- OEM -->
+
+                            <!-- [14] OEM / ODM customization (high intent → RFQ) -->
                             <div class="faq-item" data-category="oem">
                                 <button class="faq-question">
-                                    <span>Can you help with custom logo and packaging?</span>
+                                    <span data-i18n="homeFaq.q14">Do you offer OEM/ODM customization?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Absolutely! We offer full OEM/ODM services including custom logo printing, hang tags, poly bags, gift boxes, and color boxes. We can also assist with product design modifications based on your specifications.</p>
+                                    <p data-i18n="homeFaq.a14">Yes. We provide full OEM/ODM customization services including product design, logo printing, custom packaging, and private label manufacturing. Customization cycle is typically 20-30 days with MOQ starting from 200 pieces. Share your requirements and we'll find the best approach.</p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" data-category="oem">
-                                <button class="faq-question">
-                                    <span>What customization options are available?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We offer various customization options: logo printing (screen, embroidery, heat transfer), custom packaging (size, material, design), product modifications (size, color, material), and private label solutions. Share your requirements and we'll find the best approach.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Logistics -->
+
+                            <!-- [15] Shipping time (Amazon FBA focus) -->
                             <div class="faq-item" data-category="logistics">
                                 <button class="faq-question">
-                                    <span>What shipping methods do you offer?</span>
+                                    <span data-i18n="homeFaq.q15">How long does shipping take from China to Amazon warehouse?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>We offer multiple shipping options: express (DHL, FedEx, UPS), air freight, sea freight, and combined sea+express for cost efficiency. Door-to-door delivery available to most countries. We also provide warehousing and consolidation services.</p>
+                                    <p data-i18n="homeFaq.a15">Shipping time depends on the method: air freight 5-15 days, sea freight 25-45 days, express 3-7 days. We provide multiple logistics solutions, selecting the most suitable shipping method based on budget and timeline including FBA label compliance and customs clearance.</p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" data-category="logistics">
-                                <button class="faq-question">
-                                    <span>How long does shipping take?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Shipping times vary by method: Express (5-10 days), Air freight (10-15 days), Sea freight (25-40 days). Door-to-door delivery to most destinations takes 15-45 days depending on your location and chosen shipping method.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Quality -->
+
+                            <!-- [16] Quality control (critical FBA risk) -->
                             <div class="faq-item" data-category="qc">
                                 <button class="faq-question">
-                                    <span>How do you ensure product quality?</span>
+                                    <span data-i18n="homeFaq.q16">How do you ensure product quality?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>We implement strict QC at every stage: pre-production inspection, during-production checks, pre-shipment inspection (AQL 2.5 standard), and loading supervision. For Amazon FBA sellers, we offer 100% piece-by-piece inspection and FBA label compliance checks.</p>
+                                    <p data-i18n="homeFaq.a16">We ensure quality through a three-level inspection process: incoming material inspection, in-process sampling, and pre-shipment full inspection (AQL 2.5 standard). For Amazon FBA sellers, we offer 100% piece-by-piece inspection and FBA label compliance checks. Every shipment comes with a detailed quality inspection report.</p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" data-category="qc">
+
+                            <!-- [17] Supplier network size (75k+ fact = differentiator) -->
+                            <div class="faq-item" data-category="agent-advice">
                                 <button class="faq-question">
-                                    <span>Do you offer Amazon FBA preparation services?</span>
+                                    <span data-i18n="homeFaq.q17">How many suppliers do you work with?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Yes! Our FBA Prep service includes 100% piece-by-piece inspection, compliance labeling, bundling/kitting, retail-ready repackaging, sample consolidation, and supplier cargo pickup. We ensure your products meet Amazon's requirements before shipping.</p>
+                                    <p data-i18n="homeFaq.a17">We have a network of over 75,000 verified factories and suppliers across China, primarily based in Yiwu International Trade City and surrounding manufacturing hubs in Zhejiang province. All recommended suppliers are audited on-site to ensure true qualifications and stable capacity.</p>
                                 </div>
                             </div>
                         </div>
