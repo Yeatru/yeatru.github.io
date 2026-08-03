@@ -5,8 +5,9 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /app.js
-Disallow: /page.js
+# NOTE: Do NOT disallow app.js or page.js - AI crawlers (GPTBot, Google-Extended, etc.)
+# need these JS files to render the full page including i18n translated content.
+# Blocking JS breaks AI search engine comprehension of the full multilingual content.
 
 # Specific search engine rules
 User-agent: Googlebot
