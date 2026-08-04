@@ -273,13 +273,12 @@ async function runAudit() {
 
     // 2. Check Robots
     updateProgress(5, "Checking robots.txt...");
-    let robotsChecks = { allow_all: false, indexnow_key: false, ai_crawlers: false };
+    let robotsChecks = { allow_all: false, ai_crawlers: false };
     try {
         const resp = await fetch(BASE_URL + "/robots.txt", { cache: "no-store" });
         if (resp.ok) {
             const text = await resp.text();
             robotsChecks.allow_all = text.includes("Allow: /");
-            robotsChecks.indexnow_key = text.includes("cb82a7f9");
             robotsChecks.ai_crawlers = ["GPTBot","ClaudeBot","PerplexityBot"].some(b => text.includes(b));
             if (!robotsChecks.ai_crawlers) {
                 alerts.push({ level: "warning", msg: "AI crawlers not found in robots.txt" });
@@ -290,6 +289,16 @@ async function runAudit() {
         alerts.push({ level: "error", msg: "robots.txt fetch failed: " + e.message });
         errCount++;
     }
+
+    // Check IndexNow in homepage HTML (not robots.txt)
+    let indexNowKey = false;
+    try {
+        const resp = await fetch(BASE_URL + "/", { cache: "no-store" });
+        if (resp.ok) {
+            const text = await resp.text();
+            indexNowKey = text.includes("cb82a7f9");
+        }
+    } catch (e) {}
 
     // 3. Check all pages
     const pageResults = [];
@@ -370,7 +379,7 @@ async function runAudit() {
     renderSummary(okCount, warnCount, errCount, sitemapOK, sitemapURLs, internalLinkCount, pageResults);
     renderAlerts(alerts, okCount, warnCount, errCount);
     renderPageResults(pageResults);
-    renderInfra(sitemapOK, sitemapURLs, robotsChecks);
+    renderInfra(sitemapOK, sitemapURLs, robotsChecks, indexNowKey);
     renderHomeDetails(homeDetails, internalLinkCount);
 
     btn.disabled = false;
@@ -457,7 +466,7 @@ function renderPageResults(results) {
     document.getElementById("pageResults").innerHTML = html;
 }
 
-function renderInfra(sitemapOK, sitemapURLs, robots) {
+function renderInfra(sitemapOK, sitemapURLs, robots, indexNowKey) {
     let html = "";
     // Sitemap
     html += `<div class="page-row">
@@ -472,9 +481,9 @@ function renderInfra(sitemapOK, sitemapURLs, robots) {
         <span class="status ${robots.allow_all ? 'green' : 'red'}">${robots.allow_all ? '✅ OK' : '❌ FAIL'}</span>
     </div>`;
     html += `<div class="page-row">
-        <span class="path">robots.txt → IndexNow Key</span>
+        <span class="path">homepage → IndexNow Meta</span>
         <span style="flex:1"></span>
-        <span class="status ${robots.indexnow_key ? 'green' : 'yellow'}">${robots.indexnow_key ? '✅ OK' : '⚠️ MISSING'}</span>
+        <span class="status ${indexNowKey ? 'green' : 'yellow'}">${indexNowKey ? '✅ OK' : '⚠️ MISSING'}</span>
     </div>`;
     html += `<div class="page-row">
         <span class="path">robots.txt → AI Crawlers</span>
