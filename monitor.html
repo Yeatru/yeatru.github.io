@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Monitor | Yeatru Sourcing</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f1923;
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #1a2a3a;
+            margin-bottom: 30px;
+        }
+        .header h1 { color: #0b7b94; font-size: 28px; margin-bottom: 8px; }
+        .header .subtitle { color: #6a7a8a; font-size: 14px; }
+        .header .run-time { color: #0b7b94; font-size: 13px; margin-top: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: #1a2a3a;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid #2a3a4a;
+            transition: border-color 0.3s;
+        }
+        .summary-card:hover { border-color: #0b7b94; }
+        .summary-card .icon { font-size: 32px; margin-bottom: 12px; }
+        .summary-card .number { font-size: 36px; font-weight: 700; line-height: 1; }
+        .summary-card .label { font-size: 13px; color: #6a7a8a; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .green { color: #4caf50; }
+        .red { color: #f44336; }
+        .yellow { color: #ff9800; }
+        .blue { color: #2196f3; }
+
+        .section {
+            background: #1a2a3a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #2a3a4a;
+        }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #0b7b94;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section h2 .badge {
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            background: #0b7b94;
+            color: #fff;
+        }
+
+        .page-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .page-row:hover { background: #0f1923; }
+        .page-row .path { color: #a0b0c0; font-family: 'Courier New', monospace; font-size: 13px; }
+        .page-row .status { font-weight: 600; font-size: 13px; min-width: 80px; text-align: right; }
+        .page-row .meta-info { color: #6a7a8a; font-size: 12px; margin-right: 12px; }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #0f1923;
+            border-radius: 3px;
+            margin: 12px 0 20px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0b7b94, #4caf50);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .alert-box {
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .alert-warning {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+        .alert-error {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+        .alert-success {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #0b7b94;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #0a6a80; }
+        .btn:disabled { background: #2a3a4a; cursor: not-allowed; }
+        .btn-center { text-align: center; margin: 30px 0; }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #2a3a4a;
+            border-top-color: #0b7b94;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .results { display: none; }
+        .results.visible { display: block; }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #4a5a6a;
+            font-size: 13px;
+            border-top: 1px solid #1a2a3a;
+            margin-top: 30px;
+        }
+        footer a { color: #0b7b94; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SEO Monitor Dashboard</h1>
+            <div class="subtitle">Yeatru Sourcing | 每日 SEO 健康监控</div>
+            <div class="run-time" id="runTime"></div>
+        </div>
+
+        <div class="btn-center">
+            <button class="btn" id="runBtn" onclick="runAudit()">
+                Run SEO Audit
+            </button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div style="text-align:center; color:#6a7a8a; font-size:13px; margin-bottom:24px;" id="progressText">
+                Ready.
+            </div>
+
+            <div class="summary-grid" id="summaryGrid"></div>
+            <div id="alertSummary"></div>
+
+            <div class="section">
+                <h2>Page Status <span class="badge" id="pageCountBadge">0/0</span></h2>
+                <div id="pageResults"></div>
+            </div>
+
+            <div class="section">
+                <h2>Sitemap & Robots</h2>
+                <div id="infraResults"></div>
+            </div>
+
+            <div class="section">
+                <h2>Homepage Details</h2>
+                <div id="homeDetails"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Yeatru Sourcing SEO Monitor &mdash; <a href="https://www.yeatru.com/">yeatru.com</a></p>
+            <p style="margin-top:6px;">每天打开此页面点 Run SEO Audit 即可检查网站健康状态</p>
+        </footer>
+    </div>
+
+<script>
+// ===== Configuration =====
+const BASE_URL = "https://www.yeatru.com";
+
+const PAGES = [
+    { path: "/", name: "Homepage", critical: true },
+    { path: "/faq.html", name: "FAQ", critical: true },
+    { path: "/blog.html", name: "Blog", critical: true },
+    { path: "/about.html", name: "About", critical: false },
+    { path: "/contact.html", name: "Contact", critical: false },
+    { path: "/products.html", name: "Products", critical: false },
+    { path: "/product-sourcing.html", name: "Product Sourcing", critical: true },
+    { path: "/quality-control.html", name: "Quality Control", critical: true },
+    { path: "/logistics-shipping.html", name: "Logistics", critical: true },
+    { path: "/oem.html", name: "OEM", critical: false },
+    { path: "/supplier-verification.html", name: "Supplier Verification", critical: false },
+    { path: "/testimonials.html", name: "Testimonials", critical: false },
+    { path: "/service-plans.html", name: "Service Plans", critical: false },
+    { path: "/design-photography.html", name: "Design & Photography", critical: false },
+    { path: "/price-negotiation.html", name: "Price Negotiation", critical: false },
+    { path: "/data.html", name: "Data & Stats", critical: false },
+    { path: "/blog-alibaba-vs-agent.html", name: "Blog: Alibaba vs Agent", critical: false },
+    { path: "/blog-amazon-supplier-guide.html", name: "Blog: Amazon Supplier Guide", critical: false },
+    { path: "/blog-first-time-china-sourcing.html", name: "Blog: First Time Sourcing", critical: false },
+    { path: "/blog-yiwu-market-guide.html", name: "Blog: Yiwu Market Guide", critical: false },
+];
+
+// ===== Main Audit Function =====
+async function runAudit() {
+    const btn = document.getElementById("runBtn");
+    const results = document.getElementById("results");
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Running...';
+    results.classList.add("visible");
+
+    const now = new Date();
+    document.getElementById("runTime").textContent =
+        "Last run: " + now.toLocaleString("en-US", { timeZone: "Asia/Shanghai" }) + " (Beijing Time)";
+
+    let okCount = 0, warnCount = 0, errCount = 0;
+    const alerts = [];
+
+    // 1. Check Sitemap
+    updateProgress(0, "Checking sitemap.xml...");
+    let sitemapOK = false, sitemapURLs = 0;
+    try {
+        const resp = await fetch(BASE_URL + "/sitemap.xml", { cache: "no-store" });
+        if (resp.ok) {
+            const text = await resp.text();
+            sitemapURLs = (text.match(/<loc>/g) || []).length;
+            sitemapOK = true;
+        } else {
+            alerts.push({ level: "error", msg: "Sitemap returned HTTP " + resp.status });
+            errCount++;
+        }
+    } catch (e) {
+        alerts.push({ level: "error", msg: "Sitemap fetch failed: " + e.message });
+        errCount++;
+    }
+
+    // 2. Check Robots
+    updateProgress(5, "Checking robots.txt...");
+    let robotsChecks = { allow_all: false, indexnow_key: false, ai_crawlers: false };
+    try {
+        const resp = await fetch(BASE_URL + "/robots.txt", { cache: "no-store" });
+        if (resp.ok) {
+            const text = await resp.text();
+            robotsChecks.allow_all = text.includes("Allow: /");
+            robotsChecks.indexnow_key = text.includes("cb82a7f9");
+            robotsChecks.ai_crawlers = ["GPTBot","ClaudeBot","PerplexityBot"].some(b => text.includes(b));
+            if (!robotsChecks.ai_crawlers) {
+                alerts.push({ level: "warning", msg: "AI crawlers not found in robots.txt" });
+                warnCount++;
+            }
+        }
+    } catch (e) {
+        alerts.push({ level: "error", msg: "robots.txt fetch failed: " + e.message });
+        errCount++;
+    }
+
+    // 3. Check all pages
+    const pageResults = [];
+    let homeDetails = null;
+
+    for (let i = 0; i < PAGES.length; i++) {
+        const page = PAGES[i];
+        updateProgress(10 + (i / PAGES.length) * 80, "Checking " + page.path + "...");
+
+        try {
+            const resp = await fetch(BASE_URL + page.path, { cache: "no-store" });
+            const html = await resp.text();
+            const status = resp.status;
+
+            // Parse meta description
+            let metaDescLen = 0, metaDescWarning = null;
+            const metaMatch = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
+            if (metaMatch) {
+                metaDescLen = metaMatch[1].length;
+                if (metaDescLen < 140 || metaDescLen > 175) {
+                    metaDescWarning = "Meta desc " + metaDescLen + " chars (ideal 150-165)";
+                    warnCount++;
+                }
+            }
+
+            // Check canonical
+            const canonicalMatch = html.match(/<link\s+rel="canonical"\s+href="([^"]*)"/i);
+
+            // Check JSON-LD
+            const jsonldCount = (html.match(/application\/ld\+json/g) || []).length;
+
+            // Check IndexNow
+            const hasIndexNow = html.includes("IndexNow");
+
+            if (status === 200) {
+                if (!metaDescWarning) okCount++;
+                pageResults.push({
+                    page, status, ok: true, metaDescLen, metaDescWarning,
+                    canonical: canonicalMatch ? canonicalMatch[1] : null,
+                    jsonldCount, hasIndexNow, size: html.length
+                });
+
+                // Capture homepage details
+                if (page.path === "/") {
+                    homeDetails = { status, size: html.length, metaDescLen, jsonldCount, hasIndexNow };
+                }
+            } else {
+                errCount++;
+                pageResults.push({ page, status, ok: false });
+                alerts.push({ level: "error", msg: page.path + " returned HTTP " + status });
+            }
+        } catch (e) {
+            errCount++;
+            pageResults.push({ page, status: "ERR", ok: false, error: e.message });
+            alerts.push({ level: "error", msg: page.path + " fetch error: " + e.message });
+        }
+    }
+
+    // 4. Check internal links on homepage
+    updateProgress(92, "Checking internal links...");
+    let internalLinkCount = 0;
+    const homeResult = pageResults.find(r => r.page.path === "/");
+    if (homeResult && homeResult.ok) {
+        try {
+            const resp = await fetch(BASE_URL + "/", { cache: "no-store" });
+            const html = await resp.text();
+            internalLinkCount = (html.match(/href="[^"]*\.html[^"]*"/g) || []).length;
+            if (internalLinkCount < 5) {
+                alerts.push({ level: "warning", msg: "Homepage has only " + internalLinkCount + " internal links (recommend 20+)" });
+                warnCount++;
+            }
+        } catch (e) {}
+    }
+
+    updateProgress(100, "Audit complete!");
+
+    // 5. Render results
+    renderSummary(okCount, warnCount, errCount, sitemapOK, sitemapURLs, internalLinkCount, pageResults);
+    renderAlerts(alerts, okCount, warnCount, errCount);
+    renderPageResults(pageResults);
+    renderInfra(sitemapOK, sitemapURLs, robotsChecks);
+    renderHomeDetails(homeDetails, internalLinkCount);
+
+    btn.disabled = false;
+    btn.innerHTML = "Re-run Audit";
+}
+
+// ===== Render Functions =====
+function renderSummary(ok, warn, err, sitemapOK, sitemapURLs, intLinks, pageResults) {
+    const total = pageResults.length;
+    const okColor = ok === total ? "green" : (ok > total * 0.8 ? "yellow" : "red");
+
+    const html = `
+        <div class="summary-card">
+            <div class="icon green">✅</div>
+            <div class="number green">${ok}</div>
+            <div class="label">Pages OK</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon yellow">⚠️</div>
+            <div class="number yellow">${warn}</div>
+            <div class="label">Warnings</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon red">❌</div>
+            <div class="number red">${err}</div>
+            <div class="label">Errors</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon blue">📄</div>
+            <div class="number blue">${sitemapURLs}</div>
+            <div class="label">Sitemap URLs</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon blue">🔗</div>
+            <div class="number blue">${intLinks}</div>
+            <div class="label">Internal Links</div>
+        </div>
+        <div class="summary-card">
+            <div class="icon ${sitemapOK ? 'green' : 'red'}">${sitemapOK ? '✅' : '❌'}</div>
+            <div class="number ${sitemapOK ? 'green' : 'red'}">${total}</div>
+            <div class="label">Total Checked</div>
+        </div>
+    `;
+    document.getElementById("summaryGrid").innerHTML = html;
+    document.getElementById("pageCountBadge").textContent = ok + "/" + total;
+}
+
+function renderAlerts(alerts, ok, warn, err) {
+    let html = "";
+    if (alerts.length === 0) {
+        html = `<div class="alert-box alert-success"><span>✅</span><span>All checks passed! Website is healthy.</span></div>`;
+    } else {
+        for (const a of alerts) {
+            const cls = a.level === "error" ? "alert-error" : "alert-warning";
+            const icon = a.level === "error" ? "❌" : "⚠️";
+            html += `<div class="alert-box ${cls}"><span>${icon}</span><span>${a.msg}</span></div>`;
+        }
+    }
+    document.getElementById("alertSummary").innerHTML = html;
+}
+
+function renderPageResults(results) {
+    let html = "";
+    for (const r of results) {
+        const statusClass = r.ok ? (r.metaDescWarning ? "yellow" : "green") : "red";
+        const statusText = r.ok ? (r.metaDescWarning ? "⚠️ " + r.status : "✅ " + r.status) : "❌ " + r.status;
+        let metaInfo = "";
+        if (r.ok) {
+            const parts = [];
+            if (r.metaDescLen) parts.push("meta:" + r.metaDescLen);
+            if (r.jsonldCount) parts.push("ld:" + r.jsonldCount);
+            if (r.hasIndexNow) parts.push("IN");
+            metaInfo = parts.join(" | ");
+        }
+        html += `<div class="page-row">
+            <span class="path">${r.page.path}</span>
+            <span style="flex:1;text-align:right;padding-right:12px;">
+                ${r.page.name}${r.page.critical ? ' <span style="color:#0b7b94;font-size:11px;">★</span>' : ''}
+            </span>
+            <span class="meta-info">${metaInfo}</span>
+            <span class="status ${statusClass}">${statusText}</span>
+        </div>`;
+    }
+    document.getElementById("pageResults").innerHTML = html;
+}
+
+function renderInfra(sitemapOK, sitemapURLs, robots) {
+    let html = "";
+    // Sitemap
+    html += `<div class="page-row">
+        <span class="path">/sitemap.xml</span>
+        <span style="flex:1"></span>
+        <span class="status ${sitemapOK ? 'green' : 'red'}">${sitemapOK ? '✅ 200' : '❌ ERR'} | ${sitemapURLs} URLs</span>
+    </div>`;
+    // Robots checks
+    html += `<div class="page-row">
+        <span class="path">robots.txt → Allow: /</span>
+        <span style="flex:1"></span>
+        <span class="status ${robots.allow_all ? 'green' : 'red'}">${robots.allow_all ? '✅ OK' : '❌ FAIL'}</span>
+    </div>`;
+    html += `<div class="page-row">
+        <span class="path">robots.txt → IndexNow Key</span>
+        <span style="flex:1"></span>
+        <span class="status ${robots.indexnow_key ? 'green' : 'yellow'}">${robots.indexnow_key ? '✅ OK' : '⚠️ MISSING'}</span>
+    </div>`;
+    html += `<div class="page-row">
+        <span class="path">robots.txt → AI Crawlers</span>
+        <span style="flex:1"></span>
+        <span class="status ${robots.ai_crawlers ? 'green' : 'yellow'}">${robots.ai_crawlers ? '✅ OK' : '⚠️ MISSING'}</span>
+    </div>`;
+    document.getElementById("infraResults").innerHTML = html;
+}
+
+function renderHomeDetails(home, intLinks) {
+    if (!home) {
+        document.getElementById("homeDetails").innerHTML = '<div class="page-row"><span>Failed to fetch homepage</span></div>';
+        return;
+    }
+    const metaColor = (home.metaDescLen >= 140 && home.metaDescLen <= 175) ? "green" : "yellow";
+    const html = `
+        <div class="page-row">
+            <span class="path">HTTP Status</span>
+            <span style="flex:1"></span>
+            <span class="status green">✅ ${home.status}</span>
+        </div>
+        <div class="page-row">
+            <span class="path">Page Size</span>
+            <span style="flex:1"></span>
+            <span class="status">${(home.size / 1024).toFixed(1)} KB</span>
+        </div>
+        <div class="page-row">
+            <span class="path">Meta Description</span>
+            <span style="flex:1"></span>
+            <span class="status ${metaColor}">${home.metaDescLen} chars</span>
+        </div>
+        <div class="page-row">
+            <span class="path">JSON-LD Blocks</span>
+            <span style="flex:1"></span>
+            <span class="status green">${home.jsonldCount} blocks</span>
+        </div>
+        <div class="page-row">
+            <span class="path">IndexNow Meta</span>
+            <span style="flex:1"></span>
+            <span class="status ${home.hasIndexNow ? 'green' : 'red'}">${home.hasIndexNow ? '✅ OK' : '❌ MISSING'}</span>
+        </div>
+        <div class="page-row">
+            <span class="path">Internal Links</span>
+            <span style="flex:1"></span>
+            <span class="status ${intLinks >= 20 ? 'green' : 'yellow'}">${intLinks} links</span>
+        </div>
+    `;
+    document.getElementById("homeDetails").innerHTML = html;
+}
+
+function updateProgress(percent, text) {
+    document.getElementById("progressFill").style.width = percent + "%";
+    document.getElementById("progressText").textContent = text;
+}
+</script>
+</body>
+</html>
