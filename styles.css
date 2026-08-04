@@ -8525,3 +8525,139 @@ body.rtl .lang-dropdown-btn .dropdown-toggle::after {
     overflow: hidden; clip: rect(0, 0, 0, 0);
     white-space: nowrap; border: 0;
 }
+
+/* ---- US Trip Photo Gallery (Contact page) ---- */
+.us-trip-section {
+    background: linear-gradient(135deg, #0f1923 0%, #1a2a3a 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+.us-trip-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(11, 123, 148, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(11, 123, 148, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+.us-trip-section .section-title {
+    color: #fff;
+}
+.us-trip-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+.us-trip-section .section-eyebrow {
+    color: #0b7b94;
+}
+.us-trip-section .section-divider {
+    background: #0b7b94;
+}
+.us-trip-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+.us-trip-header h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.us-trip-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+.us-trip-header .us-trip-badge {
+    display: inline-block;
+    background: rgba(11, 123, 148, 0.2);
+    color: #0b7b94;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(11, 123, 148, 0.3);
+}
+.us-trip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+@media (max-width: 991px) {
+    .us-trip-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+    .us-trip-grid { grid-template-columns: 1fr; }
+}
+.us-trip-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    group: true;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.us-trip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.us-trip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.us-trip-card:hover img {
+    transform: scale(1.05);
+}
+.us-trip-card .us-trip-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px 20px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+    color: #fff;
+}
+.us-trip-card .us-trip-caption h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.us-trip-card .us-trip-caption p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    line-height: 1.5;
+}
+.us-trip-card .us-trip-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(11, 123, 148, 0.85);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.us-trip-footer {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+}
+.us-trip-footer p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+.us-trip-footer i {
+    color: #0b7b94;
+    margin-right: 6px;
+}
