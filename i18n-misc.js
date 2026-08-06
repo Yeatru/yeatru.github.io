@@ -148,7 +148,13 @@ const I18N_MISC = {
             q29: "How to reduce cross-border e-commerce operation costs?",
             a29: "Cost reduction methods: optimize procurement costs, choose low-cost logistics, improve advertising efficiency, automate operations. Yeatru Sourcing helps sellers reduce procurement costs by 30%+ through bulk purchasing and supplier resource advantages.",
             q30: "What are common pitfalls when sourcing from China?",
-            a30: "Common pitfalls: false supplier qualifications, product quality inconsistency, delivery delays, hidden fees, infringement risks. Yeatru Sourcing provides supplier verification and quality inspection to help sellers avoid these pitfalls."
+            a30: "Common pitfalls: false supplier qualifications, product quality inconsistency, delivery delays, hidden fees, infringement risks. Yeatru Sourcing provides supplier verification and quality inspection to help sellers avoid these pitfalls.",
+            q31: "How much can I save by using Yeatru vs. buying directly on Alibaba?",
+            a31: "Most clients save 15-30% compared to buying directly on Alibaba. Here's why: we negotiate factory-direct prices (Alibaba sellers are often middlemen marking up 20-40%), consolidate orders from multiple suppliers to reduce shipping costs, and catch quality issues before shipment — eliminating costly returns. Our commission (3-8%) is typically offset by the savings alone. Contact us for a free cost comparison on your specific product.",
+            q32: "What happens if the product quality doesn't meet my standards?",
+            a32: "We have a 3-level QC system to prevent this. But if issues are found: (1) before shipment, we hold the batch and require the supplier to rework or replace at their cost; (2) if already shipped, we file a claim with the supplier and arrange compensation or replacement; (3) for critical issues, we escalate to factory management and negotiate refunds. Our pre-shipment inspection includes detailed photo/video reports so you approve before anything ships. You never pay for defective products.",
+            q33: "How fast can I receive my first order?",
+            a33: "Timeline depends on product type and order size: samples take 3-7 days via express courier (DHL/FedEx/UPS); small batch orders (50-500 pcs) take 7-15 days for production + 3-7 days shipping; bulk orders (1000+ pcs) take 15-30 days production + 7-30 days shipping depending on method. Air freight adds 5-10 days, sea freight adds 25-45 days. We provide a detailed timeline estimate with every quote and send weekly progress updates."
         },
         sp: {
             heroTag: "Transparent Pricing",
@@ -479,7 +485,13 @@ a28: "Técnicas de negociación: descuento por compra al por mayor, beneficios d
 q29: "¿Cómo reducir los costos de operación de comercio electrónico transfronterizo?",
 a29: "Métodos de reducción de costos: optimizar costos de adquisición, elegir logística económica, mejorar la eficiencia publicitaria, automatizar operaciones. Yeatru Sourcing ayuda a los vendedores a reducir los costos de adquisición en un 30%+ mediante compras al por mayor y ventajas de recursos de proveedores.",
 q30: "¿Cuáles son los problemas comunes al abastecer desde China?",
-a30: "Problemas comunes: cualificaciones falsas de proveedores, inconsistencia en la calidad del producto, retrasos en la entrega, tarifas ocultas, riesgos de infracción. Yeatru Sourcing ofrece verificación de proveedores e inspección de calidad para ayudar a los vendedores a evitar estos problemas."
+a30: "Problemas comunes: cualificaciones falsas de proveedores, inconsistencia en la calidad del producto, retrasos en la entrega, tarifas ocultas, riesgos de infracción. Yeatru Sourcing ofrece verificación de proveedores e inspección de calidad para ayudar a los vendedores a evitar estos problemas.",
+q31: "¿Cuánto puedo ahorrar usando Yeatru comparado con comprar directamente en Alibaba?",
+a31: "La mayoría de los clientes ahorran 15-30% en comparación con comprar directamente en Alibaba. Razones: negociamos precios de fábrica (los vendedores de Alibaba suelen ser intermediarios con márgenes de 20-40%), consolidamos pedidos de múltiples proveedores para reducir costos de envío, y detectamos problemas de calidad antes del envío. Nuestra comisión (3-8%) se compensa con los ahorros. Contáctenos para una comparación gratuita de costos.",
+q32: "¿Qué pasa si la calidad del producto no cumple con mis estándares?",
+a32: "Tenemos un sistema de control de calidad de 3 niveles para prevenir esto. Si se encuentran problemas: (1) antes del envío, retenemos el lote y exigimos al proveedor rehacer o reemplazar a su costo; (2) si ya fue enviado, presentamos un reclamo y gestionamos compensación o reemplazo; (3) para problemas críticos, escalamos a la gerencia de la fábrica y negociamos reembolsos. Nunca paga por productos defectuosos.",
+q33: "¿Cuánto tiempo tarda en llegar mi primer pedido?",
+a33: "Depende del producto y cantidad: muestras 3-7 días por mensajería exprés (DHL/FedEx/UPS); pedidos pequeños (50-500 uds.) 7-15 días de producción + 3-7 días de envío; pedidos grandes (1000+ uds.) 15-30 días de producción + 7-30 días de envío. Flete aéreo añade 5-10 días, flete marítimo 25-45 días. Proporcionamos una estimación detallada con cada cotización."
         },
         sp: {
             heroTag: "Precios Transparentes",
@@ -810,7 +822,13 @@ a28: "Techniques de négociation : remise sur achats en gros, avantages de coop�
 q29: "Comment réduire les coûts d'exploitation du commerce électronique transfrontalier ?",
 a29: "Méthodes de réduction de coûts : optimiser les coûts d'achat, choisir une logistique économique, améliorer l'efficacité publicitaire, automatiser les opérations. Yeatru Sourcing aide les vendeurs à réduire les coûts d'achat de 30 %+ grâce aux achats groupés et aux avantages liés aux ressources fournisseurs.",
 q30: "Quels sont les pièges courants lors de l'approvisionnement depuis la Chine ?",
-a30: "Pièges courants : qualifications fausses des fournisseurs, incohérence de la qualité produit, retards de livraison, frais cachés, risques d'infraction. Yeatru Sourcing propose une vérification fournisseur et une inspection qualité pour aider les vendeurs à éviter ces problèmes."
+a30: "Pièges courants : qualifications fausses des fournisseurs, incohérence de la qualité produit, retards de livraison, frais cachés, risques d'infraction. Yeatru Sourcing propose une vérification fournisseur et une inspection qualité pour aider les vendeurs à éviter ces problèmes.",
+q31: "Combien puis-je économiser en utilisant Yeatru vs. acheter directement sur Alibaba ?",
+a31: "La plupart des clients économisent 15-30% par rapport à un achat direct sur Alibaba. Raisons : nous négocions des prix usine (les vendeurs Alibaba sont souvent des intermédiaires avec une marge de 20-40%), nous consolisons les commandes de plusieurs fournisseurs pour réduire les frais d'expédition, et nous détectons les problèmes de qualité avant l'expédition. Notre commission (3-8%) est compensée par les économies. Contactez-nous pour une comparaison gratuite.",
+q32: "Que se passe-t-il si la qualité du produit ne répond pas à mes normes ?",
+a32: "Nous avons un système de contrôle qualité à 3 niveaux pour prévenir cela. Si des problèmes sont détectés : (1) avant l'expédition, nous retenons le lot et exigeons du fournisseur qu'il refasse ou remplace à ses frais ; (2) si déjà expédié, nous déposons une réclamation et gérons la compensation ou le remplacement ; (3) pour les problèmes critiques, nous escaladons à la direction de l'usine et négocions des remboursements. Vous ne payez jamais pour des produits défectueux.",
+q33: "Combien de temps pour recevoir ma première commande ?",
+a33: "Le délai dépend du produit et de la quantité : échantillons 3-7 jours par express (DHL/FedEx/UPS) ; petites commandes (50-500 pcs) 7-15 jours de production + 3-7 jours d'expédition ; commandes en gros (1000+ pcs) 15-30 jours de production + 7-30 jours d'expédition. Fret aérien 5-10 jours, fret maritime 25-45 jours. Nous fournissons une estimation détaillée avec chaque devis."
         },
         sp: {
             heroTag: "Tarification Transparente",
@@ -1141,7 +1159,13 @@ a28: "Методы ведения переговоров: скидки за оп
 q29: "Как снизить операционные расходы трансграничной электронной коммерции?",
 a29: "Методы снижения затрат: оптимизация затрат на закупки, выбор экономичной логистики, повышение эффективности рекламы, автоматизация операций. Yeatru Sourcing помогает продавцам снижать затраты на закупки на 30%+ за счет оптовых закупок и преимуществ ресурсов поставщиков.",
 q30: "Каковы распространенные ошибки при закупках в Китае?",
-a30: "Распространенные ошибки: поддельные квалификации поставщиков, несоответствие качества продукта, задержки доставки, скрытые комиссии, риски нарушений прав. Yeatru Sourcing предоставляет верификацию поставщиков и контроль качества, помогая продавцам избегать этих проблем."
+a30: "Распространенные ошибки: поддельные квалификации поставщиков, несоответствие качества продукта, задержки доставки, скрытые комиссии, риски нарушений прав. Yeatru Sourcing предоставляет верификацию поставщиков и контроль качества, помогая продавцам избегать этих проблем.",
+q31: "Сколько я могу сэкономить, используя Yeatru, по сравнению с покупкой напрямую на Alibaba?",
+a31: "Большинство клиентов экономят 15-30% по сравнению с покупкой напрямую на Alibaba. Причины: мы договариваемся о заводских ценах (продавцы на Alibaba часто посредники с наценкой 20-40%), консолидируем заказы от нескольких поставщиков для снижения стоимости доставки, и выявляем проблемы качества до отгрузки. Наша комиссия (3-8%) обычно окупается за счет экономии. Свяжитесь с нами для бесплатного сравнения цен.",
+q32: "Что произойдет, если качество продукта не соответствует моим стандартам?",
+a32: "У нас есть 3-уровневая система контроля качества для предотвращения этого. Если обнаружены проблемы: (1) до отгрузки мы задерживаем партию и требуем от поставщика переделать или заменить за его счет; (2) если уже отгружено, мы подаем претензию и организуем компенсацию или замену; (3) при критических проблемах мы эскалируем вопрос к руководству фабрики и добиваемся возврата средств. Вы никогда не платите за бракованные продукты.",
+q33: "Как быстро я получу свой первый заказ?",
+a33: "Сроки зависят от типа продукта и объема: образцы 3-7 дней экспресс-доставкой (DHL/FedEx/UPS); мелкие партии (50-500 шт.) 7-15 дней производство + 3-7 дней доставка; крупные заказы (1000+ шт.) 15-30 дней производство + 7-30 дней доставка. Авиафрахт добавляет 5-10 дней, морской фрахт 25-45 дней. Мы предоставляем детальную оценку сроков с каждым предложением."
         },
         sp: {
             heroTag: "Прозрачное ценообразование",
@@ -1472,7 +1496,13 @@ a28: "تقنيات التفاوض: خصم الشراء بالجملة، ومزا
 q29: "كيف تقلل تكاليف تشغيل التجارة الإلكترونية العابرة للحدود؟",
 a29: "طرق خفض التكاليف: تحسين تكاليف الشراء، واختيار الخدمات اللوجستية الاقتصادية، وتحسين كفاءة الإعلان، وأتمتة العمليات. يساعد Yeatru Sourcing البائعين على خفض تكاليف الشراء بنسبة 30%+ عبر المشتريات بالجملة ومزايا موارد الموردين.",
 q30: "ما هي المخاطر الشائعة عند التوريد من الصين؟",
-a30: "المخاطر الشائعة: مؤهلات الموردين المزيفة، وعدم اتساق جودة المنتج، والتأخير في التسليم، والرسوم الخفية، ومخاطر المخالفة. يقدم Yeatru Sourcing التحقق من الموردين وفحص الجودة لمساعدة البائعين على تجنب هذه المشاكل."
+a30: "المخاطر الشائعة: مؤهلات الموردين المزيفة، وعدم اتساق جودة المنتج، والتأخير في التسليم، والرسوم الخفية، ومخاطر المخالفة. يقدم Yeatru Sourcing التحقق من الموردين وفحص الجودة لمساعدة البائعين على تجنب هذه المشاكل.",
+q31: "كم يمكنني التوفير باستخدام Yeatru مقارنة بالشراء مباشرة من Alibaba؟",
+a31: "معظم العملاء يوفرون 15-30% مقارنة بالشراء مباشرة من Alibaba. الأسباب: نتفاوض على أسعار المصنع (بائعو Alibaba غالباً وسياء بهامش ربح 20-40%)، نجمع الطلبات من موردين متعددين لتقليل تكاليف الشحن، ونكتشف مشاكل الجودة قبل الشحن. عمولتنا (3-8%) تعوض عادة بالتوفير وحده. تواصل معنا للحصول على مقارنة مجانية للتكاليف.",
+q32: "ماذا يحدث إذا لم تكن جودة المنتج مطابقة لمعاييري؟",
+a32: "لدينا نظام مراقبة جودة من 3 مستويات لمنع ذلك. ولكن إذا تم اكتشاف مشاكل: (1) قبل الشحن، نحتجز الدفعة ونطالب المورد بإعادة العمل أو الاستبدال على نفقته؛ (2) إذا تم الشحن بالفعل، نقدم مطالبة ونرتب تعويضاً أو استبدالاً؛ (3) للمشاكل الحرجة، نصعد إلى إدارة المصنع ونتفاوض على استرداد الأموال. أنت لا تدفع أبداً مقابل منتجات معيبة.",
+q33: "كم من الوقت يستغرق استلام طلبي الأول؟",
+a33: "يعتمد ذلك على نوع المنتج وحجم الطلب: العينات 3-7 أيام عبر البريد السريع (DHL/FedEx/UPS)؛ الطلبات الصغيرة (50-500 قطعة) 7-15 يوم إنتاج + 3-7 أيام شحن؛ الطلبات الكبيرة (1000+ قطعة) 15-30 يوم إنتاج + 7-30 يوم شحن. الشحن الجوي يضيف 5-10 أيام، الشحن البحري 25-45 يوماً. نقدم تقديراً تفصيلياً للجدول الزمني مع كل عرض سعر."
         },
         sp: {
             heroTag: "أسعار شفافة",
