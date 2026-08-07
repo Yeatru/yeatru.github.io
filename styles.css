@@ -2999,15 +2999,17 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .detail-image {
     width: 100%;
-    max-width: 100%;
+    max-width: 360px;
     height: auto;
     border-radius: 8px;
     background-color: #f1f1f1;
-    object-fit: cover;
-    max-height: 480px;
+    object-fit: contain;
+    max-height: 420px;
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.4s ease;
+    margin: 0 auto;
+    display: block;
 }
 
 .detail-image.loaded {
@@ -3017,7 +3019,8 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 @media (max-width: 767.98px) {
     .detail-main { grid-template-columns: 1fr; gap: 1.5rem; }
     .detail-image {
-        max-height: 380px;
+        max-width: 300px;
+        max-height: 320px;
     }
 }
 
@@ -3672,10 +3675,11 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     box-sizing: border-box;
 }
 .aplus-block-image-wrap > img {
-    width: 280px;
+    width: 260px;
     height: auto;
     max-width: 100%;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .aplus-block-features ul {

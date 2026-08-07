@@ -1519,7 +1519,7 @@ function buildAplusBlockEl(b, idx) {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
             <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
-            <img src="${optimizeImageUrl(escapeHtml(b.image || ''), 1000)}" alt="hero" style="width:100%;height:auto;border-radius:8px;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || '')}';">
+            <img src="${optimizeImageUrl(escapeHtml(b.image || ''), 1000)}" alt="hero" style="max-width:600px;width:100%;height:auto;border-radius:8px;margin:1rem auto;display:block;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || '')}';">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
