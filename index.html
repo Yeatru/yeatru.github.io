@@ -1961,40 +1961,6 @@
         </section>
     </main>
 
-    <!-- Floating Inquiry Widget -->
-    <div class="float-inquiry-widget" id="floatInquiryWidget">
-        <button class="float-inquiry-toggle" id="floatInquiryToggle" aria-label="Contact options">
-            <i class="fas fa-comments"></i>
-            <span class="float-inquiry-badge">3</span>
-        </button>
-        <div class="float-inquiry-panel" id="floatInquiryPanel">
-            <div class="float-inquiry-header">
-                <h4>Contact Us</h4>
-                <p>Choose your preferred channel</p>
-            </div>
-            <div class="float-inquiry-options">
-                <a href="https://wa.me/+8615988516408" target="_blank" class="float-inquiry-option whatsapp" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                    <small>Instant reply</small>
-                </a>
-                <a href="mailto:info@yeatru.com" class="float-inquiry-option email">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                    <small>info@yeatru.com</small>
-                </a>
-                <a href="tel:+8615988516408" class="float-inquiry-option phone">
-                    <i class="fas fa-phone"></i>
-                    <span>Phone</span>
-                    <small>+86 15988516408</small>
-                </a>
-            </div>
-            <div class="float-inquiry-footer">
-                <a href="contact.html" class="btn btn-cta btn-sm w-100"><i class="fas fa-paper-plane me-1"></i>Send Inquiry</a>
-            </div>
-        </div>
-    </div>
-
     <section id="productDetailPage" class="product-detail-page">
         <div class="container">
             <button class="detail-back-btn" id="detailBackBtn"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.back">Back to Products</span></button>
@@ -2510,25 +2476,6 @@
                     }
                 });
             }
-        }
-        
-        // ===== Phase 5: Floating Inquiry Widget =====
-        const inquiryToggle = document.getElementById('floatInquiryToggle');
-        const inquiryPanel = document.getElementById('floatInquiryPanel');
-        
-        if (inquiryToggle && inquiryPanel) {
-            inquiryToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                inquiryPanel.classList.toggle('active');
-            });
-            
-            // Close on click outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.float-inquiry-widget')) {
-                    inquiryToggle.classList.remove('active');
-                    inquiryPanel.classList.remove('active');
-                }
-            });
         }
         
         // ===== Phase 5: URL Parameter Pre-fill for Contact Form =====
