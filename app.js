@@ -424,7 +424,13 @@ document.addEventListener('DOMContentLoaded', function () {
     safeAddEventListener('importDataFile', 'change', importSiteDataFromFile);
 
     safeAddEventListener('detailBackBtn', 'click', function () {
-        hideDetailPage();
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('product')) {
+            history.pushState(null, '', 'products.html');
+            hideDetailPage();
+        } else {
+            hideDetailPage();
+        }
     });
 
     document.querySelectorAll('#detailModeToggle button').forEach(b => {
@@ -471,8 +477,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (logoModal) bootstrap.Modal.getInstance(logoModal).hide();
     });
 
-    window.addEventListener('hashchange', handleHashRoute);
-    handleHashRoute();
+    window.addEventListener('popstate', handleRoute);
+    window.addEventListener('hashchange', handleRoute);
+    handleRoute();
 
     document.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link) {
         link.addEventListener('click', function(e) {
@@ -820,7 +827,7 @@ function renderIndexHotProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="products.html#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="products.html?product=${escapeHtml(product.sku || ('P' + product.id))}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -906,13 +913,7 @@ function applySiteData(data, options = {}) {
             if (exists) renderDetailPage(currentDetailProductId);
             else hideDetailPage();
         } else {
-            const hash = location.hash || '';
-            const m = hash.match(/^#product\/(\d+)/);
-            if (m) {
-                const id = parseInt(m[1]);
-                const exists = getProducts().some(p => p.id === id);
-                if (exists) showDetailPage(id);
-            }
+            handleRoute();
         }
     }
 
@@ -1013,7 +1014,7 @@ function renderProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="#product/${product.id}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="?product=${escapeHtml(product.sku || ('P' + product.id))}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1076,21 +1077,42 @@ function renderProducts() {
             e.preventDefault();
             const id = parseInt(this.getAttribute('data-id'));
             if (!id) return;
-            location.hash = '#product/' + id;
+            const product = getProducts().find(p => p.id === id);
+            if (!product) return;
+            const sku = product.sku || ('P' + id);
+            history.pushState({ type: 'product', id: id }, '', 'products.html?product=' + encodeURIComponent(sku));
+            showDetailPage(id);
         });
     });
 }
 
-function handleHashRoute() {
-    const hash = location.hash || '';
-    const m = hash.match(/^#product\/(\d+)/);
+function handleRoute() {
+    const params = new URLSearchParams(window.location.search);
+    const productSku = params.get('product');
     const detailPage = document.getElementById('productDetailPage');
     const mainContent = document.getElementById('mainContent');
     if (!detailPage || !mainContent) return;
-    if (m) {
-        const id = parseInt(m[1]);
-        showDetailPage(id);
+    if (productSku) {
+        const product = getProducts().find(p => p.sku === productSku || String(p.id) === productSku);
+        if (product) {
+            showDetailPage(product.id);
+        } else {
+            hideDetailPage();
+        }
     } else {
+        // Backward compat: old hash format #product/<id>
+        const hash = location.hash || '';
+        const m = hash.match(/^#product\/(\d+)/);
+        if (m) {
+            const id = parseInt(m[1]);
+            const product = getProducts().find(p => p.id === id);
+            if (product) {
+                const sku = product.sku || ('P' + id);
+                history.replaceState(null, '', 'products.html?product=' + encodeURIComponent(sku));
+                showDetailPage(id);
+                return;
+            }
+        }
         hideDetailPage();
     }
 }
@@ -1250,9 +1272,6 @@ function hideDetailPage() {
         page.style.display = 'none';
     }
     resetDefaultMeta();
-    if (location.hash.startsWith('#product/')) {
-        history.replaceState(null, '', '#products');
-    }
 }
 
 function renderDetailPage(productId) {
@@ -1882,7 +1901,7 @@ function setProductMeta(product) {
     if (!product) return;
     if (Object.keys(defaultMeta).length === 0) saveDefaultMeta();
 
-    const productUrl = window.location.origin + window.location.pathname + '#product/' + product.id;
+    const productUrl = window.location.origin + window.location.pathname + '?product=' + encodeURIComponent(product.sku || ('P' + product.id));
     const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
     const productDesc = product.description ? product.description.substring(0, 160) : defaultMeta.description;
     const productTitle = product.name + ' | Yeatru Sourcing - China Wholesale Products';
