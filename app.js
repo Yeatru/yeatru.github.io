@@ -1,5 +1,7 @@
 const DEFAULT_CATEGORIES = ["Electronics", "Home & Garden", "Kitchenware", "Toys", "Apparel"];
 const REMOTE_DATA_URL = "./site-data.json";
+const APLUS_DATA_URL = "./site-data-aplus.json";
+let aplusDataCache = null;
 const DEFAULT_PRODUCTS = [
     { id: 1, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL001A.jpg", category: "Apparel", name: "Quick Dry Activewear Set", sku: "YS-CL-001A", material: "Polyester", size: "L/XL/XXL/XXXL/XXXXL", moq: 100, priceMin: 6.49, priceMax: 6.99, description: "Men's 2-piece quick-dry athletic set with short-sleeve tee and 2-in-1 double-layer running shorts. Moisture-wicking lightweight fabric rapidly dissipates sweat for cool, breathable comfort during gym, jogging, swimming and training. Built-in compression liner avoids chafing, elastic drawstring waist secures fit. Minimalist branded black design. Sizes L–XXXXL fit men weighing 42.5–90.5kg, flexible stretch material enables full unrestricted sports movement.,【L】42.5–52.5kgs,【XL】52.5–62.5kgs,【XXL】62.5–72.5kgs,【XXXL】72.5–82.5kgs,【XXXXL】82.5–90.5kgs" },
     { id: 2, image: "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YSCL002WS.jpg", category: "Apparel", name: "Islamic/Muslim Women Swimsuit", sku: "YS-CL-002WS", material: "Polyester", size: "S/M/L/XL", moq: 200, priceMin: 7.69, priceMax: 7.99, description: "Women's 2-piece modest long sleeve swimsuit with tropical floral printed sleeves, available in black and navy blue. UPF 50+ quick-dry fabric blocks UV rays, ideal for surfing, diving, beach volleyball and Muslim modest swimwear. Soft elastic material ensures unrestricted movement, combining sun protection, coverage and stylish tropical print for all water activities." },
@@ -889,6 +891,12 @@ function applySiteData(data, options = {}) {
             }
         });
         localStorage.setItem('yeatruProducts', JSON.stringify(data.products));
+        
+        // If imported data doesn't have aplus, load it from aplus file
+        const hasAplus = data.products.some(p => p.aplus && p.aplus.length);
+        if (!hasAplus) {
+            loadAplusForProducts();
+        }
     }
     if (Object.prototype.hasOwnProperty.call(data, 'logo')) {
         if (data.logo) {
@@ -938,10 +946,77 @@ async function loadRemoteSiteData() {
     }
 }
 
+async function loadAplusData(productId) {
+    if (!aplusDataCache) {
+        try {
+            const response = await fetch(APLUS_DATA_URL);
+            if (!response.ok) throw new Error('site-data-aplus.json not found');
+            aplusDataCache = await response.json();
+        } catch (error) {
+            console.info('未读取到 site-data-aplus.json', error);
+            aplusDataCache = {};
+        }
+    }
+    return aplusDataCache[String(productId)] || null;
+}
+
+async function loadAplusForProducts() {
+    try {
+        const response = await fetch(APLUS_DATA_URL);
+        if (!response.ok) return;
+        const aplusData = await response.json();
+        aplusDataCache = aplusData;
+        
+        // Merge aplus into stored products
+        const products = getProducts();
+        let changed = false;
+        products.forEach(p => {
+            if (!p.aplus && aplusData[String(p.id)]) {
+                p.aplus = aplusData[String(p.id)];
+                changed = true;
+            }
+        });
+        if (changed) {
+            localStorage.setItem('yeatruProducts', JSON.stringify(products));
+            // Re-render current detail page if open
+            if (currentDetailProductId) {
+                const product = products.find(p => p.id === currentDetailProductId);
+                if (product && product.aplus) {
+                    renderAplusBlocks(product);
+                }
+            }
+        }
+    } catch (error) {
+        console.info('加载 aplus 数据失败', error);
+    }
+}
+
 function exportSiteData() {
     if (!isAdmin()) return;
     const data = buildSiteDataObject();
-    const json = JSON.stringify(data, null, 2);
+    
+    // Generate lightweight site-data.json (without aplus)
+    const exportData = {
+        version: data.version,
+        updatedAt: data.updatedAt,
+        logo: data.logo,
+        categories: data.categories,
+        products: data.products.map(p => {
+            const { aplus, ...rest } = p;
+            return rest;
+        })
+    };
+    
+    // Generate aplus-only data
+    const aplusData = {};
+    data.products.forEach(p => {
+        if (p.aplus && p.aplus.length) {
+            aplusData[String(p.id)] = p.aplus;
+        }
+    });
+    
+    // Download site-data.json
+    const json = JSON.stringify(exportData, null, 2);
     const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -951,7 +1026,20 @@ function exportSiteData() {
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-    alert('已导出 site-data.json。把这个文件上传并覆盖 GitHub 仓库同目录的 site-data.json，游客刷新网页后即可看到更新。');
+    
+    // Download site-data-aplus.json
+    const aplusJson = JSON.stringify(aplusData, null, 2);
+    const aplusBlob = new Blob([aplusJson], { type: 'application/json;charset=utf-8' });
+    const aplusUrl = URL.createObjectURL(aplusBlob);
+    const aplusA = document.createElement('a');
+    aplusA.href = aplusUrl;
+    aplusA.download = 'site-data-aplus.json';
+    document.body.appendChild(aplusA);
+    aplusA.click();
+    aplusA.remove();
+    URL.revokeObjectURL(aplusUrl);
+    
+    alert('已导出 site-data.json 和 site-data-aplus.json。请把两个文件都上传到 GitHub 仓库同目录，游客刷新网页后即可看到更新。');
 }
 
 function importSiteDataFromFile(event) {
@@ -1338,7 +1426,27 @@ function renderDetailPage(productId) {
     if (detailDescInput) detailDescInput.value = product.description || '';
 
     renderVariationsDisplay(product.variations);
-    renderAplusBlocks(product);
+    
+    if (product.aplus && product.aplus.length > 0) {
+        renderAplusBlocks(product);
+    } else {
+        const container = document.getElementById('aplusBlocks');
+        if (container) {
+            container.innerHTML = '<div class="aplus-loading" style="text-align:center;padding:40px;color:#999;font-size:14px;">Loading product details...</div>';
+        }
+        loadAplusData(productId).then(aplus => {
+            if (aplus) {
+                product.aplus = aplus;
+                if (document.getElementById('productDetailPage') && document.getElementById('productDetailPage').classList.contains('active')) {
+                    renderAplusBlocks(product);
+                }
+            } else {
+                if (document.getElementById('productDetailPage') && document.getElementById('productDetailPage').classList.contains('active')) {
+                    renderAplusBlocks(product);
+                }
+            }
+        });
+    }
 }
 
 function setDetailMode(mode) {
