@@ -3503,9 +3503,11 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 
 .related-article-image {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-50, #e0f4f8) 0%, #fff 100%);
 }
 
 .related-article-image img {
@@ -3513,10 +3515,45 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .related-article-card:hover .related-article-image img {
     transform: scale(1.05);
+}
+
+.related-article-image.image-error img,
+.related-article-image img[style*="display: none"] {
+    display: none;
+}
+
+.related-article-image.image-loaded .related-article-placeholder,
+.related-article-image.image-loaded .blog-card-placeholder {
+    display: none;
+}
+
+.related-article-placeholder,
+.related-article-image.image-error .blog-card-placeholder,
+.related-article-image.image-error .related-article-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary-50, #e0f4f8) 0%, #fff 100%);
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.related-article-placeholder i,
+.related-article-image.image-error .blog-card-placeholder i,
+.related-article-image.image-error .related-article-placeholder i {
+    font-size: 2.25rem;
+    opacity: 0.6;
 }
 
 .related-article-content {
