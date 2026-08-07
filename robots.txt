@@ -28,7 +28,7 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+
 
 User-agent: Slurp
 Allow: /
