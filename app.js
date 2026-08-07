@@ -1903,8 +1903,10 @@ function setProductMeta(product) {
 
     const productUrl = window.location.origin + window.location.pathname + '?product=' + encodeURIComponent(product.sku || ('P' + product.id));
     const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
-    const productDesc = product.description ? product.description.substring(0, 160) : defaultMeta.description;
-    const productTitle = product.name + ' | Yeatru Sourcing - China Wholesale Products';
+    const productDesc = product.description ? product.description.substring(0, 155) : defaultMeta.description;
+    const productTitle = product.name && (product.name.length + 18) <= 60
+        ? product.name + ' | Yeatru Sourcing'
+        : (product.name || 'Products') + ' | Yeatru';
 
     document.title = productTitle;
     updateMetaTag('meta[name="description"]', 'content', productDesc);
