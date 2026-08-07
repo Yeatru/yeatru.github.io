@@ -2999,17 +2999,15 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .detail-image {
     width: 100%;
-    max-width: 360px;
+    max-width: 420px;
     height: auto;
     border-radius: 8px;
     background-color: #f1f1f1;
-    object-fit: contain;
-    max-height: 420px;
-    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
     opacity: 0;
     transition: opacity 0.4s ease;
-    margin: 0 auto;
-    display: block;
+    box-sizing: border-box;
 }
 
 .detail-image.loaded {
@@ -3019,8 +3017,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 @media (max-width: 767.98px) {
     .detail-main { grid-template-columns: 1fr; gap: 1.5rem; }
     .detail-image {
-        max-width: 300px;
-        max-height: 320px;
+        max-width: 360px;
     }
 }
 
@@ -3994,7 +3991,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .about-stats { grid-template-columns: repeat(2, 1fr); }
     .contact-info, .contact-form { padding: 2rem 1.25rem; }
     .detail-main { grid-template-columns: 1fr; gap: 1rem; }
-    .detail-image { max-height: 350px; }
+    .detail-image { max-width: 300px; }
     .detail-info h1 { font-size: 1.4rem; }
     .aplus-block-image-wrap { flex-direction: column; }
     .aplus-block-image-wrap > img { max-width: 100%; height: auto; }
