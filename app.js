@@ -236,7 +236,9 @@ function safeAddEventListener(id, event, handler) {
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('[i18n] DOMContentLoaded fired, starting i18next init...');
-    
+
+    applyAdminVisibility();
+
     try {
         i18next
             .use(i18nextBrowserLanguageDetector)
@@ -258,9 +260,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 bindLanguageEvents();
                 loadRemoteSiteData();
                 updateLoginUI(isAdmin());
+                applyAdminVisibility();
             }).catch(function (err) {
                 console.error('[i18n] i18next init error:', err);
                 updateLoginUI(isAdmin());
+                applyAdminVisibility();
             });
     } catch (e) {
         console.error('[i18n] Exception during i18next setup:', e);
@@ -1910,16 +1914,44 @@ function renderBrandLogo() {
             footerFallback.style.display = 'none';
         }
     } else {
-        img.src = '';
-        img.style.display = 'none';
-        fallback.style.display = '';
+        // Default to site logo.svg if no admin-uploaded or data logo is set.
+        img.src = 'logo.svg';
+        img.style.display = 'inline-block';
+        fallback.style.display = 'none';
+        img.onerror = function () {
+            this.style.display = 'none';
+            if (fallback) fallback.style.display = '';
+        };
         if (footerImg && footerFallback) {
-            footerImg.src = '';
-            footerImg.style.display = 'none';
-            footerFallback.style.display = '';
+            footerImg.src = 'logo.svg';
+            footerImg.style.display = 'inline-block';
+            footerFallback.style.display = 'none';
+            footerImg.onerror = function () {
+                this.style.display = 'none';
+                if (footerFallback) footerFallback.style.display = '';
+            };
         }
     }
 }
+
+/**
+ * Admin UI toggle: show #authBtn / #loginModal nav controls only when
+ * (a) the URL includes ?admin=true, OR (b) the user is already logged in.
+ * This hides the confusing "admin login shield" button from regular visitors.
+ */
+function applyAdminVisibility() {
+    const authBtn = document.getElementById('authBtn');
+    const params = new URLSearchParams(window.location.search);
+    const adminRequested = params.get('admin') === 'true';
+    const isLoggedIn = localStorage.getItem('yeatruAdminLoggedIn') === 'true';
+    if (authBtn) {
+        authBtn.style.display = (adminRequested || isLoggedIn) ? '' : 'none';
+        authBtn.setAttribute('rel', 'nofollow');
+    }
+    // Make any login-modal close buttons / edit UX also respect the rule,
+    // but allow auth click handler (which stays bound via safeAddEventListener).
+}
+
 
 function saveLogoFromModal() {
     const fileInput = document.getElementById('logoFileInput');

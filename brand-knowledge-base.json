@@ -1,15 +1,16 @@
 {
     "company": {
         "full_name": "义乌市弋楚贸易有限公司",
+        "english_legal_name": "YIWU ETRUE TRADING CO., LTD. (also: Yiwu Yichu Trading Co., Ltd.)",
         "short_name": "弋楚贸易",
         "brand_name": "Yeatru Sourcing",
         "founded_year": 2022,
-        "legal_person": "Megan Mei",
+        "legal_person": "Neil Liu",
         "headquarters": {
             "city": "义乌",
             "province": "浙江",
             "country": "中国",
-            "address": "浙江省义乌市",
+            "address": "浙江省义乌市商城大道188号 邮编322000 (NO.188 Shangcheng Ave, Yiwu, Zhejiang 322000, China)",
             "trade_center": "义乌国际商贸城"
         },
         "qualifications": [
