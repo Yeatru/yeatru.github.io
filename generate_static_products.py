@@ -1021,7 +1021,7 @@ def build_product_page(product, aplus_blocks, all_products=None):
 
     spec_rows = []
     # WHOLESALE PRICE placed first so it appears at the top of the spec
-    # table (red-box position). big_price returns the <span class=detail-price-big>
+    # table. big_price returns the <span class=detail-price-big>
     # HTML with data-usd-price attributes; we wrap it in #detailPriceDisplay
     # so initVariantSelection() in app.js can swap it when a variant is picked.
     spec_rows.append(
@@ -1038,9 +1038,8 @@ def build_product_page(product, aplus_blocks, all_products=None):
     spec_rows.append(
         '<tr><th>MOQ</th><td>%s</td></tr>' % escape_html(moq if moq not in ("", None) else "—")
     )
-    spec_rows.append(
-        '<tr><th>SKU</th><td>%s</td></tr>' % escape_html(sku or "—")
-    )
+    # NOTE: SKU intentionally not repeated here — already shown in the
+    # detail-meta block right above the spec table (Category: ... | SKU: ...).
 
     variations_html = render_variations(product.get("variations"))
 
