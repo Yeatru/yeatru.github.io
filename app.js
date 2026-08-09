@@ -381,6 +381,10 @@ document.addEventListener('DOMContentLoaded', function () {
         applyUsdPricePlaceholders();
         initVariantSelection();
 
+    } catch (e) {
+        console.error('[init] Error during initialization:', e);
+    }
+
     safeAddEventListener('submitLogin', 'click', function () {
         const username = document.getElementById('adminUsername').value.trim();
         const password = document.getElementById('adminPassword').value.trim();

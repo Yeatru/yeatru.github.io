@@ -1340,6 +1340,9 @@
                 if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
                 if (typeof renderProducts === 'function') renderProducts();
             }
+        } else {
+            // Default: render all products on page load
+            if (typeof renderProducts === 'function') renderProducts();
         }
         
         if (search) {
