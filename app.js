@@ -182,6 +182,22 @@ function tt(key, fallback) {
     return fallback || key;
 }
 
+// Price source contract: site-data.json / site-data-aplus.json price fields
+// (priceMin, priceMax, variations[].price) are stored in CNY (RMB) from the
+// Excel price list the user uploaded. The static-page generator already
+// converts them to USD via (CNY / 6.7) * 1.15 before writing data-usd-price.
+// This dynamic site (app.js) does the same conversion inside
+// cnyToUsd() so that dynamic cards (index.html / products.html / admin
+// edit flow) stay pixel-identical to the static product pages.
+const CNY_TO_USD_RATE = 6.7;
+const PRICE_MARKUP = 1.15; // 15% wholesale markup on top of raw sourcing cost
+
+function cnyToUsd(cnyValue) {
+    const raw = parseFloat(cnyValue);
+    if (!isFinite(raw)) return null;
+    return (raw / CNY_TO_USD_RATE) * PRICE_MARKUP;
+}
+
 const EXCHANGE_RATES = {
     USD: { rate: 1, symbol: '$', name: 'USD' },
     EUR: { rate: 0.92, symbol: '€', name: 'EUR' },
@@ -201,6 +217,18 @@ function formatPrice(usdPrice) {
     const cfg = EXCHANGE_RATES[currency] || EXCHANGE_RATES.USD;
     const converted = (usdPrice * cfg.rate).toFixed(2);
     return cfg.symbol + converted;
+}
+
+/**
+ * Same as formatPrice() but the input is a CNY value (e.g. the raw
+ * product.priceMin / variation.price from site-data.json). Convenience
+ * helper so renderProducts / renderDetail / index hot-products don't
+ * have to call cnyToUsd + formatPrice every time.
+ */
+function formatPriceCny(cnyValue) {
+    const usd = cnyToUsd(cnyValue);
+    if (usd === null) return '—';
+    return formatPrice(usd);
 }
 
 /**
@@ -888,7 +916,7 @@ function renderIndexHotProducts() {
     const displayCount = Math.min(products.length, 8);
     for (let i = 0; i < displayCount; i++) {
         const product = products[i];
-        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
+        const priceText = formatPriceCny(product.priceMin) + ' - ' + formatPriceCny(product.priceMax);
         const col = document.createElement('div');
         col.className = 'col-lg-3 col-md-6';
         col.innerHTML = `
@@ -904,7 +932,7 @@ function renderIndexHotProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${(product.sku || '').replace(/[^A-Za-z0-9_-]/g, '-') || ('p'+product.id)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${skuSlugForProduct(product)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1135,6 +1163,25 @@ function importSiteDataFromFile(event) {
     reader.readAsText(file, 'utf-8');
 }
 
+/**
+ * Build a SKU-based product URL slug. Mirrors the Python _sku_slug()
+ * in generate_static_products.py so the JS-side navigation always lands
+ * on the exact same static HTML file that was generated on disk.
+ */
+function skuSlugForProduct(product) {
+    if (!product) return '';
+    const sku = String(product.sku || '');
+    if (sku) {
+        return sku.replace(/[^A-Za-z0-9_-]/g, '-');
+    }
+    return 'p' + String(product.id || '');
+}
+
+function staticUrlForProduct(product) {
+    const slug = skuSlugForProduct(product);
+    return window.location.origin + '/product-' + slug + '.html';
+}
+
 function renderProducts() {
     const products = getProducts();
     const productList = document.getElementById('productList');
@@ -1161,7 +1208,7 @@ function renderProducts() {
     }
 
     filtered.forEach(product => {
-        const priceText = formatPrice(product.priceMin) + ' - ' + formatPrice(product.priceMax);
+        const priceText = formatPriceCny(product.priceMin) + ' - ' + formatPriceCny(product.priceMax);
         const card = document.createElement('div');
         card.className = 'col-lg-3 col-md-6';
         card.innerHTML = `
@@ -1177,7 +1224,7 @@ function renderProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${(product.sku || '').replace(/[^A-Za-z0-9_-]/g, '-') || ('p'+product.id)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${skuSlugForProduct(product)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1246,14 +1293,16 @@ function renderProducts() {
         el.addEventListener('click', function (e) {
             const id = parseInt(this.getAttribute('data-id'));
             if (!id) return;
-            // Try to find the product to get its SKU for the canonical URL
-            let staticUrl = 'product-' + id + '.html';
+            let staticUrl = null;
             if (typeof getProducts === 'function') {
                 const product = getProducts().find(p => String(p.id) === String(id));
-                if (product && product.sku) {
-                    const skuSlug = product.sku.replace(/[^A-Za-z0-9_-]/g, '-');
-                    staticUrl = 'product-' + skuSlug + '.html';
+                if (product) {
+                    staticUrl = 'product-' + skuSlugForProduct(product) + '.html';
                 }
+            }
+            if (!staticUrl) {
+                // Fallback: no product matched, just use the ID as 'p<id>' slug
+                staticUrl = 'product-p' + id + '.html';
             }
             const admin = typeof isAdmin === 'function' && isAdmin();
 
@@ -1292,7 +1341,7 @@ function handleRoute() {
     if (!detailPage || !mainContent) return;
 
     const staticUrlFor = function (product) {
-        return window.location.origin + '/product-' + product.id + '.html';
+        return staticUrlForProduct(product);
     };
 
     if (productSku) {
@@ -1437,7 +1486,7 @@ function renderVariationsDisplay(variations) {
                 <span class="variation-color-dot"${v.color ? ` style="background-color: ${getColorValue(v.color)}"` : ''}></span>
                 <span class="variation-name">${escapeHtml(v.color || '-')}</span>
                 <span class="variation-size">${escapeHtml(v.size || '')}</span>
-                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">${formatPrice(parseFloat(v.price))}</span>` : ''}
+                ${v.price !== undefined && v.price !== null && v.price !== '' ? `<span class="variation-price">${formatPriceCny(parseFloat(v.price))}</span>` : ''}
             </div>
         `;
         card.addEventListener('click', function () {
@@ -1446,11 +1495,11 @@ function renderVariationsDisplay(variations) {
             const priceBig = document.getElementById('detailPriceBig');
             if (priceBig) {
                 if (v.price !== undefined && v.price !== null && v.price !== '') {
-                    priceBig.textContent = formatPrice(parseFloat(v.price));
+                    priceBig.textContent = formatPriceCny(parseFloat(v.price));
                 } else {
                     const product = getProducts().find(p => p.id === currentDetailProductId);
                     if (product) {
-                        priceBig.textContent = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
+                        priceBig.textContent = formatPriceCny(product.priceMin || 0) + ' - ' + formatPriceCny(product.priceMax || 0);
                     }
                 }
             }
@@ -1521,8 +1570,8 @@ function renderDetailPage(productId) {
     if (detailMaterial) detailMaterial.textContent = product.material || '';
     if (detailSize) detailSize.textContent = product.size || '';
     if (detailMOQ) detailMOQ.textContent = product.moq || '';
-    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? formatPrice(product.priceMin) : '';
-    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? formatPrice(product.priceMax) : '';
+    if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? formatPriceCny(product.priceMin) : '';
+    if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? formatPriceCny(product.priceMax) : '';
     if (detailDesc) detailDesc.textContent = product.description || '';
 
     let defaultPriceText;
@@ -1533,15 +1582,15 @@ function renderDetailPage(productId) {
             const vMin = Math.min(...prices);
             const vMax = Math.max(...prices);
             if (vMin === vMax) {
-                defaultPriceText = formatPrice(vMin);
+                defaultPriceText = formatPriceCny(vMin);
             } else {
-                defaultPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
+                defaultPriceText = formatPriceCny(vMin) + ' - ' + formatPriceCny(vMax);
             }
         } else {
-            defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
+            defaultPriceText = formatPriceCny(product.priceMin || 0) + ' - ' + formatPriceCny(product.priceMax || 0);
         }
     } else {
-        defaultPriceText = formatPrice(product.priceMin || 0) + ' - ' + formatPrice(product.priceMax || 0);
+        defaultPriceText = formatPriceCny(product.priceMin || 0) + ' - ' + formatPriceCny(product.priceMax || 0);
     }
     if (detailPriceBig) detailPriceBig.textContent = defaultPriceText;
 
@@ -1683,8 +1732,8 @@ function commitSave() {
         document.getElementById('detailMaterial').textContent = p.material;
         document.getElementById('detailSize').textContent = p.size;
         document.getElementById('detailMOQ').textContent = p.moq;
-        document.getElementById('detailPriceMin').textContent = formatPrice(p.priceMin);
-        document.getElementById('detailPriceMax').textContent = formatPrice(p.priceMax);
+        document.getElementById('detailPriceMin').textContent = formatPriceCny(p.priceMin);
+        document.getElementById('detailPriceMax').textContent = formatPriceCny(p.priceMax);
         document.getElementById('detailDesc').textContent = p.description;
 
         let savedPriceText;
@@ -1695,15 +1744,15 @@ function commitSave() {
                 const vMin = Math.min(...prices);
                 const vMax = Math.max(...prices);
                 if (vMin === vMax) {
-                    savedPriceText = formatPrice(vMin);
+                    savedPriceText = formatPriceCny(vMin);
                 } else {
-                    savedPriceText = formatPrice(vMin) + ' - ' + formatPrice(vMax);
+                    savedPriceText = formatPriceCny(vMin) + ' - ' + formatPriceCny(vMax);
                 }
             } else {
-                savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
+                savedPriceText = formatPriceCny(p.priceMin || 0) + ' - ' + formatPriceCny(p.priceMax || 0);
             }
         } else {
-            savedPriceText = formatPrice(p.priceMin || 0) + ' - ' + formatPrice(p.priceMax || 0);
+            savedPriceText = formatPriceCny(p.priceMin || 0) + ' - ' + formatPriceCny(p.priceMax || 0);
         }
         document.getElementById('detailPriceBig').textContent = savedPriceText;
         setSaveStatus('saved');
@@ -2167,9 +2216,9 @@ function setProductMeta(product) {
     if (Object.keys(defaultMeta).length === 0) saveDefaultMeta();
 
     // Canonical URL points to the dedicated static product page
-    // (product-<id>.html) so that Google/Bing merge weight away from the
+    // (product-<SKU>.html) so that Google/Bing merge weight away from the
     // dynamic ?product=SKU variant and from the old list-page canonical.
-    const productUrl = window.location.origin + '/product-' + product.id + '.html';
+    const productUrl = staticUrlForProduct(product);
     const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
     const productDesc = product.description ? product.description.substring(0, 155) : defaultMeta.description;
     const productTitle = product.name && (product.name.length + 18) <= 60
@@ -2210,8 +2259,8 @@ function setProductMeta(product) {
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "USD",
-            "lowPrice": product.priceMin || 0,
-            "highPrice": product.priceMax || 0,
+            "lowPrice": cnyToUsd(product.priceMin) || 0,
+            "highPrice": cnyToUsd(product.priceMax) || 0,
             "availability": "https://schema.org/InStock",
             "seller": {
                 "@type": "Organization",

@@ -137,18 +137,21 @@ def _cny_to_usd(v):
     return (f / CNY_TO_USD_RATE) * PRICE_MARKUP
 
 
-# NOTE: Static product pages no longer hard-code a "$" price. Instead we
-# emit an element with `data-usd-price` attribute and the non-breaking-space
-# placeholder "&mdash;" (—). At render time app.js.applyUsdPricePlaceholders()
-# fills the textContent via the shared formatPrice() function which honors
-# localStorage `yeatru_currency` and EXCHANGE_RATES conversion. This keeps
-# the static page price display perfectly consistent with products.html's
-# dynamic cards regardless of whether the visitor has chosen
-# USD/EUR/GBP/RUB/CNY, and eliminates the symptom where some products'
-# prices looked "extra expensive" because raw numeric values were being
-# wrapped with a literal '$' without running through formatPrice().
+# NOTE: We emit an element with `data-usd-price` attribute AND the
+# pre-formatted USD price as the visible text. The data-usd-price keeps
+# the JS-side formatPrice() / currency-switch logic intact, while the
+# visible text ensures prices render immediately (no JS-dependent placeholder
+# filling) and stay SEO-friendly for crawlers that don't execute JS.
+def _fmt_usd(usd):
+    """Format a USD float as '$XX.YY' for static HTML output."""
+    f = _to_float(usd)
+    if f is None:
+        return "&mdash;"
+    return "$%.2f" % f
+
+
 def price_span(usd, extra_class=""):
-    """Return an HTML span carrying a data-usd-price for later formatPrice().
+    """Return an HTML span carrying a data-usd-price AND visible USD text.
 
     The incoming `usd` value is expected to already be in USD. If the raw
     value is CNY, call _cny_to_usd() first.
@@ -160,8 +163,8 @@ def price_span(usd, extra_class=""):
         )
     cls = "variation-price" + ((" " + extra_class) if extra_class else "")
     return (
-        '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
-        % (cls, f)
+        '<span class="%s" data-usd-price="%.6f">%s</span>'
+        % (cls, f, _fmt_usd(f))
     )
 
 
@@ -175,8 +178,8 @@ def price_span_cny(cny, extra_class=""):
         )
     cls = "variation-price" + ((" " + extra_class) if extra_class else "")
     return (
-        '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
-        % (cls, usd)
+        '<span class="%s" data-usd-price="%.6f">%s</span>'
+        % (cls, usd, _fmt_usd(usd))
     )
 
 
@@ -196,8 +199,8 @@ def price_range_span_cny(cny_min, cny_max, extra_class=""):
             parts.append("&mdash;")
         else:
             parts.append(
-                '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
-                % (extra_class or "", v)
+                '<span class="%s" data-usd-price="%.6f">%s</span>'
+                % (extra_class or "", v, _fmt_usd(v))
             )
     return '<span class="%s">%s</span>' % (cls, " &ndash; ".join(parts))
 
@@ -700,14 +703,14 @@ def build_head(product, canonical_url):
         "@id": BASE_URL + "/#organization",
         "name": "Yeatru Sourcing",
         "url": BASE_URL,
-        "logo": BASE_URL + "/images/logo.png",
+        "logo": BASE_URL + "/logo.svg",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+86-159-8851-6408",
             "contactType": "customer service",
             "email": "info@yeatru.com",
             "areaServed": "Worldwide",
-            "availableLanguage": ["English", "Chinese"],
+            "availableLanguage": ["English", "Chinese", "Spanish", "French", "Russian", "Arabic"],
         },
     }
 
@@ -761,21 +764,33 @@ def build_head(product, canonical_url):
     head.append('    <meta name="robots" content="index, follow">')
     head.append('    <link rel="canonical" href="%s">' % url_esc)
     head.append('    <link rel="alternate" type="application/atom+xml" title="Yeatru Sourcing Blog" href="https://www.yeatru.com/atom.xml">')
-    # Only emit real hreflang tags — currently there is only one English
-    # version of the site. Previously we pointed es/fr/ru/ar alternates to
-    # the same English page with ?lang= query strings, which caused Google
-    # Search Console warnings "Alternate page with proper canonical tag".
-    # If real translations are added later, uncomment the block below.
-    head.append('    <link rel="alternate" hreflang="en" href="%s">' % url_esc)
+    # hreflang: match the sitemap's 6-language set (en, es, fr, ru, ar, x-default).
+    # The site uses JS-based i18n (?lang=xx) so these alternates point to the
+    # same URL with the appropriate query string for each language.
+    for lang in LANGS:
+        if lang == "en":
+            href = url_esc
+        else:
+            href = url_esc + "?lang=" + lang
+        head.append('    <link rel="alternate" hreflang="%s" href="%s">' % (lang, href))
     head.append('    <link rel="alternate" hreflang="x-default" href="%s">' % url_esc)
-    # --- REMOVED fake hreflang (es/fr/ru/ar) ---
     head.append('    <meta property="og:title" content="%s">' % escape_attr(title))
     head.append('    <meta property="og:description" content="%s">' % desc_esc)
     head.append('    <meta property="og:type" content="product">')
     head.append('    <meta property="og:url" content="%s">' % url_esc)
     head.append('    <meta property="og:image" content="%s">' % image_esc)
+    head.append('    <meta property="og:image:width" content="800">')
+    head.append('    <meta property="og:image:height" content="800">')
+    head.append('    <meta property="og:image:alt" content="%s">' % escape_attr(name))
     head.append('    <meta property="og:site_name" content="Yeatru Sourcing">')
     head.append('    <meta property="og:locale" content="en_US">')
+    for lang in LANGS:
+        if lang == "en":
+            continue
+        locale_map = {"es": "es_ES", "fr": "fr_FR", "ru": "ru_RU", "ar": "ar_AE"}
+        loc = locale_map.get(lang)
+        if loc:
+            head.append('    <meta property="og:locale:alternate" content="%s">' % loc)
     head.append('    <meta name="twitter:card" content="summary_large_image">')
     head.append('    <meta name="twitter:title" content="%s">' % escape_attr(title))
     head.append('    <meta name="twitter:description" content="%s">' % desc_esc)
@@ -1293,36 +1308,14 @@ def main():
         blocks = aplus.get(str(pid)) or []
         html = build_product_page(p, blocks, products)
 
-        # 1. Write the canonical SKU-based page: product-{SKU}.html
+        # Write the canonical SKU-based page: product-{SKU}.html
         sku_path = os.path.join(ROOT, "product-%s.html" % slug)
         with open(sku_path, "w", encoding="utf-8") as f:
             f.write(html)
 
-        # 2. Write an ID-based redirect page for backward compatibility:
-        #    product-{id}.html → auto-redirects to product-{SKU}.html
-        #    This preserves any existing inbound links / bookmarks.
-        redirect_html = (
-            "<!DOCTYPE html>\n"
-            '<html lang="en">\n'
-            "<head>\n"
-            '    <meta charset="UTF-8">\n'
-            '    <title>Redirecting to %s…</title>\n'
-            '    <meta http-equiv="refresh" content="0; url=product-%s.html">\n'
-            '    <link rel="canonical" href="product-%s.html">\n'
-            '    <script>window.location.replace("product-%s.html");</script>\n'
-            "</head>\n"
-            "<body>\n"
-            '    <p>Redirecting to <a href="product-%s.html">product-%s.html</a>…</p>\n'
-            "</body>\n"
-            "</html>"
-        ) % (slug, slug, slug, slug, slug, slug)
-        id_path = os.path.join(ROOT, "product-%s.html" % pid)
-        with open(id_path, "w", encoding="utf-8") as f:
-            f.write(redirect_html)
-
         generated += 1
 
-    print("Generated %d product pages + %d redirects (skipped %d)" % (generated, generated, skipped))
+    print("Generated %d product pages (skipped %d)" % (generated, skipped))
 
     sitemap_xml = build_sitemap(products)
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
