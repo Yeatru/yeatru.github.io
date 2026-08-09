@@ -3133,10 +3133,35 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 
 .detail-price-big {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #E53935;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(229, 57, 53, 0.15);
+}
+.detail-price-big .variation-price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #E53935;
+}
+.detail-price-big .price-dash {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #E53935;
+    margin: 0 0.3rem;
+}
+.detail-price-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.variation-card.selected .variation-price {
+    color: #E53935;
     font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
 }
 
 .aplus-section { 

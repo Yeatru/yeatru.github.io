@@ -23,13 +23,15 @@ from datetime import date
 BASE_URL = "https://www.yeatru.com"
 TODAY = date.today().isoformat()
 
-# CNY -> USD exchange rate used to convert the CNY prices stored in
-# site-data.json into USD for display on the static product pages.
-# The raw price fields (priceMin / priceMax / variations[].price) are
-# all CNY; we divide by this rate before writing data-usd-price or
-# the Product JSON-LD so that formatPrice() in app.js can multiply by
-# the user's chosen currency rate (e.g. 7.25 for CNY) correctly.
+# CNY -> USD exchange rate and markup used to convert the CNY prices
+# stored in site-data.json into USD for display on the static product
+# pages. The raw price fields (priceMin / priceMax / variations[].price)
+# are all CNY from the Excel source; we:
+#   1. divide by 6.7 (CNY_TO_USD_RATE) to get base USD, then
+#   2. multiply by 1.15 (PRICE_MARKUP) to add a 15% wholesale markup
+# before writing data-usd-price or the Product JSON-LD.
 CNY_TO_USD_RATE = 6.7
+PRICE_MARKUP = 1.15  # 15% wholesale markup on top of raw sourcing cost
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_DATA = os.path.join(ROOT, "site-data.json")
@@ -125,11 +127,14 @@ def _to_float(v):
 
 
 def _cny_to_usd(v):
-    """Convert a CNY price (from site-data.json) to USD."""
+    """Convert a CNY price (from site-data.json) to USD with 15% markup.
+
+    Formula: USD = (CNY / 6.7) * 1.15
+    """
     f = _to_float(v)
     if f is None:
         return None
-    return f / CNY_TO_USD_RATE
+    return (f / CNY_TO_USD_RATE) * PRICE_MARKUP
 
 
 # NOTE: Static product pages no longer hard-code a "$" price. Instead we
@@ -549,7 +554,7 @@ def render_variations(variations):
     if not variations:
         return ""
     cards = []
-    for v in variations:
+    for idx, v in enumerate(variations):
         color = v.get("color", "") or ""
         size = v.get("size", "") or ""
         dot_style = (
@@ -558,16 +563,26 @@ def render_variations(variations):
         )
         price_html = ""
         p = v.get("price")
+        usd_val = None
         if p not in (None, ""):
+            usd_val = _cny_to_usd(p)
             price_html = price_span_cny(p)
+        # Add data attributes for variant selection: data-variant-price-usd
+        # allows JS to swap the hero price when a user clicks a variant card.
+        card_extra = ""
+        if usd_val is not None:
+            card_extra = ' data-variant-price-usd="%.6f"' % usd_val
+        selected_class = " selected" if idx == 0 else ""
         cards.append(
-            '<div class="variation-card">'
+            '<div class="variation-card%s" role="button" tabindex="0"%s>'
             '<div class="variation-info">'
             '<span class="variation-color-dot"%s></span>'
             '<span class="variation-name">%s</span>'
             '<span class="variation-size">%s</span>'
             '%s'
             '</div></div>' % (
+                selected_class,
+                card_extra,
                 dot_style,
                 escape_html(color or "-"),
                 escape_html(size),
@@ -878,9 +893,26 @@ def _get_related_products(current, all_products):
     return sorted(others, key=lambda x: str(x.get("id", "")))[:6]
 
 
+def _sku_slug(sku):
+    """Convert a SKU like 'YS-CL-201A' to a URL-safe slug.
+
+    Result: 'YS-CL-201A' stays as-is (already URL-safe except we lowercase for
+    nicer looking URLs but keep original readability). GitHub Pages is
+    case-sensitive on *.html so we keep the SKU exactly as-is but replace
+    any non [A-Za-z0-9_-] characters with '-'.
+    """
+    if not sku:
+        return ""
+    import re as _re
+    slug = _re.sub(r'[^A-Za-z0-9_-]', '-', str(sku).strip())
+    return slug
+
+
 def build_product_page(product, aplus_blocks, all_products=None):
     pid = product["id"]
-    canonical_url = "%s/product-%s.html" % (BASE_URL, pid)
+    sku = product.get("sku", "") or ""
+    slug = _sku_slug(sku) or ("p" + str(pid))
+    canonical_url = "%s/product-%s.html" % (BASE_URL, slug)
 
     name = product.get("name", "") or "Product"
     category = product.get("category", "") or ""
@@ -907,10 +939,7 @@ def build_product_page(product, aplus_blocks, all_products=None):
         '<tr><th>MOQ</th><td>%s</td></tr>' % escape_html(moq if moq not in ("", None) else "—")
     )
     spec_rows.append(
-        '<tr><th>Min Price</th><td>%s</td></tr>' % (price_span_cny(price_min, "spec-price") if price_min not in ("", None) else "—")
-    )
-    spec_rows.append(
-        '<tr><th>Max Price</th><td>%s</td></tr>' % (price_span_cny(price_max, "spec-price") if price_max not in ("", None) else "—")
+        '<tr><th>SKU</th><td>%s</td></tr>' % escape_html(sku or "—")
     )
 
     variations_html = render_variations(product.get("variations"))
@@ -959,9 +988,11 @@ def build_product_page(product, aplus_blocks, all_products=None):
     body.append('                    <table class="detail-spec-table">')
     body.extend(spec_rows)
     body.append('                    </table>')
-    # big_price already returns sanitised <span data-usd-price=...> / &mdash;
-    # HTML generated by price_span() / price_range_span(). Do NOT escape again.
-    body.append('                    <div class="detail-price-big-wrap">%s</div>' % big_price)
+    # big_price already returns sanitised <span data-usd-price=...>
+    # HTML generated by price_span() / price_range_span().
+    # We wrap it with a label and a data attribute for variant switching.
+    body.append('                    <div class="detail-price-label">Wholesale Price</div>')
+    body.append('                    <div class="detail-price-big-wrap" id="detailPriceDisplay">%s</div>' % big_price)
     body.append('                    <p class="detail-desc">%s</p>' % escape_html(desc))
     # Variations first
     body.append('                    %s' % variations_html)
@@ -1011,6 +1042,7 @@ def build_product_page(product, aplus_blocks, all_products=None):
     body.append('                <div class="related-products-grid">')
     related = _get_related_products(product, all_products or [product])
     for rp in related:
+        rp_slug = _sku_slug(rp.get("sku", "")) or ("p" + str(rp.get("id", "")))
         rp_img = optimize_image_url(rp.get("image", ""), 400) if rp.get("image") else ""
         rp_pmin = _cny_to_usd(rp.get("priceMin"))
         rp_pmax = _cny_to_usd(rp.get("priceMax"))
@@ -1020,7 +1052,7 @@ def build_product_page(product, aplus_blocks, all_products=None):
                 rp_price_text = price_span(rp_pmin, "")
             else:
                 rp_price_text = price_range_span_cny(rp.get("priceMin"), rp.get("priceMax"), "")
-        body.append('                    <a class="related-product-card" href="product-%s.html">' % rp["id"])
+        body.append('                    <a class="related-product-card" href="product-%s.html">' % rp_slug)
         if rp_img:
             body.append('                        <img src="%s" alt="%s" loading="lazy" decoding="async">' % (escape_attr(rp_img), escape_attr(rp.get("name",""))))
         body.append('                        <div class="related-product-info">')
@@ -1232,7 +1264,9 @@ def build_sitemap(products):
 
     for p in products:
         pid = p["id"]
-        loc = "%s/product-%s.html" % (BASE_URL, pid)
+        sku = p.get("sku", "") or ""
+        slug = _sku_slug(sku) or ("p" + str(pid))
+        loc = "%s/product-%s.html" % (BASE_URL, slug)
         img = p.get("image") or ""
         lines.append(sitemap_url_block(loc, TODAY, "weekly", 0.8, image=img))
 
@@ -1254,14 +1288,41 @@ def main():
     skipped = 0
     for p in products:
         pid = p["id"]
+        sku = p.get("sku", "") or ""
+        slug = _sku_slug(sku) or ("p" + str(pid))
         blocks = aplus.get(str(pid)) or []
         html = build_product_page(p, blocks, products)
-        out_path = os.path.join(ROOT, "product-%s.html" % pid)
-        with open(out_path, "w", encoding="utf-8") as f:
+
+        # 1. Write the canonical SKU-based page: product-{SKU}.html
+        sku_path = os.path.join(ROOT, "product-%s.html" % slug)
+        with open(sku_path, "w", encoding="utf-8") as f:
             f.write(html)
+
+        # 2. Write an ID-based redirect page for backward compatibility:
+        #    product-{id}.html → auto-redirects to product-{SKU}.html
+        #    This preserves any existing inbound links / bookmarks.
+        redirect_html = (
+            "<!DOCTYPE html>\n"
+            '<html lang="en">\n'
+            "<head>\n"
+            '    <meta charset="UTF-8">\n'
+            '    <title>Redirecting to %s…</title>\n'
+            '    <meta http-equiv="refresh" content="0; url=product-%s.html">\n'
+            '    <link rel="canonical" href="product-%s.html">\n'
+            '    <script>window.location.replace("product-%s.html");</script>\n'
+            "</head>\n"
+            "<body>\n"
+            '    <p>Redirecting to <a href="product-%s.html">product-%s.html</a>…</p>\n'
+            "</body>\n"
+            "</html>"
+        ) % (slug, slug, slug, slug, slug, slug)
+        id_path = os.path.join(ROOT, "product-%s.html" % pid)
+        with open(id_path, "w", encoding="utf-8") as f:
+            f.write(redirect_html)
+
         generated += 1
 
-    print("Generated %d product pages (skipped %d)" % (generated, skipped))
+    print("Generated %d product pages + %d redirects (skipped %d)" % (generated, generated, skipped))
 
     sitemap_xml = build_sitemap(products)
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:

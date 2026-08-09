@@ -224,11 +224,50 @@ function applyUsdPricePlaceholders() {
             el.textContent = formatPrice(price);
         });
     } catch (err) {
-        // Never break page initialisation because of a price-formatting error.
         if (typeof console !== 'undefined' && console.warn) {
             console.warn('[applyUsdPricePlaceholders]', err);
         }
     }
+}
+
+/**
+ * Wire up variant card click handlers on static product pages.
+ * When a user clicks a variant card, we:
+ *   1. Mark it as selected (visual highlight via .selected class).
+ *   2. Update the hero price display (#detailPriceDisplay) to show
+ *      the variant's specific price (formatted with the current currency).
+ */
+function initVariantSelection() {
+    const cards = document.querySelectorAll('.variation-card');
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+        const handler = function(e) {
+            e.preventDefault();
+            // Update selected state
+            cards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+
+            // Update hero price
+            const priceUsd = card.getAttribute('data-variant-price-usd');
+            if (priceUsd !== null && priceUsd !== '') {
+                const price = parseFloat(priceUsd);
+                if (isFinite(price)) {
+                    const display = document.getElementById('detailPriceDisplay');
+                    if (display) {
+                        display.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
+                    }
+                }
+            }
+        };
+        card.addEventListener('click', handler);
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handler(e);
+            }
+        });
+    });
 }
 
 function initCurrencySelector() {
@@ -312,9 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // pre-rendered cards). Must run AFTER initCurrencySelector() so the
         // chosen currency in localStorage is respected.
         applyUsdPricePlaceholders();
-    } catch (e) {
-        console.error('[init] Error during initial render:', e);
-    }
+        initVariantSelection();
 
     safeAddEventListener('submitLogin', 'click', function () {
         const username = document.getElementById('adminUsername').value.trim();
@@ -867,7 +904,7 @@ function renderIndexHotProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${product.id}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${(product.sku || '').replace(/[^A-Za-z0-9_-]/g, '-') || ('p'+product.id)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1140,7 +1177,7 @@ function renderProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${product.id}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${(product.sku || '').replace(/[^A-Za-z0-9_-]/g, '-') || ('p'+product.id)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1209,13 +1246,21 @@ function renderProducts() {
         el.addEventListener('click', function (e) {
             const id = parseInt(this.getAttribute('data-id'));
             if (!id) return;
-            const staticUrl = 'product-' + id + '.html';
+            // Try to find the product to get its SKU for the canonical URL
+            let staticUrl = 'product-' + id + '.html';
+            if (typeof getProducts === 'function') {
+                const product = getProducts().find(p => String(p.id) === String(id));
+                if (product && product.sku) {
+                    const skuSlug = product.sku.replace(/[^A-Za-z0-9_-]/g, '-');
+                    staticUrl = 'product-' + skuSlug + '.html';
+                }
+            }
             const admin = typeof isAdmin === 'function' && isAdmin();
 
             if (admin) {
                 // Admin mode: in-page dynamic edit flow
                 e.preventDefault();
-                const product = getProducts().find(p => p.id === id);
+                const product = getProducts().find(p => String(p.id) === String(id));
                 if (!product) return;
                 const sku = product.sku || ('P' + id);
                 history.pushState({ type: 'product', id: id }, '', 'products.html?product=' + encodeURIComponent(sku));
@@ -1223,17 +1268,9 @@ function renderProducts() {
                 return;
             }
 
-            // Non-admin: always navigate to the canonical static product page.
-            // - view-detail-link is an <a href="product-<id>.html">: if it has
-            //   a valid href we let the browser follow it naturally (so that
-            //   middle-click / ctrl-click / "Open in new tab" still works).
-            // - product-img-clickable (<img>) and product-title-clickable
-            //   (<h5>) are NOT <a> elements — they have no href. We must do
-            //   the navigation explicitly via location.href.
+            // Non-admin: navigate to the canonical static product page.
             const isAnchor = (this.tagName === 'A');
             if (isAnchor) {
-                // Keep default navigation (allow new-tab / ctrl-click).
-                // Only override if the href is missing or malformed.
                 const href = this.getAttribute('href') || '';
                 if (!href || href === '#' || href.startsWith('products.html?product=')) {
                     e.preventDefault();
