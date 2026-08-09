@@ -882,7 +882,39 @@
                 <div class="text-center">
                     <span class="section-eyebrow">Our Products</span>
                     <h1 class="section-title mb-3">Wholesale Products from China</h1>
-                    <p class="section-subtitle mx-auto" style="max-width: 650px;">Explore curated product categories sourced directly from verified Chinese factories. Low MOQ, competitive prices, and one-stop service.</p>
+                    <p class="section-subtitle mx-auto" style="max-width: 700px;">Explore curated product categories sourced directly from verified Chinese factories. Low MOQ, competitive prices, and one-stop service.</p>
+
+                    <!-- In-page product search box (hero / red-box area) -->
+                    <form id="heroProductSearchForm" class="hero-product-search-form mx-auto mt-4" role="search" aria-label="Search products by SKU or keyword">
+                        <div class="hero-product-search-inner">
+                            <span class="hero-product-search-icon" aria-hidden="true"><i class="fas fa-search"></i></span>
+                            <input
+                                type="search"
+                                id="heroProductSearchInput"
+                                class="hero-product-search-input"
+                                name="search"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                spellcheck="false"
+                                placeholder="Search by SKU, product name or keyword (e.g. YCS-MSF-001, t-shirt, mug)"
+                                aria-label="Search products by SKU or keyword"
+                            >
+                            <button type="button" id="heroProductSearchReset" class="hero-product-search-reset" aria-label="Clear search" title="Clear search">
+                                <i class="fas fa-xmark"></i>
+                            </button>
+                            <button type="submit" class="hero-product-search-submit" aria-label="Search products">
+                                <i class="fas fa-search d-inline d-sm-none me-1"></i><span>Search Products</span>
+                            </button>
+                        </div>
+                        <div class="hero-product-search-hints mt-2 small text-muted">
+                            Try: <a href="products.html?search=t-shirt" class="text-decoration-none search-hint-chip">t-shirt</a>
+                            <a href="products.html?search=YCS-MSF-001" class="text-decoration-none search-hint-chip">YCS-MSF-001</a>
+                            <a href="products.html?search=crossbody+bag" class="text-decoration-none search-hint-chip">crossbody bag</a>
+                            <a href="products.html?search=waterproof" class="text-decoration-none search-hint-chip">waterproof</a>
+                            <a href="products.html?search=LED" class="text-decoration-none search-hint-chip">LED</a>
+                            <a href="products.html?search=kitchen" class="text-decoration-none search-hint-chip">kitchen</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -1328,28 +1360,29 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category');
-        const search = urlParams.get('search');
-        
+        const search = urlParams.get('search') || urlParams.get('keyword') || urlParams.get('query') || '';
+
+        // Bind the in-page hero product search box (submit, live filter, ESC clear)
+        if (typeof bindHeroProductSearch === 'function') bindHeroProductSearch();
+
         if (category) {
-            const titleEl = document.querySelector('.page-header-section .section-title');
-            if (titleEl) {
-                titleEl.textContent = decodeURIComponent(category) + ' - Wholesale from China';
-            }
             if (typeof currentFilterCategory !== 'undefined') {
                 currentFilterCategory = decodeURIComponent(category);
                 if (typeof renderCategoryFilter === 'function') renderCategoryFilter();
-                if (typeof renderProducts === 'function') renderProducts();
             }
-        } else {
-            // Default: render all products on page load
-            if (typeof renderProducts === 'function') renderProducts();
         }
-        
+
+        // Use performSearch so both "search" in URL and page title / subtitle /
+        // input placeholder / <title> meta are updated in one place.
         if (search) {
-            const titleEl = document.querySelector('.page-header-section .section-title');
-            if (titleEl) {
-                titleEl.textContent = 'Search Results for "' + decodeURIComponent(search) + '"';
+            if (typeof performSearch === 'function') {
+                performSearch(decodeURIComponent(search));
+            } else if (typeof renderProducts === 'function') {
+                renderProducts();
             }
+        } else if (typeof renderProducts === 'function') {
+            // Default: render all products on page load
+            renderProducts();
         }
     });
     </script>

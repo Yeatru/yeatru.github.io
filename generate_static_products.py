@@ -1071,6 +1071,18 @@ def build_product_page(product, aplus_blocks, all_products=None):
     body.append('<li aria-current="page">%s</li>' % escape_html(name))
     body.append('</ol>')
     body.append('</nav>')
+    # In-page product search box placed directly on static detail pages too,
+    # so visitors can jump to SKU/keyword searches without scrolling to the header.
+    # Wiring lives in app.js (bindHeroProductSearch) — on static pages the form
+    # submit navigates to products.html?search=...
+    body.append('<form id="heroProductSearchForm" class="hero-product-search-form hero-product-search-form--compact mt-4 mb-4" role="search" aria-label="Search products by SKU or keyword" novalidate>')
+    body.append('  <div class="hero-product-search-inner">')
+    body.append('    <span class="hero-product-search-icon" aria-hidden="true"><i class="fas fa-search"></i></span>')
+    body.append('    <input type="search" id="heroProductSearchInput" class="hero-product-search-input" name="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search 679+ products by SKU or keyword (e.g. YCS-CLO-001, water bottle, LED)" aria-label="Search products by SKU or keyword">')
+    body.append('    <button type="button" id="heroProductSearchReset" class="hero-product-search-reset" aria-label="Clear search" title="Clear search"><i class="fas fa-xmark"></i></button>')
+    body.append('    <button type="submit" class="hero-product-search-submit"><i class="fas fa-search d-inline d-sm-none me-1"></i><span>Search</span></button>')
+    body.append('  </div>')
+    body.append('</form>')
     body.append('            <div class="detail-main">')
     body.append('                <div class="detail-image-col">')
     if image_opt:

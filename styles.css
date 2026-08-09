@@ -7888,3 +7888,166 @@ body.rtl .lang-dropdown-btn .dropdown-toggle::after {
 .aplus-block-text div[style*="color"] {
     /* Preserve inline color styles but ensure readability */
 }
+
+/* =============================================================================
+ * Hero / In-page Product Search Box
+ * --------------------------------------------------------------------------
+ * Large, centred search bar on products.html below the page-title hero block,
+ * and a compact version embedded directly on every static product detail page
+ * so visitors can search by SKU / name / keyword without scrolling to the
+ * header magnifier icon. The visual design follows a "site-wide utility"
+ * pattern: soft rounded corners, search icon prefix, clear button, and a
+ * solid CTA submit on the right.
+ * ========================================================================== */
+.hero-product-search-form {
+    max-width: 760px;
+    width: 100%;
+}
+.hero-product-search-form--compact {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.hero-product-search-inner {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 999px;
+    padding: 6px 6px 6px 52px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+.hero-product-search-inner:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+.hero-product-search-inner:focus-within {
+    border-color: var(--primary, #0d9488);
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12), 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+.hero-product-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary, #0d9488);
+    font-size: 1.1rem;
+    pointer-events: none;
+    opacity: 0.85;
+}
+.hero-product-search-input {
+    flex: 1 1 auto;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: var(--text-primary, #0f172a);
+    padding: 12px 8px;
+    min-width: 0;
+}
+.hero-product-search-input::placeholder {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+.hero-product-search-reset {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+.hero-product-search-reset:hover {
+    color: #475569;
+    background: #f1f5f9;
+}
+.hero-product-search-input:not(:placeholder-shown) ~ .hero-product-search-reset {
+    display: inline-flex;
+}
+.hero-product-search-submit {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: none;
+    background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
+    white-space: nowrap;
+}
+.hero-product-search-submit:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+    box-shadow: 0 10px 22px rgba(13, 148, 136, 0.32);
+}
+.hero-product-search-submit:active {
+    transform: translateY(0);
+}
+.hero-product-search-hints {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.search-hint-chip {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    color: #475569;
+    font-size: 0.8rem;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.search-hint-chip:hover {
+    background: var(--primary, #0d9488);
+    color: #fff;
+    border-color: var(--primary, #0d9488);
+}
+
+/* Search-term highlighting (safe HTML with <mark>). Note: cards use escaped
+   text wrapped with <mark>, so keep the highlight visually unobtrusive. */
+mark.search-highlight {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+@media (max-width: 767.98px) {
+    .hero-product-search-form { max-width: 100%; }
+    .hero-product-search-inner {
+        padding-left: 44px;
+        padding-right: 6px;
+        border-radius: 28px;
+        flex-wrap: wrap;
+    }
+    .hero-product-search-icon { left: 16px; font-size: 1rem; }
+    .hero-product-search-input { font-size: 1rem; padding: 10px 6px; }
+    .hero-product-search-submit {
+        width: 100%;
+        margin-top: 6px;
+        border-radius: 22px;
+        padding: 10px 18px;
+    }
+    .hero-product-search-reset { width: 36px; }
+    .hero-product-search-hints { font-size: 0.78rem; }
+}
+@media (max-width: 480px) {
+    .hero-product-search-input::placeholder { font-size: 0.84rem; }
+    .hero-product-search-hints { font-size: 0.74rem; }
+    .search-hint-chip { padding: 0.2rem 0.55rem; }
+}

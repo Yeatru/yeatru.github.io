@@ -150,6 +150,7 @@ const translationResources = {
 })();
 
 let currentFilterCategory = 'all';
+let currentSearchQuery = '';
 let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
@@ -374,6 +375,10 @@ document.addEventListener('DOMContentLoaded', function () {
         renderIndexHotProducts();
         renderCategories();
         renderProducts();
+        // Wire the in-page hero search box (used on products.html and on
+        // every static product-*.html detail page). Binds form submit,
+        // live-search (debounced), ESC-to-clear, and click-to-reset.
+        bindHeroProductSearch();
         // Fill prices for server-rendered / static HTML widgets that carry
         // `data-usd-price` attributes (e.g. the static product pages, any
         // pre-rendered cards). Must run AFTER initCurrencySelector() so the
@@ -1192,22 +1197,72 @@ function renderProducts() {
     const filterInfo = document.getElementById('filterResultInfo');
     if (!productList) return;
 
-    const filtered = currentFilterCategory === 'all'
+    // 1) Category filter
+    let filtered = currentFilterCategory === 'all'
         ? products
         : products.filter(p => p.category === currentFilterCategory);
 
+    // 2) Keyword/SKU search filter. Matches case-insensitively against:
+    //    sku, name, description, category, material, size, tags.
+    if (currentSearchQuery && currentSearchQuery.trim()) {
+        const q = currentSearchQuery.trim().toLowerCase();
+        const tokens = q.split(/\s+/).filter(Boolean);
+        filtered = filtered.filter(function (p) {
+            const hay = [
+                p.sku,
+                p.name,
+                p.description,
+                p.category,
+                p.material,
+                p.size,
+                p.moq,
+                (p.tags || (p.keywords || ''))
+            ].join(' ').toLowerCase();
+            return tokens.every(function (tok) { return hay.indexOf(tok) !== -1; });
+        });
+    }
+
     if (filterInfo) {
-        if (currentFilterCategory === 'all') {
-            filterInfo.textContent = `${tt('filter.showing', 'Showing')} ${filtered.length} ${tt('filter.products', 'products')}`;
+        const context = [];
+        if (currentSearchQuery) {
+            context.push('“' + escapeHtml(currentSearchQuery) + '”');
+        }
+        if (currentFilterCategory !== 'all') {
+            context.push(escapeHtml(currentFilterCategory));
+        }
+        if (context.length === 0) {
+            filterInfo.textContent = tt('filter.showing', 'Showing') + ' ' + filtered.length + ' ' + tt('filter.products', 'products');
         } else {
-            filterInfo.textContent = `${tt('filter.showing', 'Showing')} ${filtered.length} ${tt('filter.of', 'of')} ${products.length} ${tt('filter.products', 'products')} (${currentFilterCategory})`;
+            filterInfo.textContent = tt('filter.showing', 'Showing') + ' ' + filtered.length + ' ' + tt('filter.of', 'of') + ' ' + products.length + ' ' + tt('filter.products', 'products') + ' (' + context.join(' · ') + ')';
         }
     }
 
     productList.innerHTML = '';
 
     if (filtered.length === 0) {
-        productList.innerHTML = `<div class="col-12 text-center py-5"><h5>${tt('filter.noResult', 'No products in this category')}</h5></div>`;
+        const qs = currentSearchQuery
+            ? '“' + escapeHtml(currentSearchQuery) + '”'
+            : (currentFilterCategory === 'all' ? '' : escapeHtml(currentFilterCategory));
+        productList.innerHTML =
+            '<div class="col-12 text-center py-5">' +
+            '<div class="mb-3"><i class="fas fa-search fa-3x text-muted opacity-50"></i></div>' +
+            '<h5>' + tt('filter.noResult', 'No products match your criteria') + (qs ? ' — ' + qs : '') + '</h5>' +
+            '<p class="text-muted mt-2">' +
+            tt('filter.noResultHint', 'Try a different keyword, clear the search, or browse a different category.') +
+            '</p>' +
+            '<div class="mt-3 d-flex flex-wrap justify-content-center gap-2">' +
+            '<a href="products.html" class="btn btn-outline-primary"><i class="fas fa-rotate-left me-1"></i> ' + tt('filter.resetAll', 'Reset filters') + '</a>' +
+            (currentSearchQuery
+                ? '<button type="button" class="btn btn-outline-secondary" id="clearSearchOnlyBtn"><i class="fas fa-xmark me-1"></i> ' + tt('filter.clearSearch', 'Clear search only') + '</button>'
+                : '') +
+            '</div>' +
+            '</div>';
+        const clearSearchOnlyBtn = document.getElementById('clearSearchOnlyBtn');
+        if (clearSearchOnlyBtn) {
+            clearSearchOnlyBtn.addEventListener('click', function () {
+                performSearch('');
+            });
+        }
         return;
     }
 
@@ -1220,12 +1275,12 @@ function renderProducts() {
                 <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null;this.src='${escapeHtml(product.image)}';this.classList.add('loaded');">
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
-                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
+                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${highlightSearchMatch(escapeHtml(product.name))}</h5>
                     <div class="product-meta">
-                        ${product.sku ? `<span class="product-sku"><i class="fas fa-barcode me-1"></i>${escapeHtml(product.sku)}</span>` : ''}
+                        ${product.sku ? `<span class="product-sku"><i class="fas fa-barcode me-1"></i>${highlightSearchMatch(escapeHtml(product.sku))}</span>` : ''}
                         ${product.moq ? `<span class="product-moq"><i class="fas fa-box me-1"></i>MOQ: ${escapeHtml(product.moq)}</span>` : ''}
                     </div>
-                    <p class="product-desc">${escapeHtml(product.description)}</p>
+                    <p class="product-desc">${highlightSearchMatch(escapeHtml(product.description))}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
                         <a href="product-${skuSlugForProduct(product)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
@@ -1335,6 +1390,172 @@ function renderProducts() {
             }
         });
     });
+}
+
+/**
+ * If a search query is active, highlight matching tokens inside safe HTML strings
+ * (used for name / SKU / description). Returns the HTML with <mark> highlights.
+ */
+function highlightSearchMatch(safeHtml) {
+    if (!currentSearchQuery || !safeHtml) return safeHtml;
+    const q = currentSearchQuery.trim();
+    if (!q) return safeHtml;
+    const tokens = q.split(/\s+/).filter(Boolean).filter(function (t) { return t.length >= 2; });
+    if (tokens.length === 0) return safeHtml;
+    // Build a single regex that joins tokens with | (OR) for visual highlighting.
+    const escTokens = tokens.map(function (t) {
+        return t.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    });
+    try {
+        const re = new RegExp('(' + escTokens.join('|') + ')', 'gi');
+        return safeHtml.replace(re, '<mark class="search-highlight">$1</mark>');
+    } catch (e) {
+        return safeHtml;
+    }
+}
+
+/**
+ * Central search entry point used by:
+ *  - Inline hero search box on products.html (on-page search form submit)
+ *  - Static product-page search boxes (use window.location instead of this helper)
+ *  - Clear-search buttons from the empty-state panel
+ * Updates URL (search=...), page title, hero search input, and re-renders list.
+ */
+function performSearch(rawQuery, opts) {
+    opts = opts || {};
+    const q = (rawQuery || '').toString().trim();
+    currentSearchQuery = q;
+
+    // Update the hero search input value so it stays in sync with URL / programmatic clears.
+    const heroInput = document.getElementById('heroProductSearchInput');
+    if (heroInput) {
+        heroInput.value = q;
+    }
+
+    // Update the page title (hero section)
+    const titleEl = document.querySelector('.page-header-section .section-title');
+    const subtitleEl = document.querySelector('.page-header-section .section-subtitle');
+    if (titleEl) {
+        if (q) {
+            titleEl.textContent = 'Search Results for "' + q + '"';
+        } else if (currentFilterCategory !== 'all') {
+            titleEl.textContent = currentFilterCategory + ' - Wholesale from China';
+        } else {
+            titleEl.textContent = 'Wholesale Products from China';
+        }
+    }
+    if (subtitleEl) {
+        if (q) {
+            subtitleEl.textContent = 'Can’t find what you’re looking for? Try a broader keyword, browse categories below, or contact us for direct sourcing.';
+        } else {
+            subtitleEl.textContent = 'Explore curated product categories sourced directly from verified Chinese factories. Low MOQ, competitive prices, and one-stop service.';
+        }
+    }
+
+    // Update <title> tag and <meta description>
+    try {
+        if (q) {
+            document.title = 'Wholesale Search: "' + q + '" | Yeatru Sourcing (679+ Products)';
+            const md = document.querySelector('meta[name="description"]');
+            if (md) {
+                md.setAttribute('content', 'Search Yeatru Sourcing for wholesale “' + q + '” from verified Chinese factories. Compare prices, MOQ, and request a free quote within 24 hours.');
+            }
+        }
+    } catch (e) { /* ignore */ }
+
+    // Sync URL query string without reloading.
+    if (!opts.skipUrlUpdate) {
+        try {
+            const params = new URLSearchParams(window.location.search);
+            if (q) {
+                params.set('search', q);
+            } else {
+                params.delete('search');
+            }
+            const cat = params.get('category');
+            const newQs = params.toString();
+            const newUrl = 'products.html' + (newQs ? ('?' + newQs) : '');
+            history.replaceState({ search: q, category: cat }, '', newUrl);
+        } catch (e) { /* ignore */ }
+    }
+
+    if (typeof renderProducts === 'function') {
+        renderProducts();
+    }
+}
+
+/**
+ * Attach event handlers to the in-page hero search box (#heroProductSearchForm).
+ * This is a standalone helper so both products.html (dynamic) and the static
+ * product pages (which also embed a search box) can call the same wiring.
+ */
+function bindHeroProductSearch() {
+    const form = document.getElementById('heroProductSearchForm');
+    if (!form) return;
+    const input = document.getElementById('heroProductSearchInput');
+
+    // Pre-fill value from URL on first load
+    if (input && !input.value) {
+        try {
+            const p = new URLSearchParams(window.location.search);
+            const q = p.get('search') || p.get('keyword') || p.get('query') || '';
+            if (q) input.value = decodeURIComponent(q);
+        } catch (e) { /* ignore */ }
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const value = input ? input.value : '';
+        // If the search box is embedded on a static product page (no hero
+        // filterList / productList), just navigate to products.html with the
+        // search query; performSearch() on that page will take over filtering.
+        const isDynamicProductsPage = !!document.getElementById('productList');
+        if (!isDynamicProductsPage) {
+            window.location.href = 'products.html?search=' + encodeURIComponent(value.trim());
+            return;
+        }
+        performSearch(value);
+    });
+
+    const resetBtn = document.getElementById('heroProductSearchReset');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isDynamicProductsPage = !!document.getElementById('productList');
+            if (!isDynamicProductsPage) {
+                window.location.href = 'products.html';
+                return;
+            }
+            performSearch('');
+        });
+    }
+
+    // Live search: debounced as-you-type filtering for smoother UX on dynamic list.
+    let liveSearchTimer = null;
+    if (input) {
+        input.addEventListener('input', function () {
+            const isDynamicProductsPage = !!document.getElementById('productList');
+            if (!isDynamicProductsPage) return;
+            if (liveSearchTimer) clearTimeout(liveSearchTimer);
+            const val = this.value;
+            liveSearchTimer = setTimeout(function () {
+                performSearch(val, { skipUrlUpdate: false });
+            }, 280);
+        });
+        input.addEventListener('keydown', function (e) {
+            // Allow ESC to clear quickly
+            if (e.key === 'Escape') {
+                const isDynamicProductsPage = !!document.getElementById('productList');
+                if (!isDynamicProductsPage) {
+                    window.location.href = 'products.html';
+                    return;
+                }
+                performSearch('');
+            }
+        });
+    }
 }
 
 function handleRoute() {
