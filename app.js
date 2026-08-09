@@ -833,7 +833,7 @@ function renderIndexHotProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="products.html?product=${escapeHtml(product.sku || ('P' + product.id))}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${product.id}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1106,7 +1106,7 @@ function renderProducts() {
                     <p class="product-desc">${escapeHtml(product.description)}</p>
                     <p class="product-price">${escapeHtml(priceText)}</p>
                     <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="?product=${escapeHtml(product.sku || ('P' + product.id))}" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
+                        <a href="product-${product.id}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
                         <span class="text-muted action-separator">|</span>
                         <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
                     </div>
@@ -1166,14 +1166,20 @@ function renderProducts() {
 
     document.querySelectorAll('.product-img-clickable, .product-title-clickable, .view-detail-link').forEach(el => {
         el.addEventListener('click', function (e) {
-            e.preventDefault();
             const id = parseInt(this.getAttribute('data-id'));
             if (!id) return;
-            const product = getProducts().find(p => p.id === id);
-            if (!product) return;
-            const sku = product.sku || ('P' + id);
-            history.pushState({ type: 'product', id: id }, '', 'products.html?product=' + encodeURIComponent(sku));
-            showDetailPage(id);
+            // Admin mode keeps the in-page edit flow (dynamic detail pane).
+            // Everyone else follows the href directly to the static HTML
+            // product page so SEO weight lands on the canonical URL.
+            if (typeof isAdmin === 'function' && isAdmin()) {
+                e.preventDefault();
+                const product = getProducts().find(p => p.id === id);
+                if (!product) return;
+                const sku = product.sku || ('P' + id);
+                history.pushState({ type: 'product', id: id }, '', 'products.html?product=' + encodeURIComponent(sku));
+                showDetailPage(id);
+            }
+            // else: default browser navigation to href="product-<id>.html"
         });
     });
 }
@@ -1184,10 +1190,25 @@ function handleRoute() {
     const detailPage = document.getElementById('productDetailPage');
     const mainContent = document.getElementById('mainContent');
     if (!detailPage || !mainContent) return;
+
+    const staticUrlFor = function (product) {
+        return window.location.origin + '/product-' + product.id + '.html';
+    };
+
     if (productSku) {
         const product = getProducts().find(p => p.sku === productSku || String(p.id) === productSku);
         if (product) {
-            showDetailPage(product.id);
+            // Admin users stay on this page so dynamic edit mode still works.
+            if (typeof isAdmin === 'function' && isAdmin()) {
+                showDetailPage(product.id);
+                return;
+            }
+            // For everyone else (including search engine crawlers that execute JS,
+            // and visitors with old/bookmarked links), do a JS-level permanent
+            // redirect to the canonical static product page. Using replace() means
+            // it also doesn't add a history entry.
+            window.location.replace(staticUrlFor(product));
+            return;
         } else {
             hideDetailPage();
         }
@@ -1199,9 +1220,13 @@ function handleRoute() {
             const id = parseInt(m[1]);
             const product = getProducts().find(p => p.id === id);
             if (product) {
-                const sku = product.sku || ('P' + id);
-                history.replaceState(null, '', 'products.html?product=' + encodeURIComponent(sku));
-                showDetailPage(id);
+                if (typeof isAdmin === 'function' && isAdmin()) {
+                    const sku = product.sku || ('P' + id);
+                    history.replaceState(null, '', 'products.html?product=' + encodeURIComponent(sku));
+                    showDetailPage(id);
+                    return;
+                }
+                window.location.replace(staticUrlFor(product));
                 return;
             }
         }
@@ -2041,7 +2066,10 @@ function setProductMeta(product) {
     if (!product) return;
     if (Object.keys(defaultMeta).length === 0) saveDefaultMeta();
 
-    const productUrl = window.location.origin + window.location.pathname + '?product=' + encodeURIComponent(product.sku || ('P' + product.id));
+    // Canonical URL points to the dedicated static product page
+    // (product-<id>.html) so that Google/Bing merge weight away from the
+    // dynamic ?product=SKU variant and from the old list-page canonical.
+    const productUrl = window.location.origin + '/product-' + product.id + '.html';
     const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
     const productDesc = product.description ? product.description.substring(0, 155) : defaultMeta.description;
     const productTitle = product.name && (product.name.length + 18) <= 60
