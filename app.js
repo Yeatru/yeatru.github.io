@@ -203,6 +203,34 @@ function formatPrice(usdPrice) {
     return cfg.symbol + converted;
 }
 
+/**
+ * Fill every element with a `data-usd-price="…"` attribute using formatPrice().
+ * This is how static product pages (product-<id>.html) as well as any
+ * pre-rendered price widget keep their price display perfectly in sync with
+ * the user's chosen currency (USD/EUR/GBP/RUB/CNY) stored in localStorage —
+ * and stay identical to what renderProductCard() / renderDetailPage() would
+ * produce on the dynamic products.html page.
+ *
+ * Runs once during DOMContentLoaded and again whenever currency changes.
+ */
+function applyUsdPricePlaceholders() {
+    try {
+        const nodes = document.querySelectorAll('[data-usd-price]');
+        nodes.forEach(el => {
+            const raw = el.getAttribute('data-usd-price');
+            if (raw === null || raw === '') return;
+            const price = parseFloat(raw);
+            if (!isFinite(price)) return;
+            el.textContent = formatPrice(price);
+        });
+    } catch (err) {
+        // Never break page initialisation because of a price-formatting error.
+        if (typeof console !== 'undefined' && console.warn) {
+            console.warn('[applyUsdPricePlaceholders]', err);
+        }
+    }
+}
+
 function initCurrencySelector() {
     const currencyItems = document.querySelectorAll('[data-currency]');
     const currentCurrencyEl = document.getElementById('current-currency');
@@ -225,6 +253,7 @@ function initCurrencySelector() {
             document.dispatchEvent(new CustomEvent('currencyChanged', { detail: { currency } }));
             renderProducts();
             renderIndexHotProducts();
+            applyUsdPricePlaceholders();
         });
     });
 }
@@ -278,6 +307,11 @@ document.addEventListener('DOMContentLoaded', function () {
         renderIndexHotProducts();
         renderCategories();
         renderProducts();
+        // Fill prices for server-rendered / static HTML widgets that carry
+        // `data-usd-price` attributes (e.g. the static product pages, any
+        // pre-rendered cards). Must run AFTER initCurrencySelector() so the
+        // chosen currency in localStorage is respected.
+        applyUsdPricePlaceholders();
     } catch (e) {
         console.error('[init] Error during initial render:', e);
     }
@@ -1168,18 +1202,40 @@ function renderProducts() {
         el.addEventListener('click', function (e) {
             const id = parseInt(this.getAttribute('data-id'));
             if (!id) return;
-            // Admin mode keeps the in-page edit flow (dynamic detail pane).
-            // Everyone else follows the href directly to the static HTML
-            // product page so SEO weight lands on the canonical URL.
-            if (typeof isAdmin === 'function' && isAdmin()) {
+            const staticUrl = 'product-' + id + '.html';
+            const admin = typeof isAdmin === 'function' && isAdmin();
+
+            if (admin) {
+                // Admin mode: in-page dynamic edit flow
                 e.preventDefault();
                 const product = getProducts().find(p => p.id === id);
                 if (!product) return;
                 const sku = product.sku || ('P' + id);
                 history.pushState({ type: 'product', id: id }, '', 'products.html?product=' + encodeURIComponent(sku));
                 showDetailPage(id);
+                return;
             }
-            // else: default browser navigation to href="product-<id>.html"
+
+            // Non-admin: always navigate to the canonical static product page.
+            // - view-detail-link is an <a href="product-<id>.html">: if it has
+            //   a valid href we let the browser follow it naturally (so that
+            //   middle-click / ctrl-click / "Open in new tab" still works).
+            // - product-img-clickable (<img>) and product-title-clickable
+            //   (<h5>) are NOT <a> elements — they have no href. We must do
+            //   the navigation explicitly via location.href.
+            const isAnchor = (this.tagName === 'A');
+            if (isAnchor) {
+                // Keep default navigation (allow new-tab / ctrl-click).
+                // Only override if the href is missing or malformed.
+                const href = this.getAttribute('href') || '';
+                if (!href || href === '#' || href.startsWith('products.html?product=')) {
+                    e.preventDefault();
+                    window.location.href = staticUrl;
+                }
+            } else {
+                e.preventDefault();
+                window.location.href = staticUrl;
+            }
         });
     });
 }

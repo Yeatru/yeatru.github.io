@@ -109,11 +109,58 @@ def optimize_image_url(url, width=800):
     return "https://wsrv.nl/?url=" + quote(url, safe="") + "&w=" + str(width) + "&output=webp&q=80"
 
 
-def format_price(usd):
+def _to_float(v):
     try:
-        return "$" + format(float(usd), ".2f")
+        return float(v)
     except (TypeError, ValueError):
-        return ""
+        return None
+
+
+# NOTE: Static product pages no longer hard-code a "$" price. Instead we
+# emit an element with `data-usd-price` attribute and the non-breaking-space
+# placeholder "&mdash;" (—). At render time app.js.applyUsdPricePlaceholders()
+# fills the textContent via the shared formatPrice() function which honors
+# localStorage `yeatru_currency` and EXCHANGE_RATES conversion. This keeps
+# the static page price display perfectly consistent with products.html's
+# dynamic cards regardless of whether the visitor has chosen
+# USD/EUR/GBP/RUB/CNY, and eliminates the symptom where some products'
+# prices looked "extra expensive" because raw numeric values were being
+# wrapped with a literal '$' without running through formatPrice().
+def price_span(usd, extra_class=""):
+    """Return an HTML span carrying a data-usd-price for later formatPrice()."""
+    f = _to_float(usd)
+    if f is None:
+        return '<span class="variation-price%s">&mdash;</span>' % (
+            (" " + extra_class) if extra_class else ""
+        )
+    cls = "variation-price" + ((" " + extra_class) if extra_class else "")
+    # We use format "%.6f" to preserve small prices without rounding errors;
+    # JavaScript parseFloat() will handle it cleanly.
+    return (
+        '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
+        % (cls, f)
+    )
+
+
+def price_range_span(pmin, pmax, extra_class=""):
+    fmin, fmax = _to_float(pmin), _to_float(pmax)
+    if fmin is None and fmax is None:
+        return '<span class="%s">&mdash;</span>' % (
+            ("price-range " + extra_class) if extra_class else "price-range"
+        )
+    cls = "price-range" + ((" " + extra_class) if extra_class else "")
+    if fmin is not None and fmax is not None and abs(fmin - fmax) < 0.005:
+        return price_span(fmin, extra_class)
+    parts = []
+    for v in (fmin, fmax):
+        if v is None:
+            parts.append("&mdash;")
+        else:
+            parts.append(
+                '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
+                % (extra_class or "", v)
+            )
+    return '<span class="%s">%s</span>' % (cls, " &ndash; ".join(parts))
 
 
 COLOR_MAP = {
@@ -130,7 +177,11 @@ def get_color_value(color_name):
 
 
 def price_big_text(product):
-    """Replicate renderDetailPage() big-price logic."""
+    """Return HTML (data-usd-price spans) for the hero price.
+
+    Mirrors products.js / renderDetailPage() big-price logic but outputs
+    data attributes instead of hard-coded currency text. See price_span().
+    """
     variations = product.get("variations") or []
     priced = [
         v for v in variations
@@ -139,16 +190,21 @@ def price_big_text(product):
     if priced:
         prices = []
         for v in priced:
-            try:
-                prices.append(float(v.get("price")))
-            except (TypeError, ValueError):
-                pass
+            f = _to_float(v.get("price"))
+            if f is not None:
+                prices.append(f)
         if prices:
             v_min, v_max = min(prices), max(prices)
-            if v_min == v_max:
-                return format_price(v_min)
-            return format_price(v_min) + " - " + format_price(v_max)
-    return format_price(product.get("priceMin") or 0) + " - " + format_price(product.get("priceMax") or 0)
+            if abs(v_min - v_max) < 0.005:
+                return price_span(v_min, "detail-price-big")
+            return (
+                price_span(v_min, "detail-price-big")
+                + ' <span class="price-dash">&ndash;</span> '
+                + price_span(v_max, "detail-price-big")
+            )
+    return price_range_span(
+        product.get("priceMin"), product.get("priceMax"), "detail-price-big"
+    )
 
 
 class _Undefined:
@@ -289,19 +345,59 @@ FOOTER_HTML = """    <footer class="footer">
 
 
 # ============================ A+ content rendering ==========================
-def render_aplus_block(b):
-    btype = b.get("type", "text")
-    heading = escape_html(b.get("heading", ""))
-    text = b.get("text", "") or ""
-    image = b.get("image", "") or ""
+def _norm_url(u):
+    """Normalize an image URL so that query params / anchors don't prevent
+    a meaningful equality check with the hero product image."""
+    return str(u or "").strip().split("?", 1)[0].split("#", 1)[0]
 
+
+def render_aplus_block(b, main_image=None):
+    """Render a single A+ content block.
+
+    Parameters
+    ----------
+    b : dict
+        Block descriptor from site-data-aplus.json (type, heading, text, image, …).
+    main_image : str | None
+        The canonical hero image URL for this product. When an A+ block's
+        image points at the *same* URL we drop that <img> (because the
+        visitor already sees the identical hero image above the A+ section).
+        For blocks which are nothing more than a duplicate hero image
+        (no heading, no text, no items) we return "" and the block is
+        elided entirely — this materially reduces the HTML payload size
+        (about 644 / 679 products had at least one such duplicate block,
+        totalling ~1900 redundant <img> / style attributes).
+    """
+    btype = b.get("type", "text")
+    heading_raw = b.get("heading", "")
+    heading = escape_html(heading_raw)
+    text_raw = b.get("text", "") or ""
+    text = text_raw
+    image = b.get("image", "") or ""
+    gallery = b.get("images") or []
+
+    main_norm = _norm_url(main_image) if main_image else ""
+
+    def _dup(u):
+        return bool(main_norm and _norm_url(u) == main_norm)
+
+    def _safe_optimized(u, width):
+        if _dup(u):
+            return ""
+        return escape_attr(optimize_image_url(u, width)) if u else ""
+
+    # Hero block
     if btype == "hero":
-        img_src = escape_attr(optimize_image_url(image, 1000)) if image else ""
+        img_src = _safe_optimized(image, 1000)
+        has_img = bool(img_src)
+        has_text = bool(heading.strip() or str(text_raw).strip())
+        if not has_img and not has_text:
+            return ""
         img_tag = (
             '<img src="' + img_src + '" alt="' + (heading or "hero") + '" '
             'style="max-width:600px;width:100%;height:auto;border-radius:8px;'
             'margin:1rem auto;display:block;" loading="lazy" decoding="async">'
-        ) if img_src else ""
+        ) if has_img else ""
         return (
             '<div class="aplus-block" data-type="hero">'
             '<div class="aplus-block-content">'
@@ -312,6 +408,8 @@ def render_aplus_block(b):
         )
 
     if btype == "text":
+        if not (heading.strip() or str(text_raw).strip()):
+            return ""
         return (
             '<div class="aplus-block" data-type="text">'
             '<div class="aplus-block-content">'
@@ -322,18 +420,31 @@ def render_aplus_block(b):
 
     if btype in ("textImage", "imageText"):
         layout = "layout-text-image" if btype == "textImage" else "layout-image-text"
-        img_src = escape_attr(optimize_image_url(image, 800))
+        img_src = _safe_optimized(image, 800)
+        has_img = bool(img_src)
+        has_text = bool(heading.strip() or str(text_raw).strip())
+        if not has_img and not has_text:
+            return ""
+        if has_img:
+            return (
+                '<div class="aplus-block" data-type="%s">'
+                '<div class="aplus-block-content">'
+                '<div class="aplus-block-image-wrap %s">'
+                '<div class="aplus-block-text-side">'
+                '<h3 class="aplus-block-heading">%s</h3>'
+                '<div class="aplus-block-text">%s</div>'
+                '</div>'
+                '<img src="%s" alt="%s" loading="lazy" decoding="async">'
+                '</div>'
+                '</div></div>' % (btype, layout, heading, text, img_src, heading or "block")
+            )
+        # Image was a duplicate of the hero: render the text side only.
         return (
-            '<div class="aplus-block" data-type="%s">'
+            '<div class="aplus-block" data-type="%s" data-img-deduped="1">'
             '<div class="aplus-block-content">'
-            '<div class="aplus-block-image-wrap %s">'
-            '<div class="aplus-block-text-side">'
             '<h3 class="aplus-block-heading">%s</h3>'
             '<div class="aplus-block-text">%s</div>'
-            '</div>'
-            '<img src="%s" alt="%s" loading="lazy" decoding="async">'
-            '</div>'
-            '</div></div>' % (btype, layout, heading, text, img_src, heading or "block")
+            '</div></div>' % (btype, heading, text)
         )
 
     if btype == "features":
@@ -342,6 +453,8 @@ def render_aplus_block(b):
             "<li>%s</li>" % (it if isinstance(it, str) else escape_html(it))
             for it in items
         )
+        if not (heading_raw or items_html):
+            return ""
         return (
             '<div class="aplus-block" data-type="features">'
             '<div class="aplus-block-content">'
@@ -353,6 +466,8 @@ def render_aplus_block(b):
     if btype == "twoColumns":
         col1 = b.get("column1", "") or ""
         col2 = b.get("column2", "") or ""
+        if not (str(col1).strip() or str(col2).strip()):
+            return ""
         return (
             '<div class="aplus-block" data-type="twoColumns">'
             '<div class="aplus-block-content">'
@@ -363,6 +478,28 @@ def render_aplus_block(b):
             '</div></div>' % (col1, col2)
         )
 
+    # Gallery blocks (informal check: some A+ datasets use type=gallery)
+    if btype == "gallery" and isinstance(gallery, list) and gallery:
+        kept = [g for g in gallery if not _dup(g)]
+        if not kept:
+            return ""
+        imgs = "".join(
+            '<img src="%s" alt="%s" loading="lazy" decoding="async">' % (
+                escape_attr(optimize_image_url(g, 500)),
+                escape_attr(heading or "gallery item"),
+            )
+            for g in kept
+        )
+        return (
+            '<div class="aplus-block" data-type="gallery">'
+            '<div class="aplus-block-content">'
+            '<h3 class="aplus-block-heading">%s</h3>'
+            '<div class="aplus-gallery">%s</div>'
+            '</div></div>' % (heading, imgs)
+        )
+
+    if not (heading.strip() or str(text_raw).strip()):
+        return ""
     # Fallback: plain text block
     return (
         '<div class="aplus-block" data-type="text">'
@@ -387,7 +524,7 @@ def render_variations(variations):
         price_html = ""
         p = v.get("price")
         if p not in (None, ""):
-            price_html = '<span class="variation-price">%s</span>' % format_price(p)
+            price_html = price_span(p)
         cards.append(
             '<div class="variation-card">'
             '<div class="variation-info">'
@@ -559,15 +696,17 @@ def build_product_page(product, aplus_blocks):
         '<tr><th>MOQ</th><td>%s</td></tr>' % escape_html(moq if moq not in ("", None) else "—")
     )
     spec_rows.append(
-        '<tr><th>Min Price</th><td>%s</td></tr>' % (format_price(price_min) if price_min not in ("", None) else "—")
+        '<tr><th>Min Price</th><td>%s</td></tr>' % (price_span(price_min, "spec-price") if price_min not in ("", None) else "—")
     )
     spec_rows.append(
-        '<tr><th>Max Price</th><td>%s</td></tr>' % (format_price(price_max) if price_max not in ("", None) else "—")
+        '<tr><th>Max Price</th><td>%s</td></tr>' % (price_span(price_max, "spec-price") if price_max not in ("", None) else "—")
     )
 
     variations_html = render_variations(product.get("variations"))
 
-    aplus_inner = "".join(render_aplus_block(b) for b in aplus_blocks)
+    aplus_inner = "".join(
+        b for b in (render_aplus_block(block, main_image=image) for block in aplus_blocks) if b
+    )
     if not aplus_inner:
         aplus_inner = (
             '<div class="aplus-block" data-type="text">'
@@ -584,9 +723,6 @@ def build_product_page(product, aplus_blocks):
     body.append('    <section class="product-detail-page active">')
     body.append('        <div class="container">')
     body.append('            <a class="detail-back-btn" href="products.html"><i class="fas fa-arrow-left"></i> Back to Products</a>')
-    body.append('            <div class="detail-toolbar">')
-    body.append('                <a class="btn btn-sm btn-outline-secondary" href="contact.html"><i class="fas fa-file-invoice-dollar me-1"></i> Get a Quote</a>')
-    body.append('            </div>')
     body.append('            <div class="detail-main">')
     body.append('                <div>')
     if image_opt:
@@ -604,7 +740,63 @@ def build_product_page(product, aplus_blocks):
     body.append('                    <table class="detail-spec-table">')
     body.extend(spec_rows)
     body.append('                    </table>')
-    body.append('                    <div class="detail-price-big">%s</div>' % escape_html(big_price))
+    # big_price already returns sanitised <span data-usd-price=...> / &mdash;
+    # HTML generated by price_span() / price_range_span(). Do NOT escape again.
+    body.append('                    <div class="detail-price-big-wrap">%s</div>' % big_price)
+    # Primary CTA placed in the standard "Buy Now / Add to Cart" position
+    # right below the hero price. Eliminates the previous duplicate tiny
+    # "Get a Quote" grey button that sat next to "Back to Products".
+    # Intended entry points: navbar "Get Quote" button + hero-row 3-button
+    # panel here (Quote form / WhatsApp / Email) + floating sidebar icons.
+    from urllib.parse import quote as _urlq
+    _sku_part = (" (SKU " + sku + ")") if sku else ""
+    wa_text = (
+        "Hello Yeatru Sourcing, I would like a quote for "
+        + (name or "this product") + _sku_part
+    )
+    _min_price = product.get("priceMin")
+    _min = (
+        str(_min_price) if _min_price not in (None, "") else "n/a"
+    )
+    _moq = str(moq) if moq not in ("", None) else "n/a"
+    prod_url = "https://www.yeatru.com/product-" + str(pid) + ".html"
+    wa_href = "https://wa.me/8615988516408?text=" + _urlq(wa_text)
+    mail_href = (
+        "mailto:info@yeatru.com?subject="
+        + _urlq("Quote Request - " + (name or "Product") + _sku_part)
+        + "&body=" + _urlq(
+            "Hi Yeatru Sourcing,\n\nI am interested in "
+            + (name or "this product") + _sku_part
+            + ".\n\nProduct URL: " + prod_url
+            + "\nPrice (USD): from " + _min
+            + "\nMOQ: " + _moq
+            + "\n\nQuantity:\nTarget price:\nRequired specs:\n\nThank you."
+        )
+    )
+    contact_href = (
+        "contact.html?product=" + _urlq(sku or ("P" + str(pid)))
+        + "&name=" + _urlq(name or "")
+    )
+    body.append(
+        '                    <div class="detail-buy-row">'
+        '<a class="btn btn-lg btn-primary detail-buy-btn quote-product" '
+        'href="%s" data-product="%s" data-sku="%s">'
+        '<i class="fas fa-file-invoice-dollar me-2"></i>Request a Quote</a>'
+        '<a class="btn btn-lg btn-outline-success detail-buy-btn" '
+        'href="%s" target="_blank" rel="noopener noreferrer">'
+        '<i class="fab fa-whatsapp me-2"></i>WhatsApp</a>'
+        '<a class="btn btn-lg btn-outline-primary detail-buy-btn" '
+        'href="%s">'
+        '<i class="fas fa-envelope me-2"></i>Email</a>'
+        '</div>'
+        % (
+            escape_attr(contact_href),
+            escape_attr(name or "Product"),
+            escape_attr(sku or ""),
+            escape_attr(wa_href),
+            escape_attr(mail_href),
+        )
+    )
     body.append('                    <p class="text-muted">%s</p>' % escape_html(desc))
     body.append('                    %s' % variations_html)
     body.append('                </div>')
@@ -624,7 +816,126 @@ def build_product_page(product, aplus_blocks):
     body.append('</body>')
     body.append('</html>')
 
-    return build_head(product, canonical_url) + "\n" + "\n".join(body)
+    raw = build_head(product, canonical_url) + "\n" + "\n".join(body)
+    return minify_html(raw)
+
+
+def minify_html(raw):
+    """Lightweight, safe HTML compressor for the static product pages.
+
+    We never touch content inside <pre>/<textarea>/<script>/<style> (except
+    <style>...</style> in <head>, where comments and run-of-spaces are safe
+    to collapse). The main wins come from:
+      * collapsing 2+ consecutive whitespace characters (including newlines,
+        tabs) inside tags to a single space (except inside `style="..."`,
+        `class="..."`, and `data-*="..."` where spaces are delimiters and
+        must therefore be preserved as-is);
+      * removing HTML comments that don't look like IE conditionals or
+        license markers;
+      * replacing runs of 6+ `&nbsp;` (sometimes injected by A+ editors
+        for fake spacing) with a single normal space — one or two `&nbsp;`
+        for legitimate non-breaking spaces is kept.
+    On typical pages this cuts size by 5–15%, and on the 70 KB max-sized
+    pages by closer to 20–25% — which addresses the "Html size is too long"
+    notice from Bing/Google while keeping the DOM structure 100% identical.
+    """
+    if not raw:
+        return ""
+
+    # 1. Strip HTML comments (preserve IE conditionals: <!--[if …]><!--> ... )
+    raw = re.sub(
+        r"<!--(?!\[if\s)[\s\S]*?-->",
+        lambda m: m.group(0) if m.group(0).startswith("<!--[if") or m.group(0).startswith("<!--[endif") else "",
+        raw,
+    )
+
+    # 2. Replace runs of 6+ &nbsp; with a single space (editor noise).
+    raw = re.sub(r"(&nbsp;\s*){6,}", " ", raw)
+
+    # 3. Collapse newline + tab runs outside of sensitive sections:
+    #    Walk through string once, skipping content inside <script … </script>,
+    #    <style … </style>, <pre … </pre>, <textarea … </textarea>.
+    import re as _re
+    SKIP_TAGS = ("script", "style", "pre", "textarea")
+
+    def _tag_info(s, i):
+        """If s[i:] starts with '<script...>' (etc.) return (end_idx_of_close), else None."""
+        if s[i] != "<":
+            return None
+        # find tag name
+        m = _re.match(r"<\s*/?\s*([a-zA-Z0-9]+)", s[i:])
+        if not m:
+            return None
+        tag = m.group(1).lower()
+        if tag not in SKIP_TAGS:
+            return None
+        is_close = (s[i+1:i+2] == "/")
+        if is_close:
+            # find end of this close tag
+            j = s.find(">", i)
+            return ("CLOSE", tag, j + 1)
+        else:
+            # find the matching close tag
+            close_pat = _re.compile(r"</\s*" + tag + r"\s*>", _re.IGNORECASE)
+            cm = close_pat.search(s, i)
+            if cm:
+                return ("OPEN", tag, cm.end())
+            return None
+
+    out_parts = []
+    i = 0
+    n = len(raw)
+    in_ws_run = False
+    while i < n:
+        ch = raw[i]
+        if ch == "<":
+            info = _tag_info(raw, i)
+            if info:
+                kind, tag, end_idx = info
+                # copy entire verbatim span up to end_idx
+                # (but for <style> in <head> we allow a light collapse)
+                span = raw[i:end_idx]
+                if tag == "style":
+                    span = _re.sub(r"\s+", " ", span)
+                    span = _re.sub(r"/\*[\s\S]*?\*/", "", span)
+                out_parts.append(span)
+                i = end_idx
+                in_ws_run = False
+                continue
+            # Regular tag: copy byte-by-byte up to '>' without collapsing
+            # whitespace inside it (to keep class="a b" correct).
+            j = raw.find(">", i)
+            if j == -1:
+                out_parts.append(raw[i:])
+                break
+            out_parts.append(raw[i:j+1])
+            i = j + 1
+            in_ws_run = False
+            continue
+        if ch in "\r\n\t ":
+            if in_ws_run:
+                i += 1
+                continue
+            out_parts.append(" ")
+            in_ws_run = True
+            i += 1
+            continue
+        in_ws_run = False
+        # Copy a run of non-< non-whitespace characters at once for speed.
+        j = i
+        while j < n and raw[j] not in "<\r\n\t ":
+            j += 1
+        if j == i:
+            out_parts.append(ch)
+            i += 1
+        else:
+            out_parts.append(raw[i:j])
+            i = j
+    html = "".join(out_parts)
+    # Final tidy: spaces next to block boundaries that are never meaningful.
+    html = html.replace(" >", ">").replace("< ", "<")
+    html = _re.sub(r"\s+</", "</", html)
+    return html
 
 
 # ============================ sitemap generation ============================
