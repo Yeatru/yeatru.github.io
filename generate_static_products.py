@@ -890,7 +890,7 @@ def _build_product_faqs():
 
 
 def _get_related_products(current, all_products):
-    """Pick 4-6 related products based on matching category."""
+    """Pick 4-5 related products based on matching category."""
     current_cat = current.get("category", "") or ""
     current_id = current.get("id")
     # First try: same category
@@ -899,13 +899,13 @@ def _get_related_products(current, all_products):
         if p.get("category") == current_cat
         and str(p.get("id")) != str(current_id)
     ]
-    # Shuffle-ish deterministic selection (take first 5 after sorting by id)
-    same_cat_sorted = sorted(same_cat, key=lambda x: str(x.get("id", "")))[:6]
+    # Deterministic selection (take first 5 after sorting by id)
+    same_cat_sorted = sorted(same_cat, key=lambda x: str(x.get("id", "")))[:5]
     if len(same_cat_sorted) >= 4:
         return same_cat_sorted
     # Fallback: any products, excluding current
     others = [p for p in all_products if str(p.get("id")) != str(current_id)]
-    return sorted(others, key=lambda x: str(x.get("id", "")))[:6]
+    return sorted(others, key=lambda x: str(x.get("id", "")))[:5]
 
 
 def _sku_slug(sku):
