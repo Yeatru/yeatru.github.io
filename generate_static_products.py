@@ -23,6 +23,14 @@ from datetime import date
 BASE_URL = "https://www.yeatru.com"
 TODAY = date.today().isoformat()
 
+# CNY -> USD exchange rate used to convert the CNY prices stored in
+# site-data.json into USD for display on the static product pages.
+# The raw price fields (priceMin / priceMax / variations[].price) are
+# all CNY; we divide by this rate before writing data-usd-price or
+# the Product JSON-LD so that formatPrice() in app.js can multiply by
+# the user's chosen currency rate (e.g. 7.25 for CNY) correctly.
+CNY_TO_USD_RATE = 6.7
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_DATA = os.path.join(ROOT, "site-data.json")
 APLUS_DATA = os.path.join(ROOT, "site-data-aplus.json")
@@ -116,6 +124,14 @@ def _to_float(v):
         return None
 
 
+def _cny_to_usd(v):
+    """Convert a CNY price (from site-data.json) to USD."""
+    f = _to_float(v)
+    if f is None:
+        return None
+    return f / CNY_TO_USD_RATE
+
+
 # NOTE: Static product pages no longer hard-code a "$" price. Instead we
 # emit an element with `data-usd-price` attribute and the non-breaking-space
 # placeholder "&mdash;" (—). At render time app.js.applyUsdPricePlaceholders()
@@ -127,26 +143,44 @@ def _to_float(v):
 # prices looked "extra expensive" because raw numeric values were being
 # wrapped with a literal '$' without running through formatPrice().
 def price_span(usd, extra_class=""):
-    """Return an HTML span carrying a data-usd-price for later formatPrice()."""
+    """Return an HTML span carrying a data-usd-price for later formatPrice().
+
+    The incoming `usd` value is expected to already be in USD. If the raw
+    value is CNY, call _cny_to_usd() first.
+    """
     f = _to_float(usd)
     if f is None:
         return '<span class="variation-price%s">&mdash;</span>' % (
             (" " + extra_class) if extra_class else ""
         )
     cls = "variation-price" + ((" " + extra_class) if extra_class else "")
-    # We use format "%.6f" to preserve small prices without rounding errors;
-    # JavaScript parseFloat() will handle it cleanly.
     return (
         '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
         % (cls, f)
     )
 
 
-def price_range_span(pmin, pmax, extra_class=""):
-    fmin, fmax = _to_float(pmin), _to_float(pmax)
+def price_span_cny(cny, extra_class=""):
+    """Like price_span() but the input is a CNY value; it is converted to
+    USD before writing the data-usd-price attribute."""
+    usd = _cny_to_usd(cny)
+    if usd is None:
+        return '<span class="variation-price%s">&mdash;</span>' % (
+            (" " + extra_class) if extra_class else ""
+        )
+    cls = "variation-price" + ((" " + extra_class) if extra_class else "")
+    return (
+        '<span class="%s" data-usd-price="%.6f">&mdash;</span>'
+        % (cls, usd)
+    )
+
+
+def price_range_span_cny(cny_min, cny_max, extra_class=""):
+    """Return an HTML price range span for CNY inputs (converted to USD)."""
+    fmin, fmax = _cny_to_usd(cny_min), _cny_to_usd(cny_max)
     if fmin is None and fmax is None:
-        return '<span class="%s">&mdash;</span>' % (
-            ("price-range " + extra_class) if extra_class else "price-range"
+        return '<span class="price-range%s">&mdash;</span>' % (
+            (" " + extra_class) if extra_class else ""
         )
     cls = "price-range" + ((" " + extra_class) if extra_class else "")
     if fmin is not None and fmax is not None and abs(fmin - fmax) < 0.005:
@@ -179,8 +213,9 @@ def get_color_value(color_name):
 def price_big_text(product):
     """Return HTML (data-usd-price spans) for the hero price.
 
-    Mirrors products.js / renderDetailPage() big-price logic but outputs
-    data attributes instead of hard-coded currency text. See price_span().
+    Prices in site-data.json are CNY; we convert to USD before writing
+    the data-usd-price attribute so that the static page stays correct
+    after formatPrice() conversion.
     """
     variations = product.get("variations") or []
     priced = [
@@ -190,9 +225,9 @@ def price_big_text(product):
     if priced:
         prices = []
         for v in priced:
-            f = _to_float(v.get("price"))
-            if f is not None:
-                prices.append(f)
+            usd = _cny_to_usd(v.get("price"))
+            if usd is not None:
+                prices.append(usd)
         if prices:
             v_min, v_max = min(prices), max(prices)
             if abs(v_min - v_max) < 0.005:
@@ -202,7 +237,7 @@ def price_big_text(product):
                 + ' <span class="price-dash">&ndash;</span> '
                 + price_span(v_max, "detail-price-big")
             )
-    return price_range_span(
+    return price_range_span_cny(
         product.get("priceMin"), product.get("priceMax"), "detail-price-big"
     )
 
@@ -524,7 +559,7 @@ def render_variations(variations):
         price_html = ""
         p = v.get("price")
         if p not in (None, ""):
-            price_html = price_span(p)
+            price_html = price_span_cny(p)
         cards.append(
             '<div class="variation-card">'
             '<div class="variation-info">'
@@ -579,19 +614,10 @@ def build_head(product, canonical_url):
         "Yeatru Sourcing",
     ]))
 
-    hreflang = []
-    for lang in LANGS:
-        href = canonical_url if lang == "en" else canonical_url + "?lang=" + lang
-        hreflang.append(
-            '<link rel="alternate" hreflang="%s" href="%s">' % (lang, escape_attr(href))
-        )
-    hreflang.append(
-        '<link rel="alternate" hreflang="x-default" href="%s">' % url_esc
-    )
-
     # Product JSON-LD
-    price_min = product.get("priceMin") or 0
-    price_max = product.get("priceMax") or 0
+    # Convert CNY prices to USD for JSON-LD (priceCurrency is USD)
+    price_min_usd = _cny_to_usd(product.get("priceMin")) or 0
+    price_max_usd = _cny_to_usd(product.get("priceMax")) or 0
     jsonld = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -604,13 +630,109 @@ def build_head(product, canonical_url):
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "USD",
-            "lowPrice": price_min,
-            "highPrice": price_max,
+            "lowPrice": round(price_min_usd, 2),
+            "highPrice": round(price_max_usd, 2),
             "availability": "https://schema.org/InStock",
             "seller": {"@type": "Organization", "name": "Yeatru Sourcing"},
             "url": canonical_url,
         },
     }
+
+    # Build breadcrumb list for this product
+    breadcrumb_items = [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE_URL + "/"},
+        {"@type": "ListItem", "position": 2, "name": "Products", "item": BASE_URL + "/products.html"},
+    ]
+    if category:
+        breadcrumb_items.append({
+            "@type": "ListItem", "position": 3,
+            "name": category,
+            "item": BASE_URL + "/products.html?category=" + category,
+        })
+    breadcrumb_items.append({
+        "@type": "ListItem",
+        "position": len(breadcrumb_items) + 1,
+        "name": name,
+        "item": canonical_url,
+    })
+    breadcrumb_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumb_items,
+    }
+
+    # Build FAQPage JSON-LD
+    faq_entities = []
+    for faq in _build_product_faqs():
+        faq_entities.append({
+            "@type": "Question",
+            "name": faq[0],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": re.sub(r"<[^>]+>", "", faq[1]),
+            },
+        })
+    faq_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq_entities,
+    }
+
+    # Build Organization JSON-LD (only on product pages for context)
+    org_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": BASE_URL + "/#organization",
+        "name": "Yeatru Sourcing",
+        "url": BASE_URL,
+        "logo": BASE_URL + "/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+86-159-8851-6408",
+            "contactType": "customer service",
+            "email": "info@yeatru.com",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["English", "Chinese"],
+        },
+    }
+
+    # Add datePublished/dateModified to Product JSON-LD for freshness signals
+    jsonld["datePublished"] = TODAY
+    jsonld["dateModified"] = TODAY
+
+    # Add Shipping and Return policy to AggregateOffer
+    jsonld["offers"]["shippingDetails"] = {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "USD",
+        },
+        "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": ["US", "GB", "CA", "AU", "DE", "FR", "ES", "IT", "NL", "BE", "SE", "NO", "DK", "FI", "PL", "IE", "CH", "AT", "PT", "GR", "RU", "CN", "JP", "KR", "SG", "MY", "TH", "VN", "ID", "PH", "IN", "MX", "BR", "ZA"],
+        },
+        "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {"@type": "QuantitativeValue", "minValue": 14, "maxValue": 30, "unitCode": "DAY"},
+            "transitTime": {"@type": "QuantitativeValue", "minValue": 5, "maxValue": 14, "unitCode": "DAY"},
+        },
+    }
+    jsonld["offers"]["hasMerchantReturnPolicy"] = {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+    }
+
+    # Add Speakable to FAQ
+    for faq_entity in faq_entities:
+        faq_entity["acceptedAnswer"]["speakable"] = {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".faq-answer"],
+        }
 
     head = []
     head.append('<!DOCTYPE html>')
@@ -624,7 +746,14 @@ def build_head(product, canonical_url):
     head.append('    <meta name="robots" content="index, follow">')
     head.append('    <link rel="canonical" href="%s">' % url_esc)
     head.append('    <link rel="alternate" type="application/atom+xml" title="Yeatru Sourcing Blog" href="https://www.yeatru.com/atom.xml">')
-    head.extend(hreflang)
+    # Only emit real hreflang tags — currently there is only one English
+    # version of the site. Previously we pointed es/fr/ru/ar alternates to
+    # the same English page with ?lang= query strings, which caused Google
+    # Search Console warnings "Alternate page with proper canonical tag".
+    # If real translations are added later, uncomment the block below.
+    head.append('    <link rel="alternate" hreflang="en" href="%s">' % url_esc)
+    head.append('    <link rel="alternate" hreflang="x-default" href="%s">' % url_esc)
+    # --- REMOVED fake hreflang (es/fr/ru/ar) ---
     head.append('    <meta property="og:title" content="%s">' % escape_attr(title))
     head.append('    <meta property="og:description" content="%s">' % desc_esc)
     head.append('    <meta property="og:type" content="product">')
@@ -632,17 +761,15 @@ def build_head(product, canonical_url):
     head.append('    <meta property="og:image" content="%s">' % image_esc)
     head.append('    <meta property="og:site_name" content="Yeatru Sourcing">')
     head.append('    <meta property="og:locale" content="en_US">')
-    head.append('    <meta property="og:locale:alternate" content="es_ES">')
-    head.append('    <meta property="og:locale:alternate" content="fr_FR">')
-    head.append('    <meta property="og:locale:alternate" content="ru_RU">')
-    head.append('    <meta property="og:locale:alternate" content="ar_SA">')
     head.append('    <meta name="twitter:card" content="summary_large_image">')
     head.append('    <meta name="twitter:title" content="%s">' % escape_attr(title))
     head.append('    <meta name="twitter:description" content="%s">' % desc_esc)
     head.append('    <meta name="twitter:image" content="%s">' % image_esc)
     head.append('    <meta name="twitter:url" content="%s">' % url_esc)
     head.append('    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>')
+    head.append('    <link rel="preconnect" href="https://wsrv.nl" crossorigin>')
     head.append('    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">')
+    head.append('    <link rel="dns-prefetch" href="https://wsrv.nl">')
     head.append('    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">')
     head.append('    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">')
     head.append('    <link rel="stylesheet" href="styles.css">')
@@ -660,14 +787,98 @@ def build_head(product, canonical_url):
     head.append('            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);')
     head.append('        })(window,document,"clarity","script","xsam7gvp9o");')
     head.append('    </script>')
+    # All JSON-LD blocks
     head.append('    <script type="application/ld+json">')
     head.append(json.dumps(jsonld, ensure_ascii=False, indent=2))
+    head.append('    </script>')
+    head.append('    <script type="application/ld+json">')
+    head.append(json.dumps(breadcrumb_jsonld, ensure_ascii=False, indent=2))
+    head.append('    </script>')
+    head.append('    <script type="application/ld+json">')
+    head.append(json.dumps(faq_jsonld, ensure_ascii=False, indent=2))
+    head.append('    </script>')
+    head.append('    <script type="application/ld+json">')
+    head.append(json.dumps(org_jsonld, ensure_ascii=False, indent=2))
     head.append('    </script>')
     head.append('</head>')
     return "\n".join(head)
 
 
-def build_product_page(product, aplus_blocks):
+def _build_product_faqs():
+    """Return a list of (question, html_answer) tuples for the product FAQ.
+
+    These are generic e-commerce sourcing FAQS that apply to every product.
+    They are rendered as <details> elements on the page body *and* mirrored
+    in a FAQPage JSON-LD in build_head() for Google/Fortune AI engine.
+    """
+    return [
+        (
+            "What is the minimum order quantity (MOQ)?",
+            "<p>Our standard MOQ is 100 units, but we are flexible and can "
+            "accept smaller trial orders depending on the product. Please "
+            "contact us with your specific requirements.</p>",
+        ),
+        (
+            "What materials are used in your products?",
+            "<p>We source products from certified suppliers using "
+            "high-quality materials suitable for their intended use. "
+            "Specific material details are listed in the product "
+            "specifications table above.</p>",
+        ),
+        (
+            "How long is the production lead time?",
+            "<p>Standard lead time is 15-30 days for production, plus "
+            "5-7 days international shipping. Rush orders may be available "
+            "for an additional fee.</p>",
+        ),
+        (
+            "Can I customize colors, sizes, or logos?",
+            "<p>Yes! We offer OEM/ODM services including custom colors, "
+            "sizes, logos, and packaging. Minimum order quantities apply "
+            "for custom orders. Contact us with your specific requirements.</p>",
+        ),
+        (
+            "What payment methods do you accept?",
+            "<p>We accept T/T (Telegraphic Transfer), PayPal, Western Union, "
+            "and letter of credit (L/C). A 30% deposit is required to start "
+            "production, with the balance due before shipment.</p>",
+        ),
+        (
+            "Do you provide samples?",
+            "<p>Yes, we can provide samples for most products. Sample costs "
+            "and shipping fees apply. Sample orders are typically dispatched "
+            "within 3-5 business days.</p>",
+        ),
+        (
+            "What is your quality guarantee?",
+            "<p>We offer a quality inspection service before shipment. "
+            "Third-party inspection companies such as SGS and Bureau Veritas "
+            "are also available upon request. We stand behind our products "
+            "with a quality assurance commitment.</p>",
+        ),
+    ]
+
+
+def _get_related_products(current, all_products):
+    """Pick 4-6 related products based on matching category."""
+    current_cat = current.get("category", "") or ""
+    current_id = current.get("id")
+    # First try: same category
+    same_cat = [
+        p for p in all_products
+        if p.get("category") == current_cat
+        and str(p.get("id")) != str(current_id)
+    ]
+    # Shuffle-ish deterministic selection (take first 5 after sorting by id)
+    same_cat_sorted = sorted(same_cat, key=lambda x: str(x.get("id", "")))[:6]
+    if len(same_cat_sorted) >= 4:
+        return same_cat_sorted
+    # Fallback: any products, excluding current
+    others = [p for p in all_products if str(p.get("id")) != str(current_id)]
+    return sorted(others, key=lambda x: str(x.get("id", "")))[:6]
+
+
+def build_product_page(product, aplus_blocks, all_products=None):
     pid = product["id"]
     canonical_url = "%s/product-%s.html" % (BASE_URL, pid)
 
@@ -696,10 +907,10 @@ def build_product_page(product, aplus_blocks):
         '<tr><th>MOQ</th><td>%s</td></tr>' % escape_html(moq if moq not in ("", None) else "—")
     )
     spec_rows.append(
-        '<tr><th>Min Price</th><td>%s</td></tr>' % (price_span(price_min, "spec-price") if price_min not in ("", None) else "—")
+        '<tr><th>Min Price</th><td>%s</td></tr>' % (price_span_cny(price_min, "spec-price") if price_min not in ("", None) else "—")
     )
     spec_rows.append(
-        '<tr><th>Max Price</th><td>%s</td></tr>' % (price_span(price_max, "spec-price") if price_max not in ("", None) else "—")
+        '<tr><th>Max Price</th><td>%s</td></tr>' % (price_span_cny(price_max, "spec-price") if price_max not in ("", None) else "—")
     )
 
     variations_html = render_variations(product.get("variations"))
@@ -722,13 +933,21 @@ def build_product_page(product, aplus_blocks):
     body.append('')
     body.append('    <section class="product-detail-page active">')
     body.append('        <div class="container">')
-    body.append('            <a class="detail-back-btn" href="products.html"><i class="fas fa-arrow-left"></i> Back to Products</a>')
+    body.append('<nav class="breadcrumb" aria-label="Breadcrumb">')
+    body.append('<ol>')
+    body.append('<li><a href="index.html">Home</a></li>')
+    body.append('<li><a href="products.html">Products</a></li>')
+    if category:
+        body.append('<li><a href="products.html?category=%s">%s</a></li>' % (escape_attr(category), escape_html(category)))
+    body.append('<li aria-current="page">%s</li>' % escape_html(name))
+    body.append('</ol>')
+    body.append('</nav>')
     body.append('            <div class="detail-main">')
-    body.append('                <div>')
+    body.append('                <div class="detail-image-col">')
     if image_opt:
-        body.append('                    <img class="detail-image loaded" src="%s" alt="%s" loading="eager" decoding="async">' % (escape_attr(image_opt), escape_attr(name)))
+        body.append('                    <img class="detail-image loaded" src="%s" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % (escape_attr(image_opt), escape_attr(name)))
     else:
-        body.append('                    <img class="detail-image loaded" src="" alt="%s" loading="eager" decoding="async">' % escape_attr(name))
+        body.append('                    <img class="detail-image loaded" src="" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % escape_attr(name))
     body.append('                </div>')
     body.append('                <div class="detail-info">')
     body.append('                    <h1>%s</h1>' % escape_html(name))
@@ -743,36 +962,12 @@ def build_product_page(product, aplus_blocks):
     # big_price already returns sanitised <span data-usd-price=...> / &mdash;
     # HTML generated by price_span() / price_range_span(). Do NOT escape again.
     body.append('                    <div class="detail-price-big-wrap">%s</div>' % big_price)
-    # Primary CTA placed in the standard "Buy Now / Add to Cart" position
-    # right below the hero price. Eliminates the previous duplicate tiny
-    # "Get a Quote" grey button that sat next to "Back to Products".
-    # Intended entry points: navbar "Get Quote" button + hero-row 3-button
-    # panel here (Quote form / WhatsApp / Email) + floating sidebar icons.
+    body.append('                    <p class="detail-desc">%s</p>' % escape_html(desc))
+    # Variations first
+    body.append('                    %s' % variations_html)
+    # --- Primary CTA placed below variations (replacing old "Buy Now/Cart" block) -------------------
     from urllib.parse import quote as _urlq
     _sku_part = (" (SKU " + sku + ")") if sku else ""
-    wa_text = (
-        "Hello Yeatru Sourcing, I would like a quote for "
-        + (name or "this product") + _sku_part
-    )
-    _min_price = product.get("priceMin")
-    _min = (
-        str(_min_price) if _min_price not in (None, "") else "n/a"
-    )
-    _moq = str(moq) if moq not in ("", None) else "n/a"
-    prod_url = "https://www.yeatru.com/product-" + str(pid) + ".html"
-    wa_href = "https://wa.me/8615988516408?text=" + _urlq(wa_text)
-    mail_href = (
-        "mailto:info@yeatru.com?subject="
-        + _urlq("Quote Request - " + (name or "Product") + _sku_part)
-        + "&body=" + _urlq(
-            "Hi Yeatru Sourcing,\n\nI am interested in "
-            + (name or "this product") + _sku_part
-            + ".\n\nProduct URL: " + prod_url
-            + "\nPrice (USD): from " + _min
-            + "\nMOQ: " + _moq
-            + "\n\nQuantity:\nTarget price:\nRequired specs:\n\nThank you."
-        )
-    )
     contact_href = (
         "contact.html?product=" + _urlq(sku or ("P" + str(pid)))
         + "&name=" + _urlq(name or "")
@@ -782,29 +977,59 @@ def build_product_page(product, aplus_blocks):
         '<a class="btn btn-lg btn-primary detail-buy-btn quote-product" '
         'href="%s" data-product="%s" data-sku="%s">'
         '<i class="fas fa-file-invoice-dollar me-2"></i>Request a Quote</a>'
-        '<a class="btn btn-lg btn-outline-success detail-buy-btn" '
-        'href="%s" target="_blank" rel="noopener noreferrer">'
-        '<i class="fab fa-whatsapp me-2"></i>WhatsApp</a>'
-        '<a class="btn btn-lg btn-outline-primary detail-buy-btn" '
-        'href="%s">'
-        '<i class="fas fa-envelope me-2"></i>Email</a>'
         '</div>'
         % (
             escape_attr(contact_href),
             escape_attr(name or "Product"),
             escape_attr(sku or ""),
-            escape_attr(wa_href),
-            escape_attr(mail_href),
         )
     )
-    body.append('                    <p class="text-muted">%s</p>' % escape_html(desc))
-    body.append('                    %s' % variations_html)
     body.append('                </div>')
     body.append('            </div>')
+    # --- A+ Content ---
     body.append('            <div class="aplus-section">')
-    body.append('                <h3 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i> A+ Content</h3>')
+    body.append('                <h2 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i> Product Details</h2>')
     body.append('                <div class="aplus-blocks">')
     body.append(aplus_inner)
+    body.append('                </div>')
+    body.append('            </div>')
+    # --- FAQ Section ---
+    body.append('            <div class="faq-section">')
+    body.append('                <h2 class="faq-section-title"><i class="fas fa-circle-question me-2"></i> Frequently Asked Questions</h2>')
+    body.append('                <div class="faq-list">')
+    faqs = _build_product_faqs()
+    for faq in faqs:
+        body.append('                    <details class="faq-item">')
+        body.append('                        <summary><i class="fas fa-chevron-right me-2"></i>%s</summary>' % escape_html(faq[0]))
+        body.append('                        <div class="faq-answer">%s</div>' % faq[1])
+        body.append('                    </details>')
+    body.append('                </div>')
+    body.append('            </div>')
+    # --- Related Products ---
+    body.append('            <div class="related-products-section">')
+    body.append('                <h2 class="related-section-title"><i class="fas fa-th-large me-2"></i> Related Products</h2>')
+    body.append('                <div class="related-products-grid">')
+    related = _get_related_products(product, all_products or [product])
+    for rp in related:
+        rp_img = optimize_image_url(rp.get("image", ""), 400) if rp.get("image") else ""
+        rp_pmin = _cny_to_usd(rp.get("priceMin"))
+        rp_pmax = _cny_to_usd(rp.get("priceMax"))
+        rp_price_text = ""
+        if rp_pmin is not None and rp_pmax is not None:
+            if abs(rp_pmin - rp_pmax) < 0.005:
+                rp_price_text = price_span(rp_pmin, "")
+            else:
+                rp_price_text = price_range_span_cny(rp.get("priceMin"), rp.get("priceMax"), "")
+        body.append('                    <a class="related-product-card" href="product-%s.html">' % rp["id"])
+        if rp_img:
+            body.append('                        <img src="%s" alt="%s" loading="lazy" decoding="async">' % (escape_attr(rp_img), escape_attr(rp.get("name",""))))
+        body.append('                        <div class="related-product-info">')
+        body.append('                            <h3>%s</h3>' % escape_html(rp.get("name","")))
+        body.append('                            <div class="related-product-meta">SKU: %s</div>' % escape_html(rp.get("sku","")))
+        if rp_price_text:
+            body.append('                            <div class="related-product-price">%s</div>' % rp_price_text)
+        body.append('                        </div>')
+        body.append('                    </a>')
     body.append('                </div>')
     body.append('            </div>')
     body.append('        </div>')
@@ -813,6 +1038,11 @@ def build_product_page(product, aplus_blocks):
     body.append(FOOTER_HTML)
     body.append('')
     body.append('    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>')
+    # CRITICAL: load app.js on static product pages so that
+    # 1) applyUsdPricePlaceholders() fills the data-usd-price spans
+    # 2) click handlers (img / title / view-detail-link) work identically
+    #    with products.html
+    body.append('    <script src="app.js" defer></script>')
     body.append('</body>')
     body.append('</html>')
 
@@ -1025,7 +1255,7 @@ def main():
     for p in products:
         pid = p["id"]
         blocks = aplus.get(str(pid)) or []
-        html = build_product_page(p, blocks)
+        html = build_product_page(p, blocks, products)
         out_path = os.path.join(ROOT, "product-%s.html" % pid)
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(html)

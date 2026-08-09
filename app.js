@@ -1190,11 +1190,18 @@ function renderProducts() {
 
     document.querySelectorAll('.quote-product').forEach(btn => {
         btn.addEventListener('click', function (e) {
+            // If we are on a static product page (no quote modal available),
+            // let the default <a href="contact.html?..."> navigation happen.
+            const modalEl = document.getElementById('quoteModal');
+            if (!modalEl) {
+                // Static page: follow the link naturally
+                return;
+            }
             e.preventDefault();
             e.stopPropagation();
             const productName = this.getAttribute('data-product');
             document.getElementById('quoteProductName').value = productName;
-            new bootstrap.Modal(document.getElementById('quoteModal')).show();
+            new bootstrap.Modal(modalEl).show();
         });
     });
 
