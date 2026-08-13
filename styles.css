@@ -2620,6 +2620,37 @@ body.edit-mode [contenteditable="true"]:focus {
 .page-hero .breadcrumb-current {
     color: #cbd5e1;
 }
+
+/* FAQ Sidebar */
+.sidebar-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+}
+.faq-category-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.faq-category-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-50, #eff6ff);
+}
+.faq-category-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
 .faq-category-tabs {
     display: flex;
     flex-wrap: wrap;

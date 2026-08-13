@@ -253,6 +253,53 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
                 </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="nav-search-wrapper">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="nav-search-dropdown" id="navSearchDropdown">
+                            <form class="nav-search-form" id="navSearchForm">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="nav-search-results" id="navSearchResults"></div>
+                        </div>
+                    </div>
+                    <div class="dropdown currency-selector">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="current-currency">USD</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="AED">AED د.إ</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="SAR">SAR ر.س</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EGP">EGP ج.م</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown lang-selector">
+                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="ar">العربية</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex" data-i18n="common.getQuote">
+                        <i class="fas fa-comment-dots me-1"></i>Get Quote
+                    </a>
+                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+                        <i class="fas fa-user-shield"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
