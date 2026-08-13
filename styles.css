@@ -8415,3 +8415,55 @@ mark.search-highlight {
     font-display: swap;
     src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
 }
+
+/* ===== Accessibility: focus outlines & link distinction ===== */
+/* Ensure all interactive elements have visible focus indicators */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Nav links: add underline on focus/active for non-color distinction */
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Footer links: add visual underline on hover/focus */
+.footer-link:hover,
+.footer-link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Dropdown items: visual hover state beyond just color */
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: var(--primary-dark);
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.skip-to-content:focus {
+    top: 1rem;
+}
