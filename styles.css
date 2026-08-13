@@ -23,7 +23,7 @@
     --mint-dark: #B8DBD4;
     --text-primary: #0F172A;
     --text-secondary: #475569;
-    --text-tertiary: #94A3B8;
+    --text-tertiary: #64748B;
     --bg-white: #FFFFFF;
     --bg-light: #F8FAFC;
     --bg-soft: #F1F5F9;
@@ -6078,7 +6078,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     
     --text-primary: var(--gray-900);
     --text-secondary: var(--gray-600);
-    --text-tertiary: var(--gray-500);
+    --text-tertiary: var(--gray-400);
     --text-disabled: var(--gray-400);
     
     --bg-white: #FFFFFF;
@@ -8466,4 +8466,22 @@ textarea:focus-visible,
 }
 .skip-to-content:focus {
     top: 1rem;
+}
+
+/* Global link accessibility: underline + font-weight for non-color distinction */
+a {
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+/* In-text links (not nav/footer/cta buttons) get underline by default */
+main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.footer-link):not(.contact-social-icon):not(.footer-social-icon) {
+    text-decoration: underline;
+    text-decoration-color: rgba(30, 64, 175, 0.4);
+    text-underline-offset: 3px;
+}
+
+main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.footer-link):not(.contact-social-icon):not(.footer-social-icon):hover {
+    text-decoration-color: var(--primary-dark);
+    font-weight: 600;
 }
