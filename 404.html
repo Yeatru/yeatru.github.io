@@ -27,21 +27,55 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Yeatru Sourcing</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-logo-box" title="Yeatru Sourcing Logo">
+                    <span class="brand-logo-fallback" style="color: var(--primary); font-weight: bold;">YC</span></span>
+                <span>Yeatru Sourcing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service-plans.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
+                            <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
+                            <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
+                            <li><a class="dropdown-item" href="logistics-shipping.html">Logistics &amp; Warehousing</a></li>
+                            <li><a class="dropdown-item" href="price-negotiation.html">Price Negotiation</a></li>
+                            <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
+                            <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
+                            <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="payment.html">Payment Methods</a></li>
+                            <li><a class="dropdown-item" href="refund.html">Refund &amp; Cancellation Policy</a></li>
+                            <li><a class="dropdown-item" href="terms.html">Terms of Service</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="sitemap.xml">Sitemap</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex">
+                        <i class="fas fa-comment-dots me-1"></i>Get Quote
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
