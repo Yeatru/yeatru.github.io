@@ -7976,7 +7976,50 @@ body.rtl .lang-dropdown-btn .dropdown-toggle::after {
 
 /* FAQ Section */
 .faq-section {
-    margin: 3rem 0;
+    margin: 0 0 0.75rem;
+}
+.faq-section-header {
+    width: 100%;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: left;
+}
+.faq-section-header:hover {
+    border-color: var(--primary);
+    background: var(--primary-50, #eff6ff);
+}
+.faq-section-header .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+.faq-section-icon {
+    color: var(--primary);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+.faq-section.expanded .faq-section-icon {
+    transform: rotate(180deg);
+}
+.faq-section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding-top: 0;
+}
+.faq-section.expanded .faq-section-body {
+    max-height: 5000px;
+    padding-top: 0.75rem;
 }
 .faq-section-title {
     font-size: 1.5rem;
