@@ -7,6 +7,14 @@
     <meta name="description" content="Trusted China sourcing agent for Amazon FBA, TikTok Shop & e-commerce. Factory prices, strict QC, logistics. Free 24h quote, MOQ from 50 pcs.">
     <meta name="keywords" content="China sourcing agent, Amazon FBA sourcing, TikTok shop supplier, Alibaba alternative, small business sourcing, wholesale products China, dropshipping suppliers, e-commerce sourcing, import from China, China wholesale supplier, procurement services, supplier verification, quality control China, private label manufacturer, factory direct sourcing">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <!-- 关键 CSS 内联 (避免 3.5s render-blocking) -->
+    <style>
+        body{font-family:'Inter',sans-serif;margin:0;padding:0;color:#0F172A;background:#fff}
+        .banner-carousel{position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(59,130,246,.16) 0%,transparent 55%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(13,148,136,.14) 0%,transparent 50%),linear-gradient(135deg,#F8FAFC 0%,#EFF6FF 45%,#F0FDFA 100%)}
+        .banner-slide.active{display:flex}
+        .banner-image img{width:100%;height:100%;object-fit:cover}
+        .navbar-brand{color:#1E40AF!important;font-weight:700}
+    </style>
     <meta name="theme-color" content="#0b7b94">
     <meta name="IndexNow" content="cb82a7f9-5e3d-4b8a-9c2e-1d5f7a3b9c8d" scheme="https://www.bing.com/indexnow">
     <link rel="canonical" href="https://www.yeatru.com/">
@@ -883,17 +891,20 @@
       ]
     }
     </script>
+    <!-- 核心资源 preconnect (仅 2 个，避免 >4 个连接) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- LCP 关键图片预加载 -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/FBA.jpg" as="image" fetchpriority="high">
+    <!-- 第三方分析：仅 dns-prefetch (异步加载，无需预连接) -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
     <link rel="dns-prefetch" href="https://www.clarity.ms">
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Font Awesome 非阻塞加载 (font-display: swap 内置) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics (GA4) -->
@@ -964,20 +975,20 @@
                 <div class="d-flex align-items-center gap-2">
                     <!-- Global Search -->
                     <div class="nav-search-wrapper">
-                        <button class="btn nav-search-btn" type="button" id="navSearchToggle">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle" aria-label="Toggle search">
                             <i class="fas fa-search"></i>
                         </button>
                         <div class="nav-search-dropdown" id="navSearchDropdown">
                             <form class="nav-search-form" id="navSearchForm">
-                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." autocomplete="off">
-                                <button type="submit" class="btn nav-search-submit"><i class="fas fa-search"></i></button>
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." aria-label="Search products, services, guides" autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
                             </form>
                             <div class="nav-search-results" id="navSearchResults"></div>
                         </div>
                     </div>
                     <!-- Currency Selector -->
                     <div class="dropdown currency-selector">
-                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select currency">
                             <span id="current-currency">USD</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -993,8 +1004,8 @@
                     </div>
                     <!-- Language Selector -->
                     <div class="dropdown lang-selector">
-                        <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        <button class="btn lang-dropdown-btn dropdown-toggle" aria-label="Select language" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe" aria-hidden="true"></i> <span id="current-lang">EN</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
@@ -1008,7 +1019,7 @@
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
                     <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
-                        <i class="fas fa-user-shield"></i>
+                        <i class="fas fa-user-shield" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -1049,7 +1060,7 @@
                             <div class="col-lg-6">
                                 <div class="banner-image">
                                     <div class="banner-image-wrap">
-                                        <img loading="lazy" data-img-editable="index.slide1.image" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/FBA.jpg" alt="China Sourcing for Amazon" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                                        <img data-img-editable="index.slide1.image" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/FBA.jpg" alt="China Sourcing for Amazon" width="800" height="600" decoding="async" fetchpriority="high" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
                                         <div class="banner-image-placeholder">
                                             <i class="fas fa-boxes"></i>
                                             <span>China Sourcing</span>
@@ -2338,7 +2349,7 @@
                                     <input type="tel" class="form-control" name="phone" placeholder="Phone Number / WhatsApp *" required data-i18n-placeholder="contact.phone">
                                     
                                     <!-- Product Category Dropdown -->
-                                    <select class="form-control form-select" name="category" id="quoteCategory">
+                                    <select class="form-control form-select" name="category" id="quoteCategory" aria-label="Select product category">
                                         <option value="">Select Product Category *</option>
                                         <option value="Home Decor">Home Decor &amp; Storage</option>
                                         <option value="Kitchenware">Kitchenware &amp; Utensils</option>
@@ -2361,7 +2372,7 @@
                                             <input type="number" class="form-control" name="quantity" placeholder="Quantity Needed *" min="1" id="quoteQuantity" required data-i18n-placeholder="contact.quantity">
                                         </div>
                                         <div class="col-md-6">
-                                            <select class="form-control form-select" name="moq_preference" id="quoteMOQ">
+                                            <select class="form-control form-select" name="moq_preference" id="quoteMOQ" aria-label="Select MOQ preference">
                                                 <option value="">MOQ Preference</option>
                                                 <option value="Low (50-200 pcs)">Low MOQ (50-200 pcs)</option>
                                                 <option value="Medium (200-1000 pcs)">Medium MOQ (200-1000 pcs)</option>
@@ -2372,7 +2383,7 @@
                                     </div>
                                     
                                     <!-- Service Type -->
-                                    <select class="form-control form-select" name="service_type" id="quoteServiceType">
+                                    <select class="form-control form-select" name="service_type" id="quoteServiceType" aria-label="Select service type">
                                         <option value="">Service Type Needed *</option>
                                         <option value="Product Sourcing">Product Sourcing (find suppliers)</option>
                                         <option value="OEM Customization">OEM / Private Label</option>
@@ -2593,7 +2604,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="productCategory" class="form-label" data-i18n="products.category">Category</label>
-                                <select class="form-select" id="productCategory" required>
+                                <select class="form-select" id="productCategory" aria-label="Select product category" required>
                                     <option value="" data-i18n="products.selectCategory">Select Category</option>
                                 </select>
                             </div>
@@ -2703,7 +2714,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
     

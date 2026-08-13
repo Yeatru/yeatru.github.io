@@ -8398,3 +8398,20 @@ mark.search-highlight {
     .case-study-metrics .metric-value { font-size: 0.85rem; }
     .case-study-metrics .metric-label { font-size: 0.68rem; line-height: 1.15; }
 }
+
+
+/* Font display swap for all icon fonts (PSI: Font display — Est savings of 60ms) */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+}
