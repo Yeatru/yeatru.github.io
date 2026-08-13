@@ -238,6 +238,181 @@
       ]
     }
     </script>
+    <!-- Yeatru Site Schema START -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.yeatru.com/#organization",
+      "name": "Yeatru Sourcing",
+      "legalName": "YIWU ETRUE TRADING CO., LTD.",
+      "alternateName": "Yeatru",
+      "url": "https://www.yeatru.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.yeatru.com/Images/yeatru-logo.png",
+        "width": 220,
+        "height": 60
+      },
+      "foundingDate": "2013",
+      "foundingLocation": "Yiwu, Zhejiang, China",
+      "description": "Professional China sourcing agent based in Yiwu, offering supplier verification, factory audits, quality control, OEM/ODM, and global logistics to importers, Amazon FBA sellers and DTC brands worldwide.",
+      "telephone": "+86-159-8851-6408",
+      "email": "neil@yeatru.com",
+      "vatID": "Chinese Entity Registered with Unified Social Credit Code",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 15,
+        "maxValue": 50
+      },
+      "sameAs": [
+        "https://www.facebook.com/NeilLaw",
+        "https://www.linkedin.com/in/neil-liu-398983257",
+        "https://www.instagram.com/yeatru_sourcing",
+        "https://www.alibaba.com/",
+        "https://www.importyeti.com/"
+      ],
+      "knowsAbout": [
+        "China product sourcing",
+        "Yiwu wholesale market procurement",
+        "Supplier verification",
+        "Factory audit",
+        "Quality control inspection",
+        "Amazon FBA preparation",
+        "DDP door-to-door shipping",
+        "OEM private label",
+        "Low MOQ small batch sourcing",
+        "1688 purchase agent"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.yeatru.com/#localbusiness",
+      "name": "Yeatru Sourcing",
+      "image": "https://www.yeatru.com/Images/yeatru-hero-2.jpg",
+      "url": "https://www.yeatru.com/",
+      "telephone": "+86-159-8851-6408",
+      "email": "neil@yeatru.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room 301, No.188 Shangcheng Avenue, Futian Street",
+        "addressLocality": "Yiwu",
+        "addressRegion": "Zhejiang",
+        "postalCode": "322000",
+        "addressCountry": "CN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.3061,
+        "longitude": 120.0858
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        "US",
+        "GB",
+        "DE",
+        "FR",
+        "IT",
+        "ES",
+        "CA",
+        "AU",
+        "AE",
+        "SA",
+        "TR",
+        "MX",
+        "BR",
+        "PL",
+        "NL",
+        "SE",
+        "NO",
+        "DK",
+        "JP",
+        "KR",
+        "SG",
+        "MY",
+        "TH",
+        "VN",
+        "ID",
+        "PH",
+        "KE",
+        "ZA",
+        "NG"
+      ],
+      "parentOrganization": {
+        "@id": "https://www.yeatru.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.yeatru.com/#website",
+      "url": "https://www.yeatru.com/",
+      "name": "Yeatru Sourcing",
+      "publisher": {
+        "@id": "https://www.yeatru.com/#organization"
+      },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.yeatru.com/products.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+    </script>
+    <!-- Yeatru Site Schema END -->
+    <!-- Yeatru Service Schema START -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "SourcingSubscription",
+  "name": "Transparent Sourcing Service Pricing — No Hidden Fees",
+  "description": "Flexible plans: Lite for trial orders, Standard for bulk, Pro for Amazon FBA / OEM. 3-8% sourcing fee bands, transparent pricing, no hidden costs.",
+  "provider": {
+    "@id": "https://www.yeatru.com/#organization"
+  },
+  "areaServed": "All services bundled",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sourcing Service Plans",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Standard Sourcing Fee",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceRange": "3% - 8% of order value",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  },
+  "providerMobility": "stationary (local agents dispatched to factories)",
+  "brand": {
+    "@id": "https://www.yeatru.com/#organization"
+  }
+}
+    </script>
+    <!-- Yeatru Service Schema END -->
+
+
     <style>
     /* Mobile responsiveness for large inline font-sizes */
     @media (max-width: 767.98px) {
@@ -323,7 +498,17 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="payment.html" data-i18n="nav.payment">Payment Methods</a></li>
                             <li><a class="dropdown-item" href="refund.html">Refund &amp; Cancellation Policy</a></li>
-                            <li><a class="dropdown-item" href="terms.html">Terms of Service</a></li> <li><a class="dropdown-item" href="testimonials">Client Testimonials</a></li>
+                            <li><a class="dropdown-item" href="terms.html">Terms of Service</a></li> <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header text-primary">Sourcing by Country / Platform</h6></li>
+                            <li><a class="dropdown-item" href="sourcing-for-amazon-fba-usa.html">🇺🇸 Amazon FBA (USA)</a></li>
+                            <li><a class="dropdown-item" href="yiwu-sourcing-agent-uk.html">🇬🇧 United Kingdom</a></li>
+                            <li><a class="dropdown-item" href="china-sourcing-agent-germany.html">🇩🇪 Germany / DACH</a></li>
+                            <li><a class="dropdown-item" href="china-sourcing-agent-europe.html">🇪🇺 Whole of Europe</a></li>
+                            <li><a class="dropdown-item" href="china-sourcing-turkiye.html">🇹🇷 Türkiye</a></li>
+                            <li><a class="dropdown-item" href="sourcing-agent-middle-east-uae-saudi.html">🇦🇪🇸🇦 UAE / Saudi (GCC)</a></li>
+                            <li><a class="dropdown-item" href="sourcing-agent-for-tiktok-shop-seller.html">🎵 TikTok Shop (Global)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="testimonials">Client Testimonials</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="sitemap.xml">Sitemap</a></li>
                         </ul>

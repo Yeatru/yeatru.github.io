@@ -16,6 +16,7 @@ https://yeatru.github.io/*    https://www.yeatru.com/:splat    301!
 
 # --- 4. URL 规范化 ---
 /index.html    /    301
+/services.html    /supplier-verification.html    301
 
 # --- 5. 固定资源路径 ---
 /robots.txt     /robots.txt    200
