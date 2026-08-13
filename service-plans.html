@@ -381,26 +381,32 @@
         </div>
     </nav>
 
-    <section class="page-hero" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); padding: 4rem 0 5rem; position: relative; overflow: hidden;">
+    <section class="page-header py-5 bg-light" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); padding: 4rem 0 5rem; position: relative; overflow: hidden;">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-cta rounded-full blur-3xl"></div>
         </div>
-        <div class="container relative z-10">
-            <nav class="breadcrumb-bar" aria-label="breadcrumb">
-                <a href="index.html" data-i18n="nav.home">Home</a> <span class="breadcrumb-sep">/</span>
-                <span class="breadcrumb-current">Service Plans</span>
-            </nav>
-            <div class="text-center mb-8">
-                <span class="hero-tag" style="background: rgba(22, 93, 255, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3);"><i class="fas fa-list me-2"></i><span data-i18n="sp.heroTag">Transparent Pricing</span></span>
-                <h1 class="page-hero-title mt-3" style="color: #fff; font-size: 2.5rem; font-weight: 800; line-height: 1.2;" data-i18n="sp.heroTitle">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
-                <p class="page-hero-subtitle mx-auto" style="max-width: 700px; color: #94a3b8; font-size: 1.1rem;" data-i18n="sp.heroSubtitle">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
-                <div class="banner-features justify-content-center mt-4 flex-wrap gap-3">
-                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat1">100% Transparent Pricing</span></span>
-                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat2">No Hidden Commission</span></span>
-                    <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat3">Tiered Rates for Volume</span></span>
-                </div>
+        <div class="container text-center relative z-10">
+            <span class="section-eyebrow" style="background: rgba(22, 93, 255, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3);" data-i18n="sp.heroTag"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
+            <div class="section-divider mx-auto"></div>
+            <h1 style="color: #fff; font-size: 2.5rem; font-weight: 800; line-height: 1.2;" data-i18n="sp.heroTitle">Transparent Sourcing Service Pricing — No Hidden Fees</h1>
+            <p class="section-subtitle mx-auto" style="max-width: 700px; color: #94a3b8; font-size: 1.1rem;" data-i18n="sp.heroSubtitle">Two clear service models based on your workload. Whether you have supplier links ready or need us to source from scratch — you always know exactly what you pay.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat1">100% Transparent Pricing</span></span>
+                <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat2">No Hidden Commission</span></span>
+                <span class="banner-feature" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 999px; color: #e2e8f0;"><i class="fas fa-check-circle text-green-400"></i> <span data-i18n="sp.heroFeat3">Tiered Rates for Volume</span></span>
             </div>
+        </div>
+    </section>
+
+    <section class="py-0">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li class="breadcrumb-item active">Service Plans</li>
+                </ol>
+            </nav>
         </div>
     </section>
 
