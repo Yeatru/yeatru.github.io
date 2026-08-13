@@ -1,28 +1,25 @@
 # =====================================================
-# Cloudflare Pages 重定向配置
+# Cloudflare Pages 重定向配置 - 首选域名: www.yeatru.com
 # 语法: 来源URL 目标URL 状态码
 # =====================================================
 
-# --- 1. 强制 yeatru.com (不带 www) 为首选域名 (SEO 统一权重) ---
-https://www.yeatru.com/*    https://yeatru.com/:splat    301!
-http://www.yeatru.com/*     https://yeatru.com/:splat    301!
-http://yeatru.com/*         https://yeatru.com/:splat    301!
+# --- 1. 强制 www.yeatru.com 为首选域名 (B2B 外贸风格, 统一 SEO 权重) ---
+https://yeatru.com/*          https://www.yeatru.com/:splat    301!
+http://yeatru.com/*           https://www.yeatru.com/:splat    301!
+http://www.yeatru.com/*       https://www.yeatru.com/:splat    301!
 
 # --- 2. 旧 GitHub Pages 域名 -> 新独立域名 (301 转移权重) ---
-https://yeatru.github.io/*    https://yeatru.com/:splat    301!
+https://yeatru.github.io/*    https://www.yeatru.com/:splat    301!
 
 # --- 3. Pages 临时域名 -> 正式域名 (上线后长期保留) ---
-:project.pages.dev/*    https://yeatru.com/:splat    301!
+:project.pages.dev/*          https://www.yeatru.com/:splat    301!
 
-# --- 4. 常用 URL 规范化 (小写, 移除 index.html) ---
+# --- 4. URL 规范化 ---
 /index.html    /    301
 
-# --- 5. 旧博客链接兼容 (如有博客迁移时启用) ---
-# /blog/*    /blog/:splat    301
-
-# --- 6. 常见爬虫友好路径 (可选) ---
-/robots.txt    /robots.txt    200
-/sitemap.xml    /sitemap.xml    200
-/llms.txt    /llms.txt    200
-/llms-full.txt    /llms-full.txt    200
-/data.html    /data.html    200
+# --- 5. 固定资源路径 ---
+/robots.txt     /robots.txt    200
+/sitemap.xml    /sitemap.xml   200
+/llms.txt       /llms.txt      200
+/llms-full.txt  /llms-full.txt 200
+/data.html      /data.html     200
