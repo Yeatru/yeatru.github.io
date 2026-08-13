@@ -165,8 +165,10 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="brand-logo-box" title="Yeatru Sourcing Logo">
-                    <span class="brand-logo-fallback">YC</span>
+                <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
+                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;" />
+                    <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
+                    <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
                 <span>Yeatru Sourcing</span>
             </a>
@@ -205,13 +207,64 @@
                             <li><a class="dropdown-item" href="sitemap.xml">Sitemap</a></li>
                         </ul>
                     </li>
-<li class="nav-item"><a class="nav-link active" href="testimonials.html" data-i18n="nav.testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="testimonials.html" data-i18n="nav.testimonials">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
                 </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Global Search -->
+                    <div class="nav-search-wrapper">
+                        <button class="btn nav-search-btn" type="button" id="navSearchToggle" aria-label="Toggle search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="nav-search-dropdown" id="navSearchDropdown">
+                            <form class="nav-search-form" id="navSearchForm">
+                                <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products, services, guides..." aria-label="Search products, services, guides" autocomplete="off">
+                                <button type="submit" class="btn nav-search-submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="nav-search-results" id="navSearchResults"></div>
+                        </div>
+                    </div>
+                    <!-- Currency Selector -->
+                    <div class="dropdown currency-selector">
+                        <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select currency">
+                            <span id="current-currency">USD</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
+                            <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
+                        <li><a class="dropdown-item" href="#" data-currency="AED">AED د.إ</a></li>
+                        <li><a class="dropdown-item" href="#" data-currency="SAR">SAR ر.س</a></li>
+                        <li><a class="dropdown-item" href="#" data-currency="EGP">EGP ج.م</a></li>
+                        </ul>
+                    </div>
+                    <!-- Language Selector -->
+                    <div class="dropdown lang-selector">
+                        <button class="btn lang-dropdown-btn dropdown-toggle" aria-label="Select language" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe" aria-hidden="true"></i> <span id="current-lang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="ar">العربية</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-cta btn-nav-cta d-none d-lg-inline-flex" data-i18n="common.getQuote">
+                        <i class="fas fa-comment-dots me-1"></i>Get Quote
+                    </a>
+                    <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+                        <i class="fas fa-user-shield" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
+    <main id="mainContent">
     <section class="page-header py-5 bg-light">
         <div class="container text-center">
             <span class="section-eyebrow" data-i18n="testimonials.subtitle">CLIENT REVIEWS</span>
@@ -521,17 +574,9 @@
         </div>
     </section>
 
-    <!-- Login Modal (kept but hidden from nav; access via ?admin=true) -->
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h6 class="mb-0">David Brown</h6>
-                                    <small class="text-muted">Amazon FBA Seller · Canada</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
@@ -612,34 +657,131 @@
         </div>
     </section>
 
-    <footer class="footer py-4 bg-dark text-white">
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h5 class="mb-1">Yeatru Sourcing</h5>
-                    <p class="mb-0 text-muted small">Your trusted China sourcing partner in Yiwu. 14+ years experience serving 200+ clients worldwide.</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-brand">
+                        <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
+                        </span>
+                        Yeatru Sourcing
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/NeilLaw" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="Facebook Yeatru Sourcing"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/neil-liu-398983257" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="LinkedIn Yeatru Sourcing"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/8615988516408" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="WhatsApp Yeatru Sourcing"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/yeatru_sourcing" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="Instagram Yeatru Sourcing"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0 small text-muted">&copy; 2022–2026 义乌市弋楚贸易有限公司 · Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.). All rights reserved. |
-                    <a href="privacy.html" style="color: #ccc; text-decoration: none;">Privacy</a> |
-                    <a href="terms.html" style="color: #ccc; text-decoration: none;">Terms</a> |
-                    <a href="refund.html" style="color: #ccc; text-decoration: none;">Refund</a> |
-                    <a href="nda.html" style="color: #ccc; text-decoration: none;">NDA</a>
-                </p>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="products.html" class="footer-link">Products</a>
+                    <a href="supplier-verification.html" class="footer-link">Services</a>
+                    <a href="payment.html" class="footer-link">Payment</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                    <a href="data.html" class="footer-link">Our Data</a>
+                    <a href="testimonials.html" class="footer-link">Testimonials</a>
+                    <a href="faq.html" class="footer-link">FAQ</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.services">Our Services</h3>
+                    <a href="supplier-verification.html" class="footer-link">Supplier Verification</a>
+                    <a href="product-sourcing.html" class="footer-link">Product Sourcing</a>
+                    <a href="quality-control.html" class="footer-link">Quality Control</a>
+                    <a href="logistics-shipping.html" class="footer-link">Logistics &amp; Warehousing</a>
+                    <a href="price-negotiation.html" class="footer-link">Price Negotiation</a>
+                    <a href="factory-audit.html" class="footer-link">Factory Audit</a>
+                    <a href="sample-order.html" class="footer-link">Sample Order</a>
+                    <a href="oem.html" class="footer-link">OEM Customization</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title" data-i18n="footer.contact">Contact Us</h3>
+                    <a href="https://maps.google.com/?q=NO.188+Shangcheng+Avenue+Yiwu+Zhejiang+322000+China" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fas fa-map-marker-alt me-2"></i> NO.188 Shangcheng Ave, Yiwu, Zhejiang, China</a>
+                    <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 15988516408</a>
+                    <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
+                    <a href="contact.html#opening-hours" class="footer-link"><i class="fas fa-clock me-2"></i> Open: Mo-Sa 09:00–18:00 · 24/7 Online</a>
+                    <div class="footer-payment-section mt-3">
+                        <h4 class="footer-payment-label" data-i18n="footer.paymentMethods">Payment Methods</h4>
+                        <div class="footer-payment-icons-vertical">
+                            <span class="payment-icon"><i class="fab fa-cc-visa"></i><span>Visa</span></span>
+                            <span class="payment-icon"><i class="fab fa-cc-mastercard"></i><span>MasterCard</span></span>
+                            <span class="payment-icon"><i class="fas fa-university"></i><span>Bank Transfer</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2022–2026 义乌市弋楚贸易有限公司 · Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.). <span data-i18n="footer.allRightsReserved">All rights reserved.</span> |
+                    <a href="privacy.html" class="footer-link d-inline" data-i18n="footer.privacyPolicy">Privacy Policy</a> |
+                    <a href="terms.html" class="footer-link d-inline" data-i18n="footer.termsOfService">Terms of Service</a>
+                 |
+                    <a href="refund.html" class="footer-link d-inline">Refund Policy</a> |
+                    <a href="nda.html" class="footer-link d-inline">NDA &amp; Confidentiality</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel" data-i18n="login.title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="adminUsername" class="form-label" data-i18n="login.username">Username</label>
+                        <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" data-i18n-placeholder="login.enterUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="adminPassword" class="form-label" data-i18n="login.password">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" data-i18n-placeholder="login.enterPassword">
+                    </div>
+                    <div id="loginError" class="text-danger d-none" data-i18n="login.error">Incorrect username or password!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="login.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitLogin" data-i18n="login.submit">Login</button>
                 </div>
             </div>
         </div>
-    
-            <div class="footer-nav-links" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <a href="faq.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">FAQ</a>
-                <a href="testimonials.html" style="display:none;" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Testimonials</a>
-                <a href="data.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Our Data</a>
-                <a href="index.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Home</a>
-                <a href="products.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Products</a>
-                <a href="blog.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Blog</a>
-                <a href="contact.html" class="footer-link" style="color: #ccc; margin-right: 15px; text-decoration: none;">Contact</a>
-            </div>
-    </footer>
+    </div>
+
+    <!-- Admin Export Panel -->
+    <div id="adminExportPanel" class="admin-export-panel d-none">
+        <div class="admin-export-header">
+            <h5><i class="fas fa-database me-2"></i>Data Management</h5>
+            <button type="button" class="btn-close btn-close-white" id="closeExportPanel"></button>
+        </div>
+        <div class="admin-export-body">
+            <button class="btn btn-primary btn-sm w-100 mb-2" id="pageEditModeBtn">
+                <i class="fas fa-edit me-1"></i> Edit Mode
+            </button>
+            <button class="btn btn-success btn-sm w-100 mb-2" id="savePageEditsBtn" style="display:none;">
+                <i class="fas fa-save me-1"></i> Save Page Edits
+            </button>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
+            <button class="btn btn-light btn-sm w-100 mb-2" id="exportDataBtn">
+                <i class="fas fa-download me-1"></i> Export site-data.json
+            </button>
+            <button class="btn btn-light btn-sm w-100 mb-2" id="syncGithubBtn">
+                <i class="fab fa-github me-1"></i> Sync to GitHub
+            </button>
+            <button class="btn btn-light btn-sm w-100" id="importDataBtn">
+                <i class="fas fa-upload me-1"></i> Import from JSON
+            </button>
+            <input type="file" id="importFileInput" accept=".json" style="display:none;">
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script>
