@@ -1799,12 +1799,24 @@ body.edit-mode [contenteditable="true"]:focus {
 }
 
 .banner-slide.active {
-    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.banner-slide.active > .container {
+    width: 100%;
 }
 
 @media (min-width: 992px) {
     .banner-slide {
         padding: 1.5rem 0 3.5rem;
+        min-height: 36rem; /* 统一所有 slide 高度，消除 trust-bar 带来的高度差 */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .banner-slide.active {
+        min-height: 32rem;
     }
 }
 
