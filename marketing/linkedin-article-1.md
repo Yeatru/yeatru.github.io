@@ -126,10 +126,10 @@ The data is clear: buyers who work with a local, verified sourcing agent save mo
 
 **Neil Wang** is the Founder of **Yeatru Sourcing**, a Yiwu-based China sourcing agent serving 200+ clients in 50+ countries. 14+ years of experience in product sourcing, supplier verification, quality control, and logistics.
 
-- 🌐 Website: [yeatru.com](https://www.yeatru.com/)
+- 🌐 Website: [yeatru.com](https://yeatru.com/)
 - 📧 Email: info@yeatru.com
 - 📱 WhatsApp: +86 15988516408
-- 📊 Full data: [yeatru.com/data.html](https://www.yeatru.com/data.html)
+- 📊 Full data: [yeatru.com/data.html](https://yeatru.com/data.html)
 
 ---
 

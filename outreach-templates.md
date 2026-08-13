@@ -38,7 +38,7 @@
 
 现在有 5 种语言支持（English / Español / Français / Русский / العربية）。
 
-👉 https://www.yeatru.com/faq.html
+👉 https://yeatru.com/faq.html
 
 #ChinaSourcing #AmazonFBA #TikTokShop #SourcingAgent #Yiwu
 ```
@@ -58,7 +58,7 @@
 7️⃣ 不了解认证要求 — 产品被海关扣
 
 我们在 Yeatru Sourcing 整理了完整的采购指南：
-👉 https://www.yeatru.com/blog.html
+👉 https://yeatru.com/blog.html
 
 如果你是第一次从中国采购，这篇必读。
 
@@ -77,7 +77,7 @@
 - 免费提供 24 小时报价
 - 支持 WhatsApp / Telegram 实时沟通
 
-👉 https://www.yeatru.com/testimonials.html
+👉 https://yeatru.com/testimonials.html
 
 想了解更多？评论区聊聊！
 
@@ -110,7 +110,7 @@
 - 支持 TikTok Shop / Amazon FBA 全流程
 
 完整的采购指南可以在我们的博客找到：
-https://www.yeatru.com/blog.html
+https://yeatru.com/blog.html
 
 （注：我是 Yeatru 的创始人，所以有利益相关，但上述观点基于真实行业经验。）
 ```
@@ -137,7 +137,7 @@ https://www.yeatru.com/blog.html
    - 骗子多，需要谨慎筛选
    - 样品质量和大货可能不一致
 
-我们的免费指南：https://www.yeatru.com/blog-yiwu-market-guide.html
+我们的免费指南：https://yeatru.com/blog-yiwu-market-guide.html
 
 核心建议：无论哪个渠道，**一定要做验厂**！
 ```
@@ -163,7 +163,7 @@ https://www.yeatru.com/blog.html
 3. 接受略高的单价（通常高 10-15%）
 
 如果有人需要具体的采购流程，我整理了一份指南：
-https://www.yeatru.com/blog.html
+https://yeatru.com/blog.html
 
 欢迎 DM 交流，不推销服务。
 ```
@@ -183,7 +183,7 @@ Hi r/eBaySellers,
 3. **认证**：如果做 Amazon，产品需要 FCC/CE 认证，这是硬性要求。
 
 完整的采购清单：
-https://www.yeatru.com/blog-sourcing-preparation-checklist.html
+https://yeatru.com/blog-sourcing-preparation-checklist.html
 
 欢迎提问，免费解答。
 ```
@@ -203,7 +203,7 @@ Hello everyone 👋
 - 3 个培训课程：如何在义乌采购、如何做 FBA 头程、如何砍价
 - 支持 5 种语言（English / Español / Français / Русский / العربية）
 
-👉 查看 FAQ：https://www.yeatru.com/faq.html
+👉 查看 FAQ：https://yeatru.com/faq.html
 
 有任何问题随时联系我！
 WhatsApp: +86 15988516408
@@ -228,14 +228,14 @@ WhatsApp: +86 15988516408
 
 | Date | Platform | URL | Anchor Text | Status |
 |------|----------|-----|-------------|--------|
-| Day 2 | LinkedIn | https://www.yeatru.com/faq.html | "30 FAQs" | 待发布 |
-| Day 3 | Quora | https://www.yeatru.com/blog.html | "采购指南" | 待发布 |
-| Day 4 | Reddit | https://www.yeatru.com/blog.html | "采购经验" | 待发布 |
-| Day 5 | WhatsApp | https://www.yeatru.com/faq.html | "FAQ 更新" | 待发布 |
-| Day 6 | WarriorForum | https://www.yeatru.com/products.html | "产品目录" | 待发布 |
-| Day 7 | LinkedIn | https://www.yeatru.com/blog.html | "采购陷阱" | 待发布 |
-| Day 9 | Quora | https://www.yeatru.com/blog-yiwu-market-guide.html | "义乌指南" | 待发布 |
-| Day 10 | Reddit | https://www.yeatru.com/blog.html | "真实经验" | 待发布 |
-| Day 12 | 行业论坛 | https://www.yeatru.com/contact.html | "联系我们" | 待发布 |
-| Day 14 | Quora/Reddit | https://www.yeatru.com/testimonials.html | "客户评价" | 待发布 |
-| Day 16 | LinkedIn | https://www.yeatru.com/about.html | "关于我们" | 待发布 |
+| Day 2 | LinkedIn | https://yeatru.com/faq.html | "30 FAQs" | 待发布 |
+| Day 3 | Quora | https://yeatru.com/blog.html | "采购指南" | 待发布 |
+| Day 4 | Reddit | https://yeatru.com/blog.html | "采购经验" | 待发布 |
+| Day 5 | WhatsApp | https://yeatru.com/faq.html | "FAQ 更新" | 待发布 |
+| Day 6 | WarriorForum | https://yeatru.com/products.html | "产品目录" | 待发布 |
+| Day 7 | LinkedIn | https://yeatru.com/blog.html | "采购陷阱" | 待发布 |
+| Day 9 | Quora | https://yeatru.com/blog-yiwu-market-guide.html | "义乌指南" | 待发布 |
+| Day 10 | Reddit | https://yeatru.com/blog.html | "真实经验" | 待发布 |
+| Day 12 | 行业论坛 | https://yeatru.com/contact.html | "联系我们" | 待发布 |
+| Day 14 | Quora/Reddit | https://yeatru.com/testimonials.html | "客户评价" | 待发布 |
+| Day 16 | LinkedIn | https://yeatru.com/about.html | "关于我们" | 待发布 |

@@ -1,0 +1,59 @@
+# =====================================================
+# Cloudflare Pages 头配置 - 直接消除 PSI 「Use efficient cache lifetimes」267KiB
+# 部署: Cloudflare Pages 自动读取仓库根目录 _headers 文件
+# =====================================================
+
+/*
+  # 通用安全头 (Security Headers A+ 评级)
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# =====================================================
+# 长缓存策略 (按文件类型)
+# =====================================================
+
+# 图片: 缓存 1 个月 (产品图/banner 基本不变)
+/Images/*.jpg
+/Images/*.jpeg
+/Images/*.png
+/Images/*.webp
+/Images/*.avif
+/Images/*.gif
+/Images/*.svg
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=604800, stale-if-error=604800
+
+# 静态资源 / 外链 CSS/JS: 永久缓存 (hash/版本号变更才更新)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+/*.js
+/*.mjs
+/*.woff
+/*.woff2
+/*.ttf
+/*.eot
+/*.otf
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+
+# 结构化数据 & LLM 文件: 缓存 24 小时
+/*.json
+/*.txt
+  Cache-Control: public, max-age=86400, s-maxage=86400
+
+# HTML 页面: 缓存 1 小时, 必须重新校验 (避免发布新内容用户看不到)
+/*.html
+/
+  Cache-Control: public, max-age=3600, s-maxage=3600, must-revalidate, stale-while-revalidate=86400
+
+# Sitemap: 缓存 1 天
+/sitemap.xml
+  Cache-Control: public, max-age=86400, s-maxage=86400
+
+# Logo SVG: 1 年
+/logo.svg
+  Cache-Control: public, max-age=31536000, immutable

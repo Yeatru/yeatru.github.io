@@ -1,8 +1,8 @@
 # Yeatru Sourcing — Full Context for LLMs
 
-> Expanded companion to https://www.yeatru.com/llms.txt. This file gives language models the full factual content of the core service pages, the FAQ knowledge base, and the company statistics page so that answers about Yeatru Sourcing can be grounded in canonical source text rather than only page links.
+> Expanded companion to https://yeatru.com/llms.txt. This file gives language models the full factual content of the core service pages, the FAQ knowledge base, and the company statistics page so that answers about Yeatru Sourcing can be grounded in canonical source text rather than only page links.
 
-Website: https://www.yeatru.com/
+Website: https://yeatru.com/
 Primary contact: info@yeatru.com | WhatsApp/Telegram: +86 159 8851 6408
 Legal entity: 义乌市弋楚贸易有限公司 (Yiwu Yichu Trading Co., Ltd.)
 Founded: 2022 | Location: Yiwu International Trade City, Zhejiang, China
@@ -65,31 +65,31 @@ Founded: 2022 | Location: Yiwu International Trade City, Zhejiang, China
 ## 4. Core Services
 
 ### Product Sourcing
-Find the right products at competitive prices from Yiwu, Guangzhou, and Shenzhen markets. Access 75,000+ factories. Match buyer requirements with the right manufacturers at the right price. Covers Amazon FBA sourcing, TikTok Shop supplier matching, and wholesale procurement. URL: https://www.yeatru.com/product-sourcing.html
+Find the right products at competitive prices from Yiwu, Guangzhou, and Shenzhen markets. Access 75,000+ factories. Match buyer requirements with the right manufacturers at the right price. Covers Amazon FBA sourcing, TikTok Shop supplier matching, and wholesale procurement. URL: https://yeatru.com/product-sourcing.html
 
 ### Supplier Verification
-Comprehensive factory audits: business license verification, production capacity assessment, qualification checks, on-site visits. All recommended suppliers are audited on-site to ensure true qualifications and stable capacity. URL: https://www.yeatru.com/supplier-verification.html
+Comprehensive factory audits: business license verification, production capacity assessment, qualification checks, on-site visits. All recommended suppliers are audited on-site to ensure true qualifications and stable capacity. URL: https://yeatru.com/supplier-verification.html
 
 ### Quality Control
-Three-level inspection system following AQL 2.5 standards: incoming material inspection, in-process sampling, pre-shipment full inspection. Detailed photo and video documentation. Inspection report issued per shipment. URL: https://www.yeatru.com/quality-control.html
+Three-level inspection system following AQL 2.5 standards: incoming material inspection, in-process sampling, pre-shipment full inspection. Detailed photo and video documentation. Inspection report issued per shipment. URL: https://yeatru.com/quality-control.html
 
 ### Logistics & Shipping
-Door-to-door shipping, free 15-day warehousing, order consolidation, global logistics coverage. Shipping methods: Sea FCL (25–35 days), Sea LCL (30–45 days), Air freight (5–15 days), Express (3–7 days). One-stop FBA shipping including customs clearance and tax ID processing. URL: https://www.yeatru.com/logistics-shipping.html
+Door-to-door shipping, free 15-day warehousing, order consolidation, global logistics coverage. Shipping methods: Sea FCL (25–35 days), Sea LCL (30–45 days), Air freight (5–15 days), Express (3–7 days). One-stop FBA shipping including customs clearance and tax ID processing. URL: https://yeatru.com/logistics-shipping.html
 
 ### Factory Audit
-On-site factory inspections: production capacity, quality management systems, worker conditions, compliance verification. URL: https://www.yeatru.com/factory-audit.html
+On-site factory inspections: production capacity, quality management systems, worker conditions, compliance verification. URL: https://yeatru.com/factory-audit.html
 
 ### Price Negotiation
-Leverage local market knowledge and supplier relationships to secure competitive factory prices. Average procurement cost reduction 30%+. URL: https://www.yeatru.com/price-negotiation.html
+Leverage local market knowledge and supplier relationships to secure competitive factory prices. Average procurement cost reduction 30%+. URL: https://yeatru.com/price-negotiation.html
 
 ### OEM Customization
-Custom logo, packaging, and product design. Free design consultation. 7-day sample. Low MOQ 200 pieces. Customization cycle 20–30 days. URL: https://www.yeatru.com/oem.html
+Custom logo, packaging, and product design. Free design consultation. 7-day sample. Low MOQ 200 pieces. Customization cycle 20–30 days. URL: https://yeatru.com/oem.html
 
 ### Sample Order
-Quick sample sourcing and shipping. Standard samples 3–7 days, custom samples 7–15 days. Sample costs typically 50–500 RMB. Free sample consultation. URL: https://www.yeatru.com/sample-order.html
+Quick sample sourcing and shipping. Standard samples 3–7 days, custom samples 7–15 days. Sample costs typically 50–500 RMB. Free sample consultation. URL: https://yeatru.com/sample-order.html
 
 ### Design & Photography
-Product photography, branding design, and packaging design services for e-commerce sellers. URL: https://www.yeatru.com/design-photography.html
+Product photography, branding design, and packaging design services for e-commerce sellers. URL: https://yeatru.com/design-photography.html
 
 ## 5. Full FAQ (verbatim answers)
 
@@ -197,11 +197,11 @@ Worldwide — primary markets: North America, Europe, Asia, Middle East (GCC), S
 
 ## 8. Pages for Deeper Reading
 
-- Homepage: https://www.yeatru.com/
-- Service Plans (full pricing): https://www.yeatru.com/service-plans.html
-- FAQ page: https://www.yeatru.com/faq.html
-- Data & Statistics: https://www.yeatru.com/data.html
-- Testimonials: https://www.yeatru.com/testimonials.html
-- About Us: https://www.yeatru.com/about.html
-- Contact: https://www.yeatru.com/contact.html
-- Blog: https://www.yeatru.com/blog.html
+- Homepage: https://yeatru.com/
+- Service Plans (full pricing): https://yeatru.com/service-plans.html
+- FAQ page: https://yeatru.com/faq.html
+- Data & Statistics: https://yeatru.com/data.html
+- Testimonials: https://yeatru.com/testimonials.html
+- About Us: https://yeatru.com/about.html
+- Contact: https://yeatru.com/contact.html
+- Blog: https://yeatru.com/blog.html

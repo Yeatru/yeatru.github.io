@@ -17,7 +17,7 @@ import time
 import sys
 
 INDEXNOW_KEY = "cb82a7f9-5e3d-4b8a-9c2e-1d5f7a3b9c8d"
-HOST = "www.yeatru.com"
+HOST = "yeatru.com"
 SITEMAP_FILE = "sitemap.xml"
 API_URL = "https://www.bing.com/indexnow"
 
