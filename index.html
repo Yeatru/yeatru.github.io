@@ -373,11 +373,11 @@
 </head>
 <body>
     <a href="#mainContent" class="skip-to-content">Skip to main content</a>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <nav class="navbar navbar-expand-xl bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;" />
+                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;"  class="img-fluid" />
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
@@ -430,7 +430,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                     <!-- Global Search -->
                     <div class="nav-search-wrapper">
                         <button class="btn nav-search-btn" type="button" id="navSearchToggle" aria-label="Toggle search">
@@ -522,7 +522,7 @@
                             <div class="col-lg-6">
                                 <div class="banner-image">
                                     <div class="banner-image-wrap">
-                                        <img data-img-editable="index.slide1.image" src="Images/FBA.jpg" alt="China Sourcing for Amazon" width="800" height="600" decoding="async" fetchpriority="high" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                                        <img data-img-editable="index.slide1.image" src="Images/FBA.jpg" alt="China Sourcing for Amazon" decoding="async" fetchpriority="high" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';" class="img-fluid">
                                         <div class="banner-image-placeholder">
                                             <i class="fas fa-boxes"></i>
                                             <span>China Sourcing</span>
@@ -592,7 +592,7 @@
                             <div class="col-lg-6">
                                 <div class="banner-image">
                                     <div class="banner-image-wrap">
-                                        <img loading="lazy" data-img-editable="index.slide3.image" src="Images/loading.jpg" alt="Global Shipping" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                                        <img loading="lazy" data-img-editable="index.slide3.image" src="Images/loading.jpg" alt="Global Shipping" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';" class="img-fluid">
                                         <div class="banner-image-placeholder">
                                             <i class="fas fa-shipping-fast"></i>
                                             <span>Global Shipping</span>
@@ -627,7 +627,7 @@
                             <div class="col-lg-6">
                                 <div class="banner-image">
                                     <div class="banner-image-wrap">
-                                        <img loading="lazy" data-img-editable="index.slide4.image" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E8%B1%86%E5%8C%85.png" alt="Warehousing and Quality Inspection" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';">
+                                        <img loading="lazy" data-img-editable="index.slide4.image" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/%E8%B1%86%E5%8C%85.png" alt="Warehousing and Quality Inspection" onerror="this.parentElement.classList.add('image-error'); this.style.display='none';" class="img-fluid">
                                         <div class="banner-image-placeholder">
                                             <i class="fas fa-warehouse"></i>
                                             <span>Warehousing & QC</span>
@@ -1541,7 +1541,7 @@
                             <h2 class="seo-h2">Sourcing Agent Fees: How We Price</h2>
                             <p>One of the most common questions we get is <em>"how much does a sourcing agent cost?"</em> At Yeatru Sourcing, we believe in transparent pricing. No hidden fees, no markups on factory prices. Here are our two service models:</p>
                             <div class="table-responsive">
-                                <table class="table table-bordered seo-comparison-table">
+<table class="table table-bordered seo-comparison-table">
                                     <thead class="table-dark">
                                         <tr>
                                             <th style="width:25%;">Service Model</th>
@@ -1568,13 +1568,14 @@
                                         </tr>
                                     </tbody>
                                 </table>
+</div>
                             </div>
                             <p><strong>Real example:</strong> An Amazon FBA client ordered 2,000 units of a kitchen gadget. Factory price was $3.20/unit (total $6,400). Our Full Sourcing fee at 5% = $320. We negotiated the factory down from $3.80 to $3.20 (saving $1,200), caught a labeling error during QC (avoiding $800 in Amazon returns), and consolidated shipping (saving $250 vs separate shipments). <strong>Total client savings: $2,250 — versus a $320 fee.</strong></p>
 
                             <h2 class="seo-h2">Sourcing Agent vs Trading Company vs Direct Factory</h2>
                             <p>Buyers often ask: should I use a sourcing agent, a trading company, or buy direct from the factory? Here's the honest comparison:</p>
                             <div class="table-responsive">
-                                <table class="table table-bordered seo-comparison-table">
+<table class="table table-bordered seo-comparison-table">
                                     <thead class="table-dark">
                                         <tr>
                                             <th>Factor</th>
@@ -1595,6 +1596,7 @@
                                         <tr><td><strong>After-sales</strong></td><td>✅ Agent handles claims</td><td>⚠️ May avoid responsibility</td><td>❌ Difficult to claim</td></tr>
                                     </tbody>
                                 </table>
+</div>
                             </div>
                             <p>For a deeper dive, read our detailed comparisons: <a href="blog-sourcing-agent-vs-trading-company.html">Sourcing Agent vs Trading Company</a>, <a href="blog-sourcing-agent-vs-dropshipping.html">Sourcing Agent vs Dropshipping</a>, <a href="blog-sourcing-agent-vs-direct-factory.html">Sourcing Agent vs Direct Factory</a>, and <a href="blog-sourcing-agent-vs-buying-office.html">Sourcing Agent vs Buying Office</a>.</p>
 
@@ -1672,7 +1674,7 @@
                     <div class="col-lg-4 col-md-6">
                         <a href="blog-amazon-supplier-guide.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img loading="lazy" src="Images/Audit2.jpg" alt="Amazon Sourcing Guide">
+                                <img loading="lazy" src="Images/Audit2.jpg" alt="Amazon Sourcing Guide" class="img-fluid">
                                 <div class="blog-card-placeholder">
                                     <i class="fas fa-amazon"></i>
                                     <span>Amazon Sourcing Guide</span>
@@ -1694,7 +1696,7 @@
                     <div class="col-lg-4 col-md-6">
                         <a href="blog-product-certifications.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Compliance.jpg" alt="EU US Product Certifications">
+                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Compliance.jpg" alt="EU US Product Certifications" class="img-fluid">
                                 <div class="blog-card-placeholder">
                                     <i class="fas fa-certificate"></i>
                                     <span>Product Certifications</span>
@@ -1754,7 +1756,7 @@
                         <h3 class="about-title" data-i18n="about.profile">Company Profile</h3>
                         <p class="about-desc" data-i18n="about.profileDesc">Yeatru Sourcing is a professional China sourcing agent founded in 2022, located in Yiwu City - the world's largest small commodity distribution center. We specialize in serving overseas small-to-medium wholesale buyers, cross-border e-commerce sellers, and small-batch purchasers. Our core services include procurement agency, supplier sourcing, supplier verification, quality management, goods receiving, inspection, and logistics solutions. Our management team brings over 14 years of combined experience in supplier management, procurement, logistics, and quality control, committed to serving our clients with sincerity and integrity.</p>
                         <div class="about-image-wrap">
-                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Yiwu International Trade City" class="about-long-image" loading="lazy" decoding="async">
+                            <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/international%20trading%20city%20pic.jpg" alt="Yiwu International Trade City" class="about-long-image img-fluid" loading="lazy" decoding="async">
                         </div>
                         <div class="about-stats">
                             <div class="about-stat-item">
@@ -1969,7 +1971,7 @@
 
             <div class="detail-main">
                 <div>
-                    <img id="detailImage" class="detail-image" src="" alt="Product image" loading="eager" decoding="async" onload="this.classList.add('loaded')">
+                    <img id="detailImage" class="detail-image img-fluid" src="" alt="Product image" loading="eager" decoding="async" onload="this.classList.add('loaded')">
                     <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
                 </div>
                 <div class="detail-info">
@@ -1980,13 +1982,18 @@
                         &nbsp;|&nbsp;
                         <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
                     </div>
-                    <table class="detail-spec-table">
+                    <div class="table-responsive">
+<div class="table-responsive">
+<table class="detail-spec-table">
                         <tr><th data-i18n="products.material">Material</th><td><span id="detailMaterial">—</span><input class="form-control detail-edit-only" id="detailMaterialInput" style="display:none;"></td></tr>
                         <tr><th data-i18n="products.size">Size</th><td><span id="detailSize">—</span><input class="form-control detail-edit-only" id="detailSizeInput" style="display:none;"></td></tr>
                         <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
                         <tr><th data-i18n="products.priceMin">Min Price</th><td>$<span id="detailPriceMin">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMinInput" style="display:none;"></td></tr>
                         <tr><th data-i18n="products.priceMax">Max Price</th><td>$<span id="detailPriceMax">—</span><input type="number" step="0.01" class="form-control detail-edit-only" id="detailPriceMaxInput" style="display:none;"></td></tr>
                     </table>
+</div>
+</div>
+</div>
                     <div class="detail-price-big" id="detailPriceBig">—</div>
                     <p class="text-muted" id="detailDesc">—</p>
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
@@ -2019,7 +2026,7 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;" class="img-fluid">
                             <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing
@@ -2199,7 +2206,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap">
                                 <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
                                 <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
                             </div>

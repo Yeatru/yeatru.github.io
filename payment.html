@@ -260,11 +260,11 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <nav class="navbar navbar-expand-xl bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;" />
+                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;"  class="img-fluid" />
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
@@ -317,7 +317,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                     <div class="nav-search-wrapper">
                         <button class="btn nav-search-btn" type="button" id="navSearchToggle">
                             <i class="fas fa-search"></i>
@@ -422,7 +422,8 @@
                         <p class="mb-0" style="color: #78350f;"><i class="fas fa-info-circle me-2" style="color: #d97706;"></i> <strong>Only support payment via SWIFT/FPS/CHATS</strong></p>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-sm table-borderless table-striped align-middle">
+<div class="table-responsive">
+<table class="table table-sm table-borderless table-striped align-middle">
                             <tr style="background: #f8fafc;"><td style="width:35%;"><strong data-i18n="pay.accountNumber">Account number:</strong></td><td><code class="fs-6" style="background: #eff6ff; color: #1e3a8a; padding: 0.15rem 0.5rem; border-radius: 6px;">88800006423519</code></td></tr>
                             <tr><td><strong data-i18n="pay.companyName">Account name:</strong></td><td><strong>YIWU ETRUE TRADING CO.,LTD.</strong> <small class="text-muted d-block mt-1" style="color: #64748b;">(<em>If the account name exceeds the available space, please continue in the address field.</em>)</small></td></tr>
                             <tr style="background: #f8fafc;"><td><strong>SWIFT/BIC code:</strong></td><td><code class="fs-6" style="background: #eff6ff; color: #1e3a8a; padding: 0.15rem 0.5rem; border-radius: 6px;">WIHBHKHHXXX</code></td></tr>
@@ -433,6 +434,9 @@
                             <tr><td><strong>Bank code:</strong></td><td><code class="fs-6" style="background: #eff6ff; color: #1e3a8a; padding: 0.15rem 0.5rem; border-radius: 6px;">035</code></td></tr>
                             <tr style="background: #f8fafc;"><td><strong>Payment method:</strong></td><td>For the payment of goods, please make a FPS/CHATS/SWIFT Payment</td></tr>
                         </table>
+</div>
+</div>
+</div>
                     </div>
                     <div class="mt-4 p-3 rounded-2" style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a;">
                         <i class="fas fa-info-circle me-2" style="color: #2563eb;"></i>
@@ -451,28 +455,28 @@
                     <h2 class="section-title mb-4" data-i18n="pay.termsTitle">Standard Payment Terms</h2>
                     <p class="text-muted mb-4" data-i18n="pay.termsIntro">We work with standard payment terms that protect both parties and ensure smooth transactions.</p>
                     <div class="mb-4">
-                        <div class="d-flex align-items-start mb-3">
+                        <div class="d-flex align-items-start mb-3 flex-wrap">
                             <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
                             <div>
                                 <h5 data-i18n="pay.term1Title">50% / 50% Split</h5>
                                 <p class="text-muted mb-0" data-i18n="pay.term1Desc">50% deposit to start production after order confirmation, 50% balance before shipping.</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-start mb-3">
+                        <div class="d-flex align-items-start mb-3 flex-wrap">
                             <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
                             <div>
                                 <h5 data-i18n="pay.term2Title">Full Payment Before Shipping</h5>
                                 <p class="text-muted mb-0" data-i18n="pay.term2Desc">Complete the full payment before the goods are shipped.</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-start mb-3">
+                        <div class="d-flex align-items-start mb-3 flex-wrap">
                             <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
                             <div>
                                 <h5 data-i18n="pay.term3Title">Quality Guarantee</h5>
                                 <p class="text-muted mb-0" data-i18n="pay.term3Desc">If quality issues are found, we work with suppliers to resolve or provide compensation.</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start flex-wrap">
                             <div class="me-3 text-primary"><i class="fas fa-check-circle fa-lg"></i></div>
                             <div>
                                 <h5 data-i18n="pay.term4Title">Transparent Process</h5>
@@ -531,7 +535,7 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;" class="img-fluid">
                             <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing

@@ -202,11 +202,11 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <nav class="navbar navbar-expand-xl bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;" />
+                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;"  class="img-fluid" />
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
@@ -259,7 +259,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                     <div class="nav-search-wrapper">
                         <button class="btn nav-search-btn" type="button" id="navSearchToggle">
                             <i class="fas fa-search"></i>
@@ -366,7 +366,8 @@
 
                 <h2 class="h4 mt-5 mb-3">8. Cookies</h2>
                 <p>We use a minimal set of cookies:</p>
-                <table class="table table-striped">
+                <div class="table-responsive">
+<table class="table table-striped">
                     <thead><tr><th>Cookie / Storage</th><th>Purpose</th><th>Lifetime</th><th>Category</th></tr></thead>
                     <tbody>
                         <tr><td><code>i18next</code></td><td>Remembers your preferred language (en/es/fr/ru/ar)</td><td>365 days</td><td>Necessary preference</td></tr>
@@ -375,6 +376,7 @@
                         <tr><td>MS Clarity <code>_clck</code>, <code>_clsk</code></td><td>Aggregated session heatmaps and click recordings for UX fixes</td><td>13 months / 24 hours</td><td>Analytics</td></tr>
                     </tbody>
                 </table>
+</div>
                 <p>You can reject analytics cookies at any time by enabling "Do Not Track" in your browser, or by writing to <a href="mailto:info@yeatru.com">info@yeatru.com</a> and we will honour the signal by disabling GA4 for your IP range on a best-effort basis.</p>
 
                 <h2 class="h4 mt-5 mb-3">9. Security</h2>

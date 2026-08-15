@@ -938,11 +938,11 @@
     <link rel="canonical" href="https://www.yeatru.com/products.html">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <nav class="navbar navbar-expand-xl bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
-                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;" />
+                    <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;"  class="img-fluid" />
                     <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
                     <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
                 </span>
@@ -995,7 +995,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                     <div class="nav-search-wrapper">
                         <button class="btn nav-search-btn" type="button" id="navSearchToggle">
                             <i class="fas fa-search"></i>
@@ -1101,7 +1101,7 @@
                             <button class="btn btn-primary" id="addCategoryBtn" data-i18n="products.addCategory">Add Category</button>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center gap-2">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
                         <span class="small text-muted"><i class="fas fa-shield-alt me-1"></i>Admin Mode</span>
                         <button class="btn btn-sm btn-primary" id="addProductBtn" data-bs-toggle="modal" data-bs-target="#productModal" title="Add New Product">
                             <i class="fas fa-plus me-1"></i><span data-i18n="products.addProduct">Add Product</span>
@@ -1143,7 +1143,7 @@
 
             <div class="detail-main">
                 <div>
-                    <img id="detailImage" class="detail-image" src="" alt="Product image" loading="eager" decoding="async" onload="this.classList.add('loaded')">
+                    <img id="detailImage" class="detail-image img-fluid" src="" alt="Product image" loading="eager" decoding="async" onload="this.classList.add('loaded')">
                     <input type="url" class="form-control mt-2 detail-edit-only" id="detailImageInput" placeholder="Image URL" style="display:none;">
                 </div>
                 <div class="detail-info">
@@ -1154,7 +1154,9 @@
                         &nbsp;|&nbsp;
                         <span data-i18n="products.sku">SKU</span>: <strong id="detailSKU">—</strong>
                     </div>
-                    <table class="detail-spec-table">
+                    <div class="table-responsive">
+<div class="table-responsive">
+<table class="detail-spec-table">
                         <tr class="spec-price-row">
                             <th>WHOLESALE PRICE</th>
                             <td class="spec-price-cell"><div id="detailPriceDisplay" class="detail-price-display"><div class="detail-price-big" id="detailPriceBig">—</div></div></td>
@@ -1164,6 +1166,9 @@
                         <tr><th data-i18n="products.moq">MOQ</th><td><span id="detailMOQ">—</span><input type="number" class="form-control detail-edit-only" id="detailMOQInput" style="display:none;"></td></tr>
                         <!-- SKU intentionally NOT duplicated here — already shown above in detail-meta -->
                     </table>
+</div>
+</div>
+</div>
                     <p class="text-muted" id="detailDesc">—</p>
                     <textarea class="form-control detail-edit-only" id="detailDescInput" rows="4" placeholder="Description" style="display:none;"></textarea>
 
@@ -1174,7 +1179,7 @@
 
                     <!-- Variations Editor (Edit mode only) -->
                     <div id="detailVariationsEditor" class="detail-edit-only" style="display:none; margin-top: 1.5rem;">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
                             <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
                             <button type="button" class="btn btn-sm btn-outline-secondary" id="addDetailVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
                         </div>
@@ -1204,7 +1209,7 @@
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="footer-brand">
                         <span class="brand-logo-box" style="width:36px;height:36px;min-width:36px;min-height:36px;max-width:36px;max-height:36px;border:none;background:transparent;box-shadow:none;">
-                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;">
+                            <img loading="lazy" id="footerLogoImg" src="" alt="Yeatru Logo" style="display:none;" class="img-fluid">
                             <span id="footerLogoFallback" style="color: var(--primary); font-weight: bold;">YC</span>
                         </span>
                         Yeatru Sourcing
@@ -1356,7 +1361,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap">
                                 <label class="form-label mb-0" style="font-weight:600;"><i class="fas fa-palette me-1" style="color:#0b7b94;"></i> Variations (Colors / Sizes)</label>
                                 <button type="button" class="btn btn-sm btn-outline-secondary" id="addVariationBtn"><i class="fas fa-plus me-1"></i> Add Variation</button>
                             </div>
