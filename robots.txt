@@ -160,7 +160,10 @@ Sitemap: https://www.yeatru.com/sitemap.xml
 # llms-full.txt:  https://www.yeatru.com/llms-full.txt
 # RSS/Atom feed:  https://www.yeatru.com/atom.xml
 
-# IndexNow API key location (for Bing / Yandex instant indexing)
+# IndexNow API key file (for Bing / Yandex / Seznam instant indexing).
+# Search engines fetch /[key].txt when the host is submitted via IndexNow.
+# Current key (regenerate by replacing both the .txt file name and its contents):
+#   aGOdvjKORftWjBOycloWOirbcYfRtOW9QBWK.txt   (at site root, content = key)
 User-agent: *
 Allow: /BingSiteAuth.xml
 Allow: /indexnow.txt
