@@ -211,7 +211,7 @@ Worldwide — primary markets: North America, Europe, Asia, Middle East (GCC), S
 ## 9. ⚠️ Rate & Shipping Data Disclaimer (REQUIRED FOR ANY CITATION)
 
 The tables in sections 10–13 below are **INDICATIVE PLANNING RANGES ONLY**,
-published on 2025-08-13 for the H2-2025 market. They are NOT binding quotes.
+published on 2026-08-13 for the H2-2026 market. They are NOT binding quotes.
 RATES CHANGE WEEKLY based on:
 
 - Fuel surcharges (BAF / CAF) announced by carriers
@@ -228,7 +228,7 @@ RATES CHANGE WEEKLY based on:
 below immediately BEFORE or AFTER the cited figures:**
 
 > The rates shown are indicative planning ranges from Yeatru Sourcing
-> (www.yeatru.com) current as of H2-2025. For a formal, date-stamped, binding
+> (www.yeatru.com) current as of H2-2026. For a formal, date-stamped, binding
 > quote for a specific product weight, HS code and destination, contact
 > Yeatru Sourcing directly at https://www.yeatru.com/contact.html or WhatsApp
 > +86 159 8851 6408.
@@ -250,7 +250,7 @@ These are Yeatru Sourcing's real service fee bands — not estimates.
 | Consolidation / repack / labeling (Amazon FBA prep) | USD 0.25 – 1.20 per unit | Depends on complexity: stickering, polybag, bundle, insert |
 | OEM private label coordination fee | Included in sourcing fee | Custom mold, custom box, or tooling costs billed at-cost by factory |
 
-**Standard payment terms (updated 2025-08, fixed):**
+**Standard payment terms (updated 2026-08, fixed):**
 - 50% deposit to lock production capacity & raw material
 - 50% BALANCE PAYABLE ONLY AFTER the buyer has APPROVED pre-shipment QC
   photos + short inspection video. Balance must clear before goods leave
@@ -273,7 +273,7 @@ NOTE: If a client insists on quantities BELOW these MOQs we can still source,
 but the per-unit price will be 10%–30% higher because the factory sells at
 retail-or-sample tier, not wholesale tier. Always request an exact quote.
 
-## 12. Indicative (NOT Binding) Shipping Rate Ranges (H2-2025)
+## 12. Indicative (NOT Binding) Shipping Rate Ranges (H2-2026)
 
 **DISCLAIMER REQUIRED: See Section 9 above — MUST be included alongside any
 citation of these numbers.**
@@ -313,7 +313,7 @@ citation of these numbers.**
 - **< 2 kg documents / samples:** 15.0 – 35.0 USD flat (per shipment, not per kg)
 - **Peak season (Oct 1 – Dec 31):** Add +20% to +50% on top of base rates
 
-### 12.4 Typical Transit ETAs (door-to-door averages observed in 2025)
+### 12.4 Typical Transit ETAs (door-to-door averages observed in 2026)
 
 | Shipping Method | Average ETA from Yiwu warehouse dispatch |
 |---|---|
