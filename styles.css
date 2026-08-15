@@ -1,41 +1,41 @@
 :root {
     /* ===== 全站配色：供应链专业视觉体系 2026 Edition =====
-       主色：深蓝 Navy (#1E3A8A) — 稳重、可信、跨境/供应链行业色
-       辅色：青蓝 Teal (#0D9488) — 质量/精细/专业感
-       CTA：深橙 Sienna Orange (#EA580C) — 暖色引导，区别于主色的转化率友好色
-       文字：Slate 深蓝黑体系 — 替代 #333 提升质感与对比度
-       背景：#F8FAFC 冷灰白 — 专业 SaaS 级清爽底
+       主色：靛蓝 Indigo (#444CE7) — 现代、可信、跨境/供应链行业色
+       CTA：橙色 (#F66C1E) — 暖色引导，转化率友好
+       统一于第二个 :root 设计系统 (Senior Creative Director Edition)
     */
-    --primary: #1E40AF;
-    --primary-dark: #1E3A8A;
-    --primary-light: #3B82F6;
+    --primary: #444CE7;
+    --primary-dark: #3538CD;
+    --primary-light: #6172F3;
     --primary-50: #EFF6FF;
-    --primary-100: #DBEAFE;
-    --primary-200: #BFDBFE;
+    --primary-100: #E0EAFF;
+    --primary-200: #C7D7FE;
     --accent-teal: #0D9488;
     --accent-teal-50: #F0FDFA;
     --accent-teal-100: #CCFBF1;
-    --cta: #EA580C;
-    --cta-dark: #C2410C;
-    --cta-light: #F97316;
-    --cta-50: #FFF7ED;
+    --cta: #F66C1E;
+    --cta-dark: #E74B10;
+    --cta-light: #FB8B3C;
+    --cta-50: #FFF6ED;
     --mint: #E6F4F1;
     --mint-dark: #B8DBD4;
-    --text-primary: #0F172A;
-    --text-secondary: #475569;
-    --text-tertiary: #64748B;
+    --text-primary: #101828;
+    --text-secondary: #475467;
+    --text-tertiary: #667085;
     --bg-white: #FFFFFF;
-    --bg-light: #F8FAFC;
-    --bg-soft: #F1F5F9;
-    --border: #E2E8F0;
-    --border-light: #F1F5F9;
-    --shadow-sm: 0 1px 3px rgba(15,23,42,0.06);
-    --shadow-md: 0 4px 16px rgba(15,23,42,0.08);
-    --shadow-lg: 0 12px 32px rgba(30,58,138,0.10);
+    --bg-light: #F9FAFB;
+    --bg-soft: #F2F4F7;
+    --border: #EAECF0;
+    --border-light: #F2F4F7;
+    --shadow-sm: 0 1px 3px rgba(16,24,40,0.06);
+    --shadow-md: 0 4px 16px rgba(16,24,40,0.08);
+    --shadow-lg: 0 12px 32px rgba(16,24,40,0.12);
     --radius-sm: 6px;
-    --radius: 10px;
-    --radius-lg: 14px;
-    --radius-xl: 20px;
+    --radius: 8px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
 }
 
 *, *::before, *::after {
