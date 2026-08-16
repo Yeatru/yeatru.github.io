@@ -21,6 +21,14 @@ const PERMANENT_301 = {
   '/how-it-works':                  '/index.html#sourcing-process',
   '/yiwu-market.html':              '/blog-yiwu-market-agent-for-foreigners.html',
   '/yiwu-market':                   '/blog-yiwu-market-agent-for-foreigners.html',
+  '/blog-index.html':               '/blog.html',
+  '/blog-index':                    '/blog.html',
+  '/process.html':                  '/index.html#sourcing-process',
+  '/process':                       '/index.html#sourcing-process',
+  '/term.html':                     '/terms.html',
+  '/term':                          '/terms.html',
+  '/services.html':                 '/supplier-verification.html',
+  '/services':                      '/supplier-verification.html',
 };
 
 export async function onRequest(context) {
