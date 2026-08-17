@@ -68,6 +68,13 @@
 # --- HTML 页面: 缓存 1 小时, 必须重新校验 ---
 /*.html
   Cache-Control: public, max-age=3600, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large
+
+# data.html 显式强制 index (消除 GSC "Excluded by noindex tag" 误报缓存)
+/data.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  X-Content-Type-Options: nosniff
 
 /
   Cache-Control: public, max-age=3600, must-revalidate
