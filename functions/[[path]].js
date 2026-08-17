@@ -1,4 +1,4 @@
-// Cloudflare Pages Function v4 — SEO Fix Bundle
+// Cloudflare Pages Function v5 — SEO Fix Bundle (Bing 308 redirecting + GSC 集成)
 // -----------------------------------------------------------------------------
 // Google Search Console 报错修复:
 //   (0) products.html?product=SKU  → 301 → /product-SKU.html
@@ -153,11 +153,32 @@ export async function onRequest(context) {
     }
   }
 
-  // --- (2) .html URL 服务: env.ASSETS.fetch 直接读, 彻底避免 subrequest fetch 导致的 _redirects 重定向链 ---
-  if (/\.html$/i.test(url.pathname)) {
-    // 先试 clean path (CF Pages auto-strip 逻辑), 再试原 .html 路径
-    const clean = url.pathname.replace(/\.html$/i, '');
-    const pathsToTry = [clean, url.pathname];
+  // --- (2) HTML URL 服务 (v5 统一无后缀/.html双通道, 彻底解决 Bing 308 redirecting) ---
+  // 根因: Cloudflare Pages 默认对无后缀路径如 /testimonials 返回 308 → /testimonials.html
+  //      Bing Site Explorer 把这些核心服务页归入 "URLs redirecting" (不计入 Indexed)
+  // 修复: 对 "无后缀路径 + /pathname.html" 都统一用 env.ASSETS.fetch 直读静态文件, HTTP 200 返回.
+  //      这也让两种 URL 格式都能被搜索引擎当作"正确URL直接收录", 避免重定向丢权重.
+  const isHtmlSuffix = /\.html$/i.test(url.pathname);
+  const isRoot = url.pathname === '/';
+  const isCleanPath = !isHtmlSuffix && !isRoot
+    && !/\.[a-z0-9]{1,6}$/i.test(url.pathname)     // 排除 .jpg/.css/.svg 等静态资源
+    && !/^\/(images?|img|assets?|css|js|fonts?|_)/i.test(url.pathname);
+
+  if (isHtmlSuffix || isCleanPath || isRoot) {
+    let clean;
+    let htmlPath;
+    if (isRoot) {
+      clean = '/';
+      htmlPath = '/index.html';
+    } else if (isHtmlSuffix) {
+      clean = url.pathname.replace(/\.html$/i, '');
+      htmlPath = url.pathname;
+    } else {
+      // /testimonials → clean=/testimonials htmlPath=/testimonials.html
+      clean = url.pathname.replace(/\/+$/, '') || '/';
+      htmlPath = clean + '.html';
+    }
+    const pathsToTry = [clean, htmlPath];
 
     if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
       for (const p of pathsToTry) {
@@ -169,20 +190,24 @@ export async function onRequest(context) {
             h.delete('Location');
             h.delete('Refresh');
             if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-            // data.html 显式设置 X-Robots-Tag: index 防 GSC 缓存旧版 noindex 误报
-            if (/\/data\.html$/i.test(url.pathname)) {
-              h.set('X-Robots-Tag', 'index, follow, max-image-preview:large');
+            // 强制 X-Robots-Tag index (data.html 特殊加强版)
+            if (/\/data(\.html)?$/i.test(url.pathname)) {
+              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+            } else if (!h.has('X-Robots-Tag')) {
+              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
             }
             return new Response(asset.body, { status: 200, headers: h });
           }
-          // 也接受 301/308 但剥掉 Location, 用其 body (若有)
+          // ASSETS.fetch 也可能返回 301/308 (CF 自动), 剥掉 Location 直接用其 body
           if (asset && (asset.status === 301 || asset.status === 308) && asset.body) {
             const h = new Headers(asset.headers);
             h.delete('Location');
             h.delete('Refresh');
             if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-            if (/\/data\.html$/i.test(url.pathname)) {
-              h.set('X-Robots-Tag', 'index, follow, max-image-preview:large');
+            if (/\/data(\.html)?$/i.test(url.pathname)) {
+              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+            } else if (!h.has('X-Robots-Tag')) {
+              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
             }
             return new Response(asset.body, { status: 200, headers: h });
           }
@@ -190,10 +215,10 @@ export async function onRequest(context) {
       }
     }
 
-    // 兜底: next() — 交给 Pages 默认处理器 (可能 308, 但这是极端情况)
+    // 兜底: 交给 Pages 默认处理器 (可能出现 308, 但这是无法匹配文件时的极端情况)
     return next();
   }
 
-  // 其他: 直接透传
+  // 其他 (静态资源 / /images /products带参数等): 透传
   return next();
 }
