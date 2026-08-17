@@ -14,6 +14,18 @@
 // with __bypass_strip=1 header on the subrequest, which tells Pages to serve
 // the asset directly without redirecting.
 
+const GITHUB_IMAGE_REPO = 'https://raw.githubusercontent.com/Yeatru/Image/main/Images';
+
+const IMAGE_MIME = {
+  '.png':  'image/png',
+  '.jpg':  'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.gif':  'image/gif',
+  '.svg':  'image/svg+xml',
+  '.ico':  'image/x-icon',
+};
+
 const PERMANENT_301 = {
   '/shipping-and-logistics.html':   '/logistics-shipping.html',
   '/shipping-and-logistics':        '/logistics-shipping.html',
@@ -49,6 +61,66 @@ export async function onRequest(context) {
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });
+  }
+
+  // (a.1) Image proxy: /images/SKU.ext → fetch from Yeatru/Image GitHub repo
+  //   Bypasses wsrv.nl (often offline) and serves images same-origin via CF CDN.
+  //   CF edge IPs are not rate-limited by GitHub like raw.githubusercontent.com from
+  //   shared sandbox IPs. Cached for 24h on CF edge.
+  const imageMatch = url.pathname.match(/^\/(images?|img)\/(.+)$/i);
+  if (imageMatch) {
+    const filename = decodeURIComponent(imageMatch[2]);
+    const ext = (filename.match(/\.(\w+)$/) || [])[1];
+    const mime = ext ? IMAGE_MIME['.' + ext.toLowerCase()] : null;
+    const upstreamUrl = `${GITHUB_IMAGE_REPO}/${filename}`;
+    try {
+      const imgResp = await fetch(upstreamUrl, {
+        headers: { 'User-Agent': 'YeatruSourcing/1.0 (+https://www.yeatru.com)' },
+        cf: { cacheTtl: 86400, polish: 'original' },
+      });
+      if (imgResp.status === 200) {
+        const headers = new Headers(imgResp.headers);
+        if (mime && !headers.has('Content-Type')) headers.set('Content-Type', mime);
+        headers.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+        headers.set('Access-Control-Allow-Origin', '*');
+        headers.set('X-Yeatru-Img', 'proxy-ok');
+        return new Response(imgResp.body, { status: 200, headers });
+      }
+      // Fallback: try jsdelivr CDN mirror (already cached for global users)
+      const jsdelivrUrl = `https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/${filename}`;
+      const jdResp = await fetch(jsdelivrUrl, {
+        headers: { 'User-Agent': 'YeatruSourcing/1.0' },
+        cf: { cacheTtl: 86400, polish: 'original' },
+      });
+      if (jdResp.status === 200) {
+        const headers = new Headers(jdResp.headers);
+        if (mime && !headers.has('Content-Type')) headers.set('Content-Type', mime);
+        headers.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+        headers.set('X-Yeatru-Img', 'jsdelivr-fallback');
+        return new Response(jdResp.body, { status: 200, headers });
+      }
+      // 404 placeholder
+      const placeholder = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+          <rect width="400" height="300" fill="#f5f5f5"/>
+          <text x="200" y="150" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#999">Image: ${filename}</text>
+          <text x="200" y="175" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#bbb">Loading...</text>
+        </svg>`;
+      return new Response(placeholder, {
+        status: 200,
+        headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-cache' },
+      });
+    } catch (e) {
+      const placeholder = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+          <rect width="400" height="300" fill="#fafafa"/>
+          <text x="200" y="150" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#bbb">${filename}</text>
+        </svg>`;
+      return new Response(placeholder, {
+        status: 200,
+        headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-cache' },
+      });
+    }
   }
 
   // (b) .html → serve via ASSETS.fetch (if available) or via rewritten subrequest

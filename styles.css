@@ -8381,6 +8381,15 @@ body.rtl .lang-dropdown-btn .dropdown-toggle::after {
     color: #94a3b8;
     font-size: 0.95rem;
 }
+
+
+/* Hide all native browser clear/cancel buttons on search inputs (avoid duplicates
+   with our custom #heroProductSearchReset × button). */
+.hero-product-search-input::-webkit-search-cancel-button { display: none !important; }
+.hero-product-search-input::-webkit-search-decoration { display: none !important; }
+.hero-product-search-input::-webkit-input-placeholder { color: #94a3b8; }
+.hero-product-search-input::-moz-search-clear-button { display: none !important; }
+.hero-product-search-input::-ms-clear { display: none !important; }
 .hero-product-search-reset {
     display: none;
     align-items: center;
