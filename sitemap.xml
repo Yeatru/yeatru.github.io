@@ -10820,10 +10820,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
+
 <url>
-    <loc>https://www.yeatru.com/how-it-works.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>
+        <loc>https://www.yeatru.com/design-photography.html</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <html:link rel="alternate" hreflang="en" href="https://www.yeatru.com/design-photography.html" />
+        <html:link rel="alternate" hreflang="es" href="https://www.yeatru.com/design-photography.html?lang=es" />
+        <html:link rel="alternate" hreflang="fr" href="https://www.yeatru.com/design-photography.html?lang=fr" />
+        <html:link rel="alternate" hreflang="ru" href="https://www.yeatru.com/design-photography.html?lang=ru" />
+        <html:link rel="alternate" hreflang="ar" href="https://www.yeatru.com/design-photography.html?lang=ar" />
+        <html:link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/design-photography.html" />
+    </url>
+    </urlset>
