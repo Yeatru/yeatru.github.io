@@ -98,17 +98,20 @@ export async function onRequest(context) {
     // 未知ID: 继续走默认处理器 (最终404, 但不再是"跳转+404"链)
   }
 
-  // --- (3) Image proxy: /images/SKU.ext ---
-  const imageMatch = url.pathname.match(/^\/(images?|img)\/(.+)$/i);
+  // --- (3) Image proxy: /images/SKU.ext (仅小写路径) ---
+  // 重要: 本地 /Images/ (大写I) 目录下的静态文件不走此代理，交给 CF Pages 静态处理器
+  // 原因: 之前忽略大小写的正则会拦截 /Images/*.jpg，远程代理失败返回占位SVG，导致轮播图不显示
+  const imageMatch = url.pathname.match(/^\/(images|img)\/([^/]+)$/);
   if (imageMatch) {
     const filename = decodeURIComponent(imageMatch[2]);
     const ext = (filename.match(/\.(\w+)$/) || [])[1];
     const mime = ext ? IMAGE_MIME['.' + ext.toLowerCase()] : null;
 
-    // 先查本地构建产物 (ASSETS)，命中直接返回，跳过远程代理
+    // 先查本地构建产物 (ASSETS)，命中直接返回
     if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
       try {
-        const localAsset = await env.ASSETS.fetch(new Request(request.url, request));
+        const cleanUrl = `${url.origin}${url.pathname}`;
+        const localAsset = await env.ASSETS.fetch(new Request(cleanUrl, request));
         if (localAsset && localAsset.status === 200 && localAsset.body) {
           const headers = new Headers(localAsset.headers);
           if (mime && !headers.has('Content-Type')) headers.set('Content-Type', mime);
