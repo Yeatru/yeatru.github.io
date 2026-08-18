@@ -8676,3 +8676,119 @@ main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.footer-link):not(.conta
     text-decoration-color: var(--primary-dark);
     font-weight: 600;
 }
+
+/* ========================================================
+ * Dropdown Unified Fix (2026-08-18)
+ * 解决: 28+ 条冲突的 .dropdown-menu 定义导致的:
+ *   - 下拉菜单覆盖其他 nav 项 (如 Home)
+ *   - z-index 层级混乱
+ *   - hover 与 click 行为不一致
+ * 策略: 用 specificity 更高的选择器 + !important 统一覆盖
+ * ======================================================== */
+
+/* 1) 每个 dropdown nav-item 必须是定位上下文, 让子菜单相对自身定位 */
+.navbar-nav > .nav-item.dropdown {
+    position: relative !important;
+}
+
+/* 2) 桌面端 (>=992px): hover 展开 + 相对 nav-item 定位 */
+@media (min-width: 992px) {
+    .navbar-nav > .nav-item.dropdown > .dropdown-menu {
+        /* 清除旧规则的 position: static 覆盖 */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: auto !important;
+        z-index: 1080 !important;
+        min-width: max-content !important;
+        max-width: 320px !important;
+        /* 视觉样式 */
+        padding: 8px !important;
+        border-radius: 12px !important;
+        border: 1px solid #e9ecef !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+        background: #fff !important;
+        /* 默认隐藏 (由 hover/show 控制) */
+        display: none !important;
+    }
+
+    /* hover 展开 */
+    .navbar-nav > .nav-item.dropdown:hover > .dropdown-menu {
+        display: block !important;
+        animation: dropdownFade 0.2s ease !important;
+    }
+
+    /* Bootstrap JS .show 类 (click 展开) */
+    .navbar-nav > .nav-item.dropdown.show > .dropdown-menu {
+        display: block !important;
+    }
+
+    /* nav-link 保持可点击层级 */
+    .navbar-nav > .nav-item > .nav-link {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    /* dropdown-item 统一样式 */
+    .navbar-nav .dropdown-menu .dropdown-item {
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        color: #333 !important;
+        border-radius: 8px !important;
+        margin: 2px 0 !important;
+        transition: all 0.15s ease !important;
+        white-space: nowrap !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background: var(--primary-light, #fff5f0) !important;
+        color: var(--primary, #e65100) !important;
+        font-weight: 600 !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-divider {
+        margin: 6px 8px !important;
+        border-color: #f0f0f0 !important;
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-header {
+        padding: 8px 16px 4px !important;
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        color: #999 !important;
+    }
+}
+
+/* 3) 移动端 (<992px): 展开式 inline 菜单 */
+@media (max-width: 991.98px) {
+    .navbar-nav > .nav-item.dropdown > .dropdown-menu {
+        position: static !important;
+        display: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .navbar-nav > .nav-item.dropdown.show > .dropdown-menu {
+        display: block !important;
+    }
+
+    .navbar-nav > .nav-item.dropdown > .dropdown-menu .dropdown-item {
+        padding: 8px 1rem 8px 2rem !important;
+        border-radius: 0 !important;
+        white-space: normal !important;
+    }
+
+    /* 移动端禁用 hover 展开 (需要 click) */
+    .navbar-nav > .nav-item.dropdown:hover > .dropdown-menu {
+        display: none !important;
+    }
+}

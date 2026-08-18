@@ -15,7 +15,6 @@ https://yeatru.github.io/*    https://www.yeatru.com/:splat    301!
 :project.pages.dev/*          https://www.yeatru.com/:splat    301!
 
 # --- 4. URL 规范化 ---
-/index.html    /    301
 /services.html    /supplier-verification.html    301
 /supplier-sourcing.html    /product-sourcing.html    301
 
