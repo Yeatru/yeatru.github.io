@@ -276,7 +276,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html" data-i18n="nav.products">Products</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.products">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html"><i class="fas fa-th me-2 text-muted"></i>Browse All Products</a></li>
+                            <li><a class="dropdown-item" href="all-products.html"><i class="fas fa-list me-2 text-muted"></i>Full Catalog (678+ SKUs)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="products.html?category=apparel">👗 Apparel &amp; Textile</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=home-kitchen">🏠 Home &amp; Kitchen</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=beauty-personal-care">💄 Beauty &amp; Personal Care</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=electronics-mobile">📱 Electronics &amp; Mobile</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=pet-supplies">🐾 Pet Supplies</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=toys-hobbies">🧸 Toys &amp; Hobbies</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" data-i18n="nav.services">Sourcing Service</a>
                         <ul class="dropdown-menu">
