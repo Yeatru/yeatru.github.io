@@ -104,6 +104,21 @@ export async function onRequest(context) {
     const filename = decodeURIComponent(imageMatch[2]);
     const ext = (filename.match(/\.(\w+)$/) || [])[1];
     const mime = ext ? IMAGE_MIME['.' + ext.toLowerCase()] : null;
+
+    // 先查本地构建产物 (ASSETS)，命中直接返回，跳过远程代理
+    if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
+      try {
+        const localAsset = await env.ASSETS.fetch(new Request(request.url, request));
+        if (localAsset && localAsset.status === 200 && localAsset.body) {
+          const headers = new Headers(localAsset.headers);
+          if (mime && !headers.has('Content-Type')) headers.set('Content-Type', mime);
+          headers.set('Cache-Control', 'public, max-age=2592000, s-maxage=2592000');
+          headers.set('X-Yeatru-Img', 'local-assets');
+          return new Response(localAsset.body, { status: 200, headers });
+        }
+      } catch (_) { /* 本地无此文件，继续远程 */ }
+    }
+
     const upstreamUrl = `${GITHUB_IMAGE_REPO}/${filename}`;
     try {
       const imgResp = await fetch(upstreamUrl, {
@@ -130,26 +145,10 @@ export async function onRequest(context) {
         headers.set('X-Yeatru-Img', 'jsdelivr-fallback');
         return new Response(jdResp.body, { status: 200, headers });
       }
-      const placeholder = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-          <rect width="400" height="300" fill="#f5f5f5"/>
-          <text x="200" y="150" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#999">Image: ${filename}</text>
-          <text x="200" y="175" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#bbb">Loading...</text>
-        </svg>`;
-      return new Response(placeholder, {
-        status: 200,
-        headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-cache' },
-      });
+      // 上游也找不到 → fallback 给 Pages 静态处理器 (可能命中本地文件或返回404)
+      return next();
     } catch (e) {
-      const placeholder = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-          <rect width="400" height="300" fill="#fafafa"/>
-          <text x="200" y="150" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#bbb">${filename}</text>
-        </svg>`;
-      return new Response(placeholder, {
-        status: 200,
-        headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-cache' },
-      });
+      return next();
     }
   }
 
