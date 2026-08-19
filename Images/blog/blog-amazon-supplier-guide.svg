@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<defs>
+<linearGradient id="bg-blogamazonsupplierguide" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#0369a1"/><stop offset="100%" style="stop-color:#0ea5e9"/>
+</linearGradient>
+<linearGradient id="ac-blogamazonsupplierguide" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ffffff" stop-opacity="0.32"/>
+<stop offset="100%" style="stop-color:#ffffff" stop-opacity="0.04"/>
+</linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#bg-blogamazonsupplierguide)"/>
+<circle cx="740" cy="60" r="75" fill="url(#ac-blogamazonsupplierguide)"/>
+<circle cx="80" cy="450" r="52" fill="url(#ac-blogamazonsupplierguide)"/>
+<circle cx="650" cy="405" r="38" fill="url(#ac-blogamazonsupplierguide)"/>
+<rect x="40" y="40" width="60" height="60" rx="12" fill="url(#ac-blogamazonsupplierguide)" transform="rotate(15 70 70)"/>
+<rect x="280" y="180" width="240" height="140" rx="10" fill="#7dd3fc" opacity="0.88"/>
+<rect x="320" y="220" width="160" height="8" rx="3" fill="#7dd3fc" opacity="0.88"/>
+<rect x="320" y="245" width="120" height="8" rx="3" fill="#7dd3fc" opacity="0.88"/>
+<rect x="320" y="270" width="100" height="8" rx="3" fill="#7dd3fc" opacity="0.88"/>
+<text x="350" y="230" text-anchor="middle" fill="#7dd3fc" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Amazon FBA</text>
+<g transform="translate(50,60)" opacity="0.9">
+<rect x="0" y="0" width="120" height="32" rx="16" fill="url(#ac-blogamazonsupplierguide)"/>
+<text x="60" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="15" font-weight="700">YEATRU BLOG</text>
+</g>
+<g transform="translate(400,450)" opacity="0.42">
+<rect x="-310" y="-22" width="620" height="44" rx="22" fill="#000" opacity="0.18"/>
+<text x="0" y="9" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="4">Amazon  ·  FBA  ·  Suppliers</text>
+</g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<defs>
+<linearGradient id="bg-blogamazonfbaprepservicechina" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ea580c"/><stop offset="100%" style="stop-color:#f97316"/>
+</linearGradient>
+<linearGradient id="ac-blogamazonfbaprepservicechina" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ffffff" stop-opacity="0.32"/>
+<stop offset="100%" style="stop-color:#ffffff" stop-opacity="0.04"/>
+</linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#bg-blogamazonfbaprepservicechina)"/>
+<circle cx="740" cy="60" r="75" fill="url(#ac-blogamazonfbaprepservicechina)"/>
+<circle cx="80" cy="450" r="52" fill="url(#ac-blogamazonfbaprepservicechina)"/>
+<circle cx="650" cy="405" r="38" fill="url(#ac-blogamazonfbaprepservicechina)"/>
+<rect x="40" y="40" width="60" height="60" rx="12" fill="url(#ac-blogamazonfbaprepservicechina)" transform="rotate(15 70 70)"/>
+<rect x="290" y="170" width="80" height="60" rx="6" fill="#fdba74" opacity="0.88"/>
+<rect x="390" y="170" width="80" height="60" rx="6" fill="#fdba74" opacity="0.88"/>
+<rect x="330" y="230" width="80" height="60" rx="6" fill="#fdba74" opacity="0.88"/>
+<rect x="430" y="230" width="80" height="60" rx="6" fill="#fdba74" opacity="0.88"/>
+<text x="330" y="205" text-anchor="middle" fill="#fdba74" font-family="system-ui,sans-serif" font-size="26" font-weight="700">F</text>
+<text x="390" y="205" text-anchor="middle" fill="#fdba74" font-family="system-ui,sans-serif" font-size="26" font-weight="700">B</text>
+<text x="370" y="265" text-anchor="middle" fill="#fdba74" font-family="system-ui,sans-serif" font-size="26" font-weight="700">A</text>
+<text x="470" y="265" text-anchor="middle" fill="#fdba74" font-family="system-ui,sans-serif" font-size="26" font-weight="700">1</text>
+<g transform="translate(50,60)" opacity="0.9">
+<rect x="0" y="0" width="120" height="32" rx="16" fill="url(#ac-blogamazonfbaprepservicechina)"/>
+<text x="60" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="15" font-weight="700">YEATRU BLOG</text>
+</g>
+<g transform="translate(400,450)" opacity="0.42">
+<rect x="-310" y="-22" width="620" height="44" rx="22" fill="#000" opacity="0.18"/>
+<text x="0" y="9" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="4">FBA  ·  Prep  ·  Box</text>
+</g>
+</svg>

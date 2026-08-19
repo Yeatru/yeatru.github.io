@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<defs>
+<linearGradient id="bg-bloglowmoqsourcingagent" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#c2410c"/><stop offset="100%" style="stop-color:#f59e0b"/>
+</linearGradient>
+<linearGradient id="ac-bloglowmoqsourcingagent" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ffffff" stop-opacity="0.32"/>
+<stop offset="100%" style="stop-color:#ffffff" stop-opacity="0.04"/>
+</linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#bg-bloglowmoqsourcingagent)"/>
+<circle cx="740" cy="60" r="75" fill="url(#ac-bloglowmoqsourcingagent)"/>
+<circle cx="80" cy="450" r="52" fill="url(#ac-bloglowmoqsourcingagent)"/>
+<circle cx="650" cy="405" r="38" fill="url(#ac-bloglowmoqsourcingagent)"/>
+<rect x="40" y="40" width="60" height="60" rx="12" fill="url(#ac-bloglowmoqsourcingagent)" transform="rotate(15 70 70)"/>
+<rect x="270" y="250" width="60" height="50" rx="4" fill="#fcd34d" opacity="0.88"/>
+<rect x="340" y="230" width="60" height="70" rx="5" fill="#fcd34d" opacity="0.88"/>
+<rect x="410" y="200" width="60" height="100" rx="6" fill="#fcd34d" opacity="0.88"/>
+<rect x="470" y="260" width="50" height="40" rx="3" fill="#fcd34d" opacity="0.88"/>
+<path d="M300,190 L370,170 L440,150 L500,220" fill="none" stroke="#fcd34d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<g transform="translate(50,60)" opacity="0.9">
+<rect x="0" y="0" width="120" height="32" rx="16" fill="url(#ac-bloglowmoqsourcingagent)"/>
+<text x="60" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="15" font-weight="700">YEATRU BLOG</text>
+</g>
+<g transform="translate(400,450)" opacity="0.42">
+<rect x="-310" y="-22" width="620" height="44" rx="22" fill="#000" opacity="0.18"/>
+<text x="0" y="9" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="4">Low  ·  MOQ  ·  10–500</text>
+</g>
+</svg>
