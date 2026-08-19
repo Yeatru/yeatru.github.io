@@ -27,14 +27,12 @@ const IMAGE_MIME = {
 const PERMANENT_301 = {
   '/shipping-and-logistics.html':   '/logistics-shipping.html',
   '/shipping-and-logistics':        '/logistics-shipping.html',
-  '/how-it-works.html':             '/index.html#sourcing-process',
-  '/how-it-works':                  '/index.html#sourcing-process',
+  '/how-it-works.html':             '/process.html',
+  '/how-it-works':                  '/process.html',
   '/yiwu-market.html':              '/blog-yiwu-market-agent-for-foreigners.html',
   '/yiwu-market':                   '/blog-yiwu-market-agent-for-foreigners.html',
   '/blog-index.html':               '/blog.html',
   '/blog-index':                    '/blog.html',
-  '/process.html':                  '/index.html#sourcing-process',
-  '/process':                       '/index.html#sourcing-process',
   '/term.html':                     '/terms.html',
   '/term':                          '/terms.html',
   '/services.html':                 '/supplier-verification.html',
@@ -65,8 +63,9 @@ export async function onRequest(context) {
   const { request, next, env } = context;
   const url = new URL(request.url);
 
-  // 只处理 GET
-  if (request.method !== 'GET') return next();
+  // 处理 GET 和 HEAD (HEAD 被搜索引擎用于页面检查, 必须正确返回)
+  const isHead = request.method === 'HEAD';
+  if (request.method !== 'GET' && !isHead) return next();
 
   // --- (a) 硬编码永久301 ---
   const permanentTarget = PERMANENT_301[url.pathname];
@@ -192,13 +191,13 @@ export async function onRequest(context) {
             h.delete('Location');
             h.delete('Refresh');
             if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-            // 强制 X-Robots-Tag index (data.html 特殊加强版)
+            if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
             if (/\/data(\.html)?$/i.test(url.pathname)) {
               h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
             } else if (!h.has('X-Robots-Tag')) {
               h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
             }
-            return new Response(asset.body, { status: 200, headers: h });
+            return new Response(isHead ? null : asset.body, { status: 200, headers: h });
           }
           // ASSETS.fetch 也可能返回 301/308 (CF 自动), 剥掉 Location 直接用其 body
           if (asset && (asset.status === 301 || asset.status === 308) && asset.body) {
@@ -211,13 +210,18 @@ export async function onRequest(context) {
             } else if (!h.has('X-Robots-Tag')) {
               h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
             }
-            return new Response(asset.body, { status: 200, headers: h });
+            return new Response(isHead ? null : asset.body, { status: 200, headers: h });
           }
         } catch (_) { /* try next path */ }
       }
     }
 
-    // 兜底: 交给 Pages 默认处理器 (可能出现 308, 但这是无法匹配文件时的极端情况)
+    if (isHead) {
+      const h = new Headers();
+      h.set('Content-Type', 'text/html; charset=utf-8');
+      h.set('X-Robots-Tag', 'index, follow');
+      return new Response(null, { status: 200, headers: h });
+    }
     return next();
   }
 
