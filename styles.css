@@ -8527,6 +8527,73 @@ mark.search-highlight {
 .seo-comparison-table th { font-weight: 700; color: #fff; border-color: #334155; padding: 0.75rem; }
 .seo-comparison-table td { padding: 0.65rem 0.75rem; vertical-align: top; }
 .seo-comparison-table tbody tr:nth-child(even) { background: #f8fafc; }
+
+/* GEO Definition Block - AI-citable definition paragraph */
+.geo-definition {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edf9 100%);
+    border-left: 4px solid #444CE7;
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+}
+.geo-definition h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+.geo-definition p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #334155;
+    margin-bottom: 0;
+}
+.geo-definition p strong { color: #444CE7; }
+
+/* GEO Comparison Table Wrapper */
+.geo-comparison {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+.geo-comparison h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+.geo-comparison .geo-comparison-table {
+    width: 100%;
+    font-size: 0.92rem;
+    border-collapse: collapse;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.geo-comparison .geo-comparison-table thead { background: #1e293b; }
+.geo-comparison .geo-comparison-table th {
+    color: #fff;
+    font-weight: 700;
+    padding: 0.7rem 0.85rem;
+    text-align: left;
+    border: none;
+}
+.geo-comparison .geo-comparison-table td {
+    padding: 0.6rem 0.85rem;
+    vertical-align: top;
+    border-bottom: 1px solid #e2e8f0;
+}
+.geo-comparison .geo-comparison-table tbody tr:nth-child(even) { background: #f8fafc; }
+.geo-comparison .geo-comparison-table tbody tr:last-child td { border-bottom: none; }
+.geo-comparison .geo-comparison-table td:first-child {
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .geo-comparison { font-size: 0.85rem; }
+    .geo-definition { padding: 1rem 1.25rem; }
+    .geo-definition h2 { font-size: 1.15rem; }
+}
 @media (max-width: 992px) {
     .case-study-card { padding: 1.5rem 1.25rem; }
     .case-study-title { font-size: 1.1rem; }
