@@ -199,19 +199,9 @@ export async function onRequest(context) {
             }
             return new Response(isHead ? null : asset.body, { status: 200, headers: h });
           }
-          // ASSETS.fetch 也可能返回 301/308 (CF 自动), 剥掉 Location 直接用其 body
-          if (asset && (asset.status === 301 || asset.status === 308) && asset.body) {
-            const h = new Headers(asset.headers);
-            h.delete('Location');
-            h.delete('Refresh');
-            if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-            if (/\/data(\.html)?$/i.test(url.pathname)) {
-              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-            } else if (!h.has('X-Robots-Tag')) {
-              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-            }
-            return new Response(isHead ? null : asset.body, { status: 200, headers: h });
-          }
+          // ASSETS.fetch 返回 301/308 时, body 为空 (HTTP 重定向规范)
+          // 不能返回空 body, 跳过继续尝试下一个路径
+          // (之前 bug: 返回 308 的空 body 导致 /index.html 等页面返回 0 字节)
         } catch (_) { /* try next path */ }
       }
     }
