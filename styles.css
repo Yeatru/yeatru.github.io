@@ -5547,35 +5547,95 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     color: #FFFFFF;
 }
 
+/* ===== Breadcrumb Bar - DEFAULT (Light BG / Blog Pages) ===== */
 .breadcrumb-bar {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: #64748b;  /* slate-500 - visible on white */
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
 }
 
 .breadcrumb-bar a {
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--primary);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .breadcrumb-bar a:hover {
-    color: #FFFFFF;
+    color: var(--primary-dark);
 }
 
 .breadcrumb-sep {
-    color: rgba(255, 255, 255, 0.4);
+    color: #cbd5e1;  /* slate-300 */
     font-size: 0.75rem;
 }
 
 .breadcrumb-current {
-    color: #FFFFFF;
+    color: #334155;  /* slate-700 */
     font-weight: 600;
+}
+
+/* ===== Breadcrumb Bar - Dark Override (inside .page-header / .page-hero) ===== */
+.page-header .breadcrumb-bar,
+.page-hero .breadcrumb-bar {
+    color: rgba(255, 255, 255, 0.65);
+}
+.page-header .breadcrumb-bar a,
+.page-hero .breadcrumb-bar a {
+    color: rgba(255, 255, 255, 0.65);
+}
+.page-header .breadcrumb-bar a:hover,
+.page-hero .breadcrumb-bar a:hover {
+    color: #FFFFFF;
+}
+.page-header .breadcrumb-sep,
+.page-hero .breadcrumb-sep {
+    color: rgba(255, 255, 255, 0.4);
+}
+.page-header .breadcrumb-current,
+.page-hero .breadcrumb-current {
+    color: #FFFFFF;
+}
+
+/* ===== Blog Article Header Elements (Light BG) ===== */
+.article-category {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(27, 75, 94, 0.08);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+.article-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.01em;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.88rem;
+    color: #64748b;  /* slate-500 - visible on white */
+    margin-bottom: 2rem;
+}
+
+.article-meta i {
+    color: var(--primary);
+    margin-right: 0.35rem;
 }
 
 .page-hero-title {
