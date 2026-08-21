@@ -9682,41 +9682,53 @@ main#mainContent > section.banner-carousel-section {
 /* ============================================================
  * 11. 响应式 - 信任元素和客户分层
  * ============================================================ */
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
     .trust-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(4, 1fr) !important;
     }
     .trust-badges-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr) !important;
     }
     .client-segments-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .trust-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    .trust-badges-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .client-segments-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 }
 
 @media (max-width: 575.98px) {
     .trust-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1rem 0;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        padding: 1rem 0 !important;
     }
     .trust-stat-card {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.5rem !important;
     }
     .trust-stat-icon {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
     .trust-stat-number {
-        font-size: 1.875rem;
+        font-size: 1.875rem !important;
     }
     .trust-badges-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
     .trust-badge {
-        padding: 0.875rem 1rem;
+        padding: 0.875rem 1rem !important;
     }
 }
 
