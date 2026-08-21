@@ -36,17 +36,17 @@
     --bg-white: #FFFFFF;
     --bg-light: #F5F7F9;
     --bg-soft: #EDF1F5;
-    --bg-dark: #082F3B;
-    --bg-dark-2: #0B3A48;
-    --bg-dark-3: #113F4D;
-    --bg-surface: #0F3644;
+    --bg-dark: #061C2B;
+    --bg-dark-2: #0A2740;
+    --bg-dark-3: #0E2F4A;
+    --bg-surface: #0C2A3F;
     --border: #D0D7DE;
     --border-light: #E4E9EE;
     --border-dark: rgba(255,255,255,0.12);
     --border-dark-subtle: rgba(255,255,255,0.08);
-    --shadow-sm: 0 2px 8px rgba(8,47,59,0.06);
-    --shadow-md: 0 8px 24px rgba(8,47,59,0.08);
-    --shadow-lg: 0 16px 48px rgba(8,47,59,0.12);
+    --shadow-sm: 0 2px 8px rgba(6,28,43,0.06);
+    --shadow-md: 0 8px 24px rgba(6,28,43,0.08);
+    --shadow-lg: 0 16px 48px rgba(6,28,43,0.12);
     --radius-sm: 4px;
     --radius: 8px;
     --radius-md: 8px;
@@ -299,7 +299,7 @@ select {
 .page-header {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
-    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 40%, #0F3644 70%, #082F3B 100%);
+    background: linear-gradient(135deg, #061C2B 0%, #0A2740 40%, #0E2F4A 70%, #061C2B 100%);
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -311,9 +311,9 @@ select {
     inset: 0;
     pointer-events: none;
     background-image:
-        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(27, 75, 94, 0.25) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(200, 165, 116, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(8, 47, 59, 0.4) 0%, transparent 70%);
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(27, 75, 94, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(6, 28, 43, 0.4) 0%, transparent 70%);
     z-index: 0;
 }
 
@@ -2288,11 +2288,18 @@ body.edit-mode [contenteditable="true"]:focus {
 
 .banner-cta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 1.75rem;
+}
+
+.banner-cta .btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.65rem 1.25rem !important;
+    font-size: 0.95rem !important;
 }
 
 /* 信任数据条：slide1 底部统一展示，4 张轮播保持同样左右结构 */
@@ -2350,6 +2357,40 @@ body.edit-mode [contenteditable="true"]:focus {
     .trust-stat .ts-num { font-size: 0.9rem; }
     .trust-stat .ts-lab { font-size: 0.58rem; letter-spacing: -0.02em; }
     .trust-sep { height: 20px; }
+    .banner-cta {
+        gap: 0.4rem;
+        flex-wrap: nowrap;
+    }
+    .banner-cta .btn {
+        padding: 0.5rem 0.7rem !important;
+        font-size: 0.78rem !important;
+        white-space: nowrap;
+        flex: 1 1 0;
+        min-width: 0;
+        text-align: center;
+    }
+    .banner-cta .btn i {
+        margin-right: 0.25rem !important;
+        font-size: 0.72em;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-cta {
+        gap: 0.3rem;
+    }
+    .banner-cta .btn {
+        padding: 0.45rem 0.55rem !important;
+        font-size: 0.72rem !important;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+        flex: 1 1 0;
+        min-width: 0;
+        text-align: center;
+    }
+    .banner-cta .btn i {
+        margin-right: 0.18rem !important;
+    }
 }
 
 .banner-image {
@@ -9634,14 +9675,14 @@ main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.footer-link):not(.conta
 
     /* -- 明暗交替背景 -- */
     --bg-section-alt: #F5F7F9;
-    --bg-section-dark: #082F3B;
-    --bg-section-dark-2: #0B3A48;
+    --bg-section-dark: #061C2B;
+    --bg-section-dark-2: #0A2740;
 
     /* -- 统一卡片样式 -- */
     --card-radius: 12px;
-    --card-shadow-sm: 0 2px 8px rgba(8,47,59,0.06);
-    --card-shadow-md: 0 8px 24px rgba(8,47,59,0.08);
-    --card-shadow-lg: 0 16px 48px rgba(8,47,59,0.12);
+    --card-shadow-sm: 0 2px 8px rgba(6,28,43,0.06);
+    --card-shadow-md: 0 8px 24px rgba(6,28,43,0.08);
+    --card-shadow-lg: 0 16px 48px rgba(6,28,43,0.12);
 
     /* -- 文字层级 -- */
     --color-heading: #0F3443;
@@ -9750,7 +9791,7 @@ main > section.section-narrow > .container {
 }
 
 .section-dark-alt {
-    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 100%) !important;
+    background: linear-gradient(135deg, #061C2B 0%, #0A2740 100%) !important;
     color: #FFFFFF !important;
     position: relative;
 }
@@ -9760,8 +9801,8 @@ main > section.section-narrow > .container {
     inset: 0;
     pointer-events: none;
     background-image:
-        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(27, 75, 94, 0.3) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(148, 179, 196, 0.12) 0%, transparent 50%);
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(27, 75, 94, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
     z-index: 0;
 }
 .section-dark-alt > .container {
@@ -10094,7 +10135,7 @@ main#mainContent > section.banner-carousel-section {
     color: #94B3C4 !important;
     margin-bottom: 0.35rem !important;
 }
-.trust-stat-number {
+.trust-stats-section .trust-stat-number {
     font-size: 2rem !important;
     font-weight: 700 !important;
     color: #FFFFFF !important;
@@ -10102,9 +10143,26 @@ main#mainContent > section.banner-carousel-section {
     line-height: 1.2 !important;
     margin: 0 0 0.15rem 0 !important;
 }
-.trust-stat-label {
+.trust-stats-section .trust-stat-label {
     font-size: 0.9rem !important;
     color: rgba(255,255,255,0.8) !important;
+    margin-top: 0.15rem !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+}
+
+/* Trust stats in light sections (testimonials, etc.) */
+.trust-stats .trust-stat-number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: var(--primary) !important;
+    font-family: var(--font-display) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.15rem 0 !important;
+}
+.trust-stats .trust-stat-label {
+    font-size: 0.9rem !important;
+    color: var(--text-secondary) !important;
     margin-top: 0.15rem !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
@@ -10593,6 +10651,16 @@ main#mainContent > section[id] {
     .contact-card-icon {
         margin-bottom: 1rem;
     }
+
+    /* Fix carousel buttons to stay on one line */
+    .banner-cta {
+        gap: 0.6rem;
+    }
+    .banner-cta .btn {
+        padding: 0.55rem 1.05rem !important;
+        font-size: 0.88rem !important;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -10616,5 +10684,19 @@ main#mainContent > section[id] {
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    /* Fix carousel buttons small screens */
+    .banner-cta {
+        gap: 0.45rem;
+    }
+    .banner-cta .btn {
+        padding: 0.5rem 0.85rem !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap;
+    }
+    .banner-cta .btn i {
+        font-size: 0.8rem;
+        margin-right: 0.3rem !important;
     }
 }

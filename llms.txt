@@ -43,7 +43,7 @@
 
 ## Service Plans & Pricing
 
-- [Service Plans](https://www.yeatru.com/service-plans.html): Transparent pricing with two service models. Plan 1 (Order Management Service, 3-4% commission, min USD 150/order) for buyers with ready supplier links. Plan 2 (Full Sourcing Service, 4-8% tiered commission, min USD 300/order) for sourcing from scratch. No hidden fees.
+- [Service Plans](https://www.yeatru.com/service-plans.html): Transparent pricing with two service models. Plan 1 (Order Management Service, 3-4% commission, min USD 50/order) for buyers with ready supplier links. Plan 2 (Full Sourcing Service, 4-8% tiered commission, min USD 100/order) for sourcing from scratch. No hidden fees.
 
 ## Company Information
 
