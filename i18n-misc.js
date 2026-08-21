@@ -236,6 +236,15 @@ const I18N_MISC = {
             startPlan2: "Start with Plan 2",
             tieredCommission: "tiered commission"
         },
+        about: {
+            heroTitle: "About Yeatru Sourcing",
+            heroSubtitle: "Your trusted China sourcing partner based in Yiwu — the world's largest small commodity wholesale hub. Sincerity, integrity, and 14+ years of combined sourcing experience.",
+            heroFact1: "14+ Years Combined Experience",
+            heroFact2: "Yiwu Market Based",
+            heroFact3: "200+ Global Clients",
+            heroCta1: "Get Your Free Quote",
+            heroCta2: "View Service Plans"
+        },
         pay: {
             eyebrow: "PAYMENT TERMS",
             heroTitle: "Secure & Flexible Payment",

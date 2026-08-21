@@ -299,7 +299,7 @@ select {
 .page-header {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
-    background: linear-gradient(135deg, #061C2B 0%, #0A2740 40%, #0E2F4A 70%, #061C2B 100%);
+    background: linear-gradient(135deg, #061C2B 0%, #0A2740 40%, #0E2F4A 70%, #061C2B 100%) !important;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -451,6 +451,42 @@ select {
 
 .page-header a:not(.btn):not(.navbar-brand):hover {
     color: #FFFFFF;
+}
+
+/* ===== Service Page Hero Badges & Buttons (Unified Dark Blue Theme) ===== */
+.page-header .badge {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    padding: 0.45rem 0.95rem !important;
+    border-radius: 999px !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.page-header .badge i {
+    color: #86efac;
+}
+.page-header .badge.bg-primary-subtle,
+.page-header .badge.bg-light {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #e2e8f0 !important;
+}
+.page-header .badge.text-primary {
+    color: #e2e8f0 !important;
+}
+.page-header .btn-cta {
+    background: var(--cta) !important;
+    color: #FFFFFF !important;
+    border-color: var(--cta) !important;
+}
+.page-header .btn-cta:hover {
+    filter: brightness(1.05);
+}
+.page-header .text-green-400 {
+    color: #86efac !important;
 }
 
 .navbar-brand {
