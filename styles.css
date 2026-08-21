@@ -9661,3 +9661,61 @@ main#mainContent > section.banner-carousel-section {
         padding: 0.875rem 1rem;
     }
 }
+
+/* ============================================================
+ * 12. Founder Photo Section
+ * ============================================================ */
+.founder-photo-wrap {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.founder-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    box-shadow: 0 8px 30px rgba(139, 111, 78, 0.25);
+    background: linear-gradient(135deg, #D4A574, #8B6F4E);
+    position: relative;
+}
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.founder-badge {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-teal);
+    color: var(--bg-white);
+    padding: 0.375rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+.founder-badge i {
+    color: #22c55e;
+    margin-right: 0.25rem;
+}
+.founder-intro {
+    line-height: 1.6;
+}
+
+@media (max-width: 575.98px) {
+    .founder-photo {
+        width: 140px;
+        height: 140px;
+    }
+    .founder-badge {
+        font-size: 0.6875rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
