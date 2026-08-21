@@ -9552,6 +9552,96 @@ main > section.section-narrow > .container {
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+.section-dark-alt {
+    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 100%) !important;
+    color: #FFFFFF !important;
+    position: relative;
+}
+.section-dark-alt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(27, 75, 94, 0.3) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(148, 179, 196, 0.12) 0%, transparent 50%);
+    z-index: 0;
+}
+.section-dark-alt > .container {
+    position: relative;
+    z-index: 1;
+}
+.section-dark-alt .section-title,
+.section-dark-alt .section-title-wrap .section-title,
+.section-dark-alt h1,
+.section-dark-alt h2,
+.section-dark-alt h3,
+.section-dark-alt h4,
+.section-dark-alt h5,
+.section-dark-alt h6 {
+    color: #FFFFFF !important;
+}
+.section-dark-alt .section-subtitle,
+.section-dark-alt .text-muted,
+.section-dark-alt p,
+.section-dark-alt li,
+.section-dark-alt span,
+.section-dark-alt div {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+.section-dark-alt .section-eyebrow {
+    color: #94B3C4 !important;
+}
+.section-dark-alt .section-divider {
+    background: linear-gradient(90deg, transparent, #94B3C4, transparent) !important;
+}
+.section-dark-alt .bg-white {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.section-dark-alt .bg-white h5,
+.section-dark-alt .bg-white h6 {
+    color: #FFFFFF !important;
+}
+.section-dark-alt .bg-white p,
+.section-dark-alt .bg-white .text-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+.section-dark-alt .badge.bg-light {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+.section-dark-alt .badge.bg-primary {
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+}
+.section-dark-alt .btn-cta {
+    background: #FFFFFF !important;
+    color: var(--primary) !important;
+}
+.section-dark-alt .btn-cta:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+.section-dark-alt .btn-outline-primary {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    background: transparent !important;
+}
+.section-dark-alt .btn-outline-primary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #FFFFFF !important;
+}
+.section-dark-alt a {
+    color: #94B3C4 !important;
+}
+.section-dark-alt a:hover {
+    color: #FFFFFF !important;
+}
+.section-dark-alt .small {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
 /* ============================================================
  * 3. 统一版块标题系统 (section-title-wrap)
  *    Contact 页已有的优秀设计 → 推广到全站
@@ -9702,11 +9792,11 @@ main#mainContent > section.banner-carousel-section {
  * 8. 首页信任元素强化 - 统计数据卡片
  * ============================================================ */
 .trust-stats-section {
-    background: var(--bg-white) !important;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 100%) !important;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
     width: 100%;
 }
 .trust-stats-section > .container {
@@ -9719,7 +9809,7 @@ main#mainContent > section.banner-carousel-section {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
-    padding: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
     margin: 0 !important;
     width: 100% !important;
 }
@@ -9728,8 +9818,8 @@ main#mainContent > section.banner-carousel-section {
     padding: 1rem 0.75rem !important;
     border-radius: var(--radius-lg) !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-    background: var(--bg-white) !important;
-    border: 1px solid var(--border-light) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -9741,24 +9831,25 @@ main#mainContent > section.banner-carousel-section {
 }
 .trust-stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 .trust-stat-icon {
     font-size: 1.75rem !important;
-    color: var(--primary) !important;
+    color: #94B3C4 !important;
     margin-bottom: 0.35rem !important;
 }
 .trust-stat-number {
     font-size: 2rem !important;
     font-weight: 700 !important;
-    color: var(--accent-teal) !important;
+    color: #FFFFFF !important;
     font-family: var(--font-display) !important;
     line-height: 1.2 !important;
     margin: 0 0 0.15rem 0 !important;
 }
 .trust-stat-label {
     font-size: 0.9rem !important;
-    color: var(--text-secondary) !important;
+    color: rgba(255,255,255,0.8) !important;
     margin-top: 0.15rem !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
@@ -9793,7 +9884,7 @@ main#mainContent > section.banner-carousel-section {
     justify-content: flex-start !important;
     gap: 0.6rem !important;
     padding: 0.75rem 1rem !important;
-    background: var(--bg-white) !important;
+    background: #fff !important;
     border-radius: var(--radius) !important;
     border: 1px solid var(--border-light) !important;
     transition: all 0.2s ease !important;
