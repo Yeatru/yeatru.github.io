@@ -9405,114 +9405,172 @@ main#mainContent > section.banner-carousel-section {
  * 8. 首页信任元素强化 - 统计数据卡片
  * ============================================================ */
 .trust-stats-section {
-    background: var(--bg-white);
+    background: var(--bg-white) !important;
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
+}
+.trust-stats-section > .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 .trust-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2rem !important;
+    padding: 2.5rem 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 .trust-stat-card {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    border-radius: var(--radius-lg);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    background: var(--bg-white) !important;
+    border: 1px solid var(--border-light) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 140px;
 }
 .trust-stat-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 .trust-stat-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
+    font-size: 2.25rem !important;
+    color: var(--primary) !important;
+    margin-bottom: 0.5rem !important;
 }
 .trust-stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--accent-teal);
-    font-family: var(--font-display);
-    line-height: 1.2;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-teal) !important;
+    font-family: var(--font-display) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.25rem 0 !important;
 }
 .trust-stat-label {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-top: 0.25rem;
-    font-weight: 500;
+    font-size: 1rem !important;
+    color: var(--text-secondary) !important;
+    margin-top: 0.25rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
 }
 
 /* ============================================================
  * 9. 首页信任标识条
  * ============================================================ */
 .trust-badges-section {
-    background: var(--bg-light);
-    padding: 1.5rem 0;
+    background: var(--bg-light) !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    width: 100%;
+}
+.trust-badges-section > .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 .trust-badges-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 .trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: var(--bg-white);
-    border-radius: var(--radius);
-    border: 1px solid var(--border-light);
-    transition: all 0.2s ease;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.25rem !important;
+    background: var(--bg-white) !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--border-light) !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 .trust-badge:hover {
-    border-color: var(--primary);
-    box-shadow: var(--shadow-sm);
+    border-color: var(--primary) !important;
+    box-shadow: var(--shadow-sm) !important;
 }
 .trust-badge-icon {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    background: var(--primary-50);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    font-size: 1.25rem;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    background: var(--primary-50) !important;
+    border-radius: var(--radius) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--primary) !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+.trust-badge-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    flex: 1 !important;
+    min-width: 0 !important;
 }
 .trust-badge-content h4 {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--accent-teal);
-    margin: 0 0 0.25rem 0;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    color: var(--accent-teal) !important;
+    margin: 0 0 0.25rem 0 !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
 }
 .trust-badge-content p {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    margin: 0;
+    font-size: 0.8125rem !important;
+    color: var(--text-secondary) !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
 }
 
 /* ============================================================
  * 10. 客户分层版块
  * ============================================================ */
 .client-segments-section {
-    background: var(--bg-white);
+    background: var(--bg-white) !important;
+    width: 100%;
+}
+.client-segments-section > .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 .client-segments-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 .client-segment-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    background: var(--bg-white) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 .client-segment-card:hover {
     transform: translateY(-6px);
@@ -9874,9 +9932,19 @@ main#mainContent > section[id] {
 
 @media (max-width: 575.98px) {
     /* Stack grid layouts on mobile */
-    .trust-stats-grid,
+    .trust-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
     .trust-badges-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .client-segments-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .trust-stat-number {
+        font-size: 1.75rem !important;
     }
     
     /* Fix padding for mobile */
