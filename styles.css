@@ -509,8 +509,15 @@ body.edit-mode .service-image-input {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 0 1rem;
     overflow: hidden;
+    color: var(--primary);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.service-icon i {
+    font-size: 1.75rem;
+    line-height: 1;
 }
 
 .service-icon img {
@@ -524,7 +531,58 @@ body.edit-mode .service-image-input {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.service-link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.service-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.service-link-card:hover .service-icon {
+    background: var(--primary);
+    color: #fff;
+}
+
+.service-quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 0.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform 0.2s ease;
+}
+
+.service-quick-link:hover {
+    transform: translateY(-4px);
+    color: var(--primary);
+}
+
+.service-quick-icon {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.service-quick-link:hover .service-quick-icon {
+    transform: scale(1.1);
 }
 
 .service-desc {
