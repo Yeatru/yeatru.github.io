@@ -299,11 +299,40 @@ select {
 .page-header {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
-    background:
-        radial-gradient(ellipse 70% 100% at 0% 0%, rgba(139,45,70,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 100% at 100% 0%, rgba(8,47,59,0.06) 0%, transparent 60%),
-        linear-gradient(135deg, var(--bg-light) 0%, var(--primary-50) 100%);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 40%, #0F3644 70%, #082F3B 100%);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(139, 45, 70, 0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(200, 165, 116, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(8, 47, 59, 0.4) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+}
+
+.page-header .container,
+.page-header .container-fluid {
+    position: relative;
+    z-index: 1;
 }
 
 .page-header .section-title {
@@ -313,16 +342,64 @@ select {
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
-    color: var(--accent-teal);
+    color: #FFFFFF;
     font-family: var(--font-display);
 }
 
 .page-header .section-subtitle {
     max-width: 620px;
     margin: 0 auto;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 450;
     line-height: 1.7;
+}
+
+.page-header .breadcrumb-bar,
+.page-header .breadcrumb-bar a,
+.page-header .breadcrumb-sep {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.page-header .breadcrumb-bar a:hover {
+    color: #FFFFFF !important;
+}
+
+.page-header .breadcrumb-current {
+    color: #FFFFFF !important;
+}
+
+.page-header .feature-tag,
+.page-header .option-tag,
+.page-header .moq-tag {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.page-header .btn-outline-primary {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    background: transparent !important;
+}
+
+.page-header .btn-outline-primary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #FFFFFF !important;
+}
+
+.page-header p,
+.page-header li,
+.page-header span:not(.section-eyebrow):not(.badge):not(.btn),
+.page-header label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header a:not(.btn):not(.navbar-brand) {
+    color: #8BA9B5;
+}
+
+.page-header a:not(.btn):not(.navbar-brand):hover {
+    color: #FFFFFF;
 }
 
 .navbar-brand {
@@ -2050,17 +2127,21 @@ body.edit-mode [contenteditable="true"]:focus {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.4rem 1.1rem;
+    padding: 0.35rem 0.9rem;
     background: linear-gradient(135deg, rgba(139, 45, 70, 0.35), rgba(255, 255, 255, 0.12));
     color: #F0D0C0;
     border: 1px solid rgba(139, 45, 70, 0.4);
     border-radius: 999px;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     box-shadow: 0 2px 12px rgba(139, 45, 70, 0.2);
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .banner-title {
@@ -2069,9 +2150,6 @@ body.edit-mode [contenteditable="true"]:focus {
     color: #FFFFFF;
     margin-bottom: 1rem;
     line-height: 1.18;
-    min-height: 3.6em;
-    display: flex;
-    align-items: center;
     letter-spacing: -0.02em;
     text-shadow: 0 2px 24px rgba(0,0,0,0.3);
 }
@@ -2094,7 +2172,6 @@ body.edit-mode [contenteditable="true"]:focus {
     margin-bottom: 1.5rem;
     max-width: 540px;
     line-height: 1.75;
-    min-height: 4.5em;
     font-weight: 460;
 }
 
@@ -2103,7 +2180,6 @@ body.edit-mode [contenteditable="true"]:focus {
     flex-wrap: wrap;
     gap: 0.4rem 0.9rem;
     margin-bottom: 1.75rem;
-    min-height: 1.7em;
 }
 
 .banner-feature {
@@ -2144,6 +2220,7 @@ body.edit-mode [contenteditable="true"]:focus {
     border-radius: var(--radius-lg);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     max-width: 480px;
+    margin-top: 1.25rem;
 }
 
 .trust-stat {
@@ -4660,7 +4737,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 }
 
 .page-header-gradient {
-    background: linear-gradient(135deg, var(--accent-teal) 0%, #109eb8 50%, #085f73 100%);
+    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 40%, #0F3644 70%, #082F3B 100%);
     position: relative;
     overflow: hidden;
 }
@@ -4672,7 +4749,22 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image:
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(139, 45, 70, 0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(200, 165, 116, 0.15) 0%, transparent 50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.page-header-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
     opacity: 0.5;
 }
 
@@ -5118,7 +5210,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
    Sub-Page Hero & Components
    ============================================ */
 .page-hero {
-    background: linear-gradient(135deg, var(--primary-50) 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #082F3B 0%, #0B3A48 40%, #0F3644 70%, #082F3B 100%);
     padding: 1.5rem 0 2.5rem;
     position: relative;
     overflow: hidden;
@@ -5131,8 +5223,52 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     right: -100px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(8, 47, 59, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 45, 70, 0.25) 0%, transparent 70%);
     border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.page-hero .container,
+.page-hero .container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .btn-outline-primary {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    background: transparent !important;
+}
+
+.page-hero .btn-outline-primary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #FFFFFF !important;
+}
+
+.page-hero p,
+.page-hero li,
+.page-hero span:not(.badge):not(.btn),
+.page-hero label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.page-hero a:not(.btn) {
+    color: #8BA9B5;
+}
+
+.page-hero a:not(.btn):hover {
+    color: #FFFFFF;
 }
 
 .breadcrumb-bar {
@@ -5140,36 +5276,36 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.65);
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
 }
 
 .breadcrumb-bar a {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .breadcrumb-bar a:hover {
-    color: var(--primary);
+    color: #FFFFFF;
 }
 
 .breadcrumb-sep {
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.4);
     font-size: 0.75rem;
 }
 
 .breadcrumb-current {
-    color: var(--primary);
+    color: #FFFFFF;
     font-weight: 600;
 }
 
 .page-hero-title {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--text-primary);
+    color: #FFFFFF;
     line-height: 1.2;
     margin: 0.75rem 0 1rem;
     letter-spacing: -0.02em;
@@ -5179,7 +5315,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 
 .page-hero-subtitle {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     margin-bottom: 1.5rem;
     position: relative;
@@ -5192,8 +5328,8 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     aspect-ratio: 4 / 3;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: #fff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #0F3644;
     position: relative;
     z-index: 1;
 }
@@ -5202,6 +5338,7 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.92) contrast(1.05) saturate(0.95);
 }
 
 .page-hero-image.image-error img {
@@ -5220,8 +5357,8 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    color: var(--primary);
-    background: linear-gradient(135deg, var(--primary-50) 0%, #fff 100%);
+    color: #8BA9B5;
+    background: linear-gradient(135deg, #0F3644 0%, #113F4D 50%, #0B3A48 100%);
     font-size: 0.95rem;
     font-weight: 500;
     opacity: 0;
