@@ -9719,3 +9719,169 @@ main#mainContent > section.banner-carousel-section {
         padding: 0.25rem 0.75rem;
     }
 }
+
+/* ============================================================
+ * 13. Founder Intro Section (Contact Page)
+ * ============================================================ */
+.founder-intro-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, #F0E8DE 100%);
+    border-top: 1px solid rgba(139, 111, 78, 0.1);
+    border-bottom: 1px solid rgba(139, 111, 78, 0.1);
+}
+.founder-photo-large {
+    width: 240px;
+    height: 240px;
+    border-width: 5px;
+}
+.founder-intro-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--accent-teal);
+    font-family: var(--font-display);
+    margin-bottom: 1.25rem;
+}
+.founder-intro-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+.founder-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 1.5rem;
+    margin: 1.5rem 0;
+}
+.founder-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+.founder-feature i {
+    color: var(--primary);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+.founder-social-links .btn {
+    border-radius: var(--radius);
+    font-weight: 500;
+}
+
+/* ============================================================
+ * 14. Homepage Section Width Alignment Fix
+ * ============================================================ */
+main#mainContent > section {
+    width: 100%;
+}
+main#mainContent > section > .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fix full-width sections that need to span */
+.trust-stats-section > .container,
+.trust-badges-section > .container {
+    max-width: 1200px;
+}
+
+/* Ensure consistent padding for all main sections */
+main#mainContent > section.py-5,
+main#mainContent > section[id] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Responsive adjustments for homepage sections */
+@media (max-width: 991.98px) {
+    .founder-features {
+        grid-template-columns: 1fr;
+    }
+    .founder-photo-large {
+        width: 200px;
+        height: 200px;
+    }
+    .founder-intro-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .founder-photo-large {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+    .founder-intro-title {
+        font-size: 1.375rem;
+    }
+    .founder-intro-text {
+        font-size: 0.9375rem;
+    }
+    .founder-features {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .founder-feature {
+        font-size: 0.875rem;
+    }
+    .founder-social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .founder-social-links .btn {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+ * 15. Mobile Layout Fixes
+ * ============================================================ */
+@media (max-width: 767.98px) {
+    /* Ensure all main sections have consistent bottom padding */
+    main#mainContent > section {
+        padding-bottom: 3rem;
+    }
+    
+    /* Fix section title consistency */
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Fix hero section */
+    .hero-section,
+    .banner-carousel-section {
+        text-align: center;
+    }
+    
+    /* Fix contact form mobile */
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-card-icon {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Stack grid layouts on mobile */
+    .trust-stats-grid,
+    .trust-badges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Fix padding for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
