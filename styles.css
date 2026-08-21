@@ -9816,6 +9816,50 @@ main > section.section-narrow > .container {
     border-color: var(--border) !important;
 }
 
+.section-dark-alt .step-card {
+    background: #FFFFFF !important;
+    color: var(--text-dark) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.section-dark-alt .step-card .step-title {
+    color: var(--text-dark) !important;
+}
+.section-dark-alt .step-card .step-desc {
+    color: var(--text-gray) !important;
+}
+
+.section-dark-alt .case-study-card {
+    background: #FFFFFF !important;
+    color: var(--text-dark) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.section-dark-alt .case-study-card .case-study-title {
+    color: var(--text-dark) !important;
+}
+.section-dark-alt .case-study-card .case-study-desc {
+    color: var(--text-gray) !important;
+}
+.section-dark-alt .case-study-card .case-study-category {
+    color: var(--primary) !important;
+}
+
+.section-dark-alt .testimonial-card {
+    background: #FFFFFF !important;
+    color: var(--text-dark) !important;
+}
+.section-dark-alt .testimonial-card .testimonial-text,
+.section-dark-alt .testimonial-card .testimonial-author {
+    color: var(--text-dark) !important;
+}
+.section-dark-alt .testimonial-card .testimonial-country {
+    color: var(--text-gray) !important;
+}
+.section-dark-alt .testimonial-card .testimonial-stars i {
+    color: #F59E0B !important;
+}
+
 /* ============================================================
  * 3. 统一版块标题系统 (section-title-wrap)
  *    Contact 页已有的优秀设计 → 推广到全站
