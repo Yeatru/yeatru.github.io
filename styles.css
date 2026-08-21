@@ -10655,6 +10655,22 @@ main#mainContent > section.banner-carousel-section {
     border-top: 1px solid rgba(139, 111, 78, 0.1);
     border-bottom: 1px solid rgba(139, 111, 78, 0.1);
 }
+/* Force equal-height columns so left photo area matches right text area */
+.founder-intro-section .row {
+    align-items: stretch !important;
+}
+.founder-intro-section .col-lg-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.founder-intro-section .founder-photo-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .founder-photo-large {
     width: 240px;
     height: 240px;
