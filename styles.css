@@ -1371,6 +1371,26 @@ body.edit-mode .page-block [data-block-field]:hover {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contact-info > .founder-photo-wrap {
+    flex-shrink: 0;
+}
+
+.contact-info > .founder-intro {
+    flex-shrink: 0;
+}
+
+.contact-info > .contact-info-item {
+    flex-shrink: 0;
+}
+
+.contact-info > .contact-social {
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .contact-info-title {
@@ -1472,7 +1492,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     }
 }
 
-.contact-card {
+.contact-cards-row .contact-card {
     display: flex;
     align-items: center;
     gap: 1.25rem;
@@ -1487,7 +1507,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     height: 100%;
 }
 
-.contact-card::before {
+.contact-cards-row .contact-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1499,14 +1519,14 @@ body.edit-mode .page-block [data-block-field]:hover {
     transition: opacity 0.3s ease;
 }
 
-.contact-card:hover {
+.contact-cards-row .contact-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(27, 75, 94, 0.12);
     border-color: transparent;
     text-decoration: none;
 }
 
-.contact-card:hover::before {
+.contact-cards-row .contact-card:hover::before {
     opacity: 1;
 }
 
@@ -1524,7 +1544,7 @@ body.edit-mode .page-block [data-block-field]:hover {
     transition: transform 0.3s ease;
 }
 
-.contact-card:hover .contact-card-icon {
+.contact-cards-row .contact-card:hover .contact-card-icon {
     transform: scale(1.1);
 }
 
@@ -1570,6 +1590,23 @@ body.edit-mode .page-block [data-block-field]:hover {
 
 .contact-form {
     padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-form .form-check {
+    margin-top: auto;
+}
+
+.contact-form .btn-cta {
+    margin-top: 0.5rem;
 }
 
 .form-title {

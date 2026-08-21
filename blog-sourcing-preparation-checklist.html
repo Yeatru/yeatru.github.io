@@ -852,7 +852,8 @@
 
         const langItems = document.querySelectorAll('[data-lang]');
         const currentLangEl = document.getElementById('current-lang');
-        const savedLang = localStorage.getItem('yeatru_lang') || 'en';
+        const urlParams_lang = new URLSearchParams(window.location.search);
+        const savedLang = urlParams_lang.get('lang') || localStorage.getItem('yeatru_lang') || 'en';
 
         if (currentLangEl) {
             currentLangEl.textContent = savedLang.toUpperCase();
@@ -863,6 +864,9 @@
                 e.preventDefault();
                 const lang = this.dataset.lang;
                 localStorage.setItem('yeatru_lang', lang);
+                const langUrl = new URL(window.location.href);
+                langUrl.searchParams.set('lang', lang);
+                window.history.replaceState({}, '', langUrl.toString());
                 if (currentLangEl) {
                     currentLangEl.textContent = lang.toUpperCase();
                 }
