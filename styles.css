@@ -453,8 +453,8 @@ select {
     color: #FFFFFF;
 }
 
-/* ===== Service Page Hero Badges & Buttons (Unified Dark Blue Theme) ===== */
-.page-header .badge {
+/* ===== Service Page Hero Badges & Buttons (Unified Dark Blue Theme) - HIGH SPEC ===== */
+body .page-header .badge {
     background: rgba(255, 255, 255, 0.12) !important;
     color: #e2e8f0 !important;
     border: 1px solid rgba(255, 255, 255, 0.22) !important;
@@ -462,30 +462,31 @@ select {
     border-radius: 999px !important;
     font-weight: 500 !important;
     font-size: 0.85rem !important;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
 }
-.page-header .badge i {
-    color: #86efac;
+body .page-header .badge i {
+    color: #86efac !important;
+    margin-right: 0 !important;
 }
-.page-header .badge.bg-primary-subtle,
-.page-header .badge.bg-light {
+body .page-header .badge.bg-primary-subtle,
+body .page-header .badge.bg-light {
     background: rgba(255, 255, 255, 0.12) !important;
     color: #e2e8f0 !important;
 }
-.page-header .badge.text-primary {
+body .page-header .badge.text-primary {
     color: #e2e8f0 !important;
 }
-.page-header .btn-cta {
+body .page-header .btn-cta {
     background: var(--cta) !important;
     color: #FFFFFF !important;
     border-color: var(--cta) !important;
 }
-.page-header .btn-cta:hover {
+body .page-header .btn-cta:hover {
     filter: brightness(1.05);
 }
-.page-header .text-green-400 {
+body .page-header .text-green-400 {
     color: #86efac !important;
 }
 
@@ -5599,6 +5600,55 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .page-header .breadcrumb-current,
 .page-hero .breadcrumb-current {
     color: #FFFFFF;
+}
+
+/* ===== Blog Article Hero (Light BG) - HIGH SPECIFICITY to never be bleached by dark blue rules ===== */
+body .article-hero .breadcrumb-bar {
+    color: #64748b !important;  /* slate-500 - visible on white */
+}
+body .article-hero .breadcrumb-bar a {
+    color: var(--primary) !important;
+}
+body .article-hero .breadcrumb-bar a:hover {
+    color: var(--primary-dark) !important;
+}
+body .article-hero .breadcrumb-sep {
+    color: #cbd5e1 !important;  /* slate-300 */
+}
+body .article-hero .breadcrumb-current {
+    color: #334155 !important;  /* slate-700 */
+}
+body .article-hero .article-category {
+    display: inline-block !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--primary) !important;
+    background: rgba(27, 75, 94, 0.08) !important;
+    padding: 0.35rem 0.85rem !important;
+    border-radius: 999px !important;
+    margin-bottom: 1rem !important;
+}
+body .article-hero .article-title {
+    font-size: 2.25rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: var(--text-primary) !important;
+    margin: 0 0 1rem 0 !important;
+    letter-spacing: -0.01em !important;
+}
+body .article-hero .article-meta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.25rem !important;
+    font-size: 0.88rem !important;
+    color: #64748b !important;  /* slate-500 - visible on white */
+    margin-bottom: 2rem !important;
+}
+body .article-hero .article-meta i {
+    color: var(--primary) !important;
+    margin-right: 0.35rem !important;
 }
 
 /* ===== Blog Article Header Elements (Light BG) ===== */
