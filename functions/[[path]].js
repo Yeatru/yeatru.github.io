@@ -25,6 +25,7 @@ const IMAGE_MIME = {
 
 // --- (a) 永久301: 固定URL别名迁移 ---
 const PERMANENT_301 = {
+  '/index.html':                  '/',
   '/shipping-and-logistics.html':   '/logistics-shipping.html',
   '/shipping-and-logistics':        '/logistics-shipping.html',
   '/how-it-works.html':             '/process.html',
@@ -154,77 +155,94 @@ export async function onRequest(context) {
     }
   }
 
-  // --- (2) HTML URL 服务 (v5 统一无后缀/.html双通道, 彻底解决 Bing 308 redirecting) ---
-  // 根因: Cloudflare Pages 默认对无后缀路径如 /testimonials 返回 308 → /testimonials.html
-  //      Bing Site Explorer 把这些核心服务页归入 "URLs redirecting" (不计入 Indexed)
-  // 修复: 对 "无后缀路径 + /pathname.html" 都统一用 env.ASSETS.fetch 直读静态文件, HTTP 200 返回.
-  //      这也让两种 URL 格式都能被搜索引擎当作"正确URL直接收录", 避免重定向丢权重.
+  // --- (2) HTML URL 规范化服务 (v6: 单通道 canonical 模式) -------------
+  // 问题诊断 (结合 Bing Webmaster + GSC 两张截图):
+  //   A) Bing "URLs redirecting": CF Pages 默认把 /testimonials 这类 clean path
+  //      返回 308 → /testimonials.html。Bing 把它记入 redirecting 档不算 Indexed。
+  //      且 308 语义上是"保留 body 跳转"，SEO 权重转移不如 301 明确。
+  //   B) v5 的"双通道都返回 200"策略虽然消掉 308，但让 /xxx 和 /xxx.html 两个 URL
+  //      内容完全一致→Duplicate Content。GSC 89 条 "Alternate page with proper
+  //      canonical tag" 就是这么来的；Bing 则直接判 Excluded (index.html 那条)。
+  // 修复策略 (single canonical URL):
+  //     首选格式 = 首页 "/" (canonical 不带 index.html) + 其他页 "/page.html"
+  //     · 访问 clean path (无后缀) → 301 永久跳转到 /page.html (.html suffix)
+  //     · 访问 /index.html            → 301 永久跳转到 / (已在 PERMANENT_301 先行)
+  //     · 访问 .html 或 /             → ASSETS.fetch 直读, 200 带 canonical header
+  // 好处: 1) 搜索引擎只收录一个 URL, 权重不再分流
+  //       2) 重定向统一成 301 (SEO 标准永久迁移, 不是 308), Bing 不再扔到 redirecting
+  //       3) canonical HTTP header 与 <link rel=canonical> 完全一致,
+  //          GSC 的 89 条 Alternate 会逐步退掉
   const isHtmlSuffix = /\.html$/i.test(url.pathname);
   const isRoot = url.pathname === '/';
   const isCleanPath = !isHtmlSuffix && !isRoot
-    && !/\.[a-z0-9]{1,6}$/i.test(url.pathname)     // 排除 .jpg/.css/.svg 等静态资源
+    && !/\.[a-z0-9]{1,6}$/i.test(url.pathname)
     && !/^\/(images?|img|assets?|css|js|fonts?|_)/i.test(url.pathname);
 
-  if (isHtmlSuffix || isCleanPath || isRoot) {
-    let clean;
+  // (2a) Clean path → 301 → .html suffix 规范化 (彻底替代 CF 默认 308)
+  if (isCleanPath) {
+    const canonicalSuffix = url.pathname.replace(/\/+$/, '') + '.html';
+    return redirect301(url, canonicalSuffix);
+  }
+
+  // (2b) 根路径 + .html URL: 直接 ASSETS.fetch 给内容 (HTTP 200)
+  if (isHtmlSuffix || isRoot) {
     let htmlPath;
     if (isRoot) {
-      clean = '/';
       htmlPath = '/index.html';
-    } else if (isHtmlSuffix) {
-      clean = url.pathname.replace(/\.html$/i, '');
-      htmlPath = url.pathname;
     } else {
-      // /testimonials → clean=/testimonials htmlPath=/testimonials.html
-      clean = url.pathname.replace(/\/+$/, '') || '/';
-      htmlPath = clean + '.html';
+      htmlPath = url.pathname;
     }
-    const pathsToTry = [clean, htmlPath];
 
     if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
-      for (const p of pathsToTry) {
-        try {
-          const r = new Request(url.origin + p + url.search, request);
-          const asset = await env.ASSETS.fetch(r);
-          if (asset && asset.status === 200 && asset.body) {
-            const h = new Headers(asset.headers);
-            h.delete('Location');
-            h.delete('Refresh');
-            if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-            if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
-            if (/\/data(\.html)?$/i.test(url.pathname)) {
-              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-            } else if (!h.has('X-Robots-Tag')) {
-              h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-            }
-            return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+      try {
+        const r = new Request(url.origin + htmlPath + url.search, request);
+        const asset = await env.ASSETS.fetch(r);
+        if (asset && asset.status === 200 && asset.body) {
+          const h = new Headers(asset.headers);
+          h.delete('Location');
+          h.delete('Refresh');
+          if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+          if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
+          // Canonical header 与 HTML 内 <link rel=canonical> 对齐，避免双 URL
+          if (isRoot) {
+            h.set('Link', '<https://www.yeatru.com/>; rel="canonical"');
+          } else {
+            const canPath = htmlPath.replace(/^\/index\.html$/i, '/');
+            h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
           }
-          // ASSETS.fetch 返回 301/308 时, body 为空 (HTTP 重定向规范)
-          // 跟随 Location 重定向获取实际内容 (修复 /index.html → / 的 308 空body问题)
-          if (asset && (asset.status === 301 || asset.status === 308)) {
-            const loc = asset.headers.get('Location');
-            if (loc) {
-              try {
-                const followUrl = new URL(loc, url.origin).href;
-                const followed = await env.ASSETS.fetch(new Request(followUrl + url.search, request));
-                if (followed && followed.status === 200 && followed.body) {
-                  const h = new Headers(followed.headers);
-                  h.delete('Location');
-                  h.delete('Refresh');
-                  if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-                  if (isHead) h.set('Content-Length', followed.headers.get('Content-Length') || '0');
-                  if (/\/data(\.html)?$/i.test(url.pathname)) {
-                    h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-                  } else if (!h.has('X-Robots-Tag')) {
-                    h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-                  }
-                  return new Response(isHead ? null : followed.body, { status: 200, headers: h });
+          if (/\/data(\.html)?$/i.test(url.pathname)) {
+            h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+          } else {
+            h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+          }
+          return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+        }
+        // 如果 ASSETS.fetch 返回 301/308 (例如 /products/ → /products.html)，跟随一次
+        if (asset && (asset.status === 301 || asset.status === 308)) {
+          const loc = asset.headers.get('Location');
+          if (loc) {
+            try {
+              const followUrl = new URL(loc, url.origin).href;
+              const followed = await env.ASSETS.fetch(new Request(followUrl + url.search, request));
+              if (followed && followed.status === 200 && followed.body) {
+                const h = new Headers(followed.headers);
+                h.delete('Location');
+                h.delete('Refresh');
+                if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+                if (isHead) h.set('Content-Length', followed.headers.get('Content-Length') || '0');
+                if (isRoot) {
+                  h.set('Link', '<https://www.yeatru.com/>; rel="canonical"');
+                } else {
+                  const canPath = htmlPath.replace(/^\/index\.html$/i, '/');
+                  h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
                 }
-              } catch (_) { /* follow failed, try next */ }
-            }
+                h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+                return new Response(isHead ? null : followed.body, { status: 200, headers: h });
+              }
+            } catch (_) {}
           }
-        } catch (_) { /* try next path */ }
-      }
+        }
+      } catch (_) {}
     }
 
     if (isHead) {
