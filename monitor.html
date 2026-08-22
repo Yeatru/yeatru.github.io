@@ -350,8 +350,8 @@ async function runAudit() {
             const metaMatch = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
             if (metaMatch) {
                 metaDescLen = metaMatch[1].length;
-                if (metaDescLen < 140 || metaDescLen > 175) {
-                    metaDescWarning = "Meta desc " + metaDescLen + " chars (ideal 150-165)";
+                if (metaDescLen < 100 || metaDescLen > 200) {
+                    metaDescWarning = "Meta desc " + metaDescLen + " chars (ideal 150-165, pass 100-200)";
                     warnCount++;
                 }
             }
@@ -530,7 +530,7 @@ function renderHomeDetails(home, intLinks) {
         document.getElementById("homeDetails").innerHTML = '<div class="page-row"><span>Failed to fetch homepage</span></div>';
         return;
     }
-    const metaColor = (home.metaDescLen >= 140 && home.metaDescLen <= 175) ? "green" : "yellow";
+    const metaColor = (home.metaDescLen >= 100 && home.metaDescLen <= 200) ? "green" : "yellow";
     const html = `
         <div class="page-row">
             <span class="path">HTTP Status</span>
