@@ -595,26 +595,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('hashchange', handleRoute);
     handleRoute();
 
-    document.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 991) {
-                e.preventDefault();
-                e.stopPropagation();
-                const parent = this.parentElement;
-                parent.classList.toggle('show');
-            }
-        });
-    });
-
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 991) {
-            if (!e.target.closest('.nav-item.dropdown')) {
-                document.querySelectorAll('.nav-item.dropdown.show').forEach(function(item) {
-                    item.classList.remove('show');
-                });
-            }
-        }
-    });
+    // Bootstrap handles nav dropdowns natively on all viewports via
+    // data-bs-toggle="dropdown". Its data-api click handler calls
+    // preventDefault(), so the Products toggle's href won't navigate.
 });
 
 function updateContent() {

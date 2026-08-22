@@ -9675,9 +9675,19 @@ main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.footer-link):not(.conta
         white-space: normal !important;
     }
 
-    /* 移动端禁用 hover 展开 (需要 click) */
-    .navbar-nav > .nav-item.dropdown:hover > .dropdown-menu {
-        display: none !important;
+    /* 仅在真正支持 hover 的设备上禁用 hover 展开 (触屏设备如 iOS 首击会附加 hover
+       状态, 用 @media (hover:hover) 避免它把 .show 盖掉) */
+    @media (hover: hover) {
+        .navbar-nav > .nav-item.dropdown:hover > .dropdown-menu {
+            display: none !important;
+        }
+    }
+
+    /* Bootstrap's native .show class is applied to the <ul.dropdown-menu>
+       element itself (not the parent <li>). Must be the LAST rule so it
+       wins over any :hover rule with equal specificity. */
+    .navbar-nav > .nav-item.dropdown > .dropdown-menu.show {
+        display: block !important;
     }
 }
 
