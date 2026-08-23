@@ -245,12 +245,8 @@ export async function onRequest(context) {
       } catch (_) {}
     }
 
-    if (isHead) {
-      const h = new Headers();
-      h.set('Content-Type', 'text/html; charset=utf-8');
-      h.set('X-Robots-Tag', 'index, follow');
-      return new Response(null, { status: 200, headers: h });
-    }
+    // ASSETS 未命中 (404 等) 或不可用: 交给 next() 返回正确状态码
+    // 不再对 HEAD 伪造 200, 否则爬虫会认为不存在的页面存在 (soft 404)
     return next();
   }
 
