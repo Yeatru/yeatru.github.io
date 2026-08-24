@@ -104,6 +104,11 @@ export async function onRequest(context) {
   const imageMatch = url.pathname.match(/^\/(images|img)\/([^/]+)$/);
   if (imageMatch) {
     const filename = decodeURIComponent(imageMatch[2]);
+    // Security: 防止路径穿越。filename 必须是纯文件名，不得含目录分隔符 / \ 或 .. 片段
+    // (否则 /images/%2e%2e%2fsecret 会被上游 raw.githubusercontent.com 解析成跨目录读文件)
+    if (/(\/|\\|\.\.)/.test(filename)) {
+      return new Response('Bad request', { status: 400 });
+    }
     const ext = (filename.match(/\.(\w+)$/) || [])[1];
     const mime = ext ? IMAGE_MIME['.' + ext.toLowerCase()] : null;
 
@@ -132,7 +137,7 @@ export async function onRequest(context) {
         const headers = new Headers(imgResp.headers);
         if (mime && !headers.has('Content-Type')) headers.set('Content-Type', mime);
         headers.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
-        headers.set('Access-Control-Allow-Origin', '*');
+        headers.set('Access-Control-Allow-Origin', 'https://www.yeatru.com');
         headers.set('X-Yeatru-Img', 'proxy-ok');
         return new Response(imgResp.body, { status: 200, headers });
       }
