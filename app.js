@@ -155,8 +155,63 @@ let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
 
+// =====================================================================
+// Server-side admin auth: single source of truth is the signed HttpOnly
+// cookie issued by POST /api/login and verified by GET /api/admin/status.
+// The localStorage flag here is ONLY an optimistic UI cache; it is never
+// authoritative. Any write action in the browser only changes *local*
+// state (localStorage), so even if someone flips this flag manually, no
+// server-side data can be mutated.
+// =====================================================================
+const LS_KEY_ADMIN = 'yeatruAdminLoggedIn_v2';
+let _adminCached = false;
+let _adminSyncPromise = null;
+
 function isAdmin() {
-    return localStorage.getItem('yeatruAdminLoggedIn') === 'true';
+    // In-memory snapshot. Might be stale for ~1 frame during early init;
+    // syncAdminStatus() below reconciles the authoritative cookie value
+    // and triggers a re-render if it flips.
+    return _adminCached;
+}
+
+function _setAdmin(v) {
+    v = !!v;
+    _adminCached = v;
+    try {
+        if (v) localStorage.setItem(LS_KEY_ADMIN, '1');
+        else localStorage.removeItem(LS_KEY_ADMIN);
+        // Remove old v1 key so a browser-side manual override cannot linger.
+        localStorage.removeItem('yeatruAdminLoggedIn');
+    } catch {}
+    if (typeof updateLoginUI === 'function') updateLoginUI(v);
+    if (typeof applyAdminVisibility === 'function') applyAdminVisibility();
+    if (typeof renderProducts === 'function') renderProducts();
+    if (typeof renderIndexHotProducts === 'function') renderIndexHotProducts();
+}
+
+async function syncAdminStatus({ force = false } = {}) {
+    if (!force && _adminSyncPromise) return _adminSyncPromise;
+    // Seed optimistic cache from localStorage so admin buttons paint instantly
+    // on reload instead of flashing on after the network round-trip.
+    try {
+        if (localStorage.getItem(LS_KEY_ADMIN) === '1') _adminCached = true;
+    } catch {}
+    _adminSyncPromise = (async () => {
+        try {
+            const r = await fetch('/api/admin/status', { credentials: 'same-origin', cache: 'no-store' });
+            const data = await r.json().catch(() => ({}));
+            const isOk = !!(data && data.isAdmin);
+            if (isOk !== _adminCached) _setAdmin(isOk);
+            else {
+                try { if (typeof applyAdminVisibility === 'function') applyAdminVisibility(); } catch {}
+                try { if (typeof updateLoginUI === 'function') updateLoginUI(isOk); } catch {}
+            }
+            return isOk;
+        } catch {
+            return _adminCached;
+        }
+    })();
+    return _adminSyncPromise;
 }
 
 function escapeHtml(str) {
@@ -165,6 +220,102 @@ function escapeHtml(str) {
         return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]);
     });
 }
+
+// -----------------------------------------------------------------
+// Lightweight HTML sanitizer (zero dependencies) for rich A+ content
+// blocks.  Do NOT pass un-sanitized content to innerHTML even when
+// data is edited only by admins — a stolen admin session / malicious
+// site-data import could otherwise cause stored XSS for every visitor.
+// -----------------------------------------------------------------
+(function () {
+    const ALLOWED_TAGS = new Set(['A','ABBR','B','BIG','BLOCKQUOTE','BR','CAPTION','CENTER','CODE','COL','COLGROUP','DD','DEL','DFN','DIV','DL','DT','EM','H1','H2','H3','H4','H5','H6','HR','I','INS','KBD','LABEL','LI','MARK','OL','P','PRE','Q','S','SAMP','SMALL','SPAN','STRIKE','STRONG','SUB','SUP','TABLE','TBODY','TD','TFOOT','TH','THEAD','TR','TT','U','UL','VAR']);
+    const COMMON_ATTRS = ['class','title','dir','lang'];
+    const EXTRA_ATTRS = {
+        'A':        ['href','target','rel','type','name'],
+        'TD':       ['colspan','rowspan','valign','align','width','height'],
+        'TH':       ['colspan','rowspan','valign','align','width','height','scope'],
+        'TR':       ['valign','align'],
+        'TABLE':    ['width','border','cellpadding','cellspacing','summary'],
+        'COL':      ['span','width'],
+        'COLGROUP': ['span','width'],
+    };
+    const SAFE_STYLE = /^(color|background-color|background|font-weight|font-style|font-size|font-family|text-decoration|text-align|vertical-align|line-height|letter-spacing|margin|margin-top|margin-right|margin-bottom|margin-left|padding|padding-top|padding-right|padding-bottom|padding-left|border|border-collapse|width|height|max-width|max-height|white-space|word-break|display|list-style|list-style-type|opacity|float|clear|visibility|table-layout|border-spacing)$/i;
+
+    function isSafeHref(v) {
+        if (v == null) return false;
+        const s = String(v).trim();
+        const lower = s.toLowerCase();
+        if (!s) return false;
+        if (lower.startsWith('javascript:') || lower.startsWith('vbscript:') || lower.startsWith('data:text/html')) return false;
+        // http(s)://, mailto:, tel:, #anchor, /abs-path, ./rel, ../parent, or bare relative.
+        return /^(https?:|mailto:|tel:|#|\/|\.\/|\.\.\/)/.test(lower) || /^[A-Za-z0-9][^:/]*$/.test(s) || /^[a-zA-Z][\w+.-]*:/.test(lower);
+    }
+
+    function walkChildren(src, dst) {
+        for (const n of Array.prototype.slice.call(src.childNodes || [])) {
+            if (n.nodeType === 3) { // TEXT
+                dst.appendChild(dst.ownerDocument.createTextNode(n.data));
+            } else if (n.nodeType === 1) { // ELEMENT
+                const tag = n.nodeName.toUpperCase();
+                if (!ALLOWED_TAGS.has(tag)) {
+                    // Strip wrapper but keep children (so <script>alert(1)</script>
+                    // drops tag but also drops its text → script literal text remains,
+                    // but as a text node inside the target, which is safe).
+                    walkChildren(n, dst);
+                    continue;
+                }
+                const el = dst.ownerDocument.createElement(tag);
+                for (const attr of Array.prototype.slice.call(n.attributes || [])) {
+                    const name = attr.name.toLowerCase();
+                    const allowed = COMMON_ATTRS.concat(EXTRA_ATTRS[tag] || []);
+                    if (allowed.indexOf(name) === -1) continue;
+                    if (name === 'href') {
+                        if (!isSafeHref(attr.value)) continue;
+                        el.setAttribute('href', attr.value);
+                        if (/^https?:\/\//i.test(attr.value)) {
+                            el.setAttribute('target', '_blank');
+                            el.setAttribute('rel', 'noopener noreferrer');
+                        }
+                        continue;
+                    }
+                    if (name === 'style') {
+                        const cleaned = String(attr.value).split(';')
+                            .map(p => p.trim())
+                            .filter(Boolean)
+                            .filter(p => {
+                                const i = p.indexOf(':');
+                                if (i < 0) return false;
+                                const k = p.slice(0, i).trim();
+                                const v = p.slice(i + 1);
+                                return SAFE_STYLE.test(k) && !/expression|url\s*\(|javascript|behavior/i.test(v);
+                            });
+                        if (cleaned.length) el.setAttribute('style', cleaned.join(';'));
+                        continue;
+                    }
+                    // Plain string attribute (incl. class / target / rel etc.)
+                    try { el.setAttribute(name, attr.value); } catch {}
+                }
+                walkChildren(n, el);
+                dst.appendChild(el);
+            }
+        }
+    }
+
+    window.sanitizeRichHtml = function sanitizeRichHtml(unsafe) {
+        if (unsafe == null || unsafe === '') return '';
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(`<body>${String(unsafe)}</body>`, 'text/html');
+            const body = doc.body;
+            const holder = document.createElement('div');
+            walkChildren(body, holder);
+            return holder.innerHTML;
+        } catch (e) {
+            // Parser unavailable or internal error → escape everything (fail-safe).
+            return escapeHtml(unsafe);
+        }
+    };
+})();
 
 // 图片优化：通过 wsrv.nl 代理实时转 WebP + 缩放，大幅减小传输体积
 // width: 目标宽度（卡片400, 详情800, A+1000）
@@ -334,7 +485,10 @@ function safeAddEventListener(id, event, handler) {
 document.addEventListener('DOMContentLoaded', function () {
     console.log('[i18n] DOMContentLoaded fired, starting i18next init...');
 
-    applyAdminVisibility();
+    // Populate the in-memory admin flag first (optimistic localStorage cache),
+    // then reconcile with the authoritative HttpOnly cookie via the API so a
+    // manually-toggled localStorage flag cannot grant privileges.
+    syncAdminStatus();
 
     try {
         i18next
@@ -390,30 +544,32 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('[init] Error during initialization:', e);
     }
 
-    safeAddEventListener('submitLogin', 'click', function () {
+    safeAddEventListener('submitLogin', 'click', async function () {
         const username = document.getElementById('adminUsername').value.trim();
         const password = document.getElementById('adminPassword').value.trim();
         const errorEl = document.getElementById('loginError');
+        const submitBtn = document.getElementById('submitLogin');
 
-        // Security: Use SHA-256 hash verification instead of plaintext password
-        // For production, move authentication to server-side
-        async function verifyCredentials() {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        if (!username || !password) {
+            if (errorEl) errorEl.classList.remove('d-none');
+            return;
+        }
+        if (errorEl) errorEl.classList.add('d-none');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.dataset.origText = submitBtn.innerText; submitBtn.innerText = '...'; }
 
-            // Pre-computed SHA-256 hash for password (stored securely)
-            // Username: Yeatru
-            const validHash = '36227ceab5d840ac4d8c6844d3d874461cb5c05ee0dfc11831635f62080e3280';
-            const validUsername = 'Yeatru';
-
-            // Note: For real security, implement server-side authentication
-            // This is a basic protection for static sites
-            if (username === validUsername && hashHex === validHash) {
-                localStorage.setItem('yeatruAdminLoggedIn', 'true');
-                updateLoginUI(true);
+        try {
+            const r = await fetch('/api/login', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await r.json().catch(() => ({}));
+            if (r.ok && data && data.ok) {
+                // Login succeeded: force a fresh /api/admin/status check so the
+                // HttpOnly cookie is now the authoritative source.
+                _adminSyncPromise = null;
+                await syncAdminStatus({ force: true });
                 const loginModal = document.getElementById('loginModal');
                 if (loginModal) {
                     const modalInstance = bootstrap.Modal.getInstance(loginModal) || new bootstrap.Modal(loginModal);
@@ -426,18 +582,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (adminPass) adminPass.value = '';
             } else {
                 if (errorEl) errorEl.classList.remove('d-none');
+                // Force reconciliation — if the server says no, clear optimistic cache.
+                _setAdmin(false);
             }
+        } catch (e) {
+            console.warn('[auth] /api/login error:', e);
+            if (errorEl) errorEl.classList.remove('d-none');
+        } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = submitBtn.dataset.origText || submitBtn.innerText; }
         }
-        verifyCredentials();
     });
 
-    safeAddEventListener('authBtn', 'click', function () {
+    safeAddEventListener('authBtn', 'click', async function () {
         if (this.classList.contains('logged-in')) {
-            localStorage.removeItem('yeatruAdminLoggedIn');
-            updateLoginUI(false);
+            // Client-side only: exit edit mode first (pure UI, no server mutation).
             const detailPage = document.getElementById('productDetailPage');
             if (detailPage && detailPage.classList.contains('active') && currentDetailMode === 'edit') {
                 setDetailMode('preview');
+            }
+            // Clear cookie on server. Always clear local optimistic cache,
+            // even if the network call fails — better UX than being stuck admin.
+            let serverCleared = false;
+            try {
+                const r = await fetch('/api/logout', { method: 'POST', credentials: 'same-origin' });
+                serverCleared = r.ok;
+            } catch (e) { console.warn('[auth] /api/logout error:', e); }
+            _adminSyncPromise = null;
+            if (serverCleared) {
+                // Verify final status.
+                try { await syncAdminStatus({ force: true }); } catch {}
+            } else {
+                // Network-level failure: fall back to local-only drop.
+                _setAdmin(false);
             }
         }
     });
@@ -2031,14 +2207,14 @@ function buildAplusBlockEl(b, idx) {
     if (b.type === 'hero') {
         content.innerHTML = `
             <h2 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h2>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <div class="aplus-block-text" data-editable="text">${sanitizeRichHtml(b.text || '')}</div>
             <img src="${optimizeImageUrl(escapeHtml(b.image || ''), 1000)}" alt="hero" style="max-width:600px;width:100%;height:auto;border-radius:8px;margin:1rem auto;display:block;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || '')}';">
             <input type="url" class="form-control aplus-image-input" placeholder="Image URL" data-editable-img value="${escapeHtml(b.image || '')}">
         `;
     } else if (b.type === 'text') {
         content.innerHTML = `
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-            <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+            <div class="aplus-block-text" data-editable="text">${sanitizeRichHtml(b.text || '')}</div>
         `;
     } else if (b.type === 'textImage' || b.type === 'imageText') {
         const layoutClass = b.type === 'textImage' ? 'layout-text-image' : 'layout-image-text';
@@ -2046,7 +2222,7 @@ function buildAplusBlockEl(b, idx) {
             <div class="aplus-block-image-wrap ${layoutClass}">
                 <div class="aplus-block-text-side">
                     <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || '')}</h3>
-                    <div class="aplus-block-text" data-editable="text">${b.text || ''}</div>
+                    <div class="aplus-block-text" data-editable="text">${sanitizeRichHtml(b.text || '')}</div>
                 </div>
                 <img src="${optimizeImageUrl(b.image || 'https://picsum.photos/600/400', 800)}" alt="block" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${escapeHtml(b.image || 'https://picsum.photos/600/400')}';">
             </div>
@@ -2058,15 +2234,15 @@ function buildAplusBlockEl(b, idx) {
             <h3 class="aplus-block-heading" data-editable="heading">${escapeHtml(b.heading || 'Key Features')}</h3>
             <div class="aplus-block-features">
                 <ul data-editable="features">
-                    ${items.map(it => '<li data-editable="feature">' + it + '</li>').join('')}
+                    ${items.map(it => '<li data-editable="feature">' + sanitizeRichHtml(it || '') + '</li>').join('')}
                 </ul>
             </div>
         `;
     } else if (b.type === 'twoColumns') {
         content.innerHTML = `
             <div class="aplus-block-two-columns">
-                <div class="aplus-block-column" data-editable="column">${b.column1 || ''}</div>
-                <div class="aplus-block-column" data-editable="column">${b.column2 || ''}</div>
+                <div class="aplus-block-column" data-editable="column">${sanitizeRichHtml(b.column1 || '')}</div>
+                <div class="aplus-block-column" data-editable="column">${sanitizeRichHtml(b.column2 || '')}</div>
             </div>
         `;
     }
@@ -2325,7 +2501,10 @@ function applyAdminVisibility() {
     const authBtn = document.getElementById('authBtn');
     const params = new URLSearchParams(window.location.search);
     const adminRequested = params.get('admin') === 'true';
-    const isLoggedIn = localStorage.getItem('yeatruAdminLoggedIn') === 'true';
+    // Authoritative source is the HttpOnly cookie (reconciled in syncAdminStatus),
+    // which updates _adminCached via _setAdmin(). Never read raw localStorage here
+    // because that would re-open the client-side bypass.
+    const isLoggedIn = isAdmin();
     if (authBtn) {
         authBtn.style.display = (adminRequested || isLoggedIn) ? '' : 'none';
         authBtn.setAttribute('rel', 'nofollow');
