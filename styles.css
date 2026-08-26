@@ -3675,10 +3675,29 @@ body.edit-mode [contenteditable="true"]:focus {
 }
 
 .contact-info-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
-.contact-info p.mb-4 { color: rgba(255,255,255,0.85); }
+.contact-info p.mb-3,
+.contact-info p.mb-4 { color: rgba(255,255,255,0.9); line-height: 1.7; }
 .contact-info-item { display: flex; align-items: center; margin-bottom: 1.25rem; }
 .contact-info-icon { font-size: 1.1rem; margin-right: 1rem; color: rgba(255,255,255,0.7); }
 .contact-info-text { font-size: 0.95rem; color: rgba(255,255,255,0.9); }
+
+.contact-info .founder-intro {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-left: 4px solid rgba(255, 255, 255, 0.5) !important;
+    color: #fff !important;
+}
+.contact-info .founder-intro p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+}
+.contact-info .founder-intro strong {
+    color: #fff !important;
+    font-weight: 700;
+}
+.contact-info .founder-intro p strong {
+    color: #B2F7EF !important;
+}
 
 .contact-social { display: flex; gap: 1rem; margin-top: auto; padding-top: 1rem; }
 
@@ -9984,8 +10003,8 @@ main > section.section-narrow > .container {
 .section-dark-alt .section-divider {
     background: linear-gradient(90deg, transparent, #94B3C4, transparent) !important;
 }
-.section-dark-alt p:not(.bg-white p):not(.card p),
-.section-dark-alt li:not(.bg-white li):not(.card li) {
+.section-dark-alt p:not(.bg-white p):not(.card p):not(.step-card p):not(.case-study-card p),
+.section-dark-alt li:not(.bg-white li):not(.card li):not(.step-card li):not(.case-study-card li) {
     color: rgba(255, 255, 255, 0.85) !important;
 }
 .section-dark-alt a:not(.btn):not(.badge):not(.card-link) {
