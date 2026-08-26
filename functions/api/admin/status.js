@@ -9,17 +9,11 @@ export async function onRequest(context) {
   if (request.method !== 'GET' && request.method !== 'HEAD') {
     return json({ ok: false, error: 'method_not_allowed' }, 405, { Allow: 'GET, HEAD' });
   }
-  const raw = env?.ADMIN_SECRET;
   const secretBytes = getAdminSecretBytes(env);
   if (!secretBytes) {
     return json({
       ok: false, isAdmin: false,
       error: 'auth_not_configured',
-      debug: {
-        hasSecret: !!raw,
-        secretLength: raw ? raw.length : 0,
-        envKeys: Object.keys(env || {}),
-      },
     }, 503);
   }
   const r = await verifySessionCookie(request, secretBytes);
