@@ -1114,8 +1114,16 @@ function renderIndexHotProducts() {
 function getProducts() {
     try {
         const s = localStorage.getItem('yeatruProducts');
-        return s ? JSON.parse(s) : DEFAULT_PRODUCTS.slice();
-    } catch (e) { return DEFAULT_PRODUCTS.slice(); }
+        if (s) return JSON.parse(s);
+    } catch (e) {}
+    try {
+        const cache = localStorage.getItem('yeatruSiteDataCache');
+        if (cache) {
+            const data = JSON.parse(cache);
+            if (data && Array.isArray(data.products)) return data.products;
+        }
+    } catch (e) {}
+    return DEFAULT_PRODUCTS.slice();
 }
 
 function saveProducts(products) {
