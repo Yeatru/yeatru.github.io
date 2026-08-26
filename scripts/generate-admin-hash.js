@@ -5,8 +5,8 @@
 // variables (Project → Settings → Environment variables → Production):
 //
 //   ADMIN_USERNAME       例如  Yeatru
-//   ADMIN_PASSWORD       由本脚本生成的 pbkdf2_sha256$...$...$... 字符串
-//   ADMIN_SESSION_SECRET 由本脚本生成的 48+ 字节 URL-safe base64 字符串
+//   ADMIN_PASSWORD_HASH  由本脚本生成的 pbkdf2_sha256$...$...$... 字符串
+//   ADMIN_SECRET         由本脚本生成的 48+ 字节 URL-safe base64 字符串
 //
 // Requires Node.js >= 16 (uses the Web Crypto API, globalThis.crypto).
 //
@@ -121,16 +121,16 @@ Cloudflare Pages 管理员账号凭证生成器
 
 输出含义:
   ADMIN_USERNAME         — 登录时使用的用户名 (明文,推荐 Yeatru 或更独特的字符串)
-  ADMIN_PASSWORD         — PBKDF2 加盐哈希字符串,Cloudflare Pages 环境变量保存
-  ADMIN_SESSION_SECRET   — HMAC-SHA256 会话 cookie 签名密钥,每台部署/每次轮换都要换新
+  ADMIN_PASSWORD_HASH    — PBKDF2 加盐哈希字符串,Cloudflare Pages 环境变量保存
+  ADMIN_SECRET           — HMAC-SHA256 会话 cookie 签名密钥,每台部署/每次轮换都要换新
 
 部署步骤 (粘贴到 Cloudflare Pages → Settings → Environment variables):
   1. 访问 https://dash.cloudflare.com/ → Workers & Pages → yeatru.github.io → Settings
   2. 找到 Environment variables,切换到 Production 环境
   3. 添加 3 条变量 (勾选 "Encrypt" 选项以加密保存):
        ADMIN_USERNAME       = (上面的用户名, 例如 Yeatru)
-       ADMIN_PASSWORD       = (上面 pbkdf2_sha256$... 整段)
-       ADMIN_SESSION_SECRET = (上面 64 字符长的随机串)
+       ADMIN_PASSWORD_HASH  = (上面 pbkdf2_sha256$... 整段)
+       ADMIN_SECRET         = (上面 64 字符长的随机串)
   4. 点击 "Save and deploy" (或重新部署)让 Functions 读到新变量。
      注意: Functions 不支持运行时读取 _headers,必须通过 env.<NAME>。
 
@@ -138,8 +138,8 @@ Cloudflare Pages 管理员账号凭证生成器
   * 迭代次数默认 ${ITERATIONS_DEFAULT}。2024 年 OWASP 推荐 PBKDF2-HMAC-SHA256 >= 310000;
     600000 对 Cloudflare Functions (单函数 ≤ 50ms CPU) 略紧,实测 40-70ms 仍在可接受范围。
     如遇偶尔 500,可降为 310000 仍在安全边界内。
-  * ADMIN_SESSION_SECRET 至少要 32 字节随机熵,本脚本提供 48 字节(384 bit)。
-  * 更改密码后,把 ADMIN_SESSION_SECRET 一起换一个新的值,可让所有已有会话立即失效。
+  * ADMIN_SECRET 至少要 32 字节随机熵,本脚本提供 48 字节(384 bit)。
+  * 更改密码后,把 ADMIN_SECRET 一起换一个新的值,可让所有已有会话立即失效。
   * 旧的前端 localStorage key (yeatruAdminLoggedIn) 会被前端新代码在加载时清除,
     不需要手动迁移。
 `);
@@ -199,8 +199,8 @@ async function main(argv) {
 
     console.log('\n复制下面三行到 Cloudflare Pages → Environment variables (Production):\n');
     console.log(`ADMIN_USERNAME         = ${username}`);
-    console.log(`ADMIN_PASSWORD         = ${formatted}`);
-    console.log(`ADMIN_SESSION_SECRET   = ${secret}`);
+    console.log(`ADMIN_PASSWORD_HASH    = ${formatted}`);
+    console.log(`ADMIN_SECRET           = ${secret}`);
     console.log('\n设置完成后,请重新部署 Pages(Functions 需要在部署时加载 env vars)。\n');
 }
 
