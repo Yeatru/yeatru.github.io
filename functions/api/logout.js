@@ -1,6 +1,6 @@
 // Admin logout: clear the signed HttpOnly session cookie.
 
-import { setCookieHeader, json } from '../_shared/auth.js';
+import { setCookieHeader, json } from '../auth.js';
 
 export async function onRequest(context) {
   const { request } = context;

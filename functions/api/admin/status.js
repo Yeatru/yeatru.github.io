@@ -2,7 +2,7 @@
 // Used by the browser UI to re-sync the optimistic localStorage flag with the
 // single authoritative source (the signed HttpOnly cookie).
 
-import { verifySessionCookie, getAdminSecretBytes, json } from '../_shared/auth.js';
+import { verifySessionCookie, getAdminSecretBytes, json } from '../../auth.js';
 
 export async function onRequest(context) {
   const { request, env } = context;

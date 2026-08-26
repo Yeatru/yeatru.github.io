@@ -8,7 +8,7 @@
 import {
   verifyPassword, signSessionId, setCookieHeader, getAdminSecretBytes, json,
   SESSION_MAX_AGE_SEC,
-} from '../_shared/auth.js';
+} from '../auth.js';
 
 export async function onRequest(context) {
   const { request, env } = context;
