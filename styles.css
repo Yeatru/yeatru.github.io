@@ -10891,3 +10891,275 @@ main#mainContent > section[id] {
         margin-right: 0.3rem !important;
     }
 }
+
+/* ============================================================
+ * 16. Visual Polish — Section Spacing, Transitions, Mobile Tables
+ * ============================================================ */
+
+/* --- 16a. Tighter section spacing --- */
+body section,
+body section.py-5,
+body section.py-5.bg-white,
+body #mainContent > section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+body section:first-of-type {
+    padding-top: 12px !important;
+}
+
+/* Tighten hero-section too */
+body .hero-section,
+body .banner-carousel {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.2rem !important;
+}
+
+/* --- 16b. Section transition dividers (SVG waves via ::after on previous section) --- */
+
+/* Add position:relative to sections that need ::after wave */
+.section-alt,
+.bg-white,
+.py-5 {
+    position: relative;
+}
+
+/* Wave: Light -> Dark (wave points UP from light into dark) */
+.section-alt:has(+ .section-dark-alt)::after,
+.section-alt:has(+ .faq-dark)::after,
+.bg-white:has(+ .section-dark-alt)::after,
+.py-5.section-alt:has(+ .section-dark-alt)::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 28' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C200,0 400,28 720,14 C1040,0 1240,28 1440,14 L1440,28 L0,28 Z' fill='%23061C2B'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Wave: Dark -> Light (wave points DOWN from dark into light) */
+.section-dark-alt:has(+ .section-alt)::after,
+.section-dark-alt:has(+ .bg-white)::after,
+.section-dark-alt:has(+ .testimonials)::after,
+.section-dark-alt:has(+ .sourcing-agent-guide)::after,
+.section-dark-alt:has(+ .blog)::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 28' preserveAspectRatio='none'%3E%3Cpath d='M0,28 C200,28 400,0 720,14 C1040,28 1240,0 1440,14 L1440,0 L0,0 Z' fill='%23F5F7FA'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* No wave for same-color transitions, before contact section, or at page end */
+.section-dark-alt:has(+ .section-dark-alt)::after,
+.section-dark-alt:has(+ .contact-section)::after,
+.section-alt:has(+ .contact-section)::after,
+.section-alt:has(+ .section-dark-alt.section-alt)::after,
+.py-5.section-alt:has(+ .contact-section)::after,
+.section-alt:has(+ #contact-us)::after,
+.py-5:has(+ #contact-us)::after {
+    display: none;
+}
+
+/* Hide waves on mobile to reduce visual noise */
+@media (max-width: 767.98px) {
+    .section-alt::after,
+    .bg-white::after,
+    .section-dark-alt::after,
+    .py-5::after {
+        display: none !important;
+    }
+}
+
+/* --- 16c. Fix mobile table text stacking --- */
+@media (max-width: 767.98px) {
+    body section,
+    body section.py-5,
+    body section.py-5.bg-white,
+    body #mainContent > section {
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+    }
+    body section:first-of-type {
+        padding-top: 10px !important;
+    }
+
+    body .hero-section,
+    body .banner-carousel {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Prevent table text from stacking vertically */
+    .table-responsive {
+        margin-bottom: 0.75rem;
+    }
+    .table-responsive table,
+    .detail-spec-table {
+        min-width: 100% !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+    .detail-spec-table th,
+    .detail-spec-table td {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.72rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.3 !important;
+    }
+    .detail-spec-table th {
+        width: auto !important;
+    }
+    .detail-spec-table tr.spec-price-row th {
+        font-size: 0.68rem !important;
+        padding: 0.3rem 0.4rem !important;
+    }
+
+    /* FAQ compact on mobile */
+    .faq-dark .faq-item,
+    .faq-dark .accordion-item {
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Trust stats tighter */
+    .trust-stats-section {
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+    }
+    .trust-stat-number {
+        font-size: 1.5rem !important;
+    }
+    .trust-stat-label {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Extra small screen tweaks */
+    .detail-spec-table th,
+    .detail-spec-table td {
+        padding: 0.25rem 0.3rem !important;
+        font-size: 0.68rem !important;
+    }
+    .detail-spec-table tr.spec-price-row td.spec-price-cell {
+        padding: 0.25rem 0.3rem !important;
+    }
+    .detail-spec-table td.spec-price-cell .detail-price-big {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* --- 16d. Font/background contrast improvements --- */
+/* Slightly brighter white text on dark sections */
+.section-dark-alt p:not(.bg-white p):not(.card p):not(.step-card p):not(.case-study-card p),
+.section-dark-alt li:not(.bg-white li):not(.card li):not(.step-card li):not(.case-study-card li) {
+    color: rgba(255, 255, 255, 0.92) !important;
+    line-height: 1.75 !important;
+}
+
+/* Contact-info section: better text brightness */
+.contact-info p.mb-3,
+.contact-info p.mb-4 {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* FAQ dark: brighter text */
+.faq-dark .faq-question,
+.faq-dark .accordion-button {
+    color: #FFFFFF !important;
+}
+.faq-dark .faq-answer,
+.faq-dark .accordion-collapse {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Step card: ensure description stays dark on white bg */
+.step-card .step-desc {
+    color: #374151 !important;
+    opacity: 1 !important;
+}
+
+/* Pricing table: brighter text */
+.tier-pricing-table th,
+.tier-pricing-table td {
+    color: #1f2937 !important;
+}
+
+/* --- 16e. Mobile: prevent excessive height from stacked grids --- */
+@media (max-width: 575.98px) {
+    /* Keep client segments as 2 cols instead of 1 to reduce height */
+    .client-segments-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+    .client-segment-card {
+        padding: 0.75rem !important;
+    }
+
+    /* Trust badges: keep 2 cols on mobile */
+    .trust-badges-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+    .trust-badge {
+        padding: 0.6rem 0.75rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Testimonial cards: stack but tighter */
+    .testimonials-grid,
+    .testimonials-row {
+        gap: 0.75rem !important;
+    }
+
+    /* Case study cards: tighter */
+    .case-study-card {
+        margin-bottom: 0.75rem !important;
+    }
+}
+
+/* --- 16f. FAQ section: tighter spacing --- */
+.faq-dark {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+.faq-dark .faq-container,
+.faq-dark .accordion-container {
+    gap: 0.5rem !important;
+}
+.faq-dark .faq-item,
+.faq-dark .accordion-item {
+    margin-bottom: 0.5rem !important;
+}
+
+/* --- 16g. Smooth scroll for anchor links --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- 16h. Reduced motion support --- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .section-alt + .section-dark-alt::before,
+    .section-dark-alt + .section-alt::before,
+    .section-alt + .bg-white::before,
+    .bg-white + .section-alt::before {
+        display: none;
+    }
+}
