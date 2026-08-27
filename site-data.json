@@ -27,7 +27,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 2,
@@ -47,7 +48,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 3,
@@ -67,7 +69,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 4,
@@ -87,7 +90,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 5,
@@ -107,7 +111,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 6,
@@ -127,7 +132,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 7,
@@ -147,7 +153,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 8,
@@ -167,7 +174,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 9,
@@ -187,7 +195,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 10,
@@ -207,7 +216,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 11,
@@ -227,7 +237,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 12,
@@ -247,7 +258,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 13,
@@ -267,7 +279,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 14,
@@ -287,7 +300,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 15,
@@ -307,7 +321,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 16,
@@ -327,7 +342,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 17,
@@ -347,7 +363,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 18,
@@ -367,7 +384,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 19,
@@ -387,7 +405,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 20,
@@ -407,7 +426,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 21,
@@ -427,7 +447,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 22,
@@ -447,7 +468,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 23,
@@ -467,7 +489,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 24,
@@ -487,7 +510,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 25,
@@ -507,7 +531,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 26,
@@ -527,7 +552,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 27,
@@ -553,7 +579,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 28,
@@ -579,7 +606,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 29,
@@ -599,7 +627,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 30,
@@ -619,7 +648,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 31,
@@ -639,7 +669,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 32,
@@ -659,7 +690,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 33,
@@ -679,7 +711,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 34,
@@ -699,7 +732,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 35,
@@ -719,7 +753,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 36,
@@ -739,7 +774,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Auto Parts & Tools"
     },
     {
       "id": 37,
@@ -759,7 +795,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 38,
@@ -779,7 +816,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 39,
@@ -799,7 +837,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 40,
@@ -819,7 +858,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 41,
@@ -839,7 +879,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 42,
@@ -859,7 +900,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 43,
@@ -885,7 +927,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 44,
@@ -905,7 +948,8 @@
           "color": "Khaki",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 45,
@@ -925,7 +969,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 46,
@@ -945,7 +990,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 47,
@@ -965,7 +1011,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 48,
@@ -985,7 +1032,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 49,
@@ -1005,7 +1053,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 50,
@@ -1025,7 +1074,8 @@
           "color": "Floral",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 51,
@@ -1045,7 +1095,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 52,
@@ -1077,7 +1128,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 53,
@@ -1097,7 +1149,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 54,
@@ -1117,7 +1170,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 55,
@@ -1137,7 +1191,8 @@
           "color": "Navy",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 56,
@@ -1163,7 +1218,8 @@
           "color": "Yellow",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 57,
@@ -1189,7 +1245,8 @@
           "color": "Brown",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 58,
@@ -1209,7 +1266,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 59,
@@ -1229,7 +1287,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 60,
@@ -1255,7 +1314,8 @@
           "color": "Green",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 61,
@@ -1275,7 +1335,8 @@
           "color": "Green",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 62,
@@ -1295,7 +1356,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 63,
@@ -1315,7 +1377,8 @@
           "color": "Black",
           "size": "XXL/XL/L/M"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 64,
@@ -1335,7 +1398,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 65,
@@ -1361,7 +1425,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 66,
@@ -1387,7 +1452,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 67,
@@ -1407,7 +1473,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 68,
@@ -1427,7 +1494,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 69,
@@ -1447,7 +1515,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 70,
@@ -1479,7 +1548,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 71,
@@ -1511,7 +1581,8 @@
           "color": "Black",
           "size": "500ml"
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 72,
@@ -1531,7 +1602,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 73,
@@ -1551,7 +1623,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 74,
@@ -1571,7 +1644,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 75,
@@ -1591,7 +1665,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 76,
@@ -1611,7 +1686,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 77,
@@ -1643,7 +1719,8 @@
           "color": "Yellow",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 78,
@@ -1681,7 +1758,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 79,
@@ -1701,7 +1779,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 80,
@@ -1721,7 +1800,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 81,
@@ -1741,7 +1821,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 82,
@@ -1761,7 +1842,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 83,
@@ -1787,7 +1869,8 @@
           "color": "",
           "size": "112cm"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 84,
@@ -1807,7 +1890,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 85,
@@ -1827,7 +1911,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 86,
@@ -1847,7 +1932,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 87,
@@ -1867,7 +1953,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 88,
@@ -1887,7 +1974,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 89,
@@ -1907,7 +1995,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 90,
@@ -1927,7 +2016,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 91,
@@ -1947,7 +2037,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 92,
@@ -1967,7 +2058,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 93,
@@ -1987,7 +2079,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 94,
@@ -2007,7 +2100,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 95,
@@ -2027,7 +2121,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 96,
@@ -2047,7 +2142,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 97,
@@ -2067,7 +2163,8 @@
           "color": "White",
           "size": "140"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 98,
@@ -2087,7 +2184,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 99,
@@ -2107,7 +2205,8 @@
           "color": "",
           "size": "130cm"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 100,
@@ -2127,7 +2226,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 101,
@@ -2147,7 +2247,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 102,
@@ -2167,7 +2268,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 103,
@@ -2187,7 +2289,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 104,
@@ -2207,7 +2310,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 105,
@@ -2227,7 +2331,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 106,
@@ -2247,7 +2352,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 107,
@@ -2267,7 +2373,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 108,
@@ -2287,7 +2394,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 109,
@@ -2307,7 +2415,8 @@
           "color": "Black",
           "size": "XXXL/L"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 110,
@@ -2327,7 +2436,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 111,
@@ -2347,7 +2457,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 112,
@@ -2367,7 +2478,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 113,
@@ -2387,7 +2499,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 114,
@@ -2407,7 +2520,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 115,
@@ -2427,7 +2541,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 116,
@@ -2447,7 +2562,8 @@
           "color": "Black",
           "size": "XXXL/L"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 117,
@@ -2467,7 +2583,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 118,
@@ -2487,7 +2604,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 119,
@@ -2525,7 +2643,8 @@
           "color": "Blue",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 120,
@@ -2545,7 +2664,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 121,
@@ -2565,7 +2685,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 122,
@@ -2585,7 +2706,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 123,
@@ -2605,7 +2727,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 124,
@@ -2637,7 +2760,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 125,
@@ -2657,7 +2781,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 126,
@@ -2683,7 +2808,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 127,
@@ -2703,7 +2829,8 @@
           "color": "Khaki",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 128,
@@ -2723,7 +2850,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 129,
@@ -2743,7 +2871,8 @@
           "color": "",
           "size": "XXL/XL"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 130,
@@ -2763,7 +2892,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 131,
@@ -2795,7 +2925,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 132,
@@ -2815,7 +2946,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 133,
@@ -2841,7 +2973,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 134,
@@ -2867,7 +3000,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 135,
@@ -2887,7 +3021,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 136,
@@ -2919,7 +3054,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 137,
@@ -2939,7 +3075,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 138,
@@ -2971,7 +3108,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 139,
@@ -3009,7 +3147,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 140,
@@ -3035,7 +3174,8 @@
           "color": "",
           "size": "500ml-B9"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 141,
@@ -3061,7 +3201,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 142,
@@ -3081,7 +3222,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 143,
@@ -3101,7 +3243,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 144,
@@ -3121,7 +3264,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 145,
@@ -3141,7 +3285,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 146,
@@ -3161,7 +3306,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 147,
@@ -3181,7 +3327,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 148,
@@ -3201,7 +3348,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 149,
@@ -3221,7 +3369,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 150,
@@ -3247,7 +3396,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 151,
@@ -3267,7 +3417,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 152,
@@ -3287,7 +3438,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 153,
@@ -3307,7 +3459,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 154,
@@ -3327,7 +3480,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 155,
@@ -3347,7 +3501,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 156,
@@ -3367,7 +3522,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 157,
@@ -3387,7 +3543,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 158,
@@ -3407,7 +3564,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 159,
@@ -3427,7 +3585,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 160,
@@ -3453,7 +3612,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 161,
@@ -3473,7 +3633,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 162,
@@ -3493,7 +3654,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 163,
@@ -3513,7 +3675,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 164,
@@ -3533,7 +3696,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 165,
@@ -3553,7 +3717,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 166,
@@ -3573,7 +3738,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 167,
@@ -3593,7 +3759,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 168,
@@ -3613,7 +3780,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 169,
@@ -3633,7 +3801,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 170,
@@ -3653,7 +3822,8 @@
           "color": "Green",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 171,
@@ -3673,7 +3843,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Pet Supplies"
     },
     {
       "id": 172,
@@ -3699,7 +3870,8 @@
           "color": "",
           "size": "100cm"
         }
-      ]
+      ],
+      "mainCategory": "Home Appliances"
     },
     {
       "id": 173,
@@ -3719,7 +3891,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 174,
@@ -3739,7 +3912,8 @@
           "color": "Gold",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 175,
@@ -3759,7 +3933,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 176,
@@ -3779,7 +3954,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 177,
@@ -3799,7 +3975,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 178,
@@ -3819,7 +3996,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 179,
@@ -3839,7 +4017,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 180,
@@ -3859,7 +4038,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 181,
@@ -3879,7 +4059,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 182,
@@ -3899,7 +4080,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 183,
@@ -3919,7 +4101,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 184,
@@ -3939,7 +4122,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 185,
@@ -3959,7 +4143,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 186,
@@ -3985,7 +4170,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 187,
@@ -4005,7 +4191,8 @@
           "color": "Gold",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 188,
@@ -4025,7 +4212,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 189,
@@ -4045,7 +4233,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 190,
@@ -4065,7 +4254,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Sports & Outdoor"
     },
     {
       "id": 191,
@@ -4091,7 +4281,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 192,
@@ -4111,7 +4302,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 193,
@@ -4131,7 +4323,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 194,
@@ -4169,7 +4362,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 195,
@@ -4189,7 +4383,8 @@
           "color": "Black",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 196,
@@ -4209,7 +4404,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 197,
@@ -4235,7 +4431,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 198,
@@ -4255,7 +4452,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 199,
@@ -4275,7 +4473,8 @@
           "color": "Red",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 200,
@@ -4295,7 +4494,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 201,
@@ -4315,7 +4515,8 @@
           "color": "Black",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 202,
@@ -4335,7 +4536,8 @@
           "color": "Black",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 203,
@@ -4355,7 +4557,8 @@
           "color": "Brown",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 204,
@@ -4375,7 +4578,8 @@
           "color": "Purple",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 205,
@@ -4395,7 +4599,8 @@
           "color": "Black",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 206,
@@ -4415,7 +4620,8 @@
           "color": "Pink",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 207,
@@ -4435,7 +4641,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 208,
@@ -4455,7 +4662,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 209,
@@ -4475,7 +4683,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 210,
@@ -4495,7 +4704,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 211,
@@ -4515,7 +4725,8 @@
           "color": "",
           "size": "180x180"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 212,
@@ -4535,7 +4746,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 213,
@@ -4555,7 +4767,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 214,
@@ -4575,7 +4788,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 215,
@@ -4595,7 +4809,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 216,
@@ -4615,7 +4830,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 217,
@@ -4635,7 +4851,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 218,
@@ -4661,7 +4878,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 219,
@@ -4681,7 +4899,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 220,
@@ -4701,7 +4920,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 221,
@@ -4721,7 +4941,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 222,
@@ -4753,7 +4974,8 @@
           "color": "",
           "size": "75FT"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 223,
@@ -4773,7 +4995,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 224,
@@ -4793,7 +5016,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 225,
@@ -4813,7 +5037,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 226,
@@ -4833,7 +5058,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 227,
@@ -4853,7 +5079,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 228,
@@ -4873,7 +5100,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 229,
@@ -4893,7 +5121,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 230,
@@ -4919,7 +5148,8 @@
           "color": "",
           "size": "15L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 231,
@@ -4939,7 +5169,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 232,
@@ -4965,7 +5196,8 @@
           "color": "2mm thickness",
           "size": "10 mm width"
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 233,
@@ -4985,7 +5217,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 234,
@@ -5005,7 +5238,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 235,
@@ -5025,7 +5259,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 236,
@@ -5045,7 +5280,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 237,
@@ -5065,7 +5301,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 238,
@@ -5085,7 +5322,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 239,
@@ -5105,7 +5343,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 240,
@@ -5125,7 +5364,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 241,
@@ -5145,7 +5385,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 242,
@@ -5165,7 +5406,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 243,
@@ -5185,7 +5427,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 244,
@@ -5205,7 +5448,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 245,
@@ -5225,7 +5469,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 246,
@@ -5245,7 +5490,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 247,
@@ -5265,7 +5511,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 248,
@@ -5285,7 +5532,8 @@
           "color": "",
           "size": "7寸"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 249,
@@ -5305,7 +5553,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 250,
@@ -5325,7 +5574,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 251,
@@ -5345,7 +5595,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 252,
@@ -5383,7 +5634,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 253,
@@ -5403,7 +5655,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 254,
@@ -5441,7 +5694,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 255,
@@ -5461,7 +5715,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 256,
@@ -5481,7 +5736,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 257,
@@ -5501,7 +5757,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 258,
@@ -5521,7 +5778,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 259,
@@ -5541,7 +5799,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 260,
@@ -5561,7 +5820,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 261,
@@ -5581,7 +5841,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 262,
@@ -5601,7 +5862,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 263,
@@ -5621,7 +5883,8 @@
           "color": "",
           "size": "7英寸"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 264,
@@ -5641,7 +5904,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 265,
@@ -5661,7 +5925,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 266,
@@ -5681,7 +5946,8 @@
           "color": "Black",
           "size": "L/M/S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 267,
@@ -5701,7 +5967,8 @@
           "color": "",
           "size": "3 Layers"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 268,
@@ -5721,7 +5988,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 269,
@@ -5753,7 +6021,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 270,
@@ -5773,7 +6042,8 @@
           "color": "Black",
           "size": "80cm"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 271,
@@ -5793,7 +6063,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 272,
@@ -5813,7 +6084,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 273,
@@ -5833,7 +6105,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 274,
@@ -5853,7 +6126,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 275,
@@ -5873,7 +6147,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 276,
@@ -5899,7 +6174,8 @@
           "color": "Black",
           "size": "5 Layers"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 277,
@@ -5919,7 +6195,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 278,
@@ -5939,7 +6216,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 279,
@@ -5959,7 +6237,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 280,
@@ -5979,7 +6258,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 281,
@@ -5999,7 +6279,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 282,
@@ -6019,7 +6300,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 283,
@@ -6051,7 +6333,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 284,
@@ -6083,7 +6366,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 285,
@@ -6115,7 +6399,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 286,
@@ -6135,7 +6420,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 287,
@@ -6155,7 +6441,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 288,
@@ -6175,7 +6462,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 289,
@@ -6195,7 +6483,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 290,
@@ -6215,7 +6504,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 291,
@@ -6235,7 +6525,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 292,
@@ -6255,7 +6546,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 293,
@@ -6275,7 +6567,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 294,
@@ -6295,7 +6588,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 295,
@@ -6315,7 +6609,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 296,
@@ -6335,7 +6630,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 297,
@@ -6355,7 +6651,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 298,
@@ -6375,7 +6672,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 299,
@@ -6395,7 +6693,8 @@
           "color": "",
           "size": "1000ml"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 300,
@@ -6415,7 +6714,8 @@
           "color": "",
           "size": "1000ml"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 301,
@@ -6435,7 +6735,8 @@
           "color": "",
           "size": "1000Ml"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 302,
@@ -6461,7 +6762,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 303,
@@ -6481,7 +6783,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 304,
@@ -6501,7 +6804,8 @@
           "color": "Purple",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 305,
@@ -6521,7 +6825,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 306,
@@ -6541,7 +6846,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 307,
@@ -6573,7 +6879,8 @@
           "color": "",
           "size": "450ml"
         }
-      ]
+      ],
+      "mainCategory": "Kitchen Supplies"
     },
     {
       "id": 308,
@@ -6593,7 +6900,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 309,
@@ -6613,7 +6921,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 310,
@@ -6633,7 +6942,8 @@
           "color": "Multicolor",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 311,
@@ -6653,7 +6963,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 312,
@@ -6673,7 +6984,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 313,
@@ -6699,7 +7011,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 314,
@@ -6719,7 +7032,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 315,
@@ -6739,7 +7053,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 316,
@@ -6759,7 +7074,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 317,
@@ -6785,7 +7101,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 318,
@@ -6805,7 +7122,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 319,
@@ -6825,7 +7143,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 320,
@@ -6845,7 +7164,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 321,
@@ -6865,7 +7185,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 322,
@@ -6885,7 +7206,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 323,
@@ -6905,7 +7227,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 324,
@@ -6925,7 +7248,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 325,
@@ -6945,7 +7269,8 @@
           "color": "",
           "size": "3x18"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 326,
@@ -6965,7 +7290,8 @@
           "color": "White",
           "size": "5x18"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 327,
@@ -6985,7 +7311,8 @@
           "color": "",
           "size": "5x18"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 328,
@@ -7011,7 +7338,8 @@
           "color": "Red",
           "size": "3x18"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 329,
@@ -7031,7 +7359,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 330,
@@ -7051,7 +7380,8 @@
           "color": "Gold",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 331,
@@ -7071,7 +7401,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 332,
@@ -7091,7 +7422,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 333,
@@ -7111,7 +7443,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 334,
@@ -7131,7 +7464,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 335,
@@ -7151,7 +7485,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 336,
@@ -7171,7 +7506,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 337,
@@ -7191,7 +7527,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 338,
@@ -7211,7 +7548,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 339,
@@ -7231,7 +7569,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Hardware & Home"
     },
     {
       "id": 340,
@@ -7251,7 +7590,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 341,
@@ -7271,7 +7611,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 342,
@@ -7291,7 +7632,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 343,
@@ -7311,7 +7653,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 344,
@@ -7331,7 +7674,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 345,
@@ -7351,7 +7695,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 346,
@@ -7371,7 +7716,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 347,
@@ -7391,7 +7737,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 348,
@@ -7411,7 +7758,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 349,
@@ -7431,7 +7779,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 350,
@@ -7451,7 +7800,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 351,
@@ -7471,7 +7821,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 352,
@@ -7491,7 +7842,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 353,
@@ -7577,7 +7929,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 354,
@@ -7597,7 +7950,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 355,
@@ -7623,7 +7977,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 356,
@@ -7643,7 +7998,8 @@
           "color": "Black",
           "size": "L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 357,
@@ -7663,7 +8019,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 358,
@@ -7683,7 +8040,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 359,
@@ -7703,7 +8061,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 360,
@@ -7723,7 +8082,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 361,
@@ -7743,7 +8103,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 362,
@@ -7763,7 +8124,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 363,
@@ -7783,7 +8145,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 364,
@@ -7803,7 +8166,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 365,
@@ -7823,7 +8187,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 366,
@@ -7843,7 +8208,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 367,
@@ -7863,7 +8229,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 368,
@@ -7883,7 +8250,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 369,
@@ -7909,7 +8277,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 370,
@@ -7929,7 +8298,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 371,
@@ -7949,7 +8319,8 @@
           "color": "Blue",
           "size": "L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 372,
@@ -7969,7 +8340,8 @@
           "color": "",
           "size": "16寸"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 373,
@@ -7989,7 +8361,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 374,
@@ -8009,7 +8382,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 375,
@@ -8029,7 +8403,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 376,
@@ -8049,7 +8424,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 377,
@@ -8069,7 +8445,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 378,
@@ -8095,7 +8472,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 379,
@@ -8115,7 +8493,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 380,
@@ -8135,7 +8514,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 381,
@@ -8155,7 +8535,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 382,
@@ -8175,7 +8556,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 383,
@@ -8195,7 +8577,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 384,
@@ -8215,7 +8598,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 385,
@@ -8235,7 +8619,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 386,
@@ -8261,7 +8646,8 @@
           "color": "Black",
           "size": "12寸"
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 387,
@@ -8281,7 +8667,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 388,
@@ -8301,7 +8688,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 389,
@@ -8327,7 +8715,8 @@
           "color": "",
           "size": "5寸"
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 390,
@@ -8347,7 +8736,8 @@
           "color": "",
           "size": "16寸"
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 391,
@@ -8367,7 +8757,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 392,
@@ -8393,7 +8784,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 393,
@@ -8413,7 +8805,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 394,
@@ -8433,7 +8826,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 395,
@@ -8453,7 +8847,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 396,
@@ -8473,7 +8868,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 397,
@@ -8493,7 +8889,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 398,
@@ -8513,7 +8910,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Phone Accessories"
     },
     {
       "id": 399,
@@ -8533,7 +8931,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 400,
@@ -8559,7 +8958,8 @@
           "color": "",
           "size": "1 hook"
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 401,
@@ -8579,7 +8979,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 402,
@@ -8605,7 +9006,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 403,
@@ -8643,7 +9045,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 404,
@@ -8669,7 +9072,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 405,
@@ -8689,7 +9093,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 406,
@@ -8709,7 +9114,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 407,
@@ -8729,7 +9135,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Musical Instruments"
     },
     {
       "id": 408,
@@ -8749,7 +9156,8 @@
           "color": "Black",
           "size": "38寸"
         }
-      ]
+      ],
+      "mainCategory": "Musical Instruments"
     },
     {
       "id": 409,
@@ -8769,7 +9177,8 @@
           "color": "",
           "size": "38寸"
         }
-      ]
+      ],
+      "mainCategory": "Musical Instruments"
     },
     {
       "id": 410,
@@ -8795,7 +9204,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 411,
@@ -8815,7 +9225,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 412,
@@ -8835,7 +9246,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 413,
@@ -8855,7 +9267,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 414,
@@ -8875,7 +9288,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 415,
@@ -8895,7 +9309,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 416,
@@ -8915,7 +9330,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 417,
@@ -8935,7 +9351,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 418,
@@ -8955,7 +9372,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 419,
@@ -8975,7 +9393,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 420,
@@ -8995,7 +9414,8 @@
           "color": "Red",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 421,
@@ -9015,7 +9435,8 @@
           "color": "Green",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 422,
@@ -9035,7 +9456,8 @@
           "color": "Silver",
           "size": "18x23"
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 423,
@@ -9055,7 +9477,8 @@
           "color": "",
           "size": "26x30"
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 424,
@@ -9075,7 +9498,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 425,
@@ -9095,7 +9519,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 426,
@@ -9115,7 +9540,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 427,
@@ -9135,7 +9561,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 428,
@@ -9155,7 +9582,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 429,
@@ -9175,7 +9603,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 430,
@@ -9195,7 +9624,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 431,
@@ -9215,7 +9645,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 432,
@@ -9235,7 +9666,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 433,
@@ -9261,7 +9693,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 434,
@@ -9281,7 +9714,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 435,
@@ -9301,7 +9735,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 436,
@@ -9321,7 +9756,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 437,
@@ -9341,7 +9777,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 438,
@@ -9361,7 +9798,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 439,
@@ -9387,7 +9825,8 @@
           "color": "Black",
           "size": "500ml"
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 440,
@@ -9407,7 +9846,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 441,
@@ -9427,7 +9867,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Material"
     },
     {
       "id": 442,
@@ -9447,7 +9888,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 443,
@@ -9467,7 +9909,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 444,
@@ -9493,7 +9936,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 445,
@@ -9513,7 +9957,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 446,
@@ -9533,7 +9978,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 447,
@@ -9553,7 +9999,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 448,
@@ -9573,7 +10020,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 449,
@@ -9593,7 +10041,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Others"
     },
     {
       "id": 450,
@@ -9613,7 +10062,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 451,
@@ -9633,7 +10083,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 452,
@@ -9653,7 +10104,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 453,
@@ -9673,7 +10125,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 454,
@@ -9693,7 +10146,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 455,
@@ -9725,7 +10179,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 456,
@@ -9763,7 +10218,8 @@
           "color": "Brown",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 457,
@@ -9783,7 +10239,8 @@
           "color": "Green",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 458,
@@ -9815,7 +10272,8 @@
           "color": "Green",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 459,
@@ -9835,7 +10293,8 @@
           "color": "Purple",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 460,
@@ -9855,7 +10314,8 @@
           "color": "Floral",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 461,
@@ -9875,7 +10335,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 462,
@@ -9895,7 +10356,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 463,
@@ -9915,7 +10377,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 464,
@@ -9959,7 +10422,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 465,
@@ -9997,7 +10461,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 466,
@@ -10017,7 +10482,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 467,
@@ -10037,7 +10503,8 @@
           "color": "Red",
           "size": "34"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 468,
@@ -10057,7 +10524,8 @@
           "color": "",
           "size": "40"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 469,
@@ -10077,7 +10545,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 470,
@@ -10097,7 +10566,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 471,
@@ -10117,7 +10587,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 472,
@@ -10137,7 +10608,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 473,
@@ -10157,7 +10629,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 474,
@@ -10177,7 +10650,8 @@
           "color": "",
           "size": "44"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 475,
@@ -10197,7 +10671,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 476,
@@ -10217,7 +10692,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 477,
@@ -10237,7 +10713,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 478,
@@ -10257,7 +10734,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 479,
@@ -10277,7 +10755,8 @@
           "color": "White",
           "size": "39"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 480,
@@ -10315,7 +10794,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 481,
@@ -10359,7 +10839,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 482,
@@ -10403,7 +10884,8 @@
           "color": "Orange",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 483,
@@ -10429,7 +10911,8 @@
           "color": "Multicolor",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 484,
@@ -10455,7 +10938,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 485,
@@ -10481,7 +10965,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 486,
@@ -10519,7 +11004,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 487,
@@ -10569,7 +11055,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 488,
@@ -10601,7 +11088,8 @@
           "color": "Khaki",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 489,
@@ -10621,7 +11109,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 490,
@@ -10647,7 +11136,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 491,
@@ -10667,7 +11157,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 492,
@@ -10699,7 +11190,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 493,
@@ -10719,7 +11211,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 494,
@@ -10739,7 +11232,8 @@
           "color": "Gold",
           "size": "100ML"
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 495,
@@ -10759,7 +11253,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 496,
@@ -10779,7 +11274,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 497,
@@ -10799,7 +11295,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 498,
@@ -10819,7 +11316,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 499,
@@ -10839,7 +11337,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 500,
@@ -10859,7 +11358,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 501,
@@ -10879,7 +11379,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 502,
@@ -10899,7 +11400,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 503,
@@ -10919,7 +11421,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 504,
@@ -10939,7 +11442,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 505,
@@ -10959,7 +11463,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 506,
@@ -10979,7 +11484,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 507,
@@ -10999,7 +11505,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 508,
@@ -11019,7 +11526,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 509,
@@ -11039,7 +11547,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 510,
@@ -11059,7 +11568,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 511,
@@ -11079,7 +11589,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 512,
@@ -11111,7 +11622,8 @@
           "color": "Floral",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 513,
@@ -11131,7 +11643,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 514,
@@ -11151,7 +11664,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 515,
@@ -11171,7 +11685,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 516,
@@ -11191,7 +11706,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 517,
@@ -11211,7 +11727,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 518,
@@ -11237,7 +11754,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 519,
@@ -11257,7 +11775,8 @@
           "color": "Purple",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 520,
@@ -11277,7 +11796,8 @@
           "color": "Blue",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 521,
@@ -11297,7 +11817,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 522,
@@ -11317,7 +11838,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 523,
@@ -11337,7 +11859,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 524,
@@ -11357,7 +11880,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 525,
@@ -11377,7 +11901,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Stationery & Office"
     },
     {
       "id": 526,
@@ -11397,7 +11922,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 527,
@@ -11423,7 +11949,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 528,
@@ -11443,7 +11970,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 529,
@@ -11463,7 +11991,8 @@
           "color": "",
           "size": "75L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 530,
@@ -11483,7 +12012,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 531,
@@ -11503,7 +12033,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 532,
@@ -11523,7 +12054,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 533,
@@ -11561,7 +12093,8 @@
           "color": "",
           "size": "180L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 534,
@@ -11581,7 +12114,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 535,
@@ -11601,7 +12135,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 536,
@@ -11621,7 +12156,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 537,
@@ -11641,7 +12177,8 @@
           "color": "Gray",
           "size": "50cm"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 538,
@@ -11667,7 +12204,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 539,
@@ -11699,7 +12237,8 @@
           "color": "",
           "size": "5 Layers"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 540,
@@ -11719,7 +12258,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 541,
@@ -11745,7 +12285,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 542,
@@ -11765,7 +12306,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 543,
@@ -11785,7 +12327,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 544,
@@ -11805,7 +12348,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 545,
@@ -11825,7 +12369,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 546,
@@ -11845,7 +12390,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 547,
@@ -11865,7 +12411,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 548,
@@ -11885,7 +12432,8 @@
           "color": "White",
           "size": "28x11"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 549,
@@ -11905,7 +12453,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 550,
@@ -11925,7 +12474,8 @@
           "color": "Gray",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 551,
@@ -11945,7 +12495,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 552,
@@ -11983,7 +12534,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 553,
@@ -12003,7 +12555,8 @@
           "color": "Silver",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 554,
@@ -12029,7 +12582,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 555,
@@ -12055,7 +12609,8 @@
           "color": "Gray",
           "size": "3 Layers"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 556,
@@ -12075,7 +12630,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 557,
@@ -12095,7 +12651,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 558,
@@ -12139,7 +12696,8 @@
           "color": "",
           "size": "75L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 559,
@@ -12177,7 +12735,8 @@
           "color": "",
           "size": "180L"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 560,
@@ -12197,7 +12756,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 561,
@@ -12217,7 +12777,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 562,
@@ -12237,7 +12798,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 563,
@@ -12257,7 +12819,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 564,
@@ -12277,7 +12840,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 565,
@@ -12297,7 +12861,8 @@
           "color": "Gray",
           "size": "45x29"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 566,
@@ -12317,7 +12882,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 567,
@@ -12337,7 +12903,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 568,
@@ -12357,7 +12924,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 569,
@@ -12377,7 +12945,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 570,
@@ -12397,7 +12966,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 571,
@@ -12417,7 +12987,8 @@
           "color": "White",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 572,
@@ -12437,7 +13008,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 573,
@@ -12457,7 +13029,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 574,
@@ -12477,7 +13050,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 575,
@@ -12497,7 +13071,8 @@
           "color": "White",
           "size": "40x30"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 576,
@@ -12517,7 +13092,8 @@
           "color": "",
           "size": "5x50"
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 577,
@@ -12537,7 +13113,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 578,
@@ -12557,7 +13134,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 579,
@@ -12577,7 +13155,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 580,
@@ -12609,7 +13188,8 @@
           "color": "Blue",
           "size": "XL/L"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 581,
@@ -12635,7 +13215,8 @@
           "color": "Multicolor",
           "size": "XL"
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 582,
@@ -12655,7 +13236,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 583,
@@ -12675,7 +13257,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 584,
@@ -12695,7 +13278,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Apparel & Footwear"
     },
     {
       "id": 585,
@@ -12715,7 +13299,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 586,
@@ -12735,7 +13320,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Digital Electronics"
     },
     {
       "id": 587,
@@ -12755,7 +13341,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 588,
@@ -12775,7 +13362,8 @@
           "color": "Black",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 589,
@@ -12795,7 +13383,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 590,
@@ -12815,7 +13404,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 591,
@@ -12835,7 +13425,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 592,
@@ -12855,7 +13446,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 593,
@@ -12875,7 +13467,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 594,
@@ -12895,7 +13488,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 595,
@@ -12915,7 +13509,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 596,
@@ -12935,7 +13530,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 597,
@@ -12955,7 +13551,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 598,
@@ -12975,7 +13572,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 599,
@@ -12995,7 +13593,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 600,
@@ -13015,7 +13614,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 601,
@@ -13035,7 +13635,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 602,
@@ -13055,7 +13656,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 603,
@@ -13075,7 +13677,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 604,
@@ -13095,7 +13698,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 605,
@@ -13115,7 +13719,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 606,
@@ -13135,7 +13740,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 607,
@@ -13155,7 +13761,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 608,
@@ -13175,7 +13782,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 609,
@@ -13201,7 +13809,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 610,
@@ -13221,7 +13830,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 611,
@@ -13259,7 +13869,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 612,
@@ -13279,7 +13890,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 613,
@@ -13299,7 +13911,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 614,
@@ -13319,7 +13932,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 615,
@@ -13339,7 +13953,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 616,
@@ -13359,7 +13974,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 617,
@@ -13379,7 +13995,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 618,
@@ -13399,7 +14016,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 619,
@@ -13419,7 +14037,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 620,
@@ -13439,7 +14058,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 621,
@@ -13459,7 +14079,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 622,
@@ -13479,7 +14100,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 623,
@@ -13499,7 +14121,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 624,
@@ -13519,7 +14142,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 625,
@@ -13539,7 +14163,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 626,
@@ -13559,7 +14184,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 627,
@@ -13579,7 +14205,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 628,
@@ -13599,7 +14226,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 629,
@@ -13619,7 +14247,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 630,
@@ -13639,7 +14268,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 631,
@@ -13659,7 +14289,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 632,
@@ -13679,7 +14310,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 633,
@@ -13699,7 +14331,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 634,
@@ -13719,7 +14352,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 635,
@@ -13739,7 +14373,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 636,
@@ -13759,7 +14394,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 637,
@@ -13779,7 +14415,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 638,
@@ -13799,7 +14436,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 639,
@@ -13819,7 +14457,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 640,
@@ -13839,7 +14478,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 641,
@@ -13859,7 +14499,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 642,
@@ -13879,7 +14520,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 643,
@@ -13899,7 +14541,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 644,
@@ -13919,7 +14562,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 645,
@@ -13939,7 +14583,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 646,
@@ -13977,7 +14622,8 @@
           "color": "Blue",
           "size": "16寸"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 647,
@@ -14003,7 +14649,8 @@
           "color": "Pink",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 648,
@@ -14023,7 +14670,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 649,
@@ -14043,7 +14691,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 650,
@@ -14063,7 +14712,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 651,
@@ -14083,7 +14733,8 @@
           "color": "",
           "size": "5寸"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 652,
@@ -14103,7 +14754,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 653,
@@ -14123,7 +14775,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 654,
@@ -14143,7 +14796,8 @@
           "color": "",
           "size": "S"
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 655,
@@ -14163,7 +14817,8 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     },
     {
       "id": 656,
@@ -14183,7 +14838,27 @@
           "color": "",
           "size": ""
         }
-      ]
+      ],
+      "mainCategory": "Baby & Toys"
     }
+  ],
+  "categories": [
+    "Apparel & Footwear",
+    "Auto Parts & Tools",
+    "Baby & Toys",
+    "Bags & Luggage",
+    "Beauty & Personal Care",
+    "Digital Electronics",
+    "Hardware & Home",
+    "Home & Daily Living",
+    "Home Appliances",
+    "Kitchen Supplies",
+    "Material",
+    "Musical Instruments",
+    "Others",
+    "Pet Supplies",
+    "Phone Accessories",
+    "Sports & Outdoor",
+    "Stationery & Office"
   ]
 }

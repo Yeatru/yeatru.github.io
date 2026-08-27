@@ -1,4 +1,135 @@
-const DEFAULT_CATEGORIES = ["Electronics", "Home & Garden", "Kitchenware", "Toys", "Apparel"];
+// ============================================================
+// UI Main Categories (the 17 filter pills shown on products.html).
+// Matches the filter buttons shown to buyers.
+// ============================================================
+const UI_MAIN_CATEGORIES = [
+    "Apparel & Footwear", "Auto Parts & Tools", "Baby & Toys",
+    "Bags & Luggage", "Beauty & Personal Care", "Digital Electronics",
+    "Hardware & Home", "Home & Daily Living", "Home Appliances",
+    "Kitchen Supplies", "Material", "Musical Instruments", "Others",
+    "Pet Supplies", "Phone Accessories", "Sports & Outdoor",
+    "Stationery & Office",
+];
+
+// ============================================================
+// Mapping: Excel AA-730 sub-category (product.category) → UI main category.
+// This is THE fix for "I click Apparel & Footwear and see 0 products"
+// and "Apparel shows earplugs / embossing molds".
+// ============================================================
+const SUB_TO_MAIN_CATEGORY = {
+    "Clothing":"Apparel & Footwear","Shoes":"Apparel & Footwear","Swimwear":"Apparel & Footwear",
+    "Socks":"Apparel & Footwear","Hair Accessories":"Apparel & Footwear","Footwear":"Apparel & Footwear",
+    "Accessories":"Apparel & Footwear",
+    "Auto Repair Tools":"Auto Parts & Tools","Auto Accessories":"Auto Parts & Tools",
+    "Toys":"Baby & Toys","Baby Care":"Baby & Toys","Kids":"Baby & Toys",
+    "Bags":"Bags & Luggage","Backpacks":"Bags & Luggage",
+    "Skin Care":"Beauty & Personal Care","Beauty":"Beauty & Personal Care",
+    "Personal Care":"Beauty & Personal Care","Massage":"Beauty & Personal Care",
+    "Microphones/Audio":"Digital Electronics","Audio/Electronics":"Digital Electronics",
+    "Smart Electronics":"Digital Electronics","Audio/Video":"Digital Electronics",
+    "Electronics":"Digital Electronics","Tablets":"Digital Electronics",
+    "Hardware":"Hardware & Home","Locks":"Hardware & Home",
+    "Home & Garden":"Home & Daily Living","Household":"Home & Daily Living",
+    "Cleaning":"Home & Daily Living","Lighting":"Home & Daily Living",
+    "Storage & Organization":"Home & Daily Living","Fans":"Home & Daily Living",
+    "Kitchen/Bath":"Home & Daily Living",
+    "Dry Goods":"Home Appliances",
+    "Kitchen Storage":"Kitchen Supplies","Kitchen Tools":"Kitchen Supplies","Cups & Drinkware":"Kitchen Supplies",
+    "Material":"Material","OFC":"Material","KAP":"Material","MSF":"Material","PET":"Material",
+    "Musical Instruments":"Musical Instruments",
+    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Others",
+    "Dog Supplies":"Pet Supplies","Pet Supplies":"Pet Supplies",
+    "Mobile Accessories":"Phone Accessories","Screen Protectors":"Phone Accessories",
+    "Fitness":"Sports & Outdoor",
+    "Stationery":"Stationery & Office",
+};
+
+// Given a product (object) or a raw sub-category string, return its UI main category.
+function resolveMainCategory(input) {
+    if (!input) return "Others";
+    const sub = (typeof input === "object") ? (input.mainCategory || input.category) : input;
+    if (typeof sub === "string" && UI_MAIN_CATEGORIES.indexOf(sub) !== -1) return sub;
+    if (typeof input === "object" && typeof input.mainCategory === "string"
+        && UI_MAIN_CATEGORIES.indexOf(input.mainCategory) !== -1) return input.mainCategory;
+    const raw = (typeof input === "object") ? (input.category || "") : String(input);
+    return SUB_TO_MAIN_CATEGORY[raw] || "Others";
+}
+
+// ============================================================
+// Placeholder image (inline SVG data URI) for broken CDN images.
+// Matches Yeatru branding so cards never have a broken-img icon.
+// ============================================================
+const YEASTRU_PLACEHOLDER_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs>' +
+    '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0%" stop-color="#EEF2FF"/><stop offset="100%" stop-color="#444CE7"/></linearGradient></defs>' +
+    '<rect width="800" height="800" fill="url(#g)"/>' +
+    '<circle cx="400" cy="350" r="90" fill="white" fill-opacity="0.9"/>' +
+    '<text x="400" y="385" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="90" font-weight="800" fill="#444CE7">YC</text>' +
+    '<text x="400" y="530" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="700" fill="#1E293B">Yeatru Sourcing</text>' +
+    '<text x="400" y="600" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="28" fill="#334155">Wholesale from China · 75K+ Factories</text>' +
+    '<text x="400" y="680" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="22" fill="#444CE7" font-weight="700">Free Quote in 24h · WhatsApp +86 159 8851 6408</text>' +
+    '</svg>'
+);
+
+// Install onerror fallback on every <img> in product lists, detail page, and homepage.
+function installImageFallback(root) {
+    const scope = root || document;
+    const imgs = scope.querySelectorAll("img");
+    imgs.forEach(function (img) {
+        if (img.dataset.yeatruFallbackInstalled) return;
+        img.dataset.yeatruFallbackInstalled = "1";
+        const setFallback = function () {
+            if (img.src !== YEASTRU_PLACEHOLDER_SVG) {
+                img.src = YEASTRU_PLACEHOLDER_SVG;
+                img.classList.add("product-img-fallback");
+                img.onerror = null;
+            }
+        };
+        img.addEventListener("error", setFallback);
+        // Some images already loaded broken before listener attached
+        if (img.complete && img.naturalWidth === 0) {
+            setFallback();
+        }
+    });
+}
+
+// Brand logo (inline SVG) — shows real "YC" branded logo in top-left nav bar.
+const YEASTRU_BRAND_LOGO_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#444CE7"/>' +
+    '<text x="24" y="33" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="white">YC</text>' +
+    '</svg>'
+);
+
+function applyBrandLogo() {
+    // 1) <img class="brand-logo-img"> if page already has the slot
+    document.querySelectorAll("img.brand-logo-img, img.js-brand-logo").forEach(function (img) {
+        if (!img.src || img.src.indexOf("brand-logo") !== -1 || img.getAttribute("src") === "") {
+            img.src = YEASTRU_BRAND_LOGO_SVG;
+            img.alt = "Yeatru Sourcing Logo";
+            img.onerror = null;
+        }
+    });
+    // 2) Replace the fallback "YC" text span with an img tag inside .brand-logo-box
+    document.querySelectorAll(".brand-logo-box").forEach(function (box) {
+        if (box.querySelector("img.brand-logo-img")) return;
+        const existing = box.querySelector(".brand-logo-fallback");
+        const img = document.createElement("img");
+        img.className = "brand-logo-img";
+        img.src = YEASTRU_BRAND_LOGO_SVG;
+        img.alt = "Yeatru Sourcing Logo";
+        img.style.width = "36px";
+        img.style.height = "36px";
+        img.style.display = "block";
+        img.style.borderRadius = "10px";
+        if (existing) existing.remove();
+        box.insertBefore(img, box.firstChild);
+    });
+}
+
+// DEFAULT_CATEGORIES now equals the 17 UI main categories (matches screenshot buttons).
+const DEFAULT_CATEGORIES = UI_MAIN_CATEGORIES.slice();
+
 const REMOTE_DATA_URL = "./site-data.json";
 const APLUS_DATA_URL = "./site-data-aplus.json";
 let aplusDataCache = null;
@@ -539,6 +670,21 @@ document.addEventListener('DOMContentLoaded', function () {
         // chosen currency in localStorage is respected.
         applyUsdPricePlaceholders();
         initVariantSelection();
+        // Apply the inline SVG Yeatru brand logo (fixes "no logo in top-left nav").
+        applyBrandLogo();
+        // Install image fallback: if any CDN product image 404s, replace it
+        // with a branded inline SVG (never shows the broken-image icon).
+        installImageFallback();
+        // Re-apply fallback whenever new product cards are rendered (detail page,
+        // hot products widget, search results, etc.).
+        const origRenderProducts = window.renderProducts;
+        if (origRenderProducts) {
+            window.renderProducts = function () {
+                const result = origRenderProducts.apply(this, arguments);
+                requestAnimationFrame(function () { installImageFallback(); });
+                return result;
+            };
+        }
 
     } catch (e) {
         console.error('[init] Error during initialization:', e);
@@ -1364,13 +1510,17 @@ function renderProducts() {
     const filterInfo = document.getElementById('filterResultInfo');
     if (!productList) return;
 
-    // 1) Category filter
+    // 1) Category filter — use resolveMainCategory so the UI's big-category pills
+    //    (e.g. "Apparel & Footwear") correctly match products whose raw category is
+    //    a sub-category like "Clothing", "Shoes", "Accessories", etc.
     let filtered = currentFilterCategory === 'all'
         ? products
-        : products.filter(p => p.category === currentFilterCategory);
+        : products.filter(function (p) {
+            return resolveMainCategory(p) === currentFilterCategory;
+        });
 
     // 2) Keyword/SKU search filter. Matches case-insensitively against:
-    //    sku, name, description, category, material, size, tags.
+    //    sku, name, description, category, mainCategory, material, size, tags.
     if (currentSearchQuery && currentSearchQuery.trim()) {
         const q = currentSearchQuery.trim().toLowerCase();
         const tokens = q.split(/\s+/).filter(Boolean);
@@ -1380,6 +1530,7 @@ function renderProducts() {
                 p.name,
                 p.description,
                 p.category,
+                p.mainCategory,
                 p.material,
                 p.size,
                 p.moq,

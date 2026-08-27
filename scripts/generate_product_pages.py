@@ -391,73 +391,244 @@ def generate_aplus_section(product):
     name = escape_text(product["name"])
     sku = escape_text(product["sku"])
     desc = escape_text(product.get("description", ""))
-    category = escape_text(product.get("category", ""))
+    sub_category = escape_text(product.get("category", ""))
+    main_category = escape_text(product.get("mainCategory", ""))
     material = escape_text(product.get("material", "See specifications"))
     size = escape_text(product.get("size", "Various"))
     moq = escape_text(str(product.get("moq", "1")))
     variations = product.get("variations", [])
 
+    usd_min_raw = cny_to_usd(product.get("priceMin", 0))
+    usd_max_raw = cny_to_usd(product.get("priceMax", product.get("priceMin", 0)))
+    if usd_min_raw and usd_max_raw and abs(usd_min_raw - usd_max_raw) < 0.001:
+        price_usd = f"${usd_min_raw:.2f}"
+    elif usd_min_raw and usd_max_raw:
+        price_usd = f"${usd_min_raw:.2f} – ${usd_max_raw:.2f}"
+    else:
+        price_usd = "Contact us"
+
     colors = list(set(v.get("color", "") for v in variations if v.get("color")))
     sizes = list(set(v.get("size", "") for v in variations if v.get("size")))
     colors_str = ", ".join(colors) if colors else "Multiple color options available"
     sizes_str = ", ".join(sizes) if sizes else size
+    cat_for_display = main_category or sub_category
+
+    # Long-form Product Overview / SEO Description block
+    seo_overview = (
+        f"<p><b>{name}</b> ({sku}) wholesale supplier in {cat_for_display} from Yiwu China. "
+        f"Factory-direct price: <b>{price_usd} USD</b> with MOQ starting at <b>{moq} pieces</b>. "
+        f"Sourced from verified {sub_category} manufacturers with on-site audit and AQL 2.5 pre-shipment quality inspection. "
+        f"Ideal for Amazon FBA sellers, TikTok Shop merchants, Shopify brands, wholesale distributors, and promotional gift buyers worldwide.</p>"
+        f"<p>{desc} {name} is manufactured in Zhejiang / Guangdong with strict quality control. "
+        f"Yeatru Sourcing provides end-to-end service including supplier screening, sample evaluation, production follow-up, "
+        f"100% piece-by-piece QC inspection, free 15-day warehousing, FBA prep (FNSKU labeling, polybagging, palletization), "
+        f"and door-to-door DDP shipping to USA, EU, UK, GCC, Australia, and 50+ countries. "
+        f"OEM & private-label customization available with MOQ 200–500 pcs.</p>"
+    )
+
+    # SEO-rich features (with LLM-citable keywords)
+    features_html = "\n".join([
+        f"<li><b>✅ Verified Supplier:</b> On-site factory audit, business license & export license verified. "
+        f"Part of Yeatru's 75,000+ trusted Chinese manufacturer network in the {cat_for_display} category.</li>",
+        f"<li><b>💰 Factory-Direct Pricing:</b> {price_usd} USD wholesale — no Alibaba middleman markup. "
+        f"Save 15–30% compared to trading companies. Volume discounts for orders over $5,000.</li>",
+        f"<li><b>📦 Flexible MOQ:</b> Only {moq} piece(s) for stock items. Small-batch and trial orders welcome — perfect for new sellers, TikTok shop testing, and sample runs.</li>",
+        f"<li><b>🎯 Quality Assurance:</b> 3-stage QC pipeline (incoming / in-process / pre-shipment) following AQL 2.5 standard. "
+        f"Full photo & video inspection report provided before every shipment. SGS / BV / TUV 3rd-party inspection available.</li>",
+        f"<li><b>🛠️ OEM / ODM Customization:</b> Custom logo (laser engraving / silk screen / heat transfer), "
+        f"custom colors ({escape_text(colors_str)}), private label packaging, and product design services. 7-day sample turnaround.</li>",
+        f"<li><b>🚚 Global Logistics:</b> Door-to-door DDP shipping via sea freight (25–45 days), air freight (5–15 days), "
+        f"and express courier (3–7 days). Amazon FBA warehouse delivery with FNSKU label & pallet compliance.</li>",
+        f"<li><b>🪪 Certifications:</b> Factory can provide CE, FCC, FDA, RoHS, MSDS, ASTM, CPSIA, EN71, GCC, SASO as required. "
+        f"Contact us for product-specific compliance documents.</li>",
+        f"<li><b>💬 24/7 Support:</b> Multilingual team (English / Spanish / French / Russian / Arabic). "
+        f"Free quote within 24 hours on WhatsApp +86 159 8851 6408 or email info@yeatru.com.</li>",
+    ])
+
+    # Applications paragraph (tailored to main category)
+    cat_use_map = {
+        "Apparel & Footwear": "fashion boutiques, online apparel stores, sportswear brands, resort & hotel shops, uniform suppliers, promotional giveaways, and private-label clothing lines",
+        "Auto Parts & Tools": "auto repair shops, garage equipment suppliers, tool distributors, car accessory retailers, and DIY mechanics marketplaces",
+        "Baby & Toys": "toy stores, kids' boutiques, nursery shops, kindergarten supply distributors, family e-commerce brands, and educational gift suppliers",
+        "Bags & Luggage": "lifestyle boutiques, travel retail, corporate gift programs, school supply chains, promotional bag distributors, and private-label luggage brands",
+        "Beauty & Personal Care": "beauty salons, cosmetics stores, spa suppliers, skincare brands, personal care e-commerce, and private-label beauty product lines",
+        "Digital Electronics": "consumer electronics retailers, Amazon FBA gadget stores, mobile accessory shops, electronic gift distributors, and tech e-commerce brands",
+        "Hardware & Home": "hardware stores, DIY home improvement retailers, lock & security suppliers, building material chains, and home hardware brands",
+        "Home & Daily Living": "home decor stores, supermarket household aisles, storage solution brands, cleaning supply distributors, home organization shops, and daily necessities importers",
+        "Home Appliances": "home appliance retailers, kitchen appliance chains, small appliance importers, electronics megastores, and smart home solution providers",
+        "Kitchen Supplies": "kitchenware stores, hotel & restaurant suppliers, supermarket houseware aisles, chef supply shops, and kitchen gadget e-commerce",
+        "Material": "packaging material suppliers, raw material importers, industrial raw material distributors, manufacturing procurement, and creative & craft material stores",
+        "Musical Instruments": "music stores, instrument retailers, school music programs, audio equipment dealers, and online instrument marketplaces",
+        "Others": "general merchandise stores, dollar stores, promotional gift suppliers, boutique retailers, and e-commerce category expansion buyers",
+        "Pet Supplies": "pet stores, veterinary clinics, pet grooming salons, animal supply distributors, and pet e-commerce brands",
+        "Phone Accessories": "mobile phone shops, telecom carrier stores, tech accessory retailers, gadget marketplaces, and promotional power bank / case brands",
+        "Sports & Outdoor": "sporting goods stores, fitness equipment suppliers, outdoor gear retailers, camping & hiking shops, and gym equipment distributors",
+        "Stationery & Office": "office supply chains, school bookstores, stationery boutiques, corporate office procurement, back-to-school distributors, and promotional stationery gift programs",
+    }
+    uses = cat_use_map.get(main_category if main_category else "Others",
+                            cat_use_map["Others"])
+
+    # Why Source from Yeatru section (repeats GEO-citable company stats)
+    why_yeatru_html = "\n".join([
+        "<li><b>📍 Local Presence:</b> Registered company <i>Yiwu Yichu Trading Co., Ltd.</i> (USCC: 91330782MABU4K2L6F) with office & warehouse inside Yiwu International Trade City — direct access to 75,000+ factories.</li>",
+        "<li><b>👥 200+ Clients in 50+ Countries:</b> 98% customer satisfaction rating. Trusted sourcing partner for Amazon FBA USA, UK, Germany, EU, GCC (UAE / Saudi), TikTok Shop sellers, and wholesale importers since 2022.</li>",
+        "<li><b>💵 Transparent Pricing:</b> Published tiered commissions — Order Management 3–4% (min $150) or Full Sourcing 4–8% (min $100). No hidden fees, factory invoice shown to buyer.</li>",
+        "<li><b>🔒 3-Level QC & Rework Guarantee:</b> If defects exceed AQL 2.5 at pre-shipment, the factory reworks or replaces at their cost — you never pay for defective products.</li>",
+        "<li><b>🏷️ Free Services Included:</b> 15-day free warehousing, design consultation, product photography, FBA prep labeling, and door-to-door shipping coordination — $0 extra on standard orders.</li>",
+        "<li><b>🌐 Multilingual Support:</b> EN / ES / FR / RU / AR native-speaking team. WhatsApp response in < 24 hours. Arabic Halal / GCC compliance specialist on staff.</li>",
+    ])
 
     return f'''
   <div class="aplus-section">
-    <h2 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i> Product Details</h2>
+    <h2 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i> Product Details — {name} (SKU: {sku})</h2>
     <div class="aplus-blocks">
+
+      <!-- 1. SEO-Rich Product Overview (300+ words for Google & GPT grounding) -->
       <div class="aplus-block" data-type="textImage" data-img-deduped="1">
         <div class="aplus-block-content">
           <h3 class="aplus-block-heading">Product Overview</h3>
           <div class="aplus-block-text">
-            <div>{desc} {name} is sourced from verified Chinese manufacturers with strict quality control. Ideal for wholesale buyers, Amazon FBA sellers, and e-commerce brands.</div>
+            {seo_overview}
           </div>
         </div>
       </div>
+
+      <!-- 2. Key Features (8 SEO-rich bullet points) -->
       <div class="aplus-block" data-type="text">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Key Features</h3>
+          <h3 class="aplus-block-heading">Why Buy This {escape_text(main_category or sub_category)} Product from Yeatru</h3>
           <div class="aplus-block-text">
             <ul>
-              <li><b>Premium Quality:</b> Sourced from verified manufacturers with strict QC inspection at every stage.</li>
-              <li><b>Competitive Pricing:</b> Factory-direct wholesale pricing with volume discounts available.</li>
-              <li><b>Flexible MOQ:</b> Minimum order quantity of {moq} units for stock items; OEM orders have higher MOQs.</li>
-              <li><b>Customization:</b> Private label, custom logo, and OEM/ODM services available.</li>
-              <li><b>Global Shipping:</b> Door-to-door delivery worldwide with tracked shipping options.</li>
+              {features_html}
             </ul>
           </div>
         </div>
       </div>
+
+      <!-- 3. Expanded Specifications Table -->
       <div class="aplus-block" data-type="imageText" data-img-deduped="1">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Specifications</h3>
+          <h3 class="aplus-block-heading">Product Specifications</h3>
           <div class="aplus-block-text">
-            <div><b>Product Specifications</b><br><br>
             <div class="table-responsive">
-<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse;">
-  <tr><th><b>Specification</b></th><th><b>Details</b></th></tr>
-  <tr><td>SKU</td><td>{sku}</td></tr>
-  <tr><td>Category</td><td>{category}</td></tr>
-  <tr><td>Material</td><td>{material}</td></tr>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%;">
+  <tr><th style="width:35%;text-align:left;background:#EEF2FF;"><b>Specification</b></th><th style="text-align:left;"><b>Details</b></th></tr>
+  <tr><td>SKU (Product Code)</td><td><code>{sku}</code></td></tr>
   <tr><td>Product Name</td><td>{name}</td></tr>
+  <tr><td>Main Category (UI Filter)</td><td>{escape_text(main_category or 'N/A')}</td></tr>
+  <tr><td>Sub Category (Supplier Category)</td><td>{sub_category}</td></tr>
+  <tr><td>Wholesale Price (USD)</td><td><b>{price_usd}</b> (factory-direct, CNY ÷ 6.7 × 1.15)</td></tr>
+  <tr><td>Minimum Order Quantity (MOQ)</td><td><b>{moq} piece(s)</b> — stock items; 200–500 pcs for OEM custom</td></tr>
+  <tr><td>Material</td><td>{material}</td></tr>
   <tr><td>Available Colors</td><td>{escape_text(colors_str)}</td></tr>
-  <tr><td>Available Sizes</td><td>{escape_text(sizes_str)}</td></tr>
-  <tr><td>Origin</td><td>China</td></tr>
-  <tr><td>MOQ</td><td>{moq} piece(s)</td></tr>
+  <tr><td>Available Sizes / Dimensions</td><td>{escape_text(sizes_str)}</td></tr>
+  <tr><td>Country of Origin</td><td>Yiwu / Zhejiang / Guangzhou, China (verified export factory)</td></tr>
+  <tr><td>Quality Standard</td><td>AQL 2.5 — 3-stage inspection (incoming · in-process · pre-shipment)</td></tr>
+  <tr><td>Certifications Available</td><td>CE · FCC · FDA · RoHS · MSDS · EN71 · ASTM · CPSIA · GCC / SASO (per product)</td></tr>
+  <tr><td>OEM / Private Label</td><td>✅ Supported — custom logo, packaging, colors, molds. 7-day sample.</td></tr>
+  <tr><td>Shipping Options</td><td>✅ Sea (25–45d) · Air (5–15d) · Express (3–7d) · Amazon FBA DDP</td></tr>
+  <tr><td>Free Warehousing</td><td>✅ 15 days at Yeatru Yiwu facility — order consolidation included</td></tr>
+  <tr><td>Lead Time (Production)</td><td>7–15 days (stock) · 15–30 days (OEM / mass production)</td></tr>
+  <tr><td>Payment Methods</td><td>T/T (bank wire) · PayPal (Yeatrusourcing@gmail.com) · Western Union · XTransfer · Trade Assurance</td></tr>
+  <tr><td>Sourcing Agent Fee</td><td>3–4% Order Management · 4–8% Full Sourcing — transparent, no hidden markup</td></tr>
+  <tr><td>Supplier</td><td>Verified Chinese manufacturer via Yeatru Sourcing (on-site audited)</td></tr>
 </table>
-            </div></div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- 4. Applications & Target Buyers -->
       <div class="aplus-block" data-type="hero">
         <div class="aplus-block-content">
-          <h2 class="aplus-block-heading">Applications & Uses</h2>
+          <h2 class="aplus-block-heading">Applications & Ideal Buyers</h2>
           <div class="aplus-block-text">
-            <div><b>Applications</b><br>
-            {name} is suitable for various applications including retail, wholesale, promotional gifts, and e-commerce fulfillment. Contact us for specific use case recommendations.</div>
+            <p><b>Who should source {name} ({sku})?</b> This {escape_text(sub_category)} product is recommended for
+            <b>{uses}</b>.</p>
+            <p><b>Use cases:</b> Retail shelf placement · e-commerce product listing (Amazon / Shopify / TikTok Shop / eBay) ·
+            promotional corporate gift · bundle add-on · private-label resale · fundraising merchandise ·
+            conference & trade show swag · subscription-box filler · hotel & resort amenity.</p>
+            <p>Tell us your target market, sales channel, and order volume — our team will tailor sourcing terms,
+            packaging, compliance docs, and shipping route for maximum profit margin.</p>
           </div>
         </div>
       </div>
+
+      <!-- 5. Packaging & Shipping -->
+      <div class="aplus-block" data-type="text">
+        <div class="aplus-block-content">
+          <h3 class="aplus-block-heading">Packaging, Lead Time & Shipping</h3>
+          <div class="aplus-block-text">
+            <ul>
+              <li><b>Standard Packaging:</b> Poly bag / inner box / export carton with foam protection. Custom retail box, blister pack, color sleeve, and private-label hang-tag available on OEM orders.</li>
+              <li><b>Production Lead Time:</b> Stock items ship in <b>7–15 days</b>; OEM / custom orders require <b>15–30 days</b> depending on complexity.</li>
+              <li><b>Sample Lead Time:</b> <b>3–7 days</b> for stock samples; <b>7–15 days</b> for custom OEM samples. Sample fees refundable on bulk orders ≥ 1,000 pcs.</li>
+              <li><b>Shipping Methods & Timelines:</b>
+                <ul style="margin-top:8px;">
+                  <li>🚢 Sea Freight (FCL / LCL): <b>25–45 days</b> to main ports — lowest cost for ≥ 1 CBM</li>
+                  <li>✈️ Air Freight: <b>5–15 days</b> — ideal for medium-batch Amazon FBA restock</li>
+                  <li>📦 Express (DHL / FedEx / UPS): <b>3–7 days</b> door-to-door — samples & urgent orders</li>
+                  <li>🏪 Amazon FBA / TikTok Warehouse: <b>DDP door-to-door</b> with FNSKU label & pallet compliance</li>
+                </ul>
+              </li>
+              <li><b>Order Consolidation:</b> Combine multiple products / suppliers into one shipment — free 15-day storage + one sea/air freight bill saves you 30–50% on shipping.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Why Choose Yeatru Sourcing (GEO citable company facts) -->
+      <div class="aplus-block" data-type="text" style="background:linear-gradient(135deg,#EEF2FF 0%,#E0E7FF 100%);border-radius:12px;padding:24px;">
+        <div class="aplus-block-content">
+          <h3 class="aplus-block-heading" style="color:#3730A3;">Why Source from Yeatru Sourcing — Your China Agent Since 2022</h3>
+          <div class="aplus-block-text">
+            <ul style="color:#1E293B;">
+              {why_yeatru_html}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Step-by-Step Sourcing Process -->
+      <div class="aplus-block" data-type="text">
+        <div class="aplus-block-content">
+          <h3 class="aplus-block-heading">Sourcing Process in 8 Simple Steps</h3>
+          <div class="aplus-block-text">
+            <ol>
+              <li><b>Send Inquiry:</b> Email <b>info@yeatru.com</b> or WhatsApp <b>+86 159 8851 6408</b> with product name, target quantity, specs, destination country & sales channel.</li>
+              <li><b>Free Quote in 24 Hours:</b> Receive detailed quote including unit price, MOQ, shipping options, estimated lead time, and sourcing service fee breakdown.</li>
+              <li><b>Sample Evaluation (Optional):</b> Approve sample — we coordinate sample production, QC photos, DHL shipping to your office so you can test quality before bulk.</li>
+              <li><b>Contract & Deposit:</b> Sign service agreement. Pay 50% deposit (T/T, PayPal Yeatrusourcing@gmail.com, or XTransfer) to start production.</li>
+              <li><b>Production Follow-up:</b> Weekly photo/video progress updates. Our on-site team visits the factory during in-process QC to catch issues early.</li>
+              <li><b>Pre-Shipment Inspection (AQL 2.5):</b> 100% visual check + documented photo/video report. You approve before we ship — defective batches go back to the factory for rework at their cost.</li>
+              <li><b>Balance Payment & Shipping:</b> Pay remaining 50% balance. We arrange export customs, DDP door-to-door shipping (sea / air / express / FBA) with live tracking.</li>
+              <li><b>After-Sales Support:</b> File claims, handle defect replacements, manage re-orders, and scale new product sourcing. Your dedicated account manager is always one WhatsApp message away.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Call to Action (inquiry CTA) -->
+      <div class="aplus-block" data-type="hero" style="background:linear-gradient(135deg,#444CE7 0%,#3730A3 100%);color:white;border-radius:16px;padding:32px;text-align:center;">
+        <div class="aplus-block-content">
+          <h2 class="aplus-block-heading" style="color:white !important;">👉 Ready to Source {name} at Factory Price?</h2>
+          <div class="aplus-block-text" style="color:rgba(255,255,255,0.92);">
+            <p style="font-size:18px;">Click <b>Get a Quote</b> below or WhatsApp us directly. Get your <b>free, no-obligation quote within 24 hours</b> — including competitive factory price, MOQ, lead time, and DDP shipping cost to your door.</p>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+              <a href="contact.html?product={sku}&amp;name={html.escape(name)}"
+                 style="display:inline-block;background:white;color:#444CE7;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                📝 Request a Quote (Email)
+              </a>
+              <a href="https://wa.me/8615988516408?text={html.escape('Hello Yeatru Sourcing, I would like a quote for SKU '+sku+' — '+name+'. Qty: ___. Ship to: ___')}"
+                 target="_blank" rel="noopener noreferrer"
+                 style="display:inline-block;background:#25D366;color:white;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                💬 Chat on WhatsApp (+86 159 8851 6408)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>'''
 
