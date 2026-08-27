@@ -28,6 +28,53 @@ EXCHANGE_RATES = {
 }
 
 
+def generate_meta_description(product):
+    sku = product["sku"]
+    name = product["name"]
+    category = product.get("category", "")
+    price_min = product.get("priceMin", 0)
+    price_max = product.get("priceMax", price_min)
+    moq = product.get("moq", 1)
+    variations = product.get("variations", [])
+
+    usd_min = cny_to_usd(price_min)
+    usd_max = cny_to_usd(price_max)
+
+    colors = list(set(v.get("color", "") for v in variations if v.get("color")))
+    sizes = list(set(v.get("size", "") for v in variations if v.get("size")))
+    color_info = f", colors: {', '.join(colors[:2])}" if colors else ""
+    size_info = f", sizes: {', '.join(sizes[:2])}" if sizes else ""
+
+    if usd_min is not None and usd_max is not None:
+        if abs(usd_min - usd_max) < 0.001:
+            price_text = f"${usd_min:.2f}"
+        else:
+            price_text = f"${usd_min:.2f}-${usd_max:.2f}"
+    else:
+        price_text = "contact"
+
+    sku_short = sku.replace("YCS-", "")
+
+    desc = (
+        f"{name} wholesale supplier from China. "
+        f"Price: {price_text} USD, MOQ {moq} pcs{color_info}{size_info}. "
+        f"Verified manufacturer, quality inspected. "
+        f"SKU:{sku_short}."
+    )
+
+    if len(desc) < 150:
+        desc += (
+            f" Yeatru Sourcing is a professional China sourcing agent "
+            f"helping importers worldwide find reliable suppliers. "
+            f"OEM/ODM, private label, Amazon FBA ready."
+        )
+
+    if len(desc) > 160:
+        desc = desc[:157].rsplit(" ", 1)[0] + "..."
+
+    return desc
+
+
 def cny_to_usd(cny_value):
     try:
         return (float(cny_value) / CNY_TO_USD_RATE) * PRICE_MARKUP
@@ -426,7 +473,7 @@ def generate_product_page(product, all_products):
     desc = product.get("description", "")
 
     title = f"{name} | Yeatru"
-    meta_desc = f"{desc[:160]}" if desc else f"{name} - wholesale {category.lower()}, bulk supplier, factory direct, China sourcing, SKU: {sku}"
+    meta_desc = generate_meta_description(product)
     meta_keywords = f"{name}, {category}, {sku}, wholesale, China sourcing, factory price, Yeatru Sourcing"
 
     breadcrumb_json = generate_json_ld_breadcrumb(product)
