@@ -55,24 +55,58 @@ def generate_meta_description(product):
 
     sku_short = sku.replace("YCS-", "")
 
-    desc = (
-        f"{name} wholesale supplier from China. "
-        f"Price: {price_text} USD, MOQ {moq} pcs{color_info}{size_info}. "
-        f"Verified manufacturer, quality inspected. "
-        f"SKU:{sku_short}."
-    )
+    # Build template parts
+    header = "{name} wholesale from China. "
+    price_part = f"Price: {price_text} USD, MOQ {moq} pcs{color_info}{size_info}. "
+    verify_part = "Verified manufacturer. SKU:" + sku_short + ". "
+    footer = "Yeatru Sourcing - trusted China agent for 200+ importers. Factory-direct prices, OEM/ODM, global shipping."
 
-    if len(desc) < 150:
-        desc += (
-            f" Yeatru Sourcing is a professional China sourcing agent "
-            f"helping importers worldwide find reliable suppliers. "
-            f"OEM/ODM, private label, Amazon FBA ready."
-        )
+    # Calculate fixed parts length
+    fixed_len = len(header.format(name="")) + len(price_part) + len(verify_part) + len(footer)
+
+    # Calculate max name length to keep total <= 160
+    max_name_len = 160 - fixed_len
+    if max_name_len < 20:
+        max_name_len = 20
+
+    safe_name = name if len(name) <= max_name_len else name[:max_name_len].rsplit(" ", 1)[0]
+    if not safe_name:
+        safe_name = name[:max_name_len]
+
+    desc = (
+        f"{safe_name} wholesale from China. "
+        f"Price: {price_text} USD, MOQ {moq} pcs{color_info}{size_info}. "
+        f"Verified manufacturer. SKU:{sku_short}. "
+        f"Yeatru Sourcing - trusted China agent for 200+ importers. "
+        f"Factory-direct prices, OEM/ODM, global shipping."
+    )
 
     if len(desc) > 160:
         desc = desc[:157].rsplit(" ", 1)[0] + "..."
 
+    # Fallback: if still < 150, add category context
+    if len(desc) < 150 and category:
+        desc += f" Category: {category}."
+        if len(desc) > 160:
+            desc = desc[:157].rsplit(" ", 1)[0] + "..."
+
     return desc
+
+
+def generate_title(product):
+    sku = product["sku"]
+    name = product["name"]
+    category = product.get("category", "")
+    sku_short = sku.replace("YCS-", "")
+
+    title = f"{name} Wholesale Supplier | Yeatru [{sku_short}]"
+
+    if len(title) > 70:
+        title = f"{name} Wholesale | Yeatru [{sku_short}]"
+        if len(title) > 70:
+            title = f"{name[:55].rsplit(' ', 1)[0]}... | Yeatru [{sku_short}]"
+
+    return title
 
 
 def cny_to_usd(cny_value):
@@ -472,7 +506,7 @@ def generate_product_page(product, all_products):
     image = product.get("image", "")
     desc = product.get("description", "")
 
-    title = f"{name} | Yeatru"
+    title = generate_title(product)
     meta_desc = generate_meta_description(product)
     meta_keywords = f"{name}, {category}, {sku}, wholesale, China sourcing, factory price, Yeatru Sourcing"
 
@@ -488,6 +522,12 @@ def generate_product_page(product, all_products):
     usd_max = cny_to_usd(var_max)
     price_text = format_usd(usd_min) if usd_min else "Contact"
 
+    og_image_width = 800
+    og_image_height = 800
+
+    og_price_amount = f"{usd_min:.2f}" if usd_min is not None else ""
+    og_price_currency = "USD"
+
     variations_html = generate_variations_section(product)
     price_display_html = generate_price_display(product)
     spec_table_html = generate_detail_spec_table(product)
@@ -500,6 +540,9 @@ def generate_product_page(product, all_products):
     sku_esc = escape_text(sku)
     desc_esc = escape_text(desc)
     image_esc = escape_attr(image)
+    title_esc = escape_attr(title)
+    meta_desc_esc = escape_attr(meta_desc)
+    canonical_url = f"https://www.yeatru.com/product-{sku}.html"
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -514,31 +557,44 @@ def generate_product_page(product, all_products):
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>{escape_text(title)}</title>
-  <meta name="description" content="{escape_attr(meta_desc)}">
+  <title>{title_esc}</title>
+  <meta name="description" content="{meta_desc_esc}">
   <meta name="keywords" content="{escape_attr(meta_keywords)}">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.yeatru.com/product-{sku}.html">
+  <meta name="author" content="Yeatru Sourcing">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#444CE7">
+  <link rel="canonical" href="{canonical_url}">
   <meta property="og:type" content="product">
-  <meta property="og:url" content="https://www.yeatru.com/product-{sku}.html">
-  <meta property="og:image" content="{image_esc}">
-  <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="800">
-  <meta property="og:image:alt" content="{escape_attr(name)}">
+  <meta property="og:url" content="{canonical_url}">
   <meta property="og:site_name" content="Yeatru Sourcing">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:title" content="{title_esc}">
+  <meta property="og:description" content="{meta_desc_esc}">
+  <meta property="og:image" content="{image_esc}">
+  <meta property="og:image:width" content="{og_image_width}">
+  <meta property="og:image:height" content="{og_image_height}">
+  <meta property="og:image:alt" content="{escape_attr(name)}">
+  <meta property="og:product:sku" content="{sku_esc}">
+  <meta property="og:price:amount" content="{og_price_amount}">
+  <meta property="og:price:currency" content="{og_price_currency}">
+  <meta property="availability" content="in_stock">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yeatru_sourcing">
+  <meta name="twitter:url" content="{canonical_url}">
+  <meta name="twitter:title" content="{title_esc}">
+  <meta name="twitter:description" content="{meta_desc_esc}">
   <meta name="twitter:image" content="{image_esc}">
-  <meta name="twitter:url" content="https://www.yeatru.com/product-{sku}.html">
-  <meta property="og:title" content="{escape_attr(title)}">
-  <meta property="og:description" content="{escape_attr(meta_desc)}">
-  <meta name="twitter:title" content="{escape_attr(title)}">
-  <meta name="twitter:description" content="{escape_attr(meta_desc)}">
+  <meta name="twitter:image:alt" content="{escape_attr(name)}">
+  <meta name="twitter:label1" content="SKU">
+  <meta name="twitter:data1" content="{sku_esc}">
+  <meta name="twitter:label2" content="Price">
+  <meta name="twitter:data2" content="{og_price_amount} USD">
   <link rel="alternate" type="atom+xml" title="Yeatru Sourcing Blog" href="https://www.yeatru.com/atom.xml">
-  <link rel="alternate" hreflang="en" href="https://www.yeatru.com/product-{sku}.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/product-{sku}.html">
+  <link rel="alternate" hreflang="en" href="{canonical_url}">
+  <link rel="alternate" hreflang="x-default" href="{canonical_url}">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
