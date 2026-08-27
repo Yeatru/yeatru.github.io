@@ -72,11 +72,35 @@ const YEASTRU_PLACEHOLDER_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
     '</svg>'
 );
 
-// Install onerror fallback on every <img> in product lists, detail page, and homepage.
+// Install onerror fallback ONLY on product images (cards, detail, hot products).
+// Brand logo, nav icons, social icons, hero illustration, flags are NEVER touched.
+// Fix: avoid the premature "naturalWidth===0" check that falsely triggered during
+// CDN image download (the user saw every product become the YC logo placeholder).
 function installImageFallback(root) {
     const scope = root || document;
-    const imgs = scope.querySelectorAll("img");
+    // Only target images that are explicitly product / retail imagery.
+    // Never touch: nav logo, hero illustrations, social icons, flag images,
+    // service icons, payment logos or any image marked class="no-fallback".
+    const selector = [
+        ".product-card img",
+        "img.product-img",
+        ".product-main-image img",
+        ".product-gallery img",
+        ".product-image img",
+        ".detail-image-col img",
+        ".related-product img",
+        ".hot-product img",
+        ".featured-product img",
+        ".static-product img",
+        ".product-grid img",
+        ".product-list img",
+        ".aplus-img",
+        ".product-thumb",
+    ].join(",");
+    const imgs = scope.querySelectorAll(selector);
     imgs.forEach(function (img) {
+        if (img.classList.contains("no-fallback")) return;
+        if (img.classList.contains("brand-logo-img")) return;
         if (img.dataset.yeatruFallbackInstalled) return;
         img.dataset.yeatruFallbackInstalled = "1";
         const setFallback = function () {
@@ -84,15 +108,56 @@ function installImageFallback(root) {
                 img.src = YEASTRU_PLACEHOLDER_SVG;
                 img.classList.add("product-img-fallback");
                 img.onerror = null;
+                img.removeEventListener("error", setFallback);
             }
         };
         img.addEventListener("error", setFallback);
-        // Some images already loaded broken before listener attached
-        if (img.complete && img.naturalWidth === 0) {
-            setFallback();
-        }
+        // Remove the aggressive synchronous check. We now rely purely on the
+        // browser's error event, which fires after a real HTTP 4xx / network
+        // failure, not in the middle of loading.
+        //
+        // As a safety net, schedule ONE additional check 5s after window.load
+        // so any silently-broken image (that somehow fired neither error nor
+        // load) eventually gets replaced.
     });
 }
+// Safety-net: once the window has fully loaded, do a second pass on product
+// images and replace any that remain broken. This runs after every real
+// network request has resolved, so naturalWidth===0 truly means "no image".
+(function installBrokenImageSafetyNet() {
+    let alreadyRan = false;
+    function secondPass() {
+        if (alreadyRan) return;
+        alreadyRan = true;
+        setTimeout(function () {
+            // Same target selectors as installImageFallback.
+            const selector = [
+                ".product-card img","img.product-img",".product-main-image img",
+                ".product-gallery img",".product-image img",".detail-image-col img",
+                ".related-product img",".hot-product img",".featured-product img",
+                ".static-product img",".product-grid img",".product-list img",
+                ".aplus-img",".product-thumb",
+            ].join(",");
+            document.querySelectorAll(selector).forEach(function (img) {
+                if (img.classList.contains("no-fallback") ||
+                    img.classList.contains("brand-logo-img")) return;
+                if (img.src === YEASTRU_PLACEHOLDER_SVG) return;
+                // Image truly broken: no width decoded, or marked errored.
+                if (img.complete && img.naturalWidth === 0) {
+                    img.src = YEASTRU_PLACEHOLDER_SVG;
+                    img.classList.add("product-img-fallback");
+                }
+            });
+        }, 200);
+    }
+    if (document.readyState === "complete") {
+        secondPass();
+    } else {
+        window.addEventListener("load", secondPass, { once: true });
+        // Hard fallback 10s into the session if load event somehow never fires.
+        setTimeout(secondPass, 10000);
+    }
+})();
 
 // Brand logo (inline SVG) — shows real "YC" branded logo in top-left nav bar.
 const YEASTRU_BRAND_LOGO_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(

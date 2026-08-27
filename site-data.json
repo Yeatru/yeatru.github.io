@@ -12,7 +12,7 @@
     {
       "id": 1,
       "sku": "YCS-ACC-001",
-      "category": "Accessories",
+      "category": "Hair Accessories",
       "name": "Hair Tie Scrunchie Set 8-Piece Accessories",
       "name_cn": "大肠圈束发带8件套",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-ACC-001.png",
@@ -54,7 +54,7 @@
     {
       "id": 3,
       "sku": "YCS-ACC-003",
-      "category": "Accessories",
+      "category": "Personal Care",
       "name": "Noise Canceling Earplugs Sleep Reusable",
       "name_cn": "防噪音耳塞",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-ACC-003.png",
@@ -70,12 +70,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 4,
       "sku": "YCS-ACC-004",
-      "category": "Accessories",
+      "category": "Machinery",
       "name": "Fashion Accessories Replacement Parts",
       "name_cn": "配件",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-ACC-004.png",
@@ -91,12 +91,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Others"
     },
     {
       "id": 5,
       "sku": "YCS-ACC-005",
-      "category": "Accessories",
+      "category": "Personal Care",
       "name": "Blue Fabric Sleep Mask Eye Cover with Cyan Accents",
       "name_cn": "眼罩",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-ACC-005.png",
@@ -112,7 +112,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 6,
@@ -2484,8 +2484,8 @@
     {
       "id": 113,
       "sku": "YCS-CLO-017",
-      "category": "Clothing",
-      "name": "Clothing Apparel Fashion Clothes",
+      "category": "Household",
+      "name": "Handheld Garment Steamer Portable Iron Travel Fabric Wrinkle Remover",
       "name_cn": "挂烫机",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-017.png",
       "priceMin": 62.0,
@@ -2500,7 +2500,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 114,
@@ -4329,7 +4329,7 @@
     {
       "id": 194,
       "sku": "YCS-HAB-001",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Women'S Shoulder Bag Fashion Leather 2 Colors",
       "name_cn": "女包2色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-001.png",
@@ -4363,12 +4363,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 195,
       "sku": "YCS-HAB-002",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "White Women's Shoulder Bag Fashion Leather",
       "name_cn": "女包：黑色-20个，白色-50个，粉色-40个，玫红色-20个，棕色-",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-002.png",
@@ -4384,12 +4384,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 196,
       "sku": "YCS-HAB-003",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包，贝壳包",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-003.png",
@@ -4405,12 +4405,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 197,
       "sku": "YCS-HAB-004",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Women'S Shoulder Bag Fashion Leather 5 Colors",
       "name_cn": "女包，2款5色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-004.png",
@@ -4432,12 +4432,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 198,
       "sku": "YCS-HAB-005",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Handbag Women'S Lady 7 Colors",
       "name_cn": "女士单肩包，2款7色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-005.png",
@@ -4453,12 +4453,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 199,
       "sku": "YCS-HAB-006",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Red Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包酒红色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-006.png",
@@ -4474,12 +4474,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 200,
       "sku": "YCS-HAB-007",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Women's Shoulder Bag Lace Strap Fashion Handbag",
       "name_cn": "单肩包（蕾丝带）",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-007.png",
@@ -4495,12 +4495,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 201,
       "sku": "YCS-HAB-008",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "White Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包：黑色-50个，白色-50个，棕色-",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-008.png",
@@ -4516,12 +4516,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 202,
       "sku": "YCS-HAB-009",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Black Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包，黑色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-009.png",
@@ -4537,12 +4537,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 203,
       "sku": "YCS-HAB-010",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Brown Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包，咖色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-010.png",
@@ -4558,12 +4558,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 204,
       "sku": "YCS-HAB-011",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Purple Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包紫色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-011.png",
@@ -4579,12 +4579,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 205,
       "sku": "YCS-HAB-012",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Black Women'S Shoulder Bag Fashion Leather",
       "name_cn": "女包黑色棕色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-012.png",
@@ -4600,12 +4600,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 206,
       "sku": "YCS-HAB-013",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Women's Leather Handbag Shoulder Bag Pink Tan with Metal Hardware",
       "name_cn": "女包-01",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-013.png",
@@ -4621,12 +4621,12 @@
           "size": "S"
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 207,
       "sku": "YCS-HAB-014",
-      "category": "Hair Accessories",
+      "category": "Bags",
       "name": "Black Waist Bag Fanny Pack Crossbody Travel",
       "name_cn": "腰包，20个黑色.20 个灰色.20个蓝色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-014.png",
@@ -4642,7 +4642,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Apparel & Footwear"
+      "mainCategory": "Bags & Luggage"
     },
     {
       "id": 208,
@@ -6885,7 +6885,7 @@
     {
       "id": 308,
       "sku": "YCS-LAP-001",
-      "category": "Electronics",
+      "category": "Personal Care",
       "name": "Digital Body Weight Scale LCD Bathroom",
       "name_cn": "体重秤",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-001.png",
@@ -6901,12 +6901,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Beauty & Personal Care"
     },
     {
       "id": 309,
       "sku": "YCS-LAP-002",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Washing Machine Foot Pad Anti-Vibration Leveling",
       "name_cn": "洗衣机脚垫",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-002.png",
@@ -6922,12 +6922,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 310,
       "sku": "YCS-LAP-003",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Electric Fireplace LED Indoor",
       "name_cn": "电子壁炉，自动加水声控多色0.7米",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-003.png",
@@ -6943,12 +6943,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 311,
       "sku": "YCS-LAP-004",
-      "category": "Electronics",
+      "category": "Household",
       "name": "White Ultrasonic Humidifier Cool Mist Home",
       "name_cn": "加湿器，双喷,白色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-004.png",
@@ -6964,12 +6964,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 312,
       "sku": "YCS-LAP-005",
-      "category": "Electronics",
+      "category": "Storage & Organization",
       "name": "Storage Rack Shelf Metal Wall Mount",
       "name_cn": "洗衣机置物架",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-005.png",
@@ -6985,12 +6985,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 313,
       "sku": "YCS-LAP-006",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Green Digital Display Humidifier Dual Spray Desktop",
       "name_cn": "数显双喷加湿器,绿色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-006.png",
@@ -7012,12 +7012,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 314,
       "sku": "YCS-LAP-007",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Ultrasonic Humidifier Cool Mist Home",
       "name_cn": "小洋葱加湿器",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-007.png",
@@ -7033,12 +7033,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 315,
       "sku": "YCS-LAP-008",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Ultrasonic Humidifier Cool Mist Home",
       "name_cn": "加湿器：4L智能款1802（欧规俄文",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-008.png",
@@ -7054,12 +7054,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 316,
       "sku": "YCS-LAP-009",
-      "category": "Electronics",
+      "category": "Household",
       "name": "Mini Folding Washing Machine Portable Apartment",
       "name_cn": "小型折叠洗衣机",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-009.png",
@@ -7075,7 +7075,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Digital Electronics"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 317,
@@ -7785,7 +7785,7 @@
     {
       "id": 350,
       "sku": "YCS-MCH-011",
-      "category": "Machinery",
+      "category": "Household",
       "name": "Ultrasonic Humidifier Cool Mist Home",
       "name_cn": "云雨加湿器，充电款彩盒装",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MCH-011.png",
@@ -7801,7 +7801,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Others"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 351,
@@ -8916,7 +8916,7 @@
     {
       "id": 399,
       "sku": "YCS-MSS-001",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Clear Wall Hook Adhesive Heavy Duty 30 Wire",
       "name_cn": "透明挂钩30丝",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-001.png",
@@ -8932,12 +8932,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 400,
       "sku": "YCS-MSS-002",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Hook Coat Hat Rack Wall Mount Metal",
       "name_cn": "无痕挂钩",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-002.png",
@@ -8959,12 +8959,12 @@
           "size": "1 hook"
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 401,
       "sku": "YCS-MSS-003",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Silicone Suction Cup Hook Wall Mount Reusable",
       "name_cn": "硅胶手机吸盘",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-003.png",
@@ -8980,12 +8980,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 402,
       "sku": "YCS-MSS-004",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Folding Drying Rack Indoor Wall Mount",
       "name_cn": "晾衣架",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-004.png",
@@ -9007,12 +9007,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 403,
       "sku": "YCS-MSS-005",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Floor Standing Drying Rack Indoor Adjustable",
       "name_cn": "落地晾衣架，18拱桥双杆黑110+衣帽钩",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-005.png",
@@ -9046,12 +9046,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 404,
       "sku": "YCS-MSS-006",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Floor Standing Drying Rack Indoor Adjustable",
       "name_cn": "落地晾衣架，侧置物网双层双杆150黑",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-006.png",
@@ -9073,12 +9073,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 405,
       "sku": "YCS-MSS-007",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Folding Drying Rack Indoor Wall Mount",
       "name_cn": "多层晾衣架",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-007.png",
@@ -9094,12 +9094,12 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 406,
       "sku": "YCS-MSS-011",
-      "category": "Massage",
+      "category": "Storage & Organization",
       "name": "Clothes Hanger Hook Wall Mount Storage",
       "name_cn": "衣架",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-011.png",
@@ -9115,7 +9115,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Beauty & Personal Care"
+      "mainCategory": "Home & Daily Living"
     },
     {
       "id": 407,

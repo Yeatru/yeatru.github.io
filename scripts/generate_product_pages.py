@@ -284,10 +284,51 @@ def generate_json_ld_product(product):
     return f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Product","sku":"{sku}","productID":"{sku}","name":"{name}","description":"{desc}","image":["{image}"],"brand":{{"@type":"Brand","name":"Yeatru Sourcing"}},"category":"{category}","material":"See specifications","color":"Multiple options available","offers":{{"@type":"Offer","url":"https://www.yeatru.com/product-{sku}.html","priceCurrency":"USD","price":"{low_price}","highPrice":"{high_price}","lowPrice":"{low_price}","offerCount":1,"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","availableDeliveryMethod":["https://schema.org/LockerDelivery","https://schema.org/OnSitePickup","https://schema.org/ParcelService"],"businessFunction":"http://purl.org/goodrelations/v1#Sell","eligibleQuantity":{{"@type":"QuantitativeValue","minValue":{moq},"unitCode":"H87"}},"seller":{{"@id":"https://www.yeatru.com/#organization"}}}},"manufacturer":{{"@id":"https://www.yeatru.com/#localbusiness"}},"additionalProperty":[{{"@type":"PropertyValue","name":"Minimum Order Quantity","value":"{moq} pieces per SKU (off-the-shelf items); OEM MOQs higher"}},{{"@type":"PropertyValue","name":"Lead Time for Stock Items","value":"3 - 7 business days from order confirmation to dispatch"}},{{"@type":"PropertyValue","name":"Lead Time for OEM Orders","value":"15 - 30 business days depending on tooling complexity"}},{{"@type":"PropertyValue","name":"Accepted Payment","value":"T/T (Bank Transfer), PayPal, Alibaba Trade Assurance, Western Union"}}]}}</script>'''
 
 
+# AA-730 sub-category -> UI main category (17 buttons on products.html).
+# Keep in sync with app.js -> SUB_TO_MAIN_CATEGORY.
+_SUB_TO_MAIN_CATEGORY = {
+    "Clothing":"Apparel & Footwear","Shoes":"Apparel & Footwear","Swimwear":"Apparel & Footwear",
+    "Socks":"Apparel & Footwear","Hair Accessories":"Apparel & Footwear","Footwear":"Apparel & Footwear",
+    "Accessories":"Apparel & Footwear",
+    "Auto Repair Tools":"Auto Parts & Tools","Auto Accessories":"Auto Parts & Tools",
+    "Toys":"Baby & Toys","Baby Care":"Baby & Toys","Kids":"Baby & Toys",
+    "Bags":"Bags & Luggage","Backpacks":"Bags & Luggage",
+    "Skin Care":"Beauty & Personal Care","Beauty":"Beauty & Personal Care",
+    "Personal Care":"Beauty & Personal Care","Massage":"Beauty & Personal Care",
+    "Microphones/Audio":"Digital Electronics","Audio/Electronics":"Digital Electronics",
+    "Smart Electronics":"Digital Electronics","Audio/Video":"Digital Electronics",
+    "Electronics":"Digital Electronics","Tablets":"Digital Electronics",
+    "Hardware":"Hardware & Home","Locks":"Hardware & Home",
+    "Home & Garden":"Home & Daily Living","Household":"Home & Daily Living",
+    "Cleaning":"Home & Daily Living","Lighting":"Home & Daily Living",
+    "Storage & Organization":"Home & Daily Living","Fans":"Home & Daily Living",
+    "Kitchen/Bath":"Home & Daily Living",
+    "Dry Goods":"Home Appliances",
+    "Kitchen Storage":"Kitchen Supplies","Kitchen Tools":"Kitchen Supplies","Cups & Drinkware":"Kitchen Supplies",
+    "Material":"Material","OFC":"Material","KAP":"Material","MSF":"Material","PET":"Material",
+    "Musical Instruments":"Musical Instruments",
+    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Others",
+    "Dog Supplies":"Pet Supplies","Pet Supplies":"Pet Supplies",
+    "Mobile Accessories":"Phone Accessories","Screen Protectors":"Phone Accessories",
+    "Fitness":"Sports & Outdoor",
+    "Stationery":"Stationery & Office",
+}
+def resolve_main_category(product):
+    """Return the 17-item UI main category for breadcrumb links + product filters."""
+    main = product.get("mainCategory")
+    if isinstance(main, str) and main:
+        return main
+    sub = product.get("category", "")
+    return _SUB_TO_MAIN_CATEGORY.get(sub, "Others")
+
+
 def generate_json_ld_breadcrumb(product):
     sku = escape_attr(product["sku"])
     name = escape_attr(product["name"])
-    category = escape_attr(product.get("category", ""))
+    sub_category = escape_attr(product.get("category", ""))
+    main_category = escape_attr(resolve_main_category(product))
+    # Breadcrumb uses the UI main category so clicking it lands on a page with
+    # matching filter pills + non-zero results. Sub-category shown in CTA tag.
     return f'''<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -295,8 +336,9 @@ def generate_json_ld_breadcrumb(product):
   "itemListElement": [
     {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yeatru.com/"}},
     {{"@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.yeatru.com/products.html"}},
-    {{"@type": "ListItem", "position": 3, "name": "{category}", "item": "https://www.yeatru.com/products.html?category={escape_attr(category)}"}},
-    {{"@type": "ListItem", "position": 4, "name": "{name}", "item": "https://www.yeatru.com/product-{sku}.html"}}
+    {{"@type": "ListItem", "position": 3, "name": "{main_category}", "item": "https://www.yeatru.com/products.html?category={main_category}"}},
+    {{"@type": "ListItem", "position": 4, "name": "{sub_category if sub_category else name}", "item": "https://www.yeatru.com/products.html?category={main_category}#sub-{escape_attr(sub_category or 'all')}"}},
+    {{"@type": "ListItem", "position": 5, "name": "{name}", "item": "https://www.yeatru.com/product-{sku}.html"}}
   ]
 }}</script>'''
 
@@ -708,6 +750,9 @@ def generate_product_page(product, all_products):
 
     h1 = escape_text(name)
     cat_esc = escape_text(category)
+    main_category = resolve_main_category(product)
+    main_cat_esc = escape_text(main_category)
+    main_cat_attr = escape_attr(main_category)
     sku_esc = escape_text(sku)
     desc_esc = escape_text(desc)
     image_esc = escape_attr(image)
@@ -860,7 +905,7 @@ def generate_product_page(product, all_products):
         <ol>
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="products.html?category={escape_attr(category)}">{cat_esc}</a></li>
+          <li><a href="products.html?category={main_cat_attr}">{main_cat_esc}</a></li>
           <li aria-current="page">{escape_text(name)}</li>
         </ol>
       </nav>
@@ -872,7 +917,7 @@ def generate_product_page(product, all_products):
         <div class="detail-info">
           <h1>{h1}</h1>
           <div class="detail-meta">
-            Category: <strong>{cat_esc}</strong> &nbsp;|&nbsp; SKU: <strong>{sku_esc}</strong>
+            Category: <strong><a href="products.html?category={main_cat_attr}" style="color:inherit;text-decoration:none;">{cat_esc}</a> · {main_cat_esc}</strong> &nbsp;|&nbsp; SKU: <strong>{sku_esc}</strong>
           </div>
           {spec_table_html}
           <p class="detail-desc">{desc_esc}</p>
