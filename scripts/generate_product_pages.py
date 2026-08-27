@@ -260,7 +260,7 @@ def generate_detail_spec_table(product):
     return f'''
 <div class="table-responsive detail-spec-wrap">
 <table class="detail-spec-table">
-  <tr class="spec-price-row"><th scope="row">WHOLESALE PRICE</th><td class="spec-price-cell"><div id="detailPriceDisplay">{price_inner}</div><div class="spec-price-hint">Factory-direct · CNY ÷ 6.7 × 1.15 · MOQ {moq}</div></td></tr>
+  <tr class="spec-price-row"><th scope="row">WHOLESALE PRICE</th><td class="spec-price-cell"><div id="detailPriceDisplay">{price_inner}</div><div class="spec-price-hint">Factory-direct wholesale · MOQ {moq}</div></td></tr>
   <tr><th scope="row">Material</th><td>{material}</td></tr>
   <tr><th scope="row">Size / Dimensions</th><td>{size}</td></tr>
   <tr><th scope="row">Minimum Order</th><td><b>{moq}</b> piece(s) · OEM custom from 200 pcs</td></tr>
@@ -602,7 +602,7 @@ def generate_aplus_section(product):
     <tr><th scope="row">Product Name</th><td>{name}</td></tr>
     <tr><th scope="row">Main Category (UI Filter)</th><td>{escape_text(main_category or 'N/A')}</td></tr>
     <tr><th scope="row">Sub Category (Supplier Category)</th><td>{sub_category}</td></tr>
-    <tr class="aplus-spec-price-row"><th scope="row">Wholesale Price (USD)</th><td><span class="detail-price-hero aplus-inline-price">{price_usd}</span><div class="spec-price-hint">Factory-direct · CNY ÷ 6.7 × 1.15</div></td></tr>
+    <tr class="aplus-spec-price-row"><th scope="row">Wholesale Price (USD)</th><td><span class="detail-price-hero aplus-inline-price">{price_usd}</span><div class="spec-price-hint">Factory-direct wholesale price</div></td></tr>
     <tr><th scope="row">Minimum Order Quantity (MOQ)</th><td><b>{moq} piece(s)</b> — stock items; 200–500 pcs for OEM custom</td></tr>
     <tr><th scope="row">Material</th><td>{material}</td></tr>
     <tr><th scope="row">Available Colors</th><td>{escape_text(colors_str)}</td></tr>
@@ -874,15 +874,32 @@ def generate_product_page(product, all_products):
   <meta name="twitter:label2" content="Price">
   <meta name="twitter:data2" content="{og_price_amount} USD">
   <link rel="alternate" type="atom+xml" title="Yeatru Sourcing Blog" href="https://www.yeatru.com/atom.xml">
+  <!-- Hreflang alternates: Bing/Google use these instead of discovering
+       ?lang=XX query-string variants as distinct pages. x-default points
+       to the language-agnostic canonical URL. -->
   <link rel="alternate" hreflang="en" href="{canonical_url}">
+  <link rel="alternate" hreflang="es" href="{canonical_url}?lang=es">
+  <link rel="alternate" hreflang="fr" href="{canonical_url}?lang=fr">
+  <link rel="alternate" hreflang="ru" href="{canonical_url}?lang=ru">
+  <link rel="alternate" hreflang="ar" href="{canonical_url}?lang=ar">
   <link rel="alternate" hreflang="x-default" href="{canonical_url}">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <!-- GA4: page_location pinned to canonical so ?lang= / ?id= variants never
+       appear as separate URLs in reports. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}gtag('js', new Date());gtag('config', 'G-KXW2N4FHZR');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{ dataLayer.push(arguments); }}
+    gtag('js', new Date());
+    gtag('config', 'G-KXW2N4FHZR', {{
+      page_location: '{canonical_url}',
+      page_title: '{title_esc}'
+    }});
+  </script>
   <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"AggregateRating","ratingValue":"4.9","reviewCount":"217","bestRating":"5","worstRating":"1"}}
   </script>
@@ -979,7 +996,7 @@ def generate_product_page(product, all_products):
 
       <div class="detail-main">
         <div class="detail-image-col">
-          <img class="detail-image loaded img-fluid" src="{image_esc}" alt="{escape_attr(name)}" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.display='none'">
+          <img class="detail-image loaded img-fluid" src="{image_esc}" alt="{escape_attr(name)}" loading="eager" fetchpriority="high" decoding="async">
         </div>
         <div class="detail-info">
           <h1>{h1}</h1>

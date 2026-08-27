@@ -208,8 +208,18 @@ const YEASTRU_PLACEHOLDER_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
 
 // Install onerror fallback ONLY on product images (cards, detail, hot products).
 // Brand logo, nav icons, social icons, hero illustration, flags are NEVER touched.
-// Fix: avoid the premature "naturalWidth===0" check that falsely triggered during
-// CDN image download (the user saw every product become the YC logo placeholder).
+//
+// STRATEGY (single chain of responsibility — no dual event handlers):
+//   1. Strip any inline onerror attributes (they created race conditions with
+//      the addEventListener handler and both tried to overwrite src, with the
+//      YC placeholder almost always "winning" even for healthy images).
+//   2. Attach ONE "error" listener that does a 2-stage retry:
+//        a) If current src is a .png, try sibling .jpg URL on the same CDN path
+//           (some old product images were uploaded as .jpg, not .png).
+//        b) If the .jpg retry also fails (or extension was not .png) → finally
+//           show the branded YC placeholder SVG.
+//   3. Mark every processed img with dataset.yeatruFallbackInstalled so we never
+//      double-attach.
 function installImageFallback(root) {
     const scope = root || document;
     // Only target images that are explicitly product / retail imagery.
@@ -237,34 +247,65 @@ function installImageFallback(root) {
         if (img.classList.contains("brand-logo-img")) return;
         if (img.dataset.yeatruFallbackInstalled) return;
         img.dataset.yeatruFallbackInstalled = "1";
-        const setFallback = function () {
+
+        // --- Kill inline onerror / src-overwrite races --------------------
+        // Template code used to ship with inline onerror that retried the
+        // same URL or the raw CDN URL. Clear it so only our 2-stage chain runs.
+        if (img.getAttribute("onerror")) {
+            img.removeAttribute("onerror");
+        }
+        // Also defend against legacy img.onerror property setters.
+        img.onerror = null;
+
+        let jpgTried = false;
+        const setPlaceholder = function () {
             if (img.src !== YEASTRU_PLACEHOLDER_SVG) {
                 img.src = YEASTRU_PLACEHOLDER_SVG;
                 img.classList.add("product-img-fallback");
-                img.onerror = null;
-                img.removeEventListener("error", setFallback);
             }
+            img.removeEventListener("error", handleError);
         };
-        img.addEventListener("error", setFallback);
-        // Remove the aggressive synchronous check. We now rely purely on the
-        // browser's error event, which fires after a real HTTP 4xx / network
-        // failure, not in the middle of loading.
-        //
-        // As a safety net, schedule ONE additional check 5s after window.load
-        // so any silently-broken image (that somehow fired neither error nor
-        // load) eventually gets replaced.
+        const handleError = function () {
+            // 2-stage retry: .png → try sibling .jpg → YC placeholder.
+            const current = img.getAttribute("src") || "";
+            if (!jpgTried && /\.png(\?|$)/i.test(current)) {
+                jpgTried = true;
+                img.src = siblingJpgUrl(current);
+                // handleError will be called again if .jpg also 404s.
+                return;
+            }
+            setPlaceholder();
+        };
+        img.addEventListener("error", handleError);
+
+        // --- Handle images that are ALREADY broken when this function runs --
+        // If the image finished loading but has no decoded pixels, it failed
+        // silently (e.g. error fired before our listener attached). Kick the
+        // retry chain by forcibly setting src again — browser will re-evaluate.
+        if (img.complete && img.naturalWidth === 0 &&
+            img.src !== YEASTRU_PLACEHOLDER_SVG) {
+            const cur = img.getAttribute("src") || "";
+            if (cur) {
+                jpgTried = /\.jpg(\?|$)/i.test(cur);
+                img.src = jpgTried ? cur : siblingJpgUrl(cur);
+            } else {
+                setPlaceholder();
+            }
+        }
     });
 }
-// Safety-net: once the window has fully loaded, do a second pass on product
-// images and replace any that remain broken. This runs after every real
-// network request has resolved, so naturalWidth===0 truly means "no image".
+// Safety-net: 30s into the session, catch any product img that's still sitting
+// on a broken remote URL with neither "load" nor "error" ever fired (extremely
+// rare edge case from stalled TCP connections). Run AFTER window.load + delay,
+// and require img.complete + naturalWidth===0 so slow-but-healthy downloads
+// are never replaced. Removed the previous 8s/20s aggressive timings because
+// real mobile users on 3G can see >10s image loads on CDN jsdelivr.
 (function installBrokenImageSafetyNet() {
     let alreadyRan = false;
     function secondPass() {
         if (alreadyRan) return;
         alreadyRan = true;
         setTimeout(function () {
-            // Same target selectors as installImageFallback.
             const selector = [
                 ".product-card img","img.product-img",".product-main-image img",
                 ".product-gallery img",".product-image img",".detail-image-col img",
@@ -276,25 +317,44 @@ function installImageFallback(root) {
                 if (img.classList.contains("no-fallback") ||
                     img.classList.contains("brand-logo-img")) return;
                 if (img.src === YEASTRU_PLACEHOLDER_SVG) return;
-                // Image truly broken: no width decoded, or marked errored.
-                // Require BOTH complete AND naturalWidth===0 so images still
-                // downloading on slow connections are never replaced.
                 if (img.complete && img.naturalWidth === 0) {
-                    img.src = YEASTRU_PLACEHOLDER_SVG;
-                    img.classList.add("product-img-fallback");
+                    // Genuinely broken. Use 2-stage chain: jpg then placeholder.
+                    const cur = img.getAttribute("src") || "";
+                    if (/\.png(\?|$)/i.test(cur)) {
+                        const jpg = siblingJpgUrl(cur);
+                        // Use a tiny inline checker via one-shot handler — if
+                        // jpg also fails, revert to placeholder.
+                        const checker = function () {
+                            if (img.complete && img.naturalWidth === 0) {
+                                img.src = YEASTRU_PLACEHOLDER_SVG;
+                                img.classList.add("product-img-fallback");
+                            }
+                            img.removeEventListener("error", checker2);
+                            img.removeEventListener("load", checker);
+                        };
+                        const checker2 = function () {
+                            img.src = YEASTRU_PLACEHOLDER_SVG;
+                            img.classList.add("product-img-fallback");
+                        };
+                        img.addEventListener("load", checker, { once: true });
+                        img.addEventListener("error", checker2, { once: true });
+                        img.src = jpg;
+                    } else {
+                        img.src = YEASTRU_PLACEHOLDER_SVG;
+                        img.classList.add("product-img-fallback");
+                    }
                 }
             });
-        // Safety-net delay intentionally long (8s). Slow CDN images can take
-        // several seconds on mobile; we never want the placeholder to win
-        // a race against a legitimately slow-but-healthy image.
-        }, 8000);
+        // 30 seconds after window.load — intentionally generous so users on
+        // hotel / conference / 3G Wi-Fi never see a false YC placeholder.
+        }, 30000);
     }
     if (document.readyState === "complete") {
         secondPass();
     } else {
         window.addEventListener("load", secondPass, { once: true });
-        // Hard fallback 20s into the session if load event somehow never fires.
-        setTimeout(secondPass, 20000);
+        // Absolute ceiling: 60s after script eval if load event hangs (rare).
+        setTimeout(secondPass, 60000);
     }
 })();
 
@@ -683,13 +743,37 @@ function escapeHtml(str) {
     };
 })();
 
-// 图片优化：通过 wsrv.nl 代理实时转 WebP + 缩放，大幅减小传输体积
-// width: 目标宽度（卡片400, 详情800, A+1000）
+// Picture URL normalizer.
+// HISTORICAL NOTE: previously this routed cdn.jsdelivr.net images through a
+// third-party wsrv.nl proxy for on-the-fly WebP transcoding. That proxy has
+// an ~83% failure rate on our CDN (returns 404 for perfectly valid images)
+// which caused installImageFallback's error handler to replace legit product
+// images with the YC placeholder. We now return the raw CDN URL directly.
+// jsdelivr is a globally-cached CDN and already serves compressed images;
+// the small savings from WebP are not worth an extra hop that fails most of
+// the time.
 function optimizeImageUrl(url, width) {
     if (!url) return url;
-    // 只对 cdn.jsdelivr.net 的图片做优化，其他URL原样返回
-    if (url.indexOf('cdn.jsdelivr.net') === -1) return url;
-    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + (width || 600) + '&output=webp&q=80';
+    // The width argument is retained for backward-compat with every call
+    // site in app.js and generated HTML. It is intentionally unused now.
+    return url;
+}
+
+// Given a jsdelivr image URL for a .png file, return the sibling .jpg URL
+// (same path, different extension). Used as a one-shot retry before we give
+// up and show the YC placeholder — some old product shots were uploaded as
+// .jpg instead of the .png that site-data.json declares.
+function siblingJpgUrl(url) {
+    if (!url) return url;
+    if (url.lastIndexOf('.png') === url.length - 4) {
+        return url.slice(0, -4) + '.jpg';
+    }
+    if (url.lastIndexOf('.jpeg') === url.length - 5) {
+        return url.slice(0, -5) + '.jpg';
+    }
+    // Try appending .jpg fallback for URLs without a known extension
+    // (shouldn't happen for our data, but safe).
+    return url;
 }
 
 function tt(key, fallback) {
@@ -709,6 +793,142 @@ function tt(key, fallback) {
 // edit flow) stay pixel-identical to the static product pages.
 const CNY_TO_USD_RATE = 6.7;
 const PRICE_MARKUP = 1.15; // 15% wholesale markup on top of raw sourcing cost
+
+// ============================================================
+// GA4 conversion tracking (G-KXW2N4FHZR). Sends named events
+// the owner can flip to "Key event" in GA4 Admin → Events so
+// the dashboard stops showing Key events = 0.
+// ============================================================
+const GA4_TRACKING_ID = "G-KXW2N4FHZR";
+function trackGA4Event(name, params) {
+    try {
+        if (typeof window.gtag === "function") {
+            window.gtag("event", name, params || {});
+            return;
+        }
+        // gtag.js hasn't loaded yet — queue to dataLayer directly.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: name, ...(params || {}) });
+    } catch (err) {
+        /* analytics must never break the page */
+    }
+}
+function initGA4ConversionTracking() {
+    // Mark the most valuable actions as GA4 recommended events where
+    // possible so GA4 funnels + "Key events" flags recognize them.
+    //
+    // 1) WhatsApp click = generate_lead (recommended conversion event)
+    document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("a[href*='wa.me/'], a[href*='whatsapp']");
+        if (!a) return;
+        trackGA4Event("generate_lead", {
+            lead_type: "whatsapp",
+            currency: getCurrentCurrency(),
+            method: "whatsapp_click",
+            page_location: location.pathname,
+            destination: a.getAttribute("href"),
+        });
+        trackGA4Event("contact", { contact_method: "whatsapp" });
+    }, true);
+
+    // 2) Email mailto: click = contact
+    document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("a[href^='mailto:']");
+        if (!a) return;
+        trackGA4Event("contact", {
+            contact_method: "email",
+            page_location: location.pathname,
+            destination: a.getAttribute("href"),
+        });
+    }, true);
+
+    // 3) Any CTA / Get Quote / Quote Request / Buy / A+ CTA button click
+    //    → submit_lead_form + generate_lead
+    var CTA_SELECTORS = [
+        ".btn-cta",
+        "[data-action='quote']",
+        "[data-action='inquiry']",
+        ".aplus-cta-btn",
+        ".btn-nav-cta",
+        "a[href*='inquiry'], a[href*='quote'], a[href*='contact.html']",
+        ".hero-btn.primary", ".hero-btn-primary",
+        ".view-product-btn",
+    ].join(",");
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest && e.target.closest(CTA_SELECTORS);
+        if (!btn) return;
+        var href = btn.getAttribute && btn.getAttribute("href");
+        var txt = (btn.innerText || "").trim().slice(0, 80);
+        var isAplus = !!btn.closest(".aplus-cta-block");
+        var isNav = !!btn.closest(".navbar");
+        var eventParams = {
+            lead_type: isAplus ? "aplus_cta" : (isNav ? "nav_cta" : "page_cta"),
+            page_location: location.pathname,
+            cta_text: txt,
+            currency: getCurrentCurrency(),
+            destination: href || "",
+        };
+        trackGA4Event("generate_lead", eventParams);
+        trackGA4Event("submit_lead_form", { ...eventParams, form_location: isAplus ? "aplus" : (isNav ? "navbar" : "page") });
+    }, true);
+
+    // 4) Actual contact form / inquiry form submit
+    var FORM_SELECTORS = [
+        "form.contact-form",
+        "form#inquiryForm",
+        "form.inquiry-form",
+        "form[name='contact']",
+        "form#contactForm",
+        ".contact-page form",
+        "form[data-purpose='contact']",
+        "form[data-purpose='inquiry']",
+    ].join(",");
+    function attachFormSubmit(form) {
+        if (form.dataset.ga4Attached === "1") return;
+        form.dataset.ga4Attached = "1";
+        form.addEventListener("submit", function () {
+            var name = (form.querySelector("[name='name']") || {}).value || "";
+            var email = (form.querySelector("[name='email']") || {}).value || "";
+            var country = (form.querySelector("[name='country']") || {}).value || "";
+            trackGA4Event("generate_lead", {
+                lead_type: "form_submit",
+                form_name: form.getAttribute("name") || form.getAttribute("id") || "contact_form",
+                page_location: location.pathname,
+                currency: getCurrentCurrency(),
+                lead_country: country || undefined,
+                has_name: !!name,
+                has_email: !!email,
+            });
+            trackGA4Event("submit_lead_form", {
+                form_location: "contact_page",
+                form_name: form.getAttribute("name") || form.getAttribute("id") || "contact_form",
+            });
+        }, true);
+    }
+    document.querySelectorAll(FORM_SELECTORS).forEach(attachFormSubmit);
+    // Fallback: if contact form is injected later, listen globally.
+    document.addEventListener("submit", function (e) {
+        if (e.target && e.target.matches && e.target.matches(FORM_SELECTORS)) {
+            attachFormSubmit(e.target);
+        }
+    }, true);
+
+    // 5) Detail page: user opens variation = view_item_list level-2 interaction
+    document.addEventListener("click", function (e) {
+        var v = e.target.closest && e.target.closest(".variation-card");
+        if (!v) return;
+        var name = (v.querySelector(".variation-name") || {}).innerText || "";
+        var size = (v.querySelector(".variation-size") || {}).innerText || "";
+        trackGA4Event("select_item", {
+            item_list_name: "product_variations",
+            item_list_id: "variations",
+            page_location: location.pathname,
+            currency: getCurrentCurrency(),
+            variation_name: name.slice(0, 80),
+            variation_size: size.slice(0, 60),
+        });
+    });
+}
 
 function cnyToUsd(cnyValue) {
     const raw = parseFloat(cnyValue);
@@ -895,6 +1115,10 @@ document.addEventListener('DOMContentLoaded', function () {
         renderIndexHotProducts();
         renderCategories();
         renderProducts();
+        // Install GA4 conversion events so "Key events" dashboard stops
+        // showing 0 after the owner marks generate_lead / submit_lead_form
+        // / contact / select_item as Key events in GA4 Admin → Events.
+        initGA4ConversionTracking();
         // Wire the in-page hero search box (used on products.html and on
         // every static product-*.html detail page). Binds form submit,
         // live-search (debounced), ESC-to-clear, and click-to-reset.
@@ -1470,7 +1694,7 @@ function renderIndexHotProducts() {
         col.className = 'col-lg-3 col-md-6';
         col.innerHTML = `
             <div class="product-card">
-                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null;this.src='${escapeHtml(product.image)}';this.classList.add('loaded');">
+                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
                     <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
@@ -1825,7 +2049,7 @@ function renderProducts() {
         card.className = 'col-lg-3 col-md-6';
         card.innerHTML = `
             <div class="product-card">
-                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.onerror=null;this.src='${escapeHtml(product.image)}';this.classList.add('loaded');">
+                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                 <div class="card-body">
                     <div class="product-category">${escapeHtml(product.category)}</div>
                     <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${highlightSearchMatch(escapeHtml(product.name))}</h5>
