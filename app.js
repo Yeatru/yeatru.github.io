@@ -167,16 +167,47 @@ const YEASTRU_BRAND_LOGO_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
 );
 
 function applyBrandLogo() {
-    // 1) <img class="brand-logo-img"> if page already has the slot
-    document.querySelectorAll("img.brand-logo-img, img.js-brand-logo").forEach(function (img) {
-        if (!img.src || img.src.indexOf("brand-logo") !== -1 || img.getAttribute("src") === "") {
+    // 1) Every <img> that is supposed to be a brand logo, fill with the inline
+    //    SVG. Catch-all selector: covers img.brand-logo-img, img.js-brand-logo,
+    //    and the legacy img#brandLogoImg.img-fluid slot on products/index.html.
+    const selectorsForBrandImg = [
+        "img.brand-logo-img",
+        "img.js-brand-logo",
+        "img#brandLogoImg",
+        ".brand-logo-box img.img-fluid",
+    ].join(",");
+    document.querySelectorAll(selectorsForBrandImg).forEach(function (img) {
+        const current = img.getAttribute("src") || "";
+        // Fill only if: empty, or still pointing at the external logo.svg
+        // placeholder, or explicitly asked via js-brand-logo class.
+        // Never overwrite if src already resolves to the data URI (avoid loops).
+        if (img.src === YEASTRU_BRAND_LOGO_SVG) {
+            img.alt = img.alt || "Yeatru Sourcing Logo";
+            img.onerror = null;
+            return;
+        }
+        if (current === "" || current === "logo.svg" || current.indexOf("brand-logo") !== -1) {
             img.src = YEASTRU_BRAND_LOGO_SVG;
-            img.alt = "Yeatru Sourcing Logo";
+            img.alt = img.alt || "Yeatru Sourcing Logo";
+            img.style.display = img.style.display && img.style.display !== "none" ? img.style.display : "block";
             img.onerror = null;
         }
     });
-    // 2) Replace the fallback "YC" text span with an img tag inside .brand-logo-box
+
+    // 2) Replace the fallback "YC" text span with an img tag inside every
+    //    .brand-logo-box that still doesn't have a rendered brand image.
     document.querySelectorAll(".brand-logo-box").forEach(function (box) {
+        const hasRenderedImg = box.querySelector("img[src]");
+        if (hasRenderedImg && (
+            hasRenderedImg.src === YEASTRU_BRAND_LOGO_SVG ||
+            (hasRenderedImg.getAttribute("src") || "").length > 0 &&
+            !hasRenderedImg.style || hasRenderedImg.style.display !== "none"
+        )) {
+            // Already has a visible logo img; just remove the redundant text fallback.
+            const existing = box.querySelector(".brand-logo-fallback");
+            if (existing) existing.remove();
+            return;
+        }
         if (box.querySelector("img.brand-logo-img")) return;
         const existing = box.querySelector(".brand-logo-fallback");
         const img = document.createElement("img");

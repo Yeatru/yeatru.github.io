@@ -831,8 +831,10 @@ def generate_product_page(product, all_products):
   <nav class="navbar navbar-expand-xl bg-white sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <span class="brand-logo-box" title="Yeatru Sourcing Logo">
-          <span class="brand-logo-fallback" style="color: var(--primary); font-weight: bold;">YC</span>
+        <span class="brand-logo-box" id="brandLogoBox" title="Yeatru Sourcing Logo">
+          <img id="brandLogoImg" src="logo.svg" alt="Yeatru Logo" style="display:none;"  class="img-fluid" />
+          <span class="brand-logo-fallback" id="brandLogoFallback">YC</span>
+          <span class="brand-logo-edit" id="brandLogoEdit" title="Change logo (Admin only)"><i class="fas fa-pen"></i></span>
         </span>
         <span>Yeatru Sourcing</span>
       </a>
