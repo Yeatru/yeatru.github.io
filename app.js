@@ -19,7 +19,8 @@ const UI_MAIN_CATEGORIES = [
 const SUB_TO_MAIN_CATEGORY = {
     "Clothing":"Apparel & Footwear","Shoes":"Apparel & Footwear","Swimwear":"Apparel & Footwear",
     "Socks":"Apparel & Footwear","Hair Accessories":"Apparel & Footwear","Footwear":"Apparel & Footwear",
-    "Accessories":"Apparel & Footwear",
+    // NOTE: generic "Accessories" is split by SKU/name inside resolveMainCategory()
+    // (jewelry items → Fashion Jewelry → Others; apparel accessories stay in Apparel).
     "Auto Repair Tools":"Auto Parts & Tools","Auto Accessories":"Auto Parts & Tools",
     "Toys":"Baby & Toys","Baby Care":"Baby & Toys","Kids":"Baby & Toys",
     "Bags":"Bags & Luggage","Backpacks":"Bags & Luggage",
@@ -37,22 +38,155 @@ const SUB_TO_MAIN_CATEGORY = {
     "Kitchen Storage":"Kitchen Supplies","Kitchen Tools":"Kitchen Supplies","Cups & Drinkware":"Kitchen Supplies",
     "Material":"Material","OFC":"Material","KAP":"Material","MSF":"Material","PET":"Material",
     "Musical Instruments":"Musical Instruments",
-    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Others",
+    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Sports & Outdoor",
+    "Fashion Jewelry":"Others","Jewelry":"Others","Home Textile":"Home & Daily Living",
     "Dog Supplies":"Pet Supplies","Pet Supplies":"Pet Supplies",
     "Mobile Accessories":"Phone Accessories","Screen Protectors":"Phone Accessories",
-    "Fitness":"Sports & Outdoor",
+    "Fitness":"Sports & Outdoor","Camping":"Sports & Outdoor","Tents":"Sports & Outdoor",
     "Stationery":"Stationery & Office",
 };
 
-// Given a product (object) or a raw sub-category string, return its UI main category.
+// Short/partial category names commonly found in old links, bookmarks, or
+// the ?category= query param (e.g. "Apparel" → "Apparel & Footwear").
+// These are user-friendly aliases so ?category=Stationery never shows 0.
+const CATEGORY_ALIASES = {
+    "Apparel":"Apparel & Footwear","Apparels":"Apparel & Footwear","Clothing":"Apparel & Footwear",
+    "Shoes":"Apparel & Footwear","Footwear":"Apparel & Footwear","Fashion":"Apparel & Footwear",
+    "Garment":"Apparel & Footwear","Wear":"Apparel & Footwear","Garments":"Apparel & Footwear",
+    "Auto":"Auto Parts & Tools","Car":"Auto Parts & Tools","Automotive":"Auto Parts & Tools",
+    "Vehicle":"Auto Parts & Tools","Car Parts":"Auto Parts & Tools",
+    "Baby":"Baby & Toys","Kids":"Baby & Toys","Toys":"Baby & Toys","Toy":"Baby & Toys","Children":"Baby & Toys",
+    "Bags":"Bags & Luggage","Luggage":"Bags & Luggage","Handbag":"Bags & Luggage","Backpack":"Bags & Luggage",
+    "Bag":"Bags & Luggage","Backpacks":"Bags & Luggage",
+    "Beauty":"Beauty & Personal Care","Cosmetics":"Beauty & Personal Care","Skin":"Beauty & Personal Care",
+    "Personal":"Beauty & Personal Care","Makeup":"Beauty & Personal Care","Personal Care":"Beauty & Personal Care",
+    "Skin Care":"Beauty & Personal Care","Skincare":"Beauty & Personal Care",
+    "Digital":"Digital Electronics","Electronics":"Digital Electronics","Electronic":"Digital Electronics",
+    "Tech":"Digital Electronics","Gadget":"Digital Electronics","Gadgets":"Digital Electronics","Audio":"Digital Electronics",
+    "Hardware":"Hardware & Home","Hardware & Home Improvement":"Hardware & Home","Hardware Tools":"Hardware & Home",
+    "Home":"Home & Daily Living","Household":"Home & Daily Living","Daily":"Home & Daily Living",
+    "Garden":"Home & Daily Living","Home & Garden":"Home & Daily Living","Cleaning":"Home & Daily Living",
+    "Lighting":"Home & Daily Living","Home Storage":"Home & Daily Living","Homeware":"Home & Daily Living",
+    "Appliance":"Home Appliances","Appliances":"Home Appliances","Home Appliance":"Home Appliances",
+    "Home Appliances":"Home Appliances","Electrical":"Home Appliances","Dry Goods":"Home Appliances",
+    "Kitchen":"Kitchen Supplies","Kitchenware":"Kitchen Supplies","Cookware":"Kitchen Supplies",
+    "Cups":"Kitchen Supplies","Kitchen Tools":"Kitchen Supplies","Drinkware":"Kitchen Supplies",
+    "Materials":"Material","Raw Material":"Material","Raw Materials":"Material","Fabric":"Material",
+    "Music":"Musical Instruments","Instruments":"Musical Instruments","Musical":"Musical Instruments",
+    "Other":"Others","Misc":"Others","Miscellaneous":"Others","General":"Others","Machinery":"Others",
+    "Photography":"Others","Outdoor":"Sports & Outdoor","Outdoor Gear":"Sports & Outdoor",
+    "Pet":"Pet Supplies","Pets":"Pet Supplies","Dog":"Pet Supplies","Pet Products":"Pet Supplies",
+    "Phone":"Phone Accessories","Mobile":"Phone Accessories","Mobile Accessories":"Phone Accessories",
+    "Cellphone":"Phone Accessories","Smartphone":"Phone Accessories",
+    "Sports":"Sports & Outdoor","Fitness":"Sports & Outdoor","Gym":"Sports & Outdoor",
+    "Sport":"Sports & Outdoor","Athletic":"Sports & Outdoor","Sporting":"Sports & Outdoor",
+    "Stationery":"Stationery & Office","Office":"Stationery & Office","Office Supplies":"Stationery & Office",
+    "School":"Stationery & Office","Office & School":"Stationery & Office",
+};
+// Given a user input or URL query category (possibly a short alias), return
+// the matching UI_MAIN_CATEGORY or the original string if already canonical.
+function normalizeCategoryForUI(input) {
+    if (!input) return 'all';
+    const raw = String(input).trim();
+    if (!raw) return 'all';
+    if (UI_MAIN_CATEGORIES.indexOf(raw) !== -1) return raw;
+    // 1) Exact alias match
+    const exact = CATEGORY_ALIASES[raw];
+    if (exact) return exact;
+    // 2) Case-insensitive match
+    const lower = raw.toLowerCase();
+    for (const key of Object.keys(CATEGORY_ALIASES)) {
+        if (key.toLowerCase() === lower) return CATEGORY_ALIASES[key];
+    }
+    for (const main of UI_MAIN_CATEGORIES) {
+        if (main.toLowerCase() === lower) return main;
+    }
+    // 3) Partial: input contains "Apparel" or is contained by a main-category name
+    for (const main of UI_MAIN_CATEGORIES) {
+        if (main.toLowerCase().indexOf(lower) !== -1 || lower.indexOf(main.toLowerCase()) !== -1) {
+            return main;
+        }
+    }
+    // 4) Otherwise treat the value as the product.category sub-category string,
+    //    and resolve to its main category (returns "Others" if unknown).
+    return resolveMainCategory(raw);
+}
+// Read ?category= from URL and normalize it to a canonical UI main category,
+// then apply it to currentFilterCategory (if not 'all'). Safe to call multiple times.
+function applyCategoryFromUrl() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const raw = params.get('category');
+        if (!raw) return false;
+        const main = normalizeCategoryForUI(raw);
+        if (main !== 'all') {
+            currentFilterCategory = main;
+            return true;
+        }
+        currentFilterCategory = 'all';
+    } catch (_) {}
+    return false;
+}
+
+// ============================================================
+// Resolve a product (or a raw sub-category string) to one of the 17
+// UI_MAIN_CATEGORIES. Adds SKU / keyword based overrides so "Accessories"
+// jewelry, outdoor tents, phone chargers, etc. land in the right bucket.
+// ============================================================
 function resolveMainCategory(input) {
+    var sub = "";
+    var sku = "";
+    var name = "";
     if (!input) return "Others";
-    const sub = (typeof input === "object") ? (input.mainCategory || input.category) : input;
-    if (typeof sub === "string" && UI_MAIN_CATEGORIES.indexOf(sub) !== -1) return sub;
-    if (typeof input === "object" && typeof input.mainCategory === "string"
-        && UI_MAIN_CATEGORIES.indexOf(input.mainCategory) !== -1) return input.mainCategory;
-    const raw = (typeof input === "object") ? (input.category || "") : String(input);
-    return SUB_TO_MAIN_CATEGORY[raw] || "Others";
+    if (typeof input === "string") {
+        sub = input;
+    } else {
+        // product-like object
+        sub = input.category || input.subCategory || "";
+        sku = input.sku || "";
+        name = input.name || "";
+    }
+    sub = String(sub || "").trim();
+    sku = String(sku || "").trim();
+    name = String(name || "").trim();
+
+    // --- 1) Per-SKU overrides (highest priority) ---
+    // Jewelry / necklace / bracelet / jewelry box → Others (Fashion Jewelry)
+    var JEWELRY_SKUS = {
+        "YCS-ACC-002": true,   // Bracelet Gift Box Jewelry Velvet
+        "YCS-ACC-006": true,   // Necklace Jewelry Fashion Gift
+    };
+    if (sku && JEWELRY_SKUS[sku]) return "Others";
+
+    // --- 2) Keyword-based overrides on sub-category + product name ---
+    var textBlurb = (sub + " " + name).toLowerCase();
+    if (/(jewelry|necklace|bracelet|earring|ring|pendant|charm)/.test(textBlurb)) return "Others";
+    if (/(tent|camping|hiking|fishing|outdoor gear)/.test(textBlurb)) return "Sports & Outdoor";
+    if (textBlurb.indexOf("phone case") !== -1 || textBlurb.indexOf("phone cover") !== -1 ||
+        /(power bank|charger|charging cable|usb cable|data cable|magnetic phone|screen protector)/.test(textBlurb)) {
+        return "Phone Accessories";
+    }
+    if (/(hair clipper|curling iron|hair styler|hair tie|scrunchie|makeup|beauty tool|sponge|shampoo|dispenser)/.test(textBlurb)) {
+        return "Beauty & Personal Care";
+    }
+
+    // --- 3) SKU prefix heuristics (for items miscategorized as "Machinery"/"Other") ---
+    var skuUpper = sku.toUpperCase();
+    if (/^YCS-(MCH|OTH)-/.test(skuUpper)) {
+        if (/(phone|case|power bank|charger|cable|screen protector|power|magnetic)/.test(textBlurb)) {
+            return "Phone Accessories";
+        }
+    }
+    if (/^YCS-OUT-/.test(skuUpper)) return "Sports & Outdoor";
+
+    // --- 4) Sub-category → main category lookup ---
+    if (sub && SUB_TO_MAIN_CATEGORY[sub]) return SUB_TO_MAIN_CATEGORY[sub];
+
+    // Generic "Accessories" without a match → put under Others (user feedback:
+    // Accessories were incorrectly grouped into Apparel & Footwear).
+    if (sub === "Accessories") return "Others";
+
+    return "Others";
 }
 
 // ============================================================
@@ -60,15 +194,15 @@ function resolveMainCategory(input) {
 // Matches Yeatru branding so cards never have a broken-img icon.
 // ============================================================
 const YEASTRU_PLACEHOLDER_SVG = "data:image/svg+xml;utf8," + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs>' +
-    '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0%" stop-color="#EEF2FF"/><stop offset="100%" stop-color="#444CE7"/></linearGradient></defs>' +
-    '<rect width="800" height="800" fill="url(#g)"/>' +
-    '<circle cx="400" cy="350" r="90" fill="white" fill-opacity="0.9"/>' +
-    '<text x="400" y="385" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="90" font-weight="800" fill="#444CE7">YC</text>' +
-    '<text x="400" y="530" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="700" fill="#1E293B">Yeatru Sourcing</text>' +
-    '<text x="400" y="600" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="28" fill="#334155">Wholesale from China · 75K+ Factories</text>' +
-    '<text x="400" y="680" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="22" fill="#444CE7" font-weight="700">Free Quote in 24h · WhatsApp +86 159 8851 6408</text>' +
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">' +
+    '<rect width="800" height="800" fill="#F8FAFC"/>' +
+    '<rect x="1" y="1" width="798" height="798" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="8 6"/>' +
+    '<g opacity="0.55">' +
+    '<rect x="300" y="300" width="200" height="200" rx="44" fill="#EEF2FF"/>' +
+    '<text x="400" y="415" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="800" fill="#444CE7">YC</text>' +
+    '</g>' +
+    '<text x="400" y="590" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="30" fill="#94A3B8">Image Unavailable</text>' +
+    '<text x="400" y="640" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="22" fill="#CBD5E1">Yeatru Sourcing</text>' +
     '</svg>'
 );
 
@@ -143,19 +277,24 @@ function installImageFallback(root) {
                     img.classList.contains("brand-logo-img")) return;
                 if (img.src === YEASTRU_PLACEHOLDER_SVG) return;
                 // Image truly broken: no width decoded, or marked errored.
+                // Require BOTH complete AND naturalWidth===0 so images still
+                // downloading on slow connections are never replaced.
                 if (img.complete && img.naturalWidth === 0) {
                     img.src = YEASTRU_PLACEHOLDER_SVG;
                     img.classList.add("product-img-fallback");
                 }
             });
-        }, 200);
+        // Safety-net delay intentionally long (8s). Slow CDN images can take
+        // several seconds on mobile; we never want the placeholder to win
+        // a race against a legitimately slow-but-healthy image.
+        }, 8000);
     }
     if (document.readyState === "complete") {
         secondPass();
     } else {
         window.addEventListener("load", secondPass, { once: true });
-        // Hard fallback 10s into the session if load event somehow never fires.
-        setTimeout(secondPass, 10000);
+        // Hard fallback 20s into the session if load event somehow never fires.
+        setTimeout(secondPass, 20000);
     }
 })();
 

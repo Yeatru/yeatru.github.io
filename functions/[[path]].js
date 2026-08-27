@@ -73,7 +73,11 @@ export async function onRequest(context) {
   if (permanentTarget) return redirect301(url, permanentTarget);
 
   // --- (0) products.html?product=SKU → /product-SKU.html (服务端301, 避免JS redirect) ---
-  if (url.pathname === '/products.html' || url.pathname === '/products') {
+  // 同时: /products 和 /products? 带任何查询 被视为 products.html 的"别名clean path",
+  //       直接 ASSETS.fetch 返回内容（不再走下面的 2a clean-path→.html 301）。
+  //       之前 /products → 301→/products.html, CF Pages有时再内置308形成ERR_TOO_MANY_REDIRECTS。
+  const isProductsAlias = (url.pathname === '/products' || url.pathname === '/products/');
+  if (url.pathname === '/products.html' || isProductsAlias) {
     const productParam = url.searchParams.get('product');
     if (productParam) {
       // 优先SKU匹配: 合法SKU白名单
@@ -85,6 +89,24 @@ export async function onRequest(context) {
       if (sku) {
         return redirect301(url, `/product-${sku}.html`);
       }
+    }
+    if (isProductsAlias) {
+      // 别名/products (无后缀但合法页面) → 直接返回/products.html内容 (200, 不跳转)
+      if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
+        try {
+          const r = new Request(url.origin + '/products.html' + url.search, request);
+          const asset = await env.ASSETS.fetch(r);
+          if (asset && asset.status === 200 && asset.body) {
+            const h = new Headers(asset.headers);
+            h.delete('Location'); h.delete('Refresh');
+            if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+            h.set('Link', '<https://www.yeatru.com/products.html>; rel="canonical"');
+            h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+            return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+          }
+        } catch (_) {}
+      }
+      return next();
     }
   }
 

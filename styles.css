@@ -11163,3 +11163,431 @@ html {
         display: none;
     }
 }
+
+/* ==========================================================================
+ * 17. Product detail page UX refactor bundle
+ *    - Unified content width (no section bleeds; no 600px table cap)
+ *    - Detail-spec table: light readable header (no white-on-dark)
+ *    - A+ spec table (first block): clean zebra + thead in indigo-on-white
+ *    - Price: hero-sized, bold, contrasting color, always visible
+ *    - Mobile: tables collapse to label/value rows, horizontal scroll fallback
+ * ========================================================================== */
+
+/* ---------- Unified widths across detail-info & aplus blocks ---------- */
+.product-detail-page > .container,
+.product-detail-page .detail-main,
+.product-detail-page .aplus-section {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.aplus-blocks {
+    gap: 1rem;
+}
+.aplus-block {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #eef2ff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+/* Section divider: thin gradient bar between aplus blocks so transitions
+   are deliberate (fixes user complaint "two panels connected with too
+   much empty space"). */
+.aplus-block + .aplus-block {
+    position: relative;
+}
+.aplus-block + .aplus-block::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #c7d2fe 50%, transparent 100%);
+}
+
+/* ---------- Detail info column (short spec table) ---------- */
+.detail-spec-wrap {
+    margin: 1rem 0 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.detail-spec-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+.detail-spec-table th,
+.detail-spec-table td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #0f172a;                 /* Never white text */
+    background: #ffffff;            /* Never dark background on data rows */
+    white-space: normal;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.detail-spec-table tr:last-child th,
+.detail-spec-table tr:last-child td {
+    border-bottom: none;
+}
+.detail-spec-table th {
+    width: 38%;
+    background: #eef2ff;           /* Very light indigo: readable, not dark */
+    color: #3730a3;                 /* Indigo 800: strong contrast vs light bg */
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* ---------- Price row (short detail-spec table) ---------- */
+.detail-spec-table tr.spec-price-row th {
+    background: #fff1f2;            /* Soft rose, not dark */
+    color: #be123c;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+.detail-spec-table tr.spec-price-row td.spec-price-cell {
+    background: #fffafb;
+    padding: 0.7rem 1rem;
+}
+.spec-price-hint {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+/* ---------- Hero price display ---------- */
+.detail-price-hero {
+    display: inline-block;
+    font-size: 3.4rem;
+    line-height: 1.02;
+    font-weight: 900;
+    color: #dc2626;                 /* Red-600: stronger contrast than #E53935 */
+    letter-spacing: -0.8px;
+    text-shadow: 0 2px 6px rgba(220, 38, 38, 0.12);
+    margin: 0.1rem 0 0.2rem;
+    padding: 0;
+    border-radius: 0;
+}
+.detail-price-hero .variation-price {
+    font-size: inherit;
+    font-weight: 900;
+    color: inherit;
+}
+.detail-price-hero .price-dash {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #dc2626;
+    margin: 0 0.4rem;
+    vertical-align: middle;
+    opacity: 0.85;
+}
+
+/* A+ inline price inside the spec table: keep large but proportional to cell */
+.aplus-inline-price {
+    font-size: 2.2rem !important;
+    line-height: 1.05 !important;
+    margin: 0.2rem 0 0 !important;
+    display: inline-block !important;
+}
+
+/* ---------- A+ Product Specifications table (first block) ---------- */
+.aplus-spec-table-wrap {
+    margin: 0.5rem 0 0;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    background: #ffffff;
+    width: 100%;
+}
+.aplus-spec-table {
+    width: 100% !important;           /* Override any legacy 600px caps */
+    max-width: 100% !important;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: auto;
+}
+.aplus-spec-table thead th {
+    background: #eef2ff;             /* Light indigo (white text impossible) */
+    color: #3730a3;                  /* Indigo-800, ≥ 7:1 vs #EEF2FF */
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border-bottom: 2px solid #c7d2fe;
+    text-transform: none;
+}
+.aplus-spec-table tbody th,
+.aplus-spec-table tbody td {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.93rem;
+    color: #0f172a;                  /* Slate-900: never white, always readable */
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.aplus-spec-table tbody tr:nth-child(even) th,
+.aplus-spec-table tbody tr:nth-child(even) td {
+    background: #f8fafc;             /* Subtle zebra, still near-white */
+}
+.aplus-spec-table tbody tr:last-child th,
+.aplus-spec-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.aplus-spec-table tbody th {
+    width: 35%;
+    color: #334155;                  /* Slate-700 (not pure white / not pure black) */
+    font-weight: 700;
+    background: #fafbff !important;  /* Slightly tinted label col */
+}
+.aplus-spec-table tbody tr.aplus-spec-price-row th,
+.aplus-spec-table tbody tr.aplus-spec-price-row td {
+    background: #fff1f2 !important;
+    border-bottom: 1px solid #fecdd3;
+}
+.aplus-spec-table code {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.88em;
+}
+
+/* Also make sure any other free-form table inside A+ is readable and wide */
+.aplus-block-text table {
+    max-width: 100% !important;      /* Kill the legacy 600px cap causing blank space */
+    width: 100% !important;
+}
+.aplus-block-text table th {
+    background: #eef2ff !important;  /* Override legacy dark gradient + white text  */
+    color: #3730a3 !important;
+    text-align: left !important;
+}
+.aplus-block-text table th,
+.aplus-block-text table td {
+    color: #0f172a !important;       /* No more "white on dark" anywhere */
+    font-size: 0.92rem;
+    padding: 0.6rem 0.8rem;
+}
+
+/* ---------- Highlight / CTA blocks inside A+ ---------- */
+.aplus-block-highlight {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    border: 1px solid #c7d2fe;
+}
+.aplus-block-highlight .aplus-block-heading {
+    color: #3730a3;
+}
+.aplus-block-highlight .aplus-block-text,
+.aplus-block-highlight .aplus-block-text li,
+.aplus-block-highlight .aplus-block-text p {
+    color: #0f172a !important;       /* Indigo gradient bg → slate-900 text */
+}
+
+.aplus-cta-block {
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem !important;
+    text-align: center;
+    border: none;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.22);
+}
+.aplus-cta-block .aplus-block-heading {
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+.aplus-cta-block .aplus-block-text {
+    color: #e0e7ff !important;       /* Not pure white; softer + still AAA vs indigo */
+    max-width: 820px;
+    margin: 0 auto;
+}
+.aplus-cta-block .aplus-block-text p {
+    color: inherit !important;
+}
+.aplus-cta-lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+.aplus-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 0.2rem;
+}
+.aplus-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    white-space: nowrap;
+}
+.aplus-cta-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+.aplus-cta-btn-primary {
+    background: #ffffff;
+    color: #4338ca;
+}
+.aplus-cta-btn-primary:hover {
+    color: #3730a3;
+}
+.aplus-cta-btn-whatsapp {
+    background: #25D366;
+    color: #ffffff;
+}
+.aplus-cta-btn-whatsapp:hover {
+    color: #ffffff;
+}
+
+/* ---------- Mobile responsiveness: tables, price, CTA ---------- */
+
+/* Tablet (≤ 991px): shrink price hero and aplus block padding */
+@media (max-width: 991.98px) {
+    .aplus-block { padding: 1.25rem 1rem; }
+    .detail-price-hero { font-size: 2.8rem; }
+    .detail-price-hero .price-dash { font-size: 2.1rem; }
+    .aplus-inline-price { font-size: 1.9rem !important; }
+}
+
+/* Small tablet / large phone (≤ 767.98px) */
+@media (max-width: 767.98px) {
+    .aplus-block {
+        padding: 1rem 0.85rem;
+        border-radius: 10px;
+    }
+    .aplus-block + .aplus-block::before { left: 5%; right: 5%; }
+    .detail-spec-table th,
+    .detail-spec-table td,
+    .aplus-spec-table thead th,
+    .aplus-spec-table tbody th,
+    .aplus-spec-table tbody td {
+        padding: 0.55rem 0.65rem;
+        font-size: 0.85rem;
+    }
+    .detail-spec-table th { width: 42%; }
+
+    /* Collapse 2-column spec tables into "label above value" rows so the
+       price/SKU text never stacks vertically and never forces tall rows. */
+    .detail-spec-table,
+    .detail-spec-table thead,
+    .detail-spec-table tbody,
+    .detail-spec-table tr,
+    .detail-spec-table th,
+    .detail-spec-table td,
+    .aplus-spec-table,
+    .aplus-spec-table thead,
+    .aplus-spec-table tbody,
+    .aplus-spec-table tr,
+    .aplus-spec-table thead th,
+    .aplus-spec-table tbody th,
+    .aplus-spec-table tbody td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    .detail-spec-table thead,
+    .aplus-spec-table thead {
+        display: none;                   /* Collapsed layout: use data-label instead */
+    }
+    .detail-spec-table tr,
+    .aplus-spec-table tbody tr {
+        margin-bottom: 0.6rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #ffffff;
+    }
+    .detail-spec-table tr.spec-price-row {
+        border: 1px solid #fecdd3;
+    }
+    .detail-spec-table th,
+    .detail-spec-table td,
+    .aplus-spec-table tbody th,
+    .aplus-spec-table tbody td {
+        border-bottom: 1px solid #f1f5f9;
+        text-align: left;
+        padding: 0.45rem 0.6rem;
+    }
+    .detail-spec-table th:last-child,
+    .detail-spec-table td:last-child,
+    .aplus-spec-table tbody th:last-child,
+    .aplus-spec-table tbody td:last-child {
+        border-bottom: none;
+    }
+    .detail-spec-table th,
+    .aplus-spec-table tbody th {
+        background: #eef2ff;
+        color: #3730a3;
+        font-weight: 700;
+        font-size: 0.78rem;
+    }
+    .detail-spec-table tr.spec-price-row th {
+        background: #fff1f2;
+        color: #be123c;
+        font-size: 0.78rem;
+    }
+
+    .detail-price-hero { font-size: 2.25rem; }
+    .detail-price-hero .price-dash { font-size: 1.7rem; }
+    .aplus-inline-price { font-size: 1.7rem !important; }
+    .spec-price-hint { font-size: 0.72rem; }
+
+    .aplus-cta-block { padding: 1.5rem 1rem !important; border-radius: 14px; }
+    .aplus-cta-block .aplus-block-heading { font-size: 1.25rem; }
+    .aplus-cta-lead { font-size: 0.95rem; }
+    .aplus-cta-actions { gap: 0.5rem; }
+    .aplus-cta-btn {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.92rem;
+    }
+}
+
+/* Small phone (≤ 575.98px): even tighter, never drop readable contrast */
+@media (max-width: 575.98px) {
+    .aplus-block { padding: 0.9rem 0.7rem; }
+    .detail-spec-table th,
+    .detail-spec-table td,
+    .aplus-spec-table tbody th,
+    .aplus-spec-table tbody td {
+        padding: 0.4rem 0.55rem;
+        font-size: 0.8rem;
+    }
+    .detail-price-hero { font-size: 1.95rem; letter-spacing: -0.4px; }
+    .detail-price-hero .price-dash { font-size: 1.45rem; }
+    .aplus-inline-price { font-size: 1.5rem !important; }
+    .aplus-cta-block .aplus-block-heading { font-size: 1.1rem; }
+    .aplus-cta-lead { font-size: 0.88rem; }
+}
+

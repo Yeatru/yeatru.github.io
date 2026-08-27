@@ -226,7 +226,8 @@ def generate_price_display(product):
     usd_max = cny_to_usd(price_max)
 
     if usd_min is None or usd_max is None:
-        return '<span class="variation-price detail-price-big" data-usd-price="0">Contact for price</span>'
+        return ('<span class="variation-price detail-price-hero" data-usd-price="0">'
+                'Contact for price</span>')
 
     if abs(usd_min - usd_max) < 0.001:
         price_display = format_usd(usd_min)
@@ -235,7 +236,8 @@ def generate_price_display(product):
         price_display = f"{format_usd(usd_min)} - {format_usd(usd_max)}"
         price_attr = f"{usd_min:.6f}-{usd_max:.6f}"
 
-    return f'<span class="variation-price detail-price-big" data-usd-price="{usd_min:.6f}">{price_display}</span>'
+    return (f'<span class="variation-price detail-price-hero" '
+            f'data-usd-price="{price_attr}">{price_display}</span>')
 
 
 def generate_detail_spec_table(product):
@@ -245,23 +247,23 @@ def generate_detail_spec_table(product):
     usd_max = cny_to_usd(price_max)
 
     if usd_min is None or usd_max is None:
-        price_cell = '<td class="spec-price-cell">Contact for price</td>'
+        price_inner = "Contact for price"
     elif abs(usd_min - usd_max) < 0.001:
-        price_cell = f'<td class="spec-price-cell"><div id="detailPriceDisplay">{generate_price_display(product)}</div></td>'
+        price_inner = generate_price_display(product)
     else:
-        price_cell = f'<td class="spec-price-cell"><div id="detailPriceDisplay">{generate_price_display(product)}</div></td>'
+        price_inner = generate_price_display(product)
 
     material = escape_text(product.get("material", "See specifications"))
     size = escape_text(product.get("size", "—"))
-    moq = escape_text(product.get("moq", "1"))
+    moq = escape_text(str(product.get("moq", "1")))
 
     return f'''
-<div class="table-responsive">
+<div class="table-responsive detail-spec-wrap">
 <table class="detail-spec-table">
-  <tr class="spec-price-row"><th>WHOLESALE PRICE</th>{price_cell}</tr>
-  <tr><th>Material</th><td>{material}</td></tr>
-  <tr><th>Size</th><td>{size}</td></tr>
-  <tr><th>MOQ</th><td>{moq}</td></tr>
+  <tr class="spec-price-row"><th scope="row">WHOLESALE PRICE</th><td class="spec-price-cell"><div id="detailPriceDisplay">{price_inner}</div><div class="spec-price-hint">Factory-direct · CNY ÷ 6.7 × 1.15 · MOQ {moq}</div></td></tr>
+  <tr><th scope="row">Material</th><td>{material}</td></tr>
+  <tr><th scope="row">Size / Dimensions</th><td>{size}</td></tr>
+  <tr><th scope="row">Minimum Order</th><td><b>{moq}</b> piece(s) · OEM custom from 200 pcs</td></tr>
 </table>
 </div>'''
 
@@ -285,11 +287,10 @@ def generate_json_ld_product(product):
 
 
 # AA-730 sub-category -> UI main category (17 buttons on products.html).
-# Keep in sync with app.js -> SUB_TO_MAIN_CATEGORY.
+# Keep in sync with app.js -> SUB_TO_MAIN_CATEGORY + resolveMainCategory().
 _SUB_TO_MAIN_CATEGORY = {
     "Clothing":"Apparel & Footwear","Shoes":"Apparel & Footwear","Swimwear":"Apparel & Footwear",
     "Socks":"Apparel & Footwear","Hair Accessories":"Apparel & Footwear","Footwear":"Apparel & Footwear",
-    "Accessories":"Apparel & Footwear",
     "Auto Repair Tools":"Auto Parts & Tools","Auto Accessories":"Auto Parts & Tools",
     "Toys":"Baby & Toys","Baby Care":"Baby & Toys","Kids":"Baby & Toys",
     "Bags":"Bags & Luggage","Backpacks":"Bags & Luggage",
@@ -307,19 +308,76 @@ _SUB_TO_MAIN_CATEGORY = {
     "Kitchen Storage":"Kitchen Supplies","Kitchen Tools":"Kitchen Supplies","Cups & Drinkware":"Kitchen Supplies",
     "Material":"Material","OFC":"Material","KAP":"Material","MSF":"Material","PET":"Material",
     "Musical Instruments":"Musical Instruments",
-    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Others",
+    "Other":"Others","Photography":"Others","Machinery":"Others","Outdoor":"Sports & Outdoor",
+    "Fashion Jewelry":"Others","Jewelry":"Others","Home Textile":"Home & Daily Living",
     "Dog Supplies":"Pet Supplies","Pet Supplies":"Pet Supplies",
     "Mobile Accessories":"Phone Accessories","Screen Protectors":"Phone Accessories",
-    "Fitness":"Sports & Outdoor",
+    "Fitness":"Sports & Outdoor","Camping":"Sports & Outdoor","Tents":"Sports & Outdoor",
     "Stationery":"Stationery & Office",
 }
+
+# Per-SKU hard overrides (highest priority). Matches app.js JEWELRY_SKUS +
+# any miscategorized items we've manually identified in AA-730.
+_SKU_MAIN_CATEGORY_OVERRIDE = {
+    # --- Fashion jewelry (previously "Accessories" → wrongly Apparel) ---
+    "YCS-ACC-002": "Others",   # Bracelet Gift Box Jewelry Velvet
+    "YCS-ACC-006": "Others",   # Necklace Jewelry Fashion Gift
+    # --- Tents: sub=Outdoor, previously Others → should be Sports & Outdoor ---
+    "YCS-OUT-001": "Sports & Outdoor",
+    "YCS-OUT-002": "Sports & Outdoor",
+    "YCS-OUT-003": "Sports & Outdoor",
+}
+
+# Keyword rules applied to (category + " " + name).lower() for finer-grained
+# category routing than the generic sub-category map alone.
+def _keyword_main_category(sub_category, name, sku):
+    blob = f"{sub_category} {name}".lower()
+    sku_u = (sku or "").upper()
+    # Fashion jewelry
+    if "jewelry" in blob or "necklace" in blob or "bracelet" in blob or \
+       "earring" in blob or "pendant" in blob:
+        return "Others"
+    # Outdoor sports
+    if "tent" in blob or "camping" in blob or "hiking" in blob:
+        return "Sports & Outdoor"
+    # Phone accessories (charger / cable / power bank / case / screen protector)
+    if (sku_u.startswith("YCS-MCH-") or sku_u.startswith("YCS-OTH-") or
+        sku_u.startswith("YCS-ACC-")):
+        if ("phone" in blob and ("case" in blob or "cover" in blob)) or \
+           "power bank" in blob or "charger" in blob or "charging cable" in blob or \
+           "usb cable" in blob or "data cable" in blob or "magnetic phone" in blob or \
+           "screen protector" in blob:
+            return "Phone Accessories"
+    # Beauty & Personal Care (tools that were caught under broader subcats)
+    if "hair clipper" in blob or "curling iron" in blob or "hair styler" in blob or \
+       "hair tie" in blob or "scrunchie" in blob or "makeup blender" in blob or \
+       "beauty tool" in blob or "shampoo dispenser" in blob or "cosmetic" in blob:
+        return "Beauty & Personal Care"
+    return None
+
 def resolve_main_category(product):
     """Return the 17-item UI main category for breadcrumb links + product filters."""
-    main = product.get("mainCategory")
-    if isinstance(main, str) and main:
-        return main
+    sku = product.get("sku", "")
+    # 1) Hard per-SKU override
+    if sku in _SKU_MAIN_CATEGORY_OVERRIDE:
+        return _SKU_MAIN_CATEGORY_OVERRIDE[sku]
+    # 2) Keyword rules (take precedence over a catch-all sub-category map entry)
     sub = product.get("category", "")
-    return _SUB_TO_MAIN_CATEGORY.get(sub, "Others")
+    name = product.get("name", "")
+    kw = _keyword_main_category(sub, name, sku)
+    if kw:
+        return kw
+    # 3) Existing mainCategory (if valid UI category)
+    main = product.get("mainCategory")
+    if isinstance(main, str) and main and main in _SUB_TO_MAIN_CATEGORY.values():
+        return main
+    # 4) Sub-category → main category lookup
+    if sub and sub in _SUB_TO_MAIN_CATEGORY:
+        return _SUB_TO_MAIN_CATEGORY[sub]
+    # Generic "Accessories" (uncategorized) → Others per user feedback
+    if sub == "Accessories":
+        return "Others"
+    return "Others"
 
 
 def generate_json_ld_breadcrumb(product):
@@ -525,20 +583,61 @@ def generate_aplus_section(product):
     <h2 class="aplus-section-title"><i class="fas fa-layer-group me-2"></i> Product Details — {name} (SKU: {sku})</h2>
     <div class="aplus-blocks">
 
-      <!-- 1. SEO-Rich Product Overview (300+ words for Google & GPT grounding) -->
+      <!-- 1. Product Specifications (FIRST block per user request: always shows
+           the structured spec table before any narrative content) -->
+      <div class="aplus-block aplus-specs-first" data-type="specTable" data-img-deduped="1">
+        <div class="aplus-block-content">
+          <h3 class="aplus-block-heading"><i class="fas fa-list-check me-2"></i>Product Specifications</h3>
+          <div class="aplus-block-text">
+            <div class="table-responsive aplus-spec-table-wrap">
+<table class="aplus-spec-table" aria-label="Product Specifications for {sku}">
+  <thead>
+    <tr>
+      <th scope="col" style="width:35%;">Specification</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">SKU (Product Code)</th><td><code>{sku}</code></td></tr>
+    <tr><th scope="row">Product Name</th><td>{name}</td></tr>
+    <tr><th scope="row">Main Category (UI Filter)</th><td>{escape_text(main_category or 'N/A')}</td></tr>
+    <tr><th scope="row">Sub Category (Supplier Category)</th><td>{sub_category}</td></tr>
+    <tr class="aplus-spec-price-row"><th scope="row">Wholesale Price (USD)</th><td><span class="detail-price-hero aplus-inline-price">{price_usd}</span><div class="spec-price-hint">Factory-direct · CNY ÷ 6.7 × 1.15</div></td></tr>
+    <tr><th scope="row">Minimum Order Quantity (MOQ)</th><td><b>{moq} piece(s)</b> — stock items; 200–500 pcs for OEM custom</td></tr>
+    <tr><th scope="row">Material</th><td>{material}</td></tr>
+    <tr><th scope="row">Available Colors</th><td>{escape_text(colors_str)}</td></tr>
+    <tr><th scope="row">Available Sizes / Dimensions</th><td>{escape_text(sizes_str)}</td></tr>
+    <tr><th scope="row">Country of Origin</th><td>Yiwu / Zhejiang / Guangzhou, China (verified export factory)</td></tr>
+    <tr><th scope="row">Quality Standard</th><td>AQL 2.5 — 3-stage inspection (incoming · in-process · pre-shipment)</td></tr>
+    <tr><th scope="row">Certifications Available</th><td>CE · FCC · FDA · RoHS · MSDS · EN71 · ASTM · CPSIA · GCC / SASO (per product)</td></tr>
+    <tr><th scope="row">OEM / Private Label</th><td>✅ Supported — custom logo, packaging, colors, molds. 7-day sample.</td></tr>
+    <tr><th scope="row">Shipping Options</th><td>✅ Sea (25–45d) · Air (5–15d) · Express (3–7d) · Amazon FBA DDP</td></tr>
+    <tr><th scope="row">Free Warehousing</th><td>✅ 15 days at Yeatru Yiwu facility — order consolidation included</td></tr>
+    <tr><th scope="row">Lead Time (Production)</th><td>7–15 days (stock) · 15–30 days (OEM / mass production)</td></tr>
+    <tr><th scope="row">Payment Methods</th><td>T/T (bank wire) · PayPal (Yeatrusourcing@gmail.com) · Western Union · XTransfer · Trade Assurance</td></tr>
+    <tr><th scope="row">Sourcing Agent Fee</th><td>3–4% Order Management · 4–8% Full Sourcing — transparent, no hidden markup</td></tr>
+    <tr><th scope="row">Supplier</th><td>Verified Chinese manufacturer via Yeatru Sourcing (on-site audited)</td></tr>
+  </tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SEO-Rich Product Overview (300+ words for Google & GPT grounding) -->
       <div class="aplus-block" data-type="textImage" data-img-deduped="1">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Product Overview</h3>
+          <h3 class="aplus-block-heading"><i class="fas fa-info-circle me-2"></i>Product Overview</h3>
           <div class="aplus-block-text">
             {seo_overview}
           </div>
         </div>
       </div>
 
-      <!-- 2. Key Features (8 SEO-rich bullet points) -->
+      <!-- 3. Key Features (8 SEO-rich bullet points) -->
       <div class="aplus-block" data-type="text">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Why Buy This {escape_text(main_category or sub_category)} Product from Yeatru</h3>
+          <h3 class="aplus-block-heading"><i class="fas fa-star me-2"></i>Why Buy This {escape_text(main_category or sub_category)} Product from Yeatru</h3>
           <div class="aplus-block-text">
             <ul>
               {features_html}
@@ -547,49 +646,16 @@ def generate_aplus_section(product):
         </div>
       </div>
 
-      <!-- 3. Expanded Specifications Table -->
-      <div class="aplus-block" data-type="imageText" data-img-deduped="1">
-        <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Product Specifications</h3>
-          <div class="aplus-block-text">
-            <div class="table-responsive">
-<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%;">
-  <tr><th style="width:35%;text-align:left;background:#EEF2FF;"><b>Specification</b></th><th style="text-align:left;"><b>Details</b></th></tr>
-  <tr><td>SKU (Product Code)</td><td><code>{sku}</code></td></tr>
-  <tr><td>Product Name</td><td>{name}</td></tr>
-  <tr><td>Main Category (UI Filter)</td><td>{escape_text(main_category or 'N/A')}</td></tr>
-  <tr><td>Sub Category (Supplier Category)</td><td>{sub_category}</td></tr>
-  <tr><td>Wholesale Price (USD)</td><td><b>{price_usd}</b> (factory-direct, CNY ÷ 6.7 × 1.15)</td></tr>
-  <tr><td>Minimum Order Quantity (MOQ)</td><td><b>{moq} piece(s)</b> — stock items; 200–500 pcs for OEM custom</td></tr>
-  <tr><td>Material</td><td>{material}</td></tr>
-  <tr><td>Available Colors</td><td>{escape_text(colors_str)}</td></tr>
-  <tr><td>Available Sizes / Dimensions</td><td>{escape_text(sizes_str)}</td></tr>
-  <tr><td>Country of Origin</td><td>Yiwu / Zhejiang / Guangzhou, China (verified export factory)</td></tr>
-  <tr><td>Quality Standard</td><td>AQL 2.5 — 3-stage inspection (incoming · in-process · pre-shipment)</td></tr>
-  <tr><td>Certifications Available</td><td>CE · FCC · FDA · RoHS · MSDS · EN71 · ASTM · CPSIA · GCC / SASO (per product)</td></tr>
-  <tr><td>OEM / Private Label</td><td>✅ Supported — custom logo, packaging, colors, molds. 7-day sample.</td></tr>
-  <tr><td>Shipping Options</td><td>✅ Sea (25–45d) · Air (5–15d) · Express (3–7d) · Amazon FBA DDP</td></tr>
-  <tr><td>Free Warehousing</td><td>✅ 15 days at Yeatru Yiwu facility — order consolidation included</td></tr>
-  <tr><td>Lead Time (Production)</td><td>7–15 days (stock) · 15–30 days (OEM / mass production)</td></tr>
-  <tr><td>Payment Methods</td><td>T/T (bank wire) · PayPal (Yeatrusourcing@gmail.com) · Western Union · XTransfer · Trade Assurance</td></tr>
-  <tr><td>Sourcing Agent Fee</td><td>3–4% Order Management · 4–8% Full Sourcing — transparent, no hidden markup</td></tr>
-  <tr><td>Supplier</td><td>Verified Chinese manufacturer via Yeatru Sourcing (on-site audited)</td></tr>
-</table>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- 4. Applications & Target Buyers -->
       <div class="aplus-block" data-type="hero">
         <div class="aplus-block-content">
-          <h2 class="aplus-block-heading">Applications & Ideal Buyers</h2>
+          <h3 class="aplus-block-heading"><i class="fas fa-store me-2"></i>Applications &amp; Ideal Buyers</h3>
           <div class="aplus-block-text">
             <p><b>Who should source {name} ({sku})?</b> This {escape_text(sub_category)} product is recommended for
             <b>{uses}</b>.</p>
             <p><b>Use cases:</b> Retail shelf placement · e-commerce product listing (Amazon / Shopify / TikTok Shop / eBay) ·
             promotional corporate gift · bundle add-on · private-label resale · fundraising merchandise ·
-            conference & trade show swag · subscription-box filler · hotel & resort amenity.</p>
+            conference &amp; trade show swag · subscription-box filler · hotel &amp; resort amenity.</p>
             <p>Tell us your target market, sales channel, and order volume — our team will tailor sourcing terms,
             packaging, compliance docs, and shipping route for maximum profit margin.</p>
           </div>
@@ -599,18 +665,18 @@ def generate_aplus_section(product):
       <!-- 5. Packaging & Shipping -->
       <div class="aplus-block" data-type="text">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Packaging, Lead Time & Shipping</h3>
+          <h3 class="aplus-block-heading"><i class="fas fa-truck-fast me-2"></i>Packaging, Lead Time &amp; Shipping</h3>
           <div class="aplus-block-text">
             <ul>
               <li><b>Standard Packaging:</b> Poly bag / inner box / export carton with foam protection. Custom retail box, blister pack, color sleeve, and private-label hang-tag available on OEM orders.</li>
               <li><b>Production Lead Time:</b> Stock items ship in <b>7–15 days</b>; OEM / custom orders require <b>15–30 days</b> depending on complexity.</li>
               <li><b>Sample Lead Time:</b> <b>3–7 days</b> for stock samples; <b>7–15 days</b> for custom OEM samples. Sample fees refundable on bulk orders ≥ 1,000 pcs.</li>
-              <li><b>Shipping Methods & Timelines:</b>
+              <li><b>Shipping Methods &amp; Timelines:</b>
                 <ul style="margin-top:8px;">
                   <li>🚢 Sea Freight (FCL / LCL): <b>25–45 days</b> to main ports — lowest cost for ≥ 1 CBM</li>
                   <li>✈️ Air Freight: <b>5–15 days</b> — ideal for medium-batch Amazon FBA restock</li>
-                  <li>📦 Express (DHL / FedEx / UPS): <b>3–7 days</b> door-to-door — samples & urgent orders</li>
-                  <li>🏪 Amazon FBA / TikTok Warehouse: <b>DDP door-to-door</b> with FNSKU label & pallet compliance</li>
+                  <li>📦 Express (DHL / FedEx / UPS): <b>3–7 days</b> door-to-door — samples &amp; urgent orders</li>
+                  <li>🏪 Amazon FBA / TikTok Warehouse: <b>DDP door-to-door</b> with FNSKU label &amp; pallet compliance</li>
                 </ul>
               </li>
               <li><b>Order Consolidation:</b> Combine multiple products / suppliers into one shipment — free 15-day storage + one sea/air freight bill saves you 30–50% on shipping.</li>
@@ -620,11 +686,11 @@ def generate_aplus_section(product):
       </div>
 
       <!-- 6. Why Choose Yeatru Sourcing (GEO citable company facts) -->
-      <div class="aplus-block" data-type="text" style="background:linear-gradient(135deg,#EEF2FF 0%,#E0E7FF 100%);border-radius:12px;padding:24px;">
+      <div class="aplus-block aplus-block-highlight" data-type="text">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading" style="color:#3730A3;">Why Source from Yeatru Sourcing — Your China Agent Since 2022</h3>
+          <h3 class="aplus-block-heading"><i class="fas fa-shield-halved me-2"></i>Why Source from Yeatru Sourcing — Your China Agent Since 2022</h3>
           <div class="aplus-block-text">
-            <ul style="color:#1E293B;">
+            <ul>
               {why_yeatru_html}
             </ul>
           </div>
@@ -634,16 +700,16 @@ def generate_aplus_section(product):
       <!-- 7. Step-by-Step Sourcing Process -->
       <div class="aplus-block" data-type="text">
         <div class="aplus-block-content">
-          <h3 class="aplus-block-heading">Sourcing Process in 8 Simple Steps</h3>
+          <h3 class="aplus-block-heading"><i class="fas fa-shoe-prints me-2"></i>Sourcing Process in 8 Simple Steps</h3>
           <div class="aplus-block-text">
             <ol>
-              <li><b>Send Inquiry:</b> Email <b>info@yeatru.com</b> or WhatsApp <b>+86 159 8851 6408</b> with product name, target quantity, specs, destination country & sales channel.</li>
+              <li><b>Send Inquiry:</b> Email <b>info@yeatru.com</b> or WhatsApp <b>+86 159 8851 6408</b> with product name, target quantity, specs, destination country &amp; sales channel.</li>
               <li><b>Free Quote in 24 Hours:</b> Receive detailed quote including unit price, MOQ, shipping options, estimated lead time, and sourcing service fee breakdown.</li>
               <li><b>Sample Evaluation (Optional):</b> Approve sample — we coordinate sample production, QC photos, DHL shipping to your office so you can test quality before bulk.</li>
-              <li><b>Contract & Deposit:</b> Sign service agreement. Pay 50% deposit (T/T, PayPal Yeatrusourcing@gmail.com, or XTransfer) to start production.</li>
+              <li><b>Contract &amp; Deposit:</b> Sign service agreement. Pay 50% deposit (T/T, PayPal Yeatrusourcing@gmail.com, or XTransfer) to start production.</li>
               <li><b>Production Follow-up:</b> Weekly photo/video progress updates. Our on-site team visits the factory during in-process QC to catch issues early.</li>
               <li><b>Pre-Shipment Inspection (AQL 2.5):</b> 100% visual check + documented photo/video report. You approve before we ship — defective batches go back to the factory for rework at their cost.</li>
-              <li><b>Balance Payment & Shipping:</b> Pay remaining 50% balance. We arrange export customs, DDP door-to-door shipping (sea / air / express / FBA) with live tracking.</li>
+              <li><b>Balance Payment &amp; Shipping:</b> Pay remaining 50% balance. We arrange export customs, DDP door-to-door shipping (sea / air / express / FBA) with live tracking.</li>
               <li><b>After-Sales Support:</b> File claims, handle defect replacements, manage re-orders, and scale new product sourcing. Your dedicated account manager is always one WhatsApp message away.</li>
             </ol>
           </div>
@@ -651,19 +717,18 @@ def generate_aplus_section(product):
       </div>
 
       <!-- 8. Call to Action (inquiry CTA) -->
-      <div class="aplus-block" data-type="hero" style="background:linear-gradient(135deg,#444CE7 0%,#3730A3 100%);color:white;border-radius:16px;padding:32px;text-align:center;">
+      <div class="aplus-block aplus-cta-block" data-type="hero">
         <div class="aplus-block-content">
-          <h2 class="aplus-block-heading" style="color:white !important;">👉 Ready to Source {name} at Factory Price?</h2>
-          <div class="aplus-block-text" style="color:rgba(255,255,255,0.92);">
-            <p style="font-size:18px;">Click <b>Get a Quote</b> below or WhatsApp us directly. Get your <b>free, no-obligation quote within 24 hours</b> — including competitive factory price, MOQ, lead time, and DDP shipping cost to your door.</p>
-            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-              <a href="contact.html?product={sku}&amp;name={html.escape(name)}"
-                 style="display:inline-block;background:white;color:#444CE7;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+          <h2 class="aplus-block-heading">👉 Ready to Source {name} at Factory Price?</h2>
+          <div class="aplus-block-text">
+            <p class="aplus-cta-lead">Click <b>Get a Quote</b> below or WhatsApp us directly. Get your <b>free, no-obligation quote within 24 hours</b> — including competitive factory price, MOQ, lead time, and DDP shipping cost to your door.</p>
+            <div class="aplus-cta-actions">
+              <a class="aplus-cta-btn aplus-cta-btn-primary"
+                 href="contact.html?product={sku}&amp;name={html.escape(name)}">
                 📝 Request a Quote (Email)
               </a>
-              <a href="https://wa.me/8615988516408?text={html.escape('Hello Yeatru Sourcing, I would like a quote for SKU '+sku+' — '+name+'. Qty: ___. Ship to: ___')}"
-                 target="_blank" rel="noopener noreferrer"
-                 style="display:inline-block;background:#25D366;color:white;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+              <a class="aplus-cta-btn aplus-cta-btn-whatsapp" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/8615988516408?text={html.escape('Hello Yeatru Sourcing, I would like a quote for SKU '+sku+' — '+name+'. Qty: ___. Ship to: ___')}">
                 💬 Chat on WhatsApp (+86 159 8851 6408)
               </a>
             </div>
