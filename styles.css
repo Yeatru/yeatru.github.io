@@ -11490,6 +11490,69 @@ html {
     color: #0f172a !important;       /* Indigo gradient bg → slate-900 text */
 }
 
+/* --- 2026-08-28: A+ Product Gallery (variant image grid) --- */
+.aplus-gallery-block {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem 1.25rem 1.5rem !important;
+    box-sizing: border-box;
+}
+.aplus-gallery-block .aplus-block-heading {
+    color: #0F172A;
+    margin-bottom: 0.4rem;
+}
+.aplus-gallery-intro {
+    color: #475569;
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+    line-height: 1.65;
+}
+.aplus-gallery-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+.aplus-gallery-item {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.aplus-gallery-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    border-color: #94A3B8;
+}
+.aplus-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+    background: #fff;
+    display: block;
+}
+@media (max-width: 576px) {
+    .aplus-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 0.5rem;
+    }
+    .aplus-gallery-item img {
+        padding: 4px;
+    }
+}
+
 .aplus-cta-block {
     background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
     color: #ffffff;

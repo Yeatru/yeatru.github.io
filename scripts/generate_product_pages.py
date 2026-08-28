@@ -720,6 +720,42 @@ def generate_aplus_section(product):
     uses = cat_use_map.get(main_category if main_category else "Others",
                             cat_use_map["Others"])
 
+    # Product Gallery (variant images) - 2026-08-28
+    # Renders images array from product data (collected from unreferenced variant images).
+    gallery_imgs = [u for u in (product.get("images") or []) if u]
+    # Deduplicate while preserving order
+    seen = set()
+    gallery_imgs = [u for u in gallery_imgs if not (u in seen or seen.add(u))]
+    if gallery_imgs:
+        items = []
+        for i, u in enumerate(gallery_imgs):
+            url_esc = escape_attr(u)
+            alt_esc = escape_attr(name) + f" variant view {i+1}"
+            title_esc = escape_attr(name) + f" variant view {i+1} — click to enlarge"
+            items.append(
+                f'<li class="aplus-gallery-item">'
+                f'<a href="{url_esc}" target="_blank" rel="noopener noreferrer" title="{title_esc}">'
+                f'<img src="{url_esc}" alt="{alt_esc}" loading="lazy" decoding="async" '
+                f"onerror=\"this.closest('.aplus-gallery-item').style.display='none'\"></a></li>"
+            )
+        gallery_items_html = "\n".join(items)
+        gallery_block_html = f'''
+      <!-- 2.5. Product Gallery (real variant / angle photos) -->
+      <div class="aplus-block aplus-gallery-block" data-type="gallery">
+        <div class="aplus-block-content">
+          <h3 class="aplus-block-heading"><i class="fas fa-images me-2"></i>Product Gallery — Real Photos &amp; Variants</h3>
+          <div class="aplus-block-text">
+            <p class="aplus-gallery-intro">Below are actual factory &amp; product photos of <b>{name}</b> ({sku}). Variants shown may include color options, size comparisons, packaging, and on-site production snapshots. Tap any image to enlarge.</p>
+            <ul class="aplus-gallery-grid" role="list" aria-label="Product gallery for {sku}">
+{gallery_items_html}
+            </ul>
+          </div>
+        </div>
+      </div>
+'''
+    else:
+        gallery_block_html = ""
+
     # Why Source from Yeatru section (repeats GEO-citable company stats)
     why_yeatru_html = "\n".join([
         "<li><b>📍 Local Presence:</b> Registered company <i>Yiwu Yichu Trading Co., Ltd.</i> (USCC: 91330782MABU4K2L6F) with office & warehouse inside Yiwu International Trade City — direct access to 75,000+ factories.</li>",
@@ -785,7 +821,7 @@ def generate_aplus_section(product):
           </div>
         </div>
       </div>
-
+{gallery_block_html}
       <!-- 3. Key Features (8 SEO-rich bullet points) -->
       <div class="aplus-block" data-type="text">
         <div class="aplus-block-content">
