@@ -1025,6 +1025,279 @@ def _sku_slug(sku):
     return slug
 
 
+# ===================== Short-description builder (task B) ===================
+# Appearance keyword lexicon — extracted cheaply from the product name or
+# image filename. Capitalisation-tolerant; matching is word-bounded.
+_APPEARANCE_COLORS = [
+    "Black", "White", "Red", "Blue", "Green", "Yellow", "Orange", "Pink",
+    "Purple", "Grey", "Gray", "Brown", "Cyan", "Magenta", "Beige", "Khaki",
+    "Navy", "Mint", "Olive", "Teal", "Maroon", "Cream", "Gold", "Silver",
+    "Rose Gold", "Copper", "Bronze", "Transparent", "Clear", "Neon",
+]
+_APPEARANCE_FINISHES = [
+    "Matte", "Glossy", "Shiny", "Satin", "Brushed", "Polished", "Velvet",
+    "Fleece", "Cotton", "Linen", "Leather", "Silicone", "Rubber", "Canvas",
+    "Mesh", "Nylon", "Stainless Steel", "Acrylic", "Bamboo", "Wooden",
+    "Wood", "Ceramic", "Marble", "Holographic", "Glitter", "Frosted",
+    "Ribbed", "Textured", "Smooth", "Quilted",
+]
+_AUDIENCE_BY_CATEGORY = {
+    # mainCategory -> audience phrase
+    "Apparel & Footwear": "fashion retailers, private-label clothing brands, and boutique e-commerce sellers",
+    "Beauty & Personal Care": "beauty retailers, salon suppliers, and private-label skincare brands",
+    "Digital Electronics": "electronics retailers, gadget e-commerce stores, B2B office equipment buyers, and tech accessory distributors",
+    "Home & Kitchen": "home goods importers, kitchenware brands, hotel procurement teams, and dropshipping stores",
+    "Outdoors & Sports": "outdoor gear retailers, sports clubs, camping distributors, and private-label activewear brands",
+    "Toys & Hobbies": "toy shops, educational suppliers, family entertainment importers, and party planners",
+    "Home Textiles & Storage": "home textile retailers, hotel & hospitality procurement, and organizer e-commerce brands",
+    "Pet Supplies": "pet shops, vet clinics, groomers, and private-label pet brands",
+    "Office & School Supplies": "stationery stores, school procurement offices, corporate B2B suppliers, and promotional gift buyers",
+    "Food & Beverage": "supermarket chains, F&B distributors, hotel procurement, and private-label snack brands",
+    "Industrial & Machinery": "MRO buyers, plant operators, contractors, and OEM machinery resellers",
+    "Healthcare & Wellness": "pharmacies, clinics, wellness retailers, and private-label supplement brands",
+    "Jewelry & Watches": "jewelry boutiques, gift shops, fashion accessory brands, and souvenir retailers",
+    "Luggage & Bags": "bag retailers, travel accessory brands, corporate gift buyers, and luggage distributors",
+    "Others": "general merchandise importers, gift store chains, and promotional product buyers",
+}
+_AUDIENCE_BY_SUBCATEGORY = {
+    # category (sub) -> audience phrase; wins over mainCategory if present
+    "Clothing & Apparel": "fashion boutique owners, private-label apparel brands, and B2B clothing importers",
+    "Shoes & Footwear": "shoe stores, sneaker resellers, uniform buyers, and private-label footwear brands",
+    "Furniture & Home Decor": "furniture retailers, interior designers, hotel procurement, and home decor brands",
+    "Kitchenware & Tableware": "restaurant supply buyers, kitchenware brands, and household goods importers",
+    "Camping Equipment": "outdoor camping retailers, rental operators, and private-label gear brands",
+    "Fitness Equipment": "gym equipment suppliers, fitness studios, and personal-use equipment retailers",
+    "Tools & Hardware": "hardware stores, maintenance contractors, and industrial MRO buyers",
+    "Office Supplies": "corporate procurement, stationery retailers, and promotional gift resellers",
+    "School & Educational Supplies": "school supply distributors, teachers, and stationery e-commerce stores",
+    "Accessories": "fashion accessory boutiques and gift-shop chains",
+    "Hair Accessories": "beauty supply stores and hair accessory importers",
+    "Personal Care": "beauty retailers, hotel amenity suppliers, and personal care brands",
+    "Machinery": "plant operators, MRO buyers, and OEM industrial resellers",
+    "Audio/Electronics": "electronics retailers and audio-visual equipment distributors",
+}
+# Rotating core-advantage templates (1 per line). Two slot placeholders:
+#   {price}   → USD price text (e.g. "$2.06" or "$2.06 – $5.12")
+#   {moq}     → MOQ number
+_ADVANTAGE_TEMPLATES = [
+    "factory-direct wholesale starting at {price}",
+    "flexible MOQ of {moq} piece(s) with OEM logo & packaging options",
+    "3-stage AQL 2.5 quality control pipeline before shipment",
+    "DDP door-to-door global logistics from Yiwu warehouse",
+    "7–15 day sample turnaround with private label customization",
+    "verified supplier network, SGS / BV / TUV 3rd-party inspection available",
+    "cost-efficient China sourcing support from Yeatru, 15–30% vs trading companies",
+    "24/7 multilingual support with quote within 24 hours",
+    "MOQ {moq} + pricing {price} — ideal mix for trial orders and volume re-stocks",
+    "factory price {price} and MOQ {moq} pcs with quality inspection included",
+    "free product photos & inspection videos on orders ≥ {moq} pcs at {price}",
+    "price {price} with transparent EXW Yiwu terms; MOQ {moq} piece(s)",
+]
+# Secondary lead-in phrase that is *always* shown once per short description
+# so SKUs with identical name/material/category still read differently by
+# the deterministic price/MOQ rotation. Slots: {price}, {moq}.
+_PRICE_LEADINS = [
+    "Priced from {price} with MOQ {moq} piece(s)",
+    "Listed at {price} ex-factory, MOQ starts at {moq} piece(s)",
+    "Offered at {price} wholesale with a {moq}-piece minimum",
+    "Wholesale rate {price} — MOQ {moq} piece(s) from our verified factory",
+    "Sourced at {price} — MOQ {moq} pieces, no middleman markup",
+    "Factory rate {price}, trial MOQ {moq} piece(s) accepted",
+    "Budget pricing {price}, low MOQ of {moq} piece(s)",
+    "Competitive {price} per unit with a {moq}-piece MOQ",
+    "Starting at {price}, with MOQ flexibility from {moq} piece(s)",
+    "Cost {price} wholesale, MOQ {moq} — shipped EXW Yiwu",
+]
+# Opening template variants to rotate sentence structure. Slots:
+#   {type}     → product type (name, de-colorised)
+#   {looks}    → appearance phrase (color + finish)
+#   {audience} → audience segment
+#   {leadin}   → price/MOQ lead-in phrase
+#   {spec}     → material/size sentence
+_SHORT_OPENERS = [
+    "{type} with {looks} — designed for {audience}; {leadin}; {spec}.",
+    "{type} showcasing {looks} — ideal for {audience}; {leadin}; {spec}.",
+    "{type} featuring {looks} — tailored for {audience}; {leadin}; {spec}.",
+    "{type} built with {looks} — suited for {audience}; {leadin}; {spec}.",
+    "{type} finished with {looks} — for {audience}; {leadin}; {spec}.",
+    "{type}, {looks} in appearance — engineered for {audience}; {leadin}; {spec}.",
+    "{type}, offering {looks}, crafted for {audience}; {leadin}; {spec}.",
+    "{type} presenting {looks} — aimed at {audience}; {leadin}; {spec}.",
+    "{type} carrying {looks} — targeted at {audience}; {leadin}; {spec}.",
+    "{type} — with {looks} — made for {audience}; {leadin}; {spec}.",
+    "{type} boasting {looks} — meant for {audience}; {leadin}; {spec}.",
+    "{type} outfitted with {looks} — for {audience}; {leadin}; {spec}.",
+]
+
+
+def _extract_appearance(name, image, colors_list):
+    """Derive a short 'looks' phrase from product name + image filename."""
+    import re as _re
+    text = " ".join([str(name or ""), str(image or "")])
+
+    # Colors: first pass from the variations list (highest priority)
+    found_colors = []
+    for c in (colors_list or []):
+        cs = str(c).strip().title()
+        if cs and cs not in found_colors:
+            found_colors.append(cs)
+    # Colors: second pass from lexicon via name/image
+    for col in _APPEARANCE_COLORS:
+        if _re.search(r'\b' + _re.escape(col) + r'\b', text, flags=re.IGNORECASE):
+            if col not in found_colors:
+                found_colors.append(col)
+
+    finishes = []
+    for fin in _APPEARANCE_FINISHES:
+        if _re.search(r'\b' + _re.escape(fin) + r'\b', text, flags=re.IGNORECASE):
+            if fin not in finishes:
+                finishes.append(fin)
+
+    # Fallback when nothing at all detected
+    if not found_colors and not finishes:
+        return "clean, market-ready styling"
+
+    parts = []
+    if found_colors:
+        if len(found_colors) == 1:
+            parts.append(f"{found_colors[0]} color")
+        else:
+            parts.append("/".join(found_colors[:3]) + " multi-color palette")
+    if finishes:
+        if len(finishes) == 1:
+            parts.append(f"{finishes[0]} finish")
+        else:
+            parts.append(" + ".join(finishes[:2]) + " materials")
+    return " and ".join(parts)
+
+
+def _audience_for(main_category, sub_category):
+    if sub_category and sub_category in _AUDIENCE_BY_SUBCATEGORY:
+        return _AUDIENCE_BY_SUBCATEGORY[sub_category]
+    if main_category and main_category in _AUDIENCE_BY_CATEGORY:
+        return _AUDIENCE_BY_CATEGORY[main_category]
+    return "global importers, e-commerce sellers, and private-label brands"
+
+
+def _type_from_name(name, colors_list):
+    """Strip redundant appearance words from the product name so the sentence
+    doesn't repeat 'Black Black Wireless Earbuds'."""
+    import re as _re
+    s = str(name or "").strip().rstrip(".")
+    if not s:
+        return "Product"
+    # Drop detected color words
+    for col in (colors_list or []):
+        cw = str(col).strip()
+        if cw:
+            s = _re.sub(r'\b' + _re.escape(cw) + r'\b', '', s, flags=re.IGNORECASE)
+    # Drop appearance-lexicon color/finish words
+    for word in _APPEARANCE_COLORS + _APPEARANCE_FINISHES:
+        s = _re.sub(r'\b' + _re.escape(word) + r'\b', '', s, flags=re.IGNORECASE)
+    # Collapse whitespace
+    s = _re.sub(r'\s+', ' ', s).strip(' -—,')
+    # Capitalise first letter; preserve uppercase SKU-like words
+    if not s:
+        s = str(name or "Product").strip().rstrip(".") or "Product"
+    return s[:1].upper() + s[1:]
+
+
+def _build_unique_short_description(product):
+    """Return a unique, human-friendly short description for the product
+    detail page's hero block (the p.detail-desc under the spec table)."""
+    import json as _json
+    import re as _re
+
+    name = product.get("name") or ""
+    sku = product.get("sku", "") or ""
+    main_cat = product.get("mainCategory") or ""
+    sub_cat = product.get("category") or ""
+    material = (product.get("material") or "").strip().rstrip(".")
+    size_field = (product.get("size") or "").strip().rstrip(".")
+    moq = product.get("moq") or 1
+    image = product.get("image") or ""
+
+    _v = product.get("variations") or []
+    if isinstance(_v, str):
+        try:
+            _v = _json.loads(_v)
+        except Exception:
+            _v = []
+    colors_list = sorted(
+        {str(v.get("color", "")).strip() for v in _v if isinstance(v, dict) and str(v.get("color", "")).strip()}
+    )
+    sizes_list = sorted(
+        {str(v.get("size", "")).strip() for v in _v if isinstance(v, dict) and str(v.get("size", "")).strip()}
+    )
+    variant_size_display = ""
+    if sizes_list:
+        variant_size_display = "variants: " + ", ".join(sizes_list[:5]) + ("…" if len(sizes_list) > 5 else "")
+    elif size_field:
+        variant_size_display = "size: " + size_field
+
+    # Deterministic rotation seed from SKU + name + MOQ + prices.
+    # We explicitly factor in price so SKUs with identical name / category
+    # / material but different prices still produce different rotations.
+    p_min = product.get("priceMin")
+    p_max = product.get("priceMax")
+    seed_str = f"{sku}|{name}|{moq}|{sub_cat}|{main_cat}|{p_min}|{p_max}|{size_field}"
+    seed = abs(hash(seed_str)) + 1
+    # Mix in a small numeric "style index" derived from SKU digits to avoid
+    # rotational degeneracy when hash(seed_str) produces the same modulus.
+    try:
+        digit_sum = sum(int(c) for c in sku if c.isdigit())
+    except Exception:
+        digit_sum = 0
+    seed = seed * 131 + digit_sum * 17 + (int(float(p_min) * 100) if p_min not in (None, "") else 0)
+    N_O = len(_SHORT_OPENERS)
+    N_A = len(_ADVANTAGE_TEMPLATES)
+    N_L = len(_PRICE_LEADINS)
+
+    # USD pricing for advantage + leadin slots
+    usd_min_raw = _cny_to_usd(product.get("priceMin"))
+    usd_max_raw = _cny_to_usd(product.get("priceMax"))
+    usd_min = round(usd_min_raw, 2) if usd_min_raw is not None else None
+    usd_max = round(usd_max_raw, 2) if usd_max_raw is not None else None
+    if usd_min is not None and usd_max is not None and abs(usd_min - usd_max) >= 0.01:
+        price_text = f"${usd_min:.2f} – ${usd_max:.2f}"
+    elif usd_min is not None:
+        price_text = f"${usd_min:.2f}"
+    elif usd_max is not None:
+        price_text = f"${usd_max:.2f}"
+    else:
+        price_text = "wholesale pricing"
+
+    leadin = _PRICE_LEADINS[seed % N_L].format(price=price_text, moq=str(moq))
+    advantage = _ADVANTAGE_TEMPLATES[(seed // N_L) % N_A].format(price=price_text, moq=str(moq))
+    looks = _extract_appearance(name, image, colors_list)
+    audience = _audience_for(main_cat, sub_cat)
+    product_type = _type_from_name(name, colors_list)
+
+    # Build the {spec} clause: material + variant sizes + 1 core advantage
+    spec_bits = []
+    if material:
+        spec_bits.append(f"material: {material}")
+    if variant_size_display:
+        spec_bits.append(variant_size_display)
+    spec_bits.append(advantage)
+    spec = "; ".join(spec_bits)
+
+    opener_idx = (seed // (N_L * N_A)) % N_O
+    opener_template = _SHORT_OPENERS[opener_idx]
+    result = opener_template.format(
+        type=product_type,
+        looks=looks,
+        audience=audience,
+        leadin=leadin,
+        spec=spec,
+    )
+    # Add the SKU signature in the closing clause so every page is trivially unique
+    result = f"{result} Sourced by Yeatru — China {sub_cat or 'merchandise'} supplier ({sku})."
+    # Tidy double spaces / double semicolons (from empty material/size)
+    result = re.sub(r'\s*;\s*;\s*', '; ', result)
+    return re.sub(r'\s{2,}', ' ', result).strip()
+
+
 def build_product_page(product, aplus_blocks, all_products=None):
     pid = product["id"]
     sku = product.get("sku", "") or ""
@@ -1040,6 +1313,27 @@ def build_product_page(product, aplus_blocks, all_products=None):
     price_min = product.get("priceMin", "")
     price_max = product.get("priceMax", "")
     desc = product.get("description", "") or ""
+    # Fallback short description (h1下方, below spec-table, above variants)
+    # ------------------------------------------------------------
+    # Replaces legacy empty/boilerplate "<name>. <name>." text with a
+    # one-line but meaningful summary that varies per SKU:
+    #   • product type
+    #   • main visual appearance cues (color / finish keywords extracted
+    #     from the product name + main-image filename)
+    #   • intended audience / buyer segment mapped from category
+    #   • one rotating core-advantage keyword (factory-direct, QC, OEM,
+    #     DDP shipping, low MOQ,…)
+    #   • correct variant sizes (from variations[]; fall back to size field)
+    # ------------------------------------------------------------
+    name_stripped = (product.get("name") or "").strip().rstrip(".")
+    desc_stripped = (desc or "").strip().rstrip(".")
+    legacy_patterns = (
+        desc_stripped == name_stripped,
+        re.fullmatch(re.escape(name_stripped) + r"\.?\s*(sizes?|available|color|colour)\b.*", desc_stripped, flags=re.I) is not None,
+        bool(name_stripped) and len(desc_stripped) <= int(len(name_stripped) * 2.2) + 30 and desc_stripped.startswith(name_stripped),
+    )
+    if not desc.strip() or any(legacy_patterns):
+        desc = _build_unique_short_description(product)
     image = product.get("image") or ""
     image_opt = optimize_image_url(image, 800) if image else ""
 
