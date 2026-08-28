@@ -65,6 +65,13 @@ STATIC_PAGES = [
     ("refund.html", 0.3, "yearly"),
     ("nda.html", 0.3, "yearly"),
     ("data.html", 0.5, "monthly"),
+    ("sourcing-agent-for-tiktok-shop-seller.html", 0.8, "monthly"),
+    ("yiwu-sourcing-agent-uk.html", 0.8, "monthly"),
+    ("china-sourcing-agent-germany.html", 0.8, "monthly"),
+    ("china-sourcing-agent-europe.html", 0.8, "monthly"),
+    ("china-sourcing-turkiye.html", 0.8, "monthly"),
+    ("sourcing-agent-middle-east-uae-saudi.html", 0.8, "monthly"),
+    ("all-products.html", 0.8, "weekly"),
 ]
 
 # The 10 real blog HTML files that actually exist in the repo.
@@ -79,6 +86,25 @@ BLOG_POSTS = [
     "blog-private-mold-packaging.html",
     "blog-sea-freight-guide.html",
     "blog-sourcing-preparation-checklist.html",
+    "blog-tiktok-shop-compliance-2026.html",
+    "blog-what-is-sourcing-agent.html",
+    "blog-how-much-sourcing-agents-charge.html",
+    "blog-how-to-choose-sourcing-agent.html",
+    "blog-how-to-pay-chinese-suppliers-safely.html",
+    "blog-import-from-china-step-by-step.html",
+    "blog-individual-seller-china-sourcing.html",
+    "blog-low-moq-sourcing-agent.html",
+    "blog-sample-order-from-china.html",
+    "blog-sourcing-agent-vs-buying-office.html",
+    "blog-sourcing-agent-vs-direct-factory.html",
+    "blog-sourcing-agent-vs-dropshipping.html",
+    "blog-sourcing-agent-vs-trading-company.html",
+    "blog-1688-shopping-agent-english.html",
+    "blog-china-ddp-shipping-agent.html",
+    "blog-china-sourcing-agent-guide.html",
+    "blog-ethical-sourcing-practices.html",
+    "blog-yiwu-market-agent-for-foreigners.html",
+    "blog-amazon-fba-prep-service-china.html",
 ]
 
 
