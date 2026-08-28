@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "lastUpdated": "2026-08-26",
+  "lastUpdated": "2026-08-28",
   "source": "AA-730价格汇总表.xlsx (only YCS- SKUs)",
   "priceFormula": {
     "cnyToUsd": "CNY / 6.7 * 1.15",
@@ -29,7 +29,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "大肠圈束发带8件套",
+      "_cjk": "大肠圈束发带件套"
     },
     {
       "id": 2,
@@ -51,7 +53,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "手链盒子",
+      "_cjk": "手链盒子"
     },
     {
       "id": 3,
@@ -73,7 +77,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "防噪音耳塞",
+      "_cjk": "防噪音耳塞"
     },
     {
       "id": 4,
@@ -95,7 +101,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "配件",
+      "_cjk": "配件"
     },
     {
       "id": 5,
@@ -117,7 +125,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "眼罩",
+      "_cjk": "眼罩"
     },
     {
       "id": 6,
@@ -139,7 +149,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "项链",
+      "_cjk": "项链"
     },
     {
       "id": 7,
@@ -161,7 +173,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "汽修工具",
+      "_cjk": "汽修工具"
     },
     {
       "id": 8,
@@ -183,7 +197,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "汽修工具kt607127件套",
+      "_cjk": "汽修工具件套"
     },
     {
       "id": 9,
@@ -205,7 +221,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "3盘锻打轴承拉马",
+      "_cjk": "盘锻打轴承拉马"
     },
     {
       "id": 10,
@@ -227,7 +245,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "瓜式弹簧压缩器",
+      "_cjk": "瓜式弹簧压缩器"
     },
     {
       "id": 11,
@@ -249,7 +269,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "22件冷气管拆卸工具",
+      "_cjk": "件冷气管拆卸工具"
     },
     {
       "id": 12,
@@ -271,7 +293,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "强磁托盘",
+      "_cjk": "强磁托盘"
     },
     {
       "id": 13,
@@ -293,7 +317,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "磁性火星塞",
+      "_cjk": "磁性火星塞"
     },
     {
       "id": 14,
@@ -315,7 +341,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "汽修球头拉拔器",
+      "_cjk": "汽修球头拉拔器"
     },
     {
       "id": 15,
@@ -337,7 +365,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "磁铁工具条",
+      "_cjk": "磁铁工具条"
     },
     {
       "id": 16,
@@ -359,7 +389,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "无线蓝牙耳机黑色",
+      "_cjk": "无线蓝牙耳机黑色"
     },
     {
       "id": 17,
@@ -381,7 +413,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "无线蓝牙耳机白色五代蓝讯芯片蜂鸣器配重低功耗",
+      "_cjk": "无线蓝牙耳机白色五代蓝讯芯片蜂鸣器配重低功耗"
     },
     {
       "id": 18,
@@ -403,7 +437,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "a9pro蓝牙耳机白色",
+      "_cjk": "蓝牙耳机白色"
     },
     {
       "id": 19,
@@ -425,7 +461,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "音箱singezqs8210黑色",
+      "_cjk": "音箱黑色"
     },
     {
       "id": 20,
@@ -447,7 +485,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "音箱jqs912s黑色",
+      "_cjk": "音箱黑色"
     },
     {
       "id": 21,
@@ -469,7 +509,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "音箱zqs8302",
+      "_cjk": "音箱"
     },
     {
       "id": 22,
@@ -491,7 +533,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "音箱singezqs8221",
+      "_cjk": "音箱"
     },
     {
       "id": 23,
@@ -513,7 +557,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "音箱dhe6002s",
+      "_cjk": "音箱"
     },
     {
       "id": 24,
@@ -535,7 +581,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "耳机黑银100个棕银",
+      "_cjk": "耳机黑银个棕银"
     },
     {
       "id": 25,
@@ -557,7 +605,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "采访棒",
+      "_cjk": "采访棒"
     },
     {
       "id": 26,
@@ -579,7 +629,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "w919蓝牙耳机",
+      "_cjk": "蓝牙耳机"
     },
     {
       "id": 27,
@@ -609,7 +661,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AUS-012-002.png"
-      ]
+      ],
+      "_norm": "q71蓝牙耳机",
+      "_cjk": "蓝牙耳机"
     },
     {
       "id": 28,
@@ -639,7 +693,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AUS-013-002.png"
-      ]
+      ],
+      "_norm": "耳机ak6绿色50个透白色100个黑色100个幻彩紫色",
+      "_cjk": "耳机绿色个透白色个黑色个幻彩紫色"
     },
     {
       "id": 29,
@@ -648,20 +704,22 @@
       "name": "White Sleep Earbuds Bluetooth Thin",
       "name_cn": "S16睡眠耳机，奶白色20个，黑色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AUS-014.png",
-      "priceMin": 45.0,
-      "priceMax": 45.0,
+      "priceMin": 46.6,
+      "priceMax": 46.6,
       "moq": 40,
       "description": "White Sleep Earbuds Bluetooth Thin. Available in Black.",
       "variations": [
         {
           "child_id": "YCS-AUS-014",
-          "price": 45.0,
+          "price": 46.6,
           "color": "Black",
           "size": ""
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "s16睡眠耳机奶白色20个黑色",
+      "_cjk": "睡眠耳机奶白色个黑色"
     },
     {
       "id": 30,
@@ -683,7 +741,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "停车牌",
+      "_cjk": "停车牌"
     },
     {
       "id": 31,
@@ -705,7 +765,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "喷码机1墨盒2",
+      "_cjk": "喷码机墨盒"
     },
     {
       "id": 32,
@@ -727,7 +789,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "方向盘套",
+      "_cjk": "方向盘套"
     },
     {
       "id": 33,
@@ -749,7 +813,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "车载吸尘器",
+      "_cjk": "车载吸尘器"
     },
     {
       "id": 34,
@@ -771,7 +837,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "卡片发声书",
+      "_cjk": "卡片发声书"
     },
     {
       "id": 35,
@@ -793,7 +861,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "车载救生锤",
+      "_cjk": "车载救生锤"
     },
     {
       "id": 36,
@@ -815,7 +885,9 @@
         }
       ],
       "mainCategory": "Auto Parts & Tools",
-      "images": []
+      "images": [],
+      "_norm": "汽车遮阳伞",
+      "_cjk": "汽车遮阳伞"
     },
     {
       "id": 37,
@@ -837,7 +909,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "电视机顶盒aosp欧规",
+      "_cjk": "电视机顶盒欧规"
     },
     {
       "id": 38,
@@ -859,7 +933,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "路由器黑色50个白色",
+      "_cjk": "路由器黑色个白色"
     },
     {
       "id": 39,
@@ -881,7 +957,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "3d眼镜",
+      "_cjk": "眼镜"
     },
     {
       "id": 40,
@@ -903,7 +981,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "小米空气净化器5",
+      "_cjk": "小米空气净化器"
     },
     {
       "id": 41,
@@ -925,7 +1005,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "投影机海外安卓游戏",
+      "_cjk": "投影机海外安卓游戏"
     },
     {
       "id": 42,
@@ -947,7 +1029,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "tv98rk3528机顶盒",
+      "_cjk": "机顶盒"
     },
     {
       "id": 43,
@@ -977,7 +1061,9 @@
       "mainCategory": "Bags & Luggage",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAC-001-002.jpg"
-      ]
+      ],
+      "_norm": "双肩包白色",
+      "_cjk": "双肩包白色"
     },
     {
       "id": 44,
@@ -999,7 +1085,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "双肩包卡其色",
+      "_cjk": "双肩包卡其色"
     },
     {
       "id": 45,
@@ -1021,7 +1109,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "旅行双肩包黑色60个白色20个红色",
+      "_cjk": "旅行双肩包黑色个白色个红色"
     },
     {
       "id": 46,
@@ -1043,7 +1133,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "商务背包60个黑色20个蓝色20个灰色",
+      "_cjk": "商务背包个黑色个蓝色个灰色"
     },
     {
       "id": 47,
@@ -1065,7 +1157,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女士双肩包黑色60个白色20个红色10个米色",
+      "_cjk": "女士双肩包黑色个白色个红色个米色"
     },
     {
       "id": 48,
@@ -1087,7 +1181,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "学院风背包",
+      "_cjk": "学院风背包"
     },
     {
       "id": 49,
@@ -1109,7 +1205,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "书包",
+      "_cjk": "书包"
     },
     {
       "id": 50,
@@ -1131,7 +1229,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "碎花背包",
+      "_cjk": "碎花背包"
     },
     {
       "id": 51,
@@ -1153,7 +1253,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "粉色书包",
+      "_cjk": "粉色书包"
     },
     {
       "id": 52,
@@ -1190,7 +1292,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-001-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-001-003.png"
-      ]
+      ],
+      "_norm": "带锁卡包灰蓝黑各",
+      "_cjk": "带锁卡包灰蓝黑各"
     },
     {
       "id": 53,
@@ -1212,7 +1316,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "洗护袋",
+      "_cjk": "洗护袋"
     },
     {
       "id": 54,
@@ -1234,7 +1340,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女士包包",
+      "_cjk": "女士包包"
     },
     {
       "id": 55,
@@ -1256,7 +1364,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "带锁卡包藏青",
+      "_cjk": "带锁卡包藏青"
     },
     {
       "id": 56,
@@ -1286,7 +1396,9 @@
       "mainCategory": "Bags & Luggage",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-006-002.png"
-      ]
+      ],
+      "_norm": "保鲜膜打包机4色",
+      "_cjk": "保鲜膜打包机色"
     },
     {
       "id": 57,
@@ -1295,20 +1407,20 @@
       "name": "Brown Small Square Bag Women's Fashion Crossbody",
       "name_cn": "小方包，棕色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-007-001.png",
-      "priceMin": 19.6,
-      "priceMax": 85.0,
+      "priceMin": 8.0,
+      "priceMax": 8.0,
       "moq": 30,
       "description": "Brown Small Square Bag Women's Fashion Crossbody. Available in Black, Brown. Sizes: S.",
       "variations": [
         {
           "child_id": "YCS-BAG-007-001",
-          "price": 19.6,
+          "price": 8.0,
           "color": "Black",
           "size": "S"
         },
         {
           "child_id": "YCS-BAG-007-002",
-          "price": 85.0,
+          "price": 8.0,
           "color": "Brown",
           "size": "S"
         }
@@ -1316,7 +1428,9 @@
       "mainCategory": "Bags & Luggage",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-007-002.png"
-      ]
+      ],
+      "_norm": "小方包棕色",
+      "_cjk": "小方包棕色"
     },
     {
       "id": 58,
@@ -1338,7 +1452,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "便携医药包红色",
+      "_cjk": "便携医药包红色"
     },
     {
       "id": 59,
@@ -1360,7 +1476,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "电脑包黑色60个深蓝色20个浅灰色10个深灰色",
+      "_cjk": "电脑包黑色个深蓝色个浅灰色个深灰色"
     },
     {
       "id": 60,
@@ -1390,7 +1508,9 @@
       "mainCategory": "Baby & Toys",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-001-002.png"
-      ]
+      ],
+      "_norm": "吸奶器粉",
+      "_cjk": "吸奶器粉"
     },
     {
       "id": 61,
@@ -1412,7 +1532,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "吸鼻器绿色",
+      "_cjk": "吸鼻器绿色"
     },
     {
       "id": 62,
@@ -1434,7 +1556,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "穿戴吸奶器浅蓝",
+      "_cjk": "穿戴吸奶器浅蓝"
     },
     {
       "id": 63,
@@ -1456,7 +1580,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "收腹带肤色m50个l50个xl50个xxl20个黑色m20个l20个xl20个xxl",
+      "_cjk": "收腹带肤色个个个个黑色个个个"
     },
     {
       "id": 64,
@@ -1478,7 +1604,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "床围栏",
+      "_cjk": "床围栏"
     },
     {
       "id": 65,
@@ -1508,7 +1636,9 @@
       "mainCategory": "Baby & Toys",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-006-002.png"
-      ]
+      ],
+      "_norm": "婴儿护理13件套粉色",
+      "_cjk": "婴儿护理件套粉色"
     },
     {
       "id": 66,
@@ -1538,7 +1668,9 @@
       "mainCategory": "Baby & Toys",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-007-002.png"
-      ]
+      ],
+      "_norm": "婴儿指甲剪8件套粉色",
+      "_cjk": "婴儿指甲剪件套粉色"
     },
     {
       "id": 67,
@@ -1560,7 +1692,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "婴儿指甲剪6件套5010c2色",
+      "_cjk": "婴儿指甲剪件套色"
     },
     {
       "id": 68,
@@ -1582,7 +1716,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "婴儿指甲剪6件套50062色",
+      "_cjk": "婴儿指甲剪件套色"
     },
     {
       "id": 69,
@@ -1604,7 +1740,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "婴儿牙胶",
+      "_cjk": "婴儿牙胶"
     },
     {
       "id": 70,
@@ -1641,7 +1779,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-011-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-011-003.png"
-      ]
+      ],
+      "_norm": "婴儿脚踏琴0315粉",
+      "_cjk": "婴儿脚踏琴粉"
     },
     {
       "id": 71,
@@ -1678,7 +1818,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BTY-001-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BTY-001-003.png"
-      ]
+      ],
+      "_norm": "沐浴液分装瓶黑500ml",
+      "_cjk": "沐浴液分装瓶黑"
     },
     {
       "id": 72,
@@ -1700,7 +1842,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "美发棒x9马卡龙6合140个x96合1粉红红色",
+      "_cjk": "美发棒马卡龙合个合粉红红色"
     },
     {
       "id": 73,
@@ -1722,7 +1866,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "电推剪",
+      "_cjk": "电推剪"
     },
     {
       "id": 74,
@@ -1744,7 +1890,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "海绵卷发器",
+      "_cjk": "海绵卷发器"
     },
     {
       "id": 75,
@@ -1766,7 +1914,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "卷发棒",
+      "_cjk": "卷发棒"
     },
     {
       "id": 76,
@@ -1788,7 +1938,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "美妆蛋",
+      "_cjk": "美妆蛋"
     },
     {
       "id": 77,
@@ -1822,7 +1974,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "窗户刮水器",
+      "_cjk": "窗户刮水器"
     },
     {
       "id": 78,
@@ -1866,7 +2020,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-002-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-002-003.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-002-004.jpg"
-      ]
+      ],
+      "_norm": "1823洗碗布7色",
+      "_cjk": "洗碗布色"
     },
     {
       "id": 79,
@@ -1888,7 +2044,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "平白拖把白",
+      "_cjk": "平白拖把白"
     },
     {
       "id": 80,
@@ -1910,7 +2068,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "电动清洁刷",
+      "_cjk": "电动清洁刷"
     },
     {
       "id": 81,
@@ -1932,7 +2092,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "拖把拖布4色",
+      "_cjk": "拖把拖布色"
     },
     {
       "id": 82,
@@ -1954,7 +2116,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "洗碗刷",
+      "_cjk": "洗碗刷"
     },
     {
       "id": 83,
@@ -1984,7 +2148,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-007-002.png"
-      ]
+      ],
+      "_norm": "三角拖把",
+      "_cjk": "三角拖把"
     },
     {
       "id": 84,
@@ -2006,7 +2172,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "三角拖把布头",
+      "_cjk": "三角拖把布头"
     },
     {
       "id": 85,
@@ -2028,7 +2196,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "除尘掸子4色",
+      "_cjk": "除尘掸子色"
     },
     {
       "id": 86,
@@ -2050,7 +2220,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "水槽过滤网",
+      "_cjk": "水槽过滤网"
     },
     {
       "id": 87,
@@ -2072,7 +2244,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "一次性压缩毛巾",
+      "_cjk": "一次性压缩毛巾"
     },
     {
       "id": 88,
@@ -2094,7 +2268,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "洗洁剂",
+      "_cjk": "洗洁剂"
     },
     {
       "id": 89,
@@ -2116,7 +2292,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "衣物漂白剂",
+      "_cjk": "衣物漂白剂"
     },
     {
       "id": 90,
@@ -2138,7 +2316,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "厨房水槽过滤网",
+      "_cjk": "厨房水槽过滤网"
     },
     {
       "id": 91,
@@ -2147,20 +2327,22 @@
       "name": "Disposable Filter Bag Washing Machine Mesh",
       "name_cn": "一次性过滤网袋",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-015.png",
-      "priceMin": 1.55,
-      "priceMax": 1.55,
+      "priceMin": 1.23,
+      "priceMax": 1.23,
       "moq": 1,
       "description": "Disposable Filter Bag Washing Machine Mesh.",
       "variations": [
         {
           "child_id": "YCS-CLN-015",
-          "price": 1.55,
+          "price": 1.23,
           "color": "",
           "size": ""
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "一次性过滤网袋",
+      "_cjk": "一次性过滤网袋"
     },
     {
       "id": 92,
@@ -2182,7 +2364,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "擦窗器",
+      "_cjk": "擦窗器"
     },
     {
       "id": 93,
@@ -2204,7 +2388,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "多功能清洗机",
+      "_cjk": "多功能清洗机"
     },
     {
       "id": 94,
@@ -2226,7 +2412,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "滤清器拆卸钳",
+      "_cjk": "滤清器拆卸钳"
     },
     {
       "id": 95,
@@ -2248,7 +2436,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "粘毛器",
+      "_cjk": "粘毛器"
     },
     {
       "id": 96,
@@ -2270,7 +2460,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "夹板",
+      "_cjk": "夹板"
     },
     {
       "id": 97,
@@ -2292,7 +2484,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "t恤140码灰白各一件",
+      "_cjk": "恤码灰白各一件"
     },
     {
       "id": 98,
@@ -2314,7 +2508,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "衣服紫色库洛米140粉色凯蒂猫140灰色小熊170白色大恐龙170",
+      "_cjk": "衣服紫色库洛米粉色凯蒂猫灰色小熊白色大恐龙"
     },
     {
       "id": 99,
@@ -2336,7 +2532,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "内裤130cm2包共8条",
+      "_cjk": "内裤包共条"
     },
     {
       "id": 100,
@@ -2358,7 +2556,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "背心裙",
+      "_cjk": "背心裙"
     },
     {
       "id": 101,
@@ -2380,7 +2580,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士平角内裤",
+      "_cjk": "男士平角内裤"
     },
     {
       "id": 102,
@@ -2402,7 +2604,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "防晒袖套",
+      "_cjk": "防晒袖套"
     },
     {
       "id": 103,
@@ -2424,7 +2628,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士内裤8条盒装",
+      "_cjk": "女士内裤条盒装"
     },
     {
       "id": 104,
@@ -2446,7 +2652,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "cosplay服装",
+      "_cjk": "服装"
     },
     {
       "id": 105,
@@ -2468,7 +2676,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "网纱内衣套装甜蜜粉3680ab30套甜蜜粉3885ab30套",
+      "_cjk": "网纱内衣套装甜蜜粉套甜蜜粉套"
     },
     {
       "id": 106,
@@ -2490,7 +2700,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "网纱内衣套装白色3680ab20套白色3885ab20套",
+      "_cjk": "网纱内衣套装白色套白色套"
     },
     {
       "id": 107,
@@ -2512,7 +2724,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "紧身连体衣黑色兔女郎30条红色兔女郎50条白色兔女郎20条",
+      "_cjk": "紧身连体衣黑色兔女郎条红色兔女郎条白色兔女郎条"
     },
     {
       "id": 108,
@@ -2534,7 +2748,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "蕾丝睡衣红色50条黑色30条白色20条",
+      "_cjk": "蕾丝睡衣红色条黑色条白色条"
     },
     {
       "id": 109,
@@ -2556,7 +2772,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "睡裙酒红色l20条xxxl20条黑色l30条黑色xxxl30",
+      "_cjk": "睡裙酒红色条条黑色条黑色"
     },
     {
       "id": 110,
@@ -2578,7 +2796,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "衣服刷白色",
+      "_cjk": "衣服刷白色"
     },
     {
       "id": 111,
@@ -2600,7 +2820,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "内裤8条盒装",
+      "_cjk": "内裤条盒装"
     },
     {
       "id": 112,
@@ -2622,7 +2844,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士内裤",
+      "_cjk": "女士内裤"
     },
     {
       "id": 113,
@@ -2644,7 +2868,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "挂烫机",
+      "_cjk": "挂烫机"
     },
     {
       "id": 114,
@@ -2666,7 +2892,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "连体衣红色",
+      "_cjk": "连体衣红色"
     },
     {
       "id": 115,
@@ -2688,7 +2916,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "连体衣3色",
+      "_cjk": "连体衣色"
     },
     {
       "id": 116,
@@ -2710,7 +2940,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "睡裙2色黑色l25条xxxl25条酒红色l25条xxxl25条",
+      "_cjk": "睡裙色黑色条条酒红色条条"
     },
     {
       "id": 117,
@@ -2732,7 +2964,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "连衣裙2色黑色50条白50条",
+      "_cjk": "连衣裙色黑色条白条"
     },
     {
       "id": 118,
@@ -2754,7 +2988,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "蕾丝睡衣2色黑色30条白色30条",
+      "_cjk": "蕾丝睡衣色黑色条白色条"
     },
     {
       "id": 119,
@@ -2798,7 +3034,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-023-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-023-003.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-023-004.jpg"
-      ]
+      ],
+      "_norm": "水洗蓝色牛仔裤尺码2838共11个尺码一套34套",
+      "_cjk": "水洗蓝色牛仔裤尺码共个尺码一套套"
     },
     {
       "id": 120,
@@ -2820,7 +3058,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "连衣裙",
+      "_cjk": "连衣裙"
     },
     {
       "id": 121,
@@ -2842,7 +3082,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "反光安全衣",
+      "_cjk": "反光安全衣"
     },
     {
       "id": 122,
@@ -2864,7 +3106,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "反光安全背心",
+      "_cjk": "反光安全背心"
     },
     {
       "id": 123,
@@ -2886,7 +3130,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士速干衣5件套",
+      "_cjk": "男士速干衣件套"
     },
     {
       "id": 124,
@@ -2923,7 +3169,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-028-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-028-003.png"
-      ]
+      ],
+      "_norm": "男士运动套装",
+      "_cjk": "男士运动套装"
     },
     {
       "id": 125,
@@ -2945,7 +3193,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士短裤",
+      "_cjk": "男士短裤"
     },
     {
       "id": 126,
@@ -2975,7 +3225,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-030-002.png"
-      ]
+      ],
+      "_norm": "牛仔裤深蓝色",
+      "_cjk": "牛仔裤深蓝色"
     },
     {
       "id": 127,
@@ -2997,7 +3249,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "牛仔裤卡其色",
+      "_cjk": "牛仔裤卡其色"
     },
     {
       "id": 128,
@@ -3019,7 +3273,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男短袖",
+      "_cjk": "男短袖"
     },
     {
       "id": 129,
@@ -3041,7 +3297,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士运动套装两色各l10xl10xxl10",
+      "_cjk": "女士运动套装两色各"
     },
     {
       "id": 130,
@@ -3063,7 +3321,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "衣服",
+      "_cjk": "衣服"
     },
     {
       "id": 131,
@@ -3100,7 +3360,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-037-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-037-003.png"
-      ]
+      ],
+      "_norm": "束脚运动裤black",
+      "_cjk": "束脚运动裤"
     },
     {
       "id": 132,
@@ -3122,7 +3384,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "美式长裤",
+      "_cjk": "美式长裤"
     },
     {
       "id": 133,
@@ -3152,7 +3416,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-039-002.png"
-      ]
+      ],
+      "_norm": "弯刀休闲裤black",
+      "_cjk": "弯刀休闲裤"
     },
     {
       "id": 134,
@@ -3182,7 +3448,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-040-002.png"
-      ]
+      ],
+      "_norm": "k139长裤black",
+      "_cjk": "长裤"
     },
     {
       "id": 135,
@@ -3204,7 +3472,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "牛仔裤黑色",
+      "_cjk": "牛仔裤黑色"
     },
     {
       "id": 136,
@@ -3241,7 +3511,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-042-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-042-003.png"
-      ]
+      ],
+      "_norm": "抽绳运动裤black",
+      "_cjk": "抽绳运动裤"
     },
     {
       "id": 137,
@@ -3263,7 +3535,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "yck2zz02u休闲长裤",
+      "_cjk": "休闲长裤"
     },
     {
       "id": 138,
@@ -3300,7 +3574,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-044-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-044-003.jpg"
-      ]
+      ],
+      "_norm": "抽绳运动裤补充black",
+      "_cjk": "抽绳运动裤补充"
     },
     {
       "id": 139,
@@ -3344,7 +3620,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-045-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-045-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-045-004.png"
-      ]
+      ],
+      "_norm": "儿童牛仔裤blue",
+      "_cjk": "儿童牛仔裤"
     },
     {
       "id": 140,
@@ -3374,7 +3652,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-001-002.png"
-      ]
+      ],
+      "_norm": "pet一次性饮料瓶带盖",
+      "_cjk": "一次性饮料瓶带盖"
     },
     {
       "id": 141,
@@ -3404,7 +3684,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-002-002.png"
-      ]
+      ],
+      "_norm": "水杯四色",
+      "_cjk": "水杯四色"
     },
     {
       "id": 142,
@@ -3426,7 +3708,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "洗米筛",
+      "_cjk": "洗米筛"
     },
     {
       "id": 143,
@@ -3448,7 +3732,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "硅胶折叠杯",
+      "_cjk": "硅胶折叠杯"
     },
     {
       "id": 144,
@@ -3470,7 +3756,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢杯子",
+      "_cjk": "不锈钢杯子"
     },
     {
       "id": 145,
@@ -3492,7 +3780,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "壁挂式调料盒三杯黑色",
+      "_cjk": "壁挂式调料盒三杯黑色"
     },
     {
       "id": 146,
@@ -3514,7 +3804,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "壁挂式调料盒两杯黑色",
+      "_cjk": "壁挂式调料盒两杯黑色"
     },
     {
       "id": 147,
@@ -3536,7 +3828,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "陶瓷杯子6色",
+      "_cjk": "陶瓷杯子色"
     },
     {
       "id": 148,
@@ -3558,7 +3852,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "陶瓷杯黑色",
+      "_cjk": "陶瓷杯黑色"
     },
     {
       "id": 149,
@@ -3580,7 +3876,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "玻璃油刷瓶",
+      "_cjk": "玻璃油刷瓶"
     },
     {
       "id": 150,
@@ -3610,7 +3908,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-012-002.png"
-      ]
+      ],
+      "_norm": "不锈钢保温杯5色",
+      "_cjk": "不锈钢保温杯色"
     },
     {
       "id": 151,
@@ -3632,7 +3932,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢水杯小白三代",
+      "_cjk": "不锈钢水杯小白三代"
     },
     {
       "id": 152,
@@ -3654,7 +3956,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢水杯四代黑色201内胆",
+      "_cjk": "不锈钢水杯四代黑色内胆"
     },
     {
       "id": 153,
@@ -3676,7 +3980,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢水杯六代白色201内胆",
+      "_cjk": "不锈钢水杯六代白色内胆"
     },
     {
       "id": 154,
@@ -3698,7 +4004,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "水杯",
+      "_cjk": "水杯"
     },
     {
       "id": 155,
@@ -3720,7 +4028,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "杯子",
+      "_cjk": "杯子"
     },
     {
       "id": 156,
@@ -3742,7 +4052,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "米桶",
+      "_cjk": "米桶"
     },
     {
       "id": 157,
@@ -3764,7 +4076,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "电动研磨器",
+      "_cjk": "电动研磨器"
     },
     {
       "id": 158,
@@ -3786,7 +4100,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "蓝牙打印机c80纹身机黑5台白5台",
+      "_cjk": "蓝牙打印机纹身机黑台白台"
     },
     {
       "id": 159,
@@ -3808,7 +4124,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "打印机清洁卡",
+      "_cjk": "打印机清洁卡"
     },
     {
       "id": 160,
@@ -3838,7 +4156,9 @@
       "mainCategory": "Pet Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DGO-004-002.png"
-      ]
+      ],
+      "_norm": "热敏打印机c80白色",
+      "_cjk": "热敏打印机白色"
     },
     {
       "id": 161,
@@ -3860,7 +4180,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "热敏打印机a4dy黑色",
+      "_cjk": "热敏打印机黑色"
     },
     {
       "id": 162,
@@ -3882,7 +4204,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "电动研磨器kymq14",
+      "_cjk": "电动研磨器"
     },
     {
       "id": 163,
@@ -3904,7 +4228,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "电动研磨套装kymq14bs",
+      "_cjk": "电动研磨套装"
     },
     {
       "id": 164,
@@ -3926,7 +4252,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "p4游戏手柄",
+      "_cjk": "游戏手柄"
     },
     {
       "id": 165,
@@ -3948,7 +4276,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "m864g游戏手柄",
+      "_cjk": "游戏手柄"
     },
     {
       "id": 166,
@@ -3970,7 +4300,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "手柄游戏机324个红色324个蓝色",
+      "_cjk": "手柄游戏机个红色个蓝色"
     },
     {
       "id": 167,
@@ -3992,7 +4324,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "打印机耗材",
+      "_cjk": "打印机耗材"
     },
     {
       "id": 168,
@@ -4014,7 +4348,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "游戏手柄p4无线蓝牙黑",
+      "_cjk": "游戏手柄无线蓝牙黑"
     },
     {
       "id": 169,
@@ -4023,20 +4359,22 @@
       "name": "Black 3D Printer Filament Pla 1Kg",
       "name_cn": "3D打印耗材，PLA【黑色】1公斤",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DGO-013.png",
-      "priceMin": 26.99,
-      "priceMax": 26.99,
+      "priceMin": 27.0,
+      "priceMax": 27.0,
       "moq": 1,
       "description": "Black 3D Printer Filament Pla 1Kg. Available in Black.",
       "variations": [
         {
           "child_id": "YCS-DGO-013",
-          "price": 26.99,
+          "price": 27.0,
           "color": "Black",
           "size": ""
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "3d打印耗材pla黑色1公斤",
+      "_cjk": "打印耗材黑色公斤"
     },
     {
       "id": 170,
@@ -4045,20 +4383,22 @@
       "name": "3D Printer Filament Pla 1Kg",
       "name_cn": "3D打印耗材，PLA【夜光绿】1KG",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DGO-014.png",
-      "priceMin": 33.99,
-      "priceMax": 33.99,
+      "priceMin": 33.0,
+      "priceMax": 33.0,
       "moq": 1,
       "description": "3D Printer Filament Pla 1Kg. Available in Green.",
       "variations": [
         {
           "child_id": "YCS-DGO-014",
-          "price": 33.99,
+          "price": 33.0,
           "color": "Green",
           "size": ""
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "3d打印耗材pla夜光绿1kg",
+      "_cjk": "打印耗材夜光绿"
     },
     {
       "id": 171,
@@ -4080,7 +4420,9 @@
         }
       ],
       "mainCategory": "Pet Supplies",
-      "images": []
+      "images": [],
+      "_norm": "3d打印耗材夜光橙变粉f104",
+      "_cjk": "打印耗材夜光橙变粉"
     },
     {
       "id": 172,
@@ -4110,7 +4452,9 @@
       "mainCategory": "Home Appliances",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DRY-001-002.png"
-      ]
+      ],
+      "_norm": "窗户晾晒杆100cm",
+      "_cjk": "窗户晾晒杆"
     },
     {
       "id": 173,
@@ -4132,7 +4476,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "usb小风扇",
+      "_cjk": "小风扇"
     },
     {
       "id": 174,
@@ -4154,7 +4500,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "便携式风扇金属款",
+      "_cjk": "便携式风扇金属款"
     },
     {
       "id": 175,
@@ -4176,7 +4524,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "迷你小风扇4个色",
+      "_cjk": "迷你小风扇个色"
     },
     {
       "id": 176,
@@ -4198,7 +4548,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手持小风扇",
+      "_cjk": "手持小风扇"
     },
     {
       "id": 177,
@@ -4220,7 +4572,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "筋膜枪",
+      "_cjk": "筋膜枪"
     },
     {
       "id": 178,
@@ -4242,7 +4596,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "瑜伽垫",
+      "_cjk": "瑜伽垫"
     },
     {
       "id": 179,
@@ -4264,7 +4620,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝关节护具",
+      "_cjk": "膝关节护具"
     },
     {
       "id": 180,
@@ -4286,7 +4644,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝部护具",
+      "_cjk": "膝部护具"
     },
     {
       "id": 181,
@@ -4308,7 +4668,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "弹力带",
+      "_cjk": "弹力带"
     },
     {
       "id": 182,
@@ -4330,7 +4692,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝关节护具款式1带背带气囊",
+      "_cjk": "膝关节护具款式带背带气囊"
     },
     {
       "id": 183,
@@ -4352,7 +4716,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝关节护具款式2轻便款带背带气囊",
+      "_cjk": "膝关节护具款式轻便款带背带气囊"
     },
     {
       "id": 184,
@@ -4374,7 +4740,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝关节护具款式3轻便款长度可调带背带气囊",
+      "_cjk": "膝关节护具款式轻便款长度可调带背带气囊"
     },
     {
       "id": 185,
@@ -4396,7 +4764,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "膝关节护具款式4轻便款快拆长度可调带背带气囊",
+      "_cjk": "膝关节护具款式轻便款快拆长度可调带背带气囊"
     },
     {
       "id": 186,
@@ -4426,7 +4796,9 @@
       "mainCategory": "Sports & Outdoor",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-FIT-010-002.png"
-      ]
+      ],
+      "_norm": "拳击速度球红色",
+      "_cjk": "拳击速度球红色"
     },
     {
       "id": 187,
@@ -4448,7 +4820,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "拳击速度球金色",
+      "_cjk": "拳击速度球金色"
     },
     {
       "id": 188,
@@ -4470,7 +4844,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "冷热款筋膜枪",
+      "_cjk": "冷热款筋膜枪"
     },
     {
       "id": 189,
@@ -4492,7 +4868,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "mini筋膜枪",
+      "_cjk": "筋膜枪"
     },
     {
       "id": 190,
@@ -4514,7 +4892,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "瑜伽拉力带",
+      "_cjk": "瑜伽拉力带"
     },
     {
       "id": 191,
@@ -4544,7 +4924,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-FTB-001-002.png"
-      ]
+      ],
+      "_norm": "足球装备5件套白色",
+      "_cjk": "足球装备件套白色"
     },
     {
       "id": 192,
@@ -4566,7 +4948,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "足球套装7件套",
+      "_cjk": "足球套装件套"
     },
     {
       "id": 193,
@@ -4588,7 +4972,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "足球装备7件套成人尺码白色80套蓝色30套黑色30套红色10套",
+      "_cjk": "足球装备件套成人尺码白色套蓝色套黑色套红色套"
     },
     {
       "id": 194,
@@ -4632,7 +5018,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-001-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-001-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-001-004.png"
-      ]
+      ],
+      "_norm": "女包2色",
+      "_cjk": "女包色"
     },
     {
       "id": 195,
@@ -4654,7 +5042,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包黑色20个白色50个粉色40个玫红色20个棕色",
+      "_cjk": "女包黑色个白色个粉色个玫红色个棕色"
     },
     {
       "id": 196,
@@ -4676,7 +5066,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包贝壳包",
+      "_cjk": "女包贝壳包"
     },
     {
       "id": 197,
@@ -4706,7 +5098,9 @@
       "mainCategory": "Bags & Luggage",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-004-002.png"
-      ]
+      ],
+      "_norm": "女包2款5色",
+      "_cjk": "女包款色"
     },
     {
       "id": 198,
@@ -4728,7 +5122,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女士单肩包2款7色",
+      "_cjk": "女士单肩包款色"
     },
     {
       "id": 199,
@@ -4750,7 +5146,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包酒红色",
+      "_cjk": "女包酒红色"
     },
     {
       "id": 200,
@@ -4772,7 +5170,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "单肩包蕾丝带",
+      "_cjk": "单肩包蕾丝带"
     },
     {
       "id": 201,
@@ -4794,7 +5194,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包黑色50个白色50个棕色",
+      "_cjk": "女包黑色个白色个棕色"
     },
     {
       "id": 202,
@@ -4816,7 +5218,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包黑色",
+      "_cjk": "女包黑色"
     },
     {
       "id": 203,
@@ -4838,7 +5242,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包咖色",
+      "_cjk": "女包咖色"
     },
     {
       "id": 204,
@@ -4860,7 +5266,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包紫色",
+      "_cjk": "女包紫色"
     },
     {
       "id": 205,
@@ -4882,7 +5290,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包黑色棕色",
+      "_cjk": "女包黑色棕色"
     },
     {
       "id": 206,
@@ -4904,7 +5314,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "女包01",
+      "_cjk": "女包"
     },
     {
       "id": 207,
@@ -4926,7 +5338,9 @@
         }
       ],
       "mainCategory": "Bags & Luggage",
-      "images": []
+      "images": [],
+      "_norm": "腰包20个黑色20个灰色20个蓝色",
+      "_cjk": "腰包个黑色个灰色个蓝色"
     },
     {
       "id": 208,
@@ -4948,7 +5362,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "304水壶5色",
+      "_cjk": "水壶色"
     },
     {
       "id": 209,
@@ -4970,7 +5386,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "淋浴花洒套装黑色",
+      "_cjk": "淋浴花洒套装黑色"
     },
     {
       "id": 210,
@@ -4992,7 +5410,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "打气泵",
+      "_cjk": "打气泵"
     },
     {
       "id": 211,
@@ -5014,7 +5434,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴帘180宽180高送挂环",
+      "_cjk": "浴帘宽高送挂环"
     },
     {
       "id": 212,
@@ -5036,7 +5458,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桌面垃圾桶组合装圆形方形",
+      "_cjk": "桌面垃圾桶组合装圆形方形"
     },
     {
       "id": 213,
@@ -5058,7 +5482,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手动桌面拉伸膜卷紧器",
+      "_cjk": "手动桌面拉伸膜卷紧器"
     },
     {
       "id": 214,
@@ -5080,7 +5506,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "气泡袋",
+      "_cjk": "气泡袋"
     },
     {
       "id": 215,
@@ -5102,7 +5530,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "气泡水瓶",
+      "_cjk": "气泡水瓶"
     },
     {
       "id": 216,
@@ -5124,7 +5554,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "高压洗车水枪",
+      "_cjk": "高压洗车水枪"
     },
     {
       "id": 217,
@@ -5146,7 +5578,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "无线充气泵",
+      "_cjk": "无线充气泵"
     },
     {
       "id": 218,
@@ -5176,7 +5610,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-011-002.png"
-      ]
+      ],
+      "_norm": "洗车水枪12v1200容量3节2电1充塑箱5米水管",
+      "_cjk": "洗车水枪容量节电充塑箱米水管"
     },
     {
       "id": 219,
@@ -5198,7 +5634,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "高压清洗机",
+      "_cjk": "高压清洗机"
     },
     {
       "id": 220,
@@ -5220,7 +5658,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "高压水枪",
+      "_cjk": "高压水枪"
     },
     {
       "id": 221,
@@ -5242,7 +5682,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "高压洗车机",
+      "_cjk": "高压洗车机"
     },
     {
       "id": 222,
@@ -5279,7 +5721,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-015-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-015-003.png"
-      ]
+      ],
+      "_norm": "伸缩水管25ft",
+      "_cjk": "伸缩水管"
     },
     {
       "id": 223,
@@ -5301,7 +5745,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "无线洗车机",
+      "_cjk": "无线洗车机"
     },
     {
       "id": 224,
@@ -5323,7 +5769,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桶装水抽水器2色",
+      "_cjk": "桶装水抽水器色"
     },
     {
       "id": 225,
@@ -5345,7 +5793,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桶装水抽水器白色",
+      "_cjk": "桶装水抽水器白色"
     },
     {
       "id": 226,
@@ -5367,7 +5817,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "便携式淋浴器",
+      "_cjk": "便携式淋浴器"
     },
     {
       "id": 227,
@@ -5389,7 +5841,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桶装水抽水器天蓝色",
+      "_cjk": "桶装水抽水器天蓝色"
     },
     {
       "id": 228,
@@ -5411,7 +5865,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桶装水抽水器白色折叠款",
+      "_cjk": "桶装水抽水器白色折叠款"
     },
     {
       "id": 229,
@@ -5433,7 +5889,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "电蚊拍四灯版底座",
+      "_cjk": "电蚊拍四灯版底座"
     },
     {
       "id": 230,
@@ -5463,7 +5921,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-023-002.png"
-      ]
+      ],
+      "_norm": "垃圾桶10l",
+      "_cjk": "垃圾桶"
     },
     {
       "id": 231,
@@ -5485,7 +5945,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "枕头",
+      "_cjk": "枕头"
     },
     {
       "id": 232,
@@ -5515,7 +5977,9 @@
       "mainCategory": "Hardware & Home",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HWR-001-002.jpg"
-      ]
+      ],
+      "_norm": "纳米双面胶带",
+      "_cjk": "纳米双面胶带"
     },
     {
       "id": 233,
@@ -5537,7 +6001,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "双面胶无痕贴",
+      "_cjk": "双面胶无痕贴"
     },
     {
       "id": 234,
@@ -5559,7 +6025,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "硅胶防撞角",
+      "_cjk": "硅胶防撞角"
     },
     {
       "id": 235,
@@ -5581,7 +6049,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "透明防撞角",
+      "_cjk": "透明防撞角"
     },
     {
       "id": 236,
@@ -5603,7 +6073,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "开关保护盖",
+      "_cjk": "开关保护盖"
     },
     {
       "id": 237,
@@ -5625,7 +6097,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "防撞角l型",
+      "_cjk": "防撞角型"
     },
     {
       "id": 238,
@@ -5647,7 +6121,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "防撞角球形",
+      "_cjk": "防撞角球形"
     },
     {
       "id": 239,
@@ -5669,7 +6145,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "防撞角直角型",
+      "_cjk": "防撞角直角型"
     },
     {
       "id": 240,
@@ -5691,7 +6169,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "透明防撞角爱心角l型卡装",
+      "_cjk": "透明防撞角爱心角型卡装"
     },
     {
       "id": 241,
@@ -5713,7 +6193,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "华夫饼机",
+      "_cjk": "华夫饼机"
     },
     {
       "id": 242,
@@ -5735,7 +6217,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "榨汁机",
+      "_cjk": "榨汁机"
     },
     {
       "id": 243,
@@ -5757,7 +6241,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "气泡水机",
+      "_cjk": "气泡水机"
     },
     {
       "id": 244,
@@ -5779,7 +6265,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "电容笔",
+      "_cjk": "电容笔"
     },
     {
       "id": 245,
@@ -5801,7 +6289,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "24g无线键盘三色背光干电",
+      "_cjk": "无线键盘三色背光干电"
     },
     {
       "id": 246,
@@ -5823,7 +6313,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "无线鼠标",
+      "_cjk": "无线鼠标"
     },
     {
       "id": 247,
@@ -5845,7 +6337,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "鼠标双模风火轮",
+      "_cjk": "鼠标双模风火轮"
     },
     {
       "id": 248,
@@ -5867,7 +6361,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "7寸儿童学习机",
+      "_cjk": "寸儿童学习机"
     },
     {
       "id": 249,
@@ -5889,7 +6385,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童浴袍",
+      "_cjk": "儿童浴袍"
     },
     {
       "id": 250,
@@ -5911,7 +6409,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童毛衣",
+      "_cjk": "儿童毛衣"
     },
     {
       "id": 251,
@@ -5933,7 +6433,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童打底裤",
+      "_cjk": "儿童打底裤"
     },
     {
       "id": 252,
@@ -5977,7 +6479,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-005-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-005-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-005-004.png"
-      ]
+      ],
+      "_norm": "儿童安全锁",
+      "_cjk": "儿童安全锁"
     },
     {
       "id": 253,
@@ -5999,7 +6503,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "英语发声书",
+      "_cjk": "英语发声书"
     },
     {
       "id": 254,
@@ -6043,7 +6549,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-007-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-007-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-007-004.png"
-      ]
+      ],
+      "_norm": "儿童四方锁白色",
+      "_cjk": "儿童四方锁白色"
     },
     {
       "id": 255,
@@ -6065,7 +6573,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "俄文大开本小百科",
+      "_cjk": "俄文大开本小百科"
     },
     {
       "id": 256,
@@ -6087,7 +6597,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "俄文数字字母",
+      "_cjk": "俄文数字字母"
     },
     {
       "id": 257,
@@ -6109,7 +6621,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "俄文周围的世界",
+      "_cjk": "俄文周围的世界"
     },
     {
       "id": 258,
@@ -6131,7 +6645,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "乌兹语电子书zhy5002",
+      "_cjk": "乌兹语电子书"
     },
     {
       "id": 259,
@@ -6153,7 +6669,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "乌兹语点读书zhy5001",
+      "_cjk": "乌兹语点读书"
     },
     {
       "id": 260,
@@ -6175,7 +6693,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "俄英双语点读书lwb426",
+      "_cjk": "俄英双语点读书"
     },
     {
       "id": 261,
@@ -6197,7 +6717,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童医生套装",
+      "_cjk": "儿童医生套装"
     },
     {
       "id": 262,
@@ -6219,7 +6741,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童羽毛球拍",
+      "_cjk": "儿童羽毛球拍"
     },
     {
       "id": 263,
@@ -6241,7 +6765,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "7英寸儿童学习机m90",
+      "_cjk": "英寸儿童学习机"
     },
     {
       "id": 264,
@@ -6263,7 +6789,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童表演服",
+      "_cjk": "儿童表演服"
     },
     {
       "id": 265,
@@ -6285,7 +6813,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "表演服白色15套粉色15套",
+      "_cjk": "表演服白色套粉色套"
     },
     {
       "id": 266,
@@ -6307,7 +6837,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "足球装备7件套七件套足球套装白色25套蓝色25套黑色25套红色25套s码儿童七件套足球套装白色25套蓝色25套黑色25套红色25套m码七件套足球套装白色80套红色20套成人l码",
+      "_cjk": "足球装备件套七件套足球套装白色套蓝色套黑色套红色套码儿童七件套足球套装白色套蓝色套黑色套红色套码七件套足球套装白色套红色套成人码"
     },
     {
       "id": 267,
@@ -6329,7 +6861,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "木质水果盘3层",
+      "_cjk": "木质水果盘层"
     },
     {
       "id": 268,
@@ -6351,7 +6885,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "厨房调料架",
+      "_cjk": "厨房调料架"
     },
     {
       "id": 269,
@@ -6388,7 +6924,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-003-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-003-003.png"
-      ]
+      ],
+      "_norm": "旋转调料架",
+      "_cjk": "旋转调料架"
     },
     {
       "id": 270,
@@ -6410,7 +6948,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "鞋帽架5层黑色80cm",
+      "_cjk": "鞋帽架层黑色"
     },
     {
       "id": 271,
@@ -6432,7 +6972,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "碗碟架",
+      "_cjk": "碗碟架"
     },
     {
       "id": 272,
@@ -6454,7 +6996,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "车载冰箱",
+      "_cjk": "车载冰箱"
     },
     {
       "id": 273,
@@ -6476,7 +7020,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "厨房防滑垫",
+      "_cjk": "厨房防滑垫"
     },
     {
       "id": 274,
@@ -6498,7 +7044,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "调料架方正圆角",
+      "_cjk": "调料架方正圆角"
     },
     {
       "id": 275,
@@ -6520,7 +7068,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "x型鞋架",
+      "_cjk": "型鞋架"
     },
     {
       "id": 276,
@@ -6550,7 +7100,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-010-002.png"
-      ]
+      ],
+      "_norm": "鞋帽架黑色5层60款",
+      "_cjk": "鞋帽架黑色层款"
     },
     {
       "id": 277,
@@ -6572,7 +7124,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "双排衣帽架黑色",
+      "_cjk": "双排衣帽架黑色"
     },
     {
       "id": 278,
@@ -6594,7 +7148,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "三角衣帽架黑色",
+      "_cjk": "三角衣帽架黑色"
     },
     {
       "id": 279,
@@ -6616,7 +7172,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "冰箱锁",
+      "_cjk": "冰箱锁"
     },
     {
       "id": 280,
@@ -6638,7 +7196,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "陶瓷果盘",
+      "_cjk": "陶瓷果盘"
     },
     {
       "id": 281,
@@ -6660,7 +7220,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "台面沥水篮枪灰色",
+      "_cjk": "台面沥水篮枪灰色"
     },
     {
       "id": 282,
@@ -6682,7 +7244,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "台面沥水篮抹布杆枪灰色",
+      "_cjk": "台面沥水篮抹布杆枪灰色"
     },
     {
       "id": 283,
@@ -6719,7 +7283,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-018-001.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-018-003.png"
-      ]
+      ],
+      "_norm": "冰箱锁扣fq3黑色方形20个fq3白色方形",
+      "_cjk": "冰箱锁扣黑色方形个白色方形"
     },
     {
       "id": 284,
@@ -6756,7 +7322,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-019-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-019-003.png"
-      ]
+      ],
+      "_norm": "冰箱锁扣fq3椭圆白色15个黑色",
+      "_cjk": "冰箱锁扣椭圆白色个黑色"
     },
     {
       "id": 285,
@@ -6793,7 +7361,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-020-001.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-020-003.png"
-      ]
+      ],
+      "_norm": "冰箱锁扣fq3a黑色10个白色",
+      "_cjk": "冰箱锁扣黑色个白色"
     },
     {
       "id": 286,
@@ -6815,7 +7385,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "安全锁升级包装",
+      "_cjk": "安全锁升级包装"
     },
     {
       "id": 287,
@@ -6837,7 +7409,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "冰箱t型锁白色80个黑色20个灰色",
+      "_cjk": "冰箱型锁白色个黑色个灰色"
     },
     {
       "id": 288,
@@ -6859,7 +7433,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "旋转冰箱锁白色10个黑色",
+      "_cjk": "旋转冰箱锁白色个黑色"
     },
     {
       "id": 289,
@@ -6881,7 +7457,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "冰箱锁扣fq10黑色15个白色",
+      "_cjk": "冰箱锁扣黑色个白色"
     },
     {
       "id": 290,
@@ -6903,7 +7481,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "厨房围裙",
+      "_cjk": "厨房围裙"
     },
     {
       "id": 291,
@@ -6925,7 +7505,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "鞋架",
+      "_cjk": "鞋架"
     },
     {
       "id": 292,
@@ -6947,7 +7529,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "玻璃密封罐",
+      "_cjk": "玻璃密封罐"
     },
     {
       "id": 293,
@@ -6969,7 +7553,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "刨丝器",
+      "_cjk": "刨丝器"
     },
     {
       "id": 294,
@@ -6991,7 +7577,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "蛋糕硅胶模具",
+      "_cjk": "蛋糕硅胶模具"
     },
     {
       "id": 295,
@@ -7013,7 +7601,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "勺叉套装",
+      "_cjk": "勺叉套装"
     },
     {
       "id": 296,
@@ -7035,7 +7625,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "刀叉勺套装",
+      "_cjk": "刀叉勺套装"
     },
     {
       "id": 297,
@@ -7057,7 +7649,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "叉勺二件套",
+      "_cjk": "叉勺二件套"
     },
     {
       "id": 298,
@@ -7079,7 +7673,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "刀叉勺三件套",
+      "_cjk": "刀叉勺三件套"
     },
     {
       "id": 299,
@@ -7101,7 +7697,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "玻璃油壶1000ml",
+      "_cjk": "玻璃油壶"
     },
     {
       "id": 300,
@@ -7123,7 +7721,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "斜身玻璃油壶1000ml",
+      "_cjk": "斜身玻璃油壶"
     },
     {
       "id": 301,
@@ -7145,7 +7745,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "玻璃喷油壶",
+      "_cjk": "玻璃喷油壶"
     },
     {
       "id": 302,
@@ -7175,7 +7777,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KUT-011-002.png"
-      ]
+      ],
+      "_norm": "304不锈钢餐盘红色",
+      "_cjk": "不锈钢餐盘红色"
     },
     {
       "id": 303,
@@ -7197,7 +7801,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "勺叉盒",
+      "_cjk": "勺叉盒"
     },
     {
       "id": 304,
@@ -7206,20 +7812,22 @@
       "name": "Purple Kitchen Utensil Stainless Steel Silicone",
       "name_cn": "硅胶蛋糕模具紫色",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KUT-013.jpg",
-      "priceMin": 6.15,
-      "priceMax": 6.15,
+      "priceMin": 5.2,
+      "priceMax": 5.2,
       "moq": 100,
       "description": "Purple Kitchen Utensil Stainless Steel Silicone. Available in Purple.",
       "variations": [
         {
           "child_id": "YCS-KUT-013",
-          "price": 6.15,
+          "price": 5.2,
           "color": "Purple",
           "size": ""
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "硅胶蛋糕模具紫色",
+      "_cjk": "硅胶蛋糕模具紫色"
     },
     {
       "id": 305,
@@ -7241,7 +7849,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "餐具四件套不锈钢",
+      "_cjk": "餐具四件套不锈钢"
     },
     {
       "id": 306,
@@ -7263,7 +7873,9 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": []
+      "images": [],
+      "_norm": "硅胶模具",
+      "_cjk": "硅胶模具"
     },
     {
       "id": 307,
@@ -7300,7 +7912,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KUT-016-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KUT-016-003.png"
-      ]
+      ],
+      "_norm": "不锈钢奶杯250ml",
+      "_cjk": "不锈钢奶杯"
     },
     {
       "id": 308,
@@ -7322,7 +7936,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "体重秤",
+      "_cjk": "体重秤"
     },
     {
       "id": 309,
@@ -7344,7 +7960,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "洗衣机脚垫",
+      "_cjk": "洗衣机脚垫"
     },
     {
       "id": 310,
@@ -7366,7 +7984,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "电子壁炉自动加水声控多色07米",
+      "_cjk": "电子壁炉自动加水声控多色米"
     },
     {
       "id": 311,
@@ -7388,7 +8008,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "加湿器双喷白色",
+      "_cjk": "加湿器双喷白色"
     },
     {
       "id": 312,
@@ -7410,7 +8032,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "洗衣机置物架",
+      "_cjk": "洗衣机置物架"
     },
     {
       "id": 313,
@@ -7440,7 +8064,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-006-002.png"
-      ]
+      ],
+      "_norm": "数显双喷加湿器绿色",
+      "_cjk": "数显双喷加湿器绿色"
     },
     {
       "id": 314,
@@ -7462,7 +8088,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "小洋葱加湿器",
+      "_cjk": "小洋葱加湿器"
     },
     {
       "id": 315,
@@ -7484,7 +8112,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "加湿器4l智能款1802欧规俄文",
+      "_cjk": "加湿器智能款欧规俄文"
     },
     {
       "id": 316,
@@ -7506,7 +8136,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "小型折叠洗衣机",
+      "_cjk": "小型折叠洗衣机"
     },
     {
       "id": 317,
@@ -7536,7 +8168,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LED-001-002.png"
-      ]
+      ],
+      "_norm": "led蜡烛",
+      "_cjk": "蜡烛"
     },
     {
       "id": 318,
@@ -7558,7 +8192,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led灯串",
+      "_cjk": "灯串"
     },
     {
       "id": 319,
@@ -7580,7 +8216,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "氛围灯",
+      "_cjk": "氛围灯"
     },
     {
       "id": 320,
@@ -7602,7 +8240,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led台灯",
+      "_cjk": "台灯"
     },
     {
       "id": 321,
@@ -7624,7 +8264,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "露营灯",
+      "_cjk": "露营灯"
     },
     {
       "id": 322,
@@ -7646,7 +8288,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "太阳能手提灯",
+      "_cjk": "太阳能手提灯"
     },
     {
       "id": 323,
@@ -7668,7 +8312,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "陶瓷密封罐套装",
+      "_cjk": "陶瓷密封罐套装"
     },
     {
       "id": 324,
@@ -7690,7 +8336,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led灯带5m12v欧规圆插",
+      "_cjk": "灯带欧规圆插"
     },
     {
       "id": 325,
@@ -7712,7 +8360,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led蜡烛6318cm透明玫瑰",
+      "_cjk": "蜡烛透明玫瑰"
     },
     {
       "id": 326,
@@ -7734,7 +8384,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led蜡烛6518cm白色满天星",
+      "_cjk": "蜡烛白色满天星"
     },
     {
       "id": 327,
@@ -7756,7 +8408,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led蜡烛6518cm幻彩满天星",
+      "_cjk": "蜡烛幻彩满天星"
     },
     {
       "id": 328,
@@ -7786,7 +8440,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LED-012-002.png"
-      ]
+      ],
+      "_norm": "led蜡烛6318cm钻石款紫色",
+      "_cjk": "蜡烛钻石款紫色"
     },
     {
       "id": 329,
@@ -7808,7 +8464,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "木质爱心蜡烛",
+      "_cjk": "木质爱心蜡烛"
     },
     {
       "id": 330,
@@ -7830,7 +8488,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "注水亮片电子蜡烛灯金色",
+      "_cjk": "注水亮片电子蜡烛灯金色"
     },
     {
       "id": 331,
@@ -7852,7 +8512,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led迷你蜡烛灯",
+      "_cjk": "迷你蜡烛灯"
     },
     {
       "id": 332,
@@ -7874,7 +8536,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "高跟鞋",
+      "_cjk": "高跟鞋"
     },
     {
       "id": 333,
@@ -7896,7 +8560,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "led灯带",
+      "_cjk": "灯带"
     },
     {
       "id": 334,
@@ -7918,7 +8584,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "卡扣钳",
+      "_cjk": "卡扣钳"
     },
     {
       "id": 335,
@@ -7940,7 +8608,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "日式四方锁黑色100个白色",
+      "_cjk": "日式四方锁黑色个白色"
     },
     {
       "id": 336,
@@ -7962,7 +8632,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "防夹手门档绿色10个咖啡色10个红色",
+      "_cjk": "防夹手门档绿色个咖啡色个红色"
     },
     {
       "id": 337,
@@ -7984,7 +8656,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "按键保护盖白色",
+      "_cjk": "按键保护盖白色"
     },
     {
       "id": 338,
@@ -8006,7 +8680,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "门挡ft1白色10个灰色",
+      "_cjk": "门挡白色个灰色"
     },
     {
       "id": 339,
@@ -8028,7 +8704,9 @@
         }
       ],
       "mainCategory": "Hardware & Home",
-      "images": []
+      "images": [],
+      "_norm": "柜门锁fs19",
+      "_cjk": "柜门锁"
     },
     {
       "id": 340,
@@ -8050,7 +8728,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "苹果手机数据线1米",
+      "_cjk": "苹果手机数据线米"
     },
     {
       "id": 341,
@@ -8072,7 +8752,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "数据线保护套",
+      "_cjk": "数据线保护套"
     },
     {
       "id": 342,
@@ -8094,7 +8776,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "一米快充线带包装",
+      "_cjk": "一米快充线带包装"
     },
     {
       "id": 343,
@@ -8116,7 +8800,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "充电宝120w",
+      "_cjk": "充电宝"
     },
     {
       "id": 344,
@@ -8138,7 +8824,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "磁吸充电宝",
+      "_cjk": "磁吸充电宝"
     },
     {
       "id": 345,
@@ -8160,7 +8848,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "充电宝5000毫安",
+      "_cjk": "充电宝毫安"
     },
     {
       "id": 346,
@@ -8182,7 +8872,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "磁吸充电宝10000毫安灰色",
+      "_cjk": "磁吸充电宝毫安灰色"
     },
     {
       "id": 347,
@@ -8204,7 +8896,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "随行mini应急胶囊电源5000mah银色",
+      "_cjk": "随行应急胶囊电源银色"
     },
     {
       "id": 348,
@@ -8226,7 +8920,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "3合1磁吸无线充电器灰色",
+      "_cjk": "合磁吸无线充电器灰色"
     },
     {
       "id": 349,
@@ -8248,7 +8944,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "大疆djiosmopocket3续航手柄",
+      "_cjk": "大疆续航手柄"
     },
     {
       "id": 350,
@@ -8270,7 +8968,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "云雨加湿器充电款彩盒装",
+      "_cjk": "云雨加湿器充电款彩盒装"
     },
     {
       "id": 351,
@@ -8292,7 +8992,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "无边框大孔手机套",
+      "_cjk": "无边框大孔手机套"
     },
     {
       "id": 352,
@@ -8314,7 +9016,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "手机壳全硬pc光面大孔",
+      "_cjk": "手机壳全硬光面大孔"
     },
     {
       "id": 353,
@@ -8409,7 +9113,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MCS-003-006_1.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MCS-003-007_1.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MCS-003-008_1.jpg"
-      ]
+      ],
+      "_norm": "手机壳透明磁吸带包装盒湖绿色",
+      "_cjk": "手机壳透明磁吸带包装盒湖绿色"
     },
     {
       "id": 354,
@@ -8431,7 +9137,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "手机壳",
+      "_cjk": "手机壳"
     },
     {
       "id": 355,
@@ -8459,7 +9167,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手机支架",
+      "_cjk": "手机支架"
     },
     {
       "id": 356,
@@ -8481,7 +9191,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "r1sl17米支架手机自拍杆黑色",
+      "_cjk": "米支架手机自拍杆黑色"
     },
     {
       "id": 357,
@@ -8503,7 +9215,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "21m手机自拍杆带塑料云台和e字夹",
+      "_cjk": "手机自拍杆带塑料云台和字夹"
     },
     {
       "id": 358,
@@ -8525,7 +9239,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手持自拍支架m01基础款",
+      "_cjk": "手持自拍支架基础款"
     },
     {
       "id": 359,
@@ -8547,7 +9263,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "rgb摄影补光棒灯rgb加亮标准补光棒桌面三脚架",
+      "_cjk": "摄影补光棒灯加亮标准补光棒桌面三脚架"
     },
     {
       "id": 360,
@@ -8569,7 +9287,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "21米三脚架",
+      "_cjk": "米三脚架"
     },
     {
       "id": 361,
@@ -8591,7 +9311,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "刀具收纳架黑",
+      "_cjk": "刀具收纳架黑"
     },
     {
       "id": 362,
@@ -8613,7 +9335,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "自拍杆不带灯黑色75个白色",
+      "_cjk": "自拍杆不带灯黑色个白色"
     },
     {
       "id": 363,
@@ -8635,7 +9359,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "自拍杆带灯黑色25个白色25个",
+      "_cjk": "自拍杆带灯黑色个白色个"
     },
     {
       "id": 364,
@@ -8657,7 +9383,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "黑色三脚架",
+      "_cjk": "黑色三脚架"
     },
     {
       "id": 365,
@@ -8679,7 +9407,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "真空吸附摄影支架dj3黑色",
+      "_cjk": "真空吸附摄影支架黑色"
     },
     {
       "id": 366,
@@ -8701,7 +9431,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "jmarykp2205支架",
+      "_cjk": "支架"
     },
     {
       "id": 367,
@@ -8723,7 +9455,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "汽车用警示三角架",
+      "_cjk": "汽车用警示三角架"
     },
     {
       "id": 368,
@@ -8745,7 +9479,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "直播支架35支架平板夹",
+      "_cjk": "直播支架支架平板夹"
     },
     {
       "id": 369,
@@ -8775,7 +9511,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MHD-015-002.png"
-      ]
+      ],
+      "_norm": "直播支架35支架手机夹",
+      "_cjk": "直播支架支架手机夹"
     },
     {
       "id": 370,
@@ -8797,7 +9535,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "jmarykp2205摄影支架",
+      "_cjk": "摄影支架"
     },
     {
       "id": 371,
@@ -8819,7 +9559,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "r1sl手机自拍杆",
+      "_cjk": "手机自拍杆"
     },
     {
       "id": 372,
@@ -8841,7 +9583,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "rl16寸平面补光灯单灯21米尼龙支架",
+      "_cjk": "寸平面补光灯单灯米尼龙支架"
     },
     {
       "id": 373,
@@ -8863,7 +9607,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手机一字夹不带孔款",
+      "_cjk": "手机一字夹不带孔款"
     },
     {
       "id": 374,
@@ -8885,7 +9631,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢支架",
+      "_cjk": "不锈钢支架"
     },
     {
       "id": 375,
@@ -8907,7 +9655,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "安全支架",
+      "_cjk": "安全支架"
     },
     {
       "id": 376,
@@ -8929,7 +9679,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "手机支架28米弹簧款14螺丝接头",
+      "_cjk": "手机支架米弹簧款螺丝接头"
     },
     {
       "id": 377,
@@ -8951,7 +9703,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "游戏指套",
+      "_cjk": "游戏指套"
     },
     {
       "id": 378,
@@ -8981,7 +9735,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-002-002.png"
-      ]
+      ],
+      "_norm": "x16风冷散热器",
+      "_cjk": "风冷散热器"
     },
     {
       "id": 379,
@@ -9003,7 +9759,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "冰磁超导手机散热器gt31",
+      "_cjk": "冰磁超导手机散热器"
     },
     {
       "id": 380,
@@ -9025,7 +9783,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "有线麦克风me6s黑色",
+      "_cjk": "有线麦克风黑色"
     },
     {
       "id": 381,
@@ -9047,7 +9807,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "无线领夹麦克风s5黑黄typec接口",
+      "_cjk": "无线领夹麦克风黑黄接口"
     },
     {
       "id": 382,
@@ -9069,7 +9831,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "无线蓝牙话筒4色",
+      "_cjk": "无线蓝牙话筒色"
     },
     {
       "id": 383,
@@ -9091,7 +9855,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "电容话筒黑色带防喷网",
+      "_cjk": "电容话筒黑色带防喷网"
     },
     {
       "id": 384,
@@ -9113,7 +9879,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "k9领夹麦克风一拖二typec苹果接口",
+      "_cjk": "领夹麦克风一拖二苹果接口"
     },
     {
       "id": 385,
@@ -9135,7 +9903,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "麦克风",
+      "_cjk": "麦克风"
     },
     {
       "id": 386,
@@ -9165,7 +9935,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-010-002.png"
-      ]
+      ],
+      "_norm": "手机屏幕放大镜10寸黑",
+      "_cjk": "手机屏幕放大镜寸黑"
     },
     {
       "id": 387,
@@ -9187,7 +9959,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "磁吸耳机",
+      "_cjk": "磁吸耳机"
     },
     {
       "id": 388,
@@ -9209,7 +9983,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "头戴式耳机黑色100个米色",
+      "_cjk": "头戴式耳机黑色个米色"
     },
     {
       "id": 389,
@@ -9239,7 +10015,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-013-002.png"
-      ]
+      ],
+      "_norm": "10寸写字板",
+      "_cjk": "寸写字板"
     },
     {
       "id": 390,
@@ -9261,7 +10039,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "16寸横屏写字板",
+      "_cjk": "寸横屏写字板"
     },
     {
       "id": 391,
@@ -9283,7 +10063,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "无线领夹麦克风s5",
+      "_cjk": "无线领夹麦克风"
     },
     {
       "id": 392,
@@ -9313,7 +10095,9 @@
       "mainCategory": "Digital Electronics",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-017-002.png"
-      ]
+      ],
+      "_norm": "52mm可调nd2400减光镜配收纳盒擦镜布镜头夹镜头盖",
+      "_cjk": "可调减光镜配收纳盒擦镜布镜头夹镜头盖"
     },
     {
       "id": 393,
@@ -9335,7 +10119,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "耳机j6一拖二磁吸圆形款typec",
+      "_cjk": "耳机一拖二磁吸圆形款"
     },
     {
       "id": 394,
@@ -9357,7 +10143,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "耳机白色80个深蓝色120个",
+      "_cjk": "耳机白色个深蓝色个"
     },
     {
       "id": 395,
@@ -9379,7 +10167,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "全自动封罐机",
+      "_cjk": "全自动封罐机"
     },
     {
       "id": 396,
@@ -9401,7 +10191,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "手机镜头保护膜",
+      "_cjk": "手机镜头保护膜"
     },
     {
       "id": 397,
@@ -9423,7 +10215,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "防窥手机钢化膜",
+      "_cjk": "防窥手机钢化膜"
     },
     {
       "id": 398,
@@ -9445,7 +10239,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "钢化膜",
+      "_cjk": "钢化膜"
     },
     {
       "id": 399,
@@ -9467,7 +10263,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "透明挂钩30丝",
+      "_cjk": "透明挂钩丝"
     },
     {
       "id": 400,
@@ -9495,7 +10293,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "无痕挂钩",
+      "_cjk": "无痕挂钩"
     },
     {
       "id": 401,
@@ -9517,7 +10317,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "硅胶手机吸盘",
+      "_cjk": "硅胶手机吸盘"
     },
     {
       "id": 402,
@@ -9547,7 +10349,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-004-002.png"
-      ]
+      ],
+      "_norm": "晾衣架",
+      "_cjk": "晾衣架"
     },
     {
       "id": 403,
@@ -9593,7 +10397,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-005-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-005-003.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-005-004.png"
-      ]
+      ],
+      "_norm": "落地晾衣架18拱桥双杆黑110衣帽钩",
+      "_cjk": "落地晾衣架拱桥双杆黑衣帽钩"
     },
     {
       "id": 404,
@@ -9623,7 +10429,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-006-002.png"
-      ]
+      ],
+      "_norm": "落地晾衣架侧置物网双层双杆150黑",
+      "_cjk": "落地晾衣架侧置物网双层双杆黑"
     },
     {
       "id": 405,
@@ -9645,7 +10453,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "多层晾衣架",
+      "_cjk": "多层晾衣架"
     },
     {
       "id": 406,
@@ -9667,7 +10477,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "衣架",
+      "_cjk": "衣架"
     },
     {
       "id": 407,
@@ -9689,7 +10501,9 @@
         }
       ],
       "mainCategory": "Musical Instruments",
-      "images": []
+      "images": [],
+      "_norm": "八音手琴",
+      "_cjk": "八音手琴"
     },
     {
       "id": 408,
@@ -9711,7 +10525,9 @@
         }
       ],
       "mainCategory": "Musical Instruments",
-      "images": []
+      "images": [],
+      "_norm": "吉他38寸纯黑色配件套餐",
+      "_cjk": "吉他寸纯黑色配件套餐"
     },
     {
       "id": 409,
@@ -9733,7 +10549,9 @@
         }
       ],
       "mainCategory": "Musical Instruments",
-      "images": []
+      "images": [],
+      "_norm": "吉他38寸",
+      "_cjk": "吉他寸"
     },
     {
       "id": 410,
@@ -9763,7 +10581,9 @@
       "mainCategory": "Material",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OFC-001-002.png"
-      ]
+      ],
+      "_norm": "办公椅",
+      "_cjk": "办公椅"
     },
     {
       "id": 411,
@@ -9785,7 +10605,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "计时器磁吸",
+      "_cjk": "计时器磁吸"
     },
     {
       "id": 412,
@@ -9807,7 +10629,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "861a办公椅black",
+      "_cjk": "办公椅"
     },
     {
       "id": 413,
@@ -9829,7 +10653,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "全实心pc材质表面光滑大口径",
+      "_cjk": "全实心材质表面光滑大口径"
     },
     {
       "id": 414,
@@ -9837,7 +10663,7 @@
       "category": "Other",
       "name": "5 цветов, по 140 пар каждого цвета Product Accessory",
       "name_cn": "5 цветов, по 140 пар каждого цвета",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-002.png",
+      "image": "",
       "priceMin": 4.5,
       "priceMax": 4.5,
       "moq": 1,
@@ -9851,7 +10677,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "5140",
+      "_cjk": ""
     },
     {
       "id": 415,
@@ -9873,7 +10701,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "单价105是单层定制款容量是350ml的105350",
+      "_cjk": "单价是单层定制款容量是的"
     },
     {
       "id": 416,
@@ -9881,7 +10711,7 @@
       "category": "Other",
       "name": "缺货，目前只有 Product Accessory",
       "name_cn": "缺货，目前只有",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-004.png",
+      "image": "",
       "priceMin": 18.5,
       "priceMax": 18.5,
       "moq": 1,
@@ -9895,7 +10725,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "缺货目前只有",
+      "_cjk": "缺货目前只有"
     },
     {
       "id": 417,
@@ -9917,7 +10749,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "阿布仓",
+      "_cjk": "阿布仓"
     },
     {
       "id": 418,
@@ -9939,7 +10773,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "黑色",
+      "_cjk": "黑色"
     },
     {
       "id": 419,
@@ -9961,7 +10797,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "白色",
+      "_cjk": "白色"
     },
     {
       "id": 420,
@@ -9983,7 +10821,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "红色",
+      "_cjk": "红色"
     },
     {
       "id": 421,
@@ -10005,7 +10845,9 @@
         }
       ],
       "mainCategory": "Phone Accessories",
-      "images": []
+      "images": [],
+      "_norm": "绿色",
+      "_cjk": "绿色"
     },
     {
       "id": 422,
@@ -10027,7 +10869,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "1823散装银丝木纤维",
+      "_cjk": "散装银丝木纤维"
     },
     {
       "id": 423,
@@ -10049,7 +10893,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "2630",
+      "_cjk": ""
     },
     {
       "id": 424,
@@ -10057,7 +10903,7 @@
       "category": "Other",
       "name": "General Purpose Product Accessory Small",
       "name_cn": "0.8",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-012.png",
+      "image": "",
       "priceMin": 18.5,
       "priceMax": 18.5,
       "moq": 1,
@@ -10071,7 +10917,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "08",
+      "_cjk": ""
     },
     {
       "id": 425,
@@ -10079,7 +10927,7 @@
       "category": "Other",
       "name": "General Purpose Product Accessory Medium",
       "name_cn": "1.06",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-013.png",
+      "image": "",
       "priceMin": 24.0,
       "priceMax": 24.0,
       "moq": 1,
@@ -10093,7 +10941,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "106",
+      "_cjk": ""
     },
     {
       "id": 426,
@@ -10101,7 +10951,7 @@
       "category": "Other",
       "name": "General Purpose Product Accessory Medium",
       "name_cn": "1.14",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-014.png",
+      "image": "",
       "priceMin": 26.5,
       "priceMax": 26.5,
       "moq": 1,
@@ -10115,7 +10965,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "114",
+      "_cjk": ""
     },
     {
       "id": 427,
@@ -10123,7 +10975,7 @@
       "category": "Other",
       "name": "General Purpose Product Accessory Large",
       "name_cn": "1.37",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-015.png",
+      "image": "",
       "priceMin": 29.5,
       "priceMax": 29.5,
       "moq": 1,
@@ -10137,7 +10989,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "137",
+      "_cjk": ""
     },
     {
       "id": 428,
@@ -10145,7 +10999,7 @@
       "category": "Other",
       "name": "General Purpose Product Accessory Large",
       "name_cn": "1.582",
-      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OTH-016.png",
+      "image": "",
       "priceMin": 35.5,
       "priceMax": 35.5,
       "moq": 1,
@@ -10159,7 +11013,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "1582",
+      "_cjk": ""
     },
     {
       "id": 429,
@@ -10181,7 +11037,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "可爱帐篷粉",
+      "_cjk": "可爱帐篷粉"
     },
     {
       "id": 430,
@@ -10203,7 +11061,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "六角帐篷粉110蓝70",
+      "_cjk": "六角帐篷粉蓝"
     },
     {
       "id": 431,
@@ -10225,7 +11085,9 @@
         }
       ],
       "mainCategory": "Sports & Outdoor",
-      "images": []
+      "images": [],
+      "_norm": "帐篷",
+      "_cjk": "帐篷"
     },
     {
       "id": 432,
@@ -10247,7 +11109,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "英韩文足贴",
+      "_cjk": "英韩文足贴"
     },
     {
       "id": 433,
@@ -10277,7 +11141,9 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-PCR-002-002.png"
-      ]
+      ],
+      "_norm": "智能皂液机",
+      "_cjk": "智能皂液机"
     },
     {
       "id": 434,
@@ -10299,7 +11165,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "便携肥皂盒",
+      "_cjk": "便携肥皂盒"
     },
     {
       "id": 435,
@@ -10321,7 +11189,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "足浴桶",
+      "_cjk": "足浴桶"
     },
     {
       "id": 436,
@@ -10343,7 +11213,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "小腿按摩器",
+      "_cjk": "小腿按摩器"
     },
     {
       "id": 437,
@@ -10365,7 +11237,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "按摩床",
+      "_cjk": "按摩床"
     },
     {
       "id": 438,
@@ -10387,7 +11261,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "足底按摩器",
+      "_cjk": "足底按摩器"
     },
     {
       "id": 439,
@@ -10417,7 +11293,9 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-PCR-008-002.png"
-      ]
+      ],
+      "_norm": "沐浴液空瓶白色封口opp装500mlpetpp",
+      "_cjk": "沐浴液空瓶白色封口装"
     },
     {
       "id": 440,
@@ -10439,7 +11317,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "肥皂盒",
+      "_cjk": "肥皂盒"
     },
     {
       "id": 441,
@@ -10461,7 +11341,9 @@
         }
       ],
       "mainCategory": "Material",
-      "images": []
+      "images": [],
+      "_norm": "逗猫球",
+      "_cjk": "逗猫球"
     },
     {
       "id": 442,
@@ -10483,7 +11365,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "摄影器材套装欧插单套装150w三色遥控灯泡",
+      "_cjk": "摄影器材套装欧插单套装三色遥控灯泡"
     },
     {
       "id": 443,
@@ -10505,7 +11389,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "摄影反光板",
+      "_cjk": "摄影反光板"
     },
     {
       "id": 444,
@@ -10535,7 +11421,9 @@
       "mainCategory": "Others",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-PHO-003-002.png"
-      ]
+      ],
+      "_norm": "10寸补光灯单灯",
+      "_cjk": "寸补光灯单灯"
     },
     {
       "id": 445,
@@ -10557,7 +11445,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "djipocket3标准版相机",
+      "_cjk": "标准版相机"
     },
     {
       "id": 446,
@@ -10579,7 +11469,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "美颜补光灯",
+      "_cjk": "美颜补光灯"
     },
     {
       "id": 447,
@@ -10601,7 +11493,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "拇指微型相机白色高配套餐三4k128g读卡器",
+      "_cjk": "拇指微型相机白色高配套餐三读卡器"
     },
     {
       "id": 448,
@@ -10623,7 +11517,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "迷你摄影灯ay49x",
+      "_cjk": "迷你摄影灯"
     },
     {
       "id": 449,
@@ -10645,7 +11541,9 @@
         }
       ],
       "mainCategory": "Others",
-      "images": []
+      "images": [],
+      "_norm": "摄影器材",
+      "_cjk": "摄影器材"
     },
     {
       "id": 450,
@@ -10667,7 +11565,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "沙滩鞋2双",
+      "_cjk": "沙滩鞋双"
     },
     {
       "id": 451,
@@ -10689,7 +11589,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "烘鞋器",
+      "_cjk": "烘鞋器"
     },
     {
       "id": 452,
@@ -10711,7 +11613,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士马丁靴",
+      "_cjk": "女士马丁靴"
     },
     {
       "id": 453,
@@ -10733,7 +11637,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士马丁靴f1",
+      "_cjk": "男士马丁靴"
     },
     {
       "id": 454,
@@ -10755,7 +11661,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋j05",
+      "_cjk": "男鞋"
     },
     {
       "id": 455,
@@ -10792,7 +11700,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-006-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-006-003.png"
-      ]
+      ],
+      "_norm": "女鞋g2806米色盒装",
+      "_cjk": "女鞋米色盒装"
     },
     {
       "id": 456,
@@ -10836,7 +11746,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-007-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-007-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-007-004.png"
-      ]
+      ],
+      "_norm": "女鞋h66咖色袋装",
+      "_cjk": "女鞋咖色袋装"
     },
     {
       "id": 457,
@@ -10858,7 +11770,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女鞋h66墨绿色袋装",
+      "_cjk": "女鞋墨绿色袋装"
     },
     {
       "id": 458,
@@ -10895,7 +11809,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-009-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-009-003.png"
-      ]
+      ],
+      "_norm": "女鞋dzgrj16米白色袋装",
+      "_cjk": "女鞋米白色袋装"
     },
     {
       "id": 459,
@@ -10917,7 +11833,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女鞋dzgrj16紫色袋装",
+      "_cjk": "女鞋紫色袋装"
     },
     {
       "id": 460,
@@ -10939,7 +11857,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士拖鞋粘花",
+      "_cjk": "女士拖鞋粘花"
     },
     {
       "id": 461,
@@ -10961,7 +11881,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女式凉拖鞋",
+      "_cjk": "女式凉拖鞋"
     },
     {
       "id": 462,
@@ -10983,7 +11905,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "水钻拖鞋",
+      "_cjk": "水钻拖鞋"
     },
     {
       "id": 463,
@@ -11005,7 +11929,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "运动鞋男",
+      "_cjk": "运动鞋男"
     },
     {
       "id": 464,
@@ -11057,7 +11983,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-015-003.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-015-004.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-015-005.jpg"
-      ]
+      ],
+      "_norm": "足球鞋长钉款",
+      "_cjk": "足球鞋长钉款"
     },
     {
       "id": 465,
@@ -11101,7 +12029,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-016-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-016-003.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-016-004.jpg"
-      ]
+      ],
+      "_norm": "足球鞋白红配色碎钉款40码5双41码5双42码5双43码5双44码5双45码2双",
+      "_cjk": "足球鞋白红配色碎钉款码双码双码双码双码双码双"
     },
     {
       "id": 466,
@@ -11123,7 +12053,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "满钻女鞋",
+      "_cjk": "满钻女鞋"
     },
     {
       "id": 467,
@@ -11145,7 +12077,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女鞋玫红34码",
+      "_cjk": "女鞋玫红码"
     },
     {
       "id": 468,
@@ -11167,7 +12101,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋40码",
+      "_cjk": "男鞋码"
     },
     {
       "id": 469,
@@ -11189,7 +12125,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "凉鞋黑色",
+      "_cjk": "凉鞋黑色"
     },
     {
       "id": 470,
@@ -11211,7 +12149,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "鞋垫",
+      "_cjk": "鞋垫"
     },
     {
       "id": 471,
@@ -11233,7 +12173,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "鞋刷白色",
+      "_cjk": "鞋刷白色"
     },
     {
       "id": 472,
@@ -11255,7 +12197,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "拖鞋",
+      "_cjk": "拖鞋"
     },
     {
       "id": 473,
@@ -11277,7 +12221,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋",
+      "_cjk": "男鞋"
     },
     {
       "id": 474,
@@ -11299,7 +12245,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋44码",
+      "_cjk": "男鞋码"
     },
     {
       "id": 475,
@@ -11321,7 +12269,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "鞋子",
+      "_cjk": "鞋子"
     },
     {
       "id": 476,
@@ -11343,7 +12293,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女鞋",
+      "_cjk": "女鞋"
     },
     {
       "id": 477,
@@ -11365,7 +12317,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋黑色",
+      "_cjk": "男鞋黑色"
     },
     {
       "id": 478,
@@ -11387,7 +12341,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋白色",
+      "_cjk": "男鞋白色"
     },
     {
       "id": 479,
@@ -11409,7 +12365,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男鞋白色39码",
+      "_cjk": "男鞋白色码"
     },
     {
       "id": 480,
@@ -11453,7 +12411,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-035-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-035-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-035-004.png"
-      ]
+      ],
+      "_norm": "7007小白鞋white",
+      "_cjk": "小白鞋"
     },
     {
       "id": 481,
@@ -11504,7 +12464,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-036-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-036-004.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-036-005.png"
-      ]
+      ],
+      "_norm": "rh2505运动鞋white",
+      "_cjk": "运动鞋"
     },
     {
       "id": 482,
@@ -11555,7 +12517,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-037-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-037-004.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-037-005.png"
-      ]
+      ],
+      "_norm": "ls826运动鞋blue",
+      "_cjk": "运动鞋"
     },
     {
       "id": 483,
@@ -11585,7 +12549,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-038-002.png"
-      ]
+      ],
+      "_norm": "zh80板鞋blue",
+      "_cjk": "板鞋"
     },
     {
       "id": 484,
@@ -11615,7 +12581,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-039-002.png"
-      ]
+      ],
+      "_norm": "1022板鞋whiteblack",
+      "_cjk": "板鞋"
     },
     {
       "id": 485,
@@ -11645,7 +12613,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-040-002.png"
-      ]
+      ],
+      "_norm": "c005板鞋red",
+      "_cjk": "板鞋"
     },
     {
       "id": 486,
@@ -11689,7 +12659,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-041-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-041-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-041-004.png"
-      ]
+      ],
+      "_norm": "mq09板鞋black",
+      "_cjk": "板鞋"
     },
     {
       "id": 487,
@@ -11747,7 +12719,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-042-004.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-042-005.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-042-006.png"
-      ]
+      ],
+      "_norm": "低帮板鞋black",
+      "_cjk": "低帮板鞋"
     },
     {
       "id": 488,
@@ -11784,7 +12758,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-043-002.jpg",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-043-003.jpg"
-      ]
+      ],
+      "_norm": "运动鞋缺货black",
+      "_cjk": "运动鞋缺货"
     },
     {
       "id": 489,
@@ -11806,7 +12782,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "面膜6款",
+      "_cjk": "面膜款"
     },
     {
       "id": 490,
@@ -11836,7 +12814,9 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SKN-002-002.png"
-      ]
+      ],
+      "_norm": "化妆包",
+      "_cjk": "化妆包"
     },
     {
       "id": 491,
@@ -11858,7 +12838,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "提拉面罩粉",
+      "_cjk": "提拉面罩粉"
     },
     {
       "id": 492,
@@ -11895,7 +12877,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SKN-004-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SKN-004-003.png"
-      ]
+      ],
+      "_norm": "化妆品收纳盒",
+      "_cjk": "化妆品收纳盒"
     },
     {
       "id": 493,
@@ -11917,7 +12901,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "精华乳",
+      "_cjk": "精华乳"
     },
     {
       "id": 494,
@@ -11939,7 +12925,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "香水1539百万金砖100ml",
+      "_cjk": "香水百万金砖"
     },
     {
       "id": 495,
@@ -11961,7 +12949,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "化妆品收纳盒奶油白",
+      "_cjk": "化妆品收纳盒奶油白"
     },
     {
       "id": 496,
@@ -11983,7 +12973,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "香薰精油套装",
+      "_cjk": "香薰精油套装"
     },
     {
       "id": 497,
@@ -12005,7 +12997,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "面膜",
+      "_cjk": "面膜"
     },
     {
       "id": 498,
@@ -12027,7 +13021,9 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": []
+      "images": [],
+      "_norm": "香水",
+      "_cjk": "香水"
     },
     {
       "id": 499,
@@ -12049,7 +13045,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "m9运动手环黑色",
+      "_cjk": "运动手环黑色"
     },
     {
       "id": 500,
@@ -12071,7 +13069,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "h98智能手表三色",
+      "_cjk": "智能手表三色"
     },
     {
       "id": 501,
@@ -12093,7 +13093,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "智能手表d30ultra2s9",
+      "_cjk": "智能手表"
     },
     {
       "id": 502,
@@ -12115,7 +13117,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢手表带",
+      "_cjk": "不锈钢手表带"
     },
     {
       "id": 503,
@@ -12137,7 +13141,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "运动手环黑色40个灰色40个白色40个",
+      "_cjk": "运动手环黑色个灰色个白色个"
     },
     {
       "id": 504,
@@ -12159,7 +13165,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "运动手表5色黑色表带配白色表盘40个灰色40个白色40个糖果绿色40个粉色",
+      "_cjk": "运动手表色黑色表带配白色表盘个灰色个白色个糖果绿色个粉色"
     },
     {
       "id": 505,
@@ -12181,7 +13189,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "不锈钢表带",
+      "_cjk": "不锈钢表带"
     },
     {
       "id": 506,
@@ -12203,7 +13213,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "硅胶表带",
+      "_cjk": "硅胶表带"
     },
     {
       "id": 507,
@@ -12225,7 +13237,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "智能手表",
+      "_cjk": "智能手表"
     },
     {
       "id": 508,
@@ -12247,7 +13261,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "手表银色",
+      "_cjk": "手表银色"
     },
     {
       "id": 509,
@@ -12269,7 +13285,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "女士手表",
+      "_cjk": "女士手表"
     },
     {
       "id": 510,
@@ -12291,7 +13309,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "智能手表3色",
+      "_cjk": "智能手表色"
     },
     {
       "id": 511,
@@ -12313,7 +13333,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "腕表",
+      "_cjk": "腕表"
     },
     {
       "id": 512,
@@ -12350,7 +13372,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SOC-001-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SOC-001-003.png"
-      ]
+      ],
+      "_norm": "0347女咖色小熊",
+      "_cjk": "女咖色小熊"
     },
     {
       "id": 513,
@@ -12372,7 +13396,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士短袜",
+      "_cjk": "男士短袜"
     },
     {
       "id": 514,
@@ -12394,7 +13420,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "男士隐形袜",
+      "_cjk": "男士隐形袜"
     },
     {
       "id": 515,
@@ -12416,7 +13444,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "永恒铅笔四色",
+      "_cjk": "永恒铅笔四色"
     },
     {
       "id": 516,
@@ -12438,7 +13468,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "控笔训练本4色",
+      "_cjk": "控笔训练本色"
     },
     {
       "id": 517,
@@ -12460,7 +13492,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "控笔训练本盒装2色",
+      "_cjk": "控笔训练本盒装色"
     },
     {
       "id": 518,
@@ -12490,7 +13524,9 @@
       "mainCategory": "Stationery & Office",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STA-004-002.png"
-      ]
+      ],
+      "_norm": "控笔训练本32页",
+      "_cjk": "控笔训练本页"
     },
     {
       "id": 519,
@@ -12512,7 +13548,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "紫色hb",
+      "_cjk": "紫色"
     },
     {
       "id": 520,
@@ -12534,7 +13572,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "蓝色hb",
+      "_cjk": "蓝色"
     },
     {
       "id": 521,
@@ -12556,7 +13596,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "白色hb",
+      "_cjk": "白色"
     },
     {
       "id": 522,
@@ -12578,7 +13620,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "蜡笔",
+      "_cjk": "蜡笔"
     },
     {
       "id": 523,
@@ -12600,7 +13644,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "字帖",
+      "_cjk": "字帖"
     },
     {
       "id": 524,
@@ -12622,7 +13668,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "字帖俄语",
+      "_cjk": "字帖俄语"
     },
     {
       "id": 525,
@@ -12644,7 +13692,9 @@
         }
       ],
       "mainCategory": "Stationery & Office",
-      "images": []
+      "images": [],
+      "_norm": "贴纸",
+      "_cjk": "贴纸"
     },
     {
       "id": 526,
@@ -12666,7 +13716,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "五谷杂粮收纳盒",
+      "_cjk": "五谷杂粮收纳盒"
     },
     {
       "id": 527,
@@ -12696,7 +13748,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-002-002.jpg"
-      ]
+      ],
+      "_norm": "抽屉收纳盒",
+      "_cjk": "抽屉收纳盒"
     },
     {
       "id": 528,
@@ -12718,7 +13772,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "透明保鲜盒",
+      "_cjk": "透明保鲜盒"
     },
     {
       "id": 529,
@@ -12740,7 +13796,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "可视窗千鸟格收纳袋200个中号50l553525200个大号75l604030",
+      "_cjk": "可视窗千鸟格收纳袋个中号个大号"
     },
     {
       "id": 530,
@@ -12762,7 +13820,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "内衣收纳盒",
+      "_cjk": "内衣收纳盒"
     },
     {
       "id": 531,
@@ -12784,7 +13844,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "衣服收纳箱",
+      "_cjk": "衣服收纳箱"
     },
     {
       "id": 532,
@@ -12806,7 +13868,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桌面收纳盒大号白色",
+      "_cjk": "桌面收纳盒大号白色"
     },
     {
       "id": 533,
@@ -12850,7 +13914,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-008-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-008-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-008-004.png"
-      ]
+      ],
+      "_norm": "千鸟格收纳袋",
+      "_cjk": "千鸟格收纳袋"
     },
     {
       "id": 534,
@@ -12872,7 +13938,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "甜品收纳盒",
+      "_cjk": "甜品收纳盒"
     },
     {
       "id": 535,
@@ -12894,7 +13962,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "香料罐置物架",
+      "_cjk": "香料罐置物架"
     },
     {
       "id": 536,
@@ -12916,7 +13986,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "厨房置物架",
+      "_cjk": "厨房置物架"
     },
     {
       "id": 537,
@@ -12938,7 +14010,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "厨房置物架枪灰304050cm",
+      "_cjk": "厨房置物架枪灰"
     },
     {
       "id": 538,
@@ -12968,7 +14042,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-013-002.png"
-      ]
+      ],
+      "_norm": "厨房置物架全封4格",
+      "_cjk": "厨房置物架全封格"
     },
     {
       "id": 539,
@@ -13005,7 +14081,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-014-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-014-003.png"
-      ]
+      ],
+      "_norm": "折叠置物架3层",
+      "_cjk": "折叠置物架层"
     },
     {
       "id": 540,
@@ -13027,7 +14105,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "双盖收纳盒",
+      "_cjk": "双盖收纳盒"
     },
     {
       "id": 541,
@@ -13057,7 +14137,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-016-002.png"
-      ]
+      ],
+      "_norm": "桌面收纳盒",
+      "_cjk": "桌面收纳盒"
     },
     {
       "id": 542,
@@ -13079,7 +14161,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室置物架黑色双层三角形",
+      "_cjk": "浴室置物架黑色双层三角形"
     },
     {
       "id": 543,
@@ -13101,7 +14185,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室置物架黑色双层长方形",
+      "_cjk": "浴室置物架黑色双层长方形"
     },
     {
       "id": 544,
@@ -13123,7 +14209,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室置物架银色三角双层",
+      "_cjk": "浴室置物架银色三角双层"
     },
     {
       "id": 545,
@@ -13145,7 +14233,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室置物架银色单层长方形",
+      "_cjk": "浴室置物架银色单层长方形"
     },
     {
       "id": 546,
@@ -13167,7 +14257,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "置物架白色四层",
+      "_cjk": "置物架白色四层"
     },
     {
       "id": 547,
@@ -13189,7 +14281,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "冰箱收纳盒",
+      "_cjk": "冰箱收纳盒"
     },
     {
       "id": 548,
@@ -13211,7 +14305,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "置物架透明白色长方形28116",
+      "_cjk": "置物架透明白色长方形"
     },
     {
       "id": 549,
@@ -13233,7 +14329,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "长方形置物架银色",
+      "_cjk": "长方形置物架银色"
     },
     {
       "id": 550,
@@ -13255,7 +14353,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "长方形置物架枪灰色",
+      "_cjk": "长方形置物架枪灰色"
     },
     {
       "id": 551,
@@ -13277,7 +14377,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "长方形置物架黑金",
+      "_cjk": "长方形置物架黑金"
     },
     {
       "id": 552,
@@ -13321,7 +14423,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-027-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-027-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-027-004.png"
-      ]
+      ],
+      "_norm": "长方形置物架",
+      "_cjk": "长方形置物架"
     },
     {
       "id": 553,
@@ -13343,7 +14447,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "三角形置物架银色",
+      "_cjk": "三角形置物架银色"
     },
     {
       "id": 554,
@@ -13373,7 +14479,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-029-002.png"
-      ]
+      ],
+      "_norm": "三角形置物架",
+      "_cjk": "三角形置物架"
     },
     {
       "id": 555,
@@ -13403,7 +14511,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-030-002.png"
-      ]
+      ],
+      "_norm": "灰色置物架3层",
+      "_cjk": "灰色置物架层"
     },
     {
       "id": 556,
@@ -13425,7 +14535,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "带抽屉的置物架",
+      "_cjk": "带抽屉的置物架"
     },
     {
       "id": 557,
@@ -13447,7 +14559,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "收纳包",
+      "_cjk": "收纳包"
     },
     {
       "id": 558,
@@ -13498,7 +14612,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-033-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-033-004.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-033-005.png"
-      ]
+      ],
+      "_norm": "可视窗收纳袋中号50l400个大号75l",
+      "_cjk": "可视窗收纳袋中号个大号"
     },
     {
       "id": 559,
@@ -13542,7 +14658,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-034-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-034-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-034-004.png"
-      ]
+      ],
+      "_norm": "收纳袋100l100个140l100个180l",
+      "_cjk": "收纳袋个个"
     },
     {
       "id": 560,
@@ -13564,7 +14682,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "布艺收纳柜",
+      "_cjk": "布艺收纳柜"
     },
     {
       "id": 561,
@@ -13586,7 +14706,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "收纳袋7件套",
+      "_cjk": "收纳袋件套"
     },
     {
       "id": 562,
@@ -13608,7 +14730,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "收纳盒",
+      "_cjk": "收纳盒"
     },
     {
       "id": 563,
@@ -13630,7 +14754,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "多功能置物架",
+      "_cjk": "多功能置物架"
     },
     {
       "id": 564,
@@ -13639,20 +14765,22 @@
       "name": "Storage Rack Shelf Metal Wall Mount",
       "name_cn": "浴室三角置物架",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-039.png",
-      "priceMin": 5.1,
-      "priceMax": 5.1,
+      "priceMin": 26.0,
+      "priceMax": 26.0,
       "moq": 1,
       "description": "Storage Rack Shelf Metal Wall Mount.",
       "variations": [
         {
           "child_id": "YCS-STO-039",
-          "price": 5.1,
+          "price": 26.0,
           "color": "",
           "size": ""
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室三角置物架",
+      "_cjk": "浴室三角置物架"
     },
     {
       "id": 565,
@@ -13674,7 +14802,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "内衣收纳盒灰色17格452912cm",
+      "_cjk": "内衣收纳盒灰色格"
     },
     {
       "id": 566,
@@ -13696,7 +14826,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "桌面收纳盒小号白色",
+      "_cjk": "桌面收纳盒小号白色"
     },
     {
       "id": 567,
@@ -13718,7 +14850,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "裤子收纳盒",
+      "_cjk": "裤子收纳盒"
     },
     {
       "id": 568,
@@ -13740,7 +14874,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "免打孔置物架",
+      "_cjk": "免打孔置物架"
     },
     {
       "id": 569,
@@ -13762,7 +14898,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "脸盆收纳架",
+      "_cjk": "脸盆收纳架"
     },
     {
       "id": 570,
@@ -13784,7 +14922,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "洗衣机上方置物架",
+      "_cjk": "洗衣机上方置物架"
     },
     {
       "id": 571,
@@ -13806,7 +14946,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "置物架透明白",
+      "_cjk": "置物架透明白"
     },
     {
       "id": 572,
@@ -13828,7 +14970,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "马桶置物架",
+      "_cjk": "马桶置物架"
     },
     {
       "id": 573,
@@ -13850,7 +14994,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "数码收纳盒",
+      "_cjk": "数码收纳盒"
     },
     {
       "id": 574,
@@ -13872,7 +15018,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "厨房置物架全封3格4格5格",
+      "_cjk": "厨房置物架全封格格格"
     },
     {
       "id": 575,
@@ -13894,7 +15042,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "藤编收纳筐珍珠白二号玫瑰花403018",
+      "_cjk": "藤编收纳筐珍珠白二号玫瑰花"
     },
     {
       "id": 576,
@@ -13916,7 +15066,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "竹制收纳盒9格2款式445505",
+      "_cjk": "竹制收纳盒格款式"
     },
     {
       "id": 577,
@@ -13938,7 +15090,9 @@
         }
       ],
       "mainCategory": "Home & Daily Living",
-      "images": []
+      "images": [],
+      "_norm": "浴室置物架",
+      "_cjk": "浴室置物架"
     },
     {
       "id": 578,
@@ -13960,7 +15114,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "女士泳衣两件套",
+      "_cjk": "女士泳衣两件套"
     },
     {
       "id": 579,
@@ -13982,7 +15138,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "连体泳衣2色",
+      "_cjk": "连体泳衣色"
     },
     {
       "id": 580,
@@ -14019,7 +15177,9 @@
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SWI-003-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SWI-003-003.png"
-      ]
+      ],
+      "_norm": "女士泳衣蓝色l20pcsxl20pcs",
+      "_cjk": "女士泳衣蓝色"
     },
     {
       "id": 581,
@@ -14049,7 +15209,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SWI-005-002.png"
-      ]
+      ],
+      "_norm": "拼色泳衣两色各l20xl30",
+      "_cjk": "拼色泳衣两色各"
     },
     {
       "id": 582,
@@ -14071,7 +15233,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "泳衣92410黑色均码",
+      "_cjk": "泳衣黑色均码"
     },
     {
       "id": 583,
@@ -14093,7 +15257,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "平角泳衣",
+      "_cjk": "平角泳衣"
     },
     {
       "id": 584,
@@ -14115,7 +15281,9 @@
         }
       ],
       "mainCategory": "Apparel & Footwear",
-      "images": []
+      "images": [],
+      "_norm": "泳衣粉黑",
+      "_cjk": "泳衣粉黑"
     },
     {
       "id": 585,
@@ -14137,7 +15305,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "三角平板拖把",
+      "_cjk": "三角平板拖把"
     },
     {
       "id": 586,
@@ -14159,7 +15329,9 @@
         }
       ],
       "mainCategory": "Digital Electronics",
-      "images": []
+      "images": [],
+      "_norm": "平板保护套",
+      "_cjk": "平板保护套"
     },
     {
       "id": 587,
@@ -14181,7 +15353,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "毛毡装饰品",
+      "_cjk": "毛毡装饰品"
     },
     {
       "id": 588,
@@ -14203,7 +15377,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "婴儿摇摇椅含玩具粉140个黑60个灰",
+      "_cjk": "婴儿摇摇椅含玩具粉个黑个灰"
     },
     {
       "id": 589,
@@ -14225,7 +15401,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "早教玩具",
+      "_cjk": "早教玩具"
     },
     {
       "id": 590,
@@ -14247,7 +15425,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "爬爬水垫",
+      "_cjk": "爬爬水垫"
     },
     {
       "id": 591,
@@ -14269,7 +15449,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "婴儿玩具三款",
+      "_cjk": "婴儿玩具三款"
     },
     {
       "id": 592,
@@ -14278,20 +15460,22 @@
       "name": "Children'S Toy Educational Crawling",
       "name_cn": "儿童爬行垫",
       "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-006.png",
-      "priceMin": 36.0,
-      "priceMax": 36.0,
+      "priceMin": 34.0,
+      "priceMax": 34.0,
       "moq": 1,
       "description": "Children'S Toy Educational Crawling. Sizes: S.",
       "variations": [
         {
           "child_id": "YCS-TOY-006",
-          "price": 36.0,
+          "price": 34.0,
           "color": "",
           "size": "S"
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童爬行垫",
+      "_cjk": "儿童爬行垫"
     },
     {
       "id": 593,
@@ -14313,7 +15497,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "玩具收纳架",
+      "_cjk": "玩具收纳架"
     },
     {
       "id": 594,
@@ -14335,7 +15521,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童过家家玩具",
+      "_cjk": "儿童过家家玩具"
     },
     {
       "id": 595,
@@ -14357,7 +15545,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "存钱罐",
+      "_cjk": "存钱罐"
     },
     {
       "id": 596,
@@ -14379,7 +15569,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "发射器玩具",
+      "_cjk": "发射器玩具"
     },
     {
       "id": 597,
@@ -14401,7 +15593,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "电动钓鱼台玩具",
+      "_cjk": "电动钓鱼台玩具"
     },
     {
       "id": 598,
@@ -14423,7 +15617,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "小兔子早教玩具",
+      "_cjk": "小兔子早教玩具"
     },
     {
       "id": 599,
@@ -14445,7 +15641,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "音乐电话玩具",
+      "_cjk": "音乐电话玩具"
     },
     {
       "id": 600,
@@ -14467,7 +15665,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "小马早教玩具",
+      "_cjk": "小马早教玩具"
     },
     {
       "id": 601,
@@ -14489,7 +15689,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "直升飞机玩具",
+      "_cjk": "直升飞机玩具"
     },
     {
       "id": 602,
@@ -14511,7 +15713,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "挖掘机玩具",
+      "_cjk": "挖掘机玩具"
     },
     {
       "id": 603,
@@ -14533,7 +15737,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "毛毡diy",
+      "_cjk": "毛毡"
     },
     {
       "id": 604,
@@ -14555,7 +15761,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "插卡片学习机玩具",
+      "_cjk": "插卡片学习机玩具"
     },
     {
       "id": 605,
@@ -14577,7 +15785,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "小号磁性国际象棋",
+      "_cjk": "小号磁性国际象棋"
     },
     {
       "id": 606,
@@ -14599,7 +15809,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "过家家玩具42件套",
+      "_cjk": "过家家玩具件套"
     },
     {
       "id": 607,
@@ -14621,7 +15833,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "四合一拼图",
+      "_cjk": "四合一拼图"
     },
     {
       "id": 608,
@@ -14643,7 +15857,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童迷宫玩具",
+      "_cjk": "儿童迷宫玩具"
     },
     {
       "id": 609,
@@ -14673,7 +15889,9 @@
       "mainCategory": "Baby & Toys",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-023-002.png"
-      ]
+      ],
+      "_norm": "仿真医生玩具",
+      "_cjk": "仿真医生玩具"
     },
     {
       "id": 610,
@@ -14695,7 +15913,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "彩屏绘画板",
+      "_cjk": "彩屏绘画板"
     },
     {
       "id": 611,
@@ -14739,7 +15959,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-025-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-025-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-025-004.png"
-      ]
+      ],
+      "_norm": "过家家玩具",
+      "_cjk": "过家家玩具"
     },
     {
       "id": 612,
@@ -14761,7 +15983,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "过家家玩具08971a",
+      "_cjk": "过家家玩具"
     },
     {
       "id": 613,
@@ -14783,7 +16007,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "早教益智玩具",
+      "_cjk": "早教益智玩具"
     },
     {
       "id": 614,
@@ -14805,7 +16031,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "摇铃5件套",
+      "_cjk": "摇铃件套"
     },
     {
       "id": 615,
@@ -14827,7 +16055,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "三合一滚动鼓玩具",
+      "_cjk": "三合一滚动鼓玩具"
     },
     {
       "id": 616,
@@ -14849,7 +16079,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "蒙氏早教彩虹塔叠叠乐",
+      "_cjk": "蒙氏早教彩虹塔叠叠乐"
     },
     {
       "id": 617,
@@ -14871,7 +16103,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "蒙氏早教几何四套柱",
+      "_cjk": "蒙氏早教几何四套柱"
     },
     {
       "id": 618,
@@ -14893,7 +16127,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "蒙氏早教几何五套柱",
+      "_cjk": "蒙氏早教几何五套柱"
     },
     {
       "id": 619,
@@ -14915,7 +16151,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童拼图",
+      "_cjk": "儿童拼图"
     },
     {
       "id": 620,
@@ -14937,7 +16175,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "企鹅时钟玩具",
+      "_cjk": "企鹅时钟玩具"
     },
     {
       "id": 621,
@@ -14959,7 +16199,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "八音敲琴玩具",
+      "_cjk": "八音敲琴玩具"
     },
     {
       "id": 622,
@@ -14981,7 +16223,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "嵌板式立体拼图8款",
+      "_cjk": "嵌板式立体拼图款"
     },
     {
       "id": 623,
@@ -15003,7 +16247,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "3d立体拼图卡",
+      "_cjk": "立体拼图卡"
     },
     {
       "id": 624,
@@ -15025,7 +16271,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "手抓板拼图",
+      "_cjk": "手抓板拼图"
     },
     {
       "id": 625,
@@ -15047,7 +16295,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "拧螺丝玩具",
+      "_cjk": "拧螺丝玩具"
     },
     {
       "id": 626,
@@ -15069,7 +16319,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "电动轨道火车",
+      "_cjk": "电动轨道火车"
     },
     {
       "id": 627,
@@ -15091,7 +16343,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童学步玩具",
+      "_cjk": "儿童学步玩具"
     },
     {
       "id": 628,
@@ -15113,7 +16367,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "玩具小车",
+      "_cjk": "玩具小车"
     },
     {
       "id": 629,
@@ -15135,7 +16391,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "医生玩具套装豪华款30件",
+      "_cjk": "医生玩具套装豪华款件"
     },
     {
       "id": 630,
@@ -15157,7 +16415,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "纸盒医生玩具42件",
+      "_cjk": "纸盒医生玩具件"
     },
     {
       "id": 631,
@@ -15179,7 +16439,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童学步车",
+      "_cjk": "儿童学步车"
     },
     {
       "id": 632,
@@ -15201,7 +16463,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "磁力积木玩具",
+      "_cjk": "磁力积木玩具"
     },
     {
       "id": 633,
@@ -15223,7 +16487,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童多功能画架8099双面画板",
+      "_cjk": "儿童多功能画架双面画板"
     },
     {
       "id": 634,
@@ -15245,7 +16511,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "医疗箱医生服玩具45件套",
+      "_cjk": "医疗箱医生服玩具件套"
     },
     {
       "id": 635,
@@ -15267,7 +16535,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "医疗箱护士服玩具45件套",
+      "_cjk": "医疗箱护士服玩具件套"
     },
     {
       "id": 636,
@@ -15289,7 +16559,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "遥控玩具车",
+      "_cjk": "遥控玩具车"
     },
     {
       "id": 637,
@@ -15311,7 +16583,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童听诊器玩具",
+      "_cjk": "儿童听诊器玩具"
     },
     {
       "id": 638,
@@ -15333,7 +16607,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "玩具三合一滚动鼓",
+      "_cjk": "玩具三合一滚动鼓"
     },
     {
       "id": 639,
@@ -15355,7 +16631,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "拼图积木六面画交通系列",
+      "_cjk": "拼图积木六面画交通系列"
     },
     {
       "id": 640,
@@ -15377,7 +16655,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "拼图积木六面画海洋系列",
+      "_cjk": "拼图积木六面画海洋系列"
     },
     {
       "id": 641,
@@ -15399,7 +16679,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "拼图积木六面农场牧场系列",
+      "_cjk": "拼图积木六面农场牧场系列"
     },
     {
       "id": 642,
@@ -15421,7 +16703,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "人体结构拼图女生英文版",
+      "_cjk": "人体结构拼图女生英文版"
     },
     {
       "id": 643,
@@ -15443,7 +16727,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "人体模型玩具txmr026",
+      "_cjk": "人体模型玩具"
     },
     {
       "id": 644,
@@ -15465,7 +16751,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "人体模型玩具txmr026a",
+      "_cjk": "人体模型玩具"
     },
     {
       "id": 645,
@@ -15487,7 +16775,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "儿童玩具08972a工具手提箱",
+      "_cjk": "儿童玩具工具手提箱"
     },
     {
       "id": 646,
@@ -15531,7 +16821,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-061-002.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-061-003.png",
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-061-004.png"
-      ]
+      ],
+      "_norm": "16寸横款画板彩色笔迹浅粉色",
+      "_cjk": "寸横款画板彩色笔迹浅粉色"
     },
     {
       "id": 647,
@@ -15561,7 +16853,9 @@
       "mainCategory": "Baby & Toys",
       "images": [
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-062-002.png"
-      ]
+      ],
+      "_norm": "仿真医生玩具升级版带电16件套粉色",
+      "_cjk": "仿真医生玩具升级版带电件套粉色"
     },
     {
       "id": 648,
@@ -15583,7 +16877,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "cpc摇铃5件套",
+      "_cjk": "摇铃件套"
     },
     {
       "id": 649,
@@ -15605,7 +16901,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "纸盒医生玩具",
+      "_cjk": "纸盒医生玩具"
     },
     {
       "id": 650,
@@ -15627,7 +16925,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "8099双面画板",
+      "_cjk": "双面画板"
     },
     {
       "id": 651,
@@ -15649,7 +16949,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "绘画板85寸m款彩屏",
+      "_cjk": "绘画板寸款彩屏"
     },
     {
       "id": 652,
@@ -15671,7 +16973,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "45件救护车玩具",
+      "_cjk": "件救护车玩具"
     },
     {
       "id": 653,
@@ -15693,7 +16997,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "磁力积木",
+      "_cjk": "磁力积木"
     },
     {
       "id": 654,
@@ -15715,7 +17021,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "爬爬垫",
+      "_cjk": "爬爬垫"
     },
     {
       "id": 655,
@@ -15737,7 +17045,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "积木",
+      "_cjk": "积木"
     },
     {
       "id": 656,
@@ -15759,7 +17069,9 @@
         }
       ],
       "mainCategory": "Baby & Toys",
-      "images": []
+      "images": [],
+      "_norm": "拼图",
+      "_cjk": "拼图"
     }
   ],
   "categories": [
