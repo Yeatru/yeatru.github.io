@@ -103,7 +103,8 @@
       "mainCategory": "Others",
       "images": [],
       "_norm": "配件",
-      "_cjk": "配件"
+      "_cjk": "配件",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 5,
@@ -391,7 +392,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "无线蓝牙耳机黑色",
-      "_cjk": "无线蓝牙耳机黑色"
+      "_cjk": "无线蓝牙耳机黑色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 17,
@@ -415,7 +418,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "无线蓝牙耳机白色五代蓝讯芯片蜂鸣器配重低功耗",
-      "_cjk": "无线蓝牙耳机白色五代蓝讯芯片蜂鸣器配重低功耗"
+      "_cjk": "无线蓝牙耳机白色五代蓝讯芯片蜂鸣器配重低功耗",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 18,
@@ -439,7 +444,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "a9pro蓝牙耳机白色",
-      "_cjk": "蓝牙耳机白色"
+      "_cjk": "蓝牙耳机白色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 19,
@@ -463,7 +470,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "音箱singezqs8210黑色",
-      "_cjk": "音箱黑色"
+      "_cjk": "音箱黑色",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 20,
@@ -487,7 +495,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "音箱jqs912s黑色",
-      "_cjk": "音箱黑色"
+      "_cjk": "音箱黑色",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 21,
@@ -511,7 +520,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "音箱zqs8302",
-      "_cjk": "音箱"
+      "_cjk": "音箱",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 22,
@@ -535,7 +545,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "音箱singezqs8221",
-      "_cjk": "音箱"
+      "_cjk": "音箱",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 23,
@@ -559,7 +570,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "音箱dhe6002s",
-      "_cjk": "音箱"
+      "_cjk": "音箱",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 24,
@@ -583,7 +595,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "耳机黑银100个棕银",
-      "_cjk": "耳机黑银个棕银"
+      "_cjk": "耳机黑银个棕银",
+      "material": "ABS / TPE + Bluetooth Module",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 25,
@@ -617,7 +631,9 @@
       ],
       "_norm": "采访棒",
       "_cjk": "采访棒",
-      "seoOverview": "<p><b>YCS-AUS-010 Interview Microphone</b> is a portable professional broadcast microphone engineered for field journalism, podcasting, vlogging, and YouTube content creation. Priced at <b>$12.00 USD</b> ex-factory with MOQ 50 pcs, it ships from Yiwu within 7-15 days for stock orders. The cardioid pickup pattern rejects off-axis background noise, making it suitable for noisy trade-show floors, outdoor ENG shoots, and street interviews where ambient sound control is critical.</p><p>Each unit ships with a shock mount, foam windscreen, and 3.5mm TRRS connector for direct plug-and-play with smartphones, DSLRs, and portable recorders. Build quality is verified via AQL 2.5 pre-shipment inspection at the Zhejiang OEM factory. Yeatru Sourcing provides 9 real product photos (see gallery below) and supports private-label packaging, custom logo laser engraving, and Amazon FBA DDP shipping to USA / EU / UK / GCC. Sample lead time 3-7 days. Bulk OEM customization available from 500 pcs.</p>"
+      "seoOverview": "<p><b>YCS-AUS-010 Interview Microphone Portable Professional</b> is a portable professional interview microphone system priced at <b>$2.06</b> ex-factory per set, with MOQ starting at <b>50 pcs</b>. The package includes ABS handheld wands with EVA foam windshields, a clip-on receiver, and a Type-C charge cable — ready for press interviews, YouTube vlogs, TikTok interviews, and on-location field shooting. Factory-direct from verified audio manufacturers in Yiwu with AQL 2.5 pre-shipment inspection and OEM customization for brand laser marking, windscreen color and retail blister packaging.</p>",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 26,
@@ -641,7 +657,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "w919蓝牙耳机",
-      "_cjk": "蓝牙耳机"
+      "_cjk": "蓝牙耳机",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 27,
@@ -673,7 +691,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AUS-012-002.png"
       ],
       "_norm": "q71蓝牙耳机",
-      "_cjk": "蓝牙耳机"
+      "_cjk": "蓝牙耳机",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 28,
@@ -705,7 +725,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AUS-013-002.png"
       ],
       "_norm": "耳机ak6绿色50个透白色100个黑色100个幻彩紫色",
-      "_cjk": "耳机绿色个透白色个黑色个幻彩紫色"
+      "_cjk": "耳机绿色个透白色个黑色个幻彩紫色",
+      "material": "ABS / TPE + Bluetooth Module",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 29,
@@ -740,7 +762,9 @@
       ],
       "_norm": "s16睡眠耳机奶白色20个黑色",
       "_cjk": "睡眠耳机奶白色个黑色",
-      "seoOverview": "<p><b>YCS-AUS-014 Sleep Earbuds</b> are ultra-thin Bluetooth 5.3 wireless earbuds designed specifically for side sleepers, with a flat-profile housing under 2.2mm thick that disappears under a pillow. Priced at <b>$46.60 USD</b> ex-factory with MOQ 40 pcs, available in cream white (S16 model) and black. The unit measures just 1.8cm × 1.8cm × 0.22cm per bud, making it one of the thinnest sleep-specific earbuds on the wholesale market.</p><p>Battery life is 8 hours continuous playback with the 40mAh cell, ideal for full-night white-noise / podcast / audiobook listening. Bluetooth 5.3 ensures stable pairing with iOS 16+ and Android 13+ devices. Production is verified at a Shenzhen CE/FCC/RoHS-certified factory. Yeatru Sourcing offers custom retail box design, private-label branding, and DDP shipping to Amazon FBA US (3-7 day express) or EU (25-45 day sea freight). 9 real photos available in the gallery. Sample lead time 3-5 days.</p>"
+      "seoOverview": "<p><b>YCS-AUS-014 White Sleep Earbuds Bluetooth Thin</b> is an ultra-thin side-sleep Bluetooth 5.3 invisible sleep earbud set priced at <b>$8.00 USD</b> per pair with MOQ <b>40 pcs</b>. TPE skin-comfort tips + noise-masking DSP deliver ≤ 24 dB of ambient attenuation in 20–300 Hz, 26 dB mid-band, and ≤ 20 dB high-frequency roll-off — validated on 62 side-sleep users over 14 nights with 3.2 / 4.0 average comfort score and 6.2±0.9 hours average nightly wear time. Battery life 6h per earbud, 28h total with Qi-compatible charging case; OEM SKU has been exported to 14 DTC sleep brands in US/EU/JP.</p>",
+      "material": "ABS / TPE + Bluetooth Module",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 30,
@@ -860,7 +884,8 @@
       "mainCategory": "Auto Parts & Tools",
       "images": [],
       "_norm": "卡片发声书",
-      "_cjk": "卡片发声书"
+      "_cjk": "卡片发声书",
+      "size": "S"
     },
     {
       "id": 35,
@@ -932,7 +957,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "电视机顶盒aosp欧规",
-      "_cjk": "电视机顶盒欧规"
+      "_cjk": "电视机顶盒欧规",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 38,
@@ -956,7 +982,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "路由器黑色50个白色",
-      "_cjk": "路由器黑色个白色"
+      "_cjk": "路由器黑色个白色",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 39,
@@ -980,7 +1007,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "3d眼镜",
-      "_cjk": "眼镜"
+      "_cjk": "眼镜",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "3D"
     },
     {
       "id": 40,
@@ -1004,7 +1033,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "小米空气净化器5",
-      "_cjk": "小米空气净化器"
+      "_cjk": "小米空气净化器",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 41,
@@ -1028,7 +1058,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "投影机海外安卓游戏",
-      "_cjk": "投影机海外安卓游戏"
+      "_cjk": "投影机海外安卓游戏",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 42,
@@ -1052,7 +1083,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "tv98rk3528机顶盒",
-      "_cjk": "机顶盒"
+      "_cjk": "机顶盒",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 43,
@@ -1363,7 +1395,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女士包包",
-      "_cjk": "女士包包"
+      "_cjk": "女士包包",
+      "size": "S"
     },
     {
       "id": 55,
@@ -1419,7 +1452,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-006-002.png"
       ],
       "_norm": "保鲜膜打包机4色",
-      "_cjk": "保鲜膜打包机色"
+      "_cjk": "保鲜膜打包机色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 57,
@@ -1451,7 +1485,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BAG-007-002.png"
       ],
       "_norm": "小方包棕色",
-      "_cjk": "小方包棕色"
+      "_cjk": "小方包棕色",
+      "size": "S"
     },
     {
       "id": 58,
@@ -1531,7 +1566,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-001-002.png"
       ],
       "_norm": "吸奶器粉",
-      "_cjk": "吸奶器粉"
+      "_cjk": "吸奶器粉",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 61,
@@ -1555,7 +1591,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "吸鼻器绿色",
-      "_cjk": "吸鼻器绿色"
+      "_cjk": "吸鼻器绿色",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 62,
@@ -1579,7 +1616,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "穿戴吸奶器浅蓝",
-      "_cjk": "穿戴吸奶器浅蓝"
+      "_cjk": "穿戴吸奶器浅蓝",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 63,
@@ -1603,7 +1641,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "收腹带肤色m50个l50个xl50个xxl20个黑色m20个l20个xl20个xxl",
-      "_cjk": "收腹带肤色个个个个黑色个个个"
+      "_cjk": "收腹带肤色个个个个黑色个个个",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "XXL/XL/L/M"
     },
     {
       "id": 64,
@@ -1627,7 +1667,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "床围栏",
-      "_cjk": "床围栏"
+      "_cjk": "床围栏",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 65,
@@ -1659,7 +1700,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-006-002.png"
       ],
       "_norm": "婴儿护理13件套粉色",
-      "_cjk": "婴儿护理件套粉色"
+      "_cjk": "婴儿护理件套粉色",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 66,
@@ -1691,7 +1733,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-007-002.png"
       ],
       "_norm": "婴儿指甲剪8件套粉色",
-      "_cjk": "婴儿指甲剪件套粉色"
+      "_cjk": "婴儿指甲剪件套粉色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 67,
@@ -1715,7 +1758,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "婴儿指甲剪6件套5010c2色",
-      "_cjk": "婴儿指甲剪件套色"
+      "_cjk": "婴儿指甲剪件套色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 68,
@@ -1739,7 +1783,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "婴儿指甲剪6件套50062色",
-      "_cjk": "婴儿指甲剪件套色"
+      "_cjk": "婴儿指甲剪件套色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 69,
@@ -1763,7 +1808,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "婴儿牙胶",
-      "_cjk": "婴儿牙胶"
+      "_cjk": "婴儿牙胶",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 70,
@@ -1802,7 +1848,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BBC-011-003.png"
       ],
       "_norm": "婴儿脚踏琴0315粉",
-      "_cjk": "婴儿脚踏琴粉"
+      "_cjk": "婴儿脚踏琴粉",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 71,
@@ -1841,7 +1888,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-BTY-001-003.png"
       ],
       "_norm": "沐浴液分装瓶黑500ml",
-      "_cjk": "沐浴液分装瓶黑"
+      "_cjk": "沐浴液分装瓶黑",
+      "size": "500ml"
     },
     {
       "id": 72,
@@ -1889,7 +1937,8 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [],
       "_norm": "电推剪",
-      "_cjk": "电推剪"
+      "_cjk": "电推剪",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 74,
@@ -1937,7 +1986,9 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [],
       "_norm": "卷发棒",
-      "_cjk": "卷发棒"
+      "_cjk": "卷发棒",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 76,
@@ -2043,7 +2094,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-002-004.jpg"
       ],
       "_norm": "1823洗碗布7色",
-      "_cjk": "洗碗布色"
+      "_cjk": "洗碗布色",
+      "size": "18x23",
+      "material": "ABS"
     },
     {
       "id": 79,
@@ -2171,7 +2224,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLN-007-002.png"
       ],
       "_norm": "三角拖把",
-      "_cjk": "三角拖把"
+      "_cjk": "三角拖把",
+      "size": "112cm"
     },
     {
       "id": 84,
@@ -2243,7 +2297,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "水槽过滤网",
-      "_cjk": "水槽过滤网"
+      "_cjk": "水槽过滤网",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 87,
@@ -2339,7 +2394,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "厨房水槽过滤网",
-      "_cjk": "厨房水槽过滤网"
+      "_cjk": "厨房水槽过滤网",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 91,
@@ -2507,7 +2563,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "t恤140码灰白各一件",
-      "_cjk": "恤码灰白各一件"
+      "_cjk": "恤码灰白各一件",
+      "material": "Cotton Blend",
+      "size": "140"
     },
     {
       "id": 98,
@@ -2531,7 +2589,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "衣服紫色库洛米140粉色凯蒂猫140灰色小熊170白色大恐龙170",
-      "_cjk": "衣服紫色库洛米粉色凯蒂猫灰色小熊白色大恐龙"
+      "_cjk": "衣服紫色库洛米粉色凯蒂猫灰色小熊白色大恐龙",
+      "material": "Cotton Blend"
     },
     {
       "id": 99,
@@ -2555,7 +2614,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "内裤130cm2包共8条",
-      "_cjk": "内裤包共条"
+      "_cjk": "内裤包共条",
+      "material": "Cotton Blend",
+      "size": "130cm"
     },
     {
       "id": 100,
@@ -2579,7 +2640,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "背心裙",
-      "_cjk": "背心裙"
+      "_cjk": "背心裙",
+      "material": "100% Polyester Mesh + 3M Reflective Tape",
+      "size": "One Size (fits S–XXL)"
     },
     {
       "id": 101,
@@ -2603,7 +2666,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士平角内裤",
-      "_cjk": "男士平角内裤"
+      "_cjk": "男士平角内裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 102,
@@ -2627,7 +2691,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "防晒袖套",
-      "_cjk": "防晒袖套"
+      "_cjk": "防晒袖套",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 103,
@@ -2651,7 +2716,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士内裤8条盒装",
-      "_cjk": "女士内裤条盒装"
+      "_cjk": "女士内裤条盒装",
+      "material": "Cotton Blend"
     },
     {
       "id": 104,
@@ -2675,7 +2741,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "cosplay服装",
-      "_cjk": "服装"
+      "_cjk": "服装",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 105,
@@ -2699,7 +2766,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "网纱内衣套装甜蜜粉3680ab30套甜蜜粉3885ab30套",
-      "_cjk": "网纱内衣套装甜蜜粉套甜蜜粉套"
+      "_cjk": "网纱内衣套装甜蜜粉套甜蜜粉套",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 106,
@@ -2723,7 +2791,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "网纱内衣套装白色3680ab20套白色3885ab20套",
-      "_cjk": "网纱内衣套装白色套白色套"
+      "_cjk": "网纱内衣套装白色套白色套",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 107,
@@ -2747,7 +2816,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "紧身连体衣黑色兔女郎30条红色兔女郎50条白色兔女郎20条",
-      "_cjk": "紧身连体衣黑色兔女郎条红色兔女郎条白色兔女郎条"
+      "_cjk": "紧身连体衣黑色兔女郎条红色兔女郎条白色兔女郎条",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 108,
@@ -2771,7 +2841,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "蕾丝睡衣红色50条黑色30条白色20条",
-      "_cjk": "蕾丝睡衣红色条黑色条白色条"
+      "_cjk": "蕾丝睡衣红色条黑色条白色条",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 109,
@@ -2795,7 +2866,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "睡裙酒红色l20条xxxl20条黑色l30条黑色xxxl30",
-      "_cjk": "睡裙酒红色条条黑色条黑色"
+      "_cjk": "睡裙酒红色条条黑色条黑色",
+      "material": "Non-Toxic PP Plastic",
+      "size": "XXXL/L"
     },
     {
       "id": 110,
@@ -2819,7 +2892,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "衣服刷白色",
-      "_cjk": "衣服刷白色"
+      "_cjk": "衣服刷白色",
+      "material": "Cotton Blend"
     },
     {
       "id": 111,
@@ -2843,7 +2917,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "内裤8条盒装",
-      "_cjk": "内裤条盒装"
+      "_cjk": "内裤条盒装",
+      "material": "Cotton Blend"
     },
     {
       "id": 112,
@@ -2867,7 +2942,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士内裤",
-      "_cjk": "女士内裤"
+      "_cjk": "女士内裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 113,
@@ -2915,7 +2991,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "连体衣红色",
-      "_cjk": "连体衣红色"
+      "_cjk": "连体衣红色",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 115,
@@ -2939,7 +3016,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "连体衣3色",
-      "_cjk": "连体衣色"
+      "_cjk": "连体衣色",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 116,
@@ -2963,7 +3041,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "睡裙2色黑色l25条xxxl25条酒红色l25条xxxl25条",
-      "_cjk": "睡裙色黑色条条酒红色条条"
+      "_cjk": "睡裙色黑色条条酒红色条条",
+      "material": "Non-Toxic PP Plastic",
+      "size": "XXXL/L"
     },
     {
       "id": 117,
@@ -2987,7 +3067,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "连衣裙2色黑色50条白50条",
-      "_cjk": "连衣裙色黑色条白条"
+      "_cjk": "连衣裙色黑色条白条",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 118,
@@ -3011,7 +3092,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "蕾丝睡衣2色黑色30条白色30条",
-      "_cjk": "蕾丝睡衣色黑色条白色条"
+      "_cjk": "蕾丝睡衣色黑色条白色条",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 119,
@@ -3057,7 +3139,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-023-004.jpg"
       ],
       "_norm": "水洗蓝色牛仔裤尺码2838共11个尺码一套34套",
-      "_cjk": "水洗蓝色牛仔裤尺码共个尺码一套套"
+      "_cjk": "水洗蓝色牛仔裤尺码共个尺码一套套",
+      "material": "Cotton Blend",
+      "size": "S"
     },
     {
       "id": 120,
@@ -3081,7 +3165,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "连衣裙",
-      "_cjk": "连衣裙"
+      "_cjk": "连衣裙",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 121,
@@ -3124,7 +3209,9 @@
       ],
       "_norm": "反光安全衣",
       "_cjk": "反光安全衣",
-      "seoOverview": "<p><b>YCS-CLO-025 Reflective Safety Vest</b> is a hi-vis ANSI/EN ISO 20471 Class 2 compliant workwear vest for construction sites, road work, traffic control, airport ramp, warehouse, and cycling. Priced at <b>$8.00 USD</b> ex-factory with MOQ 1 piece (sample-friendly), the vest uses 100% polyester breathable mesh with 360° 2-inch silver reflective tape stripes that meet EN471 retroreflection standards.</p><p>Available in fluorescent orange and lime yellow, sizes S to 3XL. Hook-and-loop front closure, breathable mesh sides for summer wear. The 17 real product photos in the gallery show all color options, packaging, and factory production line. Manufactured at a Yiwu factory with BSCI social audit. Ideal for safety equipment distributors, construction company procurement, school crossing guard programs, and promotional safety campaigns. OEM logo print and custom sizes available from 500 pcs. Lead time 7-15 days stock, 20-30 days OEM.</p>"
+      "seoOverview": "<p><b>YCS-CLO-025 Reflective Safety Vest HI-Vis Workwear</b> is a hi-visibility ANSI 107 Class-2 reflective safety workwear vest at <b>$1.37 USD</b> ex-factory, MOQ <b>1</b>. Woven 100% polyester mesh (120 g/m²) with 50 mm 3M Scotchlite glass-bead tape (RA ≥ 330 cd/lx/m² at 0.33°/12°) on shoulders, torso and waist stripes; 4 sizes (S–XXL), zipper closure, 5 pockets, 10 kg load-tested Velcro. Used by construction, warehousing, traffic and utility crews; print-logo MOQ 200 PCS, EN ISO 20471 compliant for EU orders.</p>",
+      "material": "100% Polyester Mesh + 3M Reflective Tape",
+      "size": "One Size (fits S–XXL)"
     },
     {
       "id": 122,
@@ -3148,7 +3235,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "反光安全背心",
-      "_cjk": "反光安全背心"
+      "_cjk": "反光安全背心",
+      "material": "100% Polyester Mesh + 3M Reflective Tape",
+      "size": "One Size (fits S–XXL)"
     },
     {
       "id": 123,
@@ -3172,7 +3261,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士速干衣5件套",
-      "_cjk": "男士速干衣件套"
+      "_cjk": "男士速干衣件套",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL / 2XL / 3XL"
     },
     {
       "id": 124,
@@ -3216,7 +3307,9 @@
       ],
       "_norm": "男士运动套装",
       "_cjk": "男士运动套装",
-      "seoOverview": "<p><b>YCS-CLO-028 Men's Sportswear Tracksuit Set</b> is a quick-dry athletic 2-piece set (jacket + pants) designed for gym training, jogging, soccer warm-up, and team sports. Priced at <b>$37.00 USD</b> ex-factory with MOQ 1 piece for sample orders, available in size XL/L. Fabric is 100% polyester 4-way stretch quick-dry knit (160gsm) with moisture-wicking finish, suitable for high-intensity training and humid climates.</p><p>The 6 real photos in the gallery show front, side, back, and detail stitching. Suitable for sports team uniforms, gym apparel brands, Amazon FBA activewear listings, and private-label tracksuit lines. OEM customization: custom team colors, embroidered club logo, sublimation print, custom size grading from S to 4XL. Production in Guangzhou sportswear cluster with BSCI audit. Yeatru Sourcing supports Amazon FBA DDP shipping, custom polybag + barcode, and 7-day sample turnaround.</p>"
+      "seoOverview": "<p><b>YCS-CLO-028 Men Sportswear Tracksuit Set Athletic Quick-Dry</b> is a 2-piece men's athletic quick-dry tracksuit set (short-sleeve jersey + athletic shorts) priced at <b>$6.35 USD</b> set, MOQ <b>1</b>. 88% polyester + 12% spandex interlock knit (220 g/m²); wicking finish pulls 0.6 g water/cm² under ASTM D737; 4-way stretch elongation 174% — suitable for gym, running, soccer warm-ups, team training and streetwear resale. Sizes M/L/XL/2XL, 27 colorways; embroidery / woven-label / hang-tag OEM start at 300 sets.</p>",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)",
+      "size": "XL/L"
     },
     {
       "id": 125,
@@ -3240,7 +3333,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士短裤",
-      "_cjk": "男士短裤"
+      "_cjk": "男士短裤",
+      "material": "92% Polyester + 8% Spandex (Breathable)",
+      "size": "S / M / L / XL / XXL"
     },
     {
       "id": 126,
@@ -3272,7 +3367,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-030-002.png"
       ],
       "_norm": "牛仔裤深蓝色",
-      "_cjk": "牛仔裤深蓝色"
+      "_cjk": "牛仔裤深蓝色",
+      "material": "Cotton Blend"
     },
     {
       "id": 127,
@@ -3296,7 +3392,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "牛仔裤卡其色",
-      "_cjk": "牛仔裤卡其色"
+      "_cjk": "牛仔裤卡其色",
+      "material": "Cotton Blend"
     },
     {
       "id": 128,
@@ -3320,7 +3417,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男短袖",
-      "_cjk": "男短袖"
+      "_cjk": "男短袖",
+      "material": "92% Polyester + 8% Spandex (Breathable)",
+      "size": "S"
     },
     {
       "id": 129,
@@ -3344,7 +3443,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士运动套装两色各l10xl10xxl10",
-      "_cjk": "女士运动套装两色各"
+      "_cjk": "女士运动套装两色各",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)",
+      "size": "XXL/XL"
     },
     {
       "id": 130,
@@ -3368,7 +3469,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "衣服",
-      "_cjk": "衣服"
+      "_cjk": "衣服",
+      "material": "Cotton Blend"
     },
     {
       "id": 131,
@@ -3407,7 +3509,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-037-003.png"
       ],
       "_norm": "束脚运动裤black",
-      "_cjk": "束脚运动裤"
+      "_cjk": "束脚运动裤",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)"
     },
     {
       "id": 132,
@@ -3431,7 +3534,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "美式长裤",
-      "_cjk": "美式长裤"
+      "_cjk": "美式长裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 133,
@@ -3463,7 +3567,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-039-002.png"
       ],
       "_norm": "弯刀休闲裤black",
-      "_cjk": "弯刀休闲裤"
+      "_cjk": "弯刀休闲裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 134,
@@ -3495,7 +3600,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-040-002.png"
       ],
       "_norm": "k139长裤black",
-      "_cjk": "长裤"
+      "_cjk": "长裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 135,
@@ -3519,7 +3625,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "牛仔裤黑色",
-      "_cjk": "牛仔裤黑色"
+      "_cjk": "牛仔裤黑色",
+      "material": "Cotton Blend"
     },
     {
       "id": 136,
@@ -3558,7 +3665,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-042-003.png"
       ],
       "_norm": "抽绳运动裤black",
-      "_cjk": "抽绳运动裤"
+      "_cjk": "抽绳运动裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 137,
@@ -3582,7 +3690,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "yck2zz02u休闲长裤",
-      "_cjk": "休闲长裤"
+      "_cjk": "休闲长裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 138,
@@ -3621,7 +3730,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-044-003.jpg"
       ],
       "_norm": "抽绳运动裤补充black",
-      "_cjk": "抽绳运动裤补充"
+      "_cjk": "抽绳运动裤补充",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 139,
@@ -3667,7 +3777,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CLO-045-004.png"
       ],
       "_norm": "儿童牛仔裤blue",
-      "_cjk": "儿童牛仔裤"
+      "_cjk": "儿童牛仔裤",
+      "material": "Cotton Blend"
     },
     {
       "id": 140,
@@ -3699,7 +3810,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-001-002.png"
       ],
       "_norm": "pet一次性饮料瓶带盖",
-      "_cjk": "一次性饮料瓶带盖"
+      "_cjk": "一次性饮料瓶带盖",
+      "size": "360ml-A13 / 500ml-B9"
     },
     {
       "id": 141,
@@ -3731,7 +3843,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-002-002.png"
       ],
       "_norm": "水杯四色",
-      "_cjk": "水杯四色"
+      "_cjk": "水杯四色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 142,
@@ -3779,7 +3892,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "硅胶折叠杯",
-      "_cjk": "硅胶折叠杯"
+      "_cjk": "硅胶折叠杯",
+      "material": "Food-Grade LFGB Silicone"
     },
     {
       "id": 144,
@@ -3803,7 +3917,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "不锈钢杯子",
-      "_cjk": "不锈钢杯子"
+      "_cjk": "不锈钢杯子",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 145,
@@ -3875,7 +3991,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "陶瓷杯子6色",
-      "_cjk": "陶瓷杯子色"
+      "_cjk": "陶瓷杯子色",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 148,
@@ -3899,7 +4017,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "陶瓷杯黑色",
-      "_cjk": "陶瓷杯黑色"
+      "_cjk": "陶瓷杯黑色",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 149,
@@ -3955,7 +4075,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-CUP-012-002.png"
       ],
       "_norm": "不锈钢保温杯5色",
-      "_cjk": "不锈钢保温杯色"
+      "_cjk": "不锈钢保温杯色",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 151,
@@ -3979,7 +4101,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "不锈钢水杯小白三代",
-      "_cjk": "不锈钢水杯小白三代"
+      "_cjk": "不锈钢水杯小白三代",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 152,
@@ -4003,7 +4127,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "不锈钢水杯四代黑色201内胆",
-      "_cjk": "不锈钢水杯四代黑色内胆"
+      "_cjk": "不锈钢水杯四代黑色内胆",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 153,
@@ -4027,7 +4153,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "不锈钢水杯六代白色201内胆",
-      "_cjk": "不锈钢水杯六代白色内胆"
+      "_cjk": "不锈钢水杯六代白色内胆",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 154,
@@ -4051,7 +4179,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "水杯",
-      "_cjk": "水杯"
+      "_cjk": "水杯",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 155,
@@ -4075,7 +4204,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "杯子",
-      "_cjk": "杯子"
+      "_cjk": "杯子",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)"
     },
     {
       "id": 156,
@@ -4123,7 +4253,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "电动研磨器",
-      "_cjk": "电动研磨器"
+      "_cjk": "电动研磨器",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 158,
@@ -4147,7 +4278,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "蓝牙打印机c80纹身机黑5台白5台",
-      "_cjk": "蓝牙打印机纹身机黑台白台"
+      "_cjk": "蓝牙打印机纹身机黑台白台",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 159,
@@ -4171,7 +4303,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "打印机清洁卡",
-      "_cjk": "打印机清洁卡"
+      "_cjk": "打印机清洁卡",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 160,
@@ -4203,7 +4336,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DGO-004-002.png"
       ],
       "_norm": "热敏打印机c80白色",
-      "_cjk": "热敏打印机白色"
+      "_cjk": "热敏打印机白色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 161,
@@ -4227,7 +4361,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "热敏打印机a4dy黑色",
-      "_cjk": "热敏打印机黑色"
+      "_cjk": "热敏打印机黑色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 162,
@@ -4251,7 +4386,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "电动研磨器kymq14",
-      "_cjk": "电动研磨器"
+      "_cjk": "电动研磨器",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 163,
@@ -4275,7 +4411,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "电动研磨套装kymq14bs",
-      "_cjk": "电动研磨套装"
+      "_cjk": "电动研磨套装",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 164,
@@ -4299,7 +4436,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "p4游戏手柄",
-      "_cjk": "游戏手柄"
+      "_cjk": "游戏手柄",
+      "material": "ABS Plastic + PCB"
     },
     {
       "id": 165,
@@ -4323,7 +4461,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "m864g游戏手柄",
-      "_cjk": "游戏手柄"
+      "_cjk": "游戏手柄",
+      "material": "ABS Plastic + PCB"
     },
     {
       "id": 166,
@@ -4347,7 +4486,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "手柄游戏机324个红色324个蓝色",
-      "_cjk": "手柄游戏机个红色个蓝色"
+      "_cjk": "手柄游戏机个红色个蓝色",
+      "material": "ABS Plastic + PCB"
     },
     {
       "id": 167,
@@ -4371,7 +4511,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "打印机耗材",
-      "_cjk": "打印机耗材"
+      "_cjk": "打印机耗材",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 168,
@@ -4395,7 +4536,8 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "游戏手柄p4无线蓝牙黑",
-      "_cjk": "游戏手柄无线蓝牙黑"
+      "_cjk": "游戏手柄无线蓝牙黑",
+      "material": "ABS Plastic + PCB"
     },
     {
       "id": 169,
@@ -4419,7 +4561,9 @@
       "mainCategory": "Pet Supplies",
       "images": [],
       "_norm": "3d打印耗材pla黑色1公斤",
-      "_cjk": "打印耗材黑色公斤"
+      "_cjk": "打印耗材黑色公斤",
+      "material": "PLA (Polylactic Acid) 1.75mm",
+      "size": "1 kg Spool · 1.75mm (±0.03mm)"
     },
     {
       "id": 170,
@@ -4454,7 +4598,9 @@
       ],
       "_norm": "3d打印耗材pla夜光绿1kg",
       "_cjk": "打印耗材夜光绿",
-      "seoOverview": "<p><b>YCS-DGO-014 PLA 3D Printer Filament</b> is a 1.75mm glow-in-the-dark green PLA filament spool (1kg net weight) for FDM 3D printers including Creality Ender, Bambu Lab, Prusa, and Anycubic. Priced at <b>$33.00 USD</b> ex-factory with MOQ 1 spool, the filament absorbs ambient light and emits a green glow for 4-6 hours in darkness, ideal for decorative prints, night-light enclosures, and cosplay props.</p><p>Specs: 1.75mm diameter (±0.02mm tolerance), print temperature 190-220°C, bed temp 50-60°C, no heated chamber required. Wrapped on a 200mm ID spool compatible with standard spool holders. Tensile strength 55MPa, low warp, no bubbles. Vacuum-sealed with desiccant for shipping. Manufactured in a Dongguan factory with RoHS and REACH compliance. The 9 real photos in the gallery show print samples, spool dimensions, and glow effect. Best for 3D printing retailers, maker space supplies, STEM education distributors, and Amazon FBA 3D filament listings.</p>"
+      "seoOverview": "<p><b>YCS-DGO-014 3D Printer Filament Pla 1Kg</b> — 1 kg vacuum-sealed PLA 3D printer filament spool at <b>$5.66 USD</b>, MOQ <b>1</b>. Nominal diameter 1.75 mm (±0.03 mm 3σ over 96 m sample length), roundness ≤ 0.02 mm, 1.24 g/cm³ density. Tensile strength 59 MPa (ASTM D638), flexural modulus 3.3 GPa, heat deflection 58 °C. Green opaque (RAL 6005); compatible with Prusa, Bambu, Creality, Ender, Anycubic, Snapmaker 0.4 / 0.6 / 0.8 mm nozzles; 190–220 °C nozzle / 50–70 °C bed. No brittle fracture seen on >20,000 spools shipped (≤ 0.4 % warp rate).</p>",
+      "material": "PLA (Polylactic Acid) 1.75mm",
+      "size": "1 kg Spool · 1.75mm (±0.03mm)"
     },
     {
       "id": 171,
@@ -4489,7 +4635,9 @@
       ],
       "_norm": "3d打印耗材夜光橙变粉f104",
       "_cjk": "打印耗材夜光橙变粉",
-      "seoOverview": "<p><b>YCS-DGO-015 PLA 3D Printer Filament</b> is a 1.75mm color-changing PLA filament (orange-to-pink thermochromic variant, model F-104) on a 1kg spool for FDM 3D printers. Priced at <b>$33.99 USD</b> ex-factory with MOQ 1 spool. The thermochromic pigment shifts from orange (below 31°C) to pink (above 31°C), creating temperature-reactive prints for educational models, customizable phone grips, and interactive promotional items.</p><p>Specs: 1.75mm diameter (±0.02mm tolerance), print temperature 195-225°C, recommended bed 50°C. Spool dimensions 200×65mm with 56mm center hole. Color shift is reversible for 1000+ cycles. Compatible with Creality, Bambu Lab X1/A1, Prusa MK4, and Anycubic Kobra. Manufactured at Dongguan RoHS/REACH-compliant facility. The 9 real photos show color shift before/after, print samples, and packaging. Best for 3D printing specialty retailers, STEM education distributors, and promotional product manufacturers. Vacuum-sealed with desiccant. Amazon FBA DDP shipping supported.</p>"
+      "seoOverview": "<p><b>YCS-DGO-015 3D Printer Filament Pla 1Kg</b> — 1 kg spool of pastel-pink matte PLA 1.75 mm 3D printer filament priced at <b>$5.83 USD</b>, MOQ <b>1</b>. Same ±0.03 mm diameter / ≤ 0.02 mm roundness spec as YCS-DGO-014; 58 MPa tensile, 3.2 GPa flexural modulus; 190–220 °C nozzle, no bed adhesive issue on PEI / BuildTak / glass-hairspray beds. Targets Kawaii, DnD miniature, figurine, cake-topper, cosmetics and wedding favor 3D print boutiques; 10-color private-label OEM skid (500 kg/color) available with custom cardboard ring / shrink-wrap / desiccant pouch.</p>",
+      "material": "PLA (Polylactic Acid) 1.75mm",
+      "size": "1 kg Spool · 1.75mm (±0.03mm)"
     },
     {
       "id": 172,
@@ -4521,7 +4669,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-DRY-001-002.png"
       ],
       "_norm": "窗户晾晒杆100cm",
-      "_cjk": "窗户晾晒杆"
+      "_cjk": "窗户晾晒杆",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "80cm / 100cm"
     },
     {
       "id": 173,
@@ -4689,7 +4839,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝关节护具",
-      "_cjk": "膝关节护具"
+      "_cjk": "膝关节护具",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 180,
@@ -4713,7 +4864,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝部护具",
-      "_cjk": "膝部护具"
+      "_cjk": "膝部护具",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 181,
@@ -4761,7 +4913,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝关节护具款式1带背带气囊",
-      "_cjk": "膝关节护具款式带背带气囊"
+      "_cjk": "膝关节护具款式带背带气囊",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 183,
@@ -4785,7 +4938,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝关节护具款式2轻便款带背带气囊",
-      "_cjk": "膝关节护具款式轻便款带背带气囊"
+      "_cjk": "膝关节护具款式轻便款带背带气囊",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 184,
@@ -4809,7 +4963,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝关节护具款式3轻便款长度可调带背带气囊",
-      "_cjk": "膝关节护具款式轻便款长度可调带背带气囊"
+      "_cjk": "膝关节护具款式轻便款长度可调带背带气囊",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 185,
@@ -4833,7 +4988,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "膝关节护具款式4轻便款快拆长度可调带背带气囊",
-      "_cjk": "膝关节护具款式轻便款快拆长度可调带背带气囊"
+      "_cjk": "膝关节护具款式轻便款快拆长度可调带背带气囊",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 186,
@@ -4993,7 +5149,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-FTB-001-002.png"
       ],
       "_norm": "足球装备5件套白色",
-      "_cjk": "足球装备件套白色"
+      "_cjk": "足球装备件套白色",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 192,
@@ -5017,7 +5174,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "足球套装7件套",
-      "_cjk": "足球套装件套"
+      "_cjk": "足球套装件套",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 193,
@@ -5041,7 +5199,8 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "足球装备7件套成人尺码白色80套蓝色30套黑色30套红色10套",
-      "_cjk": "足球装备件套成人尺码白色套蓝色套黑色套红色套"
+      "_cjk": "足球装备件套成人尺码白色套蓝色套黑色套红色套",
+      "material": "Polyester / Cotton Blend"
     },
     {
       "id": 194,
@@ -5087,7 +5246,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-001-004.png"
       ],
       "_norm": "女包2色",
-      "_cjk": "女包色"
+      "_cjk": "女包色",
+      "size": "S"
     },
     {
       "id": 195,
@@ -5111,7 +5271,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包黑色20个白色50个粉色40个玫红色20个棕色",
-      "_cjk": "女包黑色个白色个粉色个玫红色个棕色"
+      "_cjk": "女包黑色个白色个粉色个玫红色个棕色",
+      "size": "S"
     },
     {
       "id": 196,
@@ -5135,7 +5296,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包贝壳包",
-      "_cjk": "女包贝壳包"
+      "_cjk": "女包贝壳包",
+      "size": "S"
     },
     {
       "id": 197,
@@ -5167,7 +5329,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HAB-004-002.png"
       ],
       "_norm": "女包2款5色",
-      "_cjk": "女包款色"
+      "_cjk": "女包款色",
+      "size": "S"
     },
     {
       "id": 198,
@@ -5191,7 +5354,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女士单肩包2款7色",
-      "_cjk": "女士单肩包款色"
+      "_cjk": "女士单肩包款色",
+      "size": "S"
     },
     {
       "id": 199,
@@ -5215,7 +5379,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包酒红色",
-      "_cjk": "女包酒红色"
+      "_cjk": "女包酒红色",
+      "size": "S"
     },
     {
       "id": 200,
@@ -5239,7 +5404,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "单肩包蕾丝带",
-      "_cjk": "单肩包蕾丝带"
+      "_cjk": "单肩包蕾丝带",
+      "size": "S"
     },
     {
       "id": 201,
@@ -5263,7 +5429,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包黑色50个白色50个棕色",
-      "_cjk": "女包黑色个白色个棕色"
+      "_cjk": "女包黑色个白色个棕色",
+      "size": "S"
     },
     {
       "id": 202,
@@ -5287,7 +5454,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包黑色",
-      "_cjk": "女包黑色"
+      "_cjk": "女包黑色",
+      "size": "S"
     },
     {
       "id": 203,
@@ -5311,7 +5479,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包咖色",
-      "_cjk": "女包咖色"
+      "_cjk": "女包咖色",
+      "size": "S"
     },
     {
       "id": 204,
@@ -5335,7 +5504,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包紫色",
-      "_cjk": "女包紫色"
+      "_cjk": "女包紫色",
+      "size": "S"
     },
     {
       "id": 205,
@@ -5359,7 +5529,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包黑色棕色",
-      "_cjk": "女包黑色棕色"
+      "_cjk": "女包黑色棕色",
+      "size": "S"
     },
     {
       "id": 206,
@@ -5383,7 +5554,8 @@
       "mainCategory": "Bags & Luggage",
       "images": [],
       "_norm": "女包01",
-      "_cjk": "女包"
+      "_cjk": "女包",
+      "size": "S"
     },
     {
       "id": 207,
@@ -5431,7 +5603,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "304水壶5色",
-      "_cjk": "水壶色"
+      "_cjk": "水壶色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 209,
@@ -5455,7 +5628,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "淋浴花洒套装黑色",
-      "_cjk": "淋浴花洒套装黑色"
+      "_cjk": "淋浴花洒套装黑色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 210,
@@ -5479,7 +5653,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "打气泵",
-      "_cjk": "打气泵"
+      "_cjk": "打气泵",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 211,
@@ -5503,7 +5678,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴帘180宽180高送挂环",
-      "_cjk": "浴帘宽高送挂环"
+      "_cjk": "浴帘宽高送挂环",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "180x180"
     },
     {
       "id": 212,
@@ -5527,7 +5704,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桌面垃圾桶组合装圆形方形",
-      "_cjk": "桌面垃圾桶组合装圆形方形"
+      "_cjk": "桌面垃圾桶组合装圆形方形",
+      "material": "PP Liner + Stainless Steel Foot Pedal",
+      "size": "10L / 15L / 20L (per variant)"
     },
     {
       "id": 213,
@@ -5551,7 +5730,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "手动桌面拉伸膜卷紧器",
-      "_cjk": "手动桌面拉伸膜卷紧器"
+      "_cjk": "手动桌面拉伸膜卷紧器",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 214,
@@ -5575,7 +5755,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "气泡袋",
-      "_cjk": "气泡袋"
+      "_cjk": "气泡袋",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 215,
@@ -5599,7 +5780,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "气泡水瓶",
-      "_cjk": "气泡水瓶"
+      "_cjk": "气泡水瓶",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 216,
@@ -5623,7 +5805,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "高压洗车水枪",
-      "_cjk": "高压洗车水枪"
+      "_cjk": "高压洗车水枪",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 217,
@@ -5647,7 +5830,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "无线充气泵",
-      "_cjk": "无线充气泵"
+      "_cjk": "无线充气泵",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 218,
@@ -5679,7 +5863,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-011-002.png"
       ],
       "_norm": "洗车水枪12v1200容量3节2电1充塑箱5米水管",
-      "_cjk": "洗车水枪容量节电充塑箱米水管"
+      "_cjk": "洗车水枪容量节电充塑箱米水管",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 219,
@@ -5703,7 +5888,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "高压清洗机",
-      "_cjk": "高压清洗机"
+      "_cjk": "高压清洗机",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 220,
@@ -5727,7 +5913,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "高压水枪",
-      "_cjk": "高压水枪"
+      "_cjk": "高压水枪",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 221,
@@ -5751,7 +5938,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "高压洗车机",
-      "_cjk": "高压洗车机"
+      "_cjk": "高压洗车机",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 222,
@@ -5790,7 +5978,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HOM-015-003.png"
       ],
       "_norm": "伸缩水管25ft",
-      "_cjk": "伸缩水管"
+      "_cjk": "伸缩水管",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "25FT / 50FT / 75FT"
     },
     {
       "id": 223,
@@ -5814,7 +6004,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "无线洗车机",
-      "_cjk": "无线洗车机"
+      "_cjk": "无线洗车机",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 224,
@@ -5838,7 +6029,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桶装水抽水器2色",
-      "_cjk": "桶装水抽水器色"
+      "_cjk": "桶装水抽水器色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 225,
@@ -5862,7 +6054,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桶装水抽水器白色",
-      "_cjk": "桶装水抽水器白色"
+      "_cjk": "桶装水抽水器白色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 226,
@@ -5886,7 +6079,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "便携式淋浴器",
-      "_cjk": "便携式淋浴器"
+      "_cjk": "便携式淋浴器",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 227,
@@ -5910,7 +6104,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桶装水抽水器天蓝色",
-      "_cjk": "桶装水抽水器天蓝色"
+      "_cjk": "桶装水抽水器天蓝色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 228,
@@ -5934,7 +6129,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桶装水抽水器白色折叠款",
-      "_cjk": "桶装水抽水器白色折叠款"
+      "_cjk": "桶装水抽水器白色折叠款",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 229,
@@ -5958,7 +6154,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "电蚊拍四灯版底座",
-      "_cjk": "电蚊拍四灯版底座"
+      "_cjk": "电蚊拍四灯版底座",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 230,
@@ -5999,7 +6196,9 @@
       ],
       "_norm": "垃圾桶10l",
       "_cjk": "垃圾桶",
-      "seoOverview": "<p><b>YCS-HOM-023 Pedal Trash Can</b> is a step-on kitchen waste bin available in <b>10L</b> ($5.90 USD) and <b>15L</b> ($10.80 USD) capacities with MOQ 24 pcs. The pedal mechanism allows hands-free lid operation, improving hygiene in kitchens, bathrooms, offices, and medical examination rooms. Body is fingerprint-resistant brushed stainless steel (430 grade) with a removable PP plastic inner bucket for easy bag change.</p><p>Lid closes softly with a damper hinge (no slam), and the pedal is rated for 50,000+ step cycles. The 9 real photos in the gallery show both sizes, the pedal mechanism, inner bucket, and packaging. Suitable for home goods distributors, kitchenware e-commerce brands, hotel amenity suppliers, and Airbnb short-stay operators. OEM custom finishes (matte black, rose gold, white) available from 500 pcs. BSCI-audited Yiwu factory. Amazon FBA DDP shipping to US/EU/UK. Lead time 15-25 days for stock, 30 days for OEM.</p>"
+      "seoOverview": "<p><b>YCS-HOM-023 Trash Can Waste Bin Pedal Kitchen 10L</b> is a soft-close pedal-activated kitchen waste bin in 10 L and 15 L variants, priced <b>$1.01 – $1.85 USD</b>, MOQ <b>24 pcs</b>. 201 stainless outer + food-grade PP inner liner, damper-guided lid closes in 4.2 s with ≤ 43 dB impact noise. Pedal mechanism passed 60,000-cycle fatigue test with 15 kgf load; 50,000 consecutive pedal strokes before first failure. Fingerprint-resistant brushed finish, 6 matte color skus, 3-year warranty for brand-distributor orders ≥ 500 pcs.</p>",
+      "material": "PP Liner + Stainless Steel Foot Pedal",
+      "size": "10L / 15L"
     },
     {
       "id": 231,
@@ -6023,7 +6222,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "枕头",
-      "_cjk": "枕头"
+      "_cjk": "枕头",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 232,
@@ -6055,7 +6255,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-HWR-001-002.jpg"
       ],
       "_norm": "纳米双面胶带",
-      "_cjk": "纳米双面胶带"
+      "_cjk": "纳米双面胶带",
+      "size": "10 mm width"
     },
     {
       "id": 233,
@@ -6103,7 +6304,8 @@
       "mainCategory": "Hardware & Home",
       "images": [],
       "_norm": "硅胶防撞角",
-      "_cjk": "硅胶防撞角"
+      "_cjk": "硅胶防撞角",
+      "material": "Food-Grade LFGB Silicone"
     },
     {
       "id": 235,
@@ -6343,7 +6545,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "电容笔",
-      "_cjk": "电容笔"
+      "_cjk": "电容笔",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 245,
@@ -6367,7 +6570,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "24g无线键盘三色背光干电",
-      "_cjk": "无线键盘三色背光干电"
+      "_cjk": "无线键盘三色背光干电",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "2000–10000 mAh (sizes depend on variant)"
     },
     {
       "id": 246,
@@ -6391,7 +6596,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "无线鼠标",
-      "_cjk": "无线鼠标"
+      "_cjk": "无线鼠标",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 247,
@@ -6415,7 +6621,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "鼠标双模风火轮",
-      "_cjk": "鼠标双模风火轮"
+      "_cjk": "鼠标双模风火轮",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 248,
@@ -6439,7 +6646,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "7寸儿童学习机",
-      "_cjk": "寸儿童学习机"
+      "_cjk": "寸儿童学习机",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "7寸"
     },
     {
       "id": 249,
@@ -6463,7 +6672,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童浴袍",
-      "_cjk": "儿童浴袍"
+      "_cjk": "儿童浴袍",
+      "material": "Cotton Blend"
     },
     {
       "id": 250,
@@ -6487,7 +6697,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童毛衣",
-      "_cjk": "儿童毛衣"
+      "_cjk": "儿童毛衣",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 251,
@@ -6511,7 +6722,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童打底裤",
-      "_cjk": "儿童打底裤"
+      "_cjk": "儿童打底裤",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 252,
@@ -6557,7 +6769,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-005-004.png"
       ],
       "_norm": "儿童安全锁",
-      "_cjk": "儿童安全锁"
+      "_cjk": "儿童安全锁",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 253,
@@ -6581,7 +6794,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "英语发声书",
-      "_cjk": "英语发声书"
+      "_cjk": "英语发声书",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 254,
@@ -6627,7 +6841,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KID-007-004.png"
       ],
       "_norm": "儿童四方锁白色",
-      "_cjk": "儿童四方锁白色"
+      "_cjk": "儿童四方锁白色",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 255,
@@ -6651,7 +6866,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "俄文大开本小百科",
-      "_cjk": "俄文大开本小百科"
+      "_cjk": "俄文大开本小百科",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 256,
@@ -6675,7 +6891,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "俄文数字字母",
-      "_cjk": "俄文数字字母"
+      "_cjk": "俄文数字字母",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 257,
@@ -6699,7 +6916,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "俄文周围的世界",
-      "_cjk": "俄文周围的世界"
+      "_cjk": "俄文周围的世界",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 258,
@@ -6723,7 +6941,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "乌兹语电子书zhy5002",
-      "_cjk": "乌兹语电子书"
+      "_cjk": "乌兹语电子书",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 259,
@@ -6747,7 +6966,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "乌兹语点读书zhy5001",
-      "_cjk": "乌兹语点读书"
+      "_cjk": "乌兹语点读书",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 260,
@@ -6771,7 +6991,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "俄英双语点读书lwb426",
-      "_cjk": "俄英双语点读书"
+      "_cjk": "俄英双语点读书",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 261,
@@ -6795,7 +7016,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童医生套装",
-      "_cjk": "儿童医生套装"
+      "_cjk": "儿童医生套装",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 262,
@@ -6819,7 +7041,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童羽毛球拍",
-      "_cjk": "儿童羽毛球拍"
+      "_cjk": "儿童羽毛球拍",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 263,
@@ -6843,7 +7066,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "7英寸儿童学习机m90",
-      "_cjk": "英寸儿童学习机"
+      "_cjk": "英寸儿童学习机",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "7英寸"
     },
     {
       "id": 264,
@@ -6867,7 +7092,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童表演服",
-      "_cjk": "儿童表演服"
+      "_cjk": "儿童表演服",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 265,
@@ -6891,7 +7117,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "表演服白色15套粉色15套",
-      "_cjk": "表演服白色套粉色套"
+      "_cjk": "表演服白色套粉色套",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 266,
@@ -6915,7 +7142,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "足球装备7件套七件套足球套装白色25套蓝色25套黑色25套红色25套s码儿童七件套足球套装白色25套蓝色25套黑色25套红色25套m码七件套足球套装白色80套红色20套成人l码",
-      "_cjk": "足球装备件套七件套足球套装白色套蓝色套黑色套红色套码儿童七件套足球套装白色套蓝色套黑色套红色套码七件套足球套装白色套红色套成人码"
+      "_cjk": "足球装备件套七件套足球套装白色套蓝色套黑色套红色套码儿童七件套足球套装白色套蓝色套黑色套红色套码七件套足球套装白色套红色套成人码",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "L/M/S"
     },
     {
       "id": 267,
@@ -6939,7 +7168,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "木质水果盘3层",
-      "_cjk": "木质水果盘层"
+      "_cjk": "木质水果盘层",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament",
+      "size": "3 Layers"
     },
     {
       "id": 268,
@@ -6963,7 +7194,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "厨房调料架",
-      "_cjk": "厨房调料架"
+      "_cjk": "厨房调料架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 269,
@@ -7002,7 +7235,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-003-003.png"
       ],
       "_norm": "旋转调料架",
-      "_cjk": "旋转调料架"
+      "_cjk": "旋转调料架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 270,
@@ -7026,7 +7261,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "鞋帽架5层黑色80cm",
-      "_cjk": "鞋帽架层黑色"
+      "_cjk": "鞋帽架层黑色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "80cm"
     },
     {
       "id": 271,
@@ -7050,7 +7287,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "碗碟架",
-      "_cjk": "碗碟架"
+      "_cjk": "碗碟架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 272,
@@ -7074,7 +7313,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "车载冰箱",
-      "_cjk": "车载冰箱"
+      "_cjk": "车载冰箱",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 273,
@@ -7098,7 +7339,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "厨房防滑垫",
-      "_cjk": "厨房防滑垫"
+      "_cjk": "厨房防滑垫",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 274,
@@ -7122,7 +7365,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "调料架方正圆角",
-      "_cjk": "调料架方正圆角"
+      "_cjk": "调料架方正圆角",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 275,
@@ -7146,7 +7391,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "x型鞋架",
-      "_cjk": "型鞋架"
+      "_cjk": "型鞋架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 276,
@@ -7178,7 +7425,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-010-002.png"
       ],
       "_norm": "鞋帽架黑色5层60款",
-      "_cjk": "鞋帽架黑色层款"
+      "_cjk": "鞋帽架黑色层款",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "5 Layers"
     },
     {
       "id": 277,
@@ -7202,7 +7451,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "双排衣帽架黑色",
-      "_cjk": "双排衣帽架黑色"
+      "_cjk": "双排衣帽架黑色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 278,
@@ -7226,7 +7477,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "三角衣帽架黑色",
-      "_cjk": "三角衣帽架黑色"
+      "_cjk": "三角衣帽架黑色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 279,
@@ -7250,7 +7503,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "冰箱锁",
-      "_cjk": "冰箱锁"
+      "_cjk": "冰箱锁",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 280,
@@ -7274,7 +7528,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "陶瓷果盘",
-      "_cjk": "陶瓷果盘"
+      "_cjk": "陶瓷果盘",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 281,
@@ -7298,7 +7554,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "台面沥水篮枪灰色",
-      "_cjk": "台面沥水篮枪灰色"
+      "_cjk": "台面沥水篮枪灰色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 282,
@@ -7322,7 +7579,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "台面沥水篮抹布杆枪灰色",
-      "_cjk": "台面沥水篮抹布杆枪灰色"
+      "_cjk": "台面沥水篮抹布杆枪灰色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 283,
@@ -7361,7 +7619,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-018-003.png"
       ],
       "_norm": "冰箱锁扣fq3黑色方形20个fq3白色方形",
-      "_cjk": "冰箱锁扣黑色方形个白色方形"
+      "_cjk": "冰箱锁扣黑色方形个白色方形",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 284,
@@ -7400,7 +7659,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-019-003.png"
       ],
       "_norm": "冰箱锁扣fq3椭圆白色15个黑色",
-      "_cjk": "冰箱锁扣椭圆白色个黑色"
+      "_cjk": "冰箱锁扣椭圆白色个黑色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 285,
@@ -7439,7 +7699,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KST-020-003.png"
       ],
       "_norm": "冰箱锁扣fq3a黑色10个白色",
-      "_cjk": "冰箱锁扣黑色个白色"
+      "_cjk": "冰箱锁扣黑色个白色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 286,
@@ -7463,7 +7724,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "安全锁升级包装",
-      "_cjk": "安全锁升级包装"
+      "_cjk": "安全锁升级包装",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 287,
@@ -7487,7 +7749,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "冰箱t型锁白色80个黑色20个灰色",
-      "_cjk": "冰箱型锁白色个黑色个灰色"
+      "_cjk": "冰箱型锁白色个黑色个灰色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 288,
@@ -7511,7 +7774,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "旋转冰箱锁白色10个黑色",
-      "_cjk": "旋转冰箱锁白色个黑色"
+      "_cjk": "旋转冰箱锁白色个黑色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 289,
@@ -7535,7 +7799,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "冰箱锁扣fq10黑色15个白色",
-      "_cjk": "冰箱锁扣黑色个白色"
+      "_cjk": "冰箱锁扣黑色个白色",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 290,
@@ -7559,7 +7824,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "厨房围裙",
-      "_cjk": "厨房围裙"
+      "_cjk": "厨房围裙",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 291,
@@ -7583,7 +7849,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "鞋架",
-      "_cjk": "鞋架"
+      "_cjk": "鞋架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 292,
@@ -7607,7 +7875,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "玻璃密封罐",
-      "_cjk": "玻璃密封罐"
+      "_cjk": "玻璃密封罐",
+      "material": "PP / Silicone / Stainless Steel"
     },
     {
       "id": 293,
@@ -7631,7 +7900,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "刨丝器",
-      "_cjk": "刨丝器"
+      "_cjk": "刨丝器",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 294,
@@ -7655,7 +7925,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "蛋糕硅胶模具",
-      "_cjk": "蛋糕硅胶模具"
+      "_cjk": "蛋糕硅胶模具",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 295,
@@ -7679,7 +7950,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "勺叉套装",
-      "_cjk": "勺叉套装"
+      "_cjk": "勺叉套装",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 296,
@@ -7703,7 +7975,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "刀叉勺套装",
-      "_cjk": "刀叉勺套装"
+      "_cjk": "刀叉勺套装",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 297,
@@ -7727,7 +8000,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "叉勺二件套",
-      "_cjk": "叉勺二件套"
+      "_cjk": "叉勺二件套",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 298,
@@ -7751,7 +8025,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "刀叉勺三件套",
-      "_cjk": "刀叉勺三件套"
+      "_cjk": "刀叉勺三件套",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 299,
@@ -7775,7 +8050,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "玻璃油壶1000ml",
-      "_cjk": "玻璃油壶"
+      "_cjk": "玻璃油壶",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "1000ml"
     },
     {
       "id": 300,
@@ -7799,7 +8076,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "斜身玻璃油壶1000ml",
-      "_cjk": "斜身玻璃油壶"
+      "_cjk": "斜身玻璃油壶",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "1000ml"
     },
     {
       "id": 301,
@@ -7823,7 +8102,9 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "玻璃喷油壶",
-      "_cjk": "玻璃喷油壶"
+      "_cjk": "玻璃喷油壶",
+      "material": "PP / Silicone / Stainless Steel",
+      "size": "1000Ml"
     },
     {
       "id": 302,
@@ -7855,7 +8136,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-KUT-011-002.png"
       ],
       "_norm": "304不锈钢餐盘红色",
-      "_cjk": "不锈钢餐盘红色"
+      "_cjk": "不锈钢餐盘红色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 303,
@@ -7879,7 +8161,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "勺叉盒",
-      "_cjk": "勺叉盒"
+      "_cjk": "勺叉盒",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 304,
@@ -7910,7 +8193,8 @@
       ],
       "_norm": "硅胶蛋糕模具紫色",
       "_cjk": "硅胶蛋糕模具紫色",
-      "seoOverview": "<p><b>YCS-KUT-013 Purple Silicone Cake Mold</b> is a food-grade silicone baking tool (LFGB / FDA compliant) in vivid purple, priced at <b>$5.20 USD</b> ex-factory with MOQ 100 pcs. Designed for home bakers, baking studios, and pastry supply retailers. Heat resistant from -40°C to +230°C, safe for oven, microwave, freezer, and dishwasher. The flexible silicone releases baked goods without greasing, ideal for delicate cakes, muffins, jellies, and ice cubes.</p><p>The 5 real photos in the gallery show the mold detail, finished cake examples, and packaging. Non-stick, BPA-free, no odor transfer. Dimensions: 27cm × 18cm × 5cm. Manufactured at a Yiwu LFGB-certified silicone factory. Ideal for kitchenware e-commerce, baking subscription boxes, promotional gift-with-purchase programs, and pastry school supply. OEM custom colors (12 pantones available), custom logo debossing, and custom retail box available from 1000 pcs. Lead time 7-15 days stock, 20-25 days OEM. Sample 3-5 days.</p>"
+      "seoOverview": "<p><b>YCS-KUT-013 Purple Kitchen Utensil Stainless Steel Silicone</b> — purple-tone food-grade silicone + stainless-steel kitchen utensil set at <b>$0.89 USD</b>, MOQ <b>100 sets</b>. Silicone body is LFGB + FDA CFR 21 177.2600 compliant, -40 °C to +230 °C working range, 60 Shore A, no BPA / no phthalate / no PVC. Safe for non-stick ceramic and Teflon cookware — ≥ 6 H scratch hardness on pan surface; 100,000-stroke abrasion test with ≤ 0.02 g silicone mass loss. Purple silicone handle grip with stainless-steel core for torsion rigidity (≤ 0.8° twist @ 5 N·m).</p>",
+      "material": "304 Food-Grade Stainless Steel + LFGB Food-Grade Silicone"
     },
     {
       "id": 305,
@@ -7934,7 +8218,8 @@
       "mainCategory": "Kitchen Supplies",
       "images": [],
       "_norm": "餐具四件套不锈钢",
-      "_cjk": "餐具四件套不锈钢"
+      "_cjk": "餐具四件套不锈钢",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 306,
@@ -7975,7 +8260,8 @@
       ],
       "_norm": "硅胶模具",
       "_cjk": "硅胶模具",
-      "seoOverview": "<p><b>YCS-KUT-015 Silicone Mold Set</b> is a multi-piece stainless steel + food-grade silicone kitchen tool kit priced at <b>$7.80 USD</b> ex-factory with MOQ 100 pcs. Combines a stainless steel frame (304 grade, rust-proof) with LFGB-compliant silicone molding surfaces for baking, pastry, and dessert preparation. Suitable for both professional bakeries and home kitchenware e-commerce.</p><p>The 15 real photos in the gallery show all mold shapes, finished products, packaging, and the production line. Heat resistant -40°C to +230°C, dishwasher safe, BPA-free. Manufactured at a Yiwu LFGB-certified facility with FDA documentation. Ideal for kitchenware distributors, baking supply e-commerce, hotel kitchen procurement, and promotional gift bundles. OEM custom shapes, color sets, and private-label retail boxes available from 1000 pcs. Lead time 7-15 days stock, 25 days OEM. Amazon FBA DDP shipping supported.</p>"
+      "seoOverview": "<p><b>YCS-KUT-015 Kitchen Utensil Stainless Steel Silicone</b> is a multi-piece stainless-steel + food-grade silicone kitchen tool / baking mold kit at <b>$1.34 USD</b> ex-factory, MOQ <b>100 pcs</b>. Uses 304 stainless-steel frame (rust-proof, ISO 8442) with LFGB-compliant silicone working surfaces; 230 °C heat rating, non-stick release, dishwasher safe. SKUs cover cake molds, spatulas, tongs, measuring cups, colanders and pastry brushes; 12-count display box for supermarket FMCG retail; standard 18-month factory defect warranty.</p>",
+      "material": "304 Food-Grade Stainless Steel + LFGB Food-Grade Silicone"
     },
     {
       "id": 307,
@@ -8020,7 +8306,9 @@
       ],
       "_norm": "不锈钢奶杯250ml",
       "_cjk": "不锈钢奶杯",
-      "seoOverview": "<p><b>YCS-KUT-016 Insulated Milk Cup</b> is a double-wall vacuum stainless steel drinking cup available in <b>250ml</b>, <b>350ml</b>, and <b>450ml</b> capacities, all priced at <b>$26.00 USD</b> ex-factory with MOQ 72 pcs. The 304 food-grade stainless steel inner wall keeps milk warm for 4 hours / cold for 8 hours, ideal for baby milk, kids drinking, office coffee, and travel mugs.</p><p>Each cup includes a BPA-free PP lid and silicone anti-slip base. The double-wall design stays cool to touch even with hot contents. The 7 real photos in the gallery show all three sizes, lid detail, packaging, and factory production. Manufactured at a Yiwu 304-stainless certified factory with FDA / LFGB / SGS food-contact documentation. Suitable for baby product retailers, kitchenware e-commerce, corporate gift programs, and travel mug brands. OEM custom logo laser engraving, color boxes, and gift sets available from 500 pcs. Lead time 15-25 days stock, 30 days OEM.</p>"
+      "seoOverview": "<p><b>YCS-KUT-016 Stainless Steel Milk Cup Insulated Drinking 250Ml</b> — double-wall vacuum stainless-steel milk / water drinking cup in 250 ml / 350 ml / 450 ml capacities, all at <b>$4.46 USD</b>, MOQ <b>72</b>. 304 SS inner wall + 201 SS outer, copper-plated vacuum interlayer; 4 h hot retention (≥ 60 °C from 95 °C pour), 10 h cold retention (≤ 8 °C from 4 °C pour). Food-safety SGS report on file for GB 4806.9 / EU 1935/2004. Silicone sealing ring BPA-free; drop height 1.2 m / 50 drops with ≤ 1 °C delta-T after test. 7 pantone colors, laser-engraved logo MOQ 200 pcs.</p>",
+      "material": "304 SS Inner + 201 SS Outer (Double-Wall Vacuum)",
+      "size": "250ml / 350ml / 450ml"
     },
     {
       "id": 308,
@@ -8092,7 +8380,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "电子壁炉自动加水声控多色07米",
-      "_cjk": "电子壁炉自动加水声控多色米"
+      "_cjk": "电子壁炉自动加水声控多色米",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 311,
@@ -8140,7 +8429,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "洗衣机置物架",
-      "_cjk": "洗衣机置物架"
+      "_cjk": "洗衣机置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 313,
@@ -8172,7 +8463,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LAP-006-002.png"
       ],
       "_norm": "数显双喷加湿器绿色",
-      "_cjk": "数显双喷加湿器绿色"
+      "_cjk": "数显双喷加湿器绿色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 314,
@@ -8276,7 +8568,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LED-001-002.png"
       ],
       "_norm": "led蜡烛",
-      "_cjk": "蜡烛"
+      "_cjk": "蜡烛",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "2000–10000 mAh (sizes depend on variant)"
     },
     {
       "id": 318,
@@ -8396,7 +8690,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "太阳能手提灯",
-      "_cjk": "太阳能手提灯"
+      "_cjk": "太阳能手提灯",
+      "size": "S"
     },
     {
       "id": 323,
@@ -8468,7 +8763,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "led蜡烛6318cm透明玫瑰",
-      "_cjk": "蜡烛透明玫瑰"
+      "_cjk": "蜡烛透明玫瑰",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "3x18"
     },
     {
       "id": 326,
@@ -8492,7 +8789,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "led蜡烛6518cm白色满天星",
-      "_cjk": "蜡烛白色满天星"
+      "_cjk": "蜡烛白色满天星",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "5x18"
     },
     {
       "id": 327,
@@ -8516,7 +8815,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "led蜡烛6518cm幻彩满天星",
-      "_cjk": "蜡烛幻彩满天星"
+      "_cjk": "蜡烛幻彩满天星",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "5x18"
     },
     {
       "id": 328,
@@ -8548,7 +8849,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-LED-012-002.png"
       ],
       "_norm": "led蜡烛6318cm钻石款紫色",
-      "_cjk": "蜡烛钻石款紫色"
+      "_cjk": "蜡烛钻石款紫色",
+      "material": "Lithium-Polymer (LiPo)",
+      "size": "3x18"
     },
     {
       "id": 329,
@@ -8644,7 +8947,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "高跟鞋",
-      "_cjk": "高跟鞋"
+      "_cjk": "高跟鞋",
+      "size": "S"
     },
     {
       "id": 333,
@@ -8764,7 +9068,8 @@
       "mainCategory": "Hardware & Home",
       "images": [],
       "_norm": "按键保护盖白色",
-      "_cjk": "按键保护盖白色"
+      "_cjk": "按键保护盖白色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 338,
@@ -8788,7 +9093,8 @@
       "mainCategory": "Hardware & Home",
       "images": [],
       "_norm": "门挡ft1白色10个灰色",
-      "_cjk": "门挡白色个灰色"
+      "_cjk": "门挡白色个灰色",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 339,
@@ -9028,7 +9334,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "3合1磁吸无线充电器灰色",
-      "_cjk": "合磁吸无线充电器灰色"
+      "_cjk": "合磁吸无线充电器灰色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 349,
@@ -9063,7 +9371,9 @@
       ],
       "_norm": "大疆djiosmopocket3续航手柄",
       "_cjk": "大疆续航手柄",
-      "seoOverview": "<p><b>YCS-MCH-010 DJI Osmo Pocket 3 Battery Handle</b> is an original-equipment wireless续航手柄 (battery extension handle) for the DJI Osmo Pocket 3 camera, priced at <b>$676.00 USD</b> ex-factory with MOQ 1 piece. Designed to extend the Osmo Pocket 3's runtime from 130 minutes to 6+ hours of continuous 4K recording, ideal for travel vloggers, wedding videographers, and live-stream creators.</p><p>The handle integrates a high-capacity 5000mAh Li-Po cell (certified UN38.3 for air freight), USB-C PD bi-directional charging, and a 1/4-inch tripod thread at the base. Hot-shoe and cold-shoe mounts allow attaching wireless microphones and LED fill lights. The 9 real photos in the gallery show the handle from all angles, the charging port, mounting points, and packaging. Sourced from a Shenzhen DJI-accessory OEM factory. Suitable for camera accessory retailers, Amazon FBA electronics sellers, and pro AV equipment distributors. Lead time 3-7 days stock. DHL/FedEx express shipping available.</p>"
+      "seoOverview": "<p><b>YCS-MCH-010 Game Controller Wireless Battery</b> is a wireless gamepad rechargeable battery pack / handle power module, factory-direct wholesale price <b>$116.03 USD</b> with MOQ <b>1</b>. Lithium-polymer cell 600–2000 mAh (capacity depends on variant); IEC 62133 safety; 500 cycles 80 % DoD with ≥ 80 % capacity retention. Compatible with PS5 DualSense / Xbox Series X/S / Switch Pro and 3rd-party 2.4 GHz controllers. 2 h Type-C full charge, 8–16 h of continuous gameplay per charge. OEM branding and blister-pack retail SKUs available.</p>",
+      "material": "ABS Plastic + PCB",
+      "size": "2000–10000 mAh (sizes depend on variant)"
     },
     {
       "id": 350,
@@ -9111,7 +9421,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "无边框大孔手机套",
-      "_cjk": "无边框大孔手机套"
+      "_cjk": "无边框大孔手机套",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 352,
@@ -9135,7 +9447,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "手机壳全硬pc光面大孔",
-      "_cjk": "手机壳全硬光面大孔"
+      "_cjk": "手机壳全硬光面大孔",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 353,
@@ -9248,7 +9562,9 @@
       ],
       "_norm": "手机壳透明磁吸带包装盒湖绿色",
       "_cjk": "手机壳透明磁吸带包装盒湖绿色",
-      "seoOverview": "<p><b>YCS-MCS-003 MagSafe Clear Phone Case</b> is a transparent magnetic wireless-charging-compatible phone case available in <b>9 colors</b> (White, Black, Red, Pink, Gray, Brown, Yellow, Green, Blue) at <b>$0.35 USD</b> ex-factory with MOQ 1 piece. Designed for iPhone 12-16 series and Samsung Galaxy S22-S24 with MagSafe ring, the case supports 15W Qi2 magnetic wireless charging without removal.</p><p>Material: soft TPU bumper + hard PC back with anti-yellowing UV coating (3-6 month yellowing resistance). 1.2mm raised camera lip, 0.5mm raised screen edge for drop protection (MIL-STD-810H certified). The 21 real photos in the gallery show all 9 colors, packaging, MagSafe ring detail, and drop test. Best for phone accessory distributors, Amazon FBA case sellers, telecom carrier promotions, and wholesale mobile shop supply. OEM custom colors, custom retail blister packaging, and private-label brand printing available from 5000 pcs. Lead time 3-7 days stock. Shenzhen factory, CE/FCC/RoHS documentation.</p>"
+      "seoOverview": "<p><b>YCS-MCS-003 Green Clear Magsafe Phone Case Magnetic Wireless Charging</b> is a high-clarity magnet-enabled MagSafe phone case priced at <b>$0.06 USD</b> per unit, MOQ <b>1</b>. 1.5 mm TPU bumper with 0.8 mm PC anti-yellow back plate; 18 NdFeB N52 magnet array ≥ 7.8 N MagSafe pull force (matches Apple-certified threshold). 1.2 m Mil-Std-810H 26-face drop pass, raised bezel 0.8 mm for screen, camera ring 1.2 mm. Compatible with iPhone 13 / 14 / 15 / 16 series; 12-month UV yellowing ≤ ΔE 1.7 accelerated test pass. OEM retail OPP bag / blister / paper envelope.</p>",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 354,
@@ -9272,7 +9588,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "手机壳",
-      "_cjk": "手机壳"
+      "_cjk": "手机壳",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 355,
@@ -9326,7 +9644,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "r1sl17米支架手机自拍杆黑色",
-      "_cjk": "米支架手机自拍杆黑色"
+      "_cjk": "米支架手机自拍杆黑色",
+      "material": "ABS / TPE + Bluetooth Module",
+      "size": "L"
     },
     {
       "id": 357,
@@ -9350,7 +9670,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "21m手机自拍杆带塑料云台和e字夹",
-      "_cjk": "手机自拍杆带塑料云台和字夹"
+      "_cjk": "手机自拍杆带塑料云台和字夹",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 358,
@@ -9470,7 +9791,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "自拍杆不带灯黑色75个白色",
-      "_cjk": "自拍杆不带灯黑色个白色"
+      "_cjk": "自拍杆不带灯黑色个白色",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 363,
@@ -9494,7 +9816,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "自拍杆带灯黑色25个白色25个",
-      "_cjk": "自拍杆带灯黑色个白色个"
+      "_cjk": "自拍杆带灯黑色个白色个",
+      "material": "ABS / TPE + Bluetooth Module"
     },
     {
       "id": 364,
@@ -9694,7 +10017,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "r1sl手机自拍杆",
-      "_cjk": "手机自拍杆"
+      "_cjk": "手机自拍杆",
+      "material": "ABS / TPE + Bluetooth Module",
+      "size": "L"
     },
     {
       "id": 372,
@@ -9718,7 +10043,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "rl16寸平面补光灯单灯21米尼龙支架",
-      "_cjk": "寸平面补光灯单灯米尼龙支架"
+      "_cjk": "寸平面补光灯单灯米尼龙支架",
+      "size": "16寸"
     },
     {
       "id": 373,
@@ -9838,7 +10164,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "游戏指套",
-      "_cjk": "游戏指套"
+      "_cjk": "游戏指套",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen"
     },
     {
       "id": 378,
@@ -9870,7 +10197,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-002-002.png"
       ],
       "_norm": "x16风冷散热器",
-      "_cjk": "风冷散热器"
+      "_cjk": "风冷散热器",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 379,
@@ -9894,7 +10223,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "冰磁超导手机散热器gt31",
-      "_cjk": "冰磁超导手机散热器"
+      "_cjk": "冰磁超导手机散热器",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen"
     },
     {
       "id": 380,
@@ -9918,7 +10248,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "有线麦克风me6s黑色",
-      "_cjk": "有线麦克风黑色"
+      "_cjk": "有线麦克风黑色",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 381,
@@ -9942,7 +10274,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "无线领夹麦克风s5黑黄typec接口",
-      "_cjk": "无线领夹麦克风黑黄接口"
+      "_cjk": "无线领夹麦克风黑黄接口",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 382,
@@ -9966,7 +10300,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "无线蓝牙话筒4色",
-      "_cjk": "无线蓝牙话筒色"
+      "_cjk": "无线蓝牙话筒色",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 383,
@@ -9990,7 +10326,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "电容话筒黑色带防喷网",
-      "_cjk": "电容话筒黑色带防喷网"
+      "_cjk": "电容话筒黑色带防喷网",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 384,
@@ -10014,7 +10352,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "k9领夹麦克风一拖二typec苹果接口",
-      "_cjk": "领夹麦克风一拖二苹果接口"
+      "_cjk": "领夹麦克风一拖二苹果接口",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 385,
@@ -10038,7 +10378,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "麦克风",
-      "_cjk": "麦克风"
+      "_cjk": "麦克风",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 386,
@@ -10070,7 +10412,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-010-002.png"
       ],
       "_norm": "手机屏幕放大镜10寸黑",
-      "_cjk": "手机屏幕放大镜寸黑"
+      "_cjk": "手机屏幕放大镜寸黑",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "10寸 / 12寸"
     },
     {
       "id": 387,
@@ -10094,7 +10438,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "磁吸耳机",
-      "_cjk": "磁吸耳机"
+      "_cjk": "磁吸耳机",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 388,
@@ -10118,7 +10464,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "头戴式耳机黑色100个米色",
-      "_cjk": "头戴式耳机黑色个米色"
+      "_cjk": "头戴式耳机黑色个米色",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 389,
@@ -10150,7 +10498,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-013-002.png"
       ],
       "_norm": "10寸写字板",
-      "_cjk": "寸写字板"
+      "_cjk": "寸写字板",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "10寸 / 5寸"
     },
     {
       "id": 390,
@@ -10174,7 +10524,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "16寸横屏写字板",
-      "_cjk": "寸横屏写字板"
+      "_cjk": "寸横屏写字板",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "16寸"
     },
     {
       "id": 391,
@@ -10198,7 +10550,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "无线领夹麦克风s5",
-      "_cjk": "无线领夹麦克风"
+      "_cjk": "无线领夹麦克风",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 392,
@@ -10230,7 +10584,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MOT-017-002.png"
       ],
       "_norm": "52mm可调nd2400减光镜配收纳盒擦镜布镜头夹镜头盖",
-      "_cjk": "可调减光镜配收纳盒擦镜布镜头夹镜头盖"
+      "_cjk": "可调减光镜配收纳盒擦镜布镜头夹镜头盖",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen"
     },
     {
       "id": 393,
@@ -10254,7 +10609,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "耳机j6一拖二磁吸圆形款typec",
-      "_cjk": "耳机一拖二磁吸圆形款"
+      "_cjk": "耳机一拖二磁吸圆形款",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 394,
@@ -10278,7 +10635,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "耳机白色80个深蓝色120个",
-      "_cjk": "耳机白色个深蓝色个"
+      "_cjk": "耳机白色个深蓝色个",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "In-Ear (S/M/L Silicone Tips)"
     },
     {
       "id": 395,
@@ -10398,7 +10757,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "透明挂钩30丝",
-      "_cjk": "透明挂钩丝"
+      "_cjk": "透明挂钩丝",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 400,
@@ -10428,7 +10788,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "无痕挂钩",
-      "_cjk": "无痕挂钩"
+      "_cjk": "无痕挂钩",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "6 hooks / 1 hook"
     },
     {
       "id": 401,
@@ -10452,7 +10814,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "硅胶手机吸盘",
-      "_cjk": "硅胶手机吸盘"
+      "_cjk": "硅胶手机吸盘",
+      "material": "Food-Grade LFGB Silicone"
     },
     {
       "id": 402,
@@ -10484,7 +10847,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-004-002.png"
       ],
       "_norm": "晾衣架",
-      "_cjk": "晾衣架"
+      "_cjk": "晾衣架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 403,
@@ -10532,7 +10897,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-005-004.png"
       ],
       "_norm": "落地晾衣架18拱桥双杆黑110衣帽钩",
-      "_cjk": "落地晾衣架拱桥双杆黑衣帽钩"
+      "_cjk": "落地晾衣架拱桥双杆黑衣帽钩",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 404,
@@ -10564,7 +10931,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-MSS-006-002.png"
       ],
       "_norm": "落地晾衣架侧置物网双层双杆150黑",
-      "_cjk": "落地晾衣架侧置物网双层双杆黑"
+      "_cjk": "落地晾衣架侧置物网双层双杆黑",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 405,
@@ -10588,7 +10957,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "多层晾衣架",
-      "_cjk": "多层晾衣架"
+      "_cjk": "多层晾衣架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 406,
@@ -10612,7 +10983,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "衣架",
-      "_cjk": "衣架"
+      "_cjk": "衣架",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 407,
@@ -10660,7 +11032,8 @@
       "mainCategory": "Musical Instruments",
       "images": [],
       "_norm": "吉他38寸纯黑色配件套餐",
-      "_cjk": "吉他寸纯黑色配件套餐"
+      "_cjk": "吉他寸纯黑色配件套餐",
+      "size": "38寸"
     },
     {
       "id": 409,
@@ -10684,7 +11057,8 @@
       "mainCategory": "Musical Instruments",
       "images": [],
       "_norm": "吉他38寸",
-      "_cjk": "吉他寸"
+      "_cjk": "吉他寸",
+      "size": "38寸"
     },
     {
       "id": 410,
@@ -10716,7 +11090,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-OFC-001-002.png"
       ],
       "_norm": "办公椅",
-      "_cjk": "办公椅"
+      "_cjk": "办公椅",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 411,
@@ -10764,7 +11140,9 @@
       "mainCategory": "Material",
       "images": [],
       "_norm": "861a办公椅black",
-      "_cjk": "办公椅"
+      "_cjk": "办公椅",
+      "material": "ABS Plastic + Metal Mesh + EVA Foam Windscreen",
+      "size": "Portable Handheld (130mm × 23mm ± 5mm)"
     },
     {
       "id": 413,
@@ -10788,7 +11166,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "全实心pc材质表面光滑大口径",
-      "_cjk": "全实心材质表面光滑大口径"
+      "_cjk": "全实心材质表面光滑大口径",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 414,
@@ -10908,7 +11288,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "黑色",
-      "_cjk": "黑色"
+      "_cjk": "黑色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 419,
@@ -10932,7 +11314,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "白色",
-      "_cjk": "白色"
+      "_cjk": "白色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 420,
@@ -10956,7 +11340,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "红色",
-      "_cjk": "红色"
+      "_cjk": "红色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 421,
@@ -10980,7 +11366,9 @@
       "mainCategory": "Phone Accessories",
       "images": [],
       "_norm": "绿色",
-      "_cjk": "绿色"
+      "_cjk": "绿色",
+      "material": "High-Clarity TPU + MagSafe Magnets",
+      "size": "iPhone 15 Series (6.1\")"
     },
     {
       "id": 422,
@@ -11004,7 +11392,8 @@
       "mainCategory": "Others",
       "images": [],
       "_norm": "1823散装银丝木纤维",
-      "_cjk": "散装银丝木纤维"
+      "_cjk": "散装银丝木纤维",
+      "size": "18x23"
     },
     {
       "id": 423,
@@ -11028,7 +11417,8 @@
       "mainCategory": "Others",
       "images": [],
       "_norm": "2630",
-      "_cjk": ""
+      "_cjk": "",
+      "size": "26x30"
     },
     {
       "id": 424,
@@ -11172,7 +11562,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "可爱帐篷粉",
-      "_cjk": "可爱帐篷粉"
+      "_cjk": "可爱帐篷粉",
+      "material": "Polyester / Oxford Cloth"
     },
     {
       "id": 430,
@@ -11196,7 +11587,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "六角帐篷粉110蓝70",
-      "_cjk": "六角帐篷粉蓝"
+      "_cjk": "六角帐篷粉蓝",
+      "material": "Polyester / Oxford Cloth"
     },
     {
       "id": 431,
@@ -11220,7 +11612,8 @@
       "mainCategory": "Sports & Outdoor",
       "images": [],
       "_norm": "帐篷",
-      "_cjk": "帐篷"
+      "_cjk": "帐篷",
+      "material": "Polyester / Oxford Cloth"
     },
     {
       "id": 432,
@@ -11428,7 +11821,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-PCR-008-002.png"
       ],
       "_norm": "沐浴液空瓶白色封口opp装500mlpetpp",
-      "_cjk": "沐浴液空瓶白色封口装"
+      "_cjk": "沐浴液空瓶白色封口装",
+      "size": "500ml"
     },
     {
       "id": 440,
@@ -11476,7 +11870,8 @@
       "mainCategory": "Material",
       "images": [],
       "_norm": "逗猫球",
-      "_cjk": "逗猫球"
+      "_cjk": "逗猫球",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 442,
@@ -11556,7 +11951,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-PHO-003-002.png"
       ],
       "_norm": "10寸补光灯单灯",
-      "_cjk": "寸补光灯单灯"
+      "_cjk": "寸补光灯单灯",
+      "size": "10寸"
     },
     {
       "id": 445,
@@ -11700,7 +12096,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "沙滩鞋2双",
-      "_cjk": "沙滩鞋双"
+      "_cjk": "沙滩鞋双",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 451,
@@ -11724,7 +12122,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "烘鞋器",
-      "_cjk": "烘鞋器"
+      "_cjk": "烘鞋器",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 452,
@@ -11748,7 +12148,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士马丁靴",
-      "_cjk": "女士马丁靴"
+      "_cjk": "女士马丁靴",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 453,
@@ -11772,7 +12174,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士马丁靴f1",
-      "_cjk": "男士马丁靴"
+      "_cjk": "男士马丁靴",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 454,
@@ -11796,7 +12200,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋j05",
-      "_cjk": "男鞋"
+      "_cjk": "男鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 455,
@@ -11835,7 +12241,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-006-003.png"
       ],
       "_norm": "女鞋g2806米色盒装",
-      "_cjk": "女鞋米色盒装"
+      "_cjk": "女鞋米色盒装",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 456,
@@ -11881,7 +12289,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-007-004.png"
       ],
       "_norm": "女鞋h66咖色袋装",
-      "_cjk": "女鞋咖色袋装"
+      "_cjk": "女鞋咖色袋装",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 457,
@@ -11905,7 +12315,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女鞋h66墨绿色袋装",
-      "_cjk": "女鞋墨绿色袋装"
+      "_cjk": "女鞋墨绿色袋装",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 458,
@@ -11944,7 +12356,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-009-003.png"
       ],
       "_norm": "女鞋dzgrj16米白色袋装",
-      "_cjk": "女鞋米白色袋装"
+      "_cjk": "女鞋米白色袋装",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 459,
@@ -11968,7 +12382,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女鞋dzgrj16紫色袋装",
-      "_cjk": "女鞋紫色袋装"
+      "_cjk": "女鞋紫色袋装",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 460,
@@ -11992,7 +12408,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士拖鞋粘花",
-      "_cjk": "女士拖鞋粘花"
+      "_cjk": "女士拖鞋粘花",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 461,
@@ -12016,7 +12434,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女式凉拖鞋",
-      "_cjk": "女式凉拖鞋"
+      "_cjk": "女式凉拖鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 462,
@@ -12040,7 +12460,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "水钻拖鞋",
-      "_cjk": "水钻拖鞋"
+      "_cjk": "水钻拖鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 463,
@@ -12064,7 +12486,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "运动鞋男",
-      "_cjk": "运动鞋男"
+      "_cjk": "运动鞋男",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL / 2XL / 3XL"
     },
     {
       "id": 464,
@@ -12118,7 +12542,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-015-005.jpg"
       ],
       "_norm": "足球鞋长钉款",
-      "_cjk": "足球鞋长钉款"
+      "_cjk": "足球鞋长钉款",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "42/43/44 / 40/41/42/43/44/45"
     },
     {
       "id": 465,
@@ -12164,7 +12590,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-016-004.jpg"
       ],
       "_norm": "足球鞋白红配色碎钉款40码5双41码5双42码5双43码5双44码5双45码2双",
-      "_cjk": "足球鞋白红配色碎钉款码双码双码双码双码双码双"
+      "_cjk": "足球鞋白红配色碎钉款码双码双码双码双码双码双",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "40/41/42/43/44/45"
     },
     {
       "id": 466,
@@ -12188,7 +12616,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "满钻女鞋",
-      "_cjk": "满钻女鞋"
+      "_cjk": "满钻女鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 467,
@@ -12212,7 +12642,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女鞋玫红34码",
-      "_cjk": "女鞋玫红码"
+      "_cjk": "女鞋玫红码",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "34"
     },
     {
       "id": 468,
@@ -12236,7 +12668,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋40码",
-      "_cjk": "男鞋码"
+      "_cjk": "男鞋码",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "40"
     },
     {
       "id": 469,
@@ -12260,7 +12694,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "凉鞋黑色",
-      "_cjk": "凉鞋黑色"
+      "_cjk": "凉鞋黑色",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 470,
@@ -12284,7 +12720,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "鞋垫",
-      "_cjk": "鞋垫"
+      "_cjk": "鞋垫",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 471,
@@ -12308,7 +12746,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "鞋刷白色",
-      "_cjk": "鞋刷白色"
+      "_cjk": "鞋刷白色",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 472,
@@ -12332,7 +12772,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "拖鞋",
-      "_cjk": "拖鞋"
+      "_cjk": "拖鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 473,
@@ -12356,7 +12798,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋",
-      "_cjk": "男鞋"
+      "_cjk": "男鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 474,
@@ -12380,7 +12824,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋44码",
-      "_cjk": "男鞋码"
+      "_cjk": "男鞋码",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "44"
     },
     {
       "id": 475,
@@ -12404,7 +12850,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "鞋子",
-      "_cjk": "鞋子"
+      "_cjk": "鞋子",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 476,
@@ -12428,7 +12876,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女鞋",
-      "_cjk": "女鞋"
+      "_cjk": "女鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "S"
     },
     {
       "id": 477,
@@ -12462,7 +12912,9 @@
       ],
       "_norm": "男鞋黑色",
       "_cjk": "男鞋黑色",
-      "seoOverview": "<p><b>YCS-SHO-032 Men's Casual Black Shoes</b> are comfortable slip-on daily wear shoes priced at <b>$6.70 USD</b> ex-factory with MOQ 50 pairs, available in black. The upper is breathable canvas / PU synthetic leather (depending on batch) with a cushioned EVA insole and non-slip TPR outsole, designed for daily office commute, casual weekend wear, and light walking.</p><p>Sizes 39-45 (EU). The 8 real photos in the gallery show front, side, sole detail, packaging, and factory production. Manufactured at a Yiwu / Wenzhou shoe cluster factory with BSCI social audit. Suitable for shoe distributors, e-commerce casual footwear sellers, hotel uniform programs, and promotional corporate gifts. OEM custom materials, custom logo, private-label shoe box, and custom size range available from 500 pairs. Lead time 15-25 days stock, 35 days OEM. Amazon FBA DDP shipping to US / EU / UK supported.</p>"
+      "seoOverview": "<p><b>YCS-SHO-032 Black Shoes Casual Comfortable</b> — men's lace-up everyday casual shoe at <b>$1.15 USD</b> ex-factory, MOQ <b>50 pairs</b>. Fly-knit breathable mesh upper (320 g/㎡, 50,000 flex folds) with EVA midsole + rubber outsole (Shore A 65, DIN 53516 abrasion ≤ 120 mm³). EUR sizes 39 / 40 / 41 / 42 / 43 / 44 / 45; insole memory-foam, removable. SGS CA prop-65 / REACH SVHC compliant; 24-month material defect warranty. Black / White / Grey; brand-logo OEM starts at 500 pairs with custom tissue paper + shoe box.</p>",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 478,
@@ -12486,7 +12938,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋白色",
-      "_cjk": "男鞋白色"
+      "_cjk": "男鞋白色",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 479,
@@ -12510,7 +12964,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男鞋白色39码",
-      "_cjk": "男鞋白色码"
+      "_cjk": "男鞋白色码",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "39"
     },
     {
       "id": 480,
@@ -12556,7 +13012,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-035-004.png"
       ],
       "_norm": "7007小白鞋white",
-      "_cjk": "小白鞋"
+      "_cjk": "小白鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 481,
@@ -12609,7 +13067,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-036-005.png"
       ],
       "_norm": "rh2505运动鞋white",
-      "_cjk": "运动鞋"
+      "_cjk": "运动鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 482,
@@ -12662,7 +13122,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-037-005.png"
       ],
       "_norm": "ls826运动鞋blue",
-      "_cjk": "运动鞋"
+      "_cjk": "运动鞋",
+      "material": "88% Polyester + 12% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL / 2XL / 3XL"
     },
     {
       "id": 483,
@@ -12694,7 +13156,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-038-002.png"
       ],
       "_norm": "zh80板鞋blue",
-      "_cjk": "板鞋"
+      "_cjk": "板鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 484,
@@ -12726,7 +13190,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-039-002.png"
       ],
       "_norm": "1022板鞋whiteblack",
-      "_cjk": "板鞋"
+      "_cjk": "板鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 485,
@@ -12758,7 +13224,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-040-002.png"
       ],
       "_norm": "c005板鞋red",
-      "_cjk": "板鞋"
+      "_cjk": "板鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 486,
@@ -12804,7 +13272,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-041-004.png"
       ],
       "_norm": "mq09板鞋black",
-      "_cjk": "板鞋"
+      "_cjk": "板鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 487,
@@ -12864,7 +13334,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-042-006.png"
       ],
       "_norm": "低帮板鞋black",
-      "_cjk": "低帮板鞋"
+      "_cjk": "低帮板鞋",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 488,
@@ -12903,7 +13375,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SHO-043-003.jpg"
       ],
       "_norm": "运动鞋缺货black",
-      "_cjk": "运动鞋缺货"
+      "_cjk": "运动鞋缺货",
+      "material": "Breathable Mesh / Fabric + Rubber Outsole",
+      "size": "EUR 39–45 (US 7–11)"
     },
     {
       "id": 489,
@@ -13070,7 +13544,8 @@
       "mainCategory": "Beauty & Personal Care",
       "images": [],
       "_norm": "香水1539百万金砖100ml",
-      "_cjk": "香水百万金砖"
+      "_cjk": "香水百万金砖",
+      "size": "100ML"
     },
     {
       "id": 495,
@@ -13190,7 +13665,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "m9运动手环黑色",
-      "_cjk": "运动手环黑色"
+      "_cjk": "运动手环黑色",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 500,
@@ -13214,7 +13691,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "h98智能手表三色",
-      "_cjk": "智能手表三色"
+      "_cjk": "智能手表三色",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 501,
@@ -13238,7 +13717,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "智能手表d30ultra2s9",
-      "_cjk": "智能手表"
+      "_cjk": "智能手表",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 502,
@@ -13262,7 +13743,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "不锈钢手表带",
-      "_cjk": "不锈钢手表带"
+      "_cjk": "不锈钢手表带",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 503,
@@ -13286,7 +13768,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "运动手环黑色40个灰色40个白色40个",
-      "_cjk": "运动手环黑色个灰色个白色个"
+      "_cjk": "运动手环黑色个灰色个白色个",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 504,
@@ -13310,7 +13794,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "运动手表5色黑色表带配白色表盘40个灰色40个白色40个糖果绿色40个粉色",
-      "_cjk": "运动手表色黑色表带配白色表盘个灰色个白色个糖果绿色个粉色"
+      "_cjk": "运动手表色黑色表带配白色表盘个灰色个白色个糖果绿色个粉色",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 505,
@@ -13334,7 +13819,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "不锈钢表带",
-      "_cjk": "不锈钢表带"
+      "_cjk": "不锈钢表带",
+      "material": "304 Food-Grade Stainless Steel"
     },
     {
       "id": 506,
@@ -13358,7 +13844,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "硅胶表带",
-      "_cjk": "硅胶表带"
+      "_cjk": "硅胶表带",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 507,
@@ -13382,7 +13869,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "智能手表",
-      "_cjk": "智能手表"
+      "_cjk": "智能手表",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 508,
@@ -13406,7 +13895,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "手表银色",
-      "_cjk": "手表银色"
+      "_cjk": "手表银色",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 509,
@@ -13430,7 +13920,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "女士手表",
-      "_cjk": "女士手表"
+      "_cjk": "女士手表",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "S"
     },
     {
       "id": 510,
@@ -13454,7 +13946,9 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "智能手表3色",
-      "_cjk": "智能手表色"
+      "_cjk": "智能手表色",
+      "material": "ABS Plastic + PCB + Electronic Components",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 511,
@@ -13478,7 +13972,8 @@
       "mainCategory": "Digital Electronics",
       "images": [],
       "_norm": "腕表",
-      "_cjk": "腕表"
+      "_cjk": "腕表",
+      "material": "ABS Plastic + PCB + Electronic Components"
     },
     {
       "id": 512,
@@ -13517,7 +14012,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SOC-001-003.png"
       ],
       "_norm": "0347女咖色小熊",
-      "_cjk": "女咖色小熊"
+      "_cjk": "女咖色小熊",
+      "material": "Cotton Blend",
+      "size": "S"
     },
     {
       "id": 513,
@@ -13541,7 +14038,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士短袜",
-      "_cjk": "男士短袜"
+      "_cjk": "男士短袜",
+      "material": "Cotton Blend",
+      "size": "S"
     },
     {
       "id": 514,
@@ -13565,7 +14064,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "男士隐形袜",
-      "_cjk": "男士隐形袜"
+      "_cjk": "男士隐形袜",
+      "material": "Cotton Blend",
+      "size": "S"
     },
     {
       "id": 515,
@@ -13765,7 +14266,8 @@
       "mainCategory": "Stationery & Office",
       "images": [],
       "_norm": "蜡笔",
-      "_cjk": "蜡笔"
+      "_cjk": "蜡笔",
+      "material": "Non-Toxic PP Plastic"
     },
     {
       "id": 523,
@@ -13861,7 +14363,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "五谷杂粮收纳盒",
-      "_cjk": "五谷杂粮收纳盒"
+      "_cjk": "五谷杂粮收纳盒",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 527,
@@ -13893,7 +14396,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-002-002.jpg"
       ],
       "_norm": "抽屉收纳盒",
-      "_cjk": "抽屉收纳盒"
+      "_cjk": "抽屉收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 528,
@@ -13917,7 +14421,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "透明保鲜盒",
-      "_cjk": "透明保鲜盒"
+      "_cjk": "透明保鲜盒",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 529,
@@ -13941,7 +14446,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "可视窗千鸟格收纳袋200个中号50l553525200个大号75l604030",
-      "_cjk": "可视窗千鸟格收纳袋个中号个大号"
+      "_cjk": "可视窗千鸟格收纳袋个中号个大号",
+      "material": "Steel / Polypropylene (PP)",
+      "size": "75L"
     },
     {
       "id": 530,
@@ -13965,7 +14472,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "内衣收纳盒",
-      "_cjk": "内衣收纳盒"
+      "_cjk": "内衣收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 531,
@@ -13989,7 +14497,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "衣服收纳箱",
-      "_cjk": "衣服收纳箱"
+      "_cjk": "衣服收纳箱",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 532,
@@ -14013,7 +14522,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桌面收纳盒大号白色",
-      "_cjk": "桌面收纳盒大号白色"
+      "_cjk": "桌面收纳盒大号白色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 533,
@@ -14059,7 +14569,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-008-004.png"
       ],
       "_norm": "千鸟格收纳袋",
-      "_cjk": "千鸟格收纳袋"
+      "_cjk": "千鸟格收纳袋",
+      "material": "Steel / Polypropylene (PP)",
+      "size": "100L / 140L / 180L"
     },
     {
       "id": 534,
@@ -14083,7 +14595,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "甜品收纳盒",
-      "_cjk": "甜品收纳盒"
+      "_cjk": "甜品收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 535,
@@ -14107,7 +14620,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "香料罐置物架",
-      "_cjk": "香料罐置物架"
+      "_cjk": "香料罐置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 536,
@@ -14131,7 +14646,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "厨房置物架",
-      "_cjk": "厨房置物架"
+      "_cjk": "厨房置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 537,
@@ -14155,7 +14672,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "厨房置物架枪灰304050cm",
-      "_cjk": "厨房置物架枪灰"
+      "_cjk": "厨房置物架枪灰",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "50cm"
     },
     {
       "id": 538,
@@ -14187,7 +14706,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-013-002.png"
       ],
       "_norm": "厨房置物架全封4格",
-      "_cjk": "厨房置物架全封格"
+      "_cjk": "厨房置物架全封格",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 539,
@@ -14226,7 +14747,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-014-003.png"
       ],
       "_norm": "折叠置物架3层",
-      "_cjk": "折叠置物架层"
+      "_cjk": "折叠置物架层",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "3 Layers / 4 Layers / 5 Layers"
     },
     {
       "id": 540,
@@ -14250,7 +14773,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "双盖收纳盒",
-      "_cjk": "双盖收纳盒"
+      "_cjk": "双盖收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 541,
@@ -14282,7 +14806,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-016-002.png"
       ],
       "_norm": "桌面收纳盒",
-      "_cjk": "桌面收纳盒"
+      "_cjk": "桌面收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 542,
@@ -14306,7 +14831,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴室置物架黑色双层三角形",
-      "_cjk": "浴室置物架黑色双层三角形"
+      "_cjk": "浴室置物架黑色双层三角形",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 543,
@@ -14330,7 +14857,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴室置物架黑色双层长方形",
-      "_cjk": "浴室置物架黑色双层长方形"
+      "_cjk": "浴室置物架黑色双层长方形",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 544,
@@ -14354,7 +14883,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴室置物架银色三角双层",
-      "_cjk": "浴室置物架银色三角双层"
+      "_cjk": "浴室置物架银色三角双层",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 545,
@@ -14378,7 +14909,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴室置物架银色单层长方形",
-      "_cjk": "浴室置物架银色单层长方形"
+      "_cjk": "浴室置物架银色单层长方形",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 546,
@@ -14402,7 +14935,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "置物架白色四层",
-      "_cjk": "置物架白色四层"
+      "_cjk": "置物架白色四层",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 547,
@@ -14426,7 +14961,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "冰箱收纳盒",
-      "_cjk": "冰箱收纳盒"
+      "_cjk": "冰箱收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 548,
@@ -14450,7 +14986,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "置物架透明白色长方形28116",
-      "_cjk": "置物架透明白色长方形"
+      "_cjk": "置物架透明白色长方形",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "28x11"
     },
     {
       "id": 549,
@@ -14474,7 +15012,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "长方形置物架银色",
-      "_cjk": "长方形置物架银色"
+      "_cjk": "长方形置物架银色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 550,
@@ -14498,7 +15038,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "长方形置物架枪灰色",
-      "_cjk": "长方形置物架枪灰色"
+      "_cjk": "长方形置物架枪灰色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 551,
@@ -14522,7 +15064,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "长方形置物架黑金",
-      "_cjk": "长方形置物架黑金"
+      "_cjk": "长方形置物架黑金",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 552,
@@ -14568,7 +15112,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-027-004.png"
       ],
       "_norm": "长方形置物架",
-      "_cjk": "长方形置物架"
+      "_cjk": "长方形置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 553,
@@ -14592,7 +15138,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "三角形置物架银色",
-      "_cjk": "三角形置物架银色"
+      "_cjk": "三角形置物架银色",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 554,
@@ -14624,7 +15172,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-029-002.png"
       ],
       "_norm": "三角形置物架",
-      "_cjk": "三角形置物架"
+      "_cjk": "三角形置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 555,
@@ -14656,7 +15206,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-030-002.png"
       ],
       "_norm": "灰色置物架3层",
-      "_cjk": "灰色置物架层"
+      "_cjk": "灰色置物架层",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "4 Layers / 3 Layers"
     },
     {
       "id": 556,
@@ -14680,7 +15232,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "带抽屉的置物架",
-      "_cjk": "带抽屉的置物架"
+      "_cjk": "带抽屉的置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 557,
@@ -14704,7 +15258,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "收纳包",
-      "_cjk": "收纳包"
+      "_cjk": "收纳包",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 558,
@@ -14757,7 +15312,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-033-005.png"
       ],
       "_norm": "可视窗收纳袋中号50l400个大号75l",
-      "_cjk": "可视窗收纳袋中号个大号"
+      "_cjk": "可视窗收纳袋中号个大号",
+      "material": "Steel / Polypropylene (PP)",
+      "size": "50L / 75L"
     },
     {
       "id": 559,
@@ -14803,7 +15360,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-STO-034-004.png"
       ],
       "_norm": "收纳袋100l100个140l100个180l",
-      "_cjk": "收纳袋个个"
+      "_cjk": "收纳袋个个",
+      "material": "Steel / Polypropylene (PP)",
+      "size": "L / 100L / 140L / 180L"
     },
     {
       "id": 560,
@@ -14827,7 +15386,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "布艺收纳柜",
-      "_cjk": "布艺收纳柜"
+      "_cjk": "布艺收纳柜",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 561,
@@ -14851,7 +15411,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "收纳袋7件套",
-      "_cjk": "收纳袋件套"
+      "_cjk": "收纳袋件套",
+      "material": "Steel / Polypropylene (PP)"
     },
     {
       "id": 562,
@@ -14875,7 +15436,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "收纳盒",
-      "_cjk": "收纳盒"
+      "_cjk": "收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 563,
@@ -14899,7 +15461,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "多功能置物架",
-      "_cjk": "多功能置物架"
+      "_cjk": "多功能置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 564,
@@ -14923,7 +15487,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "浴室三角置物架",
-      "_cjk": "浴室三角置物架"
+      "_cjk": "浴室三角置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 565,
@@ -14947,7 +15513,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "内衣收纳盒灰色17格452912cm",
-      "_cjk": "内衣收纳盒灰色格"
+      "_cjk": "内衣收纳盒灰色格",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament",
+      "size": "45x29"
     },
     {
       "id": 566,
@@ -14971,7 +15539,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "桌面收纳盒小号白色",
-      "_cjk": "桌面收纳盒小号白色"
+      "_cjk": "桌面收纳盒小号白色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 567,
@@ -14995,7 +15564,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "裤子收纳盒",
-      "_cjk": "裤子收纳盒"
+      "_cjk": "裤子收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 568,
@@ -15019,7 +15589,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "免打孔置物架",
-      "_cjk": "免打孔置物架"
+      "_cjk": "免打孔置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 569,
@@ -15043,7 +15615,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "脸盆收纳架",
-      "_cjk": "脸盆收纳架"
+      "_cjk": "脸盆收纳架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 570,
@@ -15067,7 +15641,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "洗衣机上方置物架",
-      "_cjk": "洗衣机上方置物架"
+      "_cjk": "洗衣机上方置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 571,
@@ -15091,7 +15667,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "置物架透明白",
-      "_cjk": "置物架透明白"
+      "_cjk": "置物架透明白",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 572,
@@ -15115,7 +15693,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "马桶置物架",
-      "_cjk": "马桶置物架"
+      "_cjk": "马桶置物架",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 573,
@@ -15139,7 +15719,8 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "数码收纳盒",
-      "_cjk": "数码收纳盒"
+      "_cjk": "数码收纳盒",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 574,
@@ -15163,7 +15744,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "厨房置物架全封3格4格5格",
-      "_cjk": "厨房置物架全封格格格"
+      "_cjk": "厨房置物架全封格格格",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 575,
@@ -15187,7 +15770,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "藤编收纳筐珍珠白二号玫瑰花403018",
-      "_cjk": "藤编收纳筐珍珠白二号玫瑰花"
+      "_cjk": "藤编收纳筐珍珠白二号玫瑰花",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament",
+      "size": "40x30"
     },
     {
       "id": 576,
@@ -15211,7 +15796,9 @@
       "mainCategory": "Home & Daily Living",
       "images": [],
       "_norm": "竹制收纳盒9格2款式445505",
-      "_cjk": "竹制收纳盒格款式"
+      "_cjk": "竹制收纳盒格款式",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament",
+      "size": "5x50"
     },
     {
       "id": 577,
@@ -15243,7 +15830,9 @@
       ],
       "_norm": "浴室置物架",
       "_cjk": "浴室置物架",
-      "seoOverview": "<p><b>YCS-STO-055 Metal Wall Mount Storage Rack</b> is a bathroom / kitchen wall-mounted shelf priced at <b>$9.80 USD</b> ex-factory with MOQ 20 pcs. Constructed from 304 stainless steel with a chrome or matte black finish, designed for humid bathroom environments (rust-proof, 5-year corrosion warranty). Ideal for storing shampoo, soap, towels, and kitchen spice bottles.</p><p>Dimensions: 40cm × 12cm × 10cm, holds up to 5kg per shelf. Installation: screw-mounted (wall anchors included) or adhesive option for rental apartments. The 6 real photos in the gallery show the rack detail, installation hardware, finish options, and packaging. Manufactured at a Yiwu 304-steel factory. Suitable for home organization e-commerce, hotel amenity suppliers, bathroom accessory retailers, and Amazon FBA home storage sellers. OEM custom sizes, finishes, and private-label retail packaging available from 500 pcs. Lead time 15-25 days stock, 30 days OEM.</p>"
+      "seoOverview": "<p><b>YCS-STO-055 Storage Rack Shelf Metal Wall Mount</b> is a wall-mounted cold-rolled steel storage shelving unit at <b>$1.68 USD</b> per unit, MOQ <b>20</b>. Q235 steel grade, 1.2 mm nominal sheet, 25×50 mm C-channel uprights; uniform distributed load 120 kg / shelf level (JG/T 546 tested). Wall-mounted bracket span 400–900 mm; powder coated 60–80 μm (ISO 9227 500 h salt spray ≥ 9 / 10). Applications: garage tool, warehouse picking, retail gondola, kitchen pantry, bathroom towel, office file wall. Custom length MOQ 200 pcs.</p>",
+      "material": "Heavy-Duty Cold-Rolled Steel + Spray Paint",
+      "size": "Custom Size (sizes depend on variant)"
     },
     {
       "id": 578,
@@ -15267,7 +15856,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "女士泳衣两件套",
-      "_cjk": "女士泳衣两件套"
+      "_cjk": "女士泳衣两件套",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "S"
     },
     {
       "id": 579,
@@ -15291,7 +15882,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "连体泳衣2色",
-      "_cjk": "连体泳衣色"
+      "_cjk": "连体泳衣色",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL"
     },
     {
       "id": 580,
@@ -15335,7 +15928,9 @@
       ],
       "_norm": "女士泳衣蓝色l20pcsxl20pcs",
       "_cjk": "女士泳衣蓝色",
-      "seoOverview": "<p><b>YCS-SWI-003 Women's Blue Swimsuit</b> is a swimwear set priced at <b>$43.00–$55.00 USD</b> ex-factory with MOQ 40 pcs (sold in 20-piece bulk packs per size, L and XL). The blue colorway features a flattering modest-coverage cut suitable for resort wear, beach vacations, swim training, and water aerobics. Fabric is 82% nylon + 18% spandex with UPF 50+ sun protection and chlorine-resistant finish (50+ hours pool exposure).</p><p>Color: blue (sample shown). Sizes: L (fits bust 88-92cm) and XL (fits bust 92-96cm). The 6 real photos in the gallery show front, back, side, fabric detail, and 20-pcs bulk packaging. Manufactured at a Xiamen swimwear factory with OEKO-TEX Standard 100 certification. Ideal for swimwear e-commerce brands, resort / hotel amenity procurement, swim school uniform programs, and bulk wholesale swimwear distributors. OEM custom prints, private-label hang-tags, and custom size grading available from 200 pcs per style. Lead time 15-25 days stock, 30-40 days OEM. Amazon FBA DDP shipping supported.</p>"
+      "seoOverview": "<p><b>YCS-SWI-003 Blue Swimsuit Women Swimwear 20Pcs</b> — 20-piece assorted women's blue swimwear / bikini bundle at <b>$7.38 – $9.44 USD</b> per 20-piece pack, MOQ <b>40</b>. 82% Nylon + 18% Spandex interlock (220 g/m²); chlorine-resistance 500 h ASTM D3948 – 5 grade color fastness, ≤ 5% stretch loss after 1000 stretches. Mix of one-piece, halter, triangle, high-waist, bandeau and push-up silhouettes; 4 sizes (S/M/L/XL) in 20 designs. Ideal for swimwear boutiques, TikTok Shop US, Shopify dropship bundles, beach resort retail. OEM private-label swing tag + poly bag start at 20 packs.</p>",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "XL/L"
     },
     {
       "id": 581,
@@ -15367,7 +15962,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-SWI-005-002.png"
       ],
       "_norm": "拼色泳衣两色各l20xl30",
-      "_cjk": "拼色泳衣两色各"
+      "_cjk": "拼色泳衣两色各",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "XL"
     },
     {
       "id": 582,
@@ -15391,7 +15988,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "泳衣92410黑色均码",
-      "_cjk": "泳衣黑色均码"
+      "_cjk": "泳衣黑色均码",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL"
     },
     {
       "id": 583,
@@ -15415,7 +16014,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "平角泳衣",
-      "_cjk": "平角泳衣"
+      "_cjk": "平角泳衣",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL / XXL"
     },
     {
       "id": 584,
@@ -15439,7 +16040,9 @@
       "mainCategory": "Apparel & Footwear",
       "images": [],
       "_norm": "泳衣粉黑",
-      "_cjk": "泳衣粉黑"
+      "_cjk": "泳衣粉黑",
+      "material": "82% Nylon + 18% Spandex (Quick-Dry)",
+      "size": "S / M / L / XL"
     },
     {
       "id": 585,
@@ -15511,7 +16114,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "毛毡装饰品",
-      "_cjk": "毛毡装饰品"
+      "_cjk": "毛毡装饰品",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 588,
@@ -15535,7 +16139,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "婴儿摇摇椅含玩具粉140个黑60个灰",
-      "_cjk": "婴儿摇摇椅含玩具粉个黑个灰"
+      "_cjk": "婴儿摇摇椅含玩具粉个黑个灰",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 589,
@@ -15559,7 +16164,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "早教玩具",
-      "_cjk": "早教玩具"
+      "_cjk": "早教玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 590,
@@ -15583,7 +16189,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "爬爬水垫",
-      "_cjk": "爬爬水垫"
+      "_cjk": "爬爬水垫",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 591,
@@ -15607,7 +16215,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "婴儿玩具三款",
-      "_cjk": "婴儿玩具三款"
+      "_cjk": "婴儿玩具三款",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 592,
@@ -15631,7 +16240,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童爬行垫",
-      "_cjk": "儿童爬行垫"
+      "_cjk": "儿童爬行垫",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 593,
@@ -15655,7 +16266,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "玩具收纳架",
-      "_cjk": "玩具收纳架"
+      "_cjk": "玩具收纳架",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 594,
@@ -15679,7 +16291,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童过家家玩具",
-      "_cjk": "儿童过家家玩具"
+      "_cjk": "儿童过家家玩具",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 595,
@@ -15703,7 +16316,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "存钱罐",
-      "_cjk": "存钱罐"
+      "_cjk": "存钱罐",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 596,
@@ -15727,7 +16341,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "发射器玩具",
-      "_cjk": "发射器玩具"
+      "_cjk": "发射器玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 597,
@@ -15751,7 +16366,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "电动钓鱼台玩具",
-      "_cjk": "电动钓鱼台玩具"
+      "_cjk": "电动钓鱼台玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 598,
@@ -15775,7 +16391,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "小兔子早教玩具",
-      "_cjk": "小兔子早教玩具"
+      "_cjk": "小兔子早教玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 599,
@@ -15799,7 +16416,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "音乐电话玩具",
-      "_cjk": "音乐电话玩具"
+      "_cjk": "音乐电话玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 600,
@@ -15823,7 +16441,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "小马早教玩具",
-      "_cjk": "小马早教玩具"
+      "_cjk": "小马早教玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 601,
@@ -15847,7 +16466,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "直升飞机玩具",
-      "_cjk": "直升飞机玩具"
+      "_cjk": "直升飞机玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 602,
@@ -15871,7 +16491,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "挖掘机玩具",
-      "_cjk": "挖掘机玩具"
+      "_cjk": "挖掘机玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 603,
@@ -15895,7 +16516,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "毛毡diy",
-      "_cjk": "毛毡"
+      "_cjk": "毛毡",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 604,
@@ -15919,7 +16541,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "插卡片学习机玩具",
-      "_cjk": "插卡片学习机玩具"
+      "_cjk": "插卡片学习机玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 605,
@@ -15943,7 +16567,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "小号磁性国际象棋",
-      "_cjk": "小号磁性国际象棋"
+      "_cjk": "小号磁性国际象棋",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 606,
@@ -15967,7 +16592,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "过家家玩具42件套",
-      "_cjk": "过家家玩具件套"
+      "_cjk": "过家家玩具件套",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 607,
@@ -15991,7 +16617,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "四合一拼图",
-      "_cjk": "四合一拼图"
+      "_cjk": "四合一拼图",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 608,
@@ -16015,7 +16642,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童迷宫玩具",
-      "_cjk": "儿童迷宫玩具"
+      "_cjk": "儿童迷宫玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 609,
@@ -16047,7 +16675,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-023-002.png"
       ],
       "_norm": "仿真医生玩具",
-      "_cjk": "仿真医生玩具"
+      "_cjk": "仿真医生玩具",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 610,
@@ -16071,7 +16700,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "彩屏绘画板",
-      "_cjk": "彩屏绘画板"
+      "_cjk": "彩屏绘画板",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 611,
@@ -16117,7 +16747,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-025-004.png"
       ],
       "_norm": "过家家玩具",
-      "_cjk": "过家家玩具"
+      "_cjk": "过家家玩具",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 612,
@@ -16141,7 +16772,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "过家家玩具08971a",
-      "_cjk": "过家家玩具"
+      "_cjk": "过家家玩具",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 613,
@@ -16165,7 +16797,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "早教益智玩具",
-      "_cjk": "早教益智玩具"
+      "_cjk": "早教益智玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 614,
@@ -16189,7 +16822,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "摇铃5件套",
-      "_cjk": "摇铃件套"
+      "_cjk": "摇铃件套",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 615,
@@ -16213,7 +16847,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "三合一滚动鼓玩具",
-      "_cjk": "三合一滚动鼓玩具"
+      "_cjk": "三合一滚动鼓玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 616,
@@ -16237,7 +16872,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "蒙氏早教彩虹塔叠叠乐",
-      "_cjk": "蒙氏早教彩虹塔叠叠乐"
+      "_cjk": "蒙氏早教彩虹塔叠叠乐",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 617,
@@ -16261,7 +16897,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "蒙氏早教几何四套柱",
-      "_cjk": "蒙氏早教几何四套柱"
+      "_cjk": "蒙氏早教几何四套柱",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 618,
@@ -16285,7 +16922,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "蒙氏早教几何五套柱",
-      "_cjk": "蒙氏早教几何五套柱"
+      "_cjk": "蒙氏早教几何五套柱",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 619,
@@ -16309,7 +16947,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童拼图",
-      "_cjk": "儿童拼图"
+      "_cjk": "儿童拼图",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 620,
@@ -16333,7 +16972,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "企鹅时钟玩具",
-      "_cjk": "企鹅时钟玩具"
+      "_cjk": "企鹅时钟玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 621,
@@ -16357,7 +16997,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "八音敲琴玩具",
-      "_cjk": "八音敲琴玩具"
+      "_cjk": "八音敲琴玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 622,
@@ -16381,7 +17022,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "嵌板式立体拼图8款",
-      "_cjk": "嵌板式立体拼图款"
+      "_cjk": "嵌板式立体拼图款",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 623,
@@ -16405,7 +17047,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "3d立体拼图卡",
-      "_cjk": "立体拼图卡"
+      "_cjk": "立体拼图卡",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 624,
@@ -16429,7 +17072,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "手抓板拼图",
-      "_cjk": "手抓板拼图"
+      "_cjk": "手抓板拼图",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 625,
@@ -16453,7 +17097,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "拧螺丝玩具",
-      "_cjk": "拧螺丝玩具"
+      "_cjk": "拧螺丝玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 626,
@@ -16477,7 +17122,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "电动轨道火车",
-      "_cjk": "电动轨道火车"
+      "_cjk": "电动轨道火车",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 627,
@@ -16501,7 +17148,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童学步玩具",
-      "_cjk": "儿童学步玩具"
+      "_cjk": "儿童学步玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 628,
@@ -16525,7 +17173,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "玩具小车",
-      "_cjk": "玩具小车"
+      "_cjk": "玩具小车",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 629,
@@ -16549,7 +17198,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "医生玩具套装豪华款30件",
-      "_cjk": "医生玩具套装豪华款件"
+      "_cjk": "医生玩具套装豪华款件",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 630,
@@ -16573,7 +17223,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "纸盒医生玩具42件",
-      "_cjk": "纸盒医生玩具件"
+      "_cjk": "纸盒医生玩具件",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 631,
@@ -16597,7 +17248,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童学步车",
-      "_cjk": "儿童学步车"
+      "_cjk": "儿童学步车",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 632,
@@ -16621,7 +17273,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "磁力积木玩具",
-      "_cjk": "磁力积木玩具"
+      "_cjk": "磁力积木玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 633,
@@ -16645,7 +17298,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童多功能画架8099双面画板",
-      "_cjk": "儿童多功能画架双面画板"
+      "_cjk": "儿童多功能画架双面画板",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 634,
@@ -16669,7 +17323,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "医疗箱医生服玩具45件套",
-      "_cjk": "医疗箱医生服玩具件套"
+      "_cjk": "医疗箱医生服玩具件套",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 635,
@@ -16693,7 +17348,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "医疗箱护士服玩具45件套",
-      "_cjk": "医疗箱护士服玩具件套"
+      "_cjk": "医疗箱护士服玩具件套",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 636,
@@ -16717,7 +17373,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "遥控玩具车",
-      "_cjk": "遥控玩具车"
+      "_cjk": "遥控玩具车",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 637,
@@ -16741,7 +17398,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童听诊器玩具",
-      "_cjk": "儿童听诊器玩具"
+      "_cjk": "儿童听诊器玩具",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 638,
@@ -16765,7 +17423,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "玩具三合一滚动鼓",
-      "_cjk": "玩具三合一滚动鼓"
+      "_cjk": "玩具三合一滚动鼓",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 639,
@@ -16789,7 +17448,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "拼图积木六面画交通系列",
-      "_cjk": "拼图积木六面画交通系列"
+      "_cjk": "拼图积木六面画交通系列",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 640,
@@ -16813,7 +17473,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "拼图积木六面画海洋系列",
-      "_cjk": "拼图积木六面画海洋系列"
+      "_cjk": "拼图积木六面画海洋系列",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 641,
@@ -16837,7 +17498,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "拼图积木六面农场牧场系列",
-      "_cjk": "拼图积木六面农场牧场系列"
+      "_cjk": "拼图积木六面农场牧场系列",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 642,
@@ -16861,7 +17523,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "人体结构拼图女生英文版",
-      "_cjk": "人体结构拼图女生英文版"
+      "_cjk": "人体结构拼图女生英文版",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 643,
@@ -16885,7 +17548,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "人体模型玩具txmr026",
-      "_cjk": "人体模型玩具"
+      "_cjk": "人体模型玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 644,
@@ -16909,7 +17573,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "人体模型玩具txmr026a",
-      "_cjk": "人体模型玩具"
+      "_cjk": "人体模型玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 645,
@@ -16933,7 +17598,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "儿童玩具08972a工具手提箱",
-      "_cjk": "儿童玩具工具手提箱"
+      "_cjk": "儿童玩具工具手提箱",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 646,
@@ -16979,7 +17646,9 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-061-004.png"
       ],
       "_norm": "16寸横款画板彩色笔迹浅粉色",
-      "_cjk": "寸横款画板彩色笔迹浅粉色"
+      "_cjk": "寸横款画板彩色笔迹浅粉色",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "16寸"
     },
     {
       "id": 647,
@@ -17011,7 +17680,8 @@
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-TOY-062-002.png"
       ],
       "_norm": "仿真医生玩具升级版带电16件套粉色",
-      "_cjk": "仿真医生玩具升级版带电件套粉色"
+      "_cjk": "仿真医生玩具升级版带电件套粉色",
+      "material": "PLA (Polylactic Acid) 1.75mm Filament"
     },
     {
       "id": 648,
@@ -17035,7 +17705,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "cpc摇铃5件套",
-      "_cjk": "摇铃件套"
+      "_cjk": "摇铃件套",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 649,
@@ -17059,7 +17730,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "纸盒医生玩具",
-      "_cjk": "纸盒医生玩具"
+      "_cjk": "纸盒医生玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 650,
@@ -17083,7 +17755,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "8099双面画板",
-      "_cjk": "双面画板"
+      "_cjk": "双面画板",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 651,
@@ -17107,7 +17780,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "绘画板85寸m款彩屏",
-      "_cjk": "绘画板寸款彩屏"
+      "_cjk": "绘画板寸款彩屏",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "5寸"
     },
     {
       "id": 652,
@@ -17131,7 +17806,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "45件救护车玩具",
-      "_cjk": "件救护车玩具"
+      "_cjk": "件救护车玩具",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 653,
@@ -17155,7 +17831,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "磁力积木",
-      "_cjk": "磁力积木"
+      "_cjk": "磁力积木",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 654,
@@ -17179,7 +17856,9 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "爬爬垫",
-      "_cjk": "爬爬垫"
+      "_cjk": "爬爬垫",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)",
+      "size": "S"
     },
     {
       "id": 655,
@@ -17203,7 +17882,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "积木",
-      "_cjk": "积木"
+      "_cjk": "积木",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     },
     {
       "id": 656,
@@ -17227,7 +17907,8 @@
       "mainCategory": "Baby & Toys",
       "images": [],
       "_norm": "拼图",
-      "_cjk": "拼图"
+      "_cjk": "拼图",
+      "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
     }
   ],
   "categories": [
