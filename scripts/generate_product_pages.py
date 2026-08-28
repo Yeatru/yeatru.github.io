@@ -666,17 +666,23 @@ def generate_aplus_section(product):
     cat_for_display = main_category or sub_category
 
     # Long-form Product Overview / SEO Description block
-    seo_overview = (
-        f"<p><b>{name}</b> ({sku}) wholesale supplier in {cat_for_display} from Yiwu China. "
-        f"Factory-direct price: <b>{price_usd} USD</b> with MOQ starting at <b>{moq} pieces</b>. "
-        f"Sourced from verified {sub_category} manufacturers with on-site audit and AQL 2.5 pre-shipment quality inspection. "
-        f"Ideal for Amazon FBA sellers, TikTok Shop merchants, Shopify brands, wholesale distributors, and promotional gift buyers worldwide.</p>"
-        f"<p>{desc} {name} is manufactured in Zhejiang / Guangdong with strict quality control. "
-        f"Yeatru Sourcing provides end-to-end service including supplier screening, sample evaluation, production follow-up, "
-        f"100% piece-by-piece QC inspection, free 15-day warehousing, FBA prep (FNSKU labeling, polybagging, palletization), "
-        f"and door-to-door DDP shipping to USA, EU, UK, GCC, Australia, and 50+ countries. "
-        f"OEM & private-label customization available with MOQ 200–500 pcs.</p>"
-    )
+    # 2026-08-28: prefer per-product unique seoOverview (handwritten for TOP 15 SKUs)
+    # to avoid boilerplate content that AI engines deduplicate. Falls back to template.
+    custom_overview = product.get("seoOverview", "").strip()
+    if custom_overview:
+        seo_overview = custom_overview
+    else:
+        seo_overview = (
+            f"<p><b>{name}</b> ({sku}) wholesale supplier in {cat_for_display} from Yiwu China. "
+            f"Factory-direct price: <b>{price_usd} USD</b> with MOQ starting at <b>{moq} pieces</b>. "
+            f"Sourced from verified {sub_category} manufacturers with on-site audit and AQL 2.5 pre-shipment quality inspection. "
+            f"Ideal for Amazon FBA sellers, TikTok Shop merchants, Shopify brands, wholesale distributors, and promotional gift buyers worldwide.</p>"
+            f"<p>{desc} {name} is manufactured in Zhejiang / Guangdong with strict quality control. "
+            f"Yeatru Sourcing provides end-to-end service including supplier screening, sample evaluation, production follow-up, "
+            f"100% piece-by-piece QC inspection, free 15-day warehousing, FBA prep (FNSKU labeling, polybagging, palletization), "
+            f"and door-to-door DDP shipping to USA, EU, UK, GCC, Australia, and 50+ countries. "
+            f"OEM & private-label customization available with MOQ 200–500 pcs.</p>"
+        )
 
     # SEO-rich features (with LLM-citable keywords)
     features_html = "\n".join([
