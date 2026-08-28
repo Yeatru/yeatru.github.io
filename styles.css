@@ -7501,14 +7501,18 @@ p {
 
 .product-card img {
     width: 100% !important;
-    height: 220px !important;
-    object-fit: cover !important;
-    background: var(--gray-100) !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    max-height: 280px !important;
+    object-fit: contain !important;
+    background: #F5F7FA !important;
+    padding: 10px !important;
     transition: transform var(--transition-slow);
+    display: block !important;
 }
 
 .product-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .product-card .card-body {
@@ -11676,5 +11680,151 @@ html {
         font-size: 0.82rem;               /* was 0.85 but smaller layout; keep >= 13px */
         padding: 0.5rem 0.7rem;
     }
+}
+
+/* ============================================================
+ * 17. 2026-08-28 BATCH FIXES (4 issues)
+ * ============================================================ */
+
+/* --- 17a. Issue1: Step-card text visibility on dark sections ---
+ * Root cause: the :not(.step-card p) compound selector in CSS3
+ * does NOT exclude descendants, causing dark-section white text
+ * to leak onto white step cards on mobile.
+ */
+.section-dark-alt .step-card,
+.section-dark-alt .step-card p,
+.section-dark-alt .step-card .step-desc,
+.section-dark-alt .step-card .step-title,
+.section-dark-alt .step-card h1,
+.section-dark-alt .step-card h2,
+.section-dark-alt .step-card h3,
+.section-dark-alt .step-card h4,
+.section-dark-alt .step-card span:not(.step-number),
+.section-dark-alt .step-card div:not(.step-number) {
+    color: #1A2B35 !important;
+}
+.section-dark-alt .step-card .step-desc {
+    color: #374151 !important;
+    opacity: 1 !important;
+    line-height: 1.65 !important;
+}
+/* Defensive: also force visibility base rule without .section-dark-alt wrapper */
+.step-card p,
+.step-card .step-desc,
+.step-card .step-title,
+.step-card h3 {
+    color: #1A2B35 !important;
+}
+.step-card .step-desc {
+    color: #374151 !important;
+    opacity: 1 !important;
+}
+/* Mobile: guarantee step-card inner text contrast
+ * (mobile user-agent sometimes enforces ancestor inherit differently) */
+@media (max-width: 767.98px) {
+    .step-card {
+        color: #1A2B35 !important;
+    }
+    .step-card .step-desc {
+        color: #374151 !important;
+        font-size: 0.88rem !important;
+    }
+    .section-dark-alt .step-card .step-desc {
+        color: #374151 !important;
+    }
+    .section-dark-alt .step-card p {
+        color: #374151 !important;
+    }
+}
+
+/* --- 17b. Issue4: New 2-row variant display (Color row + Size row) --- */
+.variations-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.variations-group:last-child {
+    margin-bottom: 0;
+}
+.variations-group-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #082F3B;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.15rem;
+}
+.variations-group-label i {
+    color: var(--accent-teal);
+    font-size: 0.78rem;
+}
+.variations-group-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+/* New compact option button (replaces variation-card for color/size rows) */
+.option-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    background: #fff;
+    border: 1.5px solid #D5DDE3;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #082F3B;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    min-width: 60px;
+    justify-content: center;
+    white-space: nowrap;
+}
+.option-btn:hover {
+    border-color: var(--accent-teal);
+    background: rgba(8, 47, 59, 0.04);
+}
+.option-btn.selected {
+    border-color: var(--accent-teal);
+    background: rgba(8, 47, 59, 0.1);
+    color: #05525f;
+    box-shadow: 0 0 0 2px rgba(8, 47, 59, 0.12);
+    font-weight: 700;
+}
+.option-btn .option-color-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    display: inline-block;
+}
+.option-btn .option-price {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #065f46;
+    margin-left: 0.2rem;
+}
+@media (max-width: 767.98px) {
+    .option-btn {
+        padding: 0.38rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: 52px;
+    }
+    .option-btn .option-price { font-size: 0.72rem; }
+    .variations-group-list { gap: 0.35rem; }
+}
+@media (max-width: 575.98px) {
+    .option-btn {
+        padding: 0.32rem 0.65rem;
+        font-size: 0.76rem;
+    }
+    .variations-group-label { font-size: 0.75rem; }
 }
 

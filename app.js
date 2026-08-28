@@ -998,42 +998,87 @@ function applyUsdPricePlaceholders() {
 
 /**
  * Wire up variant card click handlers on static product pages.
- * When a user clicks a variant card, we:
- *   1. Mark it as selected (visual highlight via .selected class).
- *   2. Update the hero price display (#detailPriceDisplay) to show
- *      the variant's specific price (formatted with the current currency).
+ * Supports TWO generations of variant markup:
+ *   1. Legacy flat ".variation-card" pills (single row, mutually exclusive).
+ *   2. New 2-row grouped ".option-btn" pills under ".variations-group"
+ *      (Color row + Size row; selection is exclusive PER GROUP; clicking
+ *      any pill updates the hero price to that option's representative USD).
  */
 function initVariantSelection() {
+    // ---- Legacy flat variation-card support ----
     const cards = document.querySelectorAll('.variation-card');
-    if (!cards.length) return;
+    if (cards.length) {
+        cards.forEach(card => {
+            const handler = function(e) {
+                e.preventDefault();
+                cards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const priceUsd = card.getAttribute('data-variant-price-usd');
+                if (priceUsd !== null && priceUsd !== '') {
+                    const price = parseFloat(priceUsd);
+                    if (isFinite(price)) {
+                        const display = document.getElementById('detailPriceDisplay');
+                        if (display) {
+                            display.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
+                        }
+                    }
+                }
+            };
+            card.addEventListener('click', handler);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handler(e);
+                }
+            });
+        });
+    }
 
-    cards.forEach(card => {
-        const handler = function(e) {
-            e.preventDefault();
-            // Update selected state
-            cards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-
-            // Update hero price
-            const priceUsd = card.getAttribute('data-variant-price-usd');
+    // ---- New grouped option-btn support (Issue4, 2026-08-28) ----
+    const groups = document.querySelectorAll('.variations-group');
+    if (groups.length) {
+        const priceDisplayEl = document.getElementById('detailPriceDisplay');
+        // Helper: update hero price with lowest selected value (if color+size both
+        // selected, show the higher/more specific of the two — simply use the
+        // latest clicked value, which mirrors most common eCommerce UX).
+        let lastClickedPrice = null;
+        const applyPriceFromEl = function(btn) {
+            const priceUsd = btn.getAttribute('data-variant-price-usd');
             if (priceUsd !== null && priceUsd !== '') {
                 const price = parseFloat(priceUsd);
                 if (isFinite(price)) {
-                    const display = document.getElementById('detailPriceDisplay');
-                    if (display) {
-                        display.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
+                    lastClickedPrice = price;
+                    if (priceDisplayEl) {
+                        priceDisplayEl.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
                     }
                 }
             }
         };
-        card.addEventListener('click', handler);
-        card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handler(e);
-            }
+
+        groups.forEach(group => {
+            const btns = group.querySelectorAll('.option-btn');
+            if (!btns.length) return;
+            btns.forEach(btn => {
+                const handler = function(e) {
+                    e.preventDefault();
+                    // Exclusive selection within THIS group only
+                    btns.forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    applyPriceFromEl(btn);
+                };
+                btn.addEventListener('click', handler);
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handler(e);
+                    }
+                });
+            });
         });
-    });
+
+        // Initial: if any option-btn carries an initial .selected class, prime hero
+        document.querySelectorAll('.option-btn.selected').forEach(b => applyPriceFromEl(b));
+    }
 }
 
 function initCurrencySelector() {
@@ -1684,7 +1729,37 @@ function renderIndexCategories() {
 function renderIndexHotProducts() {
     const list = document.getElementById('indexHotProducts');
     if (!list) return;
-    const products = getProducts();
+    const allProducts = getProducts();
+    // ---- 2026-08-28 curated 8 visually-refined hero SKUs ----
+    // Covering: Backpack / Handbag / Smartwatch / Tracksuit / Swimwear /
+    //           Kitchen Display / LED Decor / Beachwear
+    const CURATED_HOT_SKUS = [
+        'YCS-BAC-004',   // Black Backpack Travel Business
+        'YCS-HAB-001',   // Women's Shoulder Bag Fashion Leather 2 Colors
+        'YCS-SMA-001',   // Black Smart Watch Fitness Tracker Sports
+        'YCS-CLO-028',   // Men Sportswear Tracksuit Set Athletic Quick-Dry
+        'YCS-SWI-002',   // Swimsuit Women Swimwear 2 Colors
+        'YCS-KST-001',   // Wooden Fruit Plate Stand 3-Tier Display
+        'YCS-LED-001',   // LED Flameless Candle Home Decor Battery
+        'YCS-SHO-001',   // Beach Sandals Summer Casual 2 Pairs
+    ];
+    // Build lookup (sku -> product) keeping the curated order
+    const bySku = {};
+    for (const p of allProducts) bySku[p.sku] = p;
+    const products = [];
+    for (const sku of CURATED_HOT_SKUS) {
+        if (bySku[sku]) products.push(bySku[sku]);
+    }
+    // Fallback: if curated list is shorter than 8 (e.g. data rebuild with new
+    // SKUs that didn't land yet), pad with the first few from the full list
+    if (products.length < 8) {
+        for (const p of allProducts) {
+            if (!products.find(x => x.sku === p.sku)) {
+                products.push(p);
+                if (products.length >= 8) break;
+            }
+        }
+    }
     list.innerHTML = '';
     const displayCount = Math.min(products.length, 8);
     for (let i = 0; i < displayCount; i++) {

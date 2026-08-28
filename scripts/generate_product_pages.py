@@ -10,7 +10,9 @@ import json
 import os
 import sys
 import html
+import re
 from datetime import datetime
+from collections import OrderedDict
 
 SITE_ROOT = "/workspace/yeatru.github.io"
 SITE_DATA_PATH = os.path.join(SITE_ROOT, "site-data.json")
@@ -180,42 +182,192 @@ def generate_related_section(product, all_products):
   </div>'''
 
 
+def _split_variant_tokens(raw_value):
+    """Split a composite variant value (e.g. "XL/L" or "L【40-50kg】\nXL【50-60kg】")
+    into clean, displayable individual tokens. Strips 【】weight notes and
+    splits on common delimiters (slash, newline, comma, semicolon, plus)."""
+    if not raw_value:
+        return []
+    s = str(raw_value).strip()
+    if not s:
+        return []
+    # Remove bracketed descriptive notes like 【42.5–52.5kgs】
+    s = re.sub(r'[【\[][^】\]]*[】\]]', '', s)
+    tokens = re.split(r'[/\\\n,，;；+|]+', s)
+    out = []
+    for t in tokens:
+        t = t.strip().strip('-').strip()
+        if t and 1 <= len(t) <= 32:
+            out.append(t)
+    return out
+
+
+def _approx_hex_for_color_name(label):
+    """Return a CSS hex approximation for common named colors. Returns None when
+    the name isn't recognized (caller should then skip the swatch)."""
+    if not label:
+        return None
+    # Compact, curated map of the most common color names found in AA-730.
+    _MAP = {
+        "black": "#1F2937", "white": "#F9FAFB", "red": "#DC2626",
+        "blue": "#2563EB", "green": "#16A34A", "yellow": "#EAB308",
+        "orange": "#EA580C", "pink": "#EC4899", "purple": "#7C3AED",
+        "gray": "#6B7280", "grey": "#6B7280", "brown": "#92400E",
+        "cyan": "#0891B2", "navy": "#1E3A8A", "beige": "#F5F5DC",
+        "cream": "#FFFDD0", "khaki": "#BDB76B", "gold": "#D4AF37",
+        "silver": "#C0C0C0", "rose": "#F43F5E", "violet": "#8B5CF6",
+        "indigo": "#4F46E5", "teal": "#0D9488", "emerald": "#059669",
+        "amber": "#D97706", "lime": "#84CC16", "fuchsia": "#D946EF",
+        "sky": "#0EA5E9",
+    }
+    key = label.lower()
+    # try exact match first, then containment
+    if key in _MAP:
+        return _MAP[key]
+    for name, hexv in _MAP.items():
+        if name in key:
+            return hexv
+    return None
+
+
+def _render_variant_group(label, icon, option_tuples, default_selected_index=-1):
+    """Render one grouped option row.
+    option_tuples: list of (display_label, cny_price, color_hex_or_None, size_value_or_None)
+    default_selected_index: which option (index) to mark .selected; -1 means none.
+    """
+    buttons_html = ""
+    for idx, (opt_label, cny_price, color_override, _size_val) in enumerate(option_tuples):
+        usd_price = cny_to_usd(cny_price)
+        price_attr = f"{usd_price:.6f}" if usd_price is not None else "0"
+        price_display = format_usd(usd_price) if usd_price is not None else "—"
+        selected = " selected" if idx == default_selected_index else ""
+        # color swatch: use caller-provided hex if any; otherwise approximate from label
+        swatch_html = ""
+        if icon == "palette":
+            hex_color = color_override if (color_override or "").startswith("#") else _approx_hex_for_color_name(opt_label)
+            if hex_color:
+                swatch_html = f'<span class="option-color-swatch" style="background-color: {hex_color};"></span>'
+        buttons_html += f'''
+            <button type="button" class="option-btn{selected}"
+                    data-variant-price-usd="{price_attr}"
+                    data-variant-color="{escape_attr(color_override or "")}"
+                    data-variant-size="{escape_attr(_size_val or "")}"
+                    data-variant-name="{escape_attr(opt_label)}">
+              {swatch_html}
+              <span>{escape_text(opt_label)}</span>
+              <span class="option-price">{price_display}</span>
+            </button>'''
+
+    return f'''
+    <div class="variations-group">
+      <div class="variations-group-label"><i class="fas fa-{icon}"></i> {escape_text(label)}</div>
+      <div class="variations-group-list">{buttons_html}
+      </div>
+    </div>'''
+
+
 def generate_variations_section(product):
-    variations = product.get("variations", [])
-    if not variations or len(variations) <= 1:
+    """Issue4 (2026-08-28): Rewritten grouped variant display.
+
+    Output structure
+    ----------------
+    One <div class="variations-display"> wrapper that contains 0, 1, or 2
+    grouped rows:
+      - Color row (`.variations-group` label "Color" + palette icon)
+      - Size row  (`.variations-group` label "Size"  + ruler icon)
+
+    Each row is built by aggregating distinct values across ALL child
+    variants, splitting composite strings (e.g. "XL/L" → ["XL","L"]) and
+    using the lowest child CNY price as the representative price for
+    that option. The `Variant 1` / `Variant 2` generic naming is never
+    emitted — options display actual colour names and size tokens.
+
+    A multi-child product whose children have BOTH empty colour AND empty
+    size falls back to one generic "Options" group using child IDs.
+    Single-variant products return "" (no section rendered at all).
+    """
+    variations = product.get("variations", []) or []
+    if not variations:
         return ""
 
-    cards_html = ""
-    for i, var in enumerate(variations):
-        v_price = var.get("price", product.get("priceMin", 0))
-        v_usd = cny_to_usd(v_price)
-        v_name = var.get("color", "") or var.get("size", "") or f"Variant {i+1}"
-        v_size = var.get("size", "")
-        v_color = var.get("color", "")
-        v_price_attr = f"{v_usd:.6f}" if v_usd is not None else "0"
-        v_price_display = format_usd(v_usd) if v_usd is not None else "—"
-        v_selected = " selected" if i == 0 else ""
-        v_color_style = f' style="background-color: {v_color};"' if v_color else ""
+    parent_default_cny = product.get("priceMin", 0)
 
-        cards_html += f'''
-        <div class="variation-card{v_selected}" role="button" tabindex="0"
-             data-variant-price-usd="{v_price_attr}"
-             data-variant-name="{escape_attr(v_name)}"
-             data-variant-color="{escape_attr(v_color)}"
-             data-variant-size="{escape_attr(v_size)}">
-          <div class="variation-info">
-            {f'<span class="variation-color-dot"{v_color_style}></span>' if v_color else '<span class="variation-color-dot"></span>'}
-            <span class="variation-name">{escape_text(v_name)}</span>
-            {f'<span class="variation-size">{escape_text(v_size)}</span>' if v_size else ''}
-          </div>
-          <span class="variation-price">{v_price_display}</span>
-        </div>'''
+    color_map = OrderedDict()   # label -> min CNY price
+    size_map = OrderedDict()    # label -> min CNY price
+
+    def add_option(target_map, label, cny_price):
+        if not label:
+            return
+        try:
+            price_val = float(cny_price) if cny_price is not None else None
+        except (TypeError, ValueError):
+            price_val = None
+        if label not in target_map:
+            target_map[label] = price_val
+        elif price_val is not None:
+            prev = target_map[label]
+            if prev is None or price_val < prev:
+                target_map[label] = price_val
+
+    for var in variations:
+        raw_cny = var.get("price", parent_default_cny)
+        for tok in _split_variant_tokens(var.get("color") or ""):
+            add_option(color_map, tok, raw_cny)
+        for tok in _split_variant_tokens(var.get("size") or ""):
+            add_option(size_map, tok, raw_cny)
+
+    has_colors = len(color_map) > 0
+    has_sizes = len(size_map) > 0
+
+    if not has_colors and not has_sizes:
+        # If multiple distinct children exist, still show a generic Options row.
+        # But user explicitly requested NO "Variant N" — so we use child IDs.
+        if len(variations) <= 1:
+            return ""
+        seen_labels = set()
+        generic_options = []
+        for i, var in enumerate(variations):
+            label = (var.get("child_id") or "").strip()
+            if not label or label == product.get("sku"):
+                label = f"Option {i+1}"
+            if label in seen_labels:
+                continue
+            seen_labels.add(label)
+            generic_options.append((
+                label,
+                var.get("price", parent_default_cny),
+                None,
+                None,
+            ))
+        if len(generic_options) < 2:
+            return ""
+        group = _render_variant_group("Available Options", "list-ul", generic_options, 0)
+        return f'''
+    <div class="variations-display" style="display:block;">
+      <div class="variations-display-title" style="display:none;"></div>
+      {group}
+    </div>'''
+
+    groups_html = ""
+    if has_colors:
+        color_options = []
+        for label, cny_price in color_map.items():
+            eff_cny = cny_price if cny_price is not None else parent_default_cny
+            color_options.append((label, eff_cny, label, None))
+        groups_html += _render_variant_group("Color", "palette", color_options, 0)
+
+    if has_sizes:
+        size_options = []
+        for label, cny_price in size_map.items():
+            eff_cny = cny_price if cny_price is not None else parent_default_cny
+            size_options.append((label, eff_cny, None, label))
+        default_idx = 0 if not has_colors else -1
+        groups_html += _render_variant_group("Size", "ruler", size_options, default_idx)
 
     return f'''
     <div class="variations-display" style="display:block;">
-      <div class="variations-display-title"><i class="fas fa-palette me-1"></i> Available Options</div>
-      <div class="variations-list">{cards_html}
-      </div>
+      <div class="variations-display-title" style="display:none;"></div>
+      {groups_html}
     </div>'''
 
 
