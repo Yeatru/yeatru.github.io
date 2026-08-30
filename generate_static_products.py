@@ -105,6 +105,7 @@ BLOG_POSTS = [
     "blog-ethical-sourcing-practices.html",
     "blog-yiwu-market-agent-for-foreigners.html",
     "blog-amazon-fba-prep-service-china.html",
+    "blog-low-price-vs-procurement-expert.html",
 ]
 
 
