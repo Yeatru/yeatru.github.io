@@ -3389,3 +3389,15 @@ function initBlogCardImages() {
 }
 
 document.addEventListener('DOMContentLoaded', initBlogCardImages);
+
+// GEO price swap hook (presentation only, canonical USD preserved for SEO)
+(function yeatruGeoInit() {
+    const g = (typeof window !== "undefined") && window.__YEATRUGEO__;
+    if (!g) return;
+    document.querySelectorAll(".product-hero-price, [data-usd-price]").forEach(function (el) {
+        const usd = el.getAttribute("data-usd-price") || el.getAttribute("data-usd");
+        if (!usd) return;
+        if (!el.hasAttribute("data-geo-price-swappable")) el.setAttribute("data-geo-price-swappable", "1");
+        el.setAttribute("data-usd", usd);
+    });
+})();

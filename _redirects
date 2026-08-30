@@ -1,26 +1,14 @@
-# =====================================================
-# Cloudflare Pages 重定向配置 - 首选域名: www.yeatru.com
-# 语法: 来源URL 目标URL 状态码
-# =====================================================
+# Multi-origin canonicalization (Cloudflare Pages _redirects)
+# 1) Canonical www / apex: apex -> www (SEO-safe, 301)
+yeatru.com/*                https://www.yeatru.com/:splat        301
 
-# --- 1. 强制 www.yeatru.com 为首选域名 (B2B 外贸风格, 统一 SEO 权重) ---
-https://yeatru.com/*          https://www.yeatru.com/:splat    301!
-http://yeatru.com/*           https://www.yeatru.com/:splat    301!
-http://www.yeatru.com/*       https://www.yeatru.com/:splat    301!
+# 2) GitHub Pages + Cloudflare Pages preview domains -> production domain
+yeatru.github.io/*          https://www.yeatru.com/:splat        301
+*.pages.dev/*               https://www.yeatru.com/:splat        301
 
-# --- 2. 旧 GitHub Pages 域名 -> 新独立域名 (301 转移权重) ---
-https://yeatru.github.io/*    https://www.yeatru.com/:splat    301!
+# 3) Trailing-slash consistency (optional; kept here for crawlers)
+# (Not enforcing since Cloudflare auto-strips for HTML, this is defense-in-depth)
 
-# --- 3. Pages 临时域名 -> 正式域名 (上线后长期保留) ---
-:project.pages.dev/*          https://www.yeatru.com/:splat    301!
-
-# --- 4. URL 规范化 ---
-/services.html    /supplier-verification.html    301
-/supplier-sourcing.html    /product-sourcing.html    301
-
-# --- 5. 固定资源路径 ---
-/robots.txt     /robots.txt    200
-/sitemap.xml    /sitemap.xml   200
-/llms.txt       /llms.txt      200
-/llms-full.txt  /llms-full.txt 200
-/data.html      /data.html     200
+# 4) Legacy product files that once had broken SKUs — point 301 to the catalog
+/product-YCS-DGO-013.html   /all-products.html                    301
+/product-YCS-DGO-014.html   /all-products.html                    301
