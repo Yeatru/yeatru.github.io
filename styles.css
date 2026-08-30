@@ -11202,6 +11202,274 @@ body .banner-carousel {
 }
 
 /* --- 16f. FAQ section: tighter spacing --- */
+
+/* --- 16g. Blog article: mobile / tablet responsiveness --- */
+/* (1) Desktop — small padding tweaks already handled by Bootstrap container */
+.article-hero,
+.article-content,
+.article-related-section {
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+}
+
+/* TCO tables inside articles: nicer borders and zebra striping */
+.article-table-wrap {
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: #fff;
+    padding: 4px 2px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.tco-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+.tco-table thead th {
+    background: #eef2ff;
+    color: #3730a3;
+    font-weight: 700;
+    padding: 0.7rem 0.9rem;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #dbeafe;
+    white-space: normal;
+    vertical-align: middle;
+}
+.tco-table tbody td {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.tco-table tbody tr:nth-child(even) td { background: #fafbff; }
+.tco-table tbody tr:last-child td { border-bottom: none; }
+
+/* (2) Tablet: <= 991.98px — tighter heading, smaller H1 */
+@media (max-width: 991.98px) {
+    body .article-hero .article-title {
+        font-size: 1.75rem !important;
+    }
+    .article-content h2 { font-size: 1.35rem; }
+    .article-content h3 { font-size: 1.15rem; }
+}
+
+/* (3) Mobile main breakpoint: <= 767.98px */
+@media (max-width: 767.98px) {
+    body .article-hero .breadcrumb-bar { padding-bottom: 0.5rem !important; }
+    body .article-hero .article-category {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.7rem;
+        margin-bottom: 0.75rem !important;
+    }
+    body .article-hero .article-title {
+        font-size: 1.4rem !important;
+        line-height: 1.28 !important;
+        margin-bottom: 0.75rem !important;
+    }
+    body .article-hero .article-meta {
+        gap: 0.8rem !important;
+        font-size: 0.78rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .article-content {
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+    }
+    .article-content h2 {
+        font-size: 1.22rem !important;
+        margin-top: 1.15rem !important;
+        margin-bottom: 0.65rem !important;
+        padding-bottom: 0.35rem !important;
+        border-bottom-width: 1.5px !important;
+    }
+    .article-content h3 {
+        font-size: 1.08rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .article-content h4 {
+        font-size: 0.98rem !important;
+        margin-top: 0.9rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+    .article-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.72 !important;
+        margin: 0.6rem 0 !important;
+    }
+    .article-content li {
+        font-size: 0.93rem !important;
+        line-height: 1.65 !important;
+    }
+    .article-content ul,
+    .article-content ol {
+        margin-left: 1rem !important;
+        padding-left: 0.4rem !important;
+    }
+    .article-content blockquote {
+        padding: 0.8rem 0.9rem !important;
+        font-size: 0.93rem !important;
+        margin: 0.8rem 0 !important;
+    }
+    .article-content img {
+        margin: 0.8rem 0 !important;
+        border-radius: 6px !important;
+    }
+    /* Table wrapper on mobile */
+    .article-table-wrap {
+        padding: 2px 0 0;
+        border-radius: 10px;
+        margin: 0.8rem 0 !important;
+    }
+
+    /* ====== TABLE CARD-ISATION ON MOBILE (<=767px) ======
+       hides thead, each row becomes a block card, each td displays its
+       data-label as a pseudo-element label on the left, value on the right. */
+    .article-table-wrap .tco-table thead {
+        display: none !important;
+    }
+    .article-table-wrap .tco-table,
+    .article-table-wrap .tco-table tbody,
+    .article-table-wrap .tco-table tr,
+    .article-table-wrap .tco-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .article-table-wrap .tco-table tr {
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #fff;
+        margin-bottom: 0.8rem;
+        padding: 0.15rem 0;
+        box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+    }
+    .article-table-wrap .tco-table tbody tr:nth-child(even) td {
+        background: transparent !important;
+    }
+    .article-table-wrap .tco-table tbody td {
+        border-bottom: 1px dashed #e2e8f0;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        padding: 0.45rem 0.8rem !important;
+        text-align: right;
+        position: relative;
+        min-height: 2rem;
+        padding-left: 42% !important; /* make room for label column */
+    }
+    .article-table-wrap .tco-table tbody td:last-child {
+        border-bottom: none;
+    }
+    .article-table-wrap .tco-table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0.8rem;
+        top: 0.45rem;
+        width: calc(42% - 1.2rem);
+        text-align: left;
+        font-weight: 700;
+        color: #3730a3;
+        font-size: 0.78rem;
+        line-height: 1.35;
+        white-space: normal;
+        word-break: break-word;
+        padding-right: 0.3rem;
+    }
+    /* Special case: first col `#` counter column, keep compact */
+    .article-table-wrap .tco-table tbody td[data-label="#"] {
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: #1e293b;
+    }
+}
+
+/* (4) Extra-small phones: <= 575.98px */
+@media (max-width: 575.98px) {
+    body .article-hero .article-title {
+        font-size: 1.22rem !important;
+        line-height: 1.3 !important;
+    }
+    body .article-hero .article-meta {
+        font-size: 0.72rem !important;
+        gap: 0.6rem !important;
+    }
+    .article-content h2 { font-size: 1.12rem !important; }
+    .article-content h3 { font-size: 1rem !important; }
+    .article-content p  { font-size: 0.9rem !important; line-height: 1.7 !important; }
+    .article-content li { font-size: 0.88rem !important; }
+    .article-content blockquote { font-size: 0.88rem !important; padding: 0.7rem 0.8rem !important; }
+    .article-table-wrap {
+        border-radius: 8px;
+        margin: 0.7rem 0 !important;
+    }
+    .article-table-wrap .tco-table tr {
+        border-radius: 8px;
+        margin-bottom: 0.7rem;
+    }
+    .article-table-wrap .tco-table tbody td {
+        font-size: 0.82rem !important;
+        padding-left: 44% !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+    }
+    .article-table-wrap .tco-table tbody td::before {
+        font-size: 0.72rem;
+        width: calc(44% - 1.2rem);
+    }
+}
+
+/* (5) Ultra-narrow (<= 400px): ensure the label column never clips */
+@media (max-width: 400px) {
+    .article-table-wrap .tco-table tbody td {
+        text-align: left !important;
+        padding-left: 0.8rem !important;
+        padding-top: 1.5rem !important;
+    }
+    .article-table-wrap .tco-table tbody td::before {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 0.25rem;
+        font-size: 0.7rem !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* --- 16h. Blog nav + floating share buttons on mobile --- */
+@media (max-width: 991.98px) {
+    .breadcrumb-bar {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 0 !important;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .key-takeaways-block {
+        margin: 1.25rem 0 !important;
+        padding: 1rem 1rem !important;
+    }
+    .key-takeaways-block ul {
+        margin-left: 1rem !important;
+        padding-left: 0.5rem !important;
+    }
+    .key-takeaways-block li {
+        font-size: 0.9rem !important;
+    }
+    .author-bio .author-name,
+    .author-bio h5 {
+        font-size: 1.05rem !important;
+    }
+    .author-bio .author-desc p {
+        font-size: 0.9rem !important;
+    }
+}
 .faq-dark {
     padding-top: 20px !important;
     padding-bottom: 20px !important;

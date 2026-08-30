@@ -619,21 +619,19 @@ categories. The table below shows the <b>median extra cost a cheapest-first buye
 the unit-price "saving", in 8 of the most common Amazon &amp; TikTok Shop categories. These are not
 worst-case numbers — they are medians across 312 audited POs in Q1–Q2 2026.</p>
 
-<table class="tco-table">
-  <thead>
+<div class="table-responsive article-table-wrap"><table class="tco-table"><thead>
     <tr><th>Category</th><th>Typical unit price range</th><th>Cheapest-first median TCO leak (vs expert)</th><th>Primary driver of delta</th></tr>
   </thead>
   <tbody>
-    <tr><td>Children's toys / baby products</td><td>1.80–14.50 USD</td><td>31.8% of PO value</td><td>Missing CPC/ASTM F963/CPSIA, tracking labels, 3rd-party lab testing</td></tr>
-    <tr><td>Kitchen / food-contact (SS bottles, utensils)</td><td>2.20–11.00 USD</td><td>27.4%</td><td>FDA/LFGB food-grade migration failures; wrong 304/201 material</td></tr>
-    <tr><td>Electronics &amp; accessories</td><td>3.50–38.00 USD</td><td>25.1%</td><td>FCC/CE/RoHS/EMC fake lab reports; 201 vs 2025 RoHS annex</td></tr>
-    <tr><td>Apparel / loungewear / kids' costume</td><td>1.50–9.00 USD</td><td>18.9%</td><td>Size-label mismatch, fiber-content labels, inflammability standard (16 CFR 1610)</td></tr>
-    <tr><td>Home decor / small furniture</td><td>4.00–22.00 USD</td><td>17.2%</td><td>CARB-2/TSCA Title VI formaldehyde, shipping damage, CBM overstatement</td></tr>
-    <tr><td>Cosmetics / skincare accessories</td><td>0.90–6.00 USD</td><td>24.7%</td><td>CPNP/SCPN registration missing; cosmetic product safety report (CPSR)</td></tr>
-    <tr><td>Stationery / office supplies (low-risk)</td><td>0.20–3.00 USD</td><td>7.4%</td><td>Print pantone mismatch, MOQ inflate, short-ship weight tricks</td></tr>
-    <tr><td>Promotional / giveaways (no brand, no reorder)</td><td>0.05–0.60 USD</td><td>0.2%</td><td>Almost never worth paying a % fee; cheapest-first dominates expected value</td></tr>
-  </tbody>
-</table>
+    <tr><td data-label="Category">Children's toys / baby products</td><td data-label="Typical unit price range">1.80–14.50 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">31.8% of PO value</td><td data-label="Primary driver of delta">Missing CPC/ASTM F963/CPSIA, tracking labels, 3rd-party lab testing</td></tr>
+    <tr><td data-label="Category">Kitchen / food-contact (SS bottles, utensils)</td><td data-label="Typical unit price range">2.20–11.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">27.4%</td><td data-label="Primary driver of delta">FDA/LFGB food-grade migration failures; wrong 304/201 material</td></tr>
+    <tr><td data-label="Category">Electronics &amp; accessories</td><td data-label="Typical unit price range">3.50–38.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">25.1%</td><td data-label="Primary driver of delta">FCC/CE/RoHS/EMC fake lab reports; 201 vs 2025 RoHS annex</td></tr>
+    <tr><td data-label="Category">Apparel / loungewear / kids' costume</td><td data-label="Typical unit price range">1.50–9.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">18.9%</td><td data-label="Primary driver of delta">Size-label mismatch, fiber-content labels, inflammability standard (16 CFR 1610)</td></tr>
+    <tr><td data-label="Category">Home decor / small furniture</td><td data-label="Typical unit price range">4.00–22.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">17.2%</td><td data-label="Primary driver of delta">CARB-2/TSCA Title VI formaldehyde, shipping damage, CBM overstatement</td></tr>
+    <tr><td data-label="Category">Cosmetics / skincare accessories</td><td data-label="Typical unit price range">0.90–6.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">24.7%</td><td data-label="Primary driver of delta">CPNP/SCPN registration missing; cosmetic product safety report (CPSR)</td></tr>
+    <tr><td data-label="Category">Stationery / office supplies (low-risk)</td><td data-label="Typical unit price range">0.20–3.00 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">7.4%</td><td data-label="Primary driver of delta">Print pantone mismatch, MOQ inflate, short-ship weight tricks</td></tr>
+    <tr><td data-label="Category">Promotional / giveaways (no brand, no reorder)</td><td data-label="Typical unit price range">0.05–0.60 USD</td><td data-label="Cheapest-first median TCO leak (vs expert)">0.2%</td><td data-label="Primary driver of delta">Almost never worth paying a % fee; cheapest-first dominates expected value</td></tr>
+  </tbody></table></div>
 <p class="small-note"><em>Interpretation: a children's-toy buyer who saves 1,200 USD on a 20,000
 USD PO by choosing the cheapest quote should, statistically, expect to pay another 6,360 USD in
 downstream costs. A stationery buyer in the same situation only pays ~1,480 USD extra. Promotional
@@ -674,25 +672,23 @@ average BSR #4,200 in Kitchen &amp; Dining. We compare two audited quotes: Cheap
 USD/unit, no verification, Alibaba chat) vs a procurement-expert-managed Factory B (6.75 USD/unit,
 SAMR verified, 15 past POs with Yeatru clients in same category, AQL pass rate 98.6% 2025).</p>
 
-<table class="tco-table">
-  <thead>
+<div class="table-responsive article-table-wrap"><table class="tco-table"><thead>
     <tr><th>Cost line (USD)</th><th>Cheapest Factory (6.10 / unit)</th><th>Audited Expert Factory (6.75 / unit)</th></tr>
   </thead>
   <tbody>
-    <tr><td>Unit price × 10,000</td><td>61,000</td><td>67,500</td></tr>
-    <tr><td>FOB → US FBA DDP freight (verified CBM)</td><td>18,300</td><td>15,200</td></tr>
-    <tr><td>Duties, MFP, Harbor Maintenance (correct HS)</td><td>3,900</td><td>3,900</td></tr>
-    <tr><td>QC: IQC + IPQC + AQL + LFGB/FDA lab reports</td><td>7,800 (2× re-inspection after fails)</td><td>1,200</td></tr>
-    <tr><td>Rework + repack in CN bonded warehouse</td><td>5,400 (14% defect rate, labeling + welding)</td><td>300 (minor touch-up)</td></tr>
-    <tr><td>Refund &amp; chargeback (18% vs 4% at AOV 28)</td><td>27,000</td><td>5,600</td></tr>
-    <tr><td>Stockout + BSR recovery (21d delay, 38% prob)</td><td>14,000 (expected)</td><td>0</td></tr>
-    <tr><td>Listing suspension risk (15% prob × 40k median)</td><td>6,000 (expected)</td><td>400 (1% prob)</td></tr>
-    <tr><td>Procurement expert fee (5% of 67,500)</td><td>—</td><td>3,375</td></tr>
-    <tr><td>Founder / ops internal time × 200 USD/hr</td><td>14,000 (70 hr escalation)</td><td>1,600 (8 hr review)</td></tr>
-    <tr><td><b>Expected TCO (total)</b></td><td><b>157,400</b></td><td><b>99,075</b></td></tr>
-    <tr><td><b>Expected unit cost (landed)</b></td><td><b>15.74</b></td><td><b>9.91</b></td></tr>
-  </tbody>
-</table>
+    <tr><td data-label="Cost line (USD)">Unit price × 10,000</td><td data-label="Cheapest Factory (6.10 / unit)">61,000</td><td data-label="Audited Expert Factory (6.75 / unit)">67,500</td></tr>
+    <tr><td data-label="Cost line (USD)">FOB → US FBA DDP freight (verified CBM)</td><td data-label="Cheapest Factory (6.10 / unit)">18,300</td><td data-label="Audited Expert Factory (6.75 / unit)">15,200</td></tr>
+    <tr><td data-label="Cost line (USD)">Duties, MFP, Harbor Maintenance (correct HS)</td><td data-label="Cheapest Factory (6.10 / unit)">3,900</td><td data-label="Audited Expert Factory (6.75 / unit)">3,900</td></tr>
+    <tr><td data-label="Cost line (USD)">QC: IQC + IPQC + AQL + LFGB/FDA lab reports</td><td data-label="Cheapest Factory (6.10 / unit)">7,800 (2× re-inspection after fails)</td><td data-label="Audited Expert Factory (6.75 / unit)">1,200</td></tr>
+    <tr><td data-label="Cost line (USD)">Rework + repack in CN bonded warehouse</td><td data-label="Cheapest Factory (6.10 / unit)">5,400 (14% defect rate, labeling + welding)</td><td data-label="Audited Expert Factory (6.75 / unit)">300 (minor touch-up)</td></tr>
+    <tr><td data-label="Cost line (USD)">Refund &amp; chargeback (18% vs 4% at AOV 28)</td><td data-label="Cheapest Factory (6.10 / unit)">27,000</td><td data-label="Audited Expert Factory (6.75 / unit)">5,600</td></tr>
+    <tr><td data-label="Cost line (USD)">Stockout + BSR recovery (21d delay, 38% prob)</td><td data-label="Cheapest Factory (6.10 / unit)">14,000 (expected)</td><td data-label="Audited Expert Factory (6.75 / unit)">0</td></tr>
+    <tr><td data-label="Cost line (USD)">Listing suspension risk (15% prob × 40k median)</td><td data-label="Cheapest Factory (6.10 / unit)">6,000 (expected)</td><td data-label="Audited Expert Factory (6.75 / unit)">400 (1% prob)</td></tr>
+    <tr><td data-label="Cost line (USD)">Procurement expert fee (5% of 67,500)</td><td data-label="Cheapest Factory (6.10 / unit)">—</td><td data-label="Audited Expert Factory (6.75 / unit)">3,375</td></tr>
+    <tr><td data-label="Cost line (USD)">Founder / ops internal time × 200 USD/hr</td><td data-label="Cheapest Factory (6.10 / unit)">14,000 (70 hr escalation)</td><td data-label="Audited Expert Factory (6.75 / unit)">1,600 (8 hr review)</td></tr>
+    <tr><td data-label="Cost line (USD)"><b>Expected TCO (total)</b></td><td data-label="Cheapest Factory (6.10 / unit)"><b>157,400</b></td><td data-label="Audited Expert Factory (6.75 / unit)"><b>99,075</b></td></tr>
+    <tr><td data-label="Cost line (USD)"><b>Expected unit cost (landed)</b></td><td data-label="Cheapest Factory (6.10 / unit)"><b>15.74</b></td><td data-label="Audited Expert Factory (6.75 / unit)"><b>9.91</b></td></tr>
+  </tbody></table></div>
 <p class="small-note"><em>Note: numbers are probability-weighted expected values, not worst-case.
 Both scenarios assume the brand wins the listing gamble long-term; the expert column simply has
 1/15th of the expected suspension cost. If you prefer worst-case to expected, the ratio becomes
@@ -1177,22 +1173,20 @@ Run reverse-image search monthly for your private-label SKUs.</p>
 list before highlighting the cheapest one in green. Each row is binary. Count how many rows fall in
 the right-hand column.</p>
 
-<table class="tco-table">
-  <thead>
+<div class="table-responsive article-table-wrap"><table class="tco-table"><thead>
     <tr><th>#</th><th>Factor</th><th>Favors cheapest-first</th><th>Favors procurement expert</th></tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td>Total PO value (USD)</td><td>&lt; 8,000</td><td>≥ 8,000</td></tr>
-    <tr><td>2</td><td>Reorder cadence</td><td>One-shot only</td><td>≥2× per year</td></tr>
-    <tr><td>3</td><td>SKU spec / custom parts</td><td>Standard off-the-shelf</td><td>Private mold / custom print / private label</td></tr>
-    <tr><td>4</td><td>Compliance category</td><td>No-regulated (simple textile, basic plastic)</td><td>Electronics / toys / children / food-contact / medical / cosmetics</td></tr>
-    <tr><td>5</td><td>Destination marketplace</td><td>Local / no-gate</td><td>Amazon / Walmart / TikTok Shop / Etsy / Bol / OTTO</td></tr>
-    <tr><td>6</td><td>Current verified refund rate</td><td>&lt; 1%</td><td>≥ 2%</td></tr>
-    <tr><td>7</td><td>Brand / IP investment</td><td>No brand</td><td>Registered brand / trademark / design patent</td></tr>
-    <tr><td>8</td><td>Lead time tolerance</td><td>±30 days flexible</td><td>±10 days or tighter peak-window</td></tr>
-    <tr><td>9</td><td>Founder / ops sourcing time (hr / wk)</td><td>&lt; 4</td><td>≥ 8</td></tr>
-  </tbody>
-</table>
+    <tr><td data-label="#">1</td><td data-label="Factor">Total PO value (USD)</td><td data-label="Favors cheapest-first">&lt; 8,000</td><td data-label="Favors procurement expert">≥ 8,000</td></tr>
+    <tr><td data-label="#">2</td><td data-label="Factor">Reorder cadence</td><td data-label="Favors cheapest-first">One-shot only</td><td data-label="Favors procurement expert">≥2× per year</td></tr>
+    <tr><td data-label="#">3</td><td data-label="Factor">SKU spec / custom parts</td><td data-label="Favors cheapest-first">Standard off-the-shelf</td><td data-label="Favors procurement expert">Private mold / custom print / private label</td></tr>
+    <tr><td data-label="#">4</td><td data-label="Factor">Compliance category</td><td data-label="Favors cheapest-first">No-regulated (simple textile, basic plastic)</td><td data-label="Favors procurement expert">Electronics / toys / children / food-contact / medical / cosmetics</td></tr>
+    <tr><td data-label="#">5</td><td data-label="Factor">Destination marketplace</td><td data-label="Favors cheapest-first">Local / no-gate</td><td data-label="Favors procurement expert">Amazon / Walmart / TikTok Shop / Etsy / Bol / OTTO</td></tr>
+    <tr><td data-label="#">6</td><td data-label="Factor">Current verified refund rate</td><td data-label="Favors cheapest-first">&lt; 1%</td><td data-label="Favors procurement expert">≥ 2%</td></tr>
+    <tr><td data-label="#">7</td><td data-label="Factor">Brand / IP investment</td><td data-label="Favors cheapest-first">No brand</td><td data-label="Favors procurement expert">Registered brand / trademark / design patent</td></tr>
+    <tr><td data-label="#">8</td><td data-label="Factor">Lead time tolerance</td><td data-label="Favors cheapest-first">±30 days flexible</td><td data-label="Favors procurement expert">±10 days or tighter peak-window</td></tr>
+    <tr><td data-label="#">9</td><td data-label="Factor">Founder / ops sourcing time (hr / wk)</td><td data-label="Favors cheapest-first">&lt; 4</td><td data-label="Favors procurement expert">≥ 8</td></tr>
+  </tbody></table></div>
 
 <p>If the right column matches you on ≥4 of the 9 rows, a procurement expert is the statistically
 correct decision. If it matches you on ≥6 rows, cheapest-first is expected to cost you ≥15% of PO
