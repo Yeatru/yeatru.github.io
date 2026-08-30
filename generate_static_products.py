@@ -518,10 +518,22 @@ def render_aplus_block(b, main_image=None):
 
     if btype == "features":
         items = b.get("items") or []
-        items_html = "".join(
-            "<li>%s</li>" % (it if isinstance(it, str) else escape_html(it))
-            for it in items
-        )
+        _LI_RE = re.compile(r'^\s*<li\b[^>]*>\s*|\s*</li>\s*$', flags=re.IGNORECASE)
+
+        def _clean_item(it):
+            if not isinstance(it, str):
+                return escape_html(it)
+            # Remove any outer <li>…</li> wrapper the item already carried —
+            # we wrap exactly once below. Defensive against legacy data where
+            # build_features() used to wrap its strings with <li>/</li> and the
+            # renderer wrapped again (→ double-nested <li>, empty grid cells).
+            prev = None
+            while prev != it:
+                prev = it
+                it = _LI_RE.sub('', it)
+            return it
+
+        items_html = "".join("<li>%s</li>" % _clean_item(it) for it in items)
         if not (heading_raw or items_html):
             return ""
         return (

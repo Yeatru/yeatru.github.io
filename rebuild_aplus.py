@@ -733,21 +733,21 @@ def build_features(category, main_category, moq, usd_min, usd_max, colors_str, s
     else:
         price_str = fmt_usd(usd_min if usd_min else usd_max)
     return [
-        f"<li><b>✅ Verified Supplier:</b> On-site factory audit, business license & export license verified. "
-        f"Part of Yeatru's 75,000+ trusted Chinese manufacturer network in the {esc_html(cat_display)} category.</li>",
-        f"<li><b>💰 Factory-Direct Pricing:</b> {price_str} wholesale — no Alibaba middleman markup. "
-        f"Save 15–30% compared to trading companies. Volume discounts for orders over $5,000.</li>",
-        f"<li><b>📦 Flexible MOQ:</b> Only {moq} piece(s) for stock items. Small-batch and trial orders welcome — perfect for new sellers, TikTok shop testing, and sample runs.</li>",
-        f"<li><b>🎯 Quality Assurance:</b> 3-stage QC pipeline (incoming / in-process / pre-shipment) following AQL 2.5 standard. "
-        f"Full photo & video inspection report provided before every shipment. SGS / BV / TUV 3rd-party inspection available.</li>",
-        f"<li><b>🛠️ OEM / ODM Customization:</b> Custom logo (laser engraving / silk screen / heat transfer), "
-        f"custom colors ({esc_html(colors_str)}), custom sizes ({esc_html(sizes_str)}), private label packaging, and product design services. 7-day sample turnaround.</li>",
-        f"<li><b>🚚 Global Logistics:</b> Door-to-door DDP shipping via sea freight (25–45 days), air freight (5–15 days), "
-        f"and express courier (3–7 days). Amazon FBA warehouse delivery with FNSKU label & pallet compliance.</li>",
-        f"<li><b>🪪 Certifications:</b> Factory can provide CE, FCC, FDA, RoHS, MSDS, ASTM, CPSIA, EN71, GCC, SASO as required. "
-        f"Contact us for product-specific compliance documents.</li>",
-        f"<li><b>💬 24/7 Support:</b> Multilingual team (English / Spanish / French / Russian / Arabic). "
-        f"Free quote within 24 hours on WhatsApp +86 159 8851 6408 or email info@yeatru.com.</li>",
+        f"<b>✅ Verified Supplier:</b> On-site factory audit, business license & export license verified. "
+        f"Part of Yeatru's 75,000+ trusted Chinese manufacturer network in the {esc_html(cat_display)} category.",
+        f"<b>💰 Factory-Direct Pricing:</b> {price_str} wholesale — no Alibaba middleman markup. "
+        f"Save 15–30% compared to trading companies. Volume discounts for orders over $5,000.",
+        f"<b>📦 Flexible MOQ:</b> Only {moq} piece(s) for stock items. Small-batch and trial orders welcome — perfect for new sellers, TikTok shop testing, and sample runs.",
+        f"<b>🎯 Quality Assurance:</b> 3-stage QC pipeline (incoming / in-process / pre-shipment) following AQL 2.5 standard. "
+        f"Full photo & video inspection report provided before every shipment. SGS / BV / TUV 3rd-party inspection available.",
+        f"<b>🛠️ OEM / ODM Customization:</b> Custom logo (laser engraving / silk screen / heat transfer), "
+        f"custom colors ({esc_html(colors_str)}), custom sizes ({esc_html(sizes_str)}), private label packaging, and product design services. 7-day sample turnaround.",
+        f"<b>🚚 Global Logistics:</b> Door-to-door DDP shipping via sea freight (25–45 days), air freight (5–15 days), "
+        f"and express courier (3–7 days). Amazon FBA warehouse delivery with FNSKU label & pallet compliance.",
+        f"<b>🪪 Certifications:</b> Factory can provide CE, FCC, FDA, RoHS, MSDS, ASTM, CPSIA, EN71, GCC, SASO as required. "
+        f"Contact us for product-specific compliance documents.",
+        f"<b>💬 24/7 Support:</b> Multilingual team (English / Spanish / French / Russian / Arabic). "
+        f"Free quote within 24 hours on WhatsApp +86 159 8851 6408 or email info@yeatru.com.",
     ]
 
 
