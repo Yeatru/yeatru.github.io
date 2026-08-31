@@ -676,6 +676,7 @@ def build_head(product, canonical_url):
     jsonld = {
         "@context": "https://schema.org",
         "@type": "Product",
+        "@id": canonical_url + "#product",
         "name": name,
         "image": image,
         "description": desc_raw or desc,
@@ -744,6 +745,12 @@ def build_head(product, canonical_url):
         "review": [
             {
                 "@type": "Review",
+                "itemReviewed": {
+                    "@type": "Product",
+                    "@id": canonical_url + "#product",
+                    "name": name,
+                    "sku": sku,
+                },
                 "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
@@ -757,6 +764,12 @@ def build_head(product, canonical_url):
             },
             {
                 "@type": "Review",
+                "itemReviewed": {
+                    "@type": "Product",
+                    "@id": canonical_url + "#product",
+                    "name": name,
+                    "sku": sku,
+                },
                 "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
