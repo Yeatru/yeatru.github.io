@@ -1,4 +1,12 @@
-# Yeatru Sourcing — robots.txt (auto-generated 2026-08-30)
+# Yeatru Sourcing — robots.txt (AI-friendly revision 2026-08-31)
+#
+# We intentionally serve structured JSON endpoints (site-data.json +
+# /api/v1/*) so AI coding agents (ChatGPT/Codex/Claude/Copilot) and
+# AI search engines can fetch Yeatru's 656-product catalog without
+# scraping HTML. Every AI bot below is explicitly allowed + zero
+# crawl delay because they hit public read-only endpoints.
+
+# ── Generic crawlers ──────────────────────────────────────────────
 User-agent: *
 Allow: /
 Disallow: /admin.html
@@ -8,9 +16,102 @@ Disallow: /google*.html
 Disallow: /indexnow.txt
 Crawl-delay: 2
 
-# Sitemap index + 3 sub-sitemaps — see https://www.yeatru.com/sitemap.xml for index
+# ── OpenAI / ChatGPT / Codex ──────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
+
+User-agent: CodexBot
+Allow: /
+Crawl-delay: 0
+
+# ── Anthropic Claude ──────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0
+
+# ── Perplexity / You.com / DuckDuckGo AI / Google SGE ────────────
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 0
+
+User-agent: Google-CloudVertexBot
+Allow: /
+Crawl-delay: 0
+
+# ── Microsoft Copilot / Bing AI ───────────────────────────────────
+User-agent: BingBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: msnbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: MicrosoftBot
+Allow: /
+Crawl-delay: 0
+
+# ── GitHub Copilot / Amazon Bedrock / Salesforce Einstein ────────
+User-agent: GithubBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: SalesforceEinsteinBot
+Allow: /
+Crawl-delay: 0
+
+# ── Cohere / Meta AI ─────────────────────────────────────────────
+User-agent: CohereBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: MetaBot
+Allow: /
+Crawl-delay: 0
+
+# ── Key pages for AI crawlers ──────────────────────────────────────
+# These pages are the structured entry points AI agents look for:
+#   /data.html               → API documentation page
+#   /site-data.json          → raw 656-product JSON (566 KB)
+#   /api/v1/products         → public API endpoint (paged + filtered)
+#   /api/v1/product?sku=...  → single product lookup
+#   /api/v1/categories       → category list w/ counts
+#   /logistics-shipping.html → LCL vs FCL comparison (Polish/DE/ES/FR grounding)
+
+# ── Sitemaps ──────────────────────────────────────────────────────
 Sitemap: https://www.yeatru.com/sitemap.xml
 Sitemap: https://www.yeatru.com/sitemap-static.xml
 Sitemap: https://www.yeatru.com/sitemap-products-a-m.xml
 Sitemap: https://www.yeatru.com/sitemap-products-n-z.xml
 Sitemap: https://www.yeatru.com/sitemap-categories.xml
+
+# ── Official bot docs ─────────────────────────────────────────────
+# GPTBot: https://platform.openai.com/docs/gptbot
+# ClaudeBot: https://support.claude.com/s/article/Claude-Web-Crawler
+# PerplexityBot: https://docs.perplexity.ai/docs/perplexitybot
+# Google-Extended: https://developers.google.com/search/blog/2023/07/google-extended-crawler
