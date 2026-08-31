@@ -928,7 +928,8 @@ def build_head(product, canonical_url):
     head.append('    <link rel="preconnect" href="https://wsrv.nl" crossorigin>')
     head.append('    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">')
     head.append('    <link rel="dns-prefetch" href="https://wsrv.nl">')
-    head.append('    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">')
+    head.append('    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" media="print" onload="this.media=\'all\'" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">')
+    head.append('    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"></noscript>')
     head.append('    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">')
     head.append('    <link rel="stylesheet" href="styles.css">')
     head.append('    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>')
@@ -1521,7 +1522,7 @@ def build_product_page(product, aplus_blocks, all_products=None):
     body.append('')
     body.append(FOOTER_HTML)
     body.append('')
-    body.append('    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>')
+    body.append('    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>')
     # CRITICAL: load app.js on static product pages so that
     # 1) applyUsdPricePlaceholders() fills the data-usd-price spans
     # 2) click handlers (img / title / view-detail-link) work identically
