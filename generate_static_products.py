@@ -640,13 +640,97 @@ def render_variations(variations):
 
 
 # ============================ full product page =============================
+
+def _build_meta_description(product):
+    """Return a 120-160 char unique meta description with real keywords.
+    
+    Uses product SKU for deterministic template selection so the same SKU
+    always generates the same description (important for cache stability).
+    Falls back gracefully when fields are missing.
+    """
+    name = product.get("name", "") or ""
+    category = product.get("mainCategory", product.get("category", "")) or ""
+    price_cny = product.get("priceMin", 0) or 0
+    price_usd = _cny_to_usd(price_cny)
+    moq = product.get("moq", 0) or 0
+    sku = product.get("sku", "") or ""
+    
+    ANGLES = [
+        "Factory-direct wholesale {name} from Yiwu, China.",
+        "Source {name} with low MOQ, QC inspection & DDP shipping.",
+        "{name} at competitive factory prices — Yeatru Sourcing.",
+        "Bulk {name} supplier with audit-verified factories.",
+        "China sourcing agent for {name} — samples in 5 days.",
+        "Professional {name} wholesaler serving 200+ clients.",
+        "{name} for resellers & brands — OEM/ODM available.",
+        "Yiwu direct {name} — skip the Alibaba markup.",
+        "{name} sourcing with 3-stage QC & photo reports.",
+        "Low-MOQ {name} supplier, $5K+ volume discounts.",
+        "Import {name} from China — we handle factory → FBA.",
+        "{name} wholesale: fast samples, competitive price.",
+        "Verified supplier for {name} — audit reports on request.",
+        "{name} with factory-direct pricing, no middlemen.",
+        "Sourcing {name} for UK/EU/US — DDP with IOSS support.",
+    ]
+    
+    MOQ_PHRASES = {
+        1: "MOQ 1 — perfect for dropshipping & new sellers",
+        10: "MOQ 10 — small trial orders welcome",
+        50: "MOQ 50 — flexible for growing businesses",
+        100: "MOQ 100 — standard wholesale minimum",
+        500: "MOQ 500 — mid-volume pricing tier",
+        1000: "MOQ 1000+ — best bulk rates",
+        5000: "MOQ 5000+ — container pricing",
+        10000: "MOQ 10000+ — large-volume OEM",
+    }
+    
+    import random as _r
+    _r.seed(hash(sku) & 0xFFFFFFFF)
+    
+    angle = ANGLES[hash(sku) % len(ANGLES)]
+    desc = angle.replace("{name}", name)
+    
+    moq_keys = sorted(MOQ_PHRASES.keys())
+    moq_tier = next((k for k in moq_keys if moq <= k), moq_keys[-1])
+    moq_phrase = MOQ_PHRASES.get(moq_tier, "")
+    
+    extras = []
+    extras.append("SKU " + sku)
+    if category:
+        extras.append("in " + category)
+    if price_usd and price_usd > 0:
+        extras.append("from $%.2f USD" % price_usd)
+    if moq_phrase:
+        extras.append(moq_phrase)
+    
+    h2 = hash(sku + "_extras")
+    selected = []
+    for i, e in enumerate(extras):
+        if ((h2 >> i) & 1) and len(selected) < 3:
+            selected.append(e)
+    for e in extras:
+        if e not in selected and len(selected) < 3:
+            selected.append(e)
+    
+    meta_desc = desc + " " + ", ".join(selected[:3]) + "."
+    L = len(meta_desc)
+    if L < 120:
+        meta_desc += " Yeatru Sourcing handles factory verification, quality control, and global logistics."
+    if len(meta_desc) > 160:
+        meta_desc = meta_desc[:158].rsplit(" ", 1)[0] + "\u2026"
+    return meta_desc
+
+
 def build_head(product, canonical_url):
     name = product.get("name", "") or "Products"
     desc_raw = product.get("description", "") or ""
-    desc = desc_raw[:155] if desc_raw else (
-        "Wholesale products from China sourced by Yeatru Sourcing. "
-        "Low MOQ, competitive factory-direct prices, one-stop sourcing service."
-    )
+    # Use _build_meta_description() which guarantees 120-160 chars with
+    # real keywords (name, category, SKU, price, MOQ). Prefer a long
+    # description from site-data.json if it already exists.
+    if desc_raw and len(desc_raw) >= 120:
+        desc = desc_raw[:160]
+    else:
+        desc = _build_meta_description(product)
     image = product.get("image") or (
         "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg"
     )

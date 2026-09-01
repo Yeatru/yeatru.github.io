@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://www.yeatru.com/sitemap-static.xml</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.yeatru.com/sitemap-products-a-m.xml</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.yeatru.com/sitemap-products-n-z.xml</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.yeatru.com/sitemap-categories.xml</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </sitemap>
 </sitemapindex>
