@@ -1,4 +1,62 @@
 // ============================================================
+// EARLY NAV DROPDOWN GUARD (fixes transient "page doesn't work" flash)
+// -----------------------------------------------------------------
+// Root cause: bootstrap.bundle.min.js and app.js are both loaded with
+// `defer`, so Bootstrap's `data-api` click handler for data-bs-toggle
+// does not attach until after the DOM is fully parsed. If a user clicks
+// a nav dropdown-toggle (Products / Sourcing Service / Resources)
+// before that handler is installed, the anchor's `href` was causing
+// the browser to start navigating to "#", "/products.html", etc. and
+// Cloudflare Pages sometimes briefly showed an error page before the
+// navigation resolved.
+//
+// This capture-phase listener runs as early as possible inside app.js
+// (which itself is defer, but earlier than DOMContentLoaded-initiated
+// bootstrap data-api due to simpler startup work) and prevents the
+// default navigation for any <a> tag that acts as a Bootstrap
+// dropdown toggle. The real toggle logic then runs on bubble phase
+// (either via Bootstrap data-api when available, or via user clicking
+// a dropdown-menu item after the toggle opens).
+//
+// This is layered defense-in-depth; the primary fix is in the HTML
+// itself where all nav dropdown-toggle anchors now use
+// href="javascript:void(0)" instead of href="#" or href="products.html".
+// ============================================================
+(function installEarlyDropdownToggleGuard() {
+    function isDropdownToggleAnchor(el) {
+        if (!el || el.tagName !== 'A') return false;
+        // Any <a> that Bootstrap's data-api would later treat as a
+        // dropdown toggle, regardless of attribute order.
+        if (el.getAttribute && el.getAttribute('data-bs-toggle') === 'dropdown') return true;
+        const cls = (el.getAttribute && el.getAttribute('class')) || '';
+        if (typeof cls === 'string' && cls.indexOf('dropdown-toggle') !== -1) {
+            // Only intercept the top-level nav toggles, not nav-link items.
+            // ids used across the site: productsDropdown, servicesDropdown,
+            // resourcesDropdown. If any of these match, or if the anchor has
+            // aria-haspopup / aria-expanded typically added by the nav, guard.
+            const id = el.id || '';
+            if (id.indexOf('Dropdown') !== -1) return true;
+            if (el.hasAttribute && el.hasAttribute('aria-expanded')) return true;
+        }
+        return false;
+    }
+
+    document.addEventListener('click', function (e) {
+        const a = e.target && e.target.closest && e.target.closest('a');
+        if (!a) return;
+        if (isDropdownToggleAnchor(a)) {
+            // Prevent default navigation (the "page doesn't work" flash).
+            // Bootstrap Dropdown data-api will handle toggling on the
+            // bubble phase once it's initialized. If Bootstrap is not yet
+            // initialized, the click is still swallowed so no stray
+            // navigation occurs; the toggle simply opens on the next click
+            // after Bootstrap is ready (acceptable vs. error-page flash).
+            e.preventDefault();
+        }
+    }, true /* capture phase so we beat every other handler */);
+})();
+
+// ============================================================
 // UI Main Categories (the 17 filter pills shown on products.html).
 // Matches the filter buttons shown to buyers.
 // ============================================================

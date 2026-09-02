@@ -306,9 +306,14 @@ NAV_HTML = """    <nav class="navbar navbar-expand-lg bg-white sticky-top">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html"><i class="fas fa-th me-2 text-muted"></i>Browse All Products</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
