@@ -563,24 +563,10 @@
         text-decoration: none;
     }
 
-    /* 10. 顶部 Ribbon / 徽章 */
-    .spc-ribbon {
-        position: absolute;
-        z-index: 2;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #fff;
-        white-space: nowrap;
-    }
-    .spc-ribbon.p0 { top: 0; right: 0; background: #10b981; padding: 0.38rem 1.15rem; border-bottom-left-radius: 16px; }
-    .spc-ribbon.p2 { top: 0.9rem; right: 0.9rem;
-        background: linear-gradient(135deg, #0d9488, #0f766e);
-        padding: 0.3rem 0.85rem;
-        border-radius: 999px;
-        box-shadow: 0 4px 14px rgba(13,148,136,0.35);
-    }
+    /* 10. 顶部 Ribbon / 徽章 — unified skeleton defined above */
+    /* Ribbon unified under .spc-ribbon skeleton above — keep these as no-op placeholders */
+    .spc-ribbon.p0 {}
+    .spc-ribbon.p2 {}
 
 
     /* Header 48px icon tile — size and content alignment (shared) + tier color tints */
@@ -593,6 +579,92 @@
     .spc-icon-tile.p1 { background: #2563eb; box-shadow: 0 6px 16px rgba(37,99,235,0.30); }
     .spc-icon-tile.p2 { background: #0d9488; box-shadow: 0 6px 16px rgba(13,148,136,0.30); }
     .spc-icon-tile i { color: #fff; font-size: 1.22rem; }
+
+
+
+    /* ============================================================
+     *  Card Skeleton — ONE shape, THREE color tints (.p0 / .p1 / .p2)
+     *  统一骨架：border-radius / border / shadow / background / header 渐变 /
+     *            price 虚线 / ribbon 形状
+     * ============================================================ */
+    .plan-card {
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    /* Card border + soft inner fade — unified 2px solid brand */
+    .plan-card.p0 { border: 2px solid #10b981; box-shadow: 0 12px 40px rgba(16,185,129,0.18);
+                    background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 28%); }
+    .plan-card.p1 { border: 2px solid #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.14);
+                    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 28%); }
+    .plan-card.p2 { border: 2px solid #0d9488; box-shadow: 0 12px 40px rgba(13,148,136,0.16);
+                    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 28%); }
+
+    /* Header — unified 135deg 3-stop gradient per tier */
+    .spc-card-header {
+        min-height: 152px;
+        padding: 1.5rem 1.5rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+    .spc-card-header.p0 { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #f0fdf4 100%); }
+    .spc-card-header.p1 { background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 55%, #f8fafc 100%); }
+    .spc-card-header.p2 { background: linear-gradient(135deg, #ccfbf1 0%, #f0fdfa 55%, #f8fafc 100%); }
+
+    /* Price divider — dashed line, tinted by tier (P0 dashed green, P1 dashed blue, P2 dashed teal) */
+    .spc-divider { border-bottom-style: dashed; border-bottom-width: 1px; }
+    .spc-divider.dashed { /* legacy no-op, kept for safety */ }
+    .spc-divider.p0 { border-bottom-color: #a7f3d0; }
+    .spc-divider.p1 { border-bottom-color: #bfdbfe; }
+    .spc-divider.p2 { border-bottom-color: #99f6e4; }
+
+    /* Footer — unified pure white (no color differentiation needed here) */
+    .spc-card-footer {
+        min-height: 150px;
+        padding: 1rem 1.5rem 1.5rem;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .spc-card-footer.with-secondary { gap: 0.45rem; }
+
+    /* Body padding — unified */
+    .spc-card-body {
+        padding: 1.5rem 1.5rem 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Ribbon — ALL cards use the SAME pill shape & position (top-right, 10px pill) */
+    .spc-ribbon {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 3;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        white-space: nowrap;
+        padding: 0.32rem 0.85rem;
+        border-radius: 999px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .spc-ribbon.p0 { background: #10b981; }
+    .spc-ribbon.p1 { background: #2563eb; }
+    .spc-ribbon.p2 { background: linear-gradient(135deg, #0d9488, #0f766e); }
+
+    /* Note block (Plan0 / Plan1) — unify border-radius & subtle left accent bar */
+    .spc-note.p1 { border-left: 3px solid #2563eb; }
+
+    /* Tier table (Plan2) — outer border tint + "top" row highlight tone */
+    .spc-tier-table { border: 1px solid #ccfbf1; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 #fff; }
 
     /* 11. Section Eyebrow / Title / Subtitle */
     .spc-section-eyebrow {
@@ -614,9 +686,7 @@
         color: #64748b;
     }
 
-    /* 12. <hr divider> 三卡通用 */
-    .spc-divider.dashed { border-bottom: 1px dashed #a7f3d0; }
-    .spc-divider.solid  { border-bottom: 1px solid #f1f5f9; }
+    /* 12. Price divider — unified dashed, tinted by tier (skeleton block above) */
 
 
     /* Tiered tint classes for decorative inline helper icons inside text blocks */
@@ -844,13 +914,13 @@
                 <!-- Plan 0: Free Quotation Service                          -->
                 <!-- ======================================================= -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="plan-card h-100" style="background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); border-radius: 20px; border: 2px solid #10b981; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 40px rgba(16,185,129,0.18); position: relative;">
+                    <div class="plan-card h-100 p0">
                         <!-- Ribbon -->
                         <div class="spc-ribbon p0">
                             <i class="fas fa-gift me-1"></i> Always Free
                         </div>
-                        <!-- Header (统一高度: min-height 152px) -->
-                        <div style="min-height: 152px; background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #f0fdf4 100%); padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                        <!-- Header -->
+                        <div class="spc-card-header p0">
                             <div style="display: flex; align-items: flex-start; gap: 0.9rem;">
                                 <div class="spc-icon-tile p0">
                                     <i class="fas fa-receipt"></i>
@@ -861,13 +931,13 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Price (统一高度: min-height 124px) -->
-                        <div class="spc-divider dashed" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
+                        <!-- Price -->
+                        <div class="spc-divider p0" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
                             <div class="spc-price-amount p0">$0</div>
                             <div class="spc-price-sub p0" style="margin-top: 0.4rem;">UPFRONT COST · NO DEPOSIT · NO CARD</div>
                         </div>
-                        <!-- Body (flex 1，内容自由占高；各功能段内容量不一，后续 Best For/Features 段的 min-height 在三卡间保持一致) -->
-                        <div style="padding: 1.5rem 1.5rem 0; flex: 1; display: flex; flex-direction: column;">
+                        <!-- Body -->
+                        <div class="spc-card-body">
                             <div style="margin-bottom: 1.4rem;">
                                 <div class="spc-section-label" style="margin-bottom: 0.55rem;">What You Get <span class="accent">· 100% Free</span></div>
                                 <ul class="spc-body-list" style="gap: 0.55rem;">
@@ -913,8 +983,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- CTA (统一高度: min-height 150px) -->
-                        <div style="min-height: 150px; padding: 1rem 1.5rem 1.5rem; background: #fff; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.45rem;">
+                        <!-- CTA -->
+                        <div class="spc-card-footer with-secondary">
                             <a href="mailto:info@yeatru.com?subject=Free%20Quotation%20Request%20-%20Sourcing%20from%20China" class="spc-cta p0">
                                 <i class="fas fa-paper-plane me-1"></i> Request Free Quote
                             </a>
@@ -928,9 +998,9 @@
                 <!-- Plan 1: Order Management Service                        -->
                 <!-- ======================================================= -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="plan-card h-100" style="background: #fff; border-radius: 20px; border: 1px solid #e5e7eb; border-left: 4px solid #2563eb; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 6px 20px rgba(37,99,235,0.06);">
-                        <!-- Header (统一高度 152px) -->
-                        <div style="min-height: 152px; background: linear-gradient(90deg, #eff6ff 0%, #f8fafc 100%); padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                    <div class="plan-card h-100 p1">
+                        <!-- Header -->
+                        <div class="spc-card-header p1">
                             <div style="display: flex; align-items: flex-start; gap: 0.9rem;">
                                 <div class="spc-icon-tile p1">
                                     <i class="fas fa-clipboard-check"></i>
@@ -945,8 +1015,8 @@
                                 <span class="spc-tag p1"><i class="fas fa-check me-1"></i><span data-i18n="sp.plan1Tag5">Basic QC</span></span>
                             </div>
                         </div>
-                        <!-- Price (统一高度 124px) -->
-                        <div class="spc-divider solid" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
+                        <!-- Price -->
+                        <div class="spc-divider p1" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;">
                                 <div class="spc-price-amount p1">3% ~ 4%</div>
                                 <div class="spc-price-sub" data-i18n="sp.commission">commission</div>
@@ -955,8 +1025,8 @@
                                 <i class="fas fa-flag me-1 spc-tint p1"></i><span data-i18n="sp.plan1Min2">Minimum USD 50 per order</span>
                             </div>
                         </div>
-                        <!-- Body (统一 Best For + Features 段结构，确保纵向高度和 Plan2 对齐) -->
-                        <div style="padding: 1.5rem 1.5rem 0; flex: 1; display: flex; flex-direction: column;">
+                        <!-- Body -->
+                        <div class="spc-card-body">
                             <!-- Best For (统一 min-height 100px) -->
                             <div style="min-height: 100px; margin-bottom: 1.1rem;">
                                 <div class="spc-section-label" style="margin-bottom: 0.5rem;">Best For</div>
@@ -996,8 +1066,8 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- CTA (统一高度 150px) -->
-                        <div style="min-height: 150px; padding: 1rem 1.5rem 1.5rem; background: #fff; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <!-- CTA -->
+                        <div class="spc-card-footer">
                             <a href="contact.html" class="spc-cta p1 w-100" data-i18n="sp.selectPlan1">Select Plan 1</a>
                         </div>
                     </div>
@@ -1006,16 +1076,16 @@
                 <!-- Plan 2: Full Sourcing Service (Most Popular)            -->
                 <!-- ======================================================= -->
                 <div class="col-md-8 col-lg-4">
-                    <div class="plan-card featured h-100" style="background: #fff; border-radius: 20px; border: 2px solid #0d9488; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 14px 44px rgba(13, 148, 136, 0.14); position: relative;">
-                        <!-- Most Popular 色带 (移动到 header 内避免遮挡标题) -->
+                    <div class="plan-card h-100 p2 featured">
+                        <!-- Most Popular 色带 -->
                         <div class="spc-ribbon p2" data-i18n="sp.mostPopular">★ Most Popular</div>
-                        <!-- Header (统一高度 152px) -->
-                        <div style="min-height: 152px; background: linear-gradient(90deg, #f0fdfa 0%, #f8fafc 100%); padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                        <!-- Header -->
+                        <div class="spc-card-header p2">
                             <div style="display: flex; align-items: flex-start; gap: 0.9rem;">
                                 <div class="spc-icon-tile p2">
                                     <i class="fas fa-search-location"></i>
                                 </div>
-                                <div style="min-width: 0; flex: 1; padding-right: 7.5rem;">
+                                <div style="min-width: 0; flex: 1;">
                                     <div class="spc-plan-badge p2" data-i18n="sp.plan2Badge">Plan 2 · End-to-End Tier</div>
                                     <div class="spc-plan-title" data-i18n="sp.plan2Title">Full Sourcing Service</div>
                                 </div>
@@ -1025,8 +1095,8 @@
                                 <span class="spc-tag p2"><i class="fas fa-check me-1"></i><span data-i18n="sp.plan2Tag5">Factory Audit</span></span>
                             </div>
                         </div>
-                        <!-- Price (统一高度 124px) -->
-                        <div class="spc-divider solid" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
+                        <!-- Price -->
+                        <div class="spc-divider p2" style="min-height: 124px; padding: 1.5rem 1.5rem 1.4rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;">
                                 <div class="spc-price-amount p2">4% ~ 8%</div>
                                 <div class="spc-price-sub" data-i18n="sp.tieredCommission">tiered commission</div>
@@ -1036,7 +1106,7 @@
                             </div>
                         </div>
                         <!-- Body -->
-                        <div style="padding: 1.5rem 1.5rem 0; flex: 1; display: flex; flex-direction: column;">
+                        <div class="spc-card-body">
                             <!-- Best For (统一 min-height 100px) -->
                             <div style="min-height: 100px; margin-bottom: 1rem;">
                                 <div class="spc-section-label" style="margin-bottom: 0.5rem;">Best For</div>
@@ -1045,7 +1115,7 @@
                             <!-- Tier Pricing (对应 Plan0 的 How We Earn / Plan1 的 Service Model；统一 min-height 210px 匹配 Plan1 What's Included 段) -->
                             <div style="margin-bottom: 1.25rem;">
                                 <div class="spc-section-label" style="margin-bottom: 0.6rem;" data-i18n="sp.tieredRates">Tiered Commission Rates</div>
-                                <div style="border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 #fff;">
+                                <div class="spc-tier-table">
                                     <div class="spc-tier-row bg-alt">
                                         <span class="spc-tier-label" data-i18n="sp.tier1Range">Below USD 5,000</span>
                                         <span class="spc-tier-value">7% ~ 8%</span>
@@ -1091,8 +1161,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- CTA (统一高度 150px) -->
-                        <div style="min-height: 150px; padding: 1rem 1.5rem 1.5rem; background: #fff; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <!-- CTA -->
+                        <div class="spc-card-footer">
                             <a href="contact.html" class="spc-cta p2 w-100" data-i18n="sp.getStartedPlan2">Get Started with Plan 2</a>
                         </div>
                     </div>
