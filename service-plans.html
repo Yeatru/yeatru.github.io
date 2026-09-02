@@ -396,7 +396,7 @@
     }
     .spc-plan-badge.p0 { color: #065f46; }   /* Free Quotation (green) */
     .spc-plan-badge.p1 { color: #2563eb; }   /* Order Management (blue) */
-    .spc-plan-badge.p2 { color: #0d9488; }   /* Full Sourcing (teal)   */
+    .spc-plan-badge.p2 { color: #f97316; }   /* Full Sourcing (teal)   */
 
     .spc-plan-title {
         font-size: 1.22rem;
@@ -432,7 +432,7 @@
         color: #475569;
     }
     .spc-price-min.p1 { color: #2563eb; }     /* icon tint 保留，不影响主文字 */
-    .spc-price-min.p2 { color: #0d9488; }
+    .spc-price-min.p2 { color: #f97316; }
 
     /* 3. 区段 label (Best For / What's Included / Tiered Rates) */
     .spc-section-label {
@@ -478,7 +478,7 @@
     }
     .spc-icon.p0 { color: #10b981; }
     .spc-icon.p1 { color: #2563eb; }
-    .spc-icon.p2 { color: #0d9488; }
+    .spc-icon.p2 { color: #f97316; }
 
     /* 5. Note / Info block (Plan0 How We Earn / Plan1 Service Model) */
     .spc-note {
@@ -511,10 +511,10 @@
     .spc-tier-row { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0.95rem; }
     .spc-tier-row + .spc-tier-row { border-top: 1px solid #f1f5f9; }
     .spc-tier-row.bg-alt { background: #f8fafc; }
-    .spc-tier-row.bg-feat { background: #f0fdfa; }
+    .spc-tier-row.bg-feat { background: #fff7ed; }
     .spc-tier-label { font-size: 0.85rem; color: #334155; }
-    .spc-tier-row.bg-feat .spc-tier-label { color: #134e4a; font-weight: 600; }
-    .spc-tier-value { font-size: 0.88rem; font-weight: 700; color: #0d9488; }
+    .spc-tier-row.bg-feat .spc-tier-label { color: #9a3412; font-weight: 600; }
+    .spc-tier-value { font-size: 0.88rem; font-weight: 700; color: #f97316; }
     .spc-tier-row.bg-feat .spc-tier-value { font-size: 0.9rem; font-weight: 800; }
 
     /* 7. Tier 百分比小卡片 (Plan0 专有) */
@@ -533,7 +533,7 @@
         gap: 0.25rem;
     }
     .spc-tag.p1 { background: #dbeafe; color: #1e3a8a; }
-    .spc-tag.p2 { background: #ccfbf1; color: #134e4a; }
+    .spc-tag.p2 { background: #fed7aa; color: #9a3412; }
 
     /* 9. CTA 按钮三卡统一 (CTA 主按钮) */
     .spc-cta {
@@ -551,7 +551,7 @@
     .spc-cta:hover { transform: translateY(-1px); color: #fff; text-decoration: none; }
     .spc-cta.p0 { background: #10b981; border: 1px solid #10b981; box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
     .spc-cta.p1 { background: #2563eb; border: 1px solid #2563eb; box-shadow: 0 6px 18px rgba(37,99,235,0.30); }
-    .spc-cta.p2 { background: linear-gradient(135deg, #0d9488, #0f766e); border: 1px solid #0d9488; box-shadow: 0 6px 18px rgba(13,148,136,0.35); }
+    .spc-cta.p2 { background: linear-gradient(135deg, #f97316, #ea580c); border: 1px solid #f97316; box-shadow: 0 6px 18px rgba(13,148,136,0.35); }
 
     .spc-cta-secondary {
         display: block;
@@ -577,7 +577,7 @@
     }
     .spc-icon-tile.p0 { background: #10b981; box-shadow: 0 6px 16px rgba(16,185,129,0.35); }
     .spc-icon-tile.p1 { background: #2563eb; box-shadow: 0 6px 16px rgba(37,99,235,0.30); }
-    .spc-icon-tile.p2 { background: #0d9488; box-shadow: 0 6px 16px rgba(13,148,136,0.30); }
+    .spc-icon-tile.p2 { background: #f97316; box-shadow: 0 6px 16px rgba(13,148,136,0.30); }
     .spc-icon-tile i { color: #fff; font-size: 1.22rem; }
 
 
@@ -599,8 +599,8 @@
                     background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 28%); }
     .plan-card.p1 { border: 2px solid #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.14);
                     background: linear-gradient(180deg, #eff6ff 0%, #ffffff 28%); }
-    .plan-card.p2 { border: 2px solid #0d9488; box-shadow: 0 12px 40px rgba(13,148,136,0.16);
-                    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 28%); }
+    .plan-card.p2 { border: 2px solid #f97316; box-shadow: 0 12px 40px rgba(13,148,136,0.16);
+                    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 28%); }
 
     /* Header — unified 135deg 3-stop gradient per tier */
     .spc-card-header {
@@ -612,14 +612,14 @@
     }
     .spc-card-header.p0 { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #f0fdf4 100%); }
     .spc-card-header.p1 { background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 55%, #f8fafc 100%); }
-    .spc-card-header.p2 { background: linear-gradient(135deg, #ccfbf1 0%, #f0fdfa 55%, #f8fafc 100%); }
+    .spc-card-header.p2 { background: linear-gradient(135deg, #fed7aa 0%, #fff7ed 55%, #f8fafc 100%); }
 
     /* Price divider — dashed line, tinted by tier (P0 dashed green, P1 dashed blue, P2 dashed teal) */
     .spc-divider { border-bottom-style: dashed; border-bottom-width: 1px; }
     .spc-divider.dashed { /* legacy no-op, kept for safety */ }
     .spc-divider.p0 { border-bottom-color: #a7f3d0; }
     .spc-divider.p1 { border-bottom-color: #bfdbfe; }
-    .spc-divider.p2 { border-bottom-color: #99f6e4; }
+    .spc-divider.p2 { border-bottom-color: #fdba74; }
 
     /* Footer — unified pure white (no color differentiation needed here) */
     .spc-card-footer {
@@ -658,13 +658,13 @@
     }
     .spc-ribbon.p0 { background: #10b981; }
     .spc-ribbon.p1 { background: #2563eb; }
-    .spc-ribbon.p2 { background: linear-gradient(135deg, #0d9488, #0f766e); }
+    .spc-ribbon.p2 { background: linear-gradient(135deg, #f97316, #ea580c); }
 
     /* Note block (Plan0 / Plan1) — unify border-radius & subtle left accent bar */
     .spc-note.p1 { border-left: 3px solid #2563eb; }
 
     /* Tier table (Plan2) — outer border tint + "top" row highlight tone */
-    .spc-tier-table { border: 1px solid #ccfbf1; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 #fff; }
+    .spc-tier-table { border: 1px solid #fed7aa; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 #fff; }
 
     /* 11. Section Eyebrow / Title / Subtitle */
     .spc-section-eyebrow {
@@ -691,7 +691,7 @@
 
     /* Tiered tint classes for decorative inline helper icons inside text blocks */
     .spc-tint.p1 { color: #2563eb !important; }
-    .spc-tint.p2 { color: #0d9488 !important; }
+    .spc-tint.p2 { color: #f97316 !important; }
 
     /* 移动端 字体缩放（三卡联动） */
     @media (max-width: 767.98px) {
@@ -778,7 +778,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="javascript:void(0)" id="servicesDropdown" role="button" data-bs-toggle="dropdown" data-i18n="nav.services">Sourcing Service</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="blog-free-quotation-china-sourcing.html" style="color:#0d9488;font-weight:600;">🆓 Free Quotation Service</a></li>
+                            <li><a class="dropdown-item" href="blog-free-quotation-china-sourcing.html" style="color:#f97316;font-weight:600;">🆓 Free Quotation Service</a></li>
                             <li><a class="dropdown-item" href="supplier-verification.html" data-i18n="services.supplierVerification">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html" data-i18n="services.productSourcing">Product Sourcing</a></li>
                             <li><a class="dropdown-item" href="quality-control.html" data-i18n="services.qualityControl">Quality Control</a></li>
