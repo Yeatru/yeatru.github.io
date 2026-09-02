@@ -315,6 +315,7 @@ NAV_HTML = """    <nav class="navbar navbar-expand-lg bg-white sticky-top">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Sourcing Service</a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="blog-free-quotation-china-sourcing.html" style="color:#0d9488;font-weight:600;">🆓 Free Quotation Service</a></li>
                             <li><a class="dropdown-item" href="supplier-verification.html">Supplier Verification</a></li>
                             <li><a class="dropdown-item" href="product-sourcing.html">Product Sourcing</a></li>
                             <li><a class="dropdown-item" href="quality-control.html">Quality Control</a></li>
@@ -323,6 +324,7 @@ NAV_HTML = """    <nav class="navbar navbar-expand-lg bg-white sticky-top">
                             <li><a class="dropdown-item" href="factory-audit.html">Factory Audit</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="oem.html">OEM Customization</a></li>
+                            <li><a class="dropdown-item" href="wholesale-bulk-supplier-china.html" style="color:#7c3aed;font-weight:600;">💼 Wholesale &amp; Bulk Import</a></li>
                             <li><a class="dropdown-item" href="sample-order.html">Sample Order</a></li>
                             <li><a class="dropdown-item" href="service-plans.html">Service Plans</a></li>
                         </ul>
