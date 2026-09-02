@@ -641,13 +641,13 @@
     }
 
     /* ============================================================
-     *  Ribbon — 经典斜角绶带（Plan 0 绿色 / Plan 2 橙色，角度完全统一）
-     *  两个下角斜切 12px，整体顺时针旋转 12° 挂在右上角
+     *  Ribbon — 斜角绶带（Plan 0 绿色 / Plan 2 橙色，形状角度完全统一）
+     *  顶边水平 + 左边竖直 + 底边水平 + 仅右下角斜切 14px（书签式斜角）
      * ============================================================ */
     .spc-ribbon {
         position: absolute;
         top: 10px;
-        right: -22px;                /* 向右延伸出卡片边缘形成悬挂感 */
+        right: 10px;
         z-index: 3;
         font-size: 0.68rem;
         font-weight: 700;
@@ -655,12 +655,11 @@
         text-transform: uppercase;
         color: #fff;
         white-space: nowrap;
-        padding: 0.3rem 2.2rem;       /* 左右 padding 对称，clip-path 后字居中 */
-        /* 关键：两个下角各斜切 14px，形成绶带形状 */
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
-        transform: rotate(12deg);    /* 统一旋转角，两个 ribbon 完全一致 */
-        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        padding: 0.3rem 1.2rem;
         line-height: 1.4;
+        /* 仅右下角斜切 14px → 书签式斜角（两个 ribbon 共享完全相同的切角角度） */
+        clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
     }
     .spc-ribbon.p0 { background: #10b981; }
     .spc-ribbon.p2 { background: linear-gradient(135deg, #f97316, #ea580c); }
