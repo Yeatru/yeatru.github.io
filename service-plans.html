@@ -640,24 +640,29 @@
         flex-direction: column;
     }
 
-    /* Ribbon — ALL cards use the SAME pill shape & position (top-right, 10px pill) */
+    /* ============================================================
+     *  Ribbon — 经典斜角绶带（Plan 0 绿色 / Plan 2 橙色，角度完全统一）
+     *  两个下角斜切 12px，整体顺时针旋转 12° 挂在右上角
+     * ============================================================ */
     .spc-ribbon {
         position: absolute;
-        top: 14px;
-        right: 14px;
+        top: 10px;
+        right: -22px;                /* 向右延伸出卡片边缘形成悬挂感 */
         z-index: 3;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
         color: #fff;
         white-space: nowrap;
-        padding: 0.32rem 0.85rem;
-        border-radius: 999px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        padding: 0.3rem 2.2rem;       /* 左右 padding 对称，clip-path 后字居中 */
+        /* 关键：两个下角各斜切 14px，形成绶带形状 */
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+        transform: rotate(12deg);    /* 统一旋转角，两个 ribbon 完全一致 */
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        line-height: 1.4;
     }
     .spc-ribbon.p0 { background: #10b981; }
-    .spc-ribbon.p1 { background: #2563eb; }
     .spc-ribbon.p2 { background: linear-gradient(135deg, #f97316, #ea580c); }
 
     /* Note block (Plan0 / Plan1) — unify border-radius & subtle left accent bar */
