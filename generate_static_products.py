@@ -76,6 +76,7 @@ STATIC_PAGES = [
 
 # The 10 real blog HTML files that actually exist in the repo.
 BLOG_POSTS = [
+    "blog-free-quotation-china-sourcing.html",
     "blog-small-order-service-fee.html",
     "blog-product-certifications.html",
     "blog-yiwu-market-guide.html",
