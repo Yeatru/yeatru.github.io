@@ -38,6 +38,8 @@ const PERMANENT_301 = {
   '/term':                          '/terms.html',
   '/services.html':                 '/supplier-verification.html',
   '/services':                      '/supplier-verification.html',
+  '/quality-inspection.html':       '/quality-control.html',
+  '/quality-inspection':            '/quality-control.html',
 };
 
 // --- (0) 产品详情页合法SKU白名单 → 服务端301替代客户端JS redirect ---
