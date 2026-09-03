@@ -402,7 +402,7 @@
         font-size: 1.22rem;
         font-weight: 800;
         line-height: 1.22;
-        color: #0f172a;                    /* 三卡统一：slate-900 */
+        color: var(--text-primary);                    /* 三卡统一：slate-900 */
         word-break: keep-all;
         overflow-wrap: normal;
     }
@@ -429,7 +429,7 @@
     .spc-price-min {
         font-size: 0.88rem;
         font-weight: 500;
-        color: #475569;
+        color: var(--text-tertiary);
     }
     .spc-price-min.p1 { color: #2563eb; }     /* icon tint 保留，不影响主文字 */
     .spc-price-min.p2 { color: #f97316; }
@@ -453,7 +453,7 @@
     .spc-body-text p {
         font-size: 0.92rem;
         line-height: 1.6;
-        color: #334155;                        /* slate-700 三卡统一 */
+        color: var(--text-secondary);                        /* slate-700 三卡统一 */
     }
     .spc-body-list {
         list-style: none;
@@ -469,7 +469,7 @@
         padding: 0.2rem 0;
         font-size: 0.92rem;
         line-height: 1.5;
-        color: #334155;                        /* 统一：不再 Plan0 #0f172a vs others #334155 */
+        color: var(--text-secondary);                        /* 统一：不再 Plan0 var(--text-primary) vs others var(--text-secondary) */
     }
     .spc-icon {
         flex-shrink: 0;
@@ -503,7 +503,7 @@
     .spc-note-text {
         font-size: 0.84rem;
         line-height: 1.55;
-        color: #334155;
+        color: var(--text-secondary);
     }
     .spc-note-text.p0 { color: #047857; }  /* Plan0 品牌绿（合规差异） */
 
@@ -511,8 +511,8 @@
     .spc-tier-row { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0.95rem; }
     .spc-tier-row + .spc-tier-row { border-top: 1px solid #f1f5f9; }
     .spc-tier-row.bg-alt { background: #f8fafc; }
-    .spc-tier-row.bg-feat { background: #fff7ed; }
-    .spc-tier-label { font-size: 0.85rem; color: #334155; }
+    .spc-tier-row.bg-feat { background: var(--bg-panel)7ed; }
+    .spc-tier-label { font-size: 0.85rem; color: var(--text-secondary); }
     .spc-tier-row.bg-feat .spc-tier-label { color: #9a3412; font-weight: 600; }
     .spc-tier-value { font-size: 0.88rem; font-weight: 700; color: #f97316; }
     .spc-tier-row.bg-feat .spc-tier-value { font-size: 0.9rem; font-weight: 800; }
@@ -544,11 +544,11 @@
         font-size: 0.95rem;           /* 三卡统一 */
         font-weight: 700;              /* 三卡统一 */
         padding: 0.8rem 1rem;
-        color: #fff;
+        color: var(--bg-panel);
         text-decoration: none;
         transition: transform .15s ease, box-shadow .15s ease;
     }
-    .spc-cta:hover { transform: translateY(-1px); color: #fff; text-decoration: none; }
+    .spc-cta:hover { transform: translateY(-1px); color: var(--bg-panel); text-decoration: none; }
     .spc-cta.p0 { background: #10b981; border: 1px solid #10b981; box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
     .spc-cta.p1 { background: #2563eb; border: 1px solid #2563eb; box-shadow: 0 6px 18px rgba(37,99,235,0.30); }
     .spc-cta.p2 { background: linear-gradient(135deg, #f97316, #ea580c); border: 1px solid #f97316; box-shadow: 0 6px 18px rgba(249,115,22,0.30); }
@@ -578,7 +578,7 @@
     .spc-icon-tile.p0 { background: #10b981; box-shadow: 0 6px 16px rgba(16,185,129,0.35); }
     .spc-icon-tile.p1 { background: #2563eb; box-shadow: 0 6px 16px rgba(37,99,235,0.30); }
     .spc-icon-tile.p2 { background: #f97316; box-shadow: 0 6px 16px rgba(249,115,22,0.28); }
-    .spc-icon-tile i { color: #fff; font-size: 1.22rem; }
+    .spc-icon-tile i { color: var(--bg-panel); font-size: 1.22rem; }
 
 
 
@@ -596,11 +596,11 @@
     }
     /* Card border + soft inner fade — unified 2px solid brand */
     .plan-card.p0 { border: 2px solid #10b981; box-shadow: 0 12px 40px rgba(16,185,129,0.18);
-                    background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 28%); }
+                    background: linear-gradient(180deg, #ecfdf5 0%, var(--bg-panel) 28%); }
     .plan-card.p1 { border: 2px solid #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.14);
-                    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 28%); }
+                    background: linear-gradient(180deg, #eff6ff 0%, var(--bg-panel) 28%); }
     .plan-card.p2 { border: 2px solid #f97316; box-shadow: 0 12px 40px rgba(249,115,22,0.16);
-                    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 28%); }
+                    background: linear-gradient(180deg, var(--bg-panel)7ed 0%, var(--bg-panel) 28%); }
 
     /* Header — unified 135deg 3-stop gradient per tier */
     .spc-card-header {
@@ -612,7 +612,7 @@
     }
     .spc-card-header.p0 { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #f0fdf4 100%); }
     .spc-card-header.p1 { background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 55%, #f8fafc 100%); }
-    .spc-card-header.p2 { background: linear-gradient(135deg, #fed7aa 0%, #fff7ed 55%, #f8fafc 100%); }
+    .spc-card-header.p2 { background: linear-gradient(135deg, #fed7aa 0%, var(--bg-panel)7ed 55%, #f8fafc 100%); }
 
     /* Price divider — dashed line, tinted by tier (P0 dashed green, P1 dashed blue, P2 dashed teal) */
     .spc-divider { border-bottom-style: dashed; border-bottom-width: 1px; }
@@ -625,7 +625,7 @@
     .spc-card-footer {
         min-height: 150px;
         padding: 1rem 1.5rem 1.5rem;
-        background: #fff;
+        background: var(--bg-panel);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -653,7 +653,7 @@
         font-weight: 700;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: #fff;
+        color: var(--bg-panel);
         white-space: nowrap;
         padding: 0.3rem 1.2rem;
         line-height: 1.4;
@@ -668,7 +668,7 @@
     .spc-note.p1 { border-left: 3px solid #2563eb; }
 
     /* Tier table (Plan2) — outer border tint + "top" row highlight tone */
-    .spc-tier-table { border: 1px solid #fed7aa; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 #fff; }
+    .spc-tier-table { border: 1px solid #fed7aa; border-radius: 12px; overflow: hidden; box-shadow: inset 0 1px 0 var(--bg-panel); }
 
     /* 11. Section Eyebrow / Title / Subtitle */
     .spc-section-eyebrow {
@@ -900,7 +900,7 @@
         </div>
     </section>
 
-    <section id="plan-section" class="plan-section py-10" style="background: #fff;">
+    <section id="plan-section" class="plan-section py-10" style="background: var(--bg-panel);">
         <div class="container">
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
@@ -972,15 +972,15 @@
                                     <strong>5–8% commission</strong> only after you confirm an order — deducted from total order value.
                                 </div>
                                 <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 0.4rem; margin-top: 0.7rem;">
-                                    <div style="background: #fff; padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
+                                    <div style="background: var(--bg-panel); padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
                                         <div class="spc-chip-label">&lt;$5K</div>
                                         <div class="spc-chip-value">7–8%</div>
                                     </div>
-                                    <div style="background: #fff; padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
+                                    <div style="background: var(--bg-panel); padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
                                         <div class="spc-chip-label">$5K–$20K</div>
                                         <div class="spc-chip-value">5–6%</div>
                                     </div>
-                                    <div style="background: #fff; padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
+                                    <div style="background: var(--bg-panel); padding: 0.4rem 0.3rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
                                         <div class="spc-chip-label">&gt;$20K</div>
                                         <div class="spc-chip-value">4%</div>
                                     </div>
@@ -1203,7 +1203,7 @@
             <div class="section-title-wrap text-center mb-8">
                 <span class="section-eyebrow" style="color: #94B3C4;" data-i18n="sp.guideEyebrow">Quick Guide</span>
                 <div class="section-divider" style="background: #94B3C4;"></div>
-                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #fff;" data-i18n="sp.guideTitle">Which Plan Fits You?</h2>
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: var(--bg-panel);" data-i18n="sp.guideTitle">Which Plan Fits You?</h2>
                 <p class="section-subtitle" style="color: rgba(255,255,255,0.65); font-size: 1.05rem;" data-i18n="sp.guideSubtitle">A quick comparison to help you decide</p>
             </div>
             <div class="row g-6 mb-10">
@@ -1212,7 +1212,7 @@
                         <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.25rem;">
                             <i class="fas fa-handshake"></i>
                         </div>
-                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 1rem;" data-i18n="sp.choosePlan1">Choose Plan 1 If...</h4>
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--bg-panel); margin-bottom: 1rem;" data-i18n="sp.choosePlan1">Choose Plan 1 If...</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #3B82F6; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan1If1">You already have supplier contacts or factory links</span></li>
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #3B82F6; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan1If2">You've done business with the factory before</span></li>
@@ -1228,7 +1228,7 @@
                         <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #0D9488, #0F766E); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.25rem;">
                             <i class="fas fa-rocket"></i>
                         </div>
-                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 1rem;" data-i18n="sp.choosePlan2">Choose Plan 2 If...</h4>
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--bg-panel); margin-bottom: 1rem;" data-i18n="sp.choosePlan2">Choose Plan 2 If...</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #2DD4BF; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan2If1">You only have product photos or model names</span></li>
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #2DD4BF; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan2If2">You need help finding the right manufacturer</span></li>
@@ -1236,7 +1236,7 @@
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #2DD4BF; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan2If4">You're sourcing a new product category</span></li>
                             <li style="padding: 0.45rem 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #2DD4BF; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></i><span data-i18n="sp.plan2If5">You want full-service end-to-end sourcing</span></li>
                         </ul>
-                        <a href="contact.html" class="btn btn-cta btn-sm mt-4 w-100" style="background: linear-gradient(135deg, #0D9488, #0F766E); border: none; color: #fff;" data-i18n="sp.startPlan2">Start with Plan 2</a>
+                        <a href="contact.html" class="btn btn-cta btn-sm mt-4 w-100" style="background: linear-gradient(135deg, #0D9488, #0F766E); border: none; color: var(--bg-panel);" data-i18n="sp.startPlan2">Start with Plan 2</a>
                     </div>
                 </div>
             </div>
@@ -1245,13 +1245,13 @@
             <div class="section-title-wrap text-center mb-6">
                 <span class="section-eyebrow" style="color: #94B3C4;">FAQ</span>
                 <div class="section-divider" style="background: #94B3C4;"></div>
-                <h2 class="section-title" style="font-size: 1.8rem; font-weight: 800; color: #fff;">Frequently Asked Questions</h2>
+                <h2 class="section-title" style="font-size: 1.8rem; font-weight: 800; color: var(--bg-panel);">Frequently Asked Questions</h2>
                 <p class="section-subtitle" style="color: rgba(255,255,255,0.65); font-size: 1rem;">Quick answers about our service plans and pricing</p>
             </div>
             <div class="row justify-content-center mb-8">
                 <div class="col-lg-8">
                     <div class="faq-item active" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>What's the difference between Plan 1 and Plan 2?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1261,7 +1261,7 @@
                         </div>
                     </div>
                     <div class="faq-item" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>How is the commission calculated for Plan 2?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1276,7 +1276,7 @@
                         </div>
                     </div>
                     <div class="faq-item" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>Why can't I get quotes for my entire product catalogue at once?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1286,7 +1286,7 @@
                         </div>
                     </div>
                     <div class="faq-item" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>What information should I prepare before contacting you?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1303,7 +1303,7 @@
                         </div>
                     </div>
                     <div class="faq-item" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>Can I switch between plans?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1312,7 +1312,7 @@
                         </div>
                     </div>
                     <div class="faq-item" style="background: rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
-                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: #fff; cursor: pointer;">
+                        <button class="faq-question" style="width: 100%; padding: 1.1rem 1.5rem; background: transparent; border: none; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 0.97rem; font-weight: 600; color: var(--bg-panel); cursor: pointer;">
                             <span>Are there any hidden fees besides the commission?</span>
                             <i class="fas fa-chevron-down" style="color: #94B3C4;"></i>
                         </button>
@@ -1335,9 +1335,9 @@
                     <i class="fas fa-headset" style="color: #94B3C4; font-size: 1.5rem;"></i>
                 </div>
                 <span style="display: inline-block; font-size: 0.78rem; font-weight: 600; color: #94B3C4; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Still Unsure?</span>
-                <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">Not sure which plan?</h3>
+                <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--bg-panel); margin-bottom: 0.5rem;">Not sure which plan?</h3>
                 <p style="color: rgba(255,255,255,0.65); font-size: 0.97rem; margin-bottom: 1.5rem;">Talk to our team and we'll recommend the right plan for your business.</p>
-                <a href="contact.html" class="btn btn-cta btn-lg" style="padding: 0.75rem 2rem; font-size: 1rem; background: linear-gradient(135deg, #0D9488, #0F766E); border: none; color: #fff; border-radius: 10px; font-weight: 600;"><i class="fas fa-comment-dots me-2"></i>Get Free Consultation</a>
+                <a href="contact.html" class="btn btn-cta btn-lg" style="padding: 0.75rem 2rem; font-size: 1rem; background: linear-gradient(135deg, #0D9488, #0F766E); border: none; color: var(--bg-panel); border-radius: 10px; font-weight: 600;"><i class="fas fa-comment-dots me-2"></i>Get Free Consultation</a>
             </div>
 
         </div>

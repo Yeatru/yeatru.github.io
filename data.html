@@ -92,7 +92,7 @@
         }
         header {
             background: linear-gradient(135deg, #082f3b 0%, #1a5a6e 100%);
-            color: #fff; padding: 3rem 1rem; text-align: center;
+            color: var(--bg-panel); padding: 3rem 1rem; text-align: center;
         }
         header h1 { margin: 0 0 0.5rem; font-size: 2.2rem; font-weight: 800; }
         header p { margin: 0; opacity: 0.85; font-size: 1.1rem; }
@@ -106,7 +106,7 @@
         header .hero-stats span b { font-size: 1.25rem; display: block; }
 
         nav {
-            background: #fff; border-bottom: 1px solid #e1e8ed; position: sticky; top: 0; z-index: 100;
+            background: var(--bg-panel); border-bottom: 1px solid #e1e8ed; position: sticky; top: 0; z-index: 100;
             padding: 0.75rem 1rem; display: flex; gap: 1.5rem; align-items: center;
             max-width: 1200px; margin: 0 auto; justify-content: space-between;
         }
@@ -115,7 +115,7 @@
         nav .brand { font-size: 1.1rem; font-weight: 800; }
 
         main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-        section { background: #fff; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
+        section { background: var(--bg-panel); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
                   box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
         h2 { color: #082f3b; border-bottom: 2px solid #e1e8ed; padding-bottom: 0.5rem; margin-top: 0; }
         h3 { color: #1a5a6e; }
@@ -149,16 +149,16 @@
             display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;
             font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .badge-get { background: #27ae60; color: #fff; }
-        .badge-public { background: #082f3b; color: #fff; }
-        .badge-private { background: #c0392b; color: #fff; }
+        .badge-get { background: #27ae60; color: var(--bg-panel); }
+        .badge-public { background: #082f3b; color: var(--bg-panel); }
+        .badge-private { background: #c0392b; color: var(--bg-panel); }
 
         .cta-row {
-            background: linear-gradient(135deg, #082f3b, #1a5a6e); color: #fff; border-radius: 12px;
+            background: linear-gradient(135deg, #082f3b, #1a5a6e); color: var(--bg-panel); border-radius: 12px;
             padding: 2rem; text-align: center; margin: 2rem 0;
         }
         .cta-row a {
-            display: inline-block; background: #fff; color: #082f3b; padding: 0.75rem 2rem;
+            display: inline-block; background: var(--bg-panel); color: #082f3b; padding: 0.75rem 2rem;
             border-radius: 8px; text-decoration: none; font-weight: 700; margin: 0.5rem;
         }
         .cta-row a:hover { transform: translateY(-1px); }
@@ -393,7 +393,7 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
 </section>
 
 <div class="cta-row">
-    <h2 style="color:#fff;border:none;">Need custom columns or a partner endpoint?</h2>
+    <h2 style="color:var(--bg-panel);border:none;">Need custom columns or a partner endpoint?</h2>
     <p style="opacity:0.9;">The public API exposes pricing + MOQ + images + variations.
     Need factory contact info, lead-time data, or a write-back endpoint?<br>
     Email <strong>api@yeatru.com</strong> — we'll set up a partner key in 24h.</p>
