@@ -673,10 +673,10 @@ to{opacity:1;transform:translateY(0)}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
 .banner-slides{display:flex;transition:transform 0.5s cubic-bezier(.25,1,.5,1);will-change:transform}
 .banner-slide{min-width:100%;flex:0 0 100%;padding: .75rem 0 1.5rem;position:relative;display:flex;align-items:flex-start}
-.banner-slide.active>.container{width:100%;height:100%;position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center}
+.banner-slide>.container{width:100%;height:100%;position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center}
 @media(min-width:992px){.banner-slide{padding: 1rem 0 2rem;min-height:32rem;height:32rem;overflow:hidden}
 }
-@media(min-width:768px) and (max-width:991.98px){.banner-slide.active{min-height:28rem}
+@media(min-width:768px) and (max-width:991.98px){.banner-slide{min-height:28rem}
 }
 .banner-slide-bg{position:absolute;top:0;left:0;right:0;bottom:0;opacity:.05;background-size:cover;background-position:center}
 .banner-content{position:relative;z-index:2}
