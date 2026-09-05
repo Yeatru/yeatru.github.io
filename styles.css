@@ -300,6 +300,7 @@ html[data-theme="b"] {
   --gray-600: var(--c-neutral-600);
   --gray-700: var(--c-neutral-700);
   --gray-800: var(--c-neutral-800);
+  --gray-900: var(--c-neutral-900);
 
   /* ---- Primary finer shade aliases (Layer1 has these via --c-brand-*; fill
      -300/-400/-900 missing from backward-compat block) ---- */
