@@ -674,7 +674,7 @@ to{opacity:1;transform:translateY(0)}
 .banner-slides{display:flex;transition:transform 0.3s cubic-bezier(.25,1,.5,1)}
 .banner-slide{min-width:100%;padding: .75rem 0 1.5rem;position:relative;display:none}
 .banner-slide.active{display:flex;align-items:flex-start}
-.banner-slide.active>.container{width:100%}
+.banner-slide.active>.container{width:100%;height:100%}
 @media(min-width:992px){.banner-slide{padding: 1rem 0 2rem;min-height:32rem;height:32rem;overflow:hidden}
 }
 @media(min-width:768px) and (max-width:991.98px){.banner-slide.active{min-height:28rem}
