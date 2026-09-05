@@ -1769,6 +1769,8 @@ html[dir="rtl"] .d-flex.flex-row-reverse>*,body.rtl .d-flex.flex-row-reverse>*{}
 .contact-float-btn.whatsapp:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px rgba(37,211,102,0.55);background-color:#20bd5c}
 .contact-float-btn.email{background-color:var(--accent-teal);box-shadow:0 6px 24px color-mix(in oklch, var(--c-brand-800) 45%, transparent)}
 .contact-float-btn.email:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px color-mix(in oklch, var(--c-brand-800) 55%, transparent);background-color:#096a80}
+.contact-float-btn.telegram{background-color:#0088cc;box-shadow:0 6px 24px rgba(0,136,204,0.45)}
+.contact-float-btn.telegram:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px rgba(0,136,204,0.55);background-color:#0077b3}
 .contact-float-btn::after{content:attr(data-label);position:absolute;right:calc(100%+10px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.75);color:var(--bg-panel);font-size:12px;font-weight:500;padding: 4px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s cubic-bezier(.25,1,.5,1)}
 .contact-float-btn:hover::after{opacity:1}
 html[dir="rtl"] .contact-float,body.rtl .contact-float{right:auto;left:28px;align-items:flex-start}
