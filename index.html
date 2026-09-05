@@ -2479,18 +2479,23 @@
     function goToSlide(index) {
         const slides = document.querySelectorAll('.banner-slide');
         const indicators = document.querySelectorAll('.banner-indicator');
-        
+        const bannerSlides = document.getElementById('bannerSlides');
+
         if (slides.length === 0) return;
-        
+
         slides[currentSlide].classList.remove('active');
         indicators[currentSlide].classList.remove('active');
-        
+
         currentSlide = index;
         if (currentSlide >= totalSlides) currentSlide = 0;
         if (currentSlide < 0) currentSlide = totalSlides - 1;
-        
+
         slides[currentSlide].classList.add('active');
         indicators[currentSlide].classList.add('active');
+
+        if (bannerSlides) {
+            bannerSlides.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        }
     }
 
     function changeSlide(direction) {
