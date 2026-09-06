@@ -417,8 +417,23 @@ function installImageFallback(root) {
 })();
 
 // Brand logo (inline SVG) — shows real "YC" branded logo in top-left nav bar.
-const YEASTRU_BRAND_LOGO_SVG = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%20%3Crect%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22%23ffffff%22%2F%3E%20%3Cg%20transform%3D%22translate%2864%2C%2042%29%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%3E%20%3Cline%20x1%3D%22-35%22%20y1%3D%225%22%20x2%3D%22-15%22%20y2%3D%22-5%22%2F%3E%20%3Cline%20x1%3D%22-15%22%20y1%3D%22-5%22%20x2%3D%220%22%20y2%3D%225%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%225%22%20x2%3D%2215%22%20y2%3D%22-5%22%2F%3E%20%3Cline%20x1%3D%2215%22%20y1%3D%22-5%22%20x2%3D%2230%22%20y2%3D%225%22%2F%3E%20%3Cline%20x1%3D%22-15%22%20y1%3D%22-5%22%20x2%3D%22-5%22%20y2%3D%22-15%22%2F%3E%20%3Cline%20x1%3D%22-5%22%20y1%3D%22-15%22%20x2%3D%2210%22%20y2%3D%22-20%22%2F%3E%20%3Cline%20x1%3D%2215%22%20y1%3D%22-5%22%20x2%3D%2225%22%20y2%3D%22-18%22%2F%3E%20%3Cline%20x1%3D%2210%22%20y1%3D%22-20%22%20x2%3D%2225%22%20y2%3D%22-18%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%225%22%20x2%3D%228%22%20y2%3D%2215%22%2F%3E%20%3Cline%20x1%3D%2215%22%20y1%3D%22-5%22%20x2%3D%2222%22%20y2%3D%22-2%22%2F%3E%20%3Ccircle%20cx%3D%22-35%22%20cy%3D%225%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-15%22%20cy%3D%22-5%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%220%22%20cy%3D%225%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2215%22%20cy%3D%22-5%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2230%22%20cy%3D%225%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-5%22%20cy%3D%22-15%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2210%22%20cy%3D%22-20%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2225%22%20cy%3D%22-18%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%228%22%20cy%3D%2215%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2222%22%20cy%3D%22-2%22%20r%3D%224.5%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-5%22%20cy%3D%22-15%22%20r%3D%226%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%222%22%2F%3E%20%3Ccircle%20cx%3D%2210%22%20cy%3D%22-20%22%20r%3D%226%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%222%22%2F%3E%20%3Ccircle%20cx%3D%2225%22%20cy%3D%22-18%22%20r%3D%226%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%222%22%2F%3E%20%3Cg%20fill%3D%22%23FF9500%22%20stroke%3D%22none%22%3E%20%3Crect%20x%3D%22-10%22%20y%3D%22-17%22%20width%3D%2210%22%20height%3D%226%22%20rx%3D%221%22%2F%3E%20%3Ccircle%20cx%3D%22-7%22%20cy%3D%22-9%22%20r%3D%221.5%22%20fill%3D%22%23ffffff%22%2F%3E%20%3Ccircle%20cx%3D%22-3%22%20cy%3D%22-9%22%20r%3D%221.5%22%20fill%3D%22%23ffffff%22%2F%3E%20%3Cpath%20d%3D%22M21%2C-18%20L30%2C-18%20L28%2C-22%20L24%2C-22%20Z%22%20fill%3D%22%23ffffff%22%2F%3E%20%3Ccircle%20cx%3D%22-5%22%20cy%3D%22-15%22%20r%3D%223%22%20fill%3D%22%23ffffff%22%20stroke%3D%22none%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate%2864%2C%2090%29%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-weight%3D%22900%22%20fill%3D%22%23001F5C%22%3E%20%3Ctext%20x%3D%220%22%20y%3D%220%22%20font-size%3D%2242%22%20letter-spacing%3D%22-1%22%3EYeatru%3C%2Ftext%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E";
-
+const YEASTRU_BRAND_LOGO_LIGHT = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20260%2056%22%20width%3D%22260%22%20height%3D%2256%22%3E%20%3Cg%20transform%3D%22translate%2828%2C%2028%29%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%20%3Cline%20x1%3D%22-16%22%20y1%3D%223%22%20x2%3D%22-7%22%20y2%3D%22-2%22%2F%3E%20%3Cline%20x1%3D%22-7%22%20y1%3D%22-2%22%20x2%3D%220%22%20y2%3D%223%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%223%22%20x2%3D%227%22%20y2%3D%22-2%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2214%22%20y2%3D%223%22%2F%3E%20%3Cline%20x1%3D%22-7%22%20y1%3D%22-2%22%20x2%3D%22-3%22%20y2%3D%22-9%22%2F%3E%20%3Cline%20x1%3D%22-3%22%20y1%3D%22-9%22%20x2%3D%225%22%20y2%3D%22-12%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2212%22%20y2%3D%22-10%22%2F%3E%20%3Cline%20x1%3D%225%22%20y1%3D%22-12%22%20x2%3D%2212%22%20y2%3D%22-10%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%223%22%20x2%3D%224%22%20y2%3D%228%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2210%22%20y2%3D%220%22%2F%3E%20%3Ccircle%20cx%3D%22-16%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-7%22%20cy%3D%22-2%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%220%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%227%22%20cy%3D%22-2%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2214%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-3%22%20cy%3D%22-9%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%225%22%20cy%3D%22-12%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2212%22%20cy%3D%22-10%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%224%22%20cy%3D%228%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2210%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-3%22%20cy%3D%22-9%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3Ccircle%20cx%3D%225%22%20cy%3D%22-12%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3Ccircle%20cx%3D%2212%22%20cy%3D%22-10%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3C%2Fg%3E%20%3Ctext%20x%3D%2264%22%20y%3D%2238%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2228%22%20fill%3D%22%23001F5C%22%20letter-spacing%3D%22-0.5%22%3EYeatru%3C%2Ftext%3E%20%3C%2Fsvg%3E"; // 亮底用：深蓝 Yeatru 文字
+const YEASTRU_BRAND_LOGO_DARK  = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20260%2056%22%20width%3D%22260%22%20height%3D%2256%22%3E%20%3Cg%20transform%3D%22translate%2828%2C%2028%29%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%20%3Cline%20x1%3D%22-16%22%20y1%3D%223%22%20x2%3D%22-7%22%20y2%3D%22-2%22%2F%3E%20%3Cline%20x1%3D%22-7%22%20y1%3D%22-2%22%20x2%3D%220%22%20y2%3D%223%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%223%22%20x2%3D%227%22%20y2%3D%22-2%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2214%22%20y2%3D%223%22%2F%3E%20%3Cline%20x1%3D%22-7%22%20y1%3D%22-2%22%20x2%3D%22-3%22%20y2%3D%22-9%22%2F%3E%20%3Cline%20x1%3D%22-3%22%20y1%3D%22-9%22%20x2%3D%225%22%20y2%3D%22-12%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2212%22%20y2%3D%22-10%22%2F%3E%20%3Cline%20x1%3D%225%22%20y1%3D%22-12%22%20x2%3D%2212%22%20y2%3D%22-10%22%2F%3E%20%3Cline%20x1%3D%220%22%20y1%3D%223%22%20x2%3D%224%22%20y2%3D%228%22%2F%3E%20%3Cline%20x1%3D%227%22%20y1%3D%22-2%22%20x2%3D%2210%22%20y2%3D%220%22%2F%3E%20%3Ccircle%20cx%3D%22-16%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-7%22%20cy%3D%22-2%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%220%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%227%22%20cy%3D%22-2%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2214%22%20cy%3D%223%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-3%22%20cy%3D%22-9%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%225%22%20cy%3D%22-12%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2212%22%20cy%3D%22-10%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%224%22%20cy%3D%228%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%2210%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22%23FF9500%22%2F%3E%20%3Ccircle%20cx%3D%22-3%22%20cy%3D%22-9%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3Ccircle%20cx%3D%225%22%20cy%3D%22-12%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3Ccircle%20cx%3D%2212%22%20cy%3D%22-10%22%20r%3D%223.2%22%20fill%3D%22none%22%20stroke%3D%22%23FF9500%22%20stroke-width%3D%221%22%2F%3E%20%3C%2Fg%3E%20%3Ctext%20x%3D%2264%22%20y%3D%2238%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-weight%3D%22900%22%20font-size%3D%2228%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%22-0.5%22%3EYeatru%3C%2Ftext%3E%20%3C%2Fsvg%3E";  // 暗底用：白色 Yeatru 文字
+function _pickBrandLogoUri(el) {
+    // 按最近祖先判断：在 .footer, .footer-brand, [data-theme="dark"] 里 → 用暗底版
+    if (!el) return YEASTRU_BRAND_LOGO_LIGHT;
+    let node = el;
+    while (node && node.nodeType === 1) {
+        if (node.classList && (
+            node.classList.contains('footer') ||
+            node.classList.contains('footer-brand') ||
+            node.classList.contains('footer-brand') ||
+            (node.hasAttribute && node.getAttribute('data-theme') === 'dark')
+        )) return YEASTRU_BRAND_LOGO_DARK;
+        node = node.parentNode;
+    }
+    return YEASTRU_BRAND_LOGO_LIGHT;
+}
 function applyBrandLogo() {
     // 1) Every <img> that is supposed to be a brand logo, fill with the inline
     //    SVG. Catch-all selector: covers img.brand-logo-img, img.js-brand-logo,
@@ -434,13 +449,13 @@ function applyBrandLogo() {
         // Fill only if: empty, or still pointing at the external logo.svg
         // placeholder, or explicitly asked via js-brand-logo class.
         // Never overwrite if src already resolves to the data URI (avoid loops).
-        if (img.src === YEASTRU_BRAND_LOGO_SVG) {
+        if (img.src === _pickBrandLogoUri(img)) {
             img.alt = img.alt || "Yeatru Sourcing Logo";
             img.onerror = null;
             return;
         }
         if (current === "" || current === "logo.svg" || current.indexOf("brand-logo") !== -1) {
-            img.src = YEASTRU_BRAND_LOGO_SVG;
+            img.src = _pickBrandLogoUri(img);
             img.alt = img.alt || "Yeatru Sourcing Logo";
             img.style.display = img.style.display && img.style.display !== "none" ? img.style.display : "block";
             img.onerror = null;
@@ -452,9 +467,9 @@ function applyBrandLogo() {
     document.querySelectorAll(".brand-logo-box").forEach(function (box) {
         const hasRenderedImg = box.querySelector("img[src]");
         if (hasRenderedImg && (
-            hasRenderedImg.src === YEASTRU_BRAND_LOGO_SVG ||
-            (hasRenderedImg.getAttribute("src") || "").length > 0 &&
-            !hasRenderedImg.style || hasRenderedImg.style.display !== "none"
+            (hasRenderedImg.src === _pickBrandLogoUri(box)) ||
+            ((hasRenderedImg.getAttribute("src") || "").length > 0 &&
+             (!hasRenderedImg.style || hasRenderedImg.style.display !== "none"))
         )) {
             // Already has a visible logo img; just remove the redundant text fallback.
             const existing = box.querySelector(".brand-logo-fallback");
@@ -465,13 +480,14 @@ function applyBrandLogo() {
         const existing = box.querySelector(".brand-logo-fallback");
         const img = document.createElement("img");
         img.className = "brand-logo-img";
-        img.src = YEASTRU_BRAND_LOGO_SVG;
+        img.src = _pickBrandLogoUri(img);
         img.alt = "Yeatru Sourcing Logo";
         img.style.width = "36px";
         img.style.height = "36px";
         img.style.display = "block";
         img.style.borderRadius = "10px";
         if (existing) existing.remove();
+        img.src = _pickBrandLogoUri(box);
         box.insertBefore(img, box.firstChild);
     });
 }

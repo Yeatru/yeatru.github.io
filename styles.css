@@ -3282,3 +3282,109 @@ html body .navbar-nav .dropdown-menu .dropdown-divider{margin:6px 8px!important}
     padding-left:30px!important;
   }
 }
+
+/* ====== Fix brand logo: horizontal logo (icon + Yeatru) ====== */
+.brand-logo-box{
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:38px!important;
+    min-height:38px!important;
+    max-height:38px!important;
+    border:none!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    padding:0!important;
+}
+.brand-logo-box img,
+.brand-logo-box .brand-logo-img{
+    height:100%!important;
+    width:auto!important;
+    max-width:none!important;
+    max-height:38px!important;
+    object-fit:contain!important;
+    display:block!important;
+}
+.footer-brand .brand-logo-box{
+    width:auto!important;
+    height:30px!important;
+    min-height:30px!important;
+    max-height:30px!important;
+    border:none!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+}
+.footer-brand .brand-logo-box img{
+    max-height:30px!important;
+}
+
+/* ====== Fix "Still Have Questions" CTA box: dark bg like footer ====== */
+.final-cta-box,
+.get-personalized-help,
+[class*="cta-box"],
+[class*="cta-section"]{
+    background:var(--gray-900)!important;
+    color:#ffffff!important;
+    border:1px solid var(--gray-700)!important;
+}
+.final-cta-box *,
+.get-personalized-help *,
+[class*="cta-box"] *,
+[class*="cta-section"] *{
+    color:#ffffff!important;
+}
+.final-cta-box .section-eyebrow,
+.get-personalized-help .section-eyebrow,
+[class*="cta-box"] .section-eyebrow,
+[class*="cta-section"] .section-eyebrow{
+    color:#ffffff!important;
+    background:rgba(255,255,255,0.12)!important;
+    border-color:rgba(255,255,255,0.25)!important;
+}
+.final-cta-box .section-divider,
+.get-personalized-help .section-divider,
+[class*="cta-box"] .section-divider,
+[class*="cta-section"] .section-divider{
+    background:rgba(255,255,255,0.4)!important;
+}
+.final-cta-box .section-title,
+.get-personalized-help .section-title,
+[class*="cta-box"] .section-title,
+[class*="cta-section"] .section-title{
+    color:#ffffff!important;
+}
+.final-cta-box .section-subtitle,
+.get-personalized-help .section-subtitle,
+[class*="cta-box"] .section-subtitle,
+[class*="cta-section"] .section-subtitle{
+    color:rgba(255,255,255,0.82)!important;
+}
+.final-cta-box .btn,
+.get-personalized-help .btn,
+[class*="cta-box"] .btn,
+[class*="cta-section"] .btn{
+    border-color:rgba(255,255,255,0.6)!important;
+    color:#ffffff!important;
+}
+.final-cta-box .btn-outline-primary,
+.get-personalized-help .btn-outline-primary,
+[class*="cta-box"] .btn-outline-primary,
+[class*="cta-section"] .btn-outline-primary{
+    border-color:rgba(255,255,255,0.6)!important;
+    color:#ffffff!important;
+}
+.final-cta-box .btn-outline-primary:hover,
+.get-personalized-help .btn-outline-primary:hover,
+[class*="cta-box"] .btn-outline-primary:hover,
+[class*="cta-section"] .btn-outline-primary:hover{
+    background:rgba(255,255,255,0.15)!important;
+    border-color:#ffffff!important;
+    color:#ffffff!important;
+}
