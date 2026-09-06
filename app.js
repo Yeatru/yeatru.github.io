@@ -1217,6 +1217,8 @@ document.addEventListener('DOMContentLoaded', function () {
         renderIndexCategories();
         renderIndexHotProducts();
         renderCategories();
+        applyCategoryFromUrl();
+        renderCategoryFilter();
         renderProducts();
         // Install GA4 conversion events so "Key events" dashboard stops
         // showing 0 after the owner marks generate_lead / submit_lead_form
@@ -1603,6 +1605,7 @@ function updateContent() {
         console.error('[i18n] Error translating meta title/description:', e);
     }
 
+    applyCategoryFromUrl();
     renderCategoryFilter();
     renderProducts();
     renderProductsDropdown();

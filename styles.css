@@ -2380,7 +2380,7 @@ html{scroll-behavior:smooth}
 .variations-group-list{display:flex;flex-wrap:wrap;gap: .5rem}
 .option-btn{display:inline-flex;align-items:center;gap: .4rem;padding: .45rem .9rem;background:var(--bg-panel);border:1.5px solid var(--c-neutral-200);border-radius:10px;font-size:.85rem;font-weight:600;color:var(--c-brand-900);cursor:pointer;user-select:none;transition:all 0.2s cubic-bezier(.25,1,.5,1);min-width:60px;justify-content:center;white-space:nowrap}
 .option-btn:hover{border-color:var(--accent-teal);background:color-mix(in oklch, var(--c-brand-800) 4%, transparent)}
-.option-btn.selected{border-color:var(--accent-teal);background:color-mix(in oklch, var(--c-brand-800) 10%, transparent);color:#05525f;box-shadow:0 0 0 2px color-mix(in oklch, var(--c-brand-800) 12%, transparent);font-weight:700}
+.option-btn.selected{border-color:var(--accent-teal,#0d6efd);background:var(--accent-teal,#0d6efd);color:#fff;box-shadow:0 0 0 3px color-mix(in oklch, var(--accent-teal,#0d6efd) 25%, transparent);font-weight:700}
 .option-btn .option-color-swatch{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,0.15);flex-shrink:0;display:inline-block}
 .option-btn .option-price{font-size:.78rem;font-weight:800;color:#065f46;margin-left: .2rem}
 @media(max-width:767.98px){.option-btn{padding: .38rem .75rem;font-size:.8rem;min-width:52px}
