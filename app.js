@@ -466,11 +466,14 @@ function applyBrandLogo() {
     //    .brand-logo-box that still doesn't have a rendered brand image.
     document.querySelectorAll(".brand-logo-box").forEach(function (box) {
         const hasRenderedImg = box.querySelector("img[src]");
-        if (hasRenderedImg && (
-            (hasRenderedImg.src === _pickBrandLogoUri(box)) ||
-            ((hasRenderedImg.getAttribute("src") || "").length > 0 &&
-             (!hasRenderedImg.style || hasRenderedImg.style.display !== "none"))
-        )) {
+        if (hasRenderedImg) {
+            const currentSrc = hasRenderedImg.getAttribute("src") || "";
+            // If still pointing at the external logo.svg placeholder, swap to the
+            // context-aware inline data URI (dark version in footer, light elsewhere).
+            if (currentSrc === "logo.svg" || currentSrc === "" || currentSrc.indexOf("brand-logo") !== -1) {
+                hasRenderedImg.src = _pickBrandLogoUri(box);
+                hasRenderedImg.style.display = "block";
+            }
             // Already has a visible logo img; just remove the redundant text fallback.
             const existing = box.querySelector(".brand-logo-fallback");
             if (existing) existing.remove();
