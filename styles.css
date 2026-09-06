@@ -3388,3 +3388,28 @@ html body .navbar-nav .dropdown-menu .dropdown-divider{margin:6px 8px!important}
     border-color:#ffffff!important;
     color:#ffffff!important;
 }
+
+/* ====== Fix CTA parent section bg-white override ====== */
+section.bg-white:has(.final-cta-box),
+section.bg-white:has([class*="cta-box"]),
+section.bg-white:has([class*="cta-section"]),
+div.bg-white:has(.final-cta-box),
+div.bg-white:has([class*="cta-box"]),
+div.bg-white:has([class*="cta-section"]){
+    background:var(--gray-900)!important;
+    color:#ffffff!important;
+}
+section.py-5:has(.final-cta-box),
+section.py-5:has([class*="cta-box"]),
+section.py-5:has([class*="cta-section"]){
+    background:var(--gray-900)!important;
+    color:#ffffff!important;
+}
+.final-cta-box .btn.btn-cta,
+.get-personalized-help .btn.btn-cta,
+[class*="cta-box"] .btn.btn-cta,
+[class*="cta-section"] .btn.btn-cta{
+    background:var(--primary)!important;
+    color:#ffffff!important;
+    border-color:var(--primary)!important;
+}
