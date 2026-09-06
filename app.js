@@ -3480,3 +3480,22 @@ document.addEventListener('DOMContentLoaded', initBlogCardImages);
         el.setAttribute("data-usd", usd);
     });
 })();
+
+// ====== Fix CTA box: make parent dark bg ======
+document.addEventListener('DOMContentLoaded', function() {
+    var ctaBoxes = document.querySelectorAll('.final-cta-box, [class*="cta-box"], [class*="cta-section"]');
+    ctaBoxes.forEach(function(box) {
+        // Walk up to find nearest section or div wrapper (usually the direct parent row section)
+        var parent = box.parentElement;
+        while (parent) {
+            if (parent.tagName === 'SECTION' || parent.tagName === 'DIV') {
+                parent.classList.add('cta-dark-wrapper');
+                parent.classList.remove('bg-white');
+                parent.style.backgroundColor = 'var(--gray-900)';
+                parent.style.color = '#ffffff';
+            }
+            if (parent.tagName === 'SECTION') break; // stop at first section
+            parent = parent.parentElement;
+        }
+    });
+});
