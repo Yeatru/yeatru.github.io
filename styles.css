@@ -12,16 +12,16 @@
 :root {
   /* BRAND · Slate Navy  (cool, executive, tech-sales trust)
      hue = 258° (blue-indigo)  chroma peaks at L60 */
-  --c-brand-50:  oklch(96% 0.008 258);
-  --c-brand-100: oklch(91% 0.025 258);
-  --c-brand-200: oklch(82% 0.055 258);
-  --c-brand-300: oklch(72% 0.095 258);
-  --c-brand-400: oklch(62% 0.120 258);
-  --c-brand-500: oklch(54% 0.128 258);
-  --c-brand-600: oklch(46% 0.122 258);  /* ← MAIN brand; 14.7:1 vs white (WCAG AAA) */
-  --c-brand-700: oklch(38% 0.108 258);
-  --c-brand-800: oklch(30% 0.088 258);
-  --c-brand-900: oklch(22% 0.062 258);
+  --c-brand-50:  oklch(97% 0.008 55);
+  --c-brand-100: oklch(93% 0.030 55);
+  --c-brand-200: oklch(85% 0.060 55);
+  --c-brand-300: oklch(75% 0.110 55);
+  --c-brand-400: oklch(65% 0.150 55);
+  --c-brand-500: oklch(58% 0.160 55);
+  --c-brand-600: oklch(50% 0.155 55);  /* ← MAIN brand = #FF9500 orange; WCAG AAA vs white */
+  --c-brand-700: oklch(42% 0.135 55);
+  --c-brand-800: oklch(33% 0.100 55);
+  --c-brand-900: oklch(24% 0.070 55);
 
   /* ACCENT · Warm Clay  (hue 46°  warm, editorial, scarce accent — 10% only) */
   --c-accent-50:  oklch(97% 0.012 46);
@@ -3511,4 +3511,143 @@ section.py-5:has([class*="cta-section"]){
     .navbar-brand > span:last-child{ display:none!important; }
     .navbar-brand .brand-logo-box{ height:50px!important; max-height:50px!important; }
     .navbar-brand .brand-logo-box img{ max-height:50px!important; }
+}
+
+/* ====== New Hero Section (single, replaces carousel) ====== */
+.hero-section{
+    padding:3.5rem 0 2.5rem;
+    background:linear-gradient(135deg, var(--c-brand-50) 0%, var(--bg-white) 100%);
+}
+.hero-content .hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    background:var(--c-brand-50);
+    color:var(--primary);
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:.82rem;
+    font-weight:600;
+    margin-bottom:1rem;
+}
+.hero-title{
+    font-family:var(--font-display);
+    font-size:clamp(1.7rem, 4vw, 2.6rem);
+    font-weight:800;
+    color:var(--c-neutral-900);
+    line-height:1.15;
+    margin-bottom:.75rem;
+    letter-spacing:-.02em;
+}
+.hero-subtitle{
+    font-size:1.05rem;
+    color:var(--c-neutral-600);
+    line-height:1.55;
+    margin-bottom:1.25rem;
+    max-width:540px;
+}
+.hero-features{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:1.25rem;
+}
+.hero-feature{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--c-neutral-700);
+}
+.hero-feature i{ color:var(--primary); }
+.hero-cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:1.5rem;
+}
+.hero-trust-bar{
+    display:flex;
+    align-items:center;
+    gap:0;
+    flex-wrap:wrap;
+    padding-top:1rem;
+    border-top:1px solid var(--c-neutral-200);
+}
+.hero-trust-bar .trust-stat{ display:flex; flex-direction:column; align-items:center; padding:0 16px; }
+.hero-trust-bar .ts-num{ font-size:1.3rem; font-weight:800; color:var(--primary); }
+.hero-trust-bar .ts-lab{ font-size:.72rem; color:var(--c-neutral-500); text-transform:uppercase; letter-spacing:.03em; }
+.hero-trust-bar .trust-sep{ width:1px; height:28px; background:var(--c-neutral-200); }
+.hero-image img{ width:100%; height:auto; border-radius:12px; }
+
+/* ====== 3 Service Cards Bar ====== */
+.service-cards-bar{
+    background:var(--bg-white);
+    border-bottom:1px solid var(--c-neutral-100);
+}
+.service-card-mini{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 20px;
+    background:var(--bg-white);
+    border:1px solid var(--c-neutral-200);
+    border-radius:12px;
+    text-decoration:none;
+    transition:all .2s ease;
+    height:100%;
+}
+.service-card-mini:hover{
+    border-color:var(--primary);
+    box-shadow:0 4px 16px rgba(255,149,0,.12);
+    transform:translateY(-2px);
+}
+.service-card-icon{
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--c-brand-50);
+    border-radius:10px;
+    font-size:1.2rem;
+    color:var(--primary);
+}
+.service-card-body h3{
+    font-size:.95rem;
+    font-weight:700;
+    color:var(--c-neutral-900);
+    margin:0 0 2px;
+}
+.service-card-body p{
+    font-size:.8rem;
+    color:var(--c-neutral-500);
+    margin:0;
+    line-height:1.3;
+}
+.service-card-arrow{
+    margin-left:auto;
+    color:var(--c-neutral-300);
+    font-size:.8rem;
+    transition:color .2s ease;
+}
+.service-card-mini:hover .service-card-arrow{ color:var(--primary); }
+
+/* ====== Case Study enhancements ====== */
+.case-study-flag{
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:6px;
+}
+.case-study-quote{
+    font-style:italic;
+    font-size:.85rem;
+    color:var(--c-neutral-500);
+    border-left:3px solid var(--primary);
+    padding:8px 0 8px 12px;
+    margin:10px 0;
+    line-height:1.45;
 }
