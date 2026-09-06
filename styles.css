@@ -3413,3 +3413,42 @@ section.py-5:has([class*="cta-section"]){
     color:#ffffff!important;
     border-color:var(--primary)!important;
 }
+
+/* ====== CTA parent: .cta-section-dark class (added by HTML bulk edit) ====== */
+.cta-section-dark{
+    background:var(--gray-900)!important;
+    background-color:#23262d!important;
+    color:#ffffff!important;
+}
+.cta-section-dark *,
+.cta-section-dark .final-cta-box,
+.cta-section-dark .final-cta-box *{
+    color:#ffffff!important;
+}
+.cta-section-dark .section-eyebrow,
+.cta-section-dark .final-cta-box .section-eyebrow{
+    color:#ffffff!important;
+    background:rgba(255,255,255,0.12)!important;
+    border-color:rgba(255,255,255,0.25)!important;
+}
+.cta-section-dark .section-title,
+.cta-section-dark .final-cta-box .section-title{
+    color:#ffffff!important;
+}
+.cta-section-dark .section-subtitle,
+.cta-section-dark .final-cta-box .section-subtitle{
+    color:rgba(255,255,255,0.82)!important;
+}
+.cta-section-dark .btn-outline-primary,
+.cta-section-dark .btn{
+    border-color:rgba(255,255,255,0.6)!important;
+    color:#ffffff!important;
+}
+.cta-section-dark .btn-cta{
+    background:var(--primary)!important;
+    color:#ffffff!important;
+    border-color:var(--primary)!important;
+}
+.cta-section-dark .section-divider{
+    background:rgba(255,255,255,0.4)!important;
+}
