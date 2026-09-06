@@ -3481,30 +3481,21 @@ document.addEventListener('DOMContentLoaded', initBlogCardImages);
     });
 })();
 
-// ====== Fix CTA box: make parent dark bg (override Bootstrap .bg-white !important) ======
-(function applyCtaDarkBg(){
+// ====== Fix CTA box: force parent section to match footer dark bg ======
+// Using window.load ensures this runs AFTER everything else (CSS, other scripts, fonts, images)
+window.addEventListener('load', function applyCtaDarkBg() {
     var candidates = document.querySelectorAll('.final-cta-box, [class*="cta-box"], [class*="cta-section"]');
-    candidates.forEach(function(box){
+    candidates.forEach(function(box) {
         var parent = box.parentElement;
-        // Walk up to the first SECTION that has bg-white or a row-wrapper
         while (parent) {
-            if (parent.tagName === 'SECTION' || (parent.tagName === 'DIV' && parent.classList &&
-                (parent.classList.contains('bg-white') || parent.classList.contains('cta-dark-wrapper')))) {
-                parent.classList.add('cta-dark-wrapper');
+            if (parent.tagName === 'SECTION') {
                 parent.classList.remove('bg-white');
                 parent.style.setProperty('background-color', 'var(--gray-900)', 'important');
                 parent.style.setProperty('color', '#ffffff', 'important');
+                parent.style.setProperty('--bs-bg-opacity', '0', 'important');
                 break;
             }
             parent = parent.parentElement;
         }
     });
-})();
-// Also run after a short delay in case other scripts re-add classes
-setTimeout(function(){ (function(){
-    var c = document.querySelectorAll('.cta-dark-wrapper');
-    c.forEach(function(p){
-        p.style.setProperty('background-color', 'var(--gray-900)', 'important');
-        p.style.setProperty('color', '#ffffff', 'important');
-    });
-})(); }, 400);
+});
