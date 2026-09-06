@@ -1049,9 +1049,9 @@ textarea.form-control{min-height:120px;resize:vertical}
 @media(max-width:575.98px){.aplus-content table{min-width:100%}
 .aplus-content table th,.aplus-content table td{padding: .25rem .35rem;font-size:.68rem}
 }
-.detail-price-big{font-size:3.2rem;font-weight:900;color:#E53935;letter-spacing:-0.75px;text-shadow:0 2px 4px rgba(229,57,53,0.18);line-height:1.05;display:inline-block;margin: .05rem 0}
-.detail-price-big .variation-price{font-size:3.2rem;font-weight:900;color:#E53935}
-.detail-price-big .price-dash{font-size:2.6rem;font-weight:700;color:#E53935;margin: 0 .45rem;vertical-align:middle}
+.detail-price-big{font-size:3.8rem;font-weight:900;color:#dc2626;letter-spacing:-1px;text-shadow:0 2px 8px rgba(220,38,38,0.2);line-height:1.05;display:inline-block;margin: .1rem 0;background:linear-gradient(180deg,rgba(254,226,226,0.5),transparent);padding:0 .35rem;border-radius:8px}
+.detail-price-big .variation-price{font-size:3.8rem;font-weight:900;color:#dc2626}
+.detail-price-big .price-dash{font-size:3rem;font-weight:700;color:#dc2626;margin: 0 .45rem;vertical-align:middle}
 .detail-price-label{display:none}
 .aplus-section{margin-top: 2rem;width:100%;max-width:100%}
 .aplus-section-title{font-size:1.4rem;font-weight:700;color:var(--primary-dark);margin-bottom: 1.25rem;border-left:4px solid var(--primary);padding-left: .8rem}
@@ -2193,7 +2193,7 @@ body .hero-section,body .banner-carousel{padding-top: 1rem!important;padding-bot
 }
 @media(max-width:575.98px){.detail-spec-table th,.detail-spec-table td{padding: .25rem .3rem!important;font-size:.68rem!important}
 .detail-spec-table tr.spec-price-row td.spec-price-cell{padding: .25rem .3rem!important}
-.detail-spec-table td.spec-price-cell .detail-price-big{font-size:.85rem!important}
+.detail-spec-table td.spec-price-cell .detail-price-big{font-size:2.4rem!important}
 }
 .section-dark-alt p:not(.bg-white p):not(.card p):not(.step-card p):not(.case-study-card p),.section-dark-alt li:not(.bg-white li):not(.card li):not(.step-card li):not(.case-study-card li){color:rgba(255,255,255,0.92)!important;line-height:1.75!important}
 .contact-info p.mb-3,.contact-info p.mb-4{color:rgba(255,255,255,0.92)!important}
