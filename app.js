@@ -3481,21 +3481,30 @@ document.addEventListener('DOMContentLoaded', initBlogCardImages);
     });
 })();
 
-// ====== Fix CTA box: make parent dark bg ======
-document.addEventListener('DOMContentLoaded', function() {
-    var ctaBoxes = document.querySelectorAll('.final-cta-box, [class*="cta-box"], [class*="cta-section"]');
-    ctaBoxes.forEach(function(box) {
-        // Walk up to find nearest section or div wrapper (usually the direct parent row section)
+// ====== Fix CTA box: make parent dark bg (override Bootstrap .bg-white !important) ======
+(function applyCtaDarkBg(){
+    var candidates = document.querySelectorAll('.final-cta-box, [class*="cta-box"], [class*="cta-section"]');
+    candidates.forEach(function(box){
         var parent = box.parentElement;
+        // Walk up to the first SECTION that has bg-white or a row-wrapper
         while (parent) {
-            if (parent.tagName === 'SECTION' || parent.tagName === 'DIV') {
+            if (parent.tagName === 'SECTION' || (parent.tagName === 'DIV' && parent.classList &&
+                (parent.classList.contains('bg-white') || parent.classList.contains('cta-dark-wrapper')))) {
                 parent.classList.add('cta-dark-wrapper');
                 parent.classList.remove('bg-white');
-                parent.style.backgroundColor = 'var(--gray-900)';
-                parent.style.color = '#ffffff';
+                parent.style.setProperty('background-color', 'var(--gray-900)', 'important');
+                parent.style.setProperty('color', '#ffffff', 'important');
+                break;
             }
-            if (parent.tagName === 'SECTION') break; // stop at first section
             parent = parent.parentElement;
         }
     });
-});
+})();
+// Also run after a short delay in case other scripts re-add classes
+setTimeout(function(){ (function(){
+    var c = document.querySelectorAll('.cta-dark-wrapper');
+    c.forEach(function(p){
+        p.style.setProperty('background-color', 'var(--gray-900)', 'important');
+        p.style.setProperty('color', '#ffffff', 'important');
+    });
+})(); }, 400);
