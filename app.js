@@ -3482,15 +3482,15 @@ document.addEventListener('DOMContentLoaded', initBlogCardImages);
 })();
 
 // ====== Fix CTA box: force parent section to match footer dark bg ======
-// Using window.load ensures this runs AFTER everything else (CSS, other scripts, fonts, images)
-window.addEventListener('load', function applyCtaDarkBg() {
+// Run immediately on script exec (defer script runs after DOM parsed but before load/DOMContentLoaded)
+function _applyCtaDarkBg() {
     var candidates = document.querySelectorAll('.final-cta-box, [class*="cta-box"], [class*="cta-section"]');
     candidates.forEach(function(box) {
         var parent = box.parentElement;
         while (parent) {
             if (parent.tagName === 'SECTION') {
                 parent.classList.remove('bg-white');
-                parent.style.setProperty('background-color', 'var(--gray-900)', 'important');
+                parent.style.setProperty('background-color', '#23262d', 'important');
                 parent.style.setProperty('color', '#ffffff', 'important');
                 parent.style.setProperty('--bs-bg-opacity', '0', 'important');
                 break;
@@ -3498,4 +3498,10 @@ window.addEventListener('load', function applyCtaDarkBg() {
             parent = parent.parentElement;
         }
     });
-});
+}
+// Try now (defer script: DOM is parsed)
+_applyCtaDarkBg();
+// Also retry after load to catch any later class changes
+if (document.readyState !== 'complete') {
+    window.addEventListener('load', _applyCtaDarkBg);
+}
