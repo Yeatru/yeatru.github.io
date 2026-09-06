@@ -423,7 +423,7 @@
                        style="width:32px;height:32px;padding:0;border-radius:8px;line-height:1;box-shadow:none;">
                         <i class="fas fa-envelope" style="font-size:14px;"></i>
                     </a>
-<a href="contact.html" class="btn btn-cta btn-nav-cta d-inline-flex text-nowrap" data-i18n="common.getQuote">
+<a href="request-quote.html" class="btn btn-cta btn-nav-cta d-inline-flex text-nowrap" data-i18n="common.getQuote">
                         <i class="fas fa-comment-dots me-1"></i>Get Quote
                     </a>
                     <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
@@ -474,7 +474,10 @@
                     <div class="quote-form-card p-4 p-lg-5 bg-white rounded shadow-sm border">
                         <h2 class="mb-4">Tell Us About Your Project</h2>
                         <p class="text-muted mb-4">Fill in the form below and we'll get back to you within 24 hours with detailed supplier recommendations and pricing.</p>
-                        <form id="quoteForm" onsubmit="return submitQuoteForm(event)">
+                        <form id="quoteForm" action="https://formsubmit.co/info@yeatru.com" method="POST">
+<input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label">Full Name *</label>
@@ -807,40 +810,30 @@
     });
 
     function submitQuoteForm(e) {
-        e.preventDefault();
-        const form = document.getElementById('quoteForm');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
-
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => { data[key] = value; });
-
-        const subject = encodeURIComponent('Free Quote Request from ' + (data.fullName || 'Website Visitor'));
-        const body = encodeURIComponent(
-            'Name: ' + (data.fullName || '') + '\n' +
-            'Email: ' + (data.email || '') + '\n' +
-            'Phone/WhatsApp: ' + (data.whatsapp || '') + '\n' +
-            'Company: ' + (data.company || '') + '\n' +
-            'Product Category: ' + (data.productCategory || '') + '\n' +
-            'Product Details: ' + (data.productDetails || '') + '\n' +
-            'Quantity: ' + (data.quantity || '') + '\n' +
-            'Target Market: ' + (data.targetMarket || '') + '\n' +
-            'Additional Info: ' + (data.additionalInfo || '')
-        );
-
-        window.location.href = 'mailto:info@yeatru.com?subject=' + subject + '&body=' + body;
-
+        // formsubmit handles the actual submission; show success message
         setTimeout(() => {
             document.getElementById('quoteSuccess').classList.remove('d-none');
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Submit Another Request';
-        }, 1500);
-
-        return false;
+        }, 500);
     }
+    // Pre-fill product from URL params
+    document.addEventListener('DOMContentLoaded', function() {
+        var params = new URLSearchParams(window.location.search);
+        var product = params.get('product');
+        var name = params.get('name');
+        if (product) {
+            var details = document.getElementById('productDetails');
+            if (details) { details.value = (name ? name + ' — ' : '') + 'SKU: ' + product; details.classList.add('prefilled'); }
+        }
+        var category = params.get('category');
+        if (category) {
+            var cat = document.getElementById('productCategory');
+            if (cat) {
+                for (var i = 0; i < cat.options.length; i++) {
+                    if (cat.options[i].value === category) { cat.selectedIndex = i; break; }
+                }
+            }
+        }
+    });
     </script>
 
 <div class="contact-float">
