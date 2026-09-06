@@ -1441,8 +1441,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!currentDetailProductId) return;
         const p = getProducts().find(x => x.id === currentDetailProductId);
         if (!p) return;
-        const quoteProductName = document.getElementById('quoteProductName');
-        if (quoteProductName) quoteProductName.value = p.name;
+        const nameEl = document.getElementById('quoteProductName');
+        const skuEl = document.getElementById('quoteProductSku');
+        const displayEl = document.getElementById('quoteProductDisplay');
+        const sku = p.sku || ('P' + p.id);
+        if (nameEl) nameEl.value = p.name;
+        if (skuEl) skuEl.value = sku;
+        if (displayEl) displayEl.value = sku + ' — ' + p.name;
         const quoteModal = document.getElementById('quoteModal');
         if (quoteModal) new bootstrap.Modal(quoteModal).show();
     });
@@ -2243,17 +2248,18 @@ function renderProducts() {
 
     document.querySelectorAll('.quote-product').forEach(btn => {
         btn.addEventListener('click', function (e) {
-            // If we are on a static product page (no quote modal available),
-            // let the default <a href="contact.html?..."> navigation happen.
             const modalEl = document.getElementById('quoteModal');
-            if (!modalEl) {
-                // Static page: follow the link naturally
-                return;
-            }
+            if (!modalEl) return;
             e.preventDefault();
             e.stopPropagation();
-            const productName = this.getAttribute('data-product');
-            document.getElementById('quoteProductName').value = productName;
+            const productName = this.getAttribute('data-product') || '';
+            const productSku = this.getAttribute('data-sku') || '';
+            const nameEl = document.getElementById('quoteProductName');
+            const skuEl = document.getElementById('quoteProductSku');
+            const displayEl = document.getElementById('quoteProductDisplay');
+            if (nameEl) nameEl.value = productName;
+            if (skuEl) skuEl.value = productSku;
+            if (displayEl) displayEl.value = (productSku ? productSku + ' — ' : '') + productName;
             new bootstrap.Modal(modalEl).show();
         });
     });

@@ -443,7 +443,7 @@
  style="width:32px;height:32px;padding:0;border-radius:8px;line-height:1;box-shadow:none;">
  <i class="fas fa-envelope"style="font-size:14px;"></i>
  </a>
-<a href="request-quote.html"class="btn btn-cta btn-nav-cta d-inline-flex text-nowrap"data-i18n="common.getQuote">
+<a href="request-quote.html"class="btn btn-cta btn-nav-cta quote-product d-inline-flex text-nowrap"data-i18n="common.getQuote">
  <i class="fas fa-comment-dots me-1"></i>Get Quote
  </a>
  <button id="authBtn"class="btn admin-nav-btn d-md-inline-flex"data-bs-toggle="modal"data-bs-target="#loginModal"title="Admin Login">
@@ -830,5 +830,62 @@
  <i class="fas fa-envelope"></i>
  </a>
 </div>
+
+    <!-- Quote Request Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:linear-gradient(135deg,#1e40af,#0d6efd);color:#fff;">
+                    <h5 class="modal-title" id="quoteModalLabel"><i class="fas fa-file-invoice-dollar me-2"></i>Get a Quote</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="quoteForm" action="https://formsubmit.co/info@yeatru.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Product Quote Request - Yeatru Sourcing">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" id="quoteProductName" name="Product">
+                        <input type="hidden" id="quoteProductSku" name="SKU">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Product</label>
+                            <input type="text" class="form-control bg-light" id="quoteProductDisplay" readonly>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="quoteName" class="form-label fw-semibold">Your Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="quoteName" name="Name" required placeholder="John Smith">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="quoteEmail" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="quoteEmail" name="Email" required placeholder="john@company.com">
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="quotePhone" class="form-label fw-semibold">Phone / WhatsApp</label>
+                                <input type="tel" class="form-control" id="quotePhone" name="Phone" placeholder="+1 555 123 4567">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="quoteQuantity" class="form-label fw-semibold">Required Quantity <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="quoteQuantity" name="Quantity" required placeholder="e.g. 500">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteCountry" class="form-label fw-semibold">Target Market / Country</label>
+                            <input type="text" class="form-control" id="quoteCountry" name="Target Market" placeholder="e.g. United States">
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteMessage" class="form-label fw-semibold">Additional Requirements</label>
+                            <textarea class="form-control" id="quoteMessage" name="Message" rows="3" placeholder="Describe your requirements: packaging, color, logo printing, delivery time, etc."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer flex-column-reverse flex-sm-row gap-2">
+                    <button type="button" class="btn btn-secondary flex-grow-1" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" form="quoteForm" class="btn btn-primary flex-grow-1"><i class="fas fa-paper-plane me-2"></i>Send Quote Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
