@@ -1,30 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56">
-  <!-- Network Icon (left) -->
-  <g transform="translate(28, 28)" fill="none" stroke="#FF9500" stroke-width="2.2" stroke-linecap="round">
-    <line x1="-16" y1="3" x2="-7" y2="-2"/>
-    <line x1="-7" y1="-2" x2="0" y2="3"/>
-    <line x1="0" y1="3" x2="7" y2="-2"/>
-    <line x1="7" y1="-2" x2="14" y2="3"/>
-    <line x1="-7" y1="-2" x2="-3" y2="-9"/>
-    <line x1="-3" y1="-9" x2="5" y2="-12"/>
-    <line x1="7" y1="-2" x2="12" y2="-10"/>
-    <line x1="5" y1="-12" x2="12" y2="-10"/>
-    <line x1="0" y1="3" x2="4" y2="8"/>
-    <line x1="7" y1="-2" x2="10" y2="0"/>
-    <circle cx="-16" cy="3" r="2.4" fill="#FF9500"/>
-    <circle cx="-7" cy="-2" r="2.4" fill="#FF9500"/>
-    <circle cx="0" cy="3" r="2.4" fill="#FF9500"/>
-    <circle cx="7" cy="-2" r="2.4" fill="#FF9500"/>
-    <circle cx="14" cy="3" r="2.4" fill="#FF9500"/>
-    <circle cx="-3" cy="-9" r="2.4" fill="#FF9500"/>
-    <circle cx="5" cy="-12" r="2.4" fill="#FF9500"/>
-    <circle cx="12" cy="-10" r="2.4" fill="#FF9500"/>
-    <circle cx="4" cy="8" r="2.4" fill="#FF9500"/>
-    <circle cx="10" cy="0" r="2.4" fill="#FF9500"/>
-    <circle cx="-3" cy="-9" r="3.2" fill="none" stroke="#FF9500" stroke-width="1"/>
-    <circle cx="5" cy="-12" r="3.2" fill="none" stroke="#FF9500" stroke-width="1"/>
-    <circle cx="12" cy="-10" r="3.2" fill="none" stroke="#FF9500" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Orange Network Icon (top, slightly right) -->
+  <g transform="translate(115, 72)" fill="none" stroke="#FF9500" stroke-width="3.5" stroke-linecap="round">
+    <line x1="-44" y1="6" x2="-18" y2="-7"/>
+    <line x1="-18" y1="-7" x2="0" y2="7"/>
+    <line x1="0" y1="7" x2="22" y2="-7"/>
+    <line x1="22" y1="-7" x2="44" y2="7"/>
+    <line x1="-18" y1="-7" x2="-7" y2="-20"/>
+    <line x1="-7" y1="-20" x2="16" y2="-28"/>
+    <line x1="22" y1="-7" x2="34" y2="-24"/>
+    <line x1="16" y1="-28" x2="34" y2="-24"/>
+    <line x1="0" y1="7" x2="10" y2="20"/>
+    <line x1="22" y1="-7" x2="30" y2="-3"/>
+    <circle cx="-44" cy="6" r="5.5" fill="#FF9500"/>
+    <circle cx="-18" cy="-7" r="5.5" fill="#FF9500"/>
+    <circle cx="0" cy="7" r="5.5" fill="#FF9500"/>
+    <circle cx="22" cy="-7" r="5.5" fill="#FF9500"/>
+    <circle cx="44" cy="6" r="5.5" fill="#FF9500"/>
+    <circle cx="-7" cy="-20" r="5.5" fill="#FF9500"/>
+    <circle cx="16" cy="-28" r="5.5" fill="#FF9500"/>
+    <circle cx="34" cy="-24" r="5.5" fill="#FF9500"/>
+    <circle cx="10" cy="20" r="5.5" fill="#FF9500"/>
+    <circle cx="30" cy="-3" r="5.5" fill="#FF9500"/>
+    <circle cx="-28" cy="0" r="4" fill="#FF9500"/>
+    <circle cx="-7" cy="-20" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
+    <circle cx="16" cy="-28" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
+    <circle cx="34" cy="-24" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
+    <!-- Package icon -->
+    <rect x="-13" y="-23" width="12" height="8" rx="1.5" fill="#FF9500" stroke="none"/>
+    <rect x="-13" y="-23" width="12" height="3" fill="#FF9500" stroke="none"/>
+    <rect x="-13" y="-23" width="12" height="3" fill="#ffffff" stroke="none" opacity="0.5"/>
+    <!-- Person icon -->
+    <circle cx="16" cy="-28" r="4" fill="#ffffff" stroke="none"/>
+    <path d="M10,-22 Q16,-17 22,-22" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Plane icon -->
+    <path d="M28,-28 L40,-28 L37,-34 L31,-34 Z" fill="#ffffff" stroke="none"/>
   </g>
-  <!-- Yeatru Text (dark navy — for light backgrounds) -->
-  <text x="64" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="28" fill="#001F5C" letter-spacing="-0.5">Yeatru</text>
+  <!-- Yeatru Text (dark navy) -->
+  <text x="100" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="56" fill="#001F5C" letter-spacing="-2">Yeatru</text>
+  <!-- Slogan line 1 (gray-blue) -->
+  <text x="100" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="12" fill="#1E3A5F">Global Procurement. Inspection. Logistics.</text>
+  <!-- Slogan line 2 (orange) -->
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="14" fill="#FF9500">One Stop, Seamless Service</text>
 </svg>

@@ -3452,3 +3452,63 @@ section.py-5:has([class*="cta-section"]){
 .cta-section-dark .section-divider{
     background:rgba(255,255,255,0.4)!important;
 }
+
+/* ====== Vertical brand logo (icon on top, Yeatru text below) ====== */
+.brand-logo-box{
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:64px!important;
+    min-height:64px!important;
+    max-height:64px!important;
+    border:none!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    padding:0!important;
+}
+.brand-logo-box img,
+.brand-logo-box .brand-logo-img{
+    height:100%!important;
+    width:auto!important;
+    max-width:none!important;
+    max-height:64px!important;
+    object-fit:contain!important;
+    display:block!important;
+}
+/* Footer logo: smaller */
+.footer-brand .brand-logo-box{
+    width:auto!important;
+    height:56px!important;
+    min-height:56px!important;
+    max-height:56px!important;
+    border:none!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+}
+.footer-brand .brand-logo-box img{
+    max-height:56px!important;
+}
+/* Make navbar-brand layout vertical (logo image then text "Sourcing") */
+.navbar-brand{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    gap:8px!important;
+}
+.navbar-brand .brand-logo-box + span,
+.navbar-brand > span:last-child{
+    display:inline-block!important;
+}
+/* On small screens, hide the extra "Sourcing" text since logo already says Yeatru */
+@media(max-width:480px){
+    .navbar-brand > span:last-child{ display:none!important; }
+    .navbar-brand .brand-logo-box{ height:50px!important; max-height:50px!important; }
+    .navbar-brand .brand-logo-box img{ max-height:50px!important; }
+}
