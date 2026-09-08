@@ -1,13 +1,14 @@
 {
   "version": 3,
-  "lastUpdated": "2026-08-28",
+  "lastUpdated": "2026-09-08",
   "source": "AA-730价格汇总表.xlsx (only YCS- SKUs)",
   "priceFormula": {
-    "cnyToUsd": "CNY / 6.7 * 1.15",
-    "rate": 6.7,
-    "markup": 1.15
+    "usdFromUsd": "USD * 1.15",
+    "usdFromCny": "CNY / 7 * 1.15",
+    "markup": 1.15,
+    "cnyRate": 7
   },
-  "productCount": 656,
+  "productCount": 675,
   "products": [
     {
       "id": 1,
@@ -17909,6 +17910,538 @@
       "_norm": "拼图",
       "_cjk": "拼图",
       "material": "Non-Toxic PP Plastic / ABS (Child-Safe, EN71 / ASTM F963)"
+    },
+    {
+      "id": 657,
+      "sku": "YCS-AJ-35",
+      "category": "Hair Accessories",
+      "name": "Wig Dryer Styling Tool",
+      "name_cn": "假发烘干造型器",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-35.png",
+      "priceMin": 90.96,
+      "priceMax": 90.96,
+      "moq": 2,
+      "description": "Wig Dryer Styling Tool.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-35",
+          "price": 90.96,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-35-002.png"
+      ]
+    },
+    {
+      "id": 658,
+      "sku": "YCS-AJ-36",
+      "category": "Hair Accessories",
+      "name": "Hair Tie Accessories",
+      "name_cn": "发圈配件",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-36.png",
+      "priceMin": 0.38,
+      "priceMax": 0.38,
+      "moq": 1,
+      "description": "Hair Tie Accessories.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-36",
+          "price": 0.38,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-36-002.png"
+      ]
+    },
+    {
+      "id": 659,
+      "sku": "YCS-AJ-37",
+      "category": "Hair Accessories",
+      "name": "Hair Tie Accessories",
+      "name_cn": "发圈配件",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-37.png",
+      "priceMin": 0.38,
+      "priceMax": 0.38,
+      "moq": 1,
+      "description": "Hair Tie Accessories.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-37",
+          "price": 0.38,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": []
+    },
+    {
+      "id": 660,
+      "sku": "YCS-AJ-38",
+      "category": "Hair Accessories",
+      "name": "Large Hair Extension Tying Tool",
+      "name_cn": "大肠发圈大号11-14cm",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-38.png",
+      "priceMin": 1.25,
+      "priceMax": 1.25,
+      "moq": 1,
+      "description": "Large Hair Extension Tying Tool.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-38",
+          "price": 1.25,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-38-002.png",
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-38-003.png"
+      ]
+    },
+    {
+      "id": 661,
+      "sku": "YCS-AJ-39",
+      "category": "Hair Accessories",
+      "name": "Hair Extension Tying Tool Medium",
+      "name_cn": "大肠发圈中号11*5cm",
+      "image": "",
+      "priceMin": 2.4,
+      "priceMax": 2.4,
+      "moq": 1,
+      "description": "Hair Extension Tying Tool Medium.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-39",
+          "price": 2.4,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": []
+    },
+    {
+      "id": 662,
+      "sku": "YCS-AJ-40",
+      "category": "Accessories",
+      "name": "Pearl Necklace Jewelry",
+      "name_cn": "珍珠项链",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-40.png",
+      "priceMin": 1.13,
+      "priceMax": 1.13,
+      "moq": 1,
+      "description": "Pearl Necklace Jewelry.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-40",
+          "price": 1.13,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Accessories",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-40-002.png",
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-40-003.png"
+      ]
+    },
+    {
+      "id": 663,
+      "sku": "YCS-AJ-41",
+      "category": "Accessories",
+      "name": "Statement Necklace Jewelry",
+      "name_cn": "项链",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-41.png",
+      "priceMin": 10.13,
+      "priceMax": 10.13,
+      "moq": 1,
+      "description": "Statement Necklace Jewelry.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-41",
+          "price": 10.13,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Accessories",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-41-002.png"
+      ]
+    },
+    {
+      "id": 664,
+      "sku": "YCS-AJ-42",
+      "category": "Hair Accessories",
+      "name": "Durags Head Wraps",
+      "name_cn": "头套Durags",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-42.png",
+      "priceMin": 0.91,
+      "priceMax": 0.91,
+      "moq": 1,
+      "description": "Durags Head Wraps.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-42",
+          "price": 0.91,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-AJ-42-002.png"
+      ]
+    },
+    {
+      "id": 665,
+      "sku": "YCS-AJ-43",
+      "category": "Hair Accessories",
+      "name": "Hair Dressing Trolley Cart",
+      "name_cn": "美发推车",
+      "image": "",
+      "priceMin": 96.14,
+      "priceMax": 96.14,
+      "moq": 1,
+      "description": "Hair Dressing Trolley Cart.",
+      "variations": [
+        {
+          "child_id": "YCS-AJ-43",
+          "price": 96.14,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Beauty & Personal Care",
+      "images": []
+    },
+    {
+      "id": 666,
+      "sku": "YCS-XLY-080",
+      "category": "Household",
+      "name": "Portable Garment Steamer Iron",
+      "name_cn": "挂烫机家用小型熨烫机",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-080.jpeg",
+      "priceMin": 10.83,
+      "priceMax": 10.83,
+      "moq": 500,
+      "description": "Portable Garment Steamer Iron.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-080",
+          "price": 10.83,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Home Appliances",
+      "images": []
+    },
+    {
+      "id": 667,
+      "sku": "YCS-XLY-081",
+      "category": "Cups & Drinkware",
+      "name": "Ceramic Tableware Set 8-Piece",
+      "name_cn": "陶瓷餐具套装1",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-081.jpeg",
+      "priceMin": 0.6,
+      "priceMax": 3.61,
+      "moq": 5,
+      "description": "Ceramic Tableware Set 8-Piece.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-081-001",
+          "price": 0.6,
+          "color": "",
+          "size": "Small soup spoon"
+        },
+        {
+          "child_id": "YCS-XLY-081-002",
+          "price": 0.74,
+          "color": "",
+          "size": "3.5-inch saucer"
+        },
+        {
+          "child_id": "YCS-XLY-081-003",
+          "price": 1.12,
+          "color": "",
+          "size": "4.5-inch bowl"
+        },
+        {
+          "child_id": "YCS-XLY-081-004",
+          "price": 3.61,
+          "color": "",
+          "size": "8-inch bowl"
+        },
+        {
+          "child_id": "YCS-XLY-081-005",
+          "price": 2.63,
+          "color": "",
+          "size": "8-inch shallow plate"
+        },
+        {
+          "child_id": "YCS-XLY-081-006",
+          "price": 2.96,
+          "color": "",
+          "size": "8-inch deep plate"
+        },
+        {
+          "child_id": "YCS-XLY-081-007",
+          "price": 3.61,
+          "color": "",
+          "size": "10-inch shallow plate"
+        },
+        {
+          "child_id": "YCS-XLY-081-008",
+          "price": 3.61,
+          "color": "",
+          "size": "12-inch fish plate"
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-081-002.png"
+      ]
+    },
+    {
+      "id": 668,
+      "sku": "YCS-XLY-082",
+      "category": "Cups & Drinkware",
+      "name": "Premium Ceramic Tableware Set",
+      "name_cn": "陶瓷餐具套装2",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-082.jpeg",
+      "priceMin": 1.12,
+      "priceMax": 5.34,
+      "moq": 5,
+      "description": "Premium Ceramic Tableware Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-082-001",
+          "price": 1.12,
+          "color": "",
+          "size": "Small soup spoon"
+        },
+        {
+          "child_id": "YCS-XLY-082-002",
+          "price": 1.28,
+          "color": "",
+          "size": "Lotus-leaf saucer"
+        },
+        {
+          "child_id": "YCS-XLY-082-003",
+          "price": 1.63,
+          "color": "",
+          "size": "4.5-inch straight-rim rice bowl"
+        },
+        {
+          "child_id": "YCS-XLY-082-004",
+          "price": 2.71,
+          "color": "",
+          "size": "7-inch ribbed trumpet bowl"
+        },
+        {
+          "child_id": "YCS-XLY-082-005",
+          "price": 2.55,
+          "color": "",
+          "size": "8-inch rimmed plate"
+        },
+        {
+          "child_id": "YCS-XLY-082-006",
+          "price": 5.26,
+          "color": "",
+          "size": "10-inch rimmed plate"
+        },
+        {
+          "child_id": "YCS-XLY-082-007",
+          "price": 3.04,
+          "color": "",
+          "size": "8-inch fish plate"
+        },
+        {
+          "child_id": "YCS-XLY-082-008",
+          "price": 3.86,
+          "color": "",
+          "size": "10-inch fish plate"
+        },
+        {
+          "child_id": "YCS-XLY-082-009",
+          "price": 5.34,
+          "color": "",
+          "size": "13.5-inch oval fish plate"
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": []
+    },
+    {
+      "id": 669,
+      "sku": "YCS-XLY-083",
+      "category": "Kitchen Storage",
+      "name": "Kitchen Storage Set",
+      "name_cn": "厨房收纳套装",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-083.jpeg",
+      "priceMin": 5.75,
+      "priceMax": 5.75,
+      "moq": 1,
+      "description": "Kitchen Storage Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-083",
+          "price": 5.75,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-083-002.png"
+      ]
+    },
+    {
+      "id": 670,
+      "sku": "YCS-XLY-084",
+      "category": "Kitchen Tools",
+      "name": "Kitchen Tool Set",
+      "name_cn": "厨房工具套装",
+      "image": "",
+      "priceMin": 2.3,
+      "priceMax": 2.3,
+      "moq": 1,
+      "description": "Kitchen Tool Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-084",
+          "price": 2.3,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": []
+    },
+    {
+      "id": 671,
+      "sku": "YCS-XLY-085",
+      "category": "Kitchen Appliances",
+      "name": "Premium Kitchen Appliance Set",
+      "name_cn": "高端厨房电器套装",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-085.jpeg",
+      "priceMin": 34.5,
+      "priceMax": 34.5,
+      "moq": 1,
+      "description": "Premium Kitchen Appliance Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-085",
+          "price": 34.5,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Home Appliances",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-085-002.jpeg",
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-085-003.jpeg"
+      ]
+    },
+    {
+      "id": 672,
+      "sku": "YCS-XLY-086",
+      "category": "Kitchen Tools",
+      "name": "Kitchen Gadget Single Piece",
+      "name_cn": "厨房小工具",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-086.jpeg",
+      "priceMin": 4.76,
+      "priceMax": 4.76,
+      "moq": 1,
+      "description": "Kitchen Gadget Single Piece.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-086",
+          "price": 4.76,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": []
+    },
+    {
+      "id": 673,
+      "sku": "YCS-XLY-087",
+      "category": "Kitchen Appliances",
+      "name": "Kitchen Cookware Set",
+      "name_cn": "厨房锅具套装",
+      "image": "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-087.jpeg",
+      "priceMin": 37.79,
+      "priceMax": 37.79,
+      "moq": 1,
+      "description": "Kitchen Cookware Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-087",
+          "price": 37.79,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Home Appliances",
+      "images": [
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-087-002.jpeg",
+        "https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/YCS-XLY-087-003.jpeg"
+      ]
+    },
+    {
+      "id": 674,
+      "sku": "YCS-XLY-088",
+      "category": "Kitchen Appliances",
+      "name": "Premium Kitchen Set",
+      "name_cn": "精品厨房套装",
+      "image": "",
+      "priceMin": 64.07,
+      "priceMax": 64.07,
+      "moq": 1,
+      "description": "Premium Kitchen Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-088",
+          "price": 64.07,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Home Appliances",
+      "images": []
+    },
+    {
+      "id": 675,
+      "sku": "YCS-XLY-090",
+      "category": "Kitchen Tools",
+      "name": "Kitchen Accessory Set",
+      "name_cn": "厨房配件套装",
+      "image": "",
+      "priceMin": 3.75,
+      "priceMax": 3.75,
+      "moq": 1,
+      "description": "Kitchen Accessory Set.",
+      "variations": [
+        {
+          "child_id": "YCS-XLY-090",
+          "price": 3.75,
+          "color": "",
+          "size": ""
+        }
+      ],
+      "mainCategory": "Kitchen Supplies",
+      "images": []
     }
   ],
   "categories": [
