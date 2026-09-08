@@ -18047,7 +18047,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Accessories",
+      "mainCategory": "Others",
       "images": [
         "https://www.yeatru.com/Images/YCS-AJ-40-002.png",
         "https://www.yeatru.com/Images/YCS-AJ-40-003.png"
@@ -18072,7 +18072,7 @@
           "size": ""
         }
       ],
-      "mainCategory": "Accessories",
+      "mainCategory": "Others",
       "images": [
         "https://www.yeatru.com/Images/YCS-AJ-41-002.png"
       ]
@@ -18461,7 +18461,6 @@
     "Pet Supplies",
     "Phone Accessories",
     "Sports & Outdoor",
-    "Stationery & Office",
-    "Accessories"
+    "Stationery & Office"
   ]
 }
