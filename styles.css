@@ -3715,3 +3715,66 @@ section.py-5:has([class*="cta-section"]){
     .filter-actions{gap: .4rem .6rem;white-space:normal;justify-content:flex-start;width:100%}
     .filter-actions .category-filter-reset{order:-1}
 }
+
+/* ====== FIX 2: Force .detail-main to center + 2-col grid ====== */
+/* Line 2279 groups .detail-main with .container and .aplus-section for max-width:auto-margin,
+   but that causes grid child columns to misalign when browser applies auto-margin on a grid.
+   Override with explicit 100% width + zero side margins so grid columns fill evenly. */
+.product-detail-page .detail-main{
+    display: grid !important;
+    grid-template-columns: minmax(0, 11fr) minmax(0, 14fr) !important;
+    column-gap: 2.5rem !important;
+    row-gap: 2rem !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 4rem !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    align-items: start !important;
+}
+.product-detail-page .detail-main > .detail-image-col{
+    grid-column: 1 / 2 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.product-detail-page .detail-main > .detail-info{
+    grid-column: 2 / 3 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+/* Also force Related Products + FAQ + Aplus to be full-width */
+.product-detail-page .related-products-section,
+.product-detail-page .faq-section,
+.product-detail-page .aplus-section{
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+}
+/* Desktop: ensure parent .container is the one doing centering */
+@media(min-width:768px){
+    .product-detail-page > .container{
+        max-width: 1180px !important;
+        margin: 0 auto !important;
+        padding: 0 1rem !important;
+    }
+}
+/* Mobile: single column */
+@media(max-width:767.98px){
+    .product-detail-page .detail-main{
+        grid-template-columns: 1fr !important;
+    }
+    .product-detail-page .detail-main > .detail-image-col,
+    .product-detail-page .detail-main > .detail-info{
+        grid-column: 1 / -1 !important;
+    }
+}
