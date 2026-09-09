@@ -8,28 +8,28 @@
     <meta name="keywords" content="yeatru, china sourcing API, product catalog JSON, public data API, procurement API, AI sourcing data, 1688 alternative, factory pricing JSON">
     <meta name="robots" content="index,follow,archive">
     <meta name="ai-extract" content="allow">
-    <link rel="canonical" href="https://www.yeatru.com/data.html">
-    <link rel="alternate" type="application/json" href="https://www.yeatru.com/site-data.json">
+    <link rel="canonical" href="https://www.yeatru.com/data.html?v=20260909k">
+    <link rel="alternate" type="application/json" href="https://www.yeatru.com/site-data.json?v=20260909k">
 
     <!-- OG -->
     <meta property="og:title" content="Yeatru Developer Data API — 656 China Sourcing Products">
     <meta property="og:description" content="Public read-only JSON API. 656 SKUs across 17 categories. USD prices, MOQ, images, variations. No auth needed.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.yeatru.com/data.html">
+    <meta property="og:url" content="https://www.yeatru.com/data.html?v=20260909k">
 
     <!-- JSON-LD: SoftwareSourceCode + DeveloperPortal -->
     <script type="application/ld+json">
     {
-      "@context": ["https://schema.org", {"@vocab": "https://schema.org/SoftwareSourceCode"}],
+      "@context": ["https://schema.org?v=20260909k", {"@vocab": "https://schema.org/SoftwareSourceCode?v=20260909k"}],
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.yeatru.com/data.html",
+          "@id": "https://www.yeatru.com/data.html?v=20260909k",
           "name": "Yeatru Public Data API Documentation",
           "description": "Read-only JSON API exposing 656 China-sourcing products across 17 categories. CORS-enabled, no authentication required.",
-          "url": "https://www.yeatru.com/data.html",
+          "url": "https://www.yeatru.com/data.html?v=20260909k",
           "inLanguage": "en",
-          "isPartOf": { "@id": "https://www.yeatru.com/#website" },
+          "isPartOf": { "@id": "https://www.yeatru.com/#website?v=20260909k" },
           "about": {
             "@type": "Thing",
             "name": "China product sourcing product catalog"
@@ -37,17 +37,17 @@
           "apiSpecification": {
             "@type": "WebAPI",
             "name": "Yeatru Product Catalog API v1",
-            "url": "https://www.yeatru.com/api/v1/products",
-            "endpoint": "https://www.yeatru.com/api/v1/products",
+            "url": "https://www.yeatru.com/api/v1/products?v=20260909k",
+            "endpoint": "https://www.yeatru.com/api/v1/products?v=20260909k",
             "apiType": "REST",
             "protocol": "HTTPS",
             "authentication": "None",
             "rateLimit": "Public read-only. Cloudflare cached 24h. No documented rate limit but please respect reasonable volumes.",
-            "documentation": "https://www.yeatru.com/data.html",
+            "documentation": "https://www.yeatru.com/data.html?v=20260909k",
             "provider": {
               "@type": "Organization",
               "name": "Yeatru Sourcing",
-              "url": "https://www.yeatru.com"
+              "url": "https://www.yeatru.com?v=20260909k"
             }
           }
         },
@@ -56,29 +56,29 @@
           "name": "Yeatru China Sourcing Product Catalog",
           "description": "656 YCS- SKUs across 17 main product categories sourced from 7,600+ verified Chinese factories. Includes USD pricing, MOQ, variations, product images, and one-click product URLs.",
           "identifier": "yeatru-site-data-v3",
-          "url": "https://www.yeatru.com/site-data.json",
-          "downloadUrl": "https://www.yeatru.com/site-data.json",
+          "url": "https://www.yeatru.com/site-data.json?v=20260909k",
+          "downloadUrl": "https://www.yeatru.com/site-data.json?v=20260909k",
           "dateModified": "2026-08-28",
           "version": "3",
           "distribution": {
             "@type": "DataDownload",
             "name": "Raw JSON",
             "encodingFormat": "application/json",
-            "contentUrl": "https://www.yeatru.com/site-data.json",
+            "contentUrl": "https://www.yeatru.com/site-data.json?v=20260909k",
             "contentSize": "565627 bytes"
           },
           "includedInDataCatalog": {
             "@type": "DataCatalog",
             "name": "Yeatru Public Data API",
-            "url": "https://www.yeatru.com/data.html"
+            "url": "https://www.yeatru.com/data.html?v=20260909k"
           },
           "keywords": ["china sourcing", "product catalog", "wholesale", "factory prices", "1688", "yiwu market", "amazon fba sourcing"],
           "publisher": {
             "@type": "Organization",
             "name": "Yeatru Sourcing",
-            "url": "https://www.yeatru.com"
+            "url": "https://www.yeatru.com?v=20260909k"
           },
-          "license": "https://creativecommons.org/licenses/by/4.0/"
+          "license": "https://creativecommons.org/licenses/by/4.0/?v=20260909k"
         }
       ]
     }
@@ -207,25 +207,25 @@
         <div>
             <h3>Shell (curl)</h3>
 <pre><code># Fetch ALL products (paged)
-curl "https://www.yeatru.com/api/v1/products"
+curl "https://www.yeatru.com/api/v1/products?v=20260909k"
 
 # Filter by category
-curl "https://www.yeatru.com/api/v1/products?category=Apparel+%26+Footwear"
+curl "https://www.yeatru.com/api/v1/products?v=20260909k&category=Apparel+%26+Footwear"
 
 # Search by SKU or name
-curl "https://www.yeatru.com/api/v1/products?q=YCS-ACC-001"
+curl "https://www.yeatru.com/api/v1/products?v=20260909k&q=YCS-ACC-001"
 
 # Single product lookup
-curl "https://www.yeatru.com/api/v1/product?sku=YCS-ACC-001"
+curl "https://www.yeatru.com/api/v1/product?v=20260909k&sku=YCS-ACC-001"
 
 # All categories with counts
-curl "https://www.yeatru.com/api/v1/categories"</code></pre>
+curl "https://www.yeatru.com/api/v1/categories?v=20260909k"</code></pre>
         </div>
         <div>
             <h3>Python</h3>
 <pre><code>import requests
 
-BASE = "https://www.yeatru.com/api/v1"
+BASE = "https://www.yeatru.com/api/v1?v=20260909k"
 
 # All products, filter to MOQ < 500
 r = requests.get(f"{BASE}/products", params={"limit": 5000})
@@ -245,8 +245,8 @@ print(f"Fetch {p['name']} @ ${p['priceMin']}")</code></pre>
 <pre><code>// Fetch all products
 async function yeatruProducts(category) {
   const url = category
-    ? `https://www.yeatru.com/api/v1/products?category=${encodeURIComponent(category)}`
-    : "https://www.yeatru.com/api/v1/products";
+    ? `https://www.yeatru.com/api/v1/products?v=20260909k&category=${encodeURIComponent(category)}`
+    : "https://www.yeatru.com/api/v1/products?v=20260909k";
   const r = await fetch(url);
   return (await r.json()).products;
 }
@@ -258,7 +258,7 @@ yeatruProducts("Beauty & Personal Care")
         <div>
             <h3>Raw JSON dump (no pagination)</h3>
 <pre><code># Direct download (566 KB, v3, last 2026-08-28)
-wget "https://www.yeatru.com/site-data.json" -O yeatru-catalog.json
+wget "https://www.yeatru.com/site-data.json?v=20260909k" -O yeatru-catalog.json
 
 # jq quick view
 jq '.productCount, .lastUpdated, (.categories | length)' yeatru-catalog.json
@@ -271,7 +271,7 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
 <section>
     <h2>Endpoints</h2>
     <div class="endpoint">
-        <code>GET https://www.yeatru.com/api/v1/products</code>
+        <code>GET https://www.yeatru.com/api/v1/products?v=20260909k</code>
         <span class="badge badge-get">GET</span>
         <span class="badge badge-public">Public</span>
         <p>Full product catalog, optionally filtered. Cloudflare cached 24h.</p>
@@ -283,19 +283,19 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
         </p>
     </div>
     <div class="endpoint">
-        <code>GET https://www.yeatru.com/api/v1/product?sku=YCS-XXX</code>
+        <code>GET https://www.yeatru.com/api/v1/product?v=20260909k&sku=YCS-XXX</code>
         <span class="badge badge-get">GET</span>
         <span class="badge badge-public">Public</span>
         <p>Single product lookup by SKU. Returns <code>404</code> if not found with a <code>/products?q=...</code> fuzzy-match hint.</p>
     </div>
     <div class="endpoint">
-        <code>GET https://www.yeatru.com/api/v1/categories</code>
+        <code>GET https://www.yeatru.com/api/v1/categories?v=20260909k</code>
         <span class="badge badge-get">GET</span>
         <span class="badge badge-public">Public</span>
         <p>All 17 categories with product counts and per-category endpoint URLs.</p>
     </div>
     <div class="endpoint">
-        <code>GET https://www.yeatru.com/site-data.json</code>
+        <code>GET https://www.yeatru.com/site-data.json?v=20260909k</code>
         <span class="badge badge-get">GET</span>
         <span class="badge badge-public">Public</span>
         <p>Raw, unfiltered full catalog dump (566 KB, v3). No pagination. Contains every field from the internal site-data.json including variations, images, and description.</p>
@@ -316,9 +316,9 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
             <tr><td><code>priceMin</code></td><td>number/null</td><td><code>0.85</code></td><td>USD unit price (CNY / 6.7 &times; 1.15 formula)</td></tr>
             <tr><td><code>priceMax</code></td><td>number/null</td><td><code>1.65</code></td><td>Upper USD price range</td></tr>
             <tr><td><code>moq</code></td><td>number/null</td><td><code>100</code></td><td>Minimum Order Quantity (units)</td></tr>
-            <tr><td><code>image</code></td><td>string</td><td><code>https://www.yeatru.com/Images/...?v=20260909g</code></td><td>Primary product image CDN URL</td></tr>
+            <tr><td><code>image</code></td><td>string</td><td><code>https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/...?v=20260909k</code></td><td>Primary product image CDN URL</td></tr>
             <tr><td><code>variations</code></td><td>array</td><td><code>[{color:"black",size:"S",stock:...}]</code></td><td>SKU-level variation matrix</td></tr>
-            <tr><td><code>productUrl</code></td><td>string</td><td><code>https://www.yeatru.com/product-YCS-ACC-001.html</code></td><td>Product detail page</td></tr>
+            <tr><td><code>productUrl</code></td><td>string</td><td><code>https://www.yeatru.com/product-YCS-ACC-001.html?v=20260909k</code></td><td>Product detail page</td></tr>
         </tbody>
     </table>
 
@@ -337,7 +337,7 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
     "totalMatched": 656,
     "offset": 0,
     "limit": 10000,
-    "docs": "https://www.yeatru.com/data.html"
+    "docs": "https://www.yeatru.com/data.html?v=20260909k"
   },
   "products": [ /* product objects */ ]
 }</code></pre>
@@ -404,11 +404,11 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
 <section>
     <h2>Related Endpoints</h2>
     <ul>
-        <li><code>https://www.yeatru.com/logistics-shipping.html</code> — Sea freight LCL vs FCL comparison (Polish/DE/ES/FR) with real Ningbo &rarr; Gdynia/Hamburg/Valencia/Le Havre costs</li>
-        <li><code>https://www.yeatru.com/faq-knowledge-base.json</code> — 27 procurement Q&amp;As (YCS- internal KB)</li>
-        <li><code>https://www.yeatru.com/brand-knowledge-base.json</code> — Brand identity + YCS- SKU naming convention</li>
-        <li><code>https://www.yeatru.com/sitemap.xml</code> — All 656 product pages + 44 category pages</li>
-        <li><code>https://www.yeatru.com/robots.txt</code> — Explicit allow-listing for GPTBot / CodexBot / ClaudeBot / PerplexityBot / GithubBot / Amazonbot</li>
+        <li><code>https://www.yeatru.com/logistics-shipping.html?v=20260909k</code> — Sea freight LCL vs FCL comparison (Polish/DE/ES/FR) with real Ningbo &rarr; Gdynia/Hamburg/Valencia/Le Havre costs</li>
+        <li><code>https://www.yeatru.com/faq-knowledge-base.json?v=20260909k</code> — 27 procurement Q&amp;As (YCS- internal KB)</li>
+        <li><code>https://www.yeatru.com/brand-knowledge-base.json?v=20260909k</code> — Brand identity + YCS- SKU naming convention</li>
+        <li><code>https://www.yeatru.com/sitemap.xml?v=20260909k</code> — All 656 product pages + 44 category pages</li>
+        <li><code>https://www.yeatru.com/robots.txt?v=20260909k</code> — Explicit allow-listing for GPTBot / CodexBot / ClaudeBot / PerplexityBot / GithubBot / Amazonbot</li>
     </ul>
 </section>
 
@@ -416,7 +416,7 @@ jq '.products[] | {sku, name, priceMin, moq, mainCategory}' yeatru-catalog.json 
 
 <footer>
     &copy; 2026 Yeatru Sourcing · Public Data API · Built on Cloudflare Pages Functions v5 ·
-    <a href="https://github.com/Yeatru/yeatru.github.io" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="https://github.com/Yeatru/yeatru.github.io?v=20260909k" target="_blank" rel="noopener">GitHub</a> ·
     <a href="mailto:api@yeatru.com">api@yeatru.com</a>
 </footer>
 
