@@ -18573,7 +18573,7 @@
       "category": "Hair Accessories",
       "name": "Wig Dryer Styling Tool",
       "name_cn": "假发烘干造型器",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-35.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-35.jpg",
       "priceMin": 90.96,
       "priceMax": 90.96,
       "moq": 2,
@@ -18588,9 +18588,10 @@
       ],
       "mainCategory": "Beauty & Personal Care",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-35-002.png"
+        "https://www.yeatru.com/Images/YCS-AJ-35.png"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-35.png"
     },
     {
       "id": 658,
@@ -18598,7 +18599,7 @@
       "category": "Hair Accessories",
       "name": "Hair Tie Accessories",
       "name_cn": "发圈配件",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-36.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-36.jpg",
       "priceMin": 0.38,
       "priceMax": 0.38,
       "moq": 1,
@@ -18613,9 +18614,10 @@
       ],
       "mainCategory": "Beauty & Personal Care",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-36-002.png"
+        "https://www.yeatru.com/Images/YCS-AJ-36.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-36.jpg"
     },
     {
       "id": 659,
@@ -18623,7 +18625,7 @@
       "category": "Hair Accessories",
       "name": "Hair Tie Accessories",
       "name_cn": "发圈配件",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-37.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-37.jpg",
       "priceMin": 0.38,
       "priceMax": 0.38,
       "moq": 1,
@@ -18637,8 +18639,11 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-AJ-37.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-37.jpg"
     },
     {
       "id": 660,
@@ -18646,7 +18651,7 @@
       "category": "Hair Accessories",
       "name": "Large Hair Extension Tying Tool",
       "name_cn": "大肠发圈大号11-14cm",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-38.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-38.jpg",
       "priceMin": 1.25,
       "priceMax": 1.25,
       "moq": 1,
@@ -18661,10 +18666,10 @@
       ],
       "mainCategory": "Beauty & Personal Care",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-38-002.png",
-        "https://www.yeatru.com/Images/YCS-AJ-38-003.png"
+        "https://www.yeatru.com/Images/YCS-AJ-38.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-38.jpg"
     },
     {
       "id": 661,
@@ -18686,8 +18691,11 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-AJ-39.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-39.jpg"
     },
     {
       "id": 662,
@@ -18695,7 +18703,7 @@
       "category": "Accessories",
       "name": "Pearl Necklace Jewelry",
       "name_cn": "珍珠项链",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-40.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-40.jpg",
       "priceMin": 1.13,
       "priceMax": 1.13,
       "moq": 1,
@@ -18710,10 +18718,10 @@
       ],
       "mainCategory": "Others",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-40-002.png",
-        "https://www.yeatru.com/Images/YCS-AJ-40-003.png"
+        "https://www.yeatru.com/Images/YCS-AJ-40.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-40.jpg"
     },
     {
       "id": 663,
@@ -18721,7 +18729,7 @@
       "category": "Accessories",
       "name": "Statement Necklace Jewelry",
       "name_cn": "项链",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-41.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-41.jpg",
       "priceMin": 10.13,
       "priceMax": 10.13,
       "moq": 1,
@@ -18736,9 +18744,10 @@
       ],
       "mainCategory": "Others",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-41-002.png"
+        "https://www.yeatru.com/Images/YCS-AJ-41.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-41.jpg"
     },
     {
       "id": 664,
@@ -18746,7 +18755,7 @@
       "category": "Hair Accessories",
       "name": "Durags Head Wraps",
       "name_cn": "头套Durags",
-      "image": "https://www.yeatru.com/Images/YCS-AJ-42.png",
+      "image": "https://www.yeatru.com/Images/YCS-AJ-42.jpg",
       "priceMin": 0.91,
       "priceMax": 0.91,
       "moq": 1,
@@ -18761,9 +18770,10 @@
       ],
       "mainCategory": "Beauty & Personal Care",
       "images": [
-        "https://www.yeatru.com/Images/YCS-AJ-42-002.png"
+        "https://www.yeatru.com/Images/YCS-AJ-42.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-42.jpg"
     },
     {
       "id": 665,
@@ -18785,8 +18795,11 @@
         }
       ],
       "mainCategory": "Beauty & Personal Care",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-AJ-43.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-AJ-43.jpg"
     },
     {
       "id": 666,
@@ -18808,8 +18821,11 @@
         }
       ],
       "mainCategory": "Home Appliances",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-080.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-080.jpg"
     },
     {
       "id": 667,
@@ -18874,9 +18890,10 @@
       ],
       "mainCategory": "Kitchen Supplies",
       "images": [
-        "https://www.yeatru.com/Images/YCS-XLY-081-002.png"
+        "https://www.yeatru.com/Images/YCS-XLY-081.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-081.jpg"
     },
     {
       "id": 668,
@@ -18946,8 +18963,11 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-082.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-082.jpg"
     },
     {
       "id": 669,
@@ -18970,9 +18990,10 @@
       ],
       "mainCategory": "Kitchen Supplies",
       "images": [
-        "https://www.yeatru.com/Images/YCS-XLY-083-002.png"
+        "https://www.yeatru.com/Images/YCS-XLY-083.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-083.jpg"
     },
     {
       "id": 670,
@@ -18994,8 +19015,11 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-084.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-084.jpg"
     },
     {
       "id": 671,
@@ -19018,10 +19042,10 @@
       ],
       "mainCategory": "Home Appliances",
       "images": [
-        "https://www.yeatru.com/Images/YCS-XLY-085-002.jpeg",
-        "https://www.yeatru.com/Images/YCS-XLY-085-003.jpeg"
+        "https://www.yeatru.com/Images/YCS-XLY-085.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-085.jpg"
     },
     {
       "id": 672,
@@ -19043,8 +19067,11 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-086.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-086.jpg"
     },
     {
       "id": 673,
@@ -19067,10 +19094,10 @@
       ],
       "mainCategory": "Home Appliances",
       "images": [
-        "https://www.yeatru.com/Images/YCS-XLY-087-002.jpeg",
-        "https://www.yeatru.com/Images/YCS-XLY-087-003.jpeg"
+        "https://www.yeatru.com/Images/YCS-XLY-087.jpg"
       ],
-      "dateAdded": "2026-09-09"
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-087.jpg"
     },
     {
       "id": 674,
@@ -19092,8 +19119,11 @@
         }
       ],
       "mainCategory": "Home Appliances",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-088.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-088.jpg"
     },
     {
       "id": 675,
@@ -19115,8 +19145,11 @@
         }
       ],
       "mainCategory": "Kitchen Supplies",
-      "images": [],
-      "dateAdded": "2026-09-09"
+      "images": [
+        "https://www.yeatru.com/Images/YCS-XLY-090.jpg"
+      ],
+      "dateAdded": "2026-09-09",
+      "mainImage": "https://www.yeatru.com/Images/YCS-XLY-090.jpg"
     }
   ],
   "categories": [

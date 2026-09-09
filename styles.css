@@ -3670,3 +3670,36 @@ section.py-5:has([class*="cta-section"]){
     margin:10px 0;
     line-height:1.45;
 }
+
+/* ====== Product Detail Page Layout Fix ====== */
+/* Ensure two-column grid layout on desktop */
+@media(min-width:768px){
+    .product-detail-page .detail-main{
+        display:grid !important;
+        grid-template-columns:minmax(0, 11fr) minmax(0, 14fr) !important;
+        column-gap:2.5rem !important;
+        row-gap:2rem !important;
+        align-items:start !important;
+    }
+    .product-detail-page .detail-main > .detail-image-col{
+        grid-column:1 / auto !important;
+        width:100% !important;
+        min-width:0 !important;
+    }
+    .product-detail-page .detail-main > .detail-info{
+        grid-column:2 / auto !important;
+        width:100% !important;
+        min-width:0 !important;
+    }
+}
+@media(max-width:767.98px){
+    .product-detail-page .detail-main{
+        grid-template-columns:1fr !important;
+    }
+    .product-detail-page .detail-main > .detail-image-col{
+        grid-column:1 / -1 !important;
+    }
+    .product-detail-page .detail-main > .detail-info{
+        grid-column:1 / -1 !important;
+    }
+}
