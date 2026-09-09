@@ -650,6 +650,7 @@ const translationResources = {
 
 let currentFilterCategory = 'all';
 let currentSearchQuery = '';
+let currentSortBy = 'newest';
 let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
@@ -2125,6 +2126,16 @@ function renderProducts() {
     const filterInfo = document.getElementById('filterResultInfo');
     if (!productList) return;
 
+    // Bind sort select (once)
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect && !sortSelect._bound) {
+        sortSelect._bound = true;
+        sortSelect.addEventListener('change', function () {
+            currentSortBy = this.value;
+            renderProducts();
+        });
+    }
+
     // 1) Category filter — use resolveMainCategory so the UI's big-category pills
     //    (e.g. "Apparel & Footwear") correctly match products whose raw category is
     //    a sub-category like "Clothing", "Shoes", "Accessories", etc.
@@ -2152,6 +2163,23 @@ function renderProducts() {
                 (p.tags || (p.keywords || ''))
             ].join(' ').toLowerCase();
             return tokens.every(function (tok) { return hay.indexOf(tok) !== -1; });
+        });
+    }
+
+    // 3) Sort filter — default: newest first (dateAdded desc)
+    if (currentSortBy === 'price-desc') {
+        filtered.sort(function (a, b) { return (b.priceMax || b.priceMin || 0) - (a.priceMax || a.priceMin || 0); });
+    } else if (currentSortBy === 'price-asc') {
+        filtered.sort(function (a, b) { return (a.priceMin || a.priceMax || 0) - (b.priceMin || b.priceMax || 0); });
+    } else if (currentSortBy === 'name-asc') {
+        filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
+    } else {
+        // newest first — dateAdded desc, then id desc
+        filtered.sort(function (a, b) {
+            const da = (a.dateAdded || '').toString();
+            const db = (b.dateAdded || '').toString();
+            if (da !== db) return db.localeCompare(da);
+            return (b.id || 0) - (a.id || 0);
         });
     }
 

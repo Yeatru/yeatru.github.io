@@ -1187,7 +1187,16 @@
                 <div class="product-filter-bar mb-4">
                     <div class="d-flex flex-wrap align-items-center gap-3 justify-content-between">
                         <div id="categoryFilterList" class="category-filter-list d-flex flex-wrap gap-2"></div>
-                        <div id="filterResultInfo" class="text-muted small"></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <label for="sortSelect" class="text-muted small mb-0"><i class="fas fa-sort me-1"></i>Sort by:</label>
+                            <select id="sortSelect" class="form-select form-select-sm" style="width:auto;min-width:160px;">
+                                <option value="newest">Newest First</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="name-asc">Name: A to Z</option>
+                            </select>
+                            <div id="filterResultInfo" class="text-muted small"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="row g-4" id="productList"></div>
