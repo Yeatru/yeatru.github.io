@@ -3703,3 +3703,15 @@ section.py-5:has([class*="cta-section"]){
         grid-column:1 / -1 !important;
     }
 }
+
+/* ====== Filter Bar: Reset Filter + Sort on same row ====== */
+.filter-top-row{gap: .75rem 1rem}
+.filter-actions{align-items:center;white-space:nowrap;flex-shrink:0}
+.filter-actions label{font-weight:500;color:var(--text-secondary)}
+.filter-actions .form-select-sm{padding-top:.25rem;padding-bottom:.25rem}
+.filter-actions .category-filter-reset{margin-left:0;margin-right:.25rem}
+@media(max-width:767.98px){
+    .filter-top-row{gap: .5rem}
+    .filter-actions{gap: .4rem .6rem;white-space:normal;justify-content:flex-start;width:100%}
+    .filter-actions .category-filter-reset{order:-1}
+}

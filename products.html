@@ -47,7 +47,7 @@
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="styles.css?v=20260909a">
+    <link rel="stylesheet" href="styles.css?v=20260909b">
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
     <script>
@@ -1185,11 +1185,12 @@
         <section class="py-5 bg-white">
             <div class="container">
                 <div class="product-filter-bar mb-4">
-                    <div class="d-flex flex-wrap align-items-center gap-3 justify-content-between">
-                        <div id="categoryFilterList" class="category-filter-list d-flex flex-wrap gap-2"></div>
-                        <div class="d-flex align-items-center gap-3">
+                    <div class="filter-top-row d-flex flex-wrap align-items-center gap-3 justify-content-between">
+                        <div id="categoryFilterList" class="category-filter-list d-flex flex-wrap gap-2 flex-1" style="min-width:280px;"></div>
+                        <div class="filter-actions d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                            <button type="button" id="resetFilterBtn" class="category-filter-reset me-1"><i class="fas fa-rotate-left me-1"></i><span data-i18n="filter.reset">Reset Filter</span></button>
                             <label for="sortSelect" class="text-muted small mb-0"><i class="fas fa-sort me-1"></i>Sort by:</label>
-                            <select id="sortSelect" class="form-select form-select-sm" style="width:auto;min-width:160px;">
+                            <select id="sortSelect" class="form-select form-select-sm" style="width:auto;min-width:150px;">
                                 <option value="newest">Newest First</option>
                                 <option value="price-desc">Price: High to Low</option>
                                 <option value="price-asc">Price: Low to High</option>

@@ -1747,16 +1747,16 @@ function renderCategoryFilter() {
         });
         list.appendChild(btn);
     });
-    const resetBtn = document.createElement('button');
-    resetBtn.type = 'button';
-    resetBtn.className = 'category-filter-reset';
-    resetBtn.innerHTML = '<i class="fas fa-rotate-left me-1"></i>' + tt('filter.reset', 'Reset Filter');
+}
+
+function bindResetFilterButton() {
+    const resetBtn = document.getElementById('resetFilterBtn');
+    if (!resetBtn) return;
     resetBtn.addEventListener('click', function () {
         currentFilterCategory = 'all';
         renderCategoryFilter();
         renderProducts();
     });
-    list.appendChild(resetBtn);
 }
 
 function renderProductsDropdown() {
@@ -1950,6 +1950,7 @@ function applySiteData(data, options = {}) {
     renderBrandLogo();
     renderCategories();
     renderCategoryFilter();
+    bindResetFilterButton();
     renderProducts();
     renderIndexCategories();
     renderIndexHotProducts();
