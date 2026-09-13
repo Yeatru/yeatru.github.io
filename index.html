@@ -357,7 +357,7 @@
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css?v=20260909k" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"></noscript>
     <!-- Font Awesome 非阻塞加载 (font-display: swap 内置) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=20260909k">
-    <link rel="stylesheet" href="styles.css?v=20260913b">
+    <link rel="stylesheet" href="styles.css?v=20260915c">
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?v=20260909k&id=G-KXW2N4FHZR"></script>
     <script>
@@ -523,40 +523,144 @@
 
     <main id="mainContent">
         <!-- Single Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-6">
-                        <div class="hero-content">
-                            <span class="hero-tag"><i class="fas fa-award me-1"></i>14+ Yrs · 200+ Clients · 98% Rating</span>
-                            <h1 class="hero-title">China Sourcing Agent — Cut Costs 30%, MOQ from 50 pcs</h1>
-                            <p class="hero-subtitle">Join 200+ global sellers who've cut sourcing costs by 30%+. We handle supplier vetting, quality control, and shipping — you focus on growing your sales.</p>
-                            <div class="hero-features">
-                                <span class="hero-feature"><i class="fas fa-check-circle"></i> 50 Pieces MOQ</span>
-                                <span class="hero-feature"><i class="fas fa-check-circle"></i> 24hr Quote</span>
-                                <span class="hero-feature"><i class="fas fa-check-circle"></i> Zero Risk</span>
-                            </div>
-                            <div class="hero-cta">
-                                <a href="#contact-us" class="btn btn-cta"><i class="fas fa-paper-plane me-2"></i>Get Free Quote Now</a>
-                                <a href="products.html" class="btn btn-outline-primary">View Products</a>
-                            </div>
-                            <div class="hero-trust-bar">
-                                <div class="trust-stat"><span class="ts-num">75K+</span><span class="ts-lab">Factories</span></div>
-                                <div class="trust-sep"></div>
-                                <div class="trust-stat"><span class="ts-num">200+</span><span class="ts-lab">Clients</span></div>
-                                <div class="trust-sep"></div>
-                                <div class="trust-stat"><span class="ts-num">50+</span><span class="ts-lab">Countries</span></div>
-                                <div class="trust-sep"></div>
-                                <div class="trust-stat"><span class="ts-num">98%</span><span class="ts-lab">Rating</span></div>
+        <!-- Hero Carousel: 4 大业务方向 -->
+        <section id="home" class="banner-carousel banner-carousel-section">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Slide 1: Core Sourcing Agent -->
+                    <div class="carousel-item active">
+                        <div class="container h-100">
+                            <div class="row align-items-center g-4 py-4">
+                                <div class="col-lg-7 banner-content">
+                                    <span class="banner-tag"><i class="fas fa-award me-1"></i>14+ Yrs · 200+ Clients · 98% Rating</span>
+                                    <h1 class="banner-title" data-i18n="banner.slide1Title">China Sourcing Agent — Cut Costs 30%, MOQ from 50 pcs</h1>
+                                    <p class="banner-subtitle" data-i18n="banner.slide1Subtitle">Join 200+ global sellers who've cut sourcing costs by 30%+. We handle supplier vetting, quality control, and shipping — you focus on growing your sales.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> <span data-i18n="banner.slide1Feat1">50 Pieces MOQ</span></span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> <span data-i18n="banner.slide1Feat2">24hr Quote</span></span>
+                                        <span class="banner-feature"><i class="fas fa-check-circle"></i> <span data-i18n="banner.slide1Feat3">Zero Risk</span></span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="#contact-us" class="btn btn-cta"><i class="fas fa-paper-plane me-2"></i><span data-i18n="banner.slide1Btn1">Get Free Quote Now</span></a>
+                                        <a href="products.html" class="btn btn-outline-light"><span data-i18n="banner.slide1Btn2">View Products</span></a>
+                                    </div>
+                                    <div class="banner-trust-bar">
+                                        <div class="trust-stat"><span class="ts-num">75K+</span><span class="ts-lab">Factories</span></div>
+                                        <div class="trust-sep"></div>
+                                        <div class="trust-stat"><span class="ts-num">200+</span><span class="ts-lab">Clients</span></div>
+                                        <div class="trust-sep"></div>
+                                        <div class="trust-stat"><span class="ts-num">50+</span><span class="ts-lab">Countries</span></div>
+                                        <div class="trust-sep"></div>
+                                        <div class="trust-stat"><span class="ts-num">98%</span><span class="ts-lab">Rating</span></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 banner-image">
+                                    <div class="banner-image-wrap">
+                                        <img src="/Images/FBA.jpg" loading="eager" alt="China Sourcing Agent" fetchpriority="high" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                        <div class="banner-image-placeholder"><i class="fas fa-globe"></i><span>Global Sourcing Network</span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="hero-image">
-                            <img src="/Images/FBA.jpg" loading="eager" alt="China Sourcing for Amazon" decoding="async" fetchpriority="high" class="img-fluid rounded shadow-sm">
+                    <!-- Slide 2: OEM & Private Label -->
+                    <div class="carousel-item">
+                        <div class="container h-100">
+                            <div class="row align-items-center g-4 py-4">
+                                <div class="col-lg-7 banner-content">
+                                    <span class="banner-tag"><i class="fas fa-palette me-1"></i>Build Your Brand Identity</span>
+                                    <h1 class="banner-title" data-i18n="banner.slide2Title">Custom Logo, Packaging & Design — Ship in 7 Days</h1>
+                                    <p class="banner-subtitle" data-i18n="banner.slide2Subtitle">Stand out from competitors with custom-branded products. Free design consultation included — no hidden fees, transparent pricing from day one.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-paint-brush"></i> <span data-i18n="banner.slide2Feat1">Free Design Support</span></span>
+                                        <span class="banner-feature"><i class="fas fa-clock"></i> <span data-i18n="banner.slide2Feat2">7-Day Sample</span></span>
+                                        <span class="banner-feature"><i class="fas fa-box"></i> <span data-i18n="banner.slide2Feat3">Low MOQ 200pcs</span></span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="#contact-us" class="btn btn-cta"><i class="fas fa-paint-brush me-2"></i><span data-i18n="banner.slide2Btn1">Start Custom Design</span></a>
+                                        <a href="oem.html" class="btn btn-outline-light"><span data-i18n="banner.slide2Btn2">View OEM Services</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 banner-image">
+                                    <div class="banner-image-wrap">
+                                        <img src="/Images/logo_and_mold.jpg" loading="lazy" alt="OEM Private Label" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                        <div class="banner-image-placeholder"><i class="fas fa-cogs"></i><span>OEM Custom Production</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Global Logistics -->
+                    <div class="carousel-item">
+                        <div class="container h-100">
+                            <div class="row align-items-center g-4 py-4">
+                                <div class="col-lg-7 banner-content">
+                                    <span class="banner-tag"><i class="fas fa-truck me-1"></i>End-to-End Logistics</span>
+                                    <h1 class="banner-title" data-i18n="banner.slide3Title">Drop Shipping & Global Warehouse Consolidation</h1>
+                                    <p class="banner-subtitle" data-i18n="banner.slide3Subtitle">Ship directly to your customers worldwide. We offer free warehousing, goods consolidation, and competitive door-to-door shipping rates.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-warehouse"></i> <span data-i18n="banner.slide3Feat1">Free Warehousing</span></span>
+                                        <span class="banner-feature"><i class="fas fa-truck"></i> <span data-i18n="banner.slide3Feat2">Door-to-Door Delivery</span></span>
+                                        <span class="banner-feature"><i class="fas fa-globe"></i> <span data-i18n="banner.slide3Feat3">Global Coverage</span></span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="#contact-us" class="btn btn-cta"><i class="fas fa-paper-plane me-2"></i><span data-i18n="banner.slide3Btn1">Get Free Quote</span></a>
+                                        <a href="logistics-shipping.html" class="btn btn-outline-light"><span data-i18n="banner.slide3Btn2">Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 banner-image">
+                                    <div class="banner-image-wrap">
+                                        <img src="/Images/warehouse.jpg" loading="lazy" alt="Global Logistics Shipping" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                        <div class="banner-image-placeholder"><i class="fas fa-truck-fast"></i><span>DDP Door-to-Door</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Warehousing & QC -->
+                    <div class="carousel-item">
+                        <div class="container h-100">
+                            <div class="row align-items-center g-4 py-4">
+                                <div class="col-lg-7 banner-content">
+                                    <span class="banner-tag"><i class="fas fa-clipboard-check me-1"></i>Quality Control Hub</span>
+                                    <h1 class="banner-title" data-i18n="banner.slide4Title">Warehousing & Quality Inspection — Your China Logistics Hub</h1>
+                                    <p class="banner-subtitle" data-i18n="banner.slide4Subtitle">Store your inventory in our Yiwu warehouse. We inspect every shipment, consolidate orders, and ship directly to your customers — perfect for small sellers.</p>
+                                    <div class="banner-features">
+                                        <span class="banner-feature"><i class="fas fa-box-open"></i> <span data-i18n="banner.slide4Feat1">Free 15-Day Storage</span></span>
+                                        <span class="banner-feature"><i class="fas fa-clipboard-check"></i> <span data-i18n="banner.slide4Feat2">Three-Level Inspection</span></span>
+                                        <span class="banner-feature"><i class="fas fa-boxes-stacked"></i> <span data-i18n="banner.slide4Feat3">Order Consolidation</span></span>
+                                    </div>
+                                    <div class="banner-cta">
+                                        <a href="#contact-us" class="btn btn-cta"><i class="fas fa-box me-2"></i><span data-i18n="banner.slide4Btn1">Get Inspection Quote</span></a>
+                                        <a href="quality-control.html" class="btn btn-outline-light"><span data-i18n="banner.slide4Btn2">Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 banner-image">
+                                    <div class="banner-image-wrap">
+                                        <img src="/Images/Audit4.jpg" loading="lazy" alt="Quality Control Inspection" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                        <div class="banner-image-placeholder"><i class="fas fa-microscope"></i><span>AQL 2.5 Inspection</span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </section>
 
@@ -767,15 +871,115 @@
                     <h2 class="section-title" data-i18n="common.hotProducts">Hot Selling Products</h2>
                     <p class="section-subtitle" data-i18n="common.hotProductsSubtitle">Browse our most popular product categories sourced from trusted suppliers</p>
                 </div>
-                
-                <!-- Category Icons -->
-                <div id="indexCategoryList" class="index-category-list">
+
+                <!-- Category Image Cards (one image per category) -->
+                <div class="row g-4 mt-3">
+                    <!-- 1. Beauty & Personal Care (Top priority: beauty/salon equipment) -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-beauty.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-CLN-003-peacock-blue.jpg" loading="lazy" alt="Beauty & Salon Equipment" decoding="async">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Beauty &amp; Personal Care</h3>
+                                <span class="category-img-sub">Salon · Nail · Skin Care</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 2. Home Appliances (salon equipment subcategory) -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-personal-care.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-AJ-38.jpg" loading="lazy" alt="Home & Salon Appliances" decoding="async">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Home Appliances</h3>
+                                <span class="category-img-sub">Appliances · Health Devices</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 3. Apparel & Footwear -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-clothing.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-CLO-028.jpg" loading="lazy" alt="Apparel & Footwear" decoding="async" onerror="this.src='https://picsum.photos/seed/apparel/600/400'">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Apparel &amp; Footwear</h3>
+                                <span class="category-img-sub">Clothing · Shoes · Swimwear</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 4. Digital Electronics -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-audio-electronics.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-SMA-001.jpg" loading="lazy" alt="Digital Electronics" decoding="async" onerror="this.src='https://picsum.photos/seed/electronics/600/400'">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Digital Electronics</h3>
+                                <span class="category-img-sub">Smart Devices · Audio · Accessories</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 5. Sports & Outdoor -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-fitness.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-FIT-001.jpg" loading="lazy" alt="Sports & Outdoor" decoding="async" onerror="this.src='https://picsum.photos/seed/sports/600/400'">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Sports &amp; Outdoor</h3>
+                                <span class="category-img-sub">Fitness · Camping · Travel</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 6. Kitchen Supplies -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-kitchen-tools.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-KST-001.jpg" loading="lazy" alt="Kitchen Supplies" decoding="async" onerror="this.src='https://picsum.photos/seed/kitchen/600/400'">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Kitchen Supplies</h3>
+                                <span class="category-img-sub">Cookware · Storage · Drinkware</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 7. Home & Daily Living -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-home-garden.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="/Images/YCS-LED-001.jpg" loading="lazy" alt="Home & Daily Living" decoding="async" onerror="this.src='https://picsum.photos/seed/home/600/400'">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Home &amp; Living</h3>
+                                <span class="category-img-sub">Decor · Storage · Cleaning</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 8. Pet Supplies -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <a href="category-dog-supplies.html" class="category-img-card d-block">
+                            <div class="category-img-wrap">
+                                <img src="https://picsum.photos/seed/pets/600/400" loading="lazy" alt="Pet Supplies" decoding="async">
+                                <div class="category-img-overlay"></div>
+                            </div>
+                            <div class="category-img-info">
+                                <h3 class="category-img-title">Pet Supplies</h3>
+                                <span class="category-img-sub">Dogs · Cats · Accessories</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                
-                <!-- Product Cards -->
-                <div class="row g-4 mt-4" id="indexHotProducts">
-                </div>
-                
+
                 <div class="text-center mt-5">
                     <a href="products.html" class="btn btn-cta" data-i18n="common.browseAll"><i class="fas fa-th me-2"></i>Browse All Products</a>
                 </div>
@@ -2548,19 +2752,18 @@
 <script src="i18n-svc2.js" defer></script>
 <script src="i18n-svc3.js" defer></script>
 <script src="i18n-misc.js" defer></script>
-    <script src="app.js?v=20260909k" defer></script>
+    <script src="app.js?v=20260915c" defer></script>
 
-<!-- Floating Contact Widget (WhatsApp + Email, sticky bottom-right) -->
+<!-- Floating Contact Widget (WhatsApp > Email > Telegram, sticky bottom-right) -->
 <div class="contact-float">
-  <a href="https://t.me/YeatruSourcing?v=20260909k" class="contact-float-btn telegram" target="_blank" rel="noopener noreferrer" data-label="Telegram" title="Chat with us on Telegram">
-    <i class="fab fa-telegram"></i>
-  </a>
-
   <a href="https://wa.me/8615988516408?v=20260909k&text=Hello%20Yeatru%20Sourcing%2C%20I%20would%20like%20a%20free%20quote%20for%20sourcing%20products%20from%20China." class="contact-float-btn whatsapp" target="_blank" rel="noopener noreferrer" data-label="WhatsApp" title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
   <a href="mailto:info@yeatru.com?subject=Free%20Quote%20Request%20-%20Sourcing%20from%20China" class="contact-float-btn email" data-label="Email Quote" title="Send us an email for a free quote">
     <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://t.me/YeatruSourcing?v=20260909k" class="contact-float-btn telegram" target="_blank" rel="noopener noreferrer" data-label="Telegram" title="Chat with us on Telegram">
+    <i class="fab fa-telegram"></i>
   </a>
 </div>
 </body>

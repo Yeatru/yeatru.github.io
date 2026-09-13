@@ -184,98 +184,105 @@ export async function onRequest(context) {
     }
   }
 
-  // --- (2) HTML URL 规范化服务 (v6: 单通道 canonical 模式) -------------
-  // 问题诊断 (结合 Bing Webmaster + GSC 两张截图):
-  //   A) Bing "URLs redirecting": CF Pages 默认把 /testimonials 这类 clean path
-  //      返回 308 → /testimonials.html。Bing 把它记入 redirecting 档不算 Indexed。
-  //      且 308 语义上是"保留 body 跳转"，SEO 权重转移不如 301 明确。
-  //   B) v5 的"双通道都返回 200"策略虽然消掉 308，但让 /xxx 和 /xxx.html 两个 URL
-  //      内容完全一致→Duplicate Content。GSC 89 条 "Alternate page with proper
-  //      canonical tag" 就是这么来的；Bing 则直接判 Excluded (index.html 那条)。
-  // 修复策略 (single canonical URL):
-  //     首选格式 = 首页 "/" (canonical 不带 index.html) + 其他页 "/page.html"
-  //     · 访问 clean path (无后缀) → 301 永久跳转到 /page.html (.html suffix)
-  //     · 访问 /index.html            → 301 永久跳转到 / (已在 PERMANENT_301 先行)
-  //     · 访问 .html 或 /             → ASSETS.fetch 直读, 200 带 canonical header
-  // 好处: 1) 搜索引擎只收录一个 URL, 权重不再分流
-  //       2) 重定向统一成 301 (SEO 标准永久迁移, 不是 308), Bing 不再扔到 redirecting
-  //       3) canonical HTTP header 与 <link rel=canonical> 完全一致,
-  //          GSC 的 89 条 Alternate 会逐步退掉
+  // --- (2) HTML URL 规范化服务 (v7: 与 CF Pages Pretty URLs 共存) -------------
+  // v6 问题: CF Pages pretty_urls 仍在生效（wrangler.toml pretty_urls=false 未部署到 Dashboard）,
+  //   导致 .html → 308 → clean path, 而我们的 Function 做 clean path → 301 → .html, 形成死循环!
+  //   curl 证据: /blog → 301 → /blog.html → 308 → /blog → 301 → /blog.html → ...
+  //
+  // v7 修复策略 (不再对抗 Pages pretty_urls, 而是共存):
+  //   canonical URL = .html 后缀版本 (保持所有 HTML 文件现有 canonical tag 不变)
+  //   - .html / /index.html: 递归 fetch 穿透 Pages 的 308, 拿到 200 直接返回
+  //   - clean path: 先尝试 fetch .html 后缀拿到 200 内容返回 (HTTP 200, 带 canonical Link header)
+  //                 不再 301! 避免与 Pages pretty_urls 的反向重定向冲突
+  //                 (SEO 上 canonical tag + HTTP Link header 指向 .html 已足够告诉搜索引擎)
+  //   - /products 和 /products/ 特例保留 (之前已处理)
+  //   - PERMANENT_301 里的固定别名 301 保持不变 (那些不是 clean path → .html)
+  //
+  // fetchAssetWithFollow: 递归跟随 Pages 内部重定向 (最多 8 层), 直到拿到 200
+  //   解决 ASSETS.fetch('/blog.html') → Pages 308 → /blog → Pages 200 这种情况
+  async function fetchAssetWithFollow(pathname, depth = 0) {
+    if (depth > 8) return null; // 防死循环
+    try {
+      const r = new Request(url.origin + pathname + url.search, request);
+      const asset = await env.ASSETS.fetch(r);
+      if (!asset) return null;
+      if (asset.status === 200 && asset.body) return asset;
+      if ((asset.status === 301 || asset.status === 302 || asset.status === 307 || asset.status === 308) && depth < 8) {
+        const loc = asset.headers.get('Location');
+        if (loc) {
+          const followUrl = new URL(loc, url.origin);
+          // 只跟随同源路径
+          if (followUrl.origin === url.origin) {
+            return fetchAssetWithFollow(followUrl.pathname, depth + 1);
+          }
+        }
+      }
+    } catch (_) {}
+    return null;
+  }
+
   const isHtmlSuffix = /\.html$/i.test(url.pathname);
   const isRoot = url.pathname === '/';
   const isCleanPath = !isHtmlSuffix && !isRoot
     && !/\.[a-z0-9]{1,6}$/i.test(url.pathname)
     && !/^\/(images?|img|assets?|css|js|fonts?|_)/i.test(url.pathname);
 
-  // (2a) Clean path → 301 → .html suffix 规范化 (彻底替代 CF 默认 308)
-  if (isCleanPath) {
-    const canonicalSuffix = url.pathname.replace(/\/+$/, '') + '.html';
-    return redirect301(url, canonicalSuffix);
+  // (2a) 根路径: fetch index.html 内容返回 200
+  if (isRoot) {
+    if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
+      const asset = await fetchAssetWithFollow('/index.html');
+      if (asset) {
+        const h = new Headers(asset.headers);
+        h.delete('Location'); h.delete('Refresh');
+        if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+        if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
+        h.set('Link', '<https://www.yeatru.com/>; rel="canonical"');
+        h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+        return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+      }
+    }
+    return next();
   }
 
-  // (2b) 根路径 + .html URL: 直接 ASSETS.fetch 给内容 (HTTP 200)
-  if (isHtmlSuffix || isRoot) {
-    let htmlPath;
-    if (isRoot) {
-      htmlPath = '/index.html';
-    } else {
-      htmlPath = url.pathname;
-    }
-
+  // (2b) .html URL: 递归 fetch 穿透 Pages 的 308, 拿到 200 直接返回
+  if (isHtmlSuffix) {
     if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
-      try {
-        const r = new Request(url.origin + htmlPath + url.search, request);
-        const asset = await env.ASSETS.fetch(r);
-        if (asset && asset.status === 200 && asset.body) {
-          const h = new Headers(asset.headers);
-          h.delete('Location');
-          h.delete('Refresh');
-          if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-          if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
-          // Canonical header 与 HTML 内 <link rel=canonical> 对齐，避免双 URL
-          if (isRoot) {
-            h.set('Link', '<https://www.yeatru.com/>; rel="canonical"');
-          } else {
-            const canPath = htmlPath.replace(/^\/index\.html$/i, '/');
-            h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
-          }
-          if (/\/data(\.html)?$/i.test(url.pathname)) {
-            h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-          } else {
-            h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-          }
-          return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+      const asset = await fetchAssetWithFollow(url.pathname);
+      if (asset) {
+        const h = new Headers(asset.headers);
+        h.delete('Location'); h.delete('Refresh');
+        if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+        if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
+        const canPath = url.pathname.replace(/^\/index\.html$/i, '/');
+        h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
+        if (/\/data(\.html)?$/i.test(url.pathname)) {
+          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+        } else {
+          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
         }
-        // 如果 ASSETS.fetch 返回 301/308 (例如 /products/ → /products.html)，跟随一次
-        if (asset && (asset.status === 301 || asset.status === 308)) {
-          const loc = asset.headers.get('Location');
-          if (loc) {
-            try {
-              const followUrl = new URL(loc, url.origin).href;
-              const followed = await env.ASSETS.fetch(new Request(followUrl + url.search, request));
-              if (followed && followed.status === 200 && followed.body) {
-                const h = new Headers(followed.headers);
-                h.delete('Location');
-                h.delete('Refresh');
-                if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-                if (isHead) h.set('Content-Length', followed.headers.get('Content-Length') || '0');
-                if (isRoot) {
-                  h.set('Link', '<https://www.yeatru.com/>; rel="canonical"');
-                } else {
-                  const canPath = htmlPath.replace(/^\/index\.html$/i, '/');
-                  h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
-                }
-                h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-                return new Response(isHead ? null : followed.body, { status: 200, headers: h });
-              }
-            } catch (_) {}
-          }
-        }
-      } catch (_) {}
+        return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+      }
     }
+    return next();
+  }
 
-    // ASSETS 未命中 (404 等) 或不可用: 交给 next() 返回正确状态码
-    // 不再对 HEAD 伪造 200, 否则爬虫会认为不存在的页面存在 (soft 404)
+  // (2c) clean path (无后缀): 直接 fetch .html 后缀拿到内容返回 200
+  // 不再做 301! 避免与 Pages pretty_urls 的 .html→clean path 308 冲突
+  // canonical 通过 HTTP Link header + HTML 内 <link rel=canonical> 都指向 .html 版本
+  if (isCleanPath) {
+    const htmlSuffix = url.pathname.replace(/\/+$/, '') + '.html';
+    if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
+      const asset = await fetchAssetWithFollow(htmlSuffix);
+      if (asset) {
+        const h = new Headers(asset.headers);
+        h.delete('Location'); h.delete('Refresh');
+        if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
+        if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
+        h.set('Link', `<https://www.yeatru.com${htmlSuffix}>; rel="canonical"`);
+        h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+        return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+      }
+    }
     return next();
   }
 
