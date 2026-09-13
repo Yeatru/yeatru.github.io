@@ -11,28 +11,28 @@
    so tints don't look washed-out and shades don't look muddy (uicraft rule). */
 :root {
   /* BRAND · Slate Navy  (cool, executive, tech-sales trust)
-     hue = 258° (blue-indigo)  chroma peaks at L60 */
-  --c-brand-50:  oklch(97% 0.008 55);
-  --c-brand-100: oklch(93% 0.030 55);
-  --c-brand-200: oklch(85% 0.060 55);
-  --c-brand-300: oklch(75% 0.110 55);
-  --c-brand-400: oklch(65% 0.150 55);
-  --c-brand-500: oklch(58% 0.160 55);
-  --c-brand-600: oklch(50% 0.155 55);  /* ← MAIN brand = #FF9500 orange; WCAG AAA vs white */
-  --c-brand-700: oklch(42% 0.135 55);
-  --c-brand-800: oklch(33% 0.100 55);
-  --c-brand-900: oklch(24% 0.070 55);
+     hue = 258° (blue-indigo business) (blue-indigo)  chroma peaks at L60 */
+  --c-brand-50:  oklch(97% 0.008 258);
+  --c-brand-100: oklch(93% 0.030 258);
+  --c-brand-200: oklch(85% 0.060 258);
+  --c-brand-300: oklch(75% 0.110 258);
+  --c-brand-400: oklch(65% 0.150 258);
+  --c-brand-500: oklch(58% 0.160 258);
+  --c-brand-600: oklch(50% 0.155 258);  /* ← MAIN brand = #2563eb blue; WCAG AAA vs white */
+  --c-brand-700: oklch(42% 0.135 258);
+  --c-brand-800: oklch(33% 0.100 258);
+  --c-brand-900: oklch(24% 0.070 258);
 
-  /* ACCENT · Warm Clay  (hue 46°  warm, editorial, scarce accent — 10% only) */
-  --c-accent-50:  oklch(97% 0.012 46);
-  --c-accent-100: oklch(92% 0.040 46);
-  --c-accent-200: oklch(83% 0.085 46);
-  --c-accent-300: oklch(72% 0.130 46);
-  --c-accent-500: oklch(58% 0.160 46);  /* ← MAIN accent; 8.2:1 vs white (WCAG AAA) */
-  --c-accent-600: oklch(49% 0.148 46);
-  --c-accent-700: oklch(40% 0.125 46);
+  /* ACCENT · Cyan Accent  (hue 200°  warm, editorial, scarce accent — 10% only) */
+  --c-accent-50:  oklch(97% 0.012 200);
+  --c-accent-100: oklch(92% 0.040 200);
+  --c-accent-200: oklch(83% 0.085 200);
+  --c-accent-300: oklch(72% 0.130 200);
+  --c-accent-500: oklch(58% 0.160 200);  /* ← MAIN accent; 8.2:1 vs white (WCAG AAA) */
+  --c-accent-600: oklch(49% 0.148 200);
+  --c-accent-700: oklch(40% 0.125 200);
 
-  /* NEUTRAL 11-step · TINTED (hue = 258°, chroma≈0.01) — UICraft: "Neutrals should not be neutral"
+  /* NEUTRAL 11-step · TINTED (hue = 258° (blue-indigo business), chroma≈0.01) — UICraft: "Neutrals should not be neutral"
      Avoids pure gray (#808080 HSL flatness).  Brand hue subtly carries across. */
   --c-neutral-0:   oklch(100% 0 0);
   --c-neutral-50:  oklch(97% 0.008 258);   /* page bg */
@@ -573,7 +573,7 @@ body.edit-mode .page-block [data-block-field]:hover{background-color:color-mix(i
 .contact-cards-row .contact-card:hover .contact-card-icon{transform:scale(1.1)}
 .contact-card-whatsapp .contact-card-icon{background:linear-gradient(135deg,#25D366,#128C7E);color:var(--bg-panel)}
 .contact-card-email .contact-card-icon{background:linear-gradient(135deg,var(--primary-500),#8b5cf6);color:var(--bg-panel)}
-.contact-card-phone .contact-card-icon{background:linear-gradient(135deg,#f97316,#ef4444);color:var(--bg-panel)}
+.contact-card-phone .contact-card-icon{background:linear-gradient(135deg,#1e40af,#dc2626);color:var(--bg-panel)}
 .contact-card-office .contact-card-icon{background:linear-gradient(135deg,#0ea5e9,var(--primary-500));color:var(--bg-panel)}
 .contact-card-content{flex:1;position:relative;z-index:1}
 .contact-card-title{font-size:1rem;font-weight:600;color:var(--text-primary);margin: 0 0 .35rem 0}
@@ -794,7 +794,7 @@ to{opacity:1;transform:translateY(0)}
 }
 .hero-plan-card,.plan-card-header,.plan-guide-icon{background-size:200% 200%;animation:gradient-shift 8s ease infinite}
 .hero-plan-card.featured{position:relative}
-.hero-plan-card.featured::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#f97316,#fb923c,#f97316);border-radius:16px;z-index:-1;opacity:0;transition:opacity 0.3s cubic-bezier(.25,1,.5,1)}
+.hero-plan-card.featured::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#1e40af,#3b82f6,#1e40af);border-radius:16px;z-index:-1;opacity:0;transition:opacity 0.3s cubic-bezier(.25,1,.5,1)}
 .hero-plan-card.featured:hover::before{opacity:.5}
 @media(max-width:767.98px){.hero-plan-card,.plan-card{border-radius:12px}
 .plan-card.featured{transform:scale(1)}
@@ -993,7 +993,7 @@ textarea.form-control{min-height:120px;resize:vertical}
 .detail-mode-toggle button{border:none;background:var(--bg-panel);padding: .4rem 1rem;font-size:.9rem;cursor:pointer;color:#495057}
 .detail-mode-toggle button.active{background:var(--primary);color:var(--bg-panel)}
 .save-status-badge{font-size:.8rem;color:var(--text-tertiary);margin-left: auto;display:inline-flex;align-items:center;gap: .4rem}
-.save-status-badge.saving{color:#ff9500}
+.save-status-badge.saving{color:#2563eb}
 .save-status-badge.saved{color:#2e8b57}
 .save-status-badge.error{color:#dc3545}
 .detail-main{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,14fr);column-gap: 2.5rem;row-gap: 2rem;align-items:start;margin: 2rem 0 4rem;width:100%;box-sizing:border-box;padding: 0}
@@ -3699,8 +3699,8 @@ section.py-5:has([class*="cta-section"]){
 .pc-header-actions{display:flex;gap:.5rem;flex-shrink:0}
 .pc-back-btn{border-radius:10px;font-weight:600;border-color:#cbd5e1;color:#475569}
 .pc-back-btn:hover{background:#f1f5f9;color:#1e40af;border-color:#94a3b8}
-.pc-quote-btn{border-radius:10px;font-weight:600;background:linear-gradient(135deg,#f97316,#ea580c);border:none}
-.pc-quote-btn:hover{background:linear-gradient(135deg,#ea580c,#c2410c)}
+.pc-quote-btn{border-radius:10px;font-weight:600;background:linear-gradient(135deg,#1e40af,#1e3a8a);border:none}
+.pc-quote-btn:hover{background:linear-gradient(135deg,#1e3a8a,#172554)}
 
 /* Toolbar */
 .pc-toolbar{
@@ -3836,3 +3836,10 @@ section.py-5:has([class*="cta-section"]){
   .pc-search-wrap{width:100%}
   .pc-sort-select, .pc-view-toggle, .pc-filters-btn{width:100%;justify-content:center}
 }
+
+/* Blog Grid — 3 columns desktop, 2 tablet, 1 mobile */
+body .blog-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:1.5rem!important}
+body .blog-grid .blog-card{margin:0!important;break-inside:avoid}
+@media(max-width:1199.98px){body .blog-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:991.98px){body .blog-grid{grid-template-columns:repeat(2,1fr)!important;gap:1.25rem!important}}
+@media(max-width:575.98px){body .blog-grid{grid-template-columns:1fr!important}}
