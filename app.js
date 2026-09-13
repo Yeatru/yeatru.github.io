@@ -650,7 +650,6 @@ const translationResources = {
 
 let currentFilterCategory = 'all';
 let currentSearchQuery = '';
-let currentSortBy = 'newest';
 let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
@@ -1747,16 +1746,16 @@ function renderCategoryFilter() {
         });
         list.appendChild(btn);
     });
-}
-
-function bindResetFilterButton() {
-    const resetBtn = document.getElementById('resetFilterBtn');
-    if (!resetBtn) return;
+    const resetBtn = document.createElement('button');
+    resetBtn.type = 'button';
+    resetBtn.className = 'category-filter-reset';
+    resetBtn.innerHTML = '<i class="fas fa-rotate-left me-1"></i>' + tt('filter.reset', 'Reset Filter');
     resetBtn.addEventListener('click', function () {
         currentFilterCategory = 'all';
         renderCategoryFilter();
         renderProducts();
     });
+    list.appendChild(resetBtn);
 }
 
 function renderProductsDropdown() {
@@ -1950,7 +1949,6 @@ function applySiteData(data, options = {}) {
     renderBrandLogo();
     renderCategories();
     renderCategoryFilter();
-    bindResetFilterButton();
     renderProducts();
     renderIndexCategories();
     renderIndexHotProducts();
@@ -2127,16 +2125,6 @@ function renderProducts() {
     const filterInfo = document.getElementById('filterResultInfo');
     if (!productList) return;
 
-    // Bind sort select (once)
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect && !sortSelect._bound) {
-        sortSelect._bound = true;
-        sortSelect.addEventListener('change', function () {
-            currentSortBy = this.value;
-            renderProducts();
-        });
-    }
-
     // 1) Category filter — use resolveMainCategory so the UI's big-category pills
     //    (e.g. "Apparel & Footwear") correctly match products whose raw category is
     //    a sub-category like "Clothing", "Shoes", "Accessories", etc.
@@ -2164,23 +2152,6 @@ function renderProducts() {
                 (p.tags || (p.keywords || ''))
             ].join(' ').toLowerCase();
             return tokens.every(function (tok) { return hay.indexOf(tok) !== -1; });
-        });
-    }
-
-    // 3) Sort filter — default: newest first (dateAdded desc)
-    if (currentSortBy === 'price-desc') {
-        filtered.sort(function (a, b) { return (b.priceMax || b.priceMin || 0) - (a.priceMax || a.priceMin || 0); });
-    } else if (currentSortBy === 'price-asc') {
-        filtered.sort(function (a, b) { return (a.priceMin || a.priceMax || 0) - (b.priceMin || b.priceMax || 0); });
-    } else if (currentSortBy === 'name-asc') {
-        filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
-    } else {
-        // newest first — dateAdded desc, then id desc
-        filtered.sort(function (a, b) {
-            const da = (a.dateAdded || '').toString();
-            const db = (b.dateAdded || '').toString();
-            if (da !== db) return db.localeCompare(da);
-            return (b.id || 0) - (a.id || 0);
         });
     }
 
@@ -3537,334 +3508,3 @@ _applyCtaDarkBg();
 if (document.readyState !== 'complete') {
     window.addEventListener('load', _applyCtaDarkBg);
 }
-
-/* ==========================================================
-
-/* ============================================================
-   GLOBAL: Smart Dark Mode Auto-Switch (全球时间感知)
-   - 本地时间 19:00 ~ 07:00 → 自动切 dark
-   - 系统 prefers-color-scheme: dark → 切 dark
-   - 用户手动切换 (localStorage yeatru-theme) → 跟随用户
-   - 支持一键切换按钮 (data-theme-toggle)
-   ============================================================ */
-(function(){
-    const LS_KEY = 'yeatru-theme';
-    const HOUR_DARK_START = 19;  // 7 PM
-    const HOUR_DARK_END   = 7;   // 7 AM
-    
-    function getAutoTheme(){
-        const saved = localStorage.getItem(LS_KEY);
-        if (saved && (saved === 'light' || saved === 'dark')) return saved;
-        
-        // 系统偏好
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
-        
-        // 本地时间判断
-        const h = new Date().getHours();
-        const isNight = h >= HOUR_DARK_START || h < HOUR_DARK_END;
-        return isNight ? 'dark' : 'light';
-    }
-    
-    function applyTheme(theme){
-        document.documentElement.setAttribute('data-theme', theme);
-        document.documentElement.style.colorScheme = theme;
-        // 更新切换按钮图标
-        document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
-            const sun = btn.querySelector('.fa-sun, .fa-moon, .fa-circle-half-stroke');
-            if (sun) {
-                sun.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-                sun.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-            }
-        });
-    }
-    
-    // 初始化 — 越早越好
-    applyTheme(getAutoTheme());
-    
-    // 每秒检查一次是否跨了日出/日落（页面长时间打开时自动切换）
-    let lastHour = new Date().getHours();
-    setInterval(() => {
-        const nowH = new Date().getHours();
-        const saved = localStorage.getItem(LS_KEY);
-        if (!saved) {  // 只有没手动设过才自动切
-            const autoTheme = getAutoTheme();
-            if (autoTheme !== document.documentElement.getAttribute('data-theme')) {
-                applyTheme(autoTheme);
-            }
-        }
-        lastHour = nowH;
-    }, 30000);  // 每 30 秒检查（足够，不耗资源）
-    
-    // 用户手动切换
-    document.addEventListener('click', function(e){
-        const btn = e.target.closest('[data-theme-toggle]');
-        if (btn) {
-            const cur = document.documentElement.getAttribute('data-theme') || 'light';
-            const next = cur === 'dark' ? 'light' : 'dark';
-            localStorage.setItem(LS_KEY, next);
-            applyTheme(next);
-        }
-    });
-    
-    // 系统偏好变化（用户在 OS 切换 dark/light）
-    if (window.matchMedia) {
-        const mq = window.matchMedia('(prefers-color-scheme: dark)');
-        const handler = () => {
-            const saved = localStorage.getItem(LS_KEY);
-            if (!saved) applyTheme(getAutoTheme());
-        };
-        if (mq.addEventListener) mq.addEventListener('change', handler);
-        else mq.addListener(handler);
-    }
-})();
-
-/* ============================================================
-   all-products.html — 全局视觉优化版
-   修复: 品类名 YCS-XXX → 真正的人类可读名称
-   设计: Nielsen Norman Group 国际标准 + 全球审美
-   ============================================================ */
-(function(){
-    const isAllProducts = /\/all-products(\.html)?(\?|$)/i.test(location.pathname);
-    if (!isAllProducts) return;
-
-    /* ========== SKU 前缀 → 真正品类名映射表 ========== */
-    const CAT_NAME_MAP = {
-        'cat-YCS-ACC': 'Accessories',
-        'cat-YCS-ART': 'Art & Crafts',
-        'cat-YCS-AUS': 'Audio & Accessories',
-        'cat-YCS-AUT': 'Automotive Parts',
-        'cat-YCS-AVD': 'AVD Accessories',
-        'cat-YCS-BAC': 'Bags & Cases',
-        'cat-YCS-BAG': 'Bags & Luggage',
-        'cat-YCS-BBC': 'Beauty & Personal Care',
-        'cat-YCS-BTY': 'Beauty Tools',
-        'cat-YCS-CLN': 'Cleaning Equipment',
-        'cat-YCS-CLO': 'Apparel & Textile',
-        'cat-YCS-CUP': 'Cups & Drinkware',
-        'cat-YCS-DGO': 'Dog Products',
-        'cat-YCS-DRY': 'Dry Goods',
-        'cat-YCS-FAN': 'Fans & Cooling',
-        'cat-YCS-FIT': 'Fitness Equipment',
-        'cat-YCS-FTB': 'Foot Care',
-        'cat-YCS-HAB': 'Habit Tracker',
-        'cat-YCS-HOM': 'Home & Kitchen',
-        'cat-YCS-HWR': 'Hardware & Tools',
-        'cat-YCS-KAP': 'Caps & Hats',
-        'cat-YCS-KBM': 'Kitchen Basics',
-        'cat-YCS-KID': "Kids' Products",
-        'cat-YCS-KST': 'Kitchen Storage',
-        'cat-YCS-KUT': 'Kitchen Utensils',
-        'cat-YCS-LAP': 'Laptop Accessories',
-        'cat-YCS-LED': 'LED Lighting',
-        'cat-YCS-LOC': 'Lock & Security',
-        'cat-YCS-MCH': 'Machinery Parts',
-        'cat-YCS-MCS': 'MCS Accessories',
-        'cat-YCS-MHD': 'Massage & Health',
-        'cat-YCS-MOT': 'Motorcycle Parts',
-        'cat-YCS-MSF': 'Specialty Items',
-        'cat-YCS-MSK': 'Masks & Protection',
-        'cat-YCS-MSS': 'Massage Tools',
-        'cat-YCS-MUS': 'Musical Instruments',
-        'cat-YCS-OFC': 'Office Supplies',
-        'cat-YCS-OTH': 'Other Products',
-        'cat-YCS-OUT': 'Outdoor Gear',
-        'cat-YCS-PCR': 'PCR Products',
-        'cat-YCS-PET': 'Pet Supplies',
-        'cat-YCS-PHO': 'Phone Accessories',
-        'cat-YCS-SHO': 'Shoes & Footwear',
-        'cat-YCS-SKN': 'Skin Care',
-        'cat-YCS-SMA': 'Smart Devices',
-        'cat-YCS-SOC': 'Socks & Hosiery',
-        'cat-YCS-STA': 'Stationery & Office',
-        'cat-YCS-STO': 'Storage & Organization',
-        'cat-YCS-SWI': 'Swimwear',
-        'cat-YCS-TAB': 'Tablet Accessories',
-        'cat-YCS-TOY': 'Toys & Hobbies',
-        'cat-YS-CL': 'Classic Products',
-        'cat-YS-ET': 'Electronic Tools',
-        'cat-YS-HB': 'Health & Beauty',
-        'cat-YS-HD': 'Home Decor',
-        'cat-YS-KW': 'Kitchenware',
-        'cat-YS-NV': 'Novelty Items',
-        'cat-YS-ST': 'Special Tools',
-        'cat-YS-TY': 'DIY & Craft',
-    };
-
-    // 1) 收集所有产品行
-    const productRows = [];
-    const catMap = new Map();
-
-    document.querySelectorAll('main.container > section').forEach(section => {
-        const h2 = section.querySelector('h2[id^="cat-"]');
-        if (!h2) return;
-        const catId = h2.id;
-        // ★ 关键修复: 从映射表取真正的品类名，而不是 YCS-XXX
-        const catName = CAT_NAME_MAP[catId] || catId;
-        
-        const rows = section.querySelectorAll(':scope .card-body > .row.g-0');
-        rows.forEach((row, idx) => {
-            const link = row.querySelector('a[href]');
-            const img  = row.querySelector('img[alt]');
-            let name = '', sku = '', href = '';
-            if (link) {
-                name = link.getAttribute('title') || link.textContent.trim();
-                href = link.getAttribute('href') || '';
-                const skuM = href.match(/product-([A-Z]{2,}-\w+-\d+)/);
-                if (skuM) sku = skuM[1];
-            }
-            if (!name && img) name = img.getAttribute('alt') || '';
-            const desc = row.querySelector('p')?.textContent.trim() || '';
-            
-            row.dataset.productName = name;
-            row.dataset.productSku  = sku;
-            row.dataset.productCatId = catId;
-            row.dataset.productCatName = catName;
-            row.dataset.productFull = (name + ' ' + sku + ' ' + catName + ' ' + desc).toLowerCase();
-            row.dataset._origIndex = productRows.length;
-            productRows.push(row);
-        });
-        
-        catMap.set(catId, { name: catName, rows: Array.from(rows) });
-    });
-    
-    if (productRows.length === 0) return;
-
-    // 2) 构建并注入 UI
-    const main = document.querySelector('main.container');
-    if (!main) return;
-    
-    // 清理旧的 section/TOC/alert
-    main.querySelectorAll(':scope > section, .text-center.mb-5, .alert.alert-info').forEach(el => el.remove());
-
-    // 构建所有 row 并从旧 section 提取出来
-    productRows.forEach(r => {
-        const oldSec = r.closest('section');
-        if (oldSec) {
-            const body = r.closest('.card-body');
-            if (body && body.contains(r)) body.parentNode.insertBefore(r, body);
-        }
-    });
-    // 清理剩余空 section/card
-    main.querySelectorAll(':scope > section').forEach(s => s.remove());
-    main.querySelectorAll('.card').forEach(c => {
-        if (main.contains(c)) c.replaceWith(...c.childNodes);
-    });
-
-    // 构建工具条
-    const allTabs = Array.from(catMap.entries())
-        .sort((a, b) => a[1].name.localeCompare(b[1].name))  // 按名称字母排序（除 All 外）
-        .map(([id, data]) => {
-            return `<button class="ap-cat-tab" data-cat="${id}">${data.name}<span class="badge">${data.rows.length}</span></button>`;
-        }).join('');
-    
-    const toolbar = document.createElement('div');
-    toolbar.className = 'ap-toolbar-flat';
-    toolbar.innerHTML = `
-      <div class="ap-header">
-        <div class="ap-header-left">
-          <h1 class="ap-title"><i class="fas fa-th-large ap-title-icon"></i>Yeatru Sourcing — Complete Product Catalog</h1>
-          <p class="ap-sub mb-0"><strong>${productRows.length}+ wholesale SKUs</strong> · ${catMap.size} categories · QC inspection · DDP to 50+ countries</p>
-        </div>
-        <div class="ap-header-right">
-          <button type="button" data-theme-toggle class="btn btn-sm btn-outline-secondary ap-theme-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-      </div>
-      <div class="ap-cat-tabs" role="tablist">
-        <button class="ap-cat-tab active" data-cat="__all__">All Categories<span class="badge">${productRows.length}</span></button>
-        ${allTabs}
-      </div>
-      <div class="ap-ctrl-row">
-        <div class="ap-search-wrap">
-          <i class="fas fa-search ap-search-icon"></i>
-          <input type="text" id="apSearch" class="ap-search-input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
-        </div>
-        <select id="apSort" class="ap-sort-select" aria-label="Sort products">
-          <option value="default">Default (category order)</option>
-          <option value="name-asc">Name A → Z</option>
-          <option value="name-desc">Name Z → A</option>
-          <option value="sku-asc">SKU A → Z</option>
-          <option value="sku-desc">SKU Z → A</option>
-        </select>
-        <span id="apCount" class="ap-count-badge">${productRows.length} products</span>
-        <button id="apReset" class="btn btn-outline-secondary ap-reset-btn d-none"><i class="fas fa-rotate-left me-1"></i>Reset</button>
-      </div>
-    `;
-    
-    const grid = document.createElement('div');
-    grid.className = 'ap-flat-grid';
-    grid.id = 'apGrid';
-    
-    const empty = document.createElement('div');
-    empty.className = 'ap-empty d-none';
-    empty.innerHTML = `<i class="fas fa-inbox"></i><p class="h6 mb-1">No matching products</p><p class="small mb-0">Try a different keyword or category filter</p>`;
-    
-    main.insertBefore(empty, main.firstChild);
-    main.insertBefore(grid, empty);
-    main.insertBefore(toolbar, grid);
-    
-    productRows.forEach(r => grid.appendChild(r));
-
-    // 3) 交互逻辑
-    let currentCat = '__all__';
-    let currentSort = 'default';
-    let debounce = null;
-    
-    function render(){
-        const q = (document.getElementById('apSearch').value || '').trim().toLowerCase();
-        
-        let visible = productRows;
-        if (currentCat !== '__all__') visible = visible.filter(r => r.dataset.productCatId === currentCat);
-        if (q) visible = visible.filter(r => r.dataset.productFull.includes(q));
-        
-        if (currentSort === 'name-asc') visible = [...visible].sort((a,b) => a.dataset.productName.localeCompare(b.dataset.productName));
-        else if (currentSort === 'name-desc') visible = [...visible].sort((a,b) => b.dataset.productName.localeCompare(a.dataset.productName));
-        else if (currentSort === 'sku-asc')  visible = [...visible].sort((a,b) => a.dataset.productSku.localeCompare(b.dataset.productSku));
-        else if (currentSort === 'sku-desc') visible = [...visible].sort((a,b) => b.dataset.productSku.localeCompare(a.dataset.productSku));
-        else visible = [...visible].sort((a,b) => parseInt(a.dataset._origIndex) - parseInt(b.dataset._origIndex));
-        
-        productRows.forEach(r => r.style.display = 'none');
-        visible.forEach(r => { r.style.display = ''; grid.appendChild(r); });
-        
-        document.getElementById('apCount').textContent = 
-            q || currentCat !== '__all__' ? `${visible.length} / ${productRows.length} products` : `${visible.length} products`;
-        document.getElementById('apReset').classList.toggle('d-none', !q && currentCat === '__all__' && currentSort === 'default');
-        empty.classList.toggle('d-none', visible.length > 0);
-        grid.classList.toggle('d-none', visible.length === 0);
-    }
-    
-    toolbar.querySelectorAll('.ap-cat-tab').forEach(tab => {
-        tab.addEventListener('click', function(){
-            toolbar.querySelectorAll('.ap-cat-tab').forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            currentCat = this.dataset.cat;
-            render();
-            toolbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    });
-    
-    const searchInput = document.getElementById('apSearch');
-    searchInput.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(render, 180); });
-    searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') { searchInput.value = ''; render(); } });
-    
-    document.getElementById('apSort').addEventListener('change', function(){ currentSort = this.value; render(); });
-    document.getElementById('apReset').addEventListener('click', () => {
-        searchInput.value = '';
-        document.getElementById('apSort').value = 'default';
-        currentSort = 'default';
-        currentCat = '__all__';
-        toolbar.querySelectorAll('.ap-cat-tab').forEach(t => t.classList.remove('active'));
-        toolbar.querySelector('[data-cat="__all__"]').classList.add('active');
-        render();
-        toolbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    
-    render();
-    if (location.hash.startsWith('#cat-')) {
-        const tab = toolbar.querySelector(`.ap-cat-tab[data-cat="${location.hash.slice(1)}"]`);
-        if (tab) tab.click();
-    }
-})();
