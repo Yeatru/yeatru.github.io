@@ -26,14 +26,31 @@ BATCH_SIZE = 10
 SLEEP_BETWEEN_BATCHES = 1.0
 
 def parse_sitemap(filepath):
+    """Parse a sitemap or sitemap index file and return all URLs."""
     ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
     tree = ET.parse(filepath)
     root = tree.getroot()
     urls = []
-    for u in root.findall('s:url', ns):
-        loc = u.find('s:loc', ns)
-        if loc is not None and loc.text:
-            urls.append(loc.text)
+
+    # Check if this is a sitemap index
+    if 'sitemapindex' in root.tag:
+        # Sitemap index: parse each referenced sitemap
+        for sm in root.findall('s:sitemap', ns):
+            loc = sm.find('s:loc', ns)
+            if loc is not None and loc.text:
+                # Convert URL to local filename
+                sm_url = loc.text
+                sm_filename = sm_url.split('/')[-1]
+                try:
+                    urls.extend(parse_sitemap(sm_filename))
+                except Exception as e:
+                    print(f"  ⚠️  Could not parse {sm_filename}: {e}")
+    else:
+        # Regular sitemap
+        for u in root.findall('s:url', ns):
+            loc = u.find('s:loc', ns)
+            if loc is not None and loc.text:
+                urls.append(loc.text)
     return urls
 
 def submit_batch(urls_batch):
