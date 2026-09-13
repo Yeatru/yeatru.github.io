@@ -41,10 +41,36 @@
     <meta name="twitter:title" content="Page Not Found (404) | Yeatru Sourcing">
     <meta name="twitter:description" content="The page you are looking for could not be found or may have moved. Browse our China sourcing services, products, blog, or contact us f. Request a free quote.">
     <meta name="twitter:url" content="https://www.yeatru.com/404.html?v=20260909k">
-    <link rel="canonical" href="https://www.yeatru.com/404.html?v=20260909k">
+    <link rel="canonical" href="https://www.yeatru.com/404.html">
     <link rel="alternate" hreflang="en" href="https://www.yeatru.com/404.html?v=20260909k">
 
     <link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/404.html?v=20260909k">
+<script>
+// Quick redirect for query-param variants (GSC cleanup 2026-09-13)
+(function(){
+  var search = location.search || '';
+  // If has ?lang= or ?v= or ?product= — strip them and redirect cleanly
+  if (search.includes('lang=') || search.includes('v=') || search.includes('product=')) {
+    var clean = location.pathname;
+    // If the path itself exists but we're here due to query param, send to path only
+    history.replaceState(null, '', clean);
+    // Check if clean URL actually exists — if still 404, fall through below
+    fetch(clean, {method:'HEAD'}).then(function(r){
+      if (r.ok && r.status !== 404) { location.replace(clean); }
+    });
+  }
+  // Known old URL patterns → redirect to catalog
+  var p = location.pathname;
+  if (/\/product-YS-/.test(p) || /\/product-\d+/.test(p)) {
+    location.replace('/all-products.html');
+  }
+  // Old blog slugs
+  var oldBlogs = ['blog-seasonal-sourcing.html','blog-negotiation-strategies.html','blog-import-compliance.html'];
+  for (var i=0;i<oldBlogs.length;i++) {
+    if (p.includes(oldBlogs[i])) { location.replace('/blog.html'); break; }
+  }
+})();
+</script>
 </head>
 <body>
         <nav class="navbar navbar-expand-xl bg-white sticky-top">

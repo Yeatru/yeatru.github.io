@@ -1,14 +1,33 @@
-# Multi-origin canonicalization (Cloudflare Pages _redirects)
-# 1) Canonical www / apex: apex -> www (SEO-safe, 301)
-yeatru.com/*                https://www.yeatru.com/:splat        301
+# ──────────────────────────────────────────────────────────────
+# Yeatru Sourcing — 301 Redirects (SEO cleanup 2026-09-13)
+# Fixes 249 404 URLs from Google Search Console
+# ──────────────────────────────────────────────────────────────
 
-# 2) GitHub Pages + Cloudflare Pages preview domains -> production domain
+# 1) Domain canonicalization (kept from original)
+yeatru.com/*                https://www.yeatru.com/:splat        301
 yeatru.github.io/*          https://www.yeatru.com/:splat        301
 *.pages.dev/*               https://www.yeatru.com/:splat        301
 
-# 3) Trailing-slash consistency (optional; kept here for crawlers)
-# (Not enforcing since Cloudflare auto-strips for HTML, this is defense-in-depth)
+# 2) OLD product URL patterns → /all-products.html catalog
+#    GSC shows: product-YS-CL-S01A.html, product-YS-HD-2008S.html
+/product-YS-*               /all-products.html                   301
 
-# 4) Legacy product files that once had broken SKUs — point 301 to the catalog
-/product-YCS-DGO-013.html   /all-products.html                    301
-/product-YCS-DGO-014.html   /all-products.html                    301
+# 3) OLD numeric product IDs → /all-products.html  
+#    GSC shows: product-1781938167021.html, product-368.html
+/product-[0-9]*.html        /all-products.html                   301
+
+# 4) OLD catalog query string patterns
+#    products.html?product=XXX → individual product page or catalog
+/products.html?*product=*   /all-products.html                   301
+
+# 5) OLD blog slugs that were renamed
+/blog-seasonal-sourcing.html    /blog.html                   301
+/blog-negotiation-strategies.html /blog.html                 301
+/blog-import-compliance.html     /blog-product-certifications.html  301
+
+
+# 5) Strip ?lang=XX query params (handled via JavaScript 404.html too)
+#    Cloudflare can't do query-param stripping natively in _redirects
+#    So we handle this client-side
+
+# 6) Strip version query params ?v=XXXXX (same as above, handled via JS)
