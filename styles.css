@@ -670,45 +670,17 @@ to{opacity:1;transform:translateY(0)}
 .lang-selector{margin-left: 0;margin-top: .5rem}
 .nav-link{font-size:1rem!important;margin: 0}
 }
-/* banner-carousel 放在最底层（z-index:0），避免遮挡 navbar 下拉菜单 */
-.banner-carousel{position:relative;overflow:visible;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem;z-index:0}
+.banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,255,255,0.06) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(255,255,255,0.04) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
-/* Bootstrap .carousel 自身仍要裁剪 slide 过渡，只对内部 overflow:hidden */
-.banner-carousel .carousel{overflow:hidden}
-/* ===== Bootstrap Carousel 修复：左右布局（所有屏幕）=====
-   默认必须是 display:none（不覆盖 Bootstrap 行为） */
-.banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0}
-@media(min-width:768px){.banner-carousel .carousel-item{min-height:26rem;padding:2rem 0}}
-@media(min-width:992px){.banner-carousel .carousel-item{min-height:30rem;padding:2.5rem 0}}
-/* 只在 Bootstrap 的"可见状态"才用 flex 布局 */
-.banner-carousel .carousel-item.active,
-.banner-carousel .carousel-item.active.carousel-item-start,
-.banner-carousel .carousel-item-next.carousel-item-start,
-.banner-carousel .carousel-item-prev.carousel-item-end{display:flex;align-items:center}
-/* container 正常文档流 */
-.banner-carousel .carousel-item>.container{width:100%;position:relative;z-index:2}
-/* ★ 核心修复：所有屏幕强制左右并排，不换行 */
-.banner-carousel .carousel-item>.container>.row{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:1rem}
-/* col-lg-7 和 col-lg-5 在所有屏幕尺寸下都保持 flex 比例，不要变成 col-12 */
-.banner-carousel .carousel-item .col-lg-7{flex:0 0 58%;max-width:58%}
-.banner-carousel .carousel-item .col-lg-5{flex:0 0 42%;max-width:42%}
-/* 小屏比例微调 */
-@media(max-width:767.98px){
-  .banner-carousel .carousel-item .col-lg-7{flex:0 0 60%;max-width:60%}
-  .banner-carousel .carousel-item .col-lg-5{flex:0 0 40%;max-width:40%}
+.banner-slides{display:flex;position:relative;z-index:1;transition:transform 0.5s cubic-bezier(.25,1,.5,1);will-change:transform}
+.banner-slide{min-width:100%;flex:0 0 100%;padding: .75rem 0 1.5rem;position:relative;display:flex;align-items:flex-start}
+.banner-slide>.container{width:100%;height:100%;position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding-top:3rem}
+@media(min-width:992px){.banner-slide{padding: 1rem 0 2rem;min-height:32rem;height:32rem;overflow:hidden}
 }
-@media(min-width:992px){
-  .banner-carousel .carousel-item .col-lg-7{flex:0 0 60%;max-width:60%}
-  .banner-carousel .carousel-item .col-lg-5{flex:0 0 40%;max-width:40%}
+@media(min-width:768px) and (max-width:991.98px){.banner-slide{min-height:28rem}
 }
-/* 轮播图 fade 过渡 */
-.banner-carousel .carousel-item{transition:opacity 0.6s ease-in-out}
-.banner-carousel .carousel-item:not(.active){opacity:0}
-.banner-carousel .carousel-item.active{opacity:1}
-/* 移除旧残留 */
-.banner-slide-bg{display:none}
-.banner-slide{display:none}
+.banner-slide-bg{position:absolute;top:0;left:0;right:0;bottom:0;opacity:.05;background-size:cover;background-position:center}
 .banner-content{position:relative;z-index:2}
 .banner-tag{display:inline-flex;align-items:center;gap: .3rem;padding: .35rem 1rem;background:linear-gradient(135deg,color-mix(in oklch, var(--c-brand-600) 40%, transparent),rgba(255,255,255,0.1));color:#FFF;border:1px solid rgba(255,255,255,0.25);border-radius:999px;font-size:.7rem;font-weight:600;margin-bottom: 1rem;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-wrap:nowrap}
 .banner-title{font-size:2.35rem;font-weight:850;color:#FFF;margin-bottom: .75rem;line-height:1.2;letter-spacing:-0.02em;text-shadow:0 2px 24px rgba(0,0,0,0.4)}
@@ -739,13 +711,10 @@ to{opacity:1;transform:translateY(0)}
 .banner-cta .btn{padding: .45rem .55rem!important;font-size:.72rem!important;letter-spacing:-0.01em;white-space:nowrap;flex:1 1 0;min-width:0;text-align:center}
 .banner-cta .btn i{margin-right: .18rem!important}
 }
-/* banner-image 默认显示，小屏全宽、桌面端自动右对齐 */
-.banner-image{position:relative;display:block;width:100%;z-index:2;margin-top:1rem}
-@media(min-width:992px){.banner-image{display:flex;align-items:center;justify-content:center;margin-top:0}}
-/* banner-image-wrap 响应式尺寸：小屏 max-width 300px，桌面 500px */
-.banner-image-wrap{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:4 / 3;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.08);background:var(--c-brand-800);transition:box-shadow 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
-@media(min-width:576px){.banner-image-wrap{max-width:380px}}
-@media(min-width:992px){.banner-image-wrap{max-width:500px;margin:0;box-shadow:0 20px 50px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.08)}}
+.banner-image{position:relative;display:none;width:100%;z-index:2}
+@media(min-width:992px){.banner-image{display:flex;align-items:center;justify-content:center}
+}
+.banner-image-wrap{position:relative;width:100%;max-width:500px;aspect-ratio:4 / 3;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.08);background:var(--c-brand-800);transition:box-shadow 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
 .banner-image-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in oklch, var(--c-brand-600) 15%, transparent) 0,transparent 40%,color-mix(in oklch, var(--c-brand-800) 20%, transparent) 100%);pointer-events:none}
 .banner-carousel:hover .banner-image-wrap{box-shadow:0 25px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.12);transform:translateY(-4px)}
 .banner-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(0.92) contrast(1.05) saturate(0.95);transition:filter 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
@@ -3808,221 +3777,20 @@ section.py-5:has([class*="cta-section"]){
     }
 }
 
-/* ====== Category Image Cards (Hot Selling Products) ====== */
-.category-img-card{
-    border-radius: var(--r-lg);
-    border: 1px solid var(--border);
-    background: var(--bg-panel);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 220ms cubic-bezier(.25,1,.5,1), box-shadow 220ms cubic-bezier(.25,1,.5,1), border-color 220ms;
-    will-change: transform;
-    color: inherit;
-}
-.category-img-card:hover{
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary);
-    color: inherit;
-    text-decoration: none;
-}
-.category-img-card .category-img-wrap{
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: var(--gray-100);
-}
-.category-img-card .category-img-wrap img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 300ms cubic-bezier(.25,1,.5,1), filter 300ms;
-    filter: brightness(0.96);
-}
-.category-img-card:hover .category-img-wrap img{
-    transform: scale(1.06);
-    filter: brightness(1);
-}
-.category-img-card .category-img-overlay{
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.18) 100%);
-    pointer-events: none;
-}
-.category-img-card .category-img-info{
-    padding: 0.85rem 1rem 1rem;
-}
-.category-img-card .category-img-title{
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0 0 0.15rem;
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-.category-img-card .category-img-sub{
-    font-size: 0.73rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-@media (max-width: 767.98px){
-    .category-img-card .category-img-info{ padding: 0.65rem 0.8rem 0.8rem; }
-    .category-img-card .category-img-title{ font-size: 0.85rem; }
-    .category-img-card .category-img-sub{ font-size: 0.68rem; }
-}
+/* ===== 安全功能性补丁（不影响美感）===== */
 
-/* ====== Bootstrap Carousel controls fine-tuning ====== */
-.banner-carousel .carousel-control-prev,
-.banner-carousel .carousel-control-next{
-    width: 40px; height: 40px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
-    backdrop-filter: blur(6px);
-}
-.banner-carousel .carousel-control-prev{ left: 12px; }
-.banner-carousel .carousel-control-next{ right: 12px; }
-.banner-carousel .carousel-control-prev:hover,
-.banner-carousel .carousel-control-next:hover{ opacity: 1; background: rgba(255,255,255,0.25); }
-.banner-carousel .carousel-indicators button{
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.35);
-    border: none;
-    margin: 0 4px;
-}
-.banner-carousel .carousel-indicators button.active{ background: var(--primary); width: 28px; border-radius: 6px; }
-@media(max-width:767.98px){
-    .banner-carousel .carousel-control-prev,
-    .banner-carousel .carousel-control-next{ width: 32px; height: 32px; }
-    .banner-carousel .carousel-indicators button{ width: 8px; height: 8px; }
-    .banner-carousel .carousel-indicators button.active{ width: 22px; }
-}
+/* 1) navbar dropdown 必须高于所有 section（兜底） */
+.nav-item.dropdown .dropdown-menu, .dropdown-menu{z-index:9999!important}
 
-/* ====== 全局锚点偏移修复（navbar sticky 遮挡问题） ====== */
+/* 2) banner-carousel 放到最底层，避免遮挡 navbar dropdown */
+.banner-carousel{position:relative;z-index:0;overflow:visible}
+.banner-carousel .carousel{overflow:hidden}
+
+/* 3) 全局锚点偏移（navbar sticky 遮挡问题）*/
 h1[id], h2[id], h3[id], h4[id], section[id]{scroll-margin-top:80px!important}
 @media(max-width:991.98px){
   h1[id], h2[id], h3[id], h4[id], section[id]{scroll-margin-top:72px!important}
 }
 
-/* ====== 移动端 trust-bar 溢出修复 ====== */
-@media(max-width:480px){
-  .banner-trust-bar{flex-wrap:nowrap!important;overflow-x:auto}
-  .trust-stat{flex:0 0 auto;min-width:calc(25% - .5rem)}
-}
-.banner-trust-bar{-webkit-overflow-scrolling:touch}
-
-/* ====== Bootstrap Carousel 指示器/控制轮播适配 ====== */
-.banner-carousel .carousel-indicators{bottom:.75rem;gap:.35rem}
-.banner-carousel .carousel-indicators button{width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,.3);border:none}
-.banner-carousel .carousel-indicators button.active{background:linear-gradient(90deg,var(--c-brand-300),var(--c-brand-400));width:32px}
-
-/* ====== 页面平滑滚动 ====== */
+/* 4) 平滑滚动 */
 html{scroll-behavior:smooth}
-/* 当用户点击锚点时，用 JS 取消 smooth（让 hashchange 即时生效） */
-
-/* ====== all-products.html：CSS Grid 魔法 —— list row → gallery card ======
-   作用域限定：只影响 .ap-category-section 内的卡片 */
-.ap-category-section > .card.card-shadow-sm{background:transparent;border:none;box-shadow:none!important}
-.ap-category-section > .card.card-shadow-sm > .card-body{
-  display:grid!important;
-  grid-template-columns:repeat(3,1fr)!important;
-  gap:1.25rem!important;
-  padding:0!important;
-  background:transparent!important;
-  border:none!important;
-}
-/* 小屏/平板响应式 */
-@media(max-width:991.98px){
-  .ap-category-section > .card.card-shadow-sm > .card-body{grid-template-columns:repeat(2,1fr)!important}
-}
-@media(max-width:575.98px){
-  .ap-category-section > .card.card-shadow-sm > .card-body{grid-template-columns:1fr!important}
-}
-/* 每个 row 变成独立卡片 */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row{
-  background:var(--bg-panel)!important;
-  border:1px solid var(--border-light)!important;
-  border-radius:14px!important;
-  box-shadow:0 2px 12px rgba(0,0,0,0.06)!important;
-  padding:0!important;
-  margin:0!important;
-  flex-direction:column!important;
-  align-items:stretch!important;
-  gap:0!important;
-  overflow:hidden!important;
-  transition:transform .25s cubic-bezier(.25,1,.5,1),box-shadow .25s cubic-bezier(.25,1,.5,1),border-color .25s!important;
-  cursor:pointer;
-  border-bottom:1px solid var(--border-light)!important;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row:hover{
-  transform:translateY(-4px)!important;
-  box-shadow:0 12px 32px rgba(0,0,0,0.12)!important;
-  border-color:var(--primary-light)!important;
-}
-/* 卡片内每个 col 改为纵向排列 */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col,
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto{
-  flex:none!important;width:100%!important;max-width:100%!important;
-  padding:0!important;margin:0!important;
-}
-/* 图片 col 放顶部（order:-1），占满宽度 */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto:first-child{
-  order:-1!important;
-  padding:0!important;
-  width:100%!important;
-  height:200px!important;
-  background:#f5f7fa;
-  overflow:hidden;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto:first-child img{
-  width:100%!important;height:100%!important;object-fit:cover!important;
-  border-radius:0!important;border:none!important;
-  transition:transform .4s cubic-bezier(.25,1,.5,1)!important;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row:hover > .col-auto:first-child img{
-  transform:scale(1.04)!important;
-}
-/* 文字 col：标题 + desc */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col:nth-of-type(2){
-  padding:1rem 1rem .5rem!important;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col a.fw-semibold{
-  font-size:1rem!important;font-weight:700!important;line-height:1.35!important;
-  color:var(--primary)!important;text-decoration:none!important;
-  display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;
-  overflow:hidden!important;margin-bottom:.4rem!important;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col p.small{
-  font-size:.82rem!important;color:var(--text-secondary)!important;line-height:1.5!important;
-  display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;
-  overflow:hidden!important;margin:0!important;max-width:none!important;
-}
-/* SKU filename col：放底部，灰底小字体 */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto.text-end:last-child{
-  padding:.5rem 1rem!important;text-align:left!important;
-  background:#f8fafc;border-top:1px solid var(--border-light);
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto.text-end:last-child small{
-  font-size:.7rem!important;color:var(--text-muted)!important;font-family:ui-monospace,monospace!important;
-}
-/* 让整个卡片可点击 — 用 JS 包一层或者把 a 提到最外层 */
-.ap-category-section > .card.card-shadow-sm > .card-body > .row{position:relative}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row::after{
-  content:"";position:absolute;inset:0;z-index:3;
-}
-.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col:nth-of-type(2) > a{position:relative;z-index:5}
-/* 全局兜底：dropdown 必须高于任何 section/carousel */
-.nav-item.dropdown .dropdown-menu, .dropdown-menu{z-index:9999!important}
