@@ -673,12 +673,18 @@ to{opacity:1;transform:translateY(0)}
 .banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,255,255,0.06) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(255,255,255,0.04) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
-.banner-slides{display:flex;position:relative;z-index:1;transition:transform 0.5s cubic-bezier(.25,1,.5,1);will-change:transform}
-.banner-slide{min-width:100%;flex:0 0 100%;padding: .75rem 0 1.5rem;position:relative;display:flex;align-items:flex-start}
-.banner-slide>.container{width:100%;height:100%;position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding-top:3rem}
-@media(min-width:992px){.banner-slide{padding: 1rem 0 2rem;min-height:32rem;height:32rem;overflow:hidden}
-}
-@media(min-width:768px) and (max-width:991.98px){.banner-slide{min-height:28rem}
+/* Bootstrap Carousel: 让每个 carousel-item 支持左右分栏布局 */
+.banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0;display:flex;align-items:center}
+@media(min-width:768px){.banner-carousel .carousel-item{min-height:26rem;padding:2rem 0}}
+@media(min-width:992px){.banner-carousel .carousel-item{min-height:30rem;padding:2.5rem 0;align-items:center}}
+.banner-carousel .carousel-item>.container{width:100%;position:relative;z-index:2}
+.banner-carousel .carousel-item>.container>.row{align-items:center;gap:1rem 0}
+@media(min-width:992px){.banner-carousel .carousel-item>.container>.row{gap:0}}
+/* 小屏时 banner-content 在上，banner-image 在下（col-12 全宽），所以先排内容再排图 */
+@media(max-width:991.98px){
+  .banner-carousel .carousel-item .row{flex-direction:column}
+  .banner-carousel .carousel-item .col-lg-5{order:2}
+  .banner-carousel .carousel-item .col-lg-7{order:1}
 }
 .banner-slide-bg{position:absolute;top:0;left:0;right:0;bottom:0;opacity:.05;background-size:cover;background-position:center}
 .banner-content{position:relative;z-index:2}
@@ -711,10 +717,13 @@ to{opacity:1;transform:translateY(0)}
 .banner-cta .btn{padding: .45rem .55rem!important;font-size:.72rem!important;letter-spacing:-0.01em;white-space:nowrap;flex:1 1 0;min-width:0;text-align:center}
 .banner-cta .btn i{margin-right: .18rem!important}
 }
-.banner-image{position:relative;display:none;width:100%;z-index:2}
-@media(min-width:992px){.banner-image{display:flex;align-items:center;justify-content:center}
-}
-.banner-image-wrap{position:relative;width:100%;max-width:500px;aspect-ratio:4 / 3;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.08);background:var(--c-brand-800);transition:box-shadow 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
+/* banner-image 默认显示，小屏全宽、桌面端自动右对齐 */
+.banner-image{position:relative;display:block;width:100%;z-index:2;margin-top:1rem}
+@media(min-width:992px){.banner-image{display:flex;align-items:center;justify-content:center;margin-top:0}}
+/* banner-image-wrap 响应式尺寸：小屏 max-width 300px，桌面 500px */
+.banner-image-wrap{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:4 / 3;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.08);background:var(--c-brand-800);transition:box-shadow 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
+@media(min-width:576px){.banner-image-wrap{max-width:380px}}
+@media(min-width:992px){.banner-image-wrap{max-width:500px;margin:0;box-shadow:0 20px 50px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.08)}}
 .banner-image-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in oklch, var(--c-brand-600) 15%, transparent) 0,transparent 40%,color-mix(in oklch, var(--c-brand-800) 20%, transparent) 100%);pointer-events:none}
 .banner-carousel:hover .banner-image-wrap{box-shadow:0 25px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.12);transform:translateY(-4px)}
 .banner-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(0.92) contrast(1.05) saturate(0.95);transition:filter 0.3s cubic-bezier(.25,1,.5,1),transform 0.3s cubic-bezier(.25,1,.5,1)}
@@ -3879,3 +3888,25 @@ section.py-5:has([class*="cta-section"]){
     .banner-carousel .carousel-indicators button{ width: 8px; height: 8px; }
     .banner-carousel .carousel-indicators button.active{ width: 22px; }
 }
+
+/* ====== 全局锚点偏移修复（navbar sticky 遮挡问题） ====== */
+h1[id], h2[id], h3[id], h4[id], section[id]{scroll-margin-top:80px!important}
+@media(max-width:991.98px){
+  h1[id], h2[id], h3[id], h4[id], section[id]{scroll-margin-top:72px!important}
+}
+
+/* ====== 移动端 trust-bar 溢出修复 ====== */
+@media(max-width:480px){
+  .banner-trust-bar{flex-wrap:nowrap!important;overflow-x:auto}
+  .trust-stat{flex:0 0 auto;min-width:calc(25% - .5rem)}
+}
+.banner-trust-bar{-webkit-overflow-scrolling:touch}
+
+/* ====== Bootstrap Carousel 指示器/控制轮播适配 ====== */
+.banner-carousel .carousel-indicators{bottom:.75rem;gap:.35rem}
+.banner-carousel .carousel-indicators button{width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,.3);border:none}
+.banner-carousel .carousel-indicators button.active{background:linear-gradient(90deg,var(--c-brand-300),var(--c-brand-400));width:32px}
+
+/* ====== 页面平滑滚动 ====== */
+html{scroll-behavior:smooth}
+/* 当用户点击锚点时，用 JS 取消 smooth（让 hashchange 即时生效） */
