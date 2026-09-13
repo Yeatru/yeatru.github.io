@@ -673,20 +673,33 @@ to{opacity:1;transform:translateY(0)}
 .banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,255,255,0.06) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(255,255,255,0.04) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
-/* Bootstrap Carousel: 让每个 carousel-item 支持左右分栏布局 */
-.banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0;display:flex;align-items:center}
+/* ===== Bootstrap Carousel 修复：只给 active/过渡状态加 display:flex =====
+   默认必须是 display:none（不覆盖 Bootstrap 行为） */
+.banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0}
 @media(min-width:768px){.banner-carousel .carousel-item{min-height:26rem;padding:2rem 0}}
-@media(min-width:992px){.banner-carousel .carousel-item{min-height:30rem;padding:2.5rem 0;align-items:center}}
+@media(min-width:992px){.banner-carousel .carousel-item{min-height:30rem;padding:2.5rem 0}}
+/* 只在 Bootstrap 的"可见状态"才用 flex 布局 — 避免所有 slide 同时显示 */
+.banner-carousel .carousel-item.active,
+.banner-carousel .carousel-item.active.carousel-item-start,
+.banner-carousel .carousel-item-next.carousel-item-start,
+.banner-carousel .carousel-item-prev.carousel-item-end{display:flex;align-items:center}
+/* container 正常文档流，不要 absolute */
 .banner-carousel .carousel-item>.container{width:100%;position:relative;z-index:2}
 .banner-carousel .carousel-item>.container>.row{align-items:center;gap:1rem 0}
 @media(min-width:992px){.banner-carousel .carousel-item>.container>.row{gap:0}}
-/* 小屏时 banner-content 在上，banner-image 在下（col-12 全宽），所以先排内容再排图 */
+/* 小屏：flex-direction column（内容在上，图在下）；桌面端：左右并排 */
 @media(max-width:991.98px){
   .banner-carousel .carousel-item .row{flex-direction:column}
   .banner-carousel .carousel-item .col-lg-5{order:2}
   .banner-carousel .carousel-item .col-lg-7{order:1}
 }
-.banner-slide-bg{position:absolute;top:0;left:0;right:0;bottom:0;opacity:.05;background-size:cover;background-position:center}
+/* 轮播图过渡效果（fade 模式替代 slide，更干净） */
+.banner-carousel .carousel-item{transition:opacity 0.6s ease-in-out}
+.banner-carousel .carousel-item:not(.active){opacity:0}
+.banner-carousel .carousel-item.active{opacity:1}
+/* 移除旧残留 */
+.banner-slide-bg{display:none}
+.banner-slide{display:none}
 .banner-content{position:relative;z-index:2}
 .banner-tag{display:inline-flex;align-items:center;gap: .3rem;padding: .35rem 1rem;background:linear-gradient(135deg,color-mix(in oklch, var(--c-brand-600) 40%, transparent),rgba(255,255,255,0.1));color:#FFF;border:1px solid rgba(255,255,255,0.25);border-radius:999px;font-size:.7rem;font-weight:600;margin-bottom: 1rem;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-wrap:nowrap}
 .banner-title{font-size:2.35rem;font-weight:850;color:#FFF;margin-bottom: .75rem;line-height:1.2;letter-spacing:-0.02em;text-shadow:0 2px 24px rgba(0,0,0,0.4)}
