@@ -670,9 +670,12 @@ to{opacity:1;transform:translateY(0)}
 .lang-selector{margin-left: 0;margin-top: .5rem}
 .nav-link{font-size:1rem!important;margin: 0}
 }
-.banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
+/* banner-carousel 放在最底层（z-index:0），避免遮挡 navbar 下拉菜单 */
+.banner-carousel{position:relative;overflow:visible;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem;z-index:0}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,255,255,0.06) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(255,255,255,0.04) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
+/* Bootstrap .carousel 自身仍要裁剪 slide 过渡，只对内部 overflow:hidden */
+.banner-carousel .carousel{overflow:hidden}
 /* ===== Bootstrap Carousel 修复：左右布局（所有屏幕）=====
    默认必须是 display:none（不覆盖 Bootstrap 行为） */
 .banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0}
@@ -4021,3 +4024,5 @@ html{scroll-behavior:smooth}
   content:"";position:absolute;inset:0;z-index:3;
 }
 .ap-category-section > .card.card-shadow-sm > .card-body > .row > .col:nth-of-type(2) > a{position:relative;z-index:5}
+/* 全局兜底：dropdown 必须高于任何 section/carousel */
+.nav-item.dropdown .dropdown-menu, .dropdown-menu{z-index:9999!important}
