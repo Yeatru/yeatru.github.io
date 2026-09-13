@@ -1,0 +1,8 @@
+# Cloudflare Pages configuration
+# Disable Pretty URLs so .html URLs are served directly (no 301/308 redirect to extensionless)
+# This fixes Bing "Not indexed as this page is a redirect" for blog/product pages
+name = "yeatru"
+pages_build_output_dir = "."
+
+[env.production]
+pretty_urls = false
