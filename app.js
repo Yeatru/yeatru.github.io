@@ -3537,3 +3537,120 @@ _applyCtaDarkBg();
 if (document.readyState !== 'complete') {
     window.addEventListener('load', _applyCtaDarkBg);
 }
+
+/* ==========================================================
+   all-products.html — Client-side Search + Sort
+   ========================================================== */
+(function(){
+    const searchInput = document.getElementById('apSearchInput');
+    const sortSelect  = document.getElementById('apSortSelect');
+    const resultCount = document.getElementById('apResultCount');
+    const resetBtn    = document.getElementById('apResetBtn');
+    const clearBtn    = document.getElementById('apSearchClear');
+    if (!searchInput) return; // 不是 all-products.html
+
+    // 收集所有产品 row 并缓存
+    const allRows = [];
+    document.querySelectorAll('.ap-category-section .card-body > .row').forEach((row, idx) => {
+        const nameEl = row.querySelector('a.fw-semibold[title]') || row.querySelector('a[title]');
+        const imgEl  = row.querySelector('img[alt]');
+        let name = '', sku = '', category = '';
+        if (nameEl) {
+            name = nameEl.getAttribute('title') || nameEl.textContent.trim();
+            // SKU 从 href 提取
+            const hm = nameEl.getAttribute('href') || '';
+            const skuM = hm.match(/product-([A-Z]{2,}-\w+-\d+)/);
+            if (skuM) sku = skuM[1];
+        }
+        // category 从最近的 h2 拿
+        const catSection = row.closest('.ap-category-section');
+        if (catSection) {
+            const h2 = catSection.querySelector('h2[id^="cat-"]');
+            if (h2) category = h2.textContent.replace(/\(.*?\)/g,'').trim();
+        }
+        if (!name && imgEl) name = imgEl.getAttribute('alt') || '';
+        row.dataset.productName = name.toLowerCase();
+        row.dataset.productSku  = sku.toLowerCase();
+        row.dataset.productFull = (name + ' ' + sku + ' ' + category + ' ' + row.textContent).toLowerCase();
+        row.dataset.productNameDisplay = name;
+        row.dataset.productSkuDisplay  = sku;
+        row.dataset._origIndex = idx;
+        allRows.push(row);
+    });
+
+    function applyFilterSort(){
+        const q = (searchInput.value || '').trim().toLowerCase();
+        const sort = sortSelect ? sortSelect.value : 'default';
+        
+        // 1) 过滤
+        let visible = allRows;
+        if (q) {
+            visible = allRows.filter(r => r.dataset.productFull.includes(q));
+        }
+        
+        // 2) 排序
+        if (sort === 'name-asc') {
+            visible = [...visible].sort((a,b) => 
+                a.dataset.productNameDisplay.localeCompare(b.dataset.productNameDisplay));
+        } else if (sort === 'name-desc') {
+            visible = [...visible].sort((a,b) => 
+                b.dataset.productNameDisplay.localeCompare(a.dataset.productNameDisplay));
+        } else if (sort === 'sku-asc') {
+            visible = [...visible].sort((a,b) => 
+                a.dataset.productSkuDisplay.localeCompare(b.dataset.productSkuDisplay));
+        } else if (sort === 'sku-desc') {
+            visible = [...visible].sort((a,b) => 
+                b.dataset.productSkuDisplay.localeCompare(a.dataset.productSkuDisplay));
+        }
+        
+        // 3) 显示/隐藏
+        const showAll = !q && (sort === 'default');
+        if (showAll) {
+            // 恢复原始顺序，所有 section 都显示
+            allRows.forEach(r => r.style.display = '');
+            document.querySelectorAll('.ap-category-section').forEach(s => s.style.display = '');
+            resultCount.textContent = allRows.length + ' products';
+        } else {
+            // 先全部隐藏
+            allRows.forEach(r => r.style.display = 'none');
+            document.querySelectorAll('.ap-category-section').forEach(s => s.style.display = 'none');
+            // 显示可见行并重新排序
+            visible.forEach((r, i) => {
+                r.style.display = '';
+                // 移动到 card-body 的末尾（实现跨 section 排序）
+                const cb = r.closest('.card-body');
+                if (cb) cb.appendChild(r);
+                // 也强制父 section 可见
+                const sec = r.closest('.ap-category-section');
+                if (sec) sec.style.display = '';
+            });
+            resultCount.textContent = visible.length + ' / ' + allRows.length + ' products';
+        }
+        
+        // 4) 重置按钮状态
+        resetBtn.classList.toggle('d-none', showAll);
+        clearBtn.classList.toggle('d-none', !q);
+    }
+
+    // 事件绑定
+    let debounce = null;
+    searchInput.addEventListener('input', function(){
+        clearTimeout(debounce);
+        debounce = setTimeout(applyFilterSort, 200);
+    });
+    searchInput.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') { searchInput.value = ''; applyFilterSort(); }
+    });
+    if (sortSelect) sortSelect.addEventListener('change', applyFilterSort);
+    if (resetBtn) resetBtn.addEventListener('click', function(){
+        searchInput.value = '';
+        if (sortSelect) sortSelect.value = 'default';
+        applyFilterSort();
+        window.scrollTo({top: document.querySelector('.ap-toolbar').offsetTop - 80, behavior:'smooth'});
+    });
+    if (clearBtn) clearBtn.addEventListener('click', function(){
+        searchInput.value = '';
+        applyFilterSort();
+        searchInput.focus();
+    });
+})();
