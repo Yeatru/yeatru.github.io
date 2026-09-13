@@ -3539,118 +3539,240 @@ if (document.readyState !== 'complete') {
 }
 
 /* ==========================================================
-   all-products.html — Client-side Search + Sort
+
+/* ==========================================================
+   all-products.html — 平铺卡片网格 + 分类 tabs + 搜索 + 排序
+   运行时把原始 section/row 结构扁平化成一行4列的卡片网格
    ========================================================== */
 (function(){
-    const searchInput = document.getElementById('apSearchInput');
-    const sortSelect  = document.getElementById('apSortSelect');
-    const resultCount = document.getElementById('apResultCount');
-    const resetBtn    = document.getElementById('apResetBtn');
-    const clearBtn    = document.getElementById('apSearchClear');
-    if (!searchInput) return; // 不是 all-products.html
+    // 只在 all-products.html 运行
+    const isAllProducts = /\/all-products(\.html)?(\?|$)/i.test(location.pathname);
+    if (!isAllProducts) return;
 
-    // 收集所有产品 row 并缓存
-    const allRows = [];
-    document.querySelectorAll('.ap-category-section .card-body > .row').forEach((row, idx) => {
-        const nameEl = row.querySelector('a.fw-semibold[title]') || row.querySelector('a[title]');
-        const imgEl  = row.querySelector('img[alt]');
-        let name = '', sku = '', category = '';
-        if (nameEl) {
-            name = nameEl.getAttribute('title') || nameEl.textContent.trim();
-            // SKU 从 href 提取
-            const hm = nameEl.getAttribute('href') || '';
-            const skuM = hm.match(/product-([A-Z]{2,}-\w+-\d+)/);
-            if (skuM) sku = skuM[1];
+    // 1) 收集所有产品行 + 品类映射
+    const productRows = [];     // 所有产品 row DOM
+    const catMap = new Map();   // catId → { name, rows[] }
+    let totalCount = 0;
+
+    // 遍历每个 <section> 品类块
+    document.querySelectorAll('main.container > section').forEach(section => {
+        // 取 h2 标题
+        const h2 = section.querySelector('h2[id^="cat-"]');
+        if (!h2) return;
+        const catId = h2.id;  // cat-YCS-ACC
+        // 去掉 h2 里的小标签和图标文本
+        const catName = h2.textContent.replace(/\(.*?\)/g,'').trim().replace(/^\S+\s+/,'').trim() || catId;
+        
+        // 收集这个 section 里的所有产品 row
+        const rows = section.querySelectorAll(':scope .card-body > .row.g-0');
+        rows.forEach((row, idx) => {
+            const link = row.querySelector('a[href]');
+            const img  = row.querySelector('img[alt]');
+            let name = '', sku = '', href = '';
+            if (link) {
+                name = link.getAttribute('title') || link.textContent.trim();
+                href = link.getAttribute('href') || '';
+                const skuM = href.match(/product-([A-Z]{2,}-\w+-\d+)/);
+                if (skuM) sku = skuM[1];
+            }
+            if (!name && img) name = img.getAttribute('alt') || '';
+            const desc = row.querySelector('p')?.textContent.trim() || '';
+            
+            // 给 row 加 data 属性
+            row.dataset.productName = name;
+            row.dataset.productSku  = sku;
+            row.dataset.productCatId = catId;
+            row.dataset.productCatName = catName;
+            row.dataset.productFull = (name + ' ' + sku + ' ' + catName + ' ' + desc).toLowerCase();
+            row.dataset._origIndex = productRows.length;
+            
+            productRows.push(row);
+        });
+        
+        catMap.set(catId, { name: catName, rows: Array.from(rows) });
+    });
+    
+    if (productRows.length === 0) return;
+    totalCount = productRows.length;
+
+    // 2) 在 <main> 开头插入工具条 + 网格容器
+    const main = document.querySelector('main.container');
+    if (!main) return;
+    
+    // 移除 TOC pills 和 alert-info（用新工具条替代）
+    const tocWrapper = main.querySelector('.row.g-2.justify-content-center');
+    const alertInfo  = main.querySelector('.alert.alert-info');
+    if (tocWrapper) tocWrapper.closest('.text-center.mb-5').remove();
+    if (alertInfo) alertInfo.remove();
+    // 也移除所有 section 标题和 card 包裹层
+    document.querySelectorAll('main.container > section').forEach(sec => {
+        const h = sec.querySelector('h2');
+        if (h) h.remove();
+        const card = sec.querySelector('.card');
+        if (card) {
+            // 把 card-body 里的 row 取出来
+            const body = card.querySelector('.card-body');
+            if (body) {
+                // 把 body 的子 row 直接移到 main
+                productRows.forEach(r => {
+                    if (body.contains(r)) body.parentNode.insertBefore(r, body);
+                });
+            }
+            card.remove();
         }
-        // category 从最近的 h2 拿
-        const catSection = row.closest('.ap-category-section');
-        if (catSection) {
-            const h2 = catSection.querySelector('h2[id^="cat-"]');
-            if (h2) category = h2.textContent.replace(/\(.*?\)/g,'').trim();
-        }
-        if (!name && imgEl) name = imgEl.getAttribute('alt') || '';
-        row.dataset.productName = name.toLowerCase();
-        row.dataset.productSku  = sku.toLowerCase();
-        row.dataset.productFull = (name + ' ' + sku + ' ' + category + ' ' + row.textContent).toLowerCase();
-        row.dataset.productNameDisplay = name;
-        row.dataset.productSkuDisplay  = sku;
-        row.dataset._origIndex = idx;
-        allRows.push(row);
+        sec.remove();
     });
 
-    function applyFilterSort(){
-        const q = (searchInput.value || '').trim().toLowerCase();
-        const sort = sortSelect ? sortSelect.value : 'default';
-        
-        // 1) 过滤
-        let visible = allRows;
-        if (q) {
-            visible = allRows.filter(r => r.dataset.productFull.includes(q));
-        }
-        
-        // 2) 排序
-        if (sort === 'name-asc') {
-            visible = [...visible].sort((a,b) => 
-                a.dataset.productNameDisplay.localeCompare(b.dataset.productNameDisplay));
-        } else if (sort === 'name-desc') {
-            visible = [...visible].sort((a,b) => 
-                b.dataset.productNameDisplay.localeCompare(a.dataset.productNameDisplay));
-        } else if (sort === 'sku-asc') {
-            visible = [...visible].sort((a,b) => 
-                a.dataset.productSkuDisplay.localeCompare(b.dataset.productSkuDisplay));
-        } else if (sort === 'sku-desc') {
-            visible = [...visible].sort((a,b) => 
-                b.dataset.productSkuDisplay.localeCompare(a.dataset.productSkuDisplay));
-        }
-        
-        // 3) 显示/隐藏
-        const showAll = !q && (sort === 'default');
-        if (showAll) {
-            // 恢复原始顺序，所有 section 都显示
-            allRows.forEach(r => r.style.display = '');
-            document.querySelectorAll('.ap-category-section').forEach(s => s.style.display = '');
-            resultCount.textContent = allRows.length + ' products';
-        } else {
-            // 先全部隐藏
-            allRows.forEach(r => r.style.display = 'none');
-            document.querySelectorAll('.ap-category-section').forEach(s => s.style.display = 'none');
-            // 显示可见行并重新排序
-            visible.forEach((r, i) => {
-                r.style.display = '';
-                // 移动到 card-body 的末尾（实现跨 section 排序）
-                const cb = r.closest('.card-body');
-                if (cb) cb.appendChild(r);
-                // 也强制父 section 可见
-                const sec = r.closest('.ap-category-section');
-                if (sec) sec.style.display = '';
-            });
-            resultCount.textContent = visible.length + ' / ' + allRows.length + ' products';
-        }
-        
-        // 4) 重置按钮状态
-        resetBtn.classList.toggle('d-none', showAll);
-        clearBtn.classList.toggle('d-none', !q);
-    }
+    // 构建工具条 HTML
+    const toolbar = document.createElement('div');
+    toolbar.className = 'ap-toolbar-flat';
+    
+    // 标题 + 排序控件
+    const allTabs = Array.from(catMap.entries()).map(([id, data]) => {
+        return `<button class="ap-cat-tab" data-cat="${id}">${data.name}<span class="badge">${data.rows.length}</span></button>`;
+    }).join('');
+    
+    toolbar.innerHTML = `
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+        <div>
+          <h1 class="ap-title"><i class="fas fa-th-large me-2" style="color:var(--brand-primary,#1e40af)"></i>Yeatru Sourcing — Complete Product Catalog</h1>
+          <p class="ap-sub mb-0"><strong>${totalCount}+ wholesale SKUs</strong> · ${catMap.size} categories · verified factories · QC inspection · DDP to 50+ countries</p>
+        </div>
+      </div>
+      <!-- 分类 Tabs -->
+      <div class="ap-cat-tabs" role="tablist">
+        <button class="ap-cat-tab active" data-cat="__all__">All Categories<span class="badge">${totalCount}</span></button>
+        ${allTabs}
+      </div>
+      <!-- 搜索 + 排序 -->
+      <div class="ap-ctrl-row">
+        <input type="text" id="apSearch" class="ap-search-input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
+        <select id="apSort" class="ap-sort-select" aria-label="Sort products">
+          <option value="default">Default (category order)</option>
+          <option value="name-asc">Name A → Z</option>
+          <option value="name-desc">Name Z → A</option>
+          <option value="sku-asc">SKU A → Z</option>
+          <option value="sku-desc">SKU Z → A</option>
+        </select>
+        <span id="apCount" class="ap-count-badge">${totalCount} products</span>
+        <button id="apReset" class="btn btn-outline-secondary ap-reset-btn d-none">Reset</button>
+      </div>
+    `;
+    
+    // 构建网格容器
+    const grid = document.createElement('div');
+    grid.className = 'ap-flat-grid';
+    grid.id = 'apGrid';
+    
+    // 空状态（隐藏）
+    const empty = document.createElement('div');
+    empty.className = 'ap-empty d-none';
+    empty.innerHTML = `<i class="fas fa-inbox"></i><p class="h6 mb-1">No matching products</p><p class="small mb-0">Try a different keyword or category</p>`;
+    
+    // 插入到 main 开头
+    main.insertBefore(empty, main.firstChild);
+    main.insertBefore(grid, empty);
+    main.insertBefore(toolbar, grid);
+    
+    // 把所有产品 row 移入 grid
+    productRows.forEach(r => grid.appendChild(r));
 
-    // 事件绑定
+    // 3) 交互逻辑
+    let currentCat = '__all__';
+    let currentSort = 'default';
     let debounce = null;
-    searchInput.addEventListener('input', function(){
+    
+    function render(){
+        const q = (document.getElementById('apSearch').value || '').trim().toLowerCase();
+        
+        // 过滤
+        let visible = productRows;
+        if (currentCat !== '__all__') {
+            visible = visible.filter(r => r.dataset.productCatId === currentCat);
+        }
+        if (q) {
+            visible = visible.filter(r => r.dataset.productFull.includes(q));
+        }
+        
+        // 排序
+        if (currentSort === 'name-asc') {
+            visible = [...visible].sort((a,b) => 
+                a.dataset.productName.localeCompare(b.dataset.productName));
+        } else if (currentSort === 'name-desc') {
+            visible = [...visible].sort((a,b) => 
+                b.dataset.productName.localeCompare(a.dataset.productName));
+        } else if (currentSort === 'sku-asc') {
+            visible = [...visible].sort((a,b) => 
+                a.dataset.productSku.localeCompare(b.dataset.productSku));
+        } else if (currentSort === 'sku-desc') {
+            visible = [...visible].sort((a,b) => 
+                b.dataset.productSku.localeCompare(a.dataset.productSku));
+        } else {
+            visible.sort((a,b) => parseInt(a.dataset._origIndex) - parseInt(b.dataset._origIndex));
+        }
+        
+        // 先全部隐藏
+        productRows.forEach(r => r.style.display = 'none');
+        // 显示可见的（grid 子元素不需要显式 display，grid 自动分配）
+        visible.forEach(r => {
+            r.style.display = '';
+            grid.appendChild(r); // 移动到 grid（实现排序）
+        });
+        
+        // UI 更新
+        document.getElementById('apCount').textContent = 
+            q || currentCat !== '__all__' ? `${visible.length} / ${totalCount} products` : `${visible.length} products`;
+        document.getElementById('apReset').classList.toggle('d-none', !q && currentCat === '__all__' && currentSort === 'default');
+        empty.classList.toggle('d-none', visible.length > 0);
+        grid.classList.toggle('d-none', visible.length === 0);
+    }
+    
+    // 分类 tabs
+    toolbar.querySelectorAll('.ap-cat-tab').forEach(tab => {
+        tab.addEventListener('click', function(){
+            toolbar.querySelectorAll('.ap-cat-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            currentCat = this.dataset.cat;
+            render();
+            // 滚动到工具条
+            toolbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // 搜索
+    const searchInput = document.getElementById('apSearch');
+    searchInput.addEventListener('input', () => {
         clearTimeout(debounce);
-        debounce = setTimeout(applyFilterSort, 200);
+        debounce = setTimeout(render, 180);
     });
-    searchInput.addEventListener('keydown', function(e){
-        if (e.key === 'Escape') { searchInput.value = ''; applyFilterSort(); }
+    searchInput.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { searchInput.value = ''; render(); }
     });
-    if (sortSelect) sortSelect.addEventListener('change', applyFilterSort);
-    if (resetBtn) resetBtn.addEventListener('click', function(){
+    
+    // 排序
+    document.getElementById('apSort').addEventListener('change', function(){
+        currentSort = this.value;
+        render();
+    });
+    
+    // Reset
+    document.getElementById('apReset').addEventListener('click', () => {
         searchInput.value = '';
-        if (sortSelect) sortSelect.value = 'default';
-        applyFilterSort();
-        window.scrollTo({top: document.querySelector('.ap-toolbar').offsetTop - 80, behavior:'smooth'});
+        document.getElementById('apSort').value = 'default';
+        currentSort = 'default';
+        currentCat = '__all__';
+        toolbar.querySelectorAll('.ap-cat-tab').forEach(t => t.classList.remove('active'));
+        toolbar.querySelector('[data-cat="__all__"]').classList.add('active');
+        render();
+        toolbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-    if (clearBtn) clearBtn.addEventListener('click', function(){
-        searchInput.value = '';
-        applyFilterSort();
-        searchInput.focus();
-    });
+    
+    // 初始化
+    render();
+    
+    // URL hash 支持：#cat-YCS-CLN → 自动选中该分类
+    if (location.hash.startsWith('#cat-')) {
+        const tab = toolbar.querySelector(`.ap-cat-tab[data-cat="${location.hash.slice(1)}"]`);
+        if (tab) tab.click();
+    }
 })();
