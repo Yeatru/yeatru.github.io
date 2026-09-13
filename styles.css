@@ -3929,3 +3929,95 @@ h1[id], h2[id], h3[id], h4[id], section[id]{scroll-margin-top:80px!important}
 /* ====== 页面平滑滚动 ====== */
 html{scroll-behavior:smooth}
 /* 当用户点击锚点时，用 JS 取消 smooth（让 hashchange 即时生效） */
+
+/* ====== all-products.html：CSS Grid 魔法 —— list row → gallery card ======
+   作用域限定：只影响 .ap-category-section 内的卡片 */
+.ap-category-section > .card.card-shadow-sm{background:transparent;border:none;box-shadow:none!important}
+.ap-category-section > .card.card-shadow-sm > .card-body{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:1.25rem!important;
+  padding:0!important;
+  background:transparent!important;
+  border:none!important;
+}
+/* 小屏/平板响应式 */
+@media(max-width:991.98px){
+  .ap-category-section > .card.card-shadow-sm > .card-body{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:575.98px){
+  .ap-category-section > .card.card-shadow-sm > .card-body{grid-template-columns:1fr!important}
+}
+/* 每个 row 变成独立卡片 */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row{
+  background:var(--bg-panel)!important;
+  border:1px solid var(--border-light)!important;
+  border-radius:14px!important;
+  box-shadow:0 2px 12px rgba(0,0,0,0.06)!important;
+  padding:0!important;
+  margin:0!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:0!important;
+  overflow:hidden!important;
+  transition:transform .25s cubic-bezier(.25,1,.5,1),box-shadow .25s cubic-bezier(.25,1,.5,1),border-color .25s!important;
+  cursor:pointer;
+  border-bottom:1px solid var(--border-light)!important;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row:hover{
+  transform:translateY(-4px)!important;
+  box-shadow:0 12px 32px rgba(0,0,0,0.12)!important;
+  border-color:var(--primary-light)!important;
+}
+/* 卡片内每个 col 改为纵向排列 */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col,
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto{
+  flex:none!important;width:100%!important;max-width:100%!important;
+  padding:0!important;margin:0!important;
+}
+/* 图片 col 放顶部（order:-1），占满宽度 */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto:first-child{
+  order:-1!important;
+  padding:0!important;
+  width:100%!important;
+  height:200px!important;
+  background:#f5f7fa;
+  overflow:hidden;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto:first-child img{
+  width:100%!important;height:100%!important;object-fit:cover!important;
+  border-radius:0!important;border:none!important;
+  transition:transform .4s cubic-bezier(.25,1,.5,1)!important;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row:hover > .col-auto:first-child img{
+  transform:scale(1.04)!important;
+}
+/* 文字 col：标题 + desc */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col:nth-of-type(2){
+  padding:1rem 1rem .5rem!important;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col a.fw-semibold{
+  font-size:1rem!important;font-weight:700!important;line-height:1.35!important;
+  color:var(--primary)!important;text-decoration:none!important;
+  display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;
+  overflow:hidden!important;margin-bottom:.4rem!important;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col p.small{
+  font-size:.82rem!important;color:var(--text-secondary)!important;line-height:1.5!important;
+  display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;
+  overflow:hidden!important;margin:0!important;max-width:none!important;
+}
+/* SKU filename col：放底部，灰底小字体 */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto.text-end:last-child{
+  padding:.5rem 1rem!important;text-align:left!important;
+  background:#f8fafc;border-top:1px solid var(--border-light);
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col-auto.text-end:last-child small{
+  font-size:.7rem!important;color:var(--text-muted)!important;font-family:ui-monospace,monospace!important;
+}
+/* 让整个卡片可点击 — 用 JS 包一层或者把 a 提到最外层 */
+.ap-category-section > .card.card-shadow-sm > .card-body > .row{position:relative}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row::after{
+  content:"";position:absolute;inset:0;z-index:3;
+}
+.ap-category-section > .card.card-shadow-sm > .card-body > .row > .col:nth-of-type(2) > a{position:relative;z-index:5}
