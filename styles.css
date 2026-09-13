@@ -4115,3 +4115,177 @@ html{scroll-behavior:smooth}
   .ap-flat-grid > .row.g-0:hover{transform:none}
   .ap-flat-grid > .row.g-0:hover img{transform:none}
 }
+
+/* =========================================================
+   DARK MODE COMPREHENSIVE OVERRIDES — All Components
+   ========================================================= */
+
+/* ---- Section backgrounds ---- */
+[data-theme="dark"] .section-dark-alt{background:linear-gradient(135deg,#0b1120,#111827)!important}
+[data-theme="dark"] .section-alt{background:#0f172a!important}
+[data-theme="dark"] .py-5.section-dark-alt,
+[data-theme="dark"] .py-5.section-alt{background:transparent}
+
+/* ---- Banner / Hero ---- */
+[data-theme="dark"] .banner-carousel{background:linear-gradient(135deg,#050a18 0%,#0b1328 55%,#070c1a 100%)!important}
+[data-theme="dark"] .banner-carousel::before{opacity:.6}
+[data-theme="dark"] .banner-carousel::after{opacity:.3}
+[data-theme="dark"] .banner-title{color:#f8fafc!important;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+[data-theme="dark"] .banner-subtitle{color:#cbd5e1!important}
+[data-theme="dark"] .banner-tag{background:rgba(59,130,246,.2)!important;color:#93c5fd!important;border-color:rgba(59,130,246,.3)!important}
+[data-theme="dark"] .banner-feature{color:#cbd5e1!important}
+[data-theme="dark"] .banner-feature i{color:#60a5fa!important}
+[data-theme="dark"] .banner-trust-bar{background:rgba(30,64,175,.15)!important;border-color:rgba(59,130,246,.3)!important}
+[data-theme="dark"] .banner-trust-bar strong{color:#93c5fd!important}
+[data-theme="dark"] .banner-image-wrap{box-shadow:0 20px 50px rgba(0,0,0,.6)!important}
+[data-theme="dark"] .banner-carousel:hover .banner-image-wrap{box-shadow:0 25px 60px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)!important}
+
+/* ---- Section titles ---- */
+[data-theme="dark"] .section-title{color:#f8fafc!important}
+[data-theme="dark"] .section-subtitle{color:#94a3b8!important}
+[data-theme="dark"] .section-eyebrow{color:#60a5fa!important}
+[data-theme="dark"] .section-divider{background:#374151!important}
+[data-theme="dark"] .section-title-wrap .text-muted{color:#64748b!important}
+
+/* ---- Category Image Cards ---- */
+[data-theme="dark"] .category-img-card .category-img-wrap{background:#1f2937!important;border-color:#374151!important}
+[data-theme="dark"] .category-img-overlay{background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.65) 100%)!important}
+[data-theme="dark"] .category-img-title{color:#f8fafc!important}
+[data-theme="dark"] .category-img-sub{color:#94a3b8!important}
+[data-theme="dark"] .category-img-card:hover .category-img-wrap{border-color:#3b82f6!important}
+
+/* ---- Service / Feature Cards ---- */
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .advantage-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .step-card,
+[data-theme="dark"] .client-segment-card,
+[data-theme="dark"] .case-study-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .trust-stat-card,
+[data-theme="dark"] .aplus-section{
+  background:#111827!important;
+  border-color:#374151!important;
+  box-shadow:0 1px 3px rgba(0,0,0,.3)!important;
+}
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .advantage-card:hover,
+[data-theme="dark"] .client-segment-card:hover,
+[data-theme="dark"] .trust-stat-card:hover,
+[data-theme="dark"] .case-study-card:hover{
+  box-shadow:0 8px 24px rgba(0,0,0,.5)!important;
+  border-color:#3b82f6!important;
+}
+[data-theme="dark"] .service-card-title,
+[data-theme="dark"] .service-card-body,
+[data-theme="dark"] .client-segment-title,
+[data-theme="dark"] .trust-stat-number,
+[data-theme="dark"] .case-study-footer,
+[data-theme="dark"] .case-study-card h3,
+[data-theme="dark"] .step-card h3,
+[data-theme="dark"] .advantage-card h4{color:#f8fafc!important}
+[data-theme="dark"] .service-card-body p,
+[data-theme="dark"] .client-segment-desc,
+[data-theme="dark"] .trust-stat-label,
+[data-theme="dark"] .trust-stat,
+[data-theme="dark"] .case-study-card p,
+[data-theme="dark"] .client-tag,
+[data-theme="dark"] .client-location,
+[data-theme="dark"] .client-type{color:#94a3b8!important}
+[data-theme="dark"] .service-card-icon,
+[data-theme="dark"] .trust-stat-icon,
+[data-theme="dark"] .client-segment-icon{background:#1e3a8a!important;color:#60a5fa!important}
+
+/* ---- Trust Stats / Bar ---- */
+[data-theme="dark"] .trust-stats-section,
+[data-theme="dark"] .trust-badges-section{background:#0b1120!important}
+[data-theme="dark"] .trust-stats{border-color:#374151!important}
+[data-theme="dark"] .trust-stat{color:#94a3b8!important}
+
+/* ---- Testimonials ---- */
+[data-theme="dark"] .testimonial-card{background:#111827!important;border-color:#374151!important;box-shadow:0 2px 10px rgba(0,0,0,.3)!important}
+[data-theme="dark"] .testimonial-text{color:#e2e8f0!important}
+[data-theme="dark"] .testimonial-author{color:#f8fafc!important}
+[data-theme="dark"] .testimonial-country,
+[data-theme="dark"] .testimonial-meta{color:#64748b!important}
+[data-theme="dark"] .testimonial-quote-icon{color:#3b82f6!important;opacity:.4}
+[data-theme="dark"] .testimonial-stars{color:#f59e0b!important}
+
+/* ---- Blog Cards ---- */
+[data-theme="dark"] .blog-card{background:#111827!important;border-color:#374151!important;box-shadow:0 1px 3px rgba(0,0,0,.3)!important}
+[data-theme="dark"] .blog-card:hover{border-color:#3b82f6!important;box-shadow:0 8px 24px rgba(0,0,0,.5)!important}
+[data-theme="dark"] .blog-card-title{color:#f8fafc!important}
+[data-theme="dark"] .blog-card-excerpt,
+[data-theme="dark"] .blog-card-meta,
+[data-theme="dark"] .blog-card-content p{color:#94a3b8!important}
+[data-theme="dark"] .blog-card-category{background:rgba(59,130,246,.2)!important;color:#93c5fd!important}
+[data-theme="dark"] .blog-card-link{color:#60a5fa!important}
+[data-theme="dark"] .blog-card-link:hover{color:#93c5fd!important}
+
+/* ---- Footer ---- */
+[data-theme="dark"] footer,
+[data-theme="dark"] .site-footer,
+[data-theme="dark"] .footer{background:#060a14!important;color:#94a3b8!important}
+[data-theme="dark"] .footer-title,
+[data-theme="dark"] .footer-brand,
+[data-theme="dark"] .footer h4,
+[data-theme="dark"] footer h5{color:#f8fafc!important}
+[data-theme="dark"] .footer-link{color:#94a3b8!important;text-decoration:none;transition:color .15s}
+[data-theme="dark"] .footer-link:hover{color:#60a5fa!important}
+[data-theme="dark"] .footer-desc{color:#64748b!important}
+[data-theme="dark"] .footer-social-icon{background:#1f2937!important;color:#94a3b8!important;border-color:#374151!important}
+[data-theme="dark"] .footer-social-icon:hover{background:#3b82f6!important;color:#fff;border-color:#3b82f6!important}
+[data-theme="dark"] .footer-bottom{border-top-color:#1f2937!important;background:#05070e!important}
+[data-theme="dark"] .footer-payment-label{color:#64748b!important}
+
+/* ---- Forms & Inputs ---- */
+[data-theme="dark"] .form-label{color:#cbd5e1!important}
+[data-theme="dark"] .form-title,
+[data-theme="dark"] .contact-form h3{color:#f8fafc!important}
+[data-theme="dark"] .form-check-input{background:#1f2937!important;border-color:#4b5563!important}
+[data-theme="dark"] .form-check-input:checked{background-color:#3b82f6!important;border-color:#3b82f6!important}
+[data-theme="dark"] .form-check-label{color:#cbd5e1!important}
+[data-theme="dark"] .modal-footer,
+[data-theme="dark"] .nav-search-form{background:transparent!important;border-color:#374151!important}
+[data-theme="dark"] .nav-search-input{background:#1f2937!important;border-color:#374151!important;color:#f8fafc!important}
+[data-theme="dark"] .nav-search-input::placeholder{color:#64748b!important}
+
+/* ---- Navbar extras ---- */
+[data-theme="dark"] .navbar-toggler{border-color:#374151!important}
+[data-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+[data-theme="dark"] .navbar-nav .nav-item .nav-link{color:#cbd5e1!important}
+[data-theme="dark"] .navbar-nav .nav-item .nav-link:hover,
+[data-theme="dark"] .navbar-nav .nav-item .nav-link.active{color:#60a5fa!important}
+
+/* ---- Buttons extras ---- */
+[data-theme="dark"] .btn-close{filter:invert(1)}
+[data-theme="dark"] .btn-outline-primary{color:#60a5fa!important;border-color:#60a5fa!important}
+[data-theme="dark"] .btn-outline-primary:hover{background:#60a5fa!important;color:#0b1120!important}
+[data-theme="dark"] .btn-outline-light{color:#e2e8f0!important;border-color:#4b5563!important}
+[data-theme="dark"] .btn-outline-light:hover{background:#374151!important;border-color:#6b7280!important}
+[data-theme="dark"] .btn-primary{background:linear-gradient(135deg,#3b82f6,#1d4ed8)!important;border-color:transparent!important}
+[data-theme="dark"] .btn-success{background:#10b981!important;border-color:#10b981!important}
+[data-theme="dark"] .btn-cta{background:linear-gradient(135deg,#3b82f6,#1d4ed8)!important;color:#fff!important}
+
+/* ---- Dropdown extras ---- */
+[data-theme="dark"] .dropdown-header{color:#60a5fa!important;background:#1f2937!important}
+[data-theme="dark"] .dropdown-divider{border-color:#374151!important}
+
+/* ---- Contact Section ---- */
+[data-theme="dark"] .contact-section{background:#0b1120!important}
+[data-theme="dark"] .contact-card h4{color:#f8fafc!important}
+[data-theme="dark"] .contact-card p,
+[data-theme="dark"] .contact-card li{color:#94a3b8!important}
+
+/* ---- Badges & Alerts ---- */
+[data-theme="dark"] .alert-info{background:rgba(59,130,246,.1)!important;border-color:rgba(59,130,246,.3)!important;color:#93c5fd!important}
+[data-theme="dark"] .badge.bg-light.text-dark{background:#1f2937!important;color:#cbd5e1!important;border:1px solid #374151}
+
+/* ---- Misc ---- */
+[data-theme="dark"] .text-muted{color:#64748b!important}
+[data-theme="dark"] .text-primary{color:#60a5fa!important}
+[data-theme="dark"] .text-indigo{color:#818cf8!important}
+[data-theme="dark"] body{background:#0b1120}
+
+/* ---- Logo invert on dark ---- */
+[data-theme="dark"] .navbar-brand img[alt="Yeatru Sourcing Logo"]{filter:brightness(1.15)}
