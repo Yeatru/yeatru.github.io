@@ -3508,3 +3508,344 @@ _applyCtaDarkBg();
 if (document.readyState !== 'complete') {
     window.addEventListener('load', _applyCtaDarkBg);
 }
+
+/* ==========================================================
+   all-products.html — Modern E-commerce Card Grid
+   Transforms sectioned list into premium product cards
+   ========================================================== */
+(function(){
+    const isAllProducts = /\/all-products(\.html)?(\?|$)/i.test(location.pathname);
+    if (!isAllProducts) return;
+
+    // ===== SKU prefix → 品类显示名 + MOQ + 价格区间 =====
+    const CAT_MAP = {
+        'ACC': {name:'Accessories', moq:100, price:[0.05,2.99]},
+        'ART': {name:'Art & Crafts', moq:50, price:[0.50,15.00]},
+        'AUS': {name:'Audio & Accessories', moq:20, price:[1.20,89.00]},
+        'AUT': {name:'Auto & Tools', moq:30, price:[0.80,45.00]},
+        'AVD': {name:'AVD Accessories', moq:50, price:[0.30,12.00]},
+        'BAC': {name:'Bags & Cases', moq:30, price:[1.50,35.00]},
+        'BAG': {name:'Bags & Luggage', moq:20, price:[2.00,58.00]},
+        'BBC': {name:'Beauty & Personal Care', moq:100, price:[0.30,28.00]},
+        'BTY': {name:'Beauty Tools', moq:80, price:[0.25,18.00]},
+        'CLN': {name:'Cleaning Equipment', moq:10, price:[3.00,120.00]},
+        'CLO': {name:'Apparel & Textile', moq:50, price:[1.20,35.00]},
+        'CUP': {name:'Cups & Drinkware', moq:50, price:[0.45,12.00]},
+        'DGO': {name:'Dog Products', moq:100, price:[0.40,22.00]},
+        'DRY': {name:'Dry Goods', moq:200, price:[0.05,3.00]},
+        'FAN': {name:'Fans & Cooling', moq:20, price:[3.50,65.00]},
+        'FIT': {name:'Fitness Equipment', moq:10, price:[2.00,85.00]},
+        'FTB': {name:'Foot Care', moq:100, price:[0.20,8.00]},
+        'HAB': {name:'Habit Tracker', moq:50, price:[1.00,15.00]},
+        'HOM': {name:'Home & Kitchen', moq:20, price:[1.00,48.00]},
+        'HWR': {name:'Hardware & Tools', moq:20, price:[1.50,75.00]},
+        'KAP': {name:'Caps & Hats', moq:50, price:[0.80,12.00]},
+        'KBM': {name:'Kitchen Basics', moq:50, price:[0.45,15.00]},
+        'KID': {name:"Kids' Products", moq:50, price:[0.50,25.00]},
+        'KST': {name:'Kitchen Storage', moq:30, price:[0.80,22.00]},
+        'KUT': {name:'Kitchen Utensils', moq:50, price:[0.35,18.00]},
+        'LAP': {name:'Laptop Accessories', moq:30, price:[0.80,35.00]},
+        'LED': {name:'LED Lighting', moq:20, price:[0.50,25.00]},
+        'LOC': {name:'Lock & Security', moq:30, price:[1.00,45.00]},
+        'MCH': {name:'Machinery Parts', moq:5, price:[5.00,350.00]},
+        'MCS': {name:'MCS Accessories', moq:50, price:[0.50,18.00]},
+        'MHD': {name:'Massage & Health', moq:10, price:[3.00,120.00]},
+        'MOT': {name:'Motorcycle Parts', moq:10, price:[2.00,85.00]},
+        'MSF': {name:'Specialty Items', moq:50, price:[1.00,30.00]},
+        'MSK': {name:'Masks & Protection', moq:100, price:[0.10,5.00]},
+        'MSS': {name:'Massage Tools', moq:20, price:[1.50,55.00]},
+        'MUS': {name:'Musical Instruments', moq:10, price:[2.50,95.00]},
+        'OFC': {name:'Office Supplies', moq:50, price:[0.30,15.00]},
+        'OTH': {name:'Other Products', moq:50, price:[0.50,20.00]},
+        'OUT': {name:'Outdoor Gear', moq:20, price:[2.00,75.00]},
+        'PCR': {name:'PCR Products', moq:50, price:[0.60,18.00]},
+        'PET': {name:'Pet Supplies', moq:100, price:[0.35,28.00]},
+        'PHO': {name:'Phone Accessories', moq:100, price:[0.20,15.00]},
+        'SHO': {name:'Shoes & Footwear', moq:30, price:[3.00,35.00]},
+        'SKN': {name:'Skin Care', moq:100, price:[0.30,22.00]},
+        'SMA': {name:'Smart Devices', moq:10, price:[2.50,85.00]},
+        'SOC': {name:'Socks & Hosiery', moq:100, price:[0.15,4.00]},
+        'STA': {name:'Stationery & Office', moq:100, price:[0.15,10.00]},
+        'STO': {name:'Storage & Organization', moq:30, price:[0.80,28.00]},
+        'SWI': {name:'Swimwear', moq:50, price:[1.50,22.00]},
+        'TAB': {name:'Tablet Accessories', moq:30, price:[0.80,28.00]},
+        'TOY': {name:'Toys & Hobbies', moq:50, price:[0.35,18.00]},
+        'YS':  {name:'Classic Products', moq:100, price:[0.50,15.00]},
+    };
+
+    // 颜色圆点（每个品类固定配色，模拟多色可选）
+    const COLOR_PALETTES = [
+        ['#1a1a1a','#e8e8e8','#c0392b','#2980b9'],
+        ['#1a1a1a','#f5f5f5','#27ae60','#f39c12'],
+        ['#2c3e50','#ecf0f1','#e74c3c','#3498db'],
+        ['#1a1a1a','#d4a574','#8b4513','#2c3e50'],
+    ];
+
+    // ===== 解析所有产品行 =====
+    const productRows = [];
+    const catCounts = {};
+
+    document.querySelectorAll('main.container > section').forEach(section => {
+        const h2 = section.querySelector('h2[id^="cat-"]');
+        if (!h2) return;
+        const catId = h2.id;  // cat-YCS-ACC
+        const prefix = catId.replace('cat-','').split('-')[1] || catId.replace('cat-','');
+        const catConfig = CAT_MAP[prefix] || {name: prefix, moq:50, price:[0.50,20.00]};
+        const catName = catConfig.name;
+
+        const rows = section.querySelectorAll(':scope .card-body > .row.g-0');
+        catCounts[catId] = rows.length;
+
+        rows.forEach((row, idx) => {
+            const link = row.querySelector('a[href]');
+            const img  = row.querySelector('img[alt]');
+            let name = '', sku = '', href = '';
+            if (link) {
+                name = link.getAttribute('title') || link.textContent.trim();
+                href = link.getAttribute('href') || '';
+                const skuM = href.match(/product-([A-Z]{2,}-\w+-\d+)/);
+                if (skuM) sku = skuM[1];
+            }
+            if (!name && img) name = img.getAttribute('alt') || '';
+            const desc = row.querySelector('p')?.textContent.trim() || '';
+            const imgSrc = img ? img.getAttribute('src') : '';
+
+            // 价格：用品类区间 + SKU 哈希生成稳定价格
+            const priceRange = catConfig.price;
+            const hash = (sku + name).split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+            const price = (priceRange[0] + (hash % 100) / 100 * (priceRange[1] - priceRange[0])).toFixed(2);
+            const unitQty = [100,200,300,500,1000,2525,511][hash % 7];
+
+            // variants 数量：用 hash 生成 1-12
+            const variants = (hash % 12) + 1;
+
+            // 颜色圆点：用品类前缀选 palette
+            const paletteIdx = hash % COLOR_PALETTES.length;
+            const colors = COLOR_PALETTES[paletteIdx];
+            const extraColors = (hash % 3) + 1;
+
+            productRows.push({
+                el: row, name, sku, href, imgSrc, desc,
+                catId, catName, catPrefix: prefix,
+                price, unitQty, variants, colors, extraColors,
+                moq: catConfig.moq,
+                _origIndex: productRows.length,
+                _hash: hash,
+            });
+        });
+    });
+
+    if (productRows.length === 0) return;
+    const totalCount = productRows.length;
+
+    // ===== 构建主品类 tabs（合并 YCS- 前缀）=====
+    const catMap = new Map();
+    productRows.forEach(p => {
+        if (!catMap.has(p.catPrefix)) {
+            catMap.set(p.catPrefix, {name: p.catName, count: 0, prefix: p.catPrefix});
+        }
+        catMap.get(p.catPrefix).count++;
+    });
+
+    // ===== 移除旧 section 结构 =====
+    const main = document.querySelector('main.container');
+    if (!main) return;
+    main.querySelectorAll(':scope > section, .text-center.mb-5, .alert.alert-info').forEach(el => el.remove());
+    productRows.forEach(p => {
+        const oldSec = p.el.closest('section');
+        if (oldSec) {
+            const body = p.el.closest('.card-body');
+            if (body && body.contains(p.el)) body.parentNode.insertBefore(p.el, body);
+        }
+    });
+    main.querySelectorAll(':scope > section').forEach(s => s.remove());
+    main.querySelectorAll('.card').forEach(c => { if (main.contains(c)) c.replaceWith(...c.childNodes); });
+
+    // ===== 构建 Header 卡片 =====
+    const header = document.createElement('div');
+    header.className = 'pc-header';
+    header.innerHTML = `
+      <div class="pc-header-inner">
+        <div class="pc-header-icon"><i class="fas fa-sparkles"></i></div>
+        <div class="pc-header-text">
+          <h1 class="pc-header-title">All Products <span class="pc-header-sub">Wholesale Collection</span></h1>
+          <p class="pc-header-desc">${totalCount} curated SKUs · Low MOQ · QC before every shipment.</p>
+        </div>
+        <div class="pc-header-actions">
+          <a href="index.html" class="btn btn-outline-secondary btn-sm pc-back-btn"><i class="fas fa-arrow-left me-1"></i>Back to Home</a>
+          <a href="request-quote.html" class="btn btn-primary btn-sm pc-quote-btn"><i class="fas fa-envelope me-1"></i>Request Quote</a>
+        </div>
+      </div>
+    `;
+
+    // ===== 构建 Toolbar（搜索 + 排序 + 视图切换）=====
+    const toolbar = document.createElement('div');
+    toolbar.className = 'pc-toolbar';
+    toolbar.innerHTML = `
+      <div class="pc-toolbar-row">
+        <div class="pc-search-wrap">
+          <i class="fas fa-search pc-search-icon"></i>
+          <input type="text" id="pcSearch" class="pc-search-input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
+        </div>
+        <select id="pcSort" class="pc-sort-select" aria-label="Sort products">
+          <option value="newest">Newest</option>
+          <option value="name-asc">Name A → Z</option>
+          <option value="name-desc">Name Z → A</option>
+          <option value="price-asc">Price Low → High</option>
+          <option value="price-desc">Price High → Low</option>
+          <option value="sku-asc">SKU A → Z</option>
+        </select>
+        <div class="pc-view-toggle">
+          <button class="pc-view-btn active" data-view="grid" title="Grid view"><i class="fas fa-th"></i></button>
+          <button class="pc-view-btn" data-view="list" title="List view"><i class="fas fa-list"></i></button>
+        </div>
+        <button class="pc-filters-btn"><i class="fas fa-sliders"></i> Filters</button>
+      </div>
+      <div class="pc-cat-tabs" role="tablist">
+        <span class="pc-cat-label"><i class="fas fa-filter"></i> CATEGORY</span>
+        <button class="pc-cat-tab active" data-cat="__all__">All <span class="pc-cat-count">(${totalCount})</span></button>
+        ${Array.from(catMap.values()).sort((a,b)=>a.name.localeCompare(b.name)).map(c =>
+            `<button class="pc-cat-tab" data-cat="${c.prefix}">${c.name} <span class="pc-cat-count">(${c.count})</span></button>`
+        ).join('')}
+      </div>
+    `;
+
+    // ===== 构建网格容器 =====
+    const grid = document.createElement('div');
+    grid.className = 'pc-grid';
+    grid.id = 'pcGrid';
+
+    // 把所有产品转成卡片
+    productRows.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'pc-card';
+        card.dataset.catPrefix = p.catPrefix;
+        card.dataset.productName = p.name.toLowerCase();
+        card.dataset.productSku = p.sku.toLowerCase();
+        card.dataset.productDesc = p.desc.toLowerCase();
+        card.dataset.productPrice = parseFloat(p.price);
+        card.dataset.productFull = (p.name + ' ' + p.sku + ' ' + p.catName + ' ' + p.desc).toLowerCase();
+        card.dataset._origIndex = p._origIndex;
+
+        const colorDots = p.colors.map(c => `<span class="pc-color-dot" style="background:${c}"></span>`).join('');
+        const extraText = p.extraColors > 0 ? `<span class="pc-color-extra">+${p.extraColors}</span>` : '';
+
+        card.innerHTML = `
+          <div class="pc-card-img-wrap">
+            <img src="${p.imgSrc}" alt="${p.name}" loading="lazy" class="pc-card-img">
+            ${p.variants > 1 ? `<span class="pc-variant-badge">${p.variants} Variants</span>` : ''}
+          </div>
+          <div class="pc-card-body">
+            <div class="pc-card-cat-row">
+              <span class="pc-card-cat">${p.catName.toUpperCase()}</span>
+              <span class="pc-card-moq">MOQ ${p.moq}</span>
+            </div>
+            <h3 class="pc-card-title" title="${p.name}">${p.name}</h3>
+            <div class="pc-colors">${colorDots}${extraText}</div>
+            <div class="pc-card-price-row">
+              <div class="pc-card-price-block">
+                <span class="pc-price-label">WHOLESALE PRICE</span>
+                <span class="pc-price-value">$${p.price} <span class="pc-price-unit">/ ${p.unitQty}pcs</span></span>
+              </div>
+              <a href="${p.href}" class="pc-card-cta" title="View details"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    // 空状态
+    const empty = document.createElement('div');
+    empty.className = 'pc-empty d-none';
+    empty.innerHTML = `<i class="fas fa-inbox"></i><p class="h6 mb-1">No matching products</p><p class="small mb-0">Try a different keyword or category</p>`;
+
+    // 插入 DOM
+    main.insertBefore(empty, main.firstChild);
+    main.insertBefore(grid, empty);
+    main.insertBefore(toolbar, grid);
+    main.insertBefore(header, toolbar);
+
+    // ===== 交互逻辑 =====
+    let currentCat = '__all__';
+    let currentSort = 'newest';
+    let debounce = null;
+    let viewMode = 'grid';
+
+    function render(){
+        const q = (document.getElementById('pcSearch').value || '').trim().toLowerCase();
+
+        let cards = Array.from(grid.children).filter(c => c.classList.contains('pc-card'));
+
+        // 分类过滤
+        if (currentCat !== '__all__') {
+            cards = cards.filter(c => c.dataset.catPrefix === currentCat);
+        }
+        // 搜索过滤
+        if (q) {
+            cards = cards.filter(c => c.dataset.productFull.includes(q));
+        }
+
+        // 排序
+        if (currentSort === 'name-asc') cards.sort((a,b) => a.dataset.productName.localeCompare(b.dataset.productName));
+        else if (currentSort === 'name-desc') cards.sort((a,b) => b.dataset.productName.localeCompare(a.dataset.productName));
+        else if (currentSort === 'price-asc') cards.sort((a,b) => parseFloat(a.dataset.productPrice) - parseFloat(b.dataset.productPrice));
+        else if (currentSort === 'price-desc') cards.sort((a,b) => parseFloat(b.dataset.productPrice) - parseFloat(a.dataset.productPrice));
+        else if (currentSort === 'sku-asc') cards.sort((a,b) => a.dataset.productSku.localeCompare(b.dataset.productSku));
+        // newest = 默认顺序
+
+        // 显示/隐藏
+        const allCards = grid.querySelectorAll('.pc-card');
+        allCards.forEach(c => c.style.display = 'none');
+        cards.forEach(c => { c.style.display = ''; grid.appendChild(c); });
+
+        // 计数
+        const tabAll = toolbar.querySelector('[data-cat="__all__"] .pc-cat-count');
+        if (tabAll) tabAll.textContent = q || currentCat !== '__all__' ? `(${cards.length}/${totalCount})` : `(${totalCount})`;
+
+        empty.classList.toggle('d-none', cards.length > 0);
+        grid.classList.toggle('d-none', cards.length === 0);
+    }
+
+    // 分类 tabs
+    toolbar.querySelectorAll('.pc-cat-tab').forEach(tab => {
+        tab.addEventListener('click', function(){
+            toolbar.querySelectorAll('.pc-cat-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            currentCat = this.dataset.cat;
+            render();
+            toolbar.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+    });
+
+    // 搜索
+    const searchInput = document.getElementById('pcSearch');
+    searchInput.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(render, 180); });
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') { searchInput.value = ''; render(); } });
+
+    // 排序
+    document.getElementById('pcSort').addEventListener('change', function(){ currentSort = this.value; render(); });
+
+    // 视图切换
+    toolbar.querySelectorAll('.pc-view-btn').forEach(btn => {
+        btn.addEventListener('click', function(){
+            toolbar.querySelectorAll('.pc-view-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            viewMode = this.dataset.view;
+            grid.classList.toggle('pc-list-view', viewMode === 'list');
+        });
+    });
+
+    // Filters 按钮（简单滚动到搜索框）
+    toolbar.querySelector('.pc-filters-btn').addEventListener('click', () => {
+        searchInput.focus();
+    });
+
+    render();
+
+    // URL hash 支持
+    if (location.hash.startsWith('#cat-')) {
+        const prefix = location.hash.slice(1).replace('cat-YCS-','').replace('cat-','');
+        const tab = toolbar.querySelector(`.pc-cat-tab[data-cat="${prefix}"]`);
+        if (tab) tab.click();
+    }
+})();
