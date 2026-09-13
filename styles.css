@@ -673,27 +673,33 @@ to{opacity:1;transform:translateY(0)}
 .banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,255,255,0.06) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(255,255,255,0.04) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
-/* ===== Bootstrap Carousel 修复：只给 active/过渡状态加 display:flex =====
+/* ===== Bootstrap Carousel 修复：左右布局（所有屏幕）=====
    默认必须是 display:none（不覆盖 Bootstrap 行为） */
 .banner-carousel .carousel-item{position:relative;min-height:24rem;padding:1.5rem 0}
 @media(min-width:768px){.banner-carousel .carousel-item{min-height:26rem;padding:2rem 0}}
 @media(min-width:992px){.banner-carousel .carousel-item{min-height:30rem;padding:2.5rem 0}}
-/* 只在 Bootstrap 的"可见状态"才用 flex 布局 — 避免所有 slide 同时显示 */
+/* 只在 Bootstrap 的"可见状态"才用 flex 布局 */
 .banner-carousel .carousel-item.active,
 .banner-carousel .carousel-item.active.carousel-item-start,
 .banner-carousel .carousel-item-next.carousel-item-start,
 .banner-carousel .carousel-item-prev.carousel-item-end{display:flex;align-items:center}
-/* container 正常文档流，不要 absolute */
+/* container 正常文档流 */
 .banner-carousel .carousel-item>.container{width:100%;position:relative;z-index:2}
-.banner-carousel .carousel-item>.container>.row{align-items:center;gap:1rem 0}
-@media(min-width:992px){.banner-carousel .carousel-item>.container>.row{gap:0}}
-/* 小屏：flex-direction column（内容在上，图在下）；桌面端：左右并排 */
-@media(max-width:991.98px){
-  .banner-carousel .carousel-item .row{flex-direction:column}
-  .banner-carousel .carousel-item .col-lg-5{order:2}
-  .banner-carousel .carousel-item .col-lg-7{order:1}
+/* ★ 核心修复：所有屏幕强制左右并排，不换行 */
+.banner-carousel .carousel-item>.container>.row{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:1rem}
+/* col-lg-7 和 col-lg-5 在所有屏幕尺寸下都保持 flex 比例，不要变成 col-12 */
+.banner-carousel .carousel-item .col-lg-7{flex:0 0 58%;max-width:58%}
+.banner-carousel .carousel-item .col-lg-5{flex:0 0 42%;max-width:42%}
+/* 小屏比例微调 */
+@media(max-width:767.98px){
+  .banner-carousel .carousel-item .col-lg-7{flex:0 0 60%;max-width:60%}
+  .banner-carousel .carousel-item .col-lg-5{flex:0 0 40%;max-width:40%}
 }
-/* 轮播图过渡效果（fade 模式替代 slide，更干净） */
+@media(min-width:992px){
+  .banner-carousel .carousel-item .col-lg-7{flex:0 0 60%;max-width:60%}
+  .banner-carousel .carousel-item .col-lg-5{flex:0 0 40%;max-width:40%}
+}
+/* 轮播图 fade 过渡 */
 .banner-carousel .carousel-item{transition:opacity 0.6s ease-in-out}
 .banner-carousel .carousel-item:not(.active){opacity:0}
 .banner-carousel .carousel-item.active{opacity:1}
