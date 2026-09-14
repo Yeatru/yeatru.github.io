@@ -105,10 +105,6 @@ Crawl-delay: 0
 
 # ── Sitemaps ──────────────────────────────────────────────────────
 Sitemap: https://www.yeatru.com/sitemap.xml
-Sitemap: https://www.yeatru.com/sitemap-static.xml
-Sitemap: https://www.yeatru.com/sitemap-products-a-m.xml
-Sitemap: https://www.yeatru.com/sitemap-products-n-z.xml
-Sitemap: https://www.yeatru.com/sitemap-categories.xml
 
 # ── Official bot docs ─────────────────────────────────────────────
 # GPTBot: https://platform.openai.com/docs/gptbot
