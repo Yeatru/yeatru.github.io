@@ -6,13 +6,13 @@
 # and generates a sitemap ping. Use after major SEO fixes or content updates.
 #
 # USAGE:  bash reindex.sh [--mode=all|critical|products|blogs]
-# KEY:    efc8ae67553af86b77dfd773f6ed71a0  (IndexNow verification)
+# KEY:    b8f3a7d2e91c4b6f8a3e5d7f2c9a1b4e  (IndexNow verification)
 # =============================================================================
 
 set -euo pipefail
 
 SITE="https://www.yeatru.com"
-INDEXNOW_KEY="efc8ae67553af86b77dfd773f6ed71a0"
+INDEXNOW_KEY="b8f3a7d2e91c4b6f8a3e5d7f2c9a1b4e"
 MODE="${1:---mode=all}"
 MODE="${MODE#--mode=}"
 MODE="${MODE:=all}"
