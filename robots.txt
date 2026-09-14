@@ -14,7 +14,11 @@ Disallow: /404.html
 Disallow: /monitor.html
 Disallow: /google*.html
 Disallow: /indexnow.txt
-Crawl-delay: 2
+# Data / export files — no search value, wastes crawl budget
+Disallow: /products.xml
+Disallow: /products.csv
+Disallow: /*.py$
+Crawl-delay: 1
 
 # ── OpenAI / ChatGPT / Codex ──────────────────────────────────────
 User-agent: GPTBot
