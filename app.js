@@ -186,6 +186,22 @@ function applyCategoryFromUrl() {
     return false;
 }
 
+// Read ?q= / ?search= / ?keyword= / ?query= from URL and apply it as the
+// current search query so filtered results render on first paint.
+function applySearchFromUrl() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('q') || params.get('search') || params.get('keyword') || params.get('query') || '';
+        if (q) {
+            currentSearchQuery = decodeURIComponent(q);
+            const heroInput = document.getElementById('heroProductSearchInput');
+            if (heroInput) heroInput.value = currentSearchQuery;
+            return true;
+        }
+    } catch (_) {}
+    return false;
+}
+
 // ============================================================
 // Resolve a product (or a raw sub-category string) to one of the 17
 // UI_MAIN_CATEGORIES. Adds SKU / keyword based overrides so "Accessories"
@@ -650,6 +666,7 @@ const translationResources = {
 
 let currentFilterCategory = 'all';
 let currentSearchQuery = '';
+let currentSort = 'newest';
 let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
@@ -1186,6 +1203,50 @@ function safeAddEventListener(id, event, handler) {
     if (el) el.addEventListener(event, handler);
 }
 
+/**
+ * Product detail gallery: clicking a thumbnail swaps the main image.
+ * All thumbnails currently point at the same source image (only one image
+ * per SKU), so this provides visual interactivity and sets up for future
+ * multi-image support.
+ */
+function initDetailGallery() {
+    const gallery = document.querySelector('.detail-gallery');
+    if (!gallery) return;
+    const mainImg = gallery.querySelector('.gallery-main .detail-image');
+    const thumbs = gallery.querySelectorAll('.gallery-thumb');
+    if (!mainImg || thumbs.length === 0) return;
+    thumbs.forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+            thumbs.forEach(function (t) { t.classList.remove('active'); });
+            thumb.classList.add('active');
+            const src = thumb.getAttribute('src');
+            if (src) mainImg.setAttribute('src', src);
+        });
+    });
+}
+
+/**
+ * Product detail quantity selector: +/- buttons adjust the number input.
+ */
+function initDetailQtySelector() {
+    const wrap = document.querySelector('.qty-input-wrap');
+    if (!wrap) return;
+    const input = wrap.querySelector('.qty-input');
+    const minus = wrap.querySelector('.qty-minus');
+    const plus = wrap.querySelector('.qty-plus');
+    if (!input || !minus || !plus) return;
+    minus.addEventListener('click', function () {
+        let v = parseInt(input.value, 10) || 1;
+        v = Math.max(1, v - 1);
+        input.value = v;
+    });
+    plus.addEventListener('click', function () {
+        let v = parseInt(input.value, 10) || 1;
+        v = v + 1;
+        input.value = v;
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log('[i18n] DOMContentLoaded fired, starting i18next init...');
 
@@ -1243,12 +1304,25 @@ document.addEventListener('DOMContentLoaded', function () {
         // every static product-*.html detail page). Binds form submit,
         // live-search (debounced), ESC-to-clear, and click-to-reset.
         bindHeroProductSearch();
+        // Sort dropdown (products.html): newest / price / name / sku
+        const sortSel = document.getElementById('sortSelect');
+        if (sortSel) {
+            sortSel.value = currentSort;
+            sortSel.addEventListener('change', function () {
+                currentSort = this.value;
+                renderProducts();
+            });
+        }
         // Fill prices for server-rendered / static HTML widgets that carry
         // `data-usd-price` attributes (e.g. the static product pages, any
         // pre-rendered cards). Must run AFTER initCurrencySelector() so the
         // chosen currency in localStorage is respected.
         applyUsdPricePlaceholders();
         initVariantSelection();
+        // Product detail gallery: thumbnail switching
+        initDetailGallery();
+        // Product detail quantity selector (+/-)
+        initDetailQtySelector();
         // Apply the inline SVG Yeatru brand logo (fixes "no logo in top-left nav").
         applyBrandLogo();
         // Install image fallback: if any CDN product image 404s, replace it
@@ -1621,6 +1695,7 @@ function updateContent() {
     }
 
     applyCategoryFromUrl();
+    applySearchFromUrl();
     renderCategoryFilter();
     renderProducts();
     renderProductsDropdown();
@@ -1845,25 +1920,30 @@ function renderIndexHotProducts() {
     const displayCount = Math.min(products.length, 8);
     for (let i = 0; i < displayCount; i++) {
         const product = products[i];
-        const priceText = formatPriceCny(product.priceMin) + ' - ' + formatPriceCny(product.priceMax);
+        const priceMin = formatPriceCny(product.priceMin);
+        const priceMax = formatPriceCny(product.priceMax);
+        const priceText = (priceMin === priceMax) ? priceMin : (priceMin + ' - ' + priceMax);
+        const slug = skuSlugForProduct(product);
+        const detailUrl = 'product-' + slug + '.html';
         const col = document.createElement('div');
-        col.className = 'col-lg-3 col-md-6';
+        col.className = 'col-6 col-md-4 col-lg-3';
         col.innerHTML = `
-            <div class="product-card">
-                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
-                <div class="card-body">
-                    <div class="product-category">${escapeHtml(product.category)}</div>
-                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${escapeHtml(product.name)}</h5>
-                    <div class="product-meta">
-                        ${product.sku ? `<span class="product-sku"><i class="fas fa-barcode me-1"></i>${escapeHtml(product.sku)}</span>` : ''}
-                        ${product.moq ? `<span class="product-moq"><i class="fas fa-box me-1"></i>MOQ: ${escapeHtml(product.moq)}</span>` : ''}
+            <div class="product-catalog-card">
+                <a href="${detailUrl}" class="product-catalog-img-link" title="${escapeHtml(product.name)}">
+                    <div class="product-catalog-img">
+                        <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     </div>
-                    <p class="product-desc">${escapeHtml(product.description)}</p>
-                    <p class="product-price">${escapeHtml(priceText)}</p>
-                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${skuSlugForProduct(product)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
-                        <span class="text-muted action-separator">|</span>
-                        <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
+                </a>
+                <div class="product-catalog-body">
+                    <div class="product-catalog-meta">
+                        ${product.sku ? `<span class="product-catalog-sku"><i class="fas fa-barcode"></i> ${escapeHtml(product.sku)}</span>` : ''}
+                        ${product.moq ? `<span class="product-catalog-moq"><i class="fas fa-box"></i> MOQ: ${escapeHtml(product.moq)}</span>` : ''}
+                    </div>
+                    <h3 class="product-catalog-title"><a href="${detailUrl}">${escapeHtml(product.name)}</a></h3>
+                    <p class="product-catalog-desc">${escapeHtml(product.description)}</p>
+                    <div class="product-catalog-footer">
+                        <span class="product-catalog-price">${escapeHtml(priceText)}</span>
+                        <a href="contact.html?product=${encodeURIComponent(product.sku || product.name)}" class="product-catalog-quote"><i class="fas fa-file-invoice-dollar"></i> ${tt('products.quote', 'Get a Quote')}</a>
                     </div>
                 </div>
             </div>
@@ -2170,6 +2250,24 @@ function renderProducts() {
         }
     }
 
+    // 3) Sort — default newest (by dateAdded desc), then price / name / sku
+    const sortField = currentSort;
+    filtered.sort(function (a, b) {
+        if (sortField === 'newest') {
+            const da = a.dateAdded || '';
+            const db = b.dateAdded || '';
+            if (da === db) return (b.id || 0) - (a.id || 0);
+            return db.localeCompare(da);
+        }
+        if (sortField === 'price-asc') return (a.priceMin || 0) - (b.priceMin || 0);
+        if (sortField === 'price-desc') return (b.priceMin || 0) - (a.priceMin || 0);
+        if (sortField === 'name-asc') return (a.name || '').localeCompare(b.name || '');
+        if (sortField === 'name-desc') return (b.name || '').localeCompare(a.name || '');
+        if (sortField === 'sku-asc') return (a.sku || '').localeCompare(b.sku || '');
+        if (sortField === 'sku-desc') return (b.sku || '').localeCompare(a.sku || '');
+        return 0;
+    });
+
     productList.innerHTML = '';
 
     if (filtered.length === 0) {
@@ -2200,30 +2298,35 @@ function renderProducts() {
     }
 
     filtered.forEach(product => {
-        const priceText = formatPriceCny(product.priceMin) + ' - ' + formatPriceCny(product.priceMax);
+        const priceMin = formatPriceCny(product.priceMin);
+        const priceMax = formatPriceCny(product.priceMax);
+        const priceText = (priceMin === priceMax) ? priceMin : (priceMin + ' - ' + priceMax);
+        const slug = skuSlugForProduct(product);
+        const detailUrl = 'product-' + slug + '.html';
         const card = document.createElement('div');
-        card.className = 'col-lg-3 col-md-6';
+        card.className = 'col-6 col-md-4 col-lg-3';
         card.innerHTML = `
-            <div class="product-card">
-                <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" class="card-img-top product-img-clickable" alt="${escapeHtml(product.name)}" data-id="${product.id}" style="cursor:pointer;" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
-                <div class="card-body">
-                    <div class="product-category">${escapeHtml(product.category)}</div>
-                    <h5 class="product-title product-title-clickable" data-id="${product.id}" style="cursor:pointer;">${highlightSearchMatch(escapeHtml(product.name))}</h5>
-                    <div class="product-meta">
-                        ${product.sku ? `<span class="product-sku"><i class="fas fa-barcode me-1"></i>${highlightSearchMatch(escapeHtml(product.sku))}</span>` : ''}
-                        ${product.moq ? `<span class="product-moq"><i class="fas fa-box me-1"></i>MOQ: ${escapeHtml(product.moq)}</span>` : ''}
+            <div class="product-catalog-card">
+                <a href="${detailUrl}" class="product-catalog-img-link product-img-clickable" data-id="${product.id}" title="${escapeHtml(product.name)}">
+                    <div class="product-catalog-img">
+                        <img src="${optimizeImageUrl(escapeHtml(product.image), 400)}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     </div>
-                    <p class="product-desc">${highlightSearchMatch(escapeHtml(product.description))}</p>
-                    <p class="product-price">${escapeHtml(priceText)}</p>
-                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <a href="product-${skuSlugForProduct(product)}.html" class="product-action-btn view-detail-link" data-id="${product.id}"><i class="fas fa-circle-info me-1"></i>${tt('products.viewDetails', 'View Details')}</a>
-                        <span class="text-muted action-separator">|</span>
-                        <a href="#" class="product-action-btn quote-product" data-product="${escapeHtml(product.name)}"><i class="fas fa-file-invoice-dollar me-1"></i>${tt('products.quote', 'Get a Quote')}</a>
+                </a>
+                <div class="product-catalog-body">
+                    <div class="product-catalog-meta">
+                        ${product.sku ? `<span class="product-catalog-sku"><i class="fas fa-barcode"></i> ${highlightSearchMatch(escapeHtml(product.sku))}</span>` : ''}
+                        ${product.moq ? `<span class="product-catalog-moq"><i class="fas fa-box"></i> MOQ: ${escapeHtml(product.moq)}</span>` : ''}
+                    </div>
+                    <h3 class="product-catalog-title"><a href="${detailUrl}" class="product-title-clickable" data-id="${product.id}">${highlightSearchMatch(escapeHtml(product.name))}</a></h3>
+                    <p class="product-catalog-desc">${highlightSearchMatch(escapeHtml(product.description))}</p>
+                    <div class="product-catalog-footer">
+                        <span class="product-catalog-price">${escapeHtml(priceText)}</span>
+                        <a href="#" class="product-catalog-quote quote-product" data-product="${escapeHtml(product.name)}" data-sku="${escapeHtml(product.sku || '')}"><i class="fas fa-file-invoice-dollar"></i> ${tt('products.quote', 'Get a Quote')}</a>
                     </div>
                     ${isAdmin() ? `
-                        <div class="product-admin-actions">
-                            <button class="btn btn-sm btn-primary product-admin-btn edit-product" data-id="${product.id}"><i class="fas fa-edit me-1"></i>${tt('products.edit', 'Edit')}</button>
-                            <button class="btn btn-sm btn-danger product-admin-btn delete-product" data-id="${product.id}"><i class="fas fa-trash me-1"></i>${tt('products.delete', 'Delete')}</button>
+                        <div class="product-admin-actions" style="margin-top:10px;padding-top:10px;border-top:1px solid #f1f5f9;display:flex;gap:8px;">
+                            <button class="btn btn-sm btn-primary edit-product" data-id="${product.id}"><i class="fas fa-edit me-1"></i>${tt('products.edit', 'Edit')}</button>
+                            <button class="btn btn-sm btn-danger delete-product" data-id="${product.id}"><i class="fas fa-trash me-1"></i>${tt('products.delete', 'Delete')}</button>
                         </div>
                     ` : ''}
                 </div>
@@ -2432,7 +2535,7 @@ function bindHeroProductSearch() {
     if (input && !input.value) {
         try {
             const p = new URLSearchParams(window.location.search);
-            const q = p.get('search') || p.get('keyword') || p.get('query') || '';
+            const q = p.get('q') || p.get('search') || p.get('keyword') || p.get('query') || '';
             if (q) input.value = decodeURIComponent(q);
         } catch (e) { /* ignore */ }
     }

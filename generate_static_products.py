@@ -178,6 +178,42 @@ def _fmt_usd(usd):
     return "$%.2f" % f
 
 
+def _build_wholesale_tiers(base_usd):
+    """Generate schema.org UnitPriceSpecification volume-discount tiers.
+
+    Tiers (unit count -> discount vs base price):
+      50+   -> 98%  (2% off)
+      500+  -> 95%  (5% off)
+      2000+ -> 90%  (10% off)
+    Returns a list of UnitPriceSpecification dicts for the Product JSON-LD.
+    """
+    f = _to_float(base_usd)
+    if f is None or f <= 0:
+        return []
+    tiers = [
+        (50, 0.98),
+        (500, 0.95),
+        (2000, 0.90),
+    ]
+    out = []
+    for qty, factor in tiers:
+        out.append({
+            "@type": "UnitPriceSpecification",
+            "name": "Wholesale tier %d+" % qty,
+            "billingIncrement": qty,
+            "unitCode": "EA",
+            "price": round(f * factor, 2),
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": False,
+            "eligibleTransactionVolume": {
+                "@type": "UnitValueSpecification",
+                "minValue": qty,
+                "unitCode": "PCE",
+            },
+        })
+    return out
+
+
 def price_span(usd, extra_class=""):
     """Return an HTML span carrying a data-usd-price AND visible USD text.
 
@@ -827,6 +863,7 @@ def build_head(product, canonical_url):
                 },
             },
         },
+        "wholesalePriceSpecification": _build_wholesale_tiers(price_min_usd),
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
@@ -1521,45 +1558,95 @@ def build_product_page(product, aplus_blocks, all_products=None):
     body.append('    <button type="submit" class="hero-product-search-submit"><i class="fas fa-search d-inline d-sm-none me-1"></i><span>Search</span></button>')
     body.append('  </div>')
     body.append('</form>')
-    body.append('            <div class="detail-main">')
-    body.append('                <div class="detail-image-col">')
-    if image_opt:
-        body.append('                    <img class="detail-image loaded" src="%s" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % (escape_attr(image_opt), escape_attr(name)))
-    else:
-        body.append('                    <img class="detail-image loaded" src="" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % escape_attr(name))
-    body.append('                </div>')
-    body.append('                <div class="detail-info">')
-    body.append('                    <h1>%s</h1>' % escape_html(name))
-    body.append('                    <div class="detail-meta">')
-    body.append('                        Category: <strong>%s</strong>' % escape_html(category))
-    body.append('                        &nbsp;|&nbsp;')
-    body.append('                        SKU: <strong>%s</strong>' % escape_html(sku))
-    body.append('                    </div>')
-    body.append('                    <table class="detail-spec-table">')
-    body.extend(spec_rows)
-    body.append('                    </table>')
-    body.append('                    <p class="detail-desc">%s</p>' % escape_html(desc))
-    # Variations first
-    body.append('                    %s' % variations_html)
-    # --- Primary CTA placed below variations (replacing old "Buy Now/Cart" block) -------------------
+    # Build trust badges, gallery, WhatsApp link once
     from urllib.parse import quote as _urlq
-    _sku_part = (" (SKU " + sku + ")") if sku else ""
     contact_href = (
         "contact.html?product=" + _urlq(sku or ("P" + str(pid)))
         + "&name=" + _urlq(name or "")
     )
+    whatsapp_msg = "Hello Yeatru, I'm interested in %s (%s). Please send a wholesale quote." % (name, sku)
+    whatsapp_href = "https://wa.me/8615988516408?text=" + _urlq(whatsapp_msg)
+    moq_display = escape_html(moq if moq not in ("", None) else "—")
+    material_display = escape_html(material or "—")
+    size_display = escape_html(size or "—")
+
+    body.append('            <div class="detail-main">')
+    # --- Image gallery (main + thumbnails) ---
+    body.append('                <div class="detail-image-col">')
+    body.append('                    <div class="detail-gallery">')
+    body.append('                        <div class="gallery-main">')
+    if image_opt:
+        body.append('                            <img class="detail-image loaded" src="%s" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % (escape_attr(image_opt), escape_attr(name)))
+    else:
+        body.append('                            <img class="detail-image loaded" src="" alt="%s" loading="eager" fetchpriority="high" decoding="async">' % escape_attr(name))
+    body.append('                        </div>')
+    body.append('                        <div class="gallery-thumbs">')
+    for i in range(4):
+        active_cls = " active" if i == 0 else ""
+        if image_opt:
+            body.append('                            <img class="gallery-thumb%s" src="%s" alt="%s view %d" data-index="%d" loading="lazy">' % (active_cls, escape_attr(image_opt), escape_attr(name), i + 1, i))
+    body.append('                        </div>')
+    body.append('                    </div>')
+    body.append('                </div>')
+    # --- Product info column ---
+    body.append('                <div class="detail-info">')
+    body.append('                    <div class="detail-cat-badge"><i class="fas fa-tag"></i> %s</div>' % escape_html(category))
+    body.append('                    <h1>%s</h1>' % escape_html(name))
+    body.append('                    <div class="detail-meta"><span class="meta-item"><i class="fas fa-barcode"></i> SKU: <strong>%s</strong></span><span class="meta-sep">·</span><span class="meta-item"><i class="fas fa-box"></i> MOQ: <strong>%s</strong></span></div>' % (escape_html(sku), moq_display))
+    # --- Price box ---
+    body.append('                    <div class="detail-price-box">')
+    body.append('                        <div class="detail-price-label"><i class="fas fa-tags"></i> Wholesale Price</div>')
+    body.append('                        <div class="detail-price-big" id="detailPriceDisplay">%s</div>' % big_price)
+    body.append('                        <div class="detail-price-save"><i class="fas fa-percentage"></i> Save up to 10% on bulk orders (2,000+ units)</div>')
+    body.append('                    </div>')
+    # --- Trust badges ---
+    body.append('                    <div class="detail-trust-row">')
+    body.append('                        <div class="trust-badge"><i class="fas fa-shield-halved"></i><span>Verified Supplier</span></div>')
+    body.append('                        <div class="trust-badge"><i class="fas fa-clipboard-check"></i><span>QC Inspection</span></div>')
+    body.append('                        <div class="trust-badge"><i class="fas fa-truck-fast"></i><span>DDP Shipping</span></div>')
+    body.append('                        <div class="trust-badge"><i class="fas fa-pen-ruler"></i><span>OEM / ODM</span></div>')
+    body.append('                    </div>')
+    # --- Spec cards (Material / Size / MOQ) ---
+    body.append('                    <div class="detail-spec-cards">')
+    body.append('                        <div class="spec-card"><span class="spec-label"><i class="fas fa-cube"></i> Material</span><span class="spec-value">%s</span></div>' % material_display)
+    body.append('                        <div class="spec-card"><span class="spec-label"><i class="fas fa-ruler"></i> Size</span><span class="spec-value">%s</span></div>' % size_display)
+    body.append('                        <div class="spec-card"><span class="spec-label"><i class="fas fa-boxes-stacked"></i> MOQ</span><span class="spec-value">%s</span></div>' % moq_display)
+    body.append('                    </div>')
+    body.append('                    <p class="detail-desc">%s</p>' % escape_html(desc))
+    # Variations
+    body.append('                    %s' % variations_html)
+    # --- Quantity + CTA buttons ---
+    body.append('                    <div class="detail-action-row">')
+    body.append('                        <div class="detail-qty">')
+    body.append('                            <label for="detailQty">Quantity</label>')
+    body.append('                            <div class="qty-input-wrap">')
+    body.append('                                <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity"><i class="fas fa-minus"></i></button>')
+    body.append('                                <input type="number" id="detailQty" class="qty-input" min="1" value="100" aria-label="Product quantity">')
+    body.append('                                <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity"><i class="fas fa-plus"></i></button>')
+    body.append('                            </div>')
+    body.append('                        </div>')
+    body.append('                        <div class="detail-cta-buttons">')
     body.append(
-        '                    <div class="detail-buy-row">'
-        '<a class="btn btn-lg btn-primary detail-buy-btn quote-product" '
+        '                            <a class="btn btn-lg btn-primary detail-buy-btn quote-product" '
         'href="%s" data-product="%s" data-sku="%s">'
         '<i class="fas fa-file-invoice-dollar me-2"></i>Request a Quote</a>'
-        '</div>'
-        % (
-            escape_attr(contact_href),
-            escape_attr(name or "Product"),
-            escape_attr(sku or ""),
-        )
+        % (escape_attr(contact_href), escape_attr(name or "Product"), escape_attr(sku or ""))
     )
+    body.append(
+        '                            <a class="btn btn-lg btn-whatsapp detail-wa-btn" '
+        'href="%s" target="_blank" rel="noopener noreferrer" '
+        'data-product="%s" data-sku="%s">'
+        '<i class="fab fa-whatsapp me-2"></i>WhatsApp</a>'
+        % (escape_attr(whatsapp_href), escape_attr(name or "Product"), escape_attr(sku or ""))
+    )
+    body.append('                        </div>')
+    body.append('                    </div>')
+    # --- Shipping info bar ---
+    body.append('                    <div class="detail-shipping-info">')
+    body.append('                        <span><i class="fas fa-truck-fast"></i> DDP door-to-door shipping · 7–35 days delivery</span>')
+    body.append('                        <span><i class="fas fa-clipboard-check"></i> Free QC report with every order</span>')
+    body.append('                        <span><i class="fas fa-shield-halved"></i> Trade assurance &amp; 3-stage QC</span>')
+    body.append('                    </div>')
     body.append('                </div>')
     body.append('            </div>')
     # --- A+ Content ---
