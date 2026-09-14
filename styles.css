@@ -1896,20 +1896,8 @@ html[dir="rtl"] .d-flex.flex-row-reverse>*,body.rtl .d-flex.flex-row-reverse>*{}
 @media(max-width:991.98px){html[dir="rtl"] .navbar-nav,body.rtl .navbar-nav{text-align:right}
 }
 .contact-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;gap: 12px;align-items:flex-end}
-.contact-float-btn{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;color:var(--bg-panel);text-decoration:none;font-size:26px;box-shadow:0 6px 24px rgba(0,0,0,0.18);transition:transform 0.25s cubic-bezier(.25,1,.5,1),box-shadow 0.25s cubic-bezier(.25,1,.5,1),background-color 0.25s cubic-bezier(.25,1,.5,1);position:relative}
-.contact-float-btn.whatsapp{background-color:#25d366;box-shadow:0 6px 24px rgba(37,211,102,0.45)}
-.contact-float-btn.whatsapp:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px rgba(37,211,102,0.55);background-color:#20bd5c}
-.contact-float-btn.email{background-color:var(--accent-teal);box-shadow:0 6px 24px color-mix(in oklch, var(--c-brand-800) 45%, transparent)}
-.contact-float-btn.email:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px color-mix(in oklch, var(--c-brand-800) 55%, transparent);background-color:#096a80}
-.contact-float-btn.telegram{background-color:#0088cc;box-shadow:0 6px 24px rgba(0,136,204,0.45)}
-.contact-float-btn.telegram:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 10px 30px rgba(0,136,204,0.55);background-color:#0077b3}
-.contact-float-btn::after{content:attr(data-label);position:absolute;right:calc(100%+10px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.75);color:var(--bg-panel);font-size:12px;font-weight:500;padding: 4px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s cubic-bezier(.25,1,.5,1)}
-.contact-float-btn:hover::after{opacity:1}
 html[dir="rtl"] .contact-float,body.rtl .contact-float{right:auto;left:28px;align-items:flex-start}
-html[dir="rtl"] .contact-float-btn::after,body.rtl .contact-float-btn::after{right:auto;left:calc(100%+10px)}
-@media(max-width:575.98px){.contact-float{bottom:20px;right:20px;gap: 8px}
-.contact-float-btn{width:50px;height:50px;font-size:24px}
-.contact-float-btn::after{display:none}
+html[dir="rtl"] @media(max-width:575.98px){.contact-float{bottom:20px;right:20px;gap: 8px}
 }
 html[dir="rtl"] .currency-dropdown-btn .dropdown-toggle::after,html[dir="rtl"] .lang-dropdown-btn .dropdown-toggle::after,body.rtl .currency-dropdown-btn .dropdown-toggle::after,body.rtl .lang-dropdown-btn .dropdown-toggle::after{margin-left: 0;margin-right: .35em}
 .us-trip-section{background:linear-gradient(135deg,#0f1923 0,#1a2a3a 100%);padding: 80px 0;position:relative;overflow:hidden}
@@ -4247,3 +4235,79 @@ body .blog-grid .blog-card{margin:0!important;break-inside:avoid}
 .banner-carousel .trust-stat .ts-lab { color: #b8c5d6 !important; }
 .banner-carousel .carousel-title { color: #ffffff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
 .banner-carousel .carousel-subtitle { color: #d0dbe9 !important; }
+
+
+/* ===== CONTACT FLOAT SIZE HIERARCHY (WhatsApp primary, Email secondary, Telegram tertiary) ===== */
+.contact-float-btn {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18) !important;
+}
+.contact-float-btn.whatsapp {
+  width: 54px !important;
+  height: 54px !important;
+  font-size: 1.3rem !important;
+  background: #25D366 !important;
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(37,211,102,0.4) !important;
+}
+.contact-float-btn.email {
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 1rem !important;
+  background: var(--c-brand-600, #1665a9) !important;
+  z-index: 2;
+}
+.contact-float-btn.telegram {
+  width: 38px !important;
+  height: 38px !important;
+  font-size: .85rem !important;
+  background: #888 !important;
+  z-index: 1;
+}
+.contact-float {
+  gap: 10px !important;
+  bottom: 24px !important;
+  right: 24px !important;
+}
+
+/* ===== GLOBAL OVERFLOW PREVENTION ===== */
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; max-width: 100%; }
+.container { max-width: 1320px; }
+
+/* ===== TABLE RESPONSIVE FIX ===== */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive table {
+  min-width: 600px;
+  font-size: .85rem;
+}
+@media (max-width: 768px) {
+  .table-responsive table { min-width: 480px; font-size: .78rem; }
+}
+
+/* ===== TEXT CONTENT COMPACTION ===== */
+.prose-compact, main p, main li, main td, main th {
+  font-size: .95rem;
+  line-height: 1.65;
+}
+@media (max-width: 768px) {
+  .prose-compact, main p, main li { font-size: .9rem; line-height: 1.6; }
+}
+
+/* ===== NAVBAR UNIFICATION ===== */
+.navbar { min-height: 60px; }
+.navbar .btn-nav-icon {
+  width: 38px; height: 38px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+
+/* ===== RESPONSIVE CONTENT WRAPPING ===== */
+main img, main svg { max-width: 100%; height: auto; }
+main .row > [class*="col-"] { word-wrap: break-word; overflow-wrap: break-word; }
+main h1, main h2, main h3 { overflow-wrap: break-word; word-break: break-word; }

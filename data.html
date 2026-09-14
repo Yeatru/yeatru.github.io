@@ -260,7 +260,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
 <section>
  <h2>Response Schema</h2>
  <h3>Product object fields</h3>
- <table>
+ <div class="table-responsive"><table>
  <thead><tr><th>Field</th><th>Type</th><th>Example</th><th>Notes</th></tr></thead>
  <tbody>
  <tr><td><code>sku</code></td><td>string</td><td><code>YCS-ACC-001</code></td><td>Unique Yeatru SKU (YCS- prefix)</td></tr>
@@ -275,7 +275,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <tr><td><code>variations</code></td><td>array</td><td><code>[{color:"black",size:"S",stock:...}]</code></td><td>SKU-level variation matrix</td></tr>
  <tr><td><code>productUrl</code></td><td>string</td><td><code>https://www.yeatru.com/product-YCS-ACC-001.html?v=20260909k</code></td><td>Product detail page</td></tr>
  </tbody>
- </table>
+ </table></div>
 
  <h3>Top-level response envelope</h3>
 <pre><code>{
@@ -323,7 +323,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
 
 <section>
  <h2>CORS Caching &amp; Rate Limits</h2>
- <table>
+ <div class="table-responsive"><table>
  <tbody>
  <tr><th>CORS</th><td>Pre-flight + simple requests from any origin (<code>*</code>) allowed. No API key required.</td></tr>
  <tr><th>Cloudflare cache</th><td><code>s-maxage=86400</code> (24h). Individual <code>Cache-Control: public max-age=3600</code> sent to browsers.</td></tr>
@@ -331,7 +331,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <tr><th>Auth</th><td>None — public read-only. No writes no PII exposure.</td></tr>
  <tr><th>Licence</th><td>CC BY 4.0. Attribution appreciated (<em>"Product data &copy; Yeatru Sourcing"</em>) not required.</td></tr>
  </tbody>
- </table>
+ </table></div>
 </section>
 
 <div class="cta-row">
