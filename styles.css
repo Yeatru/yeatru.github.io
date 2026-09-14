@@ -4234,3 +4234,16 @@ body .blog-grid .blog-card{margin:0!important;break-inside:avoid}
   .ap-filter-bar ~ .row.product-catalog-grid .product-catalog-title{font-size:.78rem}
   .ap-filter-bar ~ .row.product-catalog-grid .product-catalog-price{font-size:.85rem}
 }
+
+
+/* ===== FIX: Hero carousel text contrast (2026-09-14) ===== */
+/* Ensure ALL text on dark banner-carousel background is readable */
+.banner-carousel .hero-title { color: #ffffff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+.banner-carousel .hero-subtitle { color: #d0dbe9 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+.banner-carousel .hero-tag { color: #ffffff !important; background: rgba(255,255,255,0.14) !important; border: 1px solid rgba(255,255,255,0.25) !important; }
+.banner-carousel .hero-feature { color: #ffffff !important; }
+.banner-carousel .hero-feature i { color: #60a5fa !important; }
+.banner-carousel .trust-stat .ts-num { color: #ffffff !important; }
+.banner-carousel .trust-stat .ts-lab { color: #b8c5d6 !important; }
+.banner-carousel .carousel-title { color: #ffffff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+.banner-carousel .carousel-subtitle { color: #d0dbe9 !important; }
