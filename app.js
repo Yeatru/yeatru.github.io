@@ -104,6 +104,18 @@ const SUB_TO_MAIN_CATEGORY = {
     "Stationery":"Stationery & Office",
 };
 
+// Reverse map: main category → array of sub-categories (for collapsible filter UI).
+const MAIN_TO_SUB_CATEGORIES = (function () {
+    const map = {};
+    UI_MAIN_CATEGORIES.forEach(m => { map[m] = []; });
+    Object.keys(SUB_TO_MAIN_CATEGORY).forEach(sub => {
+        const main = SUB_TO_MAIN_CATEGORY[sub];
+        if (!map[main]) map[main] = [];
+        if (map[main].indexOf(sub) === -1) map[main].push(sub);
+    });
+    return map;
+})();
+
 // Short/partial category names commonly found in old links, bookmarks, or
 // the ?category= query param (e.g. "Apparel" → "Apparel & Footwear").
 // These are user-friendly aliases so ?category=Stationery never shows 0.
@@ -528,7 +540,7 @@ const translationResources = {
     en: { translation: {
         nav: { home: "Home", products: "Products", services: "Sourcing Service", sourcingProcess: "Sourcing Process", testimonials: "Testimonials", aboutUs: "About Us", contactUs: "Contact", login: "Login", logout: "Logout", servicePlans: "Service Plans", payment: "Payment", blog: "Blog", oem: "OEM Customization", sampleOrder: "Sample Order", factoryAudit: "Factory Audit" },
         hero: { title: "Professional China Sourcing Agent Yiwu & Global Supply Chain", desc: "One-stop sourcing solution from China: product sourcing, supplier audit, quality control, logistics shipping. Help global buyers source from China easily.", contactBtn: "Contact Us Now", productsBtn: "View Products" },
-        products: { title: "Hot Products", subtitle: "Explore our featured products sourced from China", categoryManagement: "Category Management", enterCategory: "Enter new category name", addCategory: "Add Category", addProduct: "Add New Product", imageUrl: "Image URL", enterImageUrl: "Enter product image URL", category: "Category", selectCategory: "Select Category", name: "Product Name", enterName: "Enter product name", sku: "SKU", enterSKU: "Enter product SKU", material: "Material", enterMaterial: "Enter material", size: "Size", enterSize: "Enter size", moq: "MOQ", enterMOQ: "Enter MOQ", priceMin: "Minimum Price ($)", enterMinPrice: "Enter minimum price", priceMax: "Maximum Price ($)", enterMaxPrice: "Enter maximum price", description: "Description", enterDescription: "Enter product description", cancel: "Cancel", save: "Save Product", edit: "Edit", delete: "Delete", quote: "Get a Quote", price: "Price: $", viewDetails: "View Details" },
+        products: { title: "China Wholesale Products Catalog — 675+ SKUs | Yeatru Sourcing", subtitle: "675+ China wholesale products, 59 categories. Factory-direct prices, low MOQ, QC guaranteed. Yiwu-based supplier. Buy wholesale from China with Yeatru Sourcing", allCatalogTitle: "China Wholesale Catalog | 640+ SKUs | Factory Direct — Yeatru", allCatalogDesc: "Complete China wholesale catalog with 640+ SKUs across 59 categories. Factory-direct pricing, low MOQ, DDP worldwide. Yiwu-based sourcing by Yeatru Sourcing", categoryManagement: "Category Management", enterCategory: "Enter new category name", addCategory: "Add Category", addProduct: "Add New Product", imageUrl: "Image URL", enterImageUrl: "Enter product image URL", category: "Category", selectCategory: "Select Category", name: "Product Name", enterName: "Enter product name", sku: "SKU", enterSKU: "Enter product SKU", material: "Material", enterMaterial: "Enter material", size: "Size", enterSize: "Enter size", moq: "MOQ", enterMOQ: "Enter MOQ", priceMin: "Minimum Price ($)", enterMinPrice: "Enter minimum price", priceMax: "Maximum Price ($)", enterMaxPrice: "Enter maximum price", description: "Description", enterDescription: "Enter product description", cancel: "Cancel", save: "Save Product", edit: "Edit", delete: "Delete", quote: "Get a Quote", price: "Price: $", viewDetails: "View Details" },
         filter: { title: "Filter by Category", all: "All", reset: "Reset Filter", showing: "Showing", of: "of", products: "products", noResult: "No products in this category" },
         services: { title: "Our Comprehensive Sourcing Services", subtitle: "We offer end-to-end sourcing solutions tailored to your business needs", supplierVerification: "Supplier Verification", supplierVerificationDesc: "We thoroughly vet and verify suppliers to ensure they meet international quality standards and business ethics.", productSourcing: "Product Sourcing", productSourcingDesc: "Find the right products at competitive prices with our extensive network of reliable manufacturers and suppliers.", qualityControl: "Quality Control", qualityControlDesc: "Comprehensive quality inspection at every stage of production to ensure products meet your specifications.", logistics: "Logistics & Warehousing", logisticsDesc: "Complete logistics and warehousing solutions including free storage, goods consolidation, and competitive shipping rates.", priceNegotiation: "Price Negotiation", priceNegotiationDesc: "Leverage our local expertise to negotiate the best prices and payment terms with suppliers.", designPhotography: "Design & Photography", designPhotographyDesc: "Professional product photography and graphic design to make your products stand out and boost sales." },
         process: { title: "Our Simple Sourcing Process", subtitle: "We make sourcing from China straightforward and transparent", step1: "Your Requirements", step1Desc: "Share your product specifications, quantity, budget and timeline with our team.", step2: "Supplier Matching", step2Desc: "We identify and verify the best suppliers that match your specific requirements.", step3: "Sample & Pricing", step3Desc: "Obtain samples and competitive pricing quotes from pre-vetted suppliers.", step4: "Delivery & Support", step4Desc: "We handle production oversight, quality control and shipping to your doorstep." },
@@ -574,7 +586,7 @@ const translationResources = {
     fr: { translation: {
         nav: { home: "Accueil", products: "Produits", services: "Services", sourcingProcess: "Processus d'Approvisionnement", testimonials: "Témoignages", aboutUs: "À Propos de Nous", contactUs: "Nous Contacter", login: "Connexion", logout: "Déconnexion", servicePlans: "Plans de Service", payment: "Paiement", blog: "Blog", oem: "Personnalisation OEM", sampleOrder: "Commande d'Échantillon", factoryAudit: "Audit d'Usine" },
         hero: { title: "Agent Professionnel d'Approvisionnement en Chine Yiwu & Chaîne d'Approvisionnement Mondiale", desc: "Solution d'approvisionnement tout-en-un depuis la Chine: recherche de produits, audit de fournisseurs, contrôle de qualité, expédition logistique. Aidons les acheteurs mondiaux à s'approvisionner facilement depuis la Chine.", contactBtn: "Nous Contacter Maintenant", productsBtn: "Voir les Produits" },
-        products: { title: "Produits Populaires", subtitle: "Découvrez nos produits phares approvisionnés depuis la Chine", categoryManagement: "Gestion des Catégories", enterCategory: "Entrez le nom de la nouvelle catégorie", addCategory: "Ajouter une Catégorie", addProduct: "Ajouter un Nouveau Produit", imageUrl: "URL de l'Image", enterImageUrl: "Entrez l'URL de l'image du produit", category: "Catégorie", selectCategory: "Sélectionner une Catégorie", name: "Nom du Produit", enterName: "Entrez le nom du produit", sku: "SKU", enterSKU: "Entrez le SKU du produit", material: "Matériau", enterMaterial: "Entrez le matériau", size: "Taille", enterSize: "Entrez la taille", moq: "MOQ", enterMOQ: "Entrez la MOQ", priceMin: "Prix Minimum ($)", enterMinPrice: "Entrez le prix minimum", priceMax: "Prix Maximum ($)", enterMaxPrice: "Entrez le prix maximum", description: "Description", enterDescription: "Entrez la description du produit", cancel: "Annuler", save: "Enregistrer", edit: "Modifier", delete: "Supprimer", quote: "Demander un Devis", price: "Prix: $", viewDetails: "Voir les Détails" },
+        products: { title: "Catalogue Produits de Gros Chine — 675+ SKUs | Yeatru", subtitle: "Plus de 675 produits de gros chinois à prix d'usine. 59 catégories, bas MOQ, contrôle qualité fourni par Yeatru.", allCatalogTitle: "Catalogue Grossiste Chine | 640+ SKUs | Prix d'Usine — Yeatru", allCatalogDesc: "Catalogue complet produits de gros Chine: 640+ SKUs, 59 catégories. Prix d'usine, bas MOQ, expédition DDP mondial. Sourcing Yiwu par Yeatru.", categoryManagement: "Gestion des Catégories", enterCategory: "Entrez le nom de la nouvelle catégorie", addCategory: "Ajouter une Catégorie", addProduct: "Ajouter un Nouveau Produit", imageUrl: "URL de l'Image", enterImageUrl: "Entrez l'URL de l'image du produit", category: "Catégorie", selectCategory: "Sélectionner une Catégorie", name: "Nom du Produit", enterName: "Entrez le nom du produit", sku: "SKU", enterSKU: "Entrez le SKU du produit", material: "Matériau", enterMaterial: "Entrez le matériau", size: "Taille", enterSize: "Entrez la taille", moq: "MOQ", enterMOQ: "Entrez la MOQ", priceMin: "Prix Minimum ($)", enterMinPrice: "Entrez le prix minimum", priceMax: "Prix Maximum ($)", enterMaxPrice: "Entrez le prix maximum", description: "Description", enterDescription: "Entrez la description du produit", cancel: "Annuler", save: "Enregistrer", edit: "Modifier", delete: "Supprimer", quote: "Demander un Devis", price: "Prix: $", viewDetails: "Voir les Détails" },
         filter: { title: "Filtrer par Catégorie", all: "Tous", reset: "Réinitialiser le Filtre", showing: "Affichage de", of: "sur", products: "produits", noResult: "Aucun produit dans cette catégorie" },
         services: { title: "Nos Services Complets d'Approvisionnement", subtitle: "Nous offrons des solutions d'approvisionnement de bout en bout adaptées aux besoins de votre entreprise", supplierVerification: "Vérification des Fournisseurs", supplierVerificationDesc: "Nous examinons et vérifions en profondeur les fournisseurs pour garantir qu'ils respectent les normes de qualité internationales et l'éthique professionnelle.", productSourcing: "Recherche de Produits", productSourcingDesc: "Trouvez les bons produits à des prix compétitifs grâce à notre vaste réseau de fabricants et fournisseurs fiables.", qualityControl: "Contrôle de Qualité", qualityControlDesc: "Inspection de qualité complète à chaque étape de la production pour garantir que les produits répondent à vos spécifications.", logistics: "Logistique et Entrepôt", logisticsDesc: "Solutions complètes de logistique et d'entreposage avec stockage gratuit, consolidation des marchandises et tarifs d'expédition compétitifs.", priceNegotiation: "Négociation de Prix", priceNegotiationDesc: "Profitez de notre expertise locale pour négocier les meilleurs prix et conditions de paiement avec les fournisseurs.", designPhotography: "Design et Photographie", designPhotographyDesc: "Photographie professionnelle de produits et design graphique pour que vos produits se démarquent et augmentent les ventes." },
         process: { title: "Notre Simple Processus d'Approvisionnement", subtitle: "Nous rendons l'approvisionnement depuis la Chine simple et transparent", step1: "Vos Exigences", step1Desc: "Partagez vos spécifications de produit, quantité, budget et calendrier avec notre équipe.", step2: "Appariement des Fournisseurs", step2Desc: "Nous identifions et vérifions les meilleurs fournisseurs correspondant à vos exigences spécifiques.", step3: "Échantillons et Prix", step3Desc: "Obtenez des échantillons et des devis de prix compétitifs de fournisseurs pré-vérifiés.", step4: "Livraison et Support", step4Desc: "Nous nous occupons de la supervision de la production, du contrôle de qualité et de l'expédition jusqu'à votre porte." },
@@ -597,7 +609,7 @@ const translationResources = {
     ru: { translation: {
         nav: { home: "Главная", products: "Продукты", services: "Услуги", sourcingProcess: "Процесс Поставок", testimonials: "Отзывы", aboutUs: "О Нас", contactUs: "Связаться", login: "Войти", logout: "Выйти", servicePlans: "Тарифы", payment: "Оплата", blog: "Блог", oem: "OEM Кастомизация", sampleOrder: "Заказ Образца", factoryAudit: "Аудит Фабрики" },
         hero: { title: "Профессиональный Агент По Поставкам Из Китая (Ивю) и Глобальная Цепь Поставок", desc: "Комплексное решение по поставкам из Китая: поиск товаров, аудит поставщиков, контроль качества, логистика и доставка. Помогаем покупателям со всего мира легко закупать товары в Китае.", contactBtn: "Связаться Сейчас", productsBtn: "Посмотреть Продукты" },
-        products: { title: "Популярные Продукты", subtitle: "Изучите наши рекомендуемые продукты из Китая", categoryManagement: "Управление Категориями", enterCategory: "Введите название", addCategory: "Добавить", addProduct: "Добавить Продукт", imageUrl: "URL Изображения", enterImageUrl: "Введите URL", category: "Категория", selectCategory: "Выберите", name: "Название", enterName: "Введите название", sku: "Артикул", enterSKU: "Введите артикул", material: "Материал", enterMaterial: "Введите материал", size: "Размер", enterSize: "Введите размер", moq: "MOQ", enterMOQ: "Введите MOQ", priceMin: "Мин. Цена ($)", enterMinPrice: "Введите мин. цену", priceMax: "Макс. Цена ($)", enterMaxPrice: "Введите макс. цену", description: "Описание", enterDescription: "Введите описание", cancel: "Отмена", save: "Сохранить", edit: "Редактировать", delete: "Удалить", quote: "Получить Котировку", price: "Цена: $", viewDetails: "Подробнее" },
+        products: { title: "Каталог Оптовых Товаров Китай — 675+ SKU | Yeatru", subtitle: "Более 675 оптовых товаров из Китая по заводским ценам. 59 категорий, низкий MOQ, контроль качества от Yeatru.", allCatalogTitle: "Каталог Оптовых Товаров | 640+ SKU | Заводские Цены — Yeatru", allCatalogDesc: "Полный каталог оптовых товаров Китая: 640+ SKU, 59 категорий. Заводские цены, низкий MOQ, доставка DDP по всему миру. Источник в Иу от Yeatru.", categoryManagement: "Управление Категориями", enterCategory: "Введите название", addCategory: "Добавить", addProduct: "Добавить Продукт", imageUrl: "URL Изображения", enterImageUrl: "Введите URL", category: "Категория", selectCategory: "Выберите", name: "Название", enterName: "Введите название", sku: "Артикул", enterSKU: "Введите артикул", material: "Материал", enterMaterial: "Введите материал", size: "Размер", enterSize: "Введите размер", moq: "MOQ", enterMOQ: "Введите MOQ", priceMin: "Мин. Цена ($)", enterMinPrice: "Введите мин. цену", priceMax: "Макс. Цена ($)", enterMaxPrice: "Введите макс. цену", description: "Описание", enterDescription: "Введите описание", cancel: "Отмена", save: "Сохранить", edit: "Редактировать", delete: "Удалить", quote: "Получить Котировку", price: "Цена: $", viewDetails: "Подробнее" },
         filter: { title: "Фильтр по Категории", all: "Все", reset: "Сбросить", showing: "Показано", of: "из", products: "продуктов", noResult: "Нет продуктов в этой категории" },
         services: { title: "Наши Комплексные Услуги По Поставкам", subtitle: "Мы предлагаем решения по поставкам полного цикла, адаптированные под потребности вашего бизнеса", supplierVerification: "Проверка Поставщиков", supplierVerificationDesc: "Мы тщательно проверяем поставщиков, чтобы убедиться, что они соответствуют международным стандартам качества и деловой этике.", productSourcing: "Поиск Продуктов", productSourcingDesc: "Находите нужные товары по конкурентным ценам благодаря нашей обширной сети надёжных производителей и поставщиков.", qualityControl: "Контроль Качества", qualityControlDesc: "Комплексная инспекция качества на каждом этапе производства для гарантии соответствия продукции вашим спецификациям.", logistics: "Логистика и Склад", logisticsDesc: "Полные решения по логистике и хранению: бесплатное складирование, консолидация грузов и конкурентные тарифы доставки.", priceNegotiation: "Переговоры По Ценам", priceNegotiationDesc: "Используем местную экспертизу, чтобы договориться о лучших ценах и условиях оплаты с поставщиками.", designPhotography: "Дизайн и Фотография", designPhotographyDesc: "Профессиональная предметная съёмка и графический дизайн, чтобы ваши товары выделялись и приносили больше продаж." },
         process: { title: "Наш Простой Процесс Поставок", subtitle: "Мы делаем поставки из Китая простыми и прозрачными", step1: "Ваши Требования", step1Desc: "Сообщите нашей команде спецификации товара, количество, бюджет и сроки.", step2: "Подбор Поставщиков", step2Desc: "Мы находим и проверяем лучших поставщиков под ваши конкретные требования.", step3: "Образцы и Цены", step3Desc: "Получите образцы и конкурентные ценовые предложения от проверенных поставщиков.", step4: "Доставка и Поддержка", step4Desc: "Мы контролируем производство, проверяем качество и доставляем до вашей двери." },
@@ -620,7 +632,7 @@ const translationResources = {
     ar: { translation: {
         nav: { home: "الرئيسية", products: "المنتجات", services: "خدمات التوريد", sourcingProcess: "عملية التوريد", testimonials: "آراء العملاء", aboutUs: "من نحن", contactUs: "تواصل معنا", login: "تسجيل الدخول", logout: "تسجيل الخروج", servicePlans: "باقات الخدمة", payment: "الدفع", blog: "المدونة", oem: "تخصيص OEM", sampleOrder: "طلب عينة", factoryAudit: "تدقيق المصنع" },
         hero: { title: "وكيل توريد محترف من الصين إييو وسلسلة توريد عالمية", desc: "حل توريد متكامل من الصين: البحث عن المنتجات، تدقيق الموردين، مراقبة الجودة، الشحن والخدمات اللوجستية. نساعد المشترين حول العالم على التوريد من الصين بسهولة.", contactBtn: "تواصل معنا الآن", productsBtn: "عرض المنتجات" },
-        products: { title: "منتجات رائجة", subtitle: "استكشف منتجاتنا المميزة الموردة من الصين", categoryManagement: "إدارة الفئات", enterCategory: "أدخل اسم الفئة الجديدة", addCategory: "إضافة فئة", addProduct: "إضافة منتج جديد", imageUrl: "رابط الصورة", enterImageUrl: "أدخل رابط صورة المنتج", category: "الفئة", selectCategory: "اختر الفئة", name: "اسم المنتج", enterName: "أدخل اسم المنتج", sku: "رمز SKU", enterSKU: "أدخل رمز SKU", material: "المادة", enterMaterial: "أدخل المادة", size: "المقاس", enterSize: "أدخل المقاس", moq: "الحد الأدنى للطلب", enterMOQ: "أدخل الحد الأدنى للطلب", priceMin: "أقل سعر ($)", enterMinPrice: "أدخل أقل سعر", priceMax: "أعلى سعر ($)", enterMaxPrice: "أدخل أعلى سعر", description: "الوصف", enterDescription: "أدخل وصف المنتج", cancel: "إلغاء", save: "حفظ المنتج", edit: "تعديل", delete: "حذف", quote: "اطلب عرض سعر", price: "السعر: $", viewDetails: "عرض التفاصيل" },
+        products: { title: "كتالوج المنتجات بالجملة الصينية — أكثر من 675 منتج | Yeatru", subtitle: "أكثر من 675 منتج صيني بالجملة بأسعار المصنع. 59 فئة، موك منخفض، ضمان جودة من Yeatru.", allCatalogTitle: "الكتالوج الشامل للمنتجات الصينية بالجملة | أكثر من 640 منتج | أسعار المصنع — Yeatru", allCatalogDesc: "كتالوج كامل لمنتجات الصين بالجملة: أكثر من 640 منتج، 59 فئة. أسعار المصنع، موك منخفض، شحن DDP عالمي. التوريد من Yiwu بواسطة Yeatru.", categoryManagement: "إدارة الفئات", enterCategory: "أدخل اسم الفئة الجديدة", addCategory: "إضافة فئة", addProduct: "إضافة منتج جديد", imageUrl: "رابط الصورة", enterImageUrl: "أدخل رابط صورة المنتج", category: "الفئة", selectCategory: "اختر الفئة", name: "اسم المنتج", enterName: "أدخل اسم المنتج", sku: "رمز SKU", enterSKU: "أدخل رمز SKU", material: "المادة", enterMaterial: "أدخل المادة", size: "المقاس", enterSize: "أدخل المقاس", moq: "الحد الأدنى للطلب", enterMOQ: "أدخل الحد الأدنى للطلب", priceMin: "أقل سعر ($)", enterMinPrice: "أدخل أقل سعر", priceMax: "أعلى سعر ($)", enterMaxPrice: "أدخل أعلى سعر", description: "الوصف", enterDescription: "أدخل وصف المنتج", cancel: "إلغاء", save: "حفظ المنتج", edit: "تعديل", delete: "حذف", quote: "اطلب عرض سعر", price: "السعر: $", viewDetails: "عرض التفاصيل" },
         filter: { title: "تصفية حسب الفئة", all: "الكل", reset: "إعادة تعيين التصفية", showing: "عرض", of: "من", products: "منتج", noResult: "لا توجد منتجات في هذه الفئة" },
         services: { title: "خدمات التوريد الشاملة لدينا", subtitle: "نقدم حلول توريد من البداية إلى النهاية مصممة خصيصاً لاحتياجات عملك", supplierVerification: "التحقق من الموردين", supplierVerificationDesc: "نقوم بفحص وتدقيق الموردين بدقة لضمان التزامهم بمعايير الجودة الدولية وأخلاقيات الأعمال.", productSourcing: "البحث عن المنتجات", productSourcingDesc: "اعثر على المنتجات المناسبة بأسعار تنافسية بفضل شبكتنا الواسعة من المصنعين والموردين الموثوقين.", qualityControl: "مراقبة الجودة", qualityControlDesc: "فحص جودة شامل في كل مرحلة من مراحل الإنتاج لضمان مطابقة المنتجات لمواصفاتك.", logistics: "الخدمات اللوجستية والتخزين", logisticsDesc: "حلول لوجستية وتخزين متكاملة تشمل التخزين المجاني وتجميع البضائع وأسعار شحن تنافسية.", priceNegotiation: "التفاوض على الأسعار", priceNegotiationDesc: "استفد من خبرتنا المحلية للتفاوض على أفضل الأسعار وشروط الدفع مع الموردين.", designPhotography: "التصميم والتصوير", designPhotographyDesc: "تصوير منتجات احترافي وتصميم جرافيك لجعل منتجاتك تتميز وتزيد مبيعاتك." },
         process: { title: "عملية التوريد البسيطة لدينا", subtitle: "نجعل التوريد من الصين بسيطاً وشفافاً", step1: "متطلباتك", step1Desc: "شارك مواصفات المنتج والكمية والميزانية والجدول الزمني مع فريقنا.", step2: "مطابقة الموردين", step2Desc: "نحدد ونتحقق من أفضل الموردين الذين يطابقون متطلباتك المحددة.", step3: "العينات والأسعار", step3Desc: "احصل على عينات وعروض أسعار تنافسية من موردين تم التحقق منهم مسبقاً.", step4: "التسليم والدعم", step4Desc: "نتولى الإشراف على الإنتاج ومراقبة الجودة والشحن حتى باب منزلك." },
@@ -667,6 +679,9 @@ const translationResources = {
 let currentFilterCategory = 'all';
 let currentSearchQuery = '';
 let currentSort = 'newest';
+let currentPriceMin = null;   // numeric USD (already converted via cnyToUsd)
+let currentPriceMax = null;
+let currentMoqMax = null;
 let currentDetailMode = 'preview';
 let saveTimer = null;
 let currentDetailProductId = null;
@@ -1313,6 +1328,88 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderProducts();
             });
         }
+
+        // In-filter search box (synced with hero search query)
+        const filterSearchInput = document.getElementById('filterSearchInput');
+        const filterSearchClear = document.getElementById('filterSearchClear');
+        const filterSearchBox = filterSearchInput ? filterSearchInput.closest('.filter-search-box') : null;
+        function syncFilterSearchBox() {
+            if (!filterSearchBox) return;
+            if (filterSearchInput && filterSearchInput.value) {
+                filterSearchBox.classList.add('has-value');
+            } else {
+                filterSearchBox.classList.remove('has-value');
+            }
+        }
+        if (filterSearchInput) {
+            filterSearchInput.value = currentSearchQuery || '';
+            syncFilterSearchBox();
+            let fsTimer = null;
+            filterSearchInput.addEventListener('input', function () {
+                const val = this.value;
+                syncFilterSearchBox();
+                if (fsTimer) clearTimeout(fsTimer);
+                fsTimer = setTimeout(function () { performSearch(val); }, 250);
+            });
+            filterSearchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { performSearch(''); }
+            });
+        }
+        if (filterSearchClear) {
+            filterSearchClear.addEventListener('click', function () {
+                performSearch('');
+                if (filterSearchInput) filterSearchInput.value = '';
+                syncFilterSearchBox();
+            });
+        }
+
+        // Price range & MOQ filters
+        function applyExtraFilters() {
+            const pmin = document.getElementById('priceMinInput');
+            const pmax = document.getElementById('priceMaxInput');
+            const moq = document.getElementById('moqMaxInput');
+            currentPriceMin = (pmin && pmin.value !== '') ? parseFloat(pmin.value) : null;
+            currentPriceMax = (pmax && pmax.value !== '') ? parseFloat(pmax.value) : null;
+            currentMoqMax = (moq && moq.value !== '') ? parseFloat(moq.value) : null;
+            if (currentPriceMin !== null && !isFinite(currentPriceMin)) currentPriceMin = null;
+            if (currentPriceMax !== null && !isFinite(currentPriceMax)) currentPriceMax = null;
+            if (currentMoqMax !== null && !isFinite(currentMoqMax)) currentMoqMax = null;
+            renderProducts();
+        }
+        const applyBtn = document.getElementById('applyExtraFiltersBtn');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', applyExtraFilters);
+        }
+        ['priceMinInput', 'priceMaxInput', 'moqMaxInput'].forEach(function (id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') { e.preventDefault(); applyExtraFilters(); }
+                });
+            }
+        });
+
+        // Reset Filter button (clears category, search, price & MOQ)
+        const resetBtn = document.getElementById('resetFilterBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function () {
+                currentFilterCategory = 'all';
+                currentSearchQuery = '';
+                currentPriceMin = null;
+                currentPriceMax = null;
+                currentMoqMax = null;
+                const heroInput = document.getElementById('heroProductSearchInput');
+                if (heroInput) heroInput.value = '';
+                const fsInput = document.getElementById('filterSearchInput');
+                if (fsInput) fsInput.value = '';
+                ['priceMinInput', 'priceMaxInput', 'moqMaxInput'].forEach(function (id) {
+                    const el = document.getElementById(id);
+                    if (el) el.value = '';
+                });
+                renderCategoryFilter();
+                renderProducts();
+            });
+        }
         // Fill prices for server-rendered / static HTML widgets that carry
         // `data-usd-price` attributes (e.g. the static product pages, any
         // pre-rendered cards). Must run AFTER initCurrencySelector() so the
@@ -1647,6 +1744,7 @@ function updateContent() {
             // path: [titleKey, descriptionKey or fallback text]
             '/index.html': ['hero.title', 'hero.desc'],
             '/': ['hero.title', 'hero.desc'],
+            '            '/all-products.html': ['products.allCatalogTitle', 'products.allCatalogDesc'],
             '/products.html': ['products.title', 'products.subtitle'],
             '/about.html': ['aboutPage.heroTitle', 'aboutPage.heroSubtitle'],
             '/contact.html': ['contactPage.heroTitle', 'contactPage.heroSubtitle'],
@@ -1794,33 +1892,110 @@ function renderCategories() {
 function renderCategoryFilter() {
     const list = document.getElementById('categoryFilterList');
     if (!list) return;
-    const categories = getCategories();
-    if (currentFilterCategory !== 'all' && !categories.includes(currentFilterCategory)) {
+
+    const products = getProducts();
+
+    // Compute product counts per sub-category and per main category
+    const subCounts = {};
+    const mainCounts = {};
+    products.forEach(function (p) {
+        const sub = p.category || 'Other';
+        const main = resolveMainCategory(p);
+        subCounts[sub] = (subCounts[sub] || 0) + 1;
+        mainCounts[main] = (mainCounts[main] || 0) + 1;
+    });
+
+    // Collect sub-categories that actually have products, grouped by main
+    const mainToSubs = {};
+    UI_MAIN_CATEGORIES.forEach(m => { mainToSubs[m] = []; });
+    Object.keys(subCounts).forEach(sub => {
+        const main = SUB_TO_MAIN_CATEGORY[sub] || resolveMainCategory(sub) || 'Others';
+        if (!mainToSubs[main]) mainToSubs[main] = [];
+        if (mainToSubs[main].indexOf(sub) === -1) mainToSubs[main].push(sub);
+    });
+
+    // Validate current filter: must be 'all', a known main category, or a known sub-category
+    const allMains = Object.keys(mainCounts);
+    const allSubs = Object.keys(subCounts);
+    if (currentFilterCategory !== 'all' &&
+        allMains.indexOf(currentFilterCategory) === -1 &&
+        allSubs.indexOf(currentFilterCategory) === -1) {
         currentFilterCategory = 'all';
     }
+
+    const isMainSelected = allMains.indexOf(currentFilterCategory) !== -1;
+    const isSubSelected = allSubs.indexOf(currentFilterCategory) !== -1;
+
     list.innerHTML = '';
+
+    // --- All button ---
     const allBtn = document.createElement('button');
     allBtn.type = 'button';
     allBtn.className = 'category-filter-btn' + (currentFilterCategory === 'all' ? ' active' : '');
-    allBtn.textContent = tt('filter.all', 'All');
+    allBtn.innerHTML = tt('filter.all', 'All') + ' <span class="cat-count-badge">' + products.length + '</span>';
     allBtn.addEventListener('click', function () {
         currentFilterCategory = 'all';
         renderCategoryFilter();
         renderProducts();
     });
     list.appendChild(allBtn);
-    categories.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'category-filter-btn' + (currentFilterCategory === cat ? ' active' : '');
-        btn.textContent = cat;
-        btn.addEventListener('click', function () {
-            currentFilterCategory = cat;
+
+    // --- Collapsible main category groups ---
+    UI_MAIN_CATEGORIES.forEach(main => {
+        const subs = mainToSubs[main] || [];
+        const count = mainCounts[main] || 0;
+        if (count === 0 && subs.length === 0) return;
+
+        const details = document.createElement('details');
+        details.className = 'category-group';
+        const isActiveMain = currentFilterCategory === main;
+        const hasActiveSub = subs.indexOf(currentFilterCategory) !== -1;
+        if (isActiveMain || hasActiveSub) details.open = true;
+
+        const summary = document.createElement('summary');
+        summary.className = 'category-group-summary' + (isActiveMain ? ' active' : '');
+        summary.innerHTML =
+            '<span class="category-group-name">' + escapeHtml(main) + '</span>' +
+            '<span class="cat-count-badge">' + count + '</span>';
+
+        // Summary click toggles the native <details> expand/collapse.
+        // Main-category filtering is done via the "All" button inside each group.
+        details.appendChild(summary);
+
+        const subWrap = document.createElement('div');
+        subWrap.className = 'category-sub-list';
+
+        // "All in {main}" link
+        const allInMain = document.createElement('button');
+        allInMain.type = 'button';
+        allInMain.className = 'category-sub-btn' + (isActiveMain ? ' active' : '');
+        allInMain.innerHTML = '<i class="fas fa-th-large"></i> ' + tt('filter.allIn', 'All') + ' <span class="cat-count-badge">' + count + '</span>';
+        allInMain.addEventListener('click', function () {
+            currentFilterCategory = main;
             renderCategoryFilter();
             renderProducts();
         });
-        list.appendChild(btn);
+        subWrap.appendChild(allInMain);
+
+        subs.forEach(sub => {
+            const subCount = subCounts[sub] || 0;
+            const subBtn = document.createElement('button');
+            subBtn.type = 'button';
+            subBtn.className = 'category-sub-btn' + (currentFilterCategory === sub ? ' active' : '');
+            subBtn.innerHTML = escapeHtml(sub) + ' <span class="cat-count-badge">' + subCount + '</span>';
+            subBtn.addEventListener('click', function () {
+                currentFilterCategory = sub;
+                renderCategoryFilter();
+                renderProducts();
+            });
+            subWrap.appendChild(subBtn);
+        });
+
+        details.appendChild(subWrap);
+        list.appendChild(details);
     });
+
+    // --- Reset button ---
     const resetBtn = document.createElement('button');
     resetBtn.type = 'button';
     resetBtn.className = 'category-filter-reset';
@@ -2205,12 +2380,14 @@ function renderProducts() {
     const filterInfo = document.getElementById('filterResultInfo');
     if (!productList) return;
 
-    // 1) Category filter — use resolveMainCategory so the UI's big-category pills
-    //    (e.g. "Apparel & Footwear") correctly match products whose raw category is
-    //    a sub-category like "Clothing", "Shoes", "Accessories", etc.
+    // 1) Category filter. Supports both main-category (e.g. "Apparel & Footwear")
+    //    and sub-category (e.g. "Clothing") selection. Sub-categories match
+    //    p.category exactly; main categories use resolveMainCategory().
     let filtered = currentFilterCategory === 'all'
         ? products
         : products.filter(function (p) {
+            const sub = p.category || '';
+            if (sub === currentFilterCategory) return true;
             return resolveMainCategory(p) === currentFilterCategory;
         });
 
@@ -2232,6 +2409,28 @@ function renderProducts() {
                 (p.tags || (p.keywords || ''))
             ].join(' ').toLowerCase();
             return tokens.every(function (tok) { return hay.indexOf(tok) !== -1; });
+        });
+    }
+
+    // 3) Price range filter (USD). product.priceMin / priceMax are stored in CNY.
+    if (currentPriceMin !== null || currentPriceMax !== null) {
+        filtered = filtered.filter(function (p) {
+            const usdMin = cnyToUsd(p.priceMin);
+            const usdMax = cnyToUsd(p.priceMax);
+            const lo = (usdMin !== null) ? usdMin : usdMax;
+            const hi = (usdMax !== null) ? usdMax : usdMin;
+            if (currentPriceMin !== null && hi < currentPriceMin) return false;
+            if (currentPriceMax !== null && lo > currentPriceMax) return false;
+            return true;
+        });
+    }
+
+    // 4) Max MOQ filter
+    if (currentMoqMax !== null) {
+        filtered = filtered.filter(function (p) {
+            const moq = parseFloat(p.moq);
+            if (!isFinite(moq)) return true; // no MOQ specified → keep
+            return moq <= currentMoqMax;
         });
     }
 
@@ -2468,10 +2667,18 @@ function performSearch(rawQuery, opts) {
     if (heroInput) {
         heroInput.value = q;
     }
+    // Also sync the in-filter search box (products.html)
+    const fsInput = document.getElementById('filterSearchInput');
+    if (fsInput) {
+        fsInput.value = q;
+        const box = fsInput.closest('.filter-search-box');
+        if (box) box.classList.toggle('has-value', !!q);
+    }
 
-    // Update the page title (hero section)
-    const titleEl = document.querySelector('.page-header-section .section-title');
-    const subtitleEl = document.querySelector('.page-header-section .section-subtitle');
+    // Update the page title (hero section) — supports both .page-header (h1)
+    // and the legacy .page-header-section (.section-title) layouts.
+    const titleEl = document.querySelector('.page-header h1') || document.querySelector('.page-header-section .section-title');
+    const subtitleEl = document.querySelector('.page-header .section-subtitle') || document.querySelector('.page-header-section .section-subtitle');
     if (titleEl) {
         if (q) {
             titleEl.textContent = 'Search Results for "' + q + '"';
