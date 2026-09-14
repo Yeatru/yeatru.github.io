@@ -356,58 +356,56 @@
 
   </div>
 
-  <div class="mb-5 p-3 rounded-2 border bg-light text-muted small">
-    <i class="fas fa-compass text-primary me-2"></i>
-    <strong class="text-dark">Not sure what to source?</strong> See our 
-    <a href="supplier-verification.html" class="text-decoration-none">Supplier Verification</a> · 
-    <a href="quality-control.html" class="text-decoration-none">Quality Control</a> · 
-    <a href="oem.html" class="text-decoration-none">OEM Customization</a> · 
-    <a href="logistics-shipping.html" class="text-decoration-none">DDP Shipping</a> · 
-    <a href="data.html" class="text-decoration-none">Market Reports</a> · 
-    <a href="blog.html" class="text-decoration-none">Blog / Sourcing Guides</a>
-  </div>
-
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
-    <div class="text-muted small"><i class="fas fa-sort me-1"></i>Sort catalog:</div>
-    <select id="allProdSort" class="form-select form-select-sm" style="width:auto;min-width:170px;">
-      <option value="newest">Newest First</option>
-      <option value="price-asc">Price: Low to High</option>
-      <option value="price-desc">Price: High to Low</option>
-      <option value="sku-asc">SKU: A to Z</option>
-      <option value="name-asc">Name: A to Z</option>
-    </select>
-  </div>
-
-        
-  <!-- SEO: keyword-rich visible content for search engines -->
-  <section class="seo-content-block py-4 mb-4 border-bottom">
-    <h1 class="h3 fw-bold mb-3">China Wholesale Products Catalog — 640+ SKUs, 59 Categories, Factory Direct</h1>
-    <p class="lead text-muted small mb-3">
-      Browse Yeatru Sourcing's complete China wholesale product catalog with <strong>640+ SKUs</strong> across <strong>59 categories</strong>.
-      Our Yiwu-based team sources directly from verified Chinese factories, offering <strong>low MOQ (from 1 pc)</strong>,
-      factory-direct prices, quality control inspection, and DDP shipping to 50+ countries.
-      Whether you're buying wholesale from China for Amazon FBA, TikTok Shop, or your own e-commerce store,
-      Yeatru Sourcing is your trusted China wholesale supplier for apparel, footwear, kitchenware, electronics,
-      toys, beauty products, home goods, bags, hardware, pet supplies, sports equipment, stationery, and more.
-    </p>
-    <div class="seo-category-links small text-muted">
-      <div class="fw-semibold mb-2">Popular wholesale categories:</div>
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-2">
-        <div><a href="#cat-YCS-CLO">Wholesale apparel &amp; textile</a></div>
-        <div><a href="#cat-YCS-SHO">Wholesale shoes &amp; footwear</a></div>
-        <div><a href="#cat-YCS-KUT">Wholesale kitchen utensils</a></div>
-        <div><a href="#cat-YCS-CUP">Wholesale cups &amp; drinkware</a></div>
-        <div><a href="#cat-YCS-KST">Wholesale kitchen storage</a></div>
-        <div><a href="#cat-YCS-LED">Wholesale LED lighting</a></div>
-        <div><a href="#cat-YCS-TOY">Wholesale toys &amp; hobbies</a></div>
-        <div><a href="#cat-YCS-KID">Wholesale kids' products</a></div>
-        <div><a href="#cat-YCS-BBC">Wholesale beauty &amp; personal care</a></div>
-        <div><a href="#cat-YCS-BAG">Wholesale bags &amp; luggage</a></div>
-        <div><a href="#cat-YCS-HWR">Wholesale hardware &amp; tools</a></div>
-        <div><a href="#cat-YCS-PET">Wholesale pet supplies</a></div>
+  
+  <!-- Compact search + category filter bar -->
+  <div class="ap-filter-bar mb-3">
+    <div class="ap-search-row">
+      <div class="ap-search-input-wrap">
+        <i class="fas fa-search ap-search-icon"></i>
+        <input type="text" id="apSearchInput" class="ap-search-input" placeholder="Search products by name, SKU, description..." autocomplete="off">
+        <button type="button" class="ap-search-clear" id="apSearchClear" title="Clear">×</button>
       </div>
+      <select id="apSort" class="form-select form-select-sm ap-sort-select" title="Sort">
+        <option value="newest">Newest First</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="sku-asc">SKU: A → Z</option>
+        <option value="name-asc">Name: A → Z</option>
+      </select>
     </div>
-  </section>
+    <div class="ap-cat-chips" id="apCatChips">
+<button type="button" class="ap-cat-chip active" data-cat="All">All</button>
+<button type="button" class="ap-cat-chip " data-cat="Apparel & Footwear">Apparel & Footwear</button>
+<button type="button" class="ap-cat-chip " data-cat="Kitchen Supplies">Kitchen Supplies</button>
+<button type="button" class="ap-cat-chip " data-cat="Home & Daily Living">Home & Daily Living</button>
+<button type="button" class="ap-cat-chip " data-cat="Baby & Toys">Baby & Toys</button>
+<button type="button" class="ap-cat-chip " data-cat="Beauty & Personal Care">Beauty & Personal Care</button>
+<button type="button" class="ap-cat-chip " data-cat="Digital Electronics">Digital Electronics</button>
+<button type="button" class="ap-cat-chip " data-cat="Phone Accessories">Phone Accessories</button>
+<button type="button" class="ap-cat-chip " data-cat="Bags & Luggage">Bags & Luggage</button>
+<button type="button" class="ap-cat-chip " data-cat="Hardware & Home">Hardware & Home</button>
+<button type="button" class="ap-cat-chip " data-cat="Pet Supplies">Pet Supplies</button>
+<button type="button" class="ap-cat-chip " data-cat="Sports & Outdoor">Sports & Outdoor</button>
+<button type="button" class="ap-cat-chip " data-cat="Home Appliances">Home Appliances</button>
+<button type="button" class="ap-cat-chip " data-cat="Auto Parts & Tools">Auto Parts & Tools</button>
+<button type="button" class="ap-cat-chip " data-cat="Stationery & Office">Stationery & Office</button>
+<button type="button" class="ap-cat-chip " data-cat="Material">Material</button>
+<button type="button" class="ap-cat-chip " data-cat="Musical Instruments">Musical Instruments</button>
+<button type="button" class="ap-cat-chip " data-cat="Others">Others</button>
+    </div>
+    <div class="ap-result-bar">
+      <span id="apResultCount" class="text-muted small"><strong id="apCountNum">0</strong> products</span>
+      <a href="#" id="apResetBtn" class="text-muted small text-decoration-none d-none">Reset filters</a>
+    </div>
+  </div>
+
+  <!-- Hidden SEO text (visible to crawlers, hidden from viewport by default) -->
+  <div class="ap-seo-hidden" aria-hidden="true">
+    <h2>China Wholesale Products Catalog — 640+ SKUs, 59 Categories, Factory Direct</h2>
+    <p>Browse Yeatru Sourcing's complete China wholesale product catalog with 640+ SKUs across 59 categories. Our Yiwu-based team sources directly from verified Chinese factories, offering low MOQ (from 1 pc), factory-direct prices, quality control inspection, and DDP shipping to 50+ countries. Whether you're buying wholesale from China for Amazon FBA, TikTok Shop, or your own e-commerce store, Yeatru Sourcing is your trusted China wholesale supplier.</p>
+  </div>
+
+
 
 <div class="row g-3 g-md-4 product-catalog-grid" id="flatProductGrid">
         <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 pc-card" data-sku="YCS-ACC-001" data-price="0.9955223880597014" data-date="2026-08-30" data-name="hair tie scrunchie set 8-piece accessories">
@@ -13988,42 +13986,160 @@
 <script src="i18n-misc.js" defer></script>
     <script src="app.js?v=20260914seo" defer></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-                if (!isActive) faqItem.classList.add('active');
-            });
-        });
+// FAQ accordion toggle
+document.addEventListener('click', function(e) {
+  const q = e.target.closest('.faq-question');
+  if (q) {
+    const a = q.nextElementSibling;
+    if (a && a.classList.contains('faq-answer')) {
+      const open = q.classList.contains('open');
+      q.classList.toggle('open');
+      a.style.display = open ? 'none' : 'block';
+    }
+  }
+});
 
-        // Product sort within each category grid
-        const sortSel = document.getElementById('allProdSort');
-        function applyProductSort(val) {
-            const grid = document.getElementById('flatProductGrid');
-            if (!grid) return;
-            const cards = Array.from(grid.children).filter(c => c.classList.contains('pc-card'));
-            cards.sort((a, b) => {
-                if (val === 'newest') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
-                if (val === 'price-asc') return parseFloat(a.dataset.price || 0) - parseFloat(b.dataset.price || 0);
-                if (val === 'price-desc') return parseFloat(b.dataset.price || 0) - parseFloat(a.dataset.price || 0);
-                if (val === 'sku-asc') return (a.dataset.sku || '').localeCompare(b.dataset.sku || '');
-                if (val === 'name-asc') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
-                return 0;
-            });
-            cards.forEach(c => grid.appendChild(c));
-        }
-        if (sortSel) {
-            // Default: newest first (by upload date, descending)
-            applyProductSort('newest');
-            sortSel.addEventListener('change', function() {
-                applyProductSort(this.value);
-            });
-        }
+// ============================================================
+// ALL-PRODUCTS PAGE: SEARCH + CATEGORY FILTER + SORT
+// ============================================================
+(function() {
+  const grid = document.getElementById('flatProductGrid');
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.pc-card'));
+  
+  // Category detection from product name/SKU keywords
+  function getCardCategory(card) {
+    const name = (card.dataset.name || '').toLowerCase();
+    const sku = (card.dataset.sku || '').toLowerCase();
+    const rules = [
+      ['Apparel & Footwear', ['sock','swim','hair','clothing','shoe','footwear','dress','tracksuit','tshirt','vest','leggings','apparel']],
+      ['Kitchen Supplies', ['kitchen','cup','mug','drink','utensil','storage','strainer','frothing','baking','silicone','sink','whisk','kitchenware']],
+      ['Home & Daily Living', ['home','organizer','shelf','rack','basket','cleaning','light','gard','caddy','trash','shower','household','living']],
+      ['Baby & Toys', ['toy','baby','kids','child','montessori','toddler','rattle','walker','block','puzzle','play','stethoscope','doctor','doll','teddy','educational']],
+      ['Beauty & Personal Care', ['beauty','skin','care','massage','personal','shampoo','nail','lip','mask','spa','brush','curler','skincare','cosmetic']],
+      ['Digital Electronics', ['electron','audio','smart','microphone','tablet','bluetooth','speaker','earbud','headphone','laptop','wireless']],
+      ['Phone Accessories', ['phone','mobile','screen protector','charger','cable','battery','holder','case','tripod','magnet']],
+      ['Bags & Luggage', ['bag','backpack','handbag','tote','luggage','purse','travel','duffel','briefcase','crossbody']],
+      ['Hardware & Home', ['hardware','lock','tool','wrench','screwdriver','hammer','drill','plier','socket','nut','bolt','tools']],
+      ['Pet Supplies', ['pet','dog','cat','bird','fish','aquarium','cage','feeder','collar','leash','groom']],
+      ['Sports & Outdoor', ['sport','fitness','camping','tent','hiking','yoga','gym','workout','dumbbell','kettlebell','resistance','mat','outdoor']],
+      ['Home Appliances', ['fan','dry goods','heater','vacuum','air purifier','humidifier','air fryer','rice cooker','blender','appliance']],
+      ['Auto Parts & Tools', ['auto','car','automotive','vehicle','repair','accessory','wrench','jack','battery','tire','oil','automotive']],
+      ['Stationery & Office', ['station','office','pen','note','paper','file','clip','stapler','glue','tape','sticker','stamp','stationery']],
+      ['Material', ['filament','3d printer','material','raw','fabric','cotton','polyester','nylon','leather','wooden','metal','pla']],
+      ['Musical Instruments', ['guitar','piano','drum','violin','flute','trumpet','keyboard','percussion','harmonica','ukulele','kalimba','musical']],
+    ];
+    for (const [cat, keywords] of rules) {
+      for (const kw of keywords) {
+        if (name.includes(kw) || sku.includes(kw)) return cat;
+      }
+    }
+    return 'Others';
+  }
+  
+  // Add data-category to each card
+  cards.forEach(card => { card.dataset.category = getCardCategory(card); });
+  
+  // State
+  let searchQ = '';
+  let activeCat = 'All';
+  let sortVal = 'newest';
+  
+  // Elements
+  const searchInput = document.getElementById('apSearchInput');
+  const searchClear = document.getElementById('apSearchClear');
+  const sortSelect = document.getElementById('apSort');
+  const chipsEl = document.getElementById('apCatChips');
+  const countEl = document.getElementById('apCountNum');
+  const resetBtn = document.getElementById('apResetBtn');
+  
+  function applyFilters() {
+    let filtered = activeCat === 'All' ? cards : cards.filter(c => c.dataset.category === activeCat);
+    if (searchQ) {
+      const tokens = searchQ.toLowerCase().split(/\s+/).filter(Boolean);
+      filtered = filtered.filter(c => {
+        const hay = [c.dataset.name, c.dataset.sku, c.dataset.category].join(' ').toLowerCase();
+        return tokens.every(t => hay.includes(t));
+      });
+    }
+    filtered.sort((a, b) => {
+      if (sortVal === 'newest') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+      if (sortVal === 'price-asc') return parseFloat(a.dataset.price || 0) - parseFloat(b.dataset.price || 0);
+      if (sortVal === 'price-desc') return parseFloat(b.dataset.price || 0) - parseFloat(a.dataset.price || 0);
+      if (sortVal === 'sku-asc') return (a.dataset.sku || '').localeCompare(b.dataset.sku || '');
+      if (sortVal === 'name-asc') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+      return 0;
     });
-    </script>
+    grid.innerHTML = '';
+    filtered.forEach(c => grid.appendChild(c));
+    countEl.textContent = filtered.length;
+    if (searchQ || activeCat !== 'All') {
+      resetBtn.classList.remove('d-none');
+    } else {
+      resetBtn.classList.add('d-none');
+    }
+  }
+  
+  let searchTimer;
+  searchInput?.addEventListener('input', function() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      searchQ = this.value.trim();
+      searchClear.style.display = searchQ ? '' : 'none';
+      applyFilters();
+    }, 200);
+  });
+  
+  searchClear?.addEventListener('click', () => {
+    searchInput.value = '';
+    searchQ = '';
+    searchClear.style.display = 'none';
+    applyFilters();
+    searchInput.focus();
+  });
+  
+  sortSelect?.addEventListener('change', function() {
+    sortVal = this.value;
+    applyFilters();
+  });
+  
+  chipsEl?.addEventListener('click', function(e) {
+    const chip = e.target.closest('.ap-cat-chip');
+    if (!chip) return;
+    chipsEl.querySelectorAll('.ap-cat-chip.active').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    activeCat = chip.dataset.cat;
+    applyFilters();
+  });
+  
+  resetBtn?.addEventListener('click', function(e) {
+    e.preventDefault();
+    searchInput.value = '';
+    searchQ = '';
+    searchClear.style.display = 'none';
+    activeCat = 'All';
+    sortVal = 'newest';
+    sortSelect.value = 'newest';
+    chipsEl.querySelectorAll('.ap-cat-chip.active').forEach(c => c.classList.remove('active'));
+    chipsEl.querySelector('.ap-cat-chip[data-cat="All"]').classList.add('active');
+    applyFilters();
+  });
+  
+  // URL params
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const urlQ = params.get('q') || params.get('search') || '';
+    const urlCat = params.get('category') || '';
+    if (urlQ) { searchInput.value = urlQ; searchQ = urlQ.trim(); searchClear.style.display = ''; }
+    if (urlCat) {
+      const chip = chipsEl?.querySelector('.ap-cat-chip[data-cat="' + urlCat + '"]');
+      if (chip) { activeCat = urlCat; chipsEl.querySelectorAll('.ap-cat-chip.active').forEach(c => c.classList.remove('active')); chip.classList.add('active'); }
+    }
+  } catch(_) {}
+  
+  applyFilters();
+})();
+</script>
 
 <!-- Floating Contact Widget (WhatsApp + Email, sticky bottom-right) -->
 <div class="contact-float">
