@@ -4422,16 +4422,15 @@ body .product-detail-page .detail-main{
   margin:0 !important;padding:0 !important;
 }
 body .product-detail-page .detail-main>.detail-left-stack{
-  flex:0 0 minmax(0,420px) !important;min-width:0 !important;
+  flex:1 1 0 !important;min-width:0 !important;
   display:flex !important;flex-direction:column !important;gap:0 !important;
 }
 body .product-detail-page .detail-main>.detail-trust-row{
-  flex:1 1 auto !important;min-width:0 !important;
+  flex:1 1 0 !important;min-width:0 !important;
   display:flex !important;flex-direction:column !important;gap:0 !important;
 }
 @media (max-width:1199.98px){
   body .product-detail-page .detail-main{gap:1.5rem !important}
-  body .product-detail-page .detail-main>.detail-left-stack{flex:0 0 minmax(0,340px) !important}
 }
 @media (max-width:991.98px){
   body .product-detail-page .detail-main{flex-direction:column !important;gap:1.25rem !important}
