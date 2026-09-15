@@ -4415,8 +4415,7 @@ body .product-detail-page .detail-main>.detail-trust-row{
 }
 /* Left column section gaps (override gap:0) */
 body .product-detail-page .detail-left-stack>.detail-image-col{margin-bottom:.5rem !important}
-body .product-detail-page .detail-left-stack>.detail-shipping-info{margin-top:.5rem !important}
-@media (max-width:1199.98px){
+body .product-detail-page @media (max-width:1199.98px){
   body .product-detail-page .detail-main{gap:1.25rem !important}
 }
 @media (max-width:991.98px){
@@ -4517,10 +4516,10 @@ body .product-detail-page .detail-left-stack>.trust-badge:nth-of-type(3){margin-
 body .product-detail-page .detail-left-stack>.trust-badge:nth-of-type(4){margin-top:-.25rem !important}
 
 /* Shipping card (distinct green card) */
-body .product-detail-page .detail-left-stack .detail-shipping-info{
+body .product-detail-page .detail-shipping-info{
   background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%) !important;
   border:1px solid #bbf7d0 !important;border-radius:12px !important;
-  padding:.5rem .75rem !important;
+  padding:.55rem .85rem !important;
   display:flex !important;flex-direction:column !important;gap:.2rem !important;
   box-shadow:0 1px 2px rgba(34,197,94,0.06) !important;
 }
@@ -4557,7 +4556,13 @@ body .product-detail-page .detail-meta{
   font-size:.74rem !important;color:#64748b !important;margin:.3rem 0 0 !important;
   padding-bottom:.55rem !important;border-bottom:1px solid #f1f5f9 !important;
 }
-body .product-detail-page .detail-meta strong{color:#334155 !important;font-weight:700}
+body .product-detail-page .detail-meta strong{color:#0f172a !important;font-weight:800}
+body .product-detail-page .detail-meta .meta-item:first-child strong{
+  font-size:1rem !important;font-weight:800 !important;color:#4f46e5 !important;
+  background:rgba(79,70,229,0.08);padding:.1rem .45rem !important;border-radius:5px !important;
+  font-family:'SF Mono','Monaco','Consolas',monospace !important;letter-spacing:.02em;
+  display:inline-block !important;
+}
 body .product-detail-page .detail-meta i{color:#94a3b8;margin-right:2px}
 
 /* Price box — premium amber treatment */
