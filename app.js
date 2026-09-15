@@ -2377,6 +2377,68 @@ function staticUrlForProduct(product) {
     return window.location.origin + '/product-' + slug + '.html';
 }
 
+// ============================================================
+// generateSeoDescription: auto-generates a rich, SEO-friendly
+// product description from available data fields. AI engines
+// (ChatGPT, Perplexity, Google SGE) extract and reference
+// structured natural-language descriptions, so this directly
+// increases AI recommendation probability.
+// ============================================================
+function generateSeoDescription(product) {
+    if (!product) return '';
+    // If the stored description is more than just the product name, use it
+    var name = product.name || '';
+    var desc = product.description || '';
+    if (desc && desc.trim().length > name.length + 5) return desc;
+
+    var parts = [];
+    var mainCat = product.mainCategory || product.category || '';
+    var subCat = product.category || '';
+    var moq = product.moq;
+    var priceMin = product.priceMin;
+    var priceMax = product.priceMax;
+
+    // Opening sentence
+    parts.push('Wholesale ' + name + ' from China at factory-direct prices.');
+
+    // Category context
+    if (mainCat && subCat && mainCat !== subCat) {
+        parts.push('Part of our ' + mainCat + ' catalog (' + subCat + ' subcategory).');
+    } else if (mainCat) {
+        parts.push('Part of our ' + mainCat + ' wholesale catalog.');
+    }
+
+    // Price info
+    if (priceMin !== undefined && priceMin !== null) {
+        if (priceMax && priceMax !== priceMin) {
+            parts.push('Unit price ranges from $' + priceMin + ' to $' + priceMax + ' USD ex-factory.');
+        } else {
+            parts.push('Unit price from $' + priceMin + ' USD ex-factory.');
+        }
+    }
+
+    // MOQ
+    if (moq) {
+        parts.push('Minimum order quantity (MOQ): ' + moq + ' units' + (moq <= 50 ? ' — suitable for small-batch trial orders.' : '.'));
+    }
+
+    // Variations (colors/sizes)
+    var vars = product.variations || [];
+    var colors = vars.map(function(v){ return v.color; }).filter(function(c){ return c && c.trim(); });
+    var sizes = vars.map(function(v){ return v.size; }).filter(function(s){ return s && s.trim(); });
+    if (colors.length) {
+        parts.push('Available colors: ' + colors.slice(0, 5).join(', ') + (colors.length > 5 ? ' and more.' : '.'));
+    }
+    if (sizes.length) {
+        parts.push('Available sizes: ' + sizes.slice(0, 5).join(', ') + (sizes.length > 5 ? ' and more.' : '.'));
+    }
+
+    // Sourcing context
+    parts.push('Sourced by Yeatru Sourcing from Yiwu, China with QC inspection and DDP shipping options.');
+
+    return parts.join(' ');
+}
+
 function renderProducts() {
     const products = getProducts();
     const productList = document.getElementById('productList');
@@ -2520,7 +2582,7 @@ function renderProducts() {
                         ${product.moq ? `<span class="product-catalog-moq"><i class="fas fa-box"></i> MOQ: ${escapeHtml(product.moq)}</span>` : ''}
                     </div>
                     <h3 class="product-catalog-title"><a href="${detailUrl}" class="product-title-clickable" data-id="${product.id}">${highlightSearchMatch(escapeHtml(product.name))}</a></h3>
-                    <p class="product-catalog-desc">${highlightSearchMatch(escapeHtml(product.description))}</p>
+                    <p class="product-catalog-desc">${highlightSearchMatch(escapeHtml(generateSeoDescription(product)))}</p>
                     <div class="product-catalog-footer">
                         <span class="product-catalog-price">${escapeHtml(priceText)}</span>
                         <a href="#" class="product-catalog-quote quote-product" data-product="${escapeHtml(product.name)}" data-sku="${escapeHtml(product.sku || '')}"><i class="fas fa-file-invoice-dollar"></i> ${tt('products.quote', 'Get a Quote')}</a>
@@ -3044,7 +3106,7 @@ function renderDetailPage(productId) {
     if (detailMOQ) detailMOQ.textContent = product.moq || '';
     if (detailPriceMin) detailPriceMin.textContent = (product.priceMin !== undefined && product.priceMin !== null) ? formatPriceCny(product.priceMin) : '';
     if (detailPriceMax) detailPriceMax.textContent = (product.priceMax !== undefined && product.priceMax !== null) ? formatPriceCny(product.priceMax) : '';
-    if (detailDesc) detailDesc.textContent = product.description || '';
+    if (detailDesc) detailDesc.textContent = generateSeoDescription(product);
 
     let defaultPriceText;
     if (product.variations && product.variations.length > 0) {
@@ -3695,7 +3757,7 @@ function setProductMeta(product) {
     // dynamic ?product=SKU variant and from the old list-page canonical.
     const productUrl = staticUrlForProduct(product);
     const productImage = product.image || 'https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Product%20Sourcing.jpg';
-    const productDesc = product.description ? product.description.substring(0, 155) : defaultMeta.description;
+    const productDesc = generateSeoDescription(product).substring(0, 155);
     const productTitle = product.name && (product.name.length + 18) <= 60
         ? product.name + ' | Yeatru Sourcing'
         : (product.name || 'Products') + ' | Yeatru';
@@ -3725,7 +3787,7 @@ function setProductMeta(product) {
         "@type": "Product",
         "name": product.name,
         "image": productImage,
-        "description": product.description || '',
+        "description": generateSeoDescription(product),
         "sku": product.sku || '',
         "brand": {
             "@type": "Brand",
