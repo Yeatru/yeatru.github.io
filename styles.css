@@ -4413,7 +4413,8 @@ body .product-detail-page .detail-main{
   display:grid !important;
   grid-template-columns: minmax(0,440px) minmax(0,1fr) !important;
   column-gap: 2.25rem !important;
-  row-gap: 1rem !important;
+  row-gap: 0 !important;
+  /* Each column stacks cards seamlessly with negative margin */
   align-items: start !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -4431,26 +4432,35 @@ body .product-detail-page .detail-image-col{
   grid-column:1 !important; grid-row:1 !important;
   background:#fff !important;
   border:1px solid #e2e8f0 !important;
-  border-radius:18px !important;
+  border-top-left-radius:18px !important;
+  border-top-right-radius:18px !important;
+  border-bottom-left-radius:0 !important;   /* merged below */
+  border-bottom-right-radius:0 !important;
+  border-bottom:none !important;               /* seamless join */
   padding:1rem !important;
   position:sticky !important; top:80px !important;
   box-shadow:0 1px 3px rgba(15,23,42,0.04),0 10px 30px -10px rgba(15,23,42,0.15) !important;
   align-self:start !important;
+  z-index:2 !important;
 }
 
 /* --- COL 2 · ROW 1: VERIFIED SUPPLIER (top-right chip) --- */
 body .product-detail-page .detail-main> .trust-badge:first-of-type{
   grid-column:2 !important; grid-row:1 !important;
+  /* Same border-color as card so borders merge visually */
   background: linear-gradient(135deg,#eff6ff,#dbeafe) !important;
   border:1px solid #bfdbfe !important;
   color: var(--primary) !important;
   font-size:.82rem !important;
   font-weight:700 !important;
-  padding:.5rem .9rem !important;
-  border-radius:10px !important;
+  padding:.4rem .8rem !important;
+  border-radius:8px !important;
   display:inline-flex !important;align-items:center !important;gap:.5rem !important;
   align-self:start !important;
-  margin-bottom:.25rem !important;
+  margin-bottom: -0.75rem !important;   /* overlaps with detail-info top */
+  z-index:3 !important;                  /* sits on top of card */
+  position:relative !important;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.18) !important;
 }
 body .product-detail-page .detail-main> .trust-badge:first-of-type i{font-size:.95rem;color:var(--primary) !important}
 
@@ -4459,9 +4469,15 @@ body .product-detail-page .detail-info{
   grid-column:2 !important; grid-row:2 !important;
   background:#fff !important;
   border:1px solid #e2e8f0 !important;
-  border-radius:14px !important;
-  padding: 1.2rem 1.35rem !important;
+  border-top-left-radius:14px !important;
+  border-top-right-radius:14px !important;
+  border-bottom-left-radius:0 !important;
+  border-bottom-right-radius:0 !important;
+  border-bottom:none !important;
+  /* Extra top padding to make room for overlapping Verified Supplier chip */
+  padding: 1.2rem 1.35rem 1.2rem 1.35rem !important;
   margin: 0 !important;
+  margin-top: 0 !important;   /* flush against Verified Supplier chip */
   display:flex !important;flex-direction:column !important;gap:.25rem !important;
 }
 
@@ -4472,10 +4488,14 @@ body .product-detail-page .detail-spec-cards{
   grid-template-columns:repeat(3, 1fr) !important;
   gap:.55rem !important;
   background:#fff !important;
-  border:1px solid #e2e8f0 !important;
-  border-radius:12px !important;
+  border-left:1px solid #e2e8f0 !important;
+  border-right:1px solid #e2e8f0 !important;
+  border-top:none !important;
+  border-bottom:none !important;
+  border-radius:0 !important;
   padding:.8rem !important;
   margin: 0 !important;
+  margin-top: -1px !important;
 }
 
 /* --- COL 2 · ROW 4: DESCRIPTION --- */
@@ -4485,9 +4505,16 @@ body .product-detail-page .detail-desc{
   line-height:1.72 !important;
   font-size:.92rem !important;
   margin: 0 !important;
+  margin-top: -1px !important;
   background:#fff !important;
-  border:1px solid #e2e8f0 !important;
-  border-radius:12px !important;
+  border-left:1px solid #e2e8f0 !important;
+  border-right:1px solid #e2e8f0 !important;
+  border-top:none !important;
+  border-bottom:1px solid #e2e8f0 !important;
+  border-top-left-radius:0 !important;
+  border-top-right-radius:0 !important;
+  border-bottom-left-radius:14px !important;
+  border-bottom-right-radius:14px !important;
   padding: 1rem 1.15rem !important;
 }
 
@@ -4495,20 +4522,28 @@ body .product-detail-page .detail-desc{
 body .product-detail-page .variations-display{
   grid-column:1 !important; grid-row:2 !important;
   background:#fff !important;
-  border:1px solid #e2e8f0 !important;
-  border-radius:12px !important;
+  border-left:1px solid #e2e8f0 !important;
+  border-right:1px solid #e2e8f0 !important;
+  border-top:none !important;
+  border-bottom:none !important;
+  border-radius:0 !important;
   padding: .85rem 1rem !important;
   margin: 0 !important;
+  margin-top: -1px !important;   /* overlap with gallery bottom border */
 }
 
 /* --- COL 1 · ROW 3: ACTION ROW · QTY + CTA BUTTONS (BELOW gallery!) --- */
 body .product-detail-page .detail-action-row{
   grid-column:1 !important; grid-row:3 !important;
   background:#fff !important;
-  border:1px solid #e2e8f0 !important;
-  border-radius:12px !important;
+  border-left:1px solid #e2e8f0 !important;
+  border-right:1px solid #e2e8f0 !important;
+  border-top:none !important;
+  border-bottom:none !important;
+  border-radius:0 !important;
   padding: 1rem 1.1rem !important;
   margin: 0 !important;
+  margin-top: -1px !important;
   display:flex !important;flex-direction:column !important;gap:.85rem !important;
 }
 
@@ -4516,10 +4551,17 @@ body .product-detail-page .detail-action-row{
 body .product-detail-page .detail-shipping-info{
   grid-column:1 !important; grid-row:4 !important;
   background: linear-gradient(180deg,#f0fdf4,#ecfdf5) !important;
-  border:1px solid #bbf7d0 !important;
-  border-radius:10px !important;
+  border-left:1px solid #e2e8f0 !important;
+  border-right:1px solid #e2e8f0 !important;
+  border-top:none !important;
+  border-bottom:1px solid #e2e8f0 !important;
+  border-top-left-radius:0 !important;
+  border-top-right-radius:0 !important;
+  border-bottom-left-radius:18px !important;   /* final rounded bottom */
+  border-bottom-right-radius:18px !important;
   padding:.7rem 1rem !important;
   margin: 0 !important;
+  margin-top: -1px !important;
   gap:.3rem !important;
 }
 
