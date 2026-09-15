@@ -4392,87 +4392,127 @@ main h1, main h2, main h3 { overflow-wrap: break-word; word-break: break-word; }
 
 
 /* ================================================================
-   PRODUCT DETAIL PAGE · FINAL · SIMPLE 2-COL FLEX
-   DOM after batch HTML fix:
-     .detail-main
-       .detail-left-stack   ← left flex-col (gallery+variations+action+shipping)
-       .detail-trust-row    ← right flex-col (VS+info+specs+desc)
-   No shared grid rows.  No 3-way flex.  Just 2 independent columns.
+   PRODUCT DETAIL PAGE · REORGANIZED
+   LEFT  = gallery(main-top/thumbs-below) + trust badges + variations + action + shipping
+   RIGHT = SKU info (cat-badge + H1 + meta + price) + spec-cards + desc
    ================================================================ */
 
 body .product-detail-page{background:#f1f5f9 !important;padding:1.5rem 0 3.5rem !important}
 body .product-detail-page>.container:first-of-type{max-width:1280px !important}
 
-/* ===== MAIN: 2-col flex, ONLY 2 direct children ===== */
+/* ===== MAIN: 2-col flex ===== */
 body .product-detail-page .detail-main{
-  display:flex !important;
-  gap: 2.25rem !important;
-  align-items: flex-start !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  display:flex !important;gap:2.25rem !important;align-items:flex-start !important;
+  margin:0 !important;padding:0 !important;
 }
 body .product-detail-page .detail-main> .detail-left-stack{
-  flex: 0 0 minmax(0,440px) !important;
-  min-width:0 !important;
-  display:flex !important;
-  flex-direction:column !important;
-  gap: 0 !important;
+  flex:0 0 minmax(0,440px) !important;min-width:0 !important;
+  display:flex !important;flex-direction:column !important;gap:0 !important;
 }
 body .product-detail-page .detail-main> .detail-trust-row{
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-  display:flex !important;
-  flex-direction:column !important;
-  gap: 0 !important;
+  flex:1 1 auto !important;min-width:0 !important;
+  display:flex !important;flex-direction:column !important;gap:0 !important;
 }
-
-@media (max-width: 1199.98px){
+@media (max-width:1199.98px){
   body .product-detail-page .detail-main{gap:1.5rem !important}
   body .product-detail-page .detail-main> .detail-left-stack{flex:0 0 minmax(0,360px) !important}
 }
-@media (max-width: 991.98px){
+@media (max-width:991.98px){
   body .product-detail-page .detail-main{flex-direction:column !important;gap:1.25rem !important}
   body .product-detail-page .detail-main> .detail-left-stack{flex:0 0 auto !important;width:100% !important}
 }
 
-/* ===== LEFT STACK (vertical: gallery → variations → action → shipping) ===== */
-
-/* Gallery */
+/* ===== GALLERY: main image on TOP, thumbnails BELOW (horizontal) ===== */
 body .product-detail-page .detail-left-stack .detail-image-col{
   background:#fff !important;
   border:1px solid #e2e8f0 !important;
   border-bottom:none !important;
-  border-top-left-radius:18px !important;
-  border-top-right-radius:18px !important;
-  border-bottom-left-radius:0 !important;
-  border-bottom-right-radius:0 !important;
+  border-top-left-radius:18px !important;border-top-right-radius:18px !important;
+  border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important;
   padding:1rem !important;
-  position:sticky !important; top:80px !important;
   box-shadow:0 1px 3px rgba(15,23,42,0.04),0 10px 30px -10px rgba(15,23,42,0.15) !important;
-  z-index:2 !important;
 }
 body .product-detail-page .detail-gallery{
-  display:grid !important;
-  grid-template-columns: 72px minmax(0,1fr) !important;
-  gap:.6rem !important; width:100% !important;
+  display:flex !important;flex-direction:column !important;gap:.6rem !important;width:100% !important;
 }
-body .product-detail-page .gallery-thumbs{display:flex !important;flex-direction:column !important;gap:.45rem !important;order:1 !important}
-body .product-detail-page .gallery-thumb{
-  width:100% !important;aspect-ratio:1/1 !important;object-fit:cover;
-  border:2px solid #e2e8f0 !important;border-radius:8px !important;padding:.1rem !important;
-  background:#f8fafc !important;cursor:pointer;transition:all .18s ease !important;display:block !important;
-}
-body .product-detail-page .gallery-thumb:hover{border-color:#94a3b8 !important;transform:translateX(2px)}
-body .product-detail-page .gallery-thumb.active{border-color:var(--primary) !important;box-shadow:0 0 0 3px rgba(37,99,235,0.18) !important}
+/* Main image: large, on top */
 body .product-detail-page .gallery-main{
   aspect-ratio:1/1 !important;
-  background: linear-gradient(180deg,#f8fafc,#f1f5f9) !important;
+  background:linear-gradient(180deg,#f8fafc,#f1f5f9) !important;
   border:1px solid #e2e8f0 !important;border-radius:12px !important;
-  order:2 !important;display:flex !important;align-items:center !important;justify-content:center !important;overflow:hidden !important;
+  order:1 !important;
+  display:flex !important;align-items:center !important;justify-content:center !important;overflow:hidden !important;
 }
-body .product-detail-page .detail-image{opacity:1 !important}
+body .product-detail-page .detail-image{opacity:1 !important;width:100% !important;height:100% !important;object-fit:contain !important}
+/* Thumbnails: horizontal row below main image */
+body .product-detail-page .gallery-thumbs{
+  display:flex !important;flex-direction:row !important;gap:.4rem !important;
+  order:2 !important;justify-content:center !important;flex-wrap:wrap !important;
+}
+body .product-detail-page .gallery-thumb{
+  width:64px !important;height:64px !important;aspect-ratio:1/1 !important;object-fit:cover;
+  border:2px solid #e2e8f0 !important;border-radius:8px !important;padding:0 !important;
+  background:#f8fafc !important;cursor:pointer;transition:all .18s ease !important;display:block !important;
+}
+body .product-detail-page .gallery-thumb:hover{border-color:#94a3b8 !important;transform:translateY(-2px)}
+body .product-detail-page .gallery-thumb.active{border-color:var(--primary) !important;box-shadow:0 0 0 3px rgba(37,99,235,0.18) !important}
 
-/* Variations (starts seamless with gallery) */
+/* ===== TRUST BADGES in left stack (after gallery, before variations) ===== */
+/* First badge = Verified Supplier → prominent */
+body .product-detail-page .detail-left-stack> .trust-badge:first-of-type{
+  background:linear-gradient(135deg,#eff6ff,#dbeafe) !important;
+  border:1px solid #bfdbfe !important;border-top:none !important;border-radius:0 !important;
+  color:var(--primary) !important;font-size:.82rem !important;font-weight:700 !important;
+  padding:.55rem 1rem !important;margin-top:-1px !important;
+  display:flex !important;align-items:center !important;gap:.5rem !important;
+  box-shadow:0 1px 3px rgba(37,99,235,0.12) !important;
+}
+body .product-detail-page .detail-left-stack> .trust-badge:first-of-type i{font-size:1rem;color:var(--primary) !important}
+body .product-detail-page .detail-left-stack> .trust-badge:first-of-type span{font-size:.82rem !important;font-weight:700 !important}
+
+/* Remaining trust badges (QC/DDP/OEM) → smaller, in a row */
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(2),
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(3),
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(4){
+  display:inline-flex !important;align-items:center !important;gap:.3rem !important;
+  background:#f8fafc !important;border:1px solid #e2e8f0 !important;border-top:none !important;
+  border-radius:0 !important;padding:.4rem .7rem !important;margin:0 !important;
+  font-size:.72rem !important;font-weight:600 !important;color:#475569 !important;
+  width:auto !important;
+}
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(2) i,
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(3) i,
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(4) i{font-size:.72rem;color:var(--primary) !important}
+
+/* Wrap the 3 small badges in a row via parent flex direction */
+/* Since they're siblings in a flex-column, we need them on same row */
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(2){
+  margin-top:-1px !important;
+}
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(3),
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(4){
+  /* Position them to the right of #2 using margin trick — but flex-column won't allow side-by-side.
+     Instead, make them a horizontal bar by using a wrapper effect via CSS: */
+}
+
+/* Actually, since the trust badges are siblings in flex-column,
+   we can't easily make 3 of them sit in one row without a wrapper.
+   Solution: use a grid layout for just those 3 badges.
+   But we can't wrap siblings in CSS without a container.
+   
+   Simplest approach: make the 3 badges full-width stacked (vertical),
+   which is cleaner anyway for a 440px column. */
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(2),
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(3),
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(4){
+  display:flex !important;width:100% !important;
+  border-left:1px solid #e2e8f0 !important;border-right:1px solid #e2e8f0 !important;
+}
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(2){margin-top:-1px !important}
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(3){margin-top:-1px !important}
+body .product-detail-page .detail-left-stack> .trust-badge:nth-of-type(4){margin-top:-1px !important}
+
+/* ===== VARIATIONS (seamless after badges) ===== */
 body .product-detail-page .detail-left-stack .variations-display{
   background:#fff !important;border:1px solid #e2e8f0 !important;
   border-top:none !important;border-bottom:none !important;border-radius:0 !important;
@@ -4480,8 +4520,7 @@ body .product-detail-page .detail-left-stack .variations-display{
 }
 body .product-detail-page .detail-left-stack .variations-display-title{
   display:block !important;font-size:.75rem !important;font-weight:700 !important;
-  color:#0f172a !important;margin-bottom:.5rem !important;
-  text-transform:uppercase;letter-spacing:.04em;
+  color:#0f172a !important;margin-bottom:.5rem !important;text-transform:uppercase;letter-spacing:.04em;
 }
 body .product-detail-page .variations-list{gap:.4rem !important}
 body .product-detail-page .variation-card{
@@ -4491,7 +4530,7 @@ body .product-detail-page .variation-card{
 body .product-detail-page .variation-card:hover{border-color:var(--primary) !important;background:#eff6ff !important}
 body .product-detail-page .variation-card.selected{border-color:var(--primary) !important;background:#eff6ff !important;box-shadow:0 0 0 2px rgba(37,99,235,0.18) !important}
 
-/* Action row */
+/* ===== ACTION ROW (seamless) ===== */
 body .product-detail-page .detail-left-stack .detail-action-row{
   background:#fff !important;
   border-left:1px solid #e2e8f0 !important;border-right:1px solid #e2e8f0 !important;
@@ -4519,7 +4558,7 @@ body .product-detail-page .detail-wa-btn{
 }
 body .product-detail-page .detail-wa-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.50) !important;color:#fff !important}
 
-/* Shipping (bottom rounded) */
+/* ===== SHIPPING (bottom rounded, seamless) ===== */
 body .product-detail-page .detail-left-stack .detail-shipping-info{
   background:linear-gradient(180deg,#f0fdf4,#ecfdf5) !important;
   border:1px solid #e2e8f0 !important;border-top:none !important;
@@ -4529,17 +4568,7 @@ body .product-detail-page .detail-left-stack .detail-shipping-info{
 body .product-detail-page .detail-shipping-info span{font-size:.78rem !important;color:#166534 !important;font-weight:500 !important}
 body .product-detail-page .detail-shipping-info i{font-size:.78rem !important}
 
-/* ===== RIGHT TRUST ROW (vertical: VS chip → info → specs → desc) ===== */
-body .product-detail-page .detail-trust-row> .trust-badge:first-child{
-  background:linear-gradient(135deg,#eff6ff,#dbeafe) !important;border:1px solid #bfdbfe !important;
-  color:var(--primary) !important;font-size:.82rem !important;font-weight:700 !important;
-  padding:.4rem .8rem !important;border-radius:10px !important;
-  display:inline-flex !important;align-items:center !important;gap:.5rem !important;
-  align-self:flex-start !important;margin-bottom:.35rem !important;
-  box-shadow:0 2px 6px rgba(37,99,235,0.18) !important;
-}
-body .product-detail-page .detail-trust-row> .trust-badge:first-child i{font-size:.95rem;color:var(--primary) !important}
-
+/* ===== RIGHT COLUMN: SKU INFO (detail-info → specs → desc) ===== */
 body .product-detail-page .detail-trust-row .detail-info{
   background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:14px !important;
   padding:1.2rem 1.35rem !important;margin:0 !important;
@@ -4558,13 +4587,6 @@ body .product-detail-page h1,body .product-detail-page .detail-info>h1{
   line-height:1.2 !important;letter-spacing:-.015em !important;margin:0 !important;
 }
 body .product-detail-page .detail-meta{font-size:.8rem !important;color:#64748b !important;margin:.5rem 0 0 !important;padding-bottom:.85rem !important;border-bottom:1px dashed #e2e8f0 !important}
-body .product-detail-page .detail-info>.trust-badge{
-  background:#f8fafc !important;border:1px solid #e2e8f0 !important;border-radius:8px !important;
-  padding:.38rem .65rem !important;font-size:.75rem !important;font-weight:600 !important;color:#475569 !important;
-  display:inline-flex !important;align-items:center !important;gap:.4rem !important;margin:0 !important;
-}
-body .product-detail-page .detail-info>.trust-badge i{color:var(--primary) !important;font-size:.8rem}
-
 body .product-detail-page .detail-price-box{
   background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 70%,#fde68a 100%) !important;
   border:1px solid #fde68a !important;border-radius:12px !important;
@@ -4583,6 +4605,7 @@ body .product-detail-page .detail-price-save{
 }
 body .product-detail-page .detail-price-save i{color:#d97706;font-size:.72rem}
 
+/* Spec cards */
 body .product-detail-page .detail-spec-cards{
   display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:.55rem !important;
   background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:12px !important;
@@ -4594,6 +4617,7 @@ body .product-detail-page .spec-label{font-size:.64rem !important;font-weight:70
 body .product-detail-page .spec-label i{color:var(--primary) !important;font-size:.68rem}
 body .product-detail-page .spec-value{font-size:.92rem !important;font-weight:700 !important;color:#0f172a !important;margin-top:.1rem}
 
+/* Description */
 body .product-detail-page .detail-desc{
   color:#475569 !important;line-height:1.72 !important;font-size:.92rem !important;
   margin:.75rem 0 0 !important;background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:12px !important;padding:1rem 1.15rem !important;
@@ -4605,14 +4629,13 @@ body .product-detail-page .faq-section{margin:1.75rem auto 0 !important;max-widt
 body .product-detail-page .related-products-section{margin:1.75rem auto 2rem !important;max-width:1200px !important}
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 991.98px){
+@media (max-width:991.98px){
   body .product-detail-page .detail-left-stack .detail-image-col{position:static !important}
-  body .product-detail-page .detail-gallery{grid-template-columns:minmax(0,1fr) !important}
-  body .product-detail-page .gallery-thumbs{flex-direction:row !important;order:2 !important;gap:.4rem !important;flex-wrap:wrap !important}
-  body .product-detail-page .gallery-main{order:1 !important}
+  body .product-detail-page .gallery-thumb{width:56px !important;height:56px !important}
 }
-@media (max-width: 575.98px){
+@media (max-width:575.98px){
   body .product-detail-page h1,body .product-detail-page .detail-info>h1{font-size:1.3rem !important}
   body .product-detail-page .detail-price-big,body .product-detail-page .detail-price-big .variation-price{font-size:1.8rem !important}
   body .product-detail-page .detail-spec-cards{grid-template-columns:1fr 1fr !important}
+  body .product-detail-page .gallery-thumb{width:48px !important;height:48px !important}
 }
