@@ -1744,7 +1744,7 @@ function updateContent() {
             // path: [titleKey, descriptionKey or fallback text]
             '/index.html': ['hero.title', 'hero.desc'],
             '/': ['hero.title', 'hero.desc'],
-            '            '/all-products.html': ['products.allCatalogTitle', 'products.allCatalogDesc'],
+            '/all-products.html': ['products.allCatalogTitle', 'products.allCatalogDesc'],
             '/products.html': ['products.title', 'products.subtitle'],
             '/about.html': ['aboutPage.heroTitle', 'aboutPage.heroSubtitle'],
             '/contact.html': ['contactPage.heroTitle', 'contactPage.heroSubtitle'],
@@ -2061,18 +2061,21 @@ function renderIndexHotProducts() {
     const list = document.getElementById('indexHotProducts');
     if (!list) return;
     const allProducts = getProducts();
-    // ---- 2026-08-28 curated 8 visually-refined hero SKUs ----
-    // Covering: Backpack / Handbag / Smartwatch / Tracksuit / Swimwear /
-    //           Kitchen Display / LED Decor / Beachwear
+    // ---- Curated 10 hero SKUs (one per main category, visually appealing) ----
+    // Bags & Luggage / Digital Electronics / Apparel & Footwear /
+    // Kitchen Supplies / Home & Daily Living / Beauty & Personal Care /
+    // Baby & Toys / Sports & Outdoor / Phone Accessories / Home Appliances
     const CURATED_HOT_SKUS = [
-        'YCS-BAC-004',   // Black Backpack Travel Business
-        'YCS-HAB-001',   // Women's Shoulder Bag Fashion Leather 2 Colors
-        'YCS-SMA-001',   // Black Smart Watch Fitness Tracker Sports
-        'YCS-CLO-028',   // Men Sportswear Tracksuit Set Athletic Quick-Dry
-        'YCS-SWI-002',   // Swimsuit Women Swimwear 2 Colors
-        'YCS-KST-001',   // Wooden Fruit Plate Stand 3-Tier Display
-        'YCS-LED-001',   // LED Flameless Candle Home Decor Battery
-        'YCS-SHO-001',   // Beach Sandals Summer Casual 2 Pairs
+        'YCS-BAC-004',   // Bags & Luggage   - Black Backpack Travel Business
+        'YCS-SMA-001',   // Digital Electronics - Black Smart Watch Fitness Tracker
+        'YCS-CLO-028',   // Apparel & Footwear - Men Sportswear Tracksuit Set
+        'YCS-KST-001',   // Kitchen Supplies - Wooden Fruit Plate Stand 3-Tier
+        'YCS-LED-001',   // Home & Daily Living - LED Flameless Candle Decor
+        'YCS-SKN-004',   // Beauty & Personal Care - Cosmetic Organizer Box Clear Acrylic
+        'YCS-BBC-003',   // Baby & Toys - Wearable Breast Pump Hands-Free
+        'YCS-FIT-001',   // Sports & Outdoor - Mini Fascia Massage Gun
+        'YCS-MCH-004',   // Phone Accessories - Power Bank Portable Charger
+        'YCS-XLY-080',   // Home Appliances - Portable Garment Steamer Iron
     ];
     // Build lookup (sku -> product) keeping the curated order
     const bySku = {};
@@ -2081,18 +2084,18 @@ function renderIndexHotProducts() {
     for (const sku of CURATED_HOT_SKUS) {
         if (bySku[sku]) products.push(bySku[sku]);
     }
-    // Fallback: if curated list is shorter than 8 (e.g. data rebuild with new
+    // Fallback: if curated list is shorter than 10 (e.g. data rebuild with new
     // SKUs that didn't land yet), pad with the first few from the full list
-    if (products.length < 8) {
+    if (products.length < 10) {
         for (const p of allProducts) {
             if (!products.find(x => x.sku === p.sku)) {
                 products.push(p);
-                if (products.length >= 8) break;
+                if (products.length >= 10) break;
             }
         }
     }
     list.innerHTML = '';
-    const displayCount = Math.min(products.length, 8);
+    const displayCount = Math.min(products.length, 10);
     for (let i = 0; i < displayCount; i++) {
         const product = products[i];
         const priceMin = formatPriceCny(product.priceMin);
@@ -2101,7 +2104,7 @@ function renderIndexHotProducts() {
         const slug = skuSlugForProduct(product);
         const detailUrl = 'product-' + slug + '.html';
         const col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3';
+        col.className = 'col-6 col-sm-4 hot-product-col';
         col.innerHTML = `
             <div class="product-catalog-card">
                 <a href="${detailUrl}" class="product-catalog-img-link" title="${escapeHtml(product.name)}">
