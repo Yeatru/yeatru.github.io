@@ -46,6 +46,14 @@ export async function onRequest(context) {
   const country = (request.cf && request.cf.country) || (request.headers.get('CF-IPCountry')) || 'US';
   const ccy = country_to_ccy[country] || 'USD';
 
+  // SEO: 301 redirect HTML pages with ?v= cache-busting params to clean URL
+  // Prevents Bing/Google from indexing about.html?v=20260909k as a duplicate page
+  if (url.searchParams.has('v') && /\.\.?$|\.html?$/i.test(url.pathname)) {
+    const clean = new URL(url);
+    clean.searchParams.delete('v');
+    return Response.redirect(clean.toString(), 301);
+  }
+
   // Short-circuit for non-HTML: still pass through but add headers
   const accept = (request.headers.get('Accept') || '').toLowerCase();
   const isHtml = accept.includes('text/html') || url.pathname.endsWith('/') || url.pathname.endsWith('.html');

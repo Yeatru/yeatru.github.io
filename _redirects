@@ -31,3 +31,6 @@ yeatru.github.io/*          https://www.yeatru.com/:splat        301
 #    So we handle this client-side
 
 # 6) Strip version query params ?v=XXXXX (same as above, handled via JS)
+
+# 7) OLD /item.html → /all-products.html (Bing SEO fix: dead page with no meta)
+/item.html                /all-products.html                   301
