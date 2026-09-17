@@ -4356,6 +4356,19 @@ body .blog-grid .blog-card-excerpt{flex:1!important}
 html, body { overflow-x: hidden; max-width: 100%; }
 .container { max-width: 1320px; }
 
+/* ===== INNER SECTION ROW OVERFLOW FIX ===== */
+/* Bootstrap .row uses negative margins (-8px or -12px) which can overflow
+   when placed directly inside a col-* without a wrapping .container.
+   This adds padding to sections that are direct children of .col-lg-* to
+   compensate for the negative row margins. */
+.col-lg-9 > section.mb-5 > .row,
+.col-lg-8 > section.mb-5 > .row,
+.col-lg-9 > section > .row,
+.col-lg-8 > section > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ===== TABLE RESPONSIVE FIX ===== */
 .table-responsive {
   overflow-x: auto;
