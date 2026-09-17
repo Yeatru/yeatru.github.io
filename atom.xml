@@ -4,7 +4,7 @@
     <link rel="self" href="https://www.yeatru.com/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://www.yeatru.com/blog.html"/>
     <id>https://www.yeatru.com/blog.html</id>
-    <updated>2026-08-01T09:00:00Z</updated>
+    <updated>2026-09-17T09:00:00Z</updated>
     <subtitle>Practical guides on sourcing from China, Amazon FBA tips, OEM customization, quality control, and logistics.</subtitle>
     <author>
         <name>Neil Wang</name>
@@ -12,6 +12,18 @@
     </author>
     <rights>Copyright (c) 2026 Yeatru Sourcing. All rights reserved.</rights>
     <generator>Yeatru Sourcing CMS</generator>
+
+    <entry>
+        <title>How to Write an RFQ That Gets You the Best China Factory Price: 2026 Guide</title>
+        <link rel="alternate" type="text/html" href="https://www.yeatru.com/blog-rfq-guide-china-sourcing.html"/>
+        <id>https://www.yeatru.com/blog-rfq-guide-china-sourcing.html</id>
+        <published>2026-09-17T09:00:00Z</published>
+        <updated>2026-09-17T09:00:00Z</updated>
+        <summary>Learn how to write a professional RFQ that gets accurate competitive quotes from China factories. 9 essential elements, copy-paste template, quote comparison table, red flags to watch for, and a real case study where 3 extra lines saved $4,200 on a 5,000-unit order.</summary>
+        <category term="RFQ"/>
+        <category term="Sourcing Strategy"/>
+        <category term="China Factory Pricing"/>
+    </entry>
 
     <entry>
         <title>China Quality Control &amp; Product Inspection 2026: AQL Sampling, 3-Level QC &amp; Cost Guide</title>
