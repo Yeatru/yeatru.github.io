@@ -1031,14 +1031,15 @@ textarea.form-control{min-height:120px;resize:vertical}
 .payment-icon:hover{color:var(--bg-panel)}
 .footer-payment-section{padding-top: .5rem;border-top:1px solid rgba(255,255,255,0.1)}
 .footer-payment-section .footer-payment-label{font-size:.85rem;font-weight:600;color:var(--bg-panel);margin-bottom: .5rem;display:block}
-.footer-payment-icons-vertical{display:flex;flex-direction:row;flex-wrap:wrap;gap: .75rem;align-items:center}
-.footer-payment-icons-vertical .payment-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;border-radius:50%!important;background-color:rgba(255,255,255,0.92)!important;font-size:1.1rem!important;color:#adb5bd!important;transition:all 0.2s cubic-bezier(.25,1,.5,1)!important;box-shadow:0 1px 3px rgba(0,0,0,0.15)!important}
-.footer-payment-icons-vertical .payment-icon:hover{background-color:#fff!important;transform:translateY(-2px)!important;box-shadow:0 3px 8px rgba(0,0,0,0.2)!important;color:inherit!important}
+.footer-payment-icons-vertical{display:flex;flex-direction:row;flex-wrap:wrap;gap: .5rem;align-items:center}
+.footer-payment-icons-vertical .payment-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:48px!important;height:32px!important;border-radius:6px!important;background-color:#fff!important;font-size:1.4rem!important;color:#6c757d!important;transition:all 0.2s cubic-bezier(.25,1,.5,1)!important;box-shadow:0 1px 3px rgba(0,0,0,0.18)!important;border:1px solid rgba(0,0,0,0.06)!important;box-sizing:border-box!important;line-height:1!important;overflow:hidden!important}
+.footer-payment-icons-vertical .payment-icon:hover{background-color:#fff!important;transform:translateY(-2px)!important;box-shadow:0 3px 8px rgba(0,0,0,0.22)!important;border-color:rgba(0,0,0,0.12)!important}
+.footer-payment-icons-vertical .payment-icon i{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100%!important;line-height:1!important}
 .footer-payment-icons-vertical .payment-icon .fa-cc-visa{color:#1A1F71!important}
 .footer-payment-icons-vertical .payment-icon .fa-cc-mastercard{color:#EB001B!important}
 .footer-payment-icons-vertical .payment-icon .fa-paypal{color:#003087!important}
-.footer-payment-icons-vertical .payment-icon .fa-university{color:#B8860B!important}
-.footer-payment-icons-vertical .payment-icon span{display:none}
+.footer-payment-icons-vertical .payment-icon .fa-university{color:#2E5B4A!important}
+.footer-payment-icons-vertical .payment-icon span{display:none!important}
 @media(max-width:767.98px){.footer{padding: 2rem 0 1.5rem}
 .footer-title{margin-bottom: .75rem}
 .footer-link{margin-bottom: .4rem}
@@ -5058,16 +5059,29 @@ html, body {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  background-color: rgba(255,255,255,0.92) !important;
-  font-size: 1.1rem !important;
+  width: 48px !important;
+  height: 32px !important;
+  border-radius: 6px !important;
+  background-color: #fff !important;
+  font-size: 1.4rem !important;
+  color: #6c757d !important;
   transition: all 0.2s cubic-bezier(.25,1,.5,1) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18) !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+}
+.footer-payment-icons-vertical .payment-icon i {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  line-height: 1 !important;
 }
 .footer-payment-icons-vertical .payment-icon .fa-cc-visa { color: #1A1F71 !important; }
 .footer-payment-icons-vertical .payment-icon .fa-cc-mastercard { color: #EB001B !important; }
 .footer-payment-icons-vertical .payment-icon .fa-paypal { color: #003087 !important; }
-.footer-payment-icons-vertical .payment-icon .fa-university { color: #B8860B !important; }
+.footer-payment-icons-vertical .payment-icon .fa-university { color: #2E5B4A !important; }
 .footer-payment-icons-vertical .payment-icon span { display: none !important; }
