@@ -1703,7 +1703,25 @@ function updateContent() {
         try {
             const v = i18next.t(key);
             if (v && v !== key) {
-                el.textContent = v;
+                // Preserve child elements (e.g. icons inside <a> tags) by
+                // only replacing the last text node instead of wiping the
+                // entire content via textContent.
+                if (el.children.length > 0) {
+                    let textNodeFound = false;
+                    for (let i = el.childNodes.length - 1; i >= 0; i--) {
+                        const node = el.childNodes[i];
+                        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                            node.textContent = ' ' + v;
+                            textNodeFound = true;
+                            break;
+                        }
+                    }
+                    if (!textNodeFound) {
+                        el.appendChild(document.createTextNode(' ' + v));
+                    }
+                } else {
+                    el.textContent = v;
+                }
                 updatedCount++;
             } else {
                 if (index < 20) {
