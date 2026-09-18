@@ -669,8 +669,28 @@ to{opacity:1;transform:translateY(0)}
 .lang-dropdown-btn:hover{background-color:var(--bg-light);border-color:var(--primary);color:var(--primary)!important}
 @media(max-width:991.98px){.hero-title{font-size:2.5rem}
 .contact-info,.contact-form{padding: 2rem}
-.lang-selector{margin-left: 0;margin-top: .5rem}
+.lang-selector{margin-left: 0;margin-top: 0}
 .nav-link{font-size:1rem!important;margin: 0}
+}
+/* Mobile alignment: ensure currency selector, language selector, and Get Quote button
+   share the same height and stay vertically aligned inside the collapsed navbar.
+   Only affects viewports ≤ 991.98px (mobile/tablet); desktop layout is untouched. */
+@media(max-width:991.98px){
+.navbar-collapse .d-flex.align-items-center{align-items:center!important}
+.navbar-collapse .currency-dropdown-btn,
+.navbar-collapse .lang-dropdown-btn,
+.navbar-collapse .btn-nav-cta{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:44px!important;
+  height:44px!important;
+  box-sizing:border-box!important;
+  padding-top:.4rem!important;
+  padding-bottom:.4rem!important;
+}
+.navbar-collapse .currency-selector,
+.navbar-collapse .lang-selector{margin-top:0!important;align-self:center!important}
 }
 .banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
 .banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
@@ -1043,6 +1063,9 @@ textarea.form-control{min-height:120px;resize:vertical}
 .product-detail-page>.container:first-of-type{max-width:1180px;padding-left: 1rem;padding-right: 1rem}
 .detail-image-col{display:flex;justify-content:center;align-items:flex-start;background:linear-gradient(180deg,var(--bg-panel) 0,#f8fafc 100%);border:1px solid #e2e8f0;border-radius:16px;padding: 1.25rem;position:sticky;top:88px;box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 @media(max-width:991.98px){.detail-image-col{position:static;padding: 1rem}
+}
+.geo-toc-sidebar{position:sticky;top:90px;align-self:flex-start;z-index:1020}
+@media(max-width:991.98px){.geo-toc-sidebar{position:static}
 }
 .detail-image-col .detail-image{max-width:100%;width:100%;max-height:560px;object-fit:contain;background:transparent}
 .detail-image{width:100%;max-width:480px;height:auto;border-radius:10px;background-color:transparent;display:block;margin: 0 auto;opacity:0;transition:opacity 0.3s cubic-bezier(.25,1,.5,1);box-sizing:border-box}
@@ -4845,3 +4868,73 @@ body .product-detail-page .detail-desc{
 #cta .col-lg-5 .position-absolute { min-width: 0; flex-wrap: nowrap !important; }
 #cta .col-lg-5 ul { min-width: 0; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
 #cta .col-lg-5 ul li { overflow-wrap: break-word; word-break: break-word; }
+
+/* ============================================================
+   GLOBAL FRAMEWORK SAFEGUARDS (2026-09-18)
+   Unified layout, width, overflow & visual consistency rules.
+   These rules ensure new blog/product pages automatically
+   inherit correct dimensions without per-page tuning.
+   ============================================================ */
+
+/* 1. Prevent any element from exceeding the viewport width (anti-overflow) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* 2. Ensure all images are responsive and never exceed their container */
+img { max-width: 100%; height: auto; }
+img[width]:not([width="1"]):not([width="0"]) { max-width: 100%; }
+
+/* 3. Standard content wrapper — all page sections should use .container */
+main .container,
+main .container-fluid { max-width: var(--container-max, 1320px); margin-left: auto; margin-right: auto; padding-left: var(--space-section-x, 1.5rem); padding-right: var(--space-section-x, 1.5rem); }
+
+/* 4. Unified section spacing for all pages */
+main section[class*="py-"],
+main section[class*="pt-"],
+main section[class*="pb-"] { position: relative; }
+
+/* 5. Blog article template — standardize all blog post layouts */
+article.blog-post,
+article[class*="blog-article"] { max-width: 820px; margin-left: auto; margin-right: auto; }
+article.blog-post img,
+article[class*="blog-article"] img { max-width: 100%; height: auto; border-radius: 8px; }
+article.blog-post h2,
+article[class*="blog-article"] h2 { margin-top: 2rem; margin-bottom: 1rem; }
+article.blog-post h3,
+article[class*="blog-article"] h3 { margin-top: 1.5rem; margin-bottom: 0.75rem; }
+article.blog-post p,
+article[class*="blog-article"] p { margin-bottom: 1.25rem; line-height: 1.8; }
+article.blog-post table,
+article[class*="blog-article"] table { max-width: 100%; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* 6. Prevent pre/code blocks from causing horizontal scroll */
+pre, code, kbd, samp { max-width: 100%; overflow-x: auto; word-wrap: break-word; }
+
+/* 7. Video and iframe embeds — always fit container */
+iframe, video, embed, object { max-width: 100%; }
+
+/* 8. Card grid consistency — prevent card images from exceeding card bounds */
+.card { max-width: 100%; overflow: hidden; }
+.card-img-top, .card-img-bottom, .card-img { max-width: 100%; height: auto; }
+.card-body { min-width: 0; }
+
+/* 9. Flex row overflow prevention */
+.row { min-width: 0; }
+.row > [class*="col-"] { min-width: 0; }
+
+/* 10. Table responsiveness — wrap all tables in scrollable container */
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { max-width: 100%; }
+
+/* 11. Legal/policy page content — standardize reading width */
+main .legal-content,
+main .policy-content { max-width: 900px; margin-left: auto; margin-right: auto; }
+
+/* 12. Hero section — ensure consistent blue gradient background on all pages */
+.page-header { background: linear-gradient(135deg, #0f1b2d 0%, #1a2b4a 55%, #162033 100%) !important; color: #fff; }
+.page-header h1, .page-header .section-title { color: #fff !important; }
+.page-header .section-subtitle, .page-header p { color: rgba(255, 255, 255, 0.85) !important; }
+.page-header .section-eyebrow { color: var(--c-brand-300, #93c5fd) !important; }
+
+/* 13. CTA buttons — standardized height and appearance */
+.btn-nav-cta, .btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
