@@ -1032,12 +1032,12 @@ textarea.form-control{min-height:120px;resize:vertical}
 .footer-payment-section{padding-top: .5rem;border-top:1px solid rgba(255,255,255,0.1)}
 .footer-payment-section .footer-payment-label{font-size:.85rem;font-weight:600;color:var(--bg-panel);margin-bottom: .5rem;display:block}
 .footer-payment-icons-vertical{display:flex;flex-direction:row;flex-wrap:wrap;gap: .75rem;align-items:center}
-.footer-payment-icons-vertical .payment-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background-color:rgba(255,255,255,0.92);font-size:1.1rem;color:#adb5bd;transition:all 0.2s cubic-bezier(.25,1,.5,1);box-shadow:0 1px 3px rgba(0,0,0,0.15)}
-.footer-payment-icons-vertical .payment-icon:hover{background-color:#fff;transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,0.2)}
-.footer-payment-icons-vertical .payment-icon .fa-cc-visa{color:#1A1F71}
-.footer-payment-icons-vertical .payment-icon .fa-cc-mastercard{color:#EB001B}
-.footer-payment-icons-vertical .payment-icon .fa-paypal{color:#003087}
-.footer-payment-icons-vertical .payment-icon .fa-university{color:#B8860B}
+.footer-payment-icons-vertical .payment-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;border-radius:50%!important;background-color:rgba(255,255,255,0.92)!important;font-size:1.1rem!important;color:#adb5bd!important;transition:all 0.2s cubic-bezier(.25,1,.5,1)!important;box-shadow:0 1px 3px rgba(0,0,0,0.15)!important}
+.footer-payment-icons-vertical .payment-icon:hover{background-color:#fff!important;transform:translateY(-2px)!important;box-shadow:0 3px 8px rgba(0,0,0,0.2)!important;color:inherit!important}
+.footer-payment-icons-vertical .payment-icon .fa-cc-visa{color:#1A1F71!important}
+.footer-payment-icons-vertical .payment-icon .fa-cc-mastercard{color:#EB001B!important}
+.footer-payment-icons-vertical .payment-icon .fa-paypal{color:#003087!important}
+.footer-payment-icons-vertical .payment-icon .fa-university{color:#B8860B!important}
 .footer-payment-icons-vertical .payment-icon span{display:none}
 @media(max-width:767.98px){.footer{padding: 2rem 0 1.5rem}
 .footer-title{margin-bottom: .75rem}
@@ -1064,9 +1064,10 @@ textarea.form-control{min-height:120px;resize:vertical}
 .detail-image-col{display:flex;justify-content:center;align-items:flex-start;background:linear-gradient(180deg,var(--bg-panel) 0,#f8fafc 100%);border:1px solid #e2e8f0;border-radius:16px;padding: 1.25rem;position:sticky;top:88px;box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 @media(max-width:991.98px){.detail-image-col{position:static;padding: 1rem}
 }
-.geo-toc-sidebar{position:sticky;top:90px;align-self:flex-start;z-index:1020}
-@media(max-width:991.98px){.geo-toc-sidebar{position:static}
-}
+.geo-toc-sidebar{position:sticky!important;top:90px;align-self:flex-start;height:fit-content;z-index:1020}
+.geo-toc-sidebar .card{height:auto}
+@media(max-width:991.98px){.geo-toc-sidebar{position:static!important;height:auto}}
+
 .detail-image-col .detail-image{max-width:100%;width:100%;max-height:560px;object-fit:contain;background:transparent}
 .detail-image{width:100%;max-width:480px;height:auto;border-radius:10px;background-color:transparent;display:block;margin: 0 auto;opacity:0;transition:opacity 0.3s cubic-bezier(.25,1,.5,1);box-sizing:border-box}
 .detail-image.loaded{opacity:1}
@@ -4938,3 +4939,135 @@ main .policy-content { max-width: 900px; margin-left: auto; margin-right: auto; 
 
 /* 13. CTA buttons — standardized height and appearance */
 .btn-nav-cta, .btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* Fix blog card images inside ratio wrappers */
+.card .ratio img,
+.ratio img.card-img-top{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover!important;border-radius:0!important}
+.card.overflow-hidden .ratio{overflow:hidden;border-radius:inherit}
+
+/* Ensure all cards in workflow/related sections have consistent heights */
+.row.g-3 .card.h-100,
+.row.g-4 .card.h-100{display:flex;flex-direction:column;overflow:hidden}
+.row.g-3 .card.h-100 .card-body,
+.row.g-4 .card.h-100 .card-body{flex:1;display:flex;flex-direction:column;min-height:0}
+.row.g-3 .card.h-100 .card-body p,
+.row.g-4 .card.h-100 .card-body p{flex:1}
+
+/* Fix container centering for legal pages */
+main .container[style*="max-width"],
+section .container[style*="max-width"]{margin-left:auto!important;margin-right:auto!important}
+
+/* Force container centering — fix for legal/content pages */
+body main .container,
+body main .container-fluid {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* Ensure equal-height cards in all rows */
+.row > [class*="col-"]{height:100%}
+.row > [class*="col-"] > .card.h-100,
+.row > [class*="col-"] > a.card.h-100{height:100%!important;display:flex!important;flex-direction:column!important}
+.row > [class*="col-"] > .card.h-100 .card-body,
+.row > [class*="col-"] > a.card.h-100 .card-body{flex:1!important;display:flex!important;flex-direction:column!important}
+
+/* Fix sticky sidebar: remove overflow clipping on GEO sections
+   that contain .geo-toc-sidebar so position:sticky works */
+section:has(.geo-toc-sidebar),
+section:has(.geo-toc-sidebar) > .container {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* Fix sticky sidebar: remove overflow clipping on GEO content sections */
+.geo-content-section,
+.geo-content-section > .container {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* Also fix main overflow for sticky sidebar */
+main:has(.geo-toc-sidebar) {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* ==========================================================================
+   FIXES — Legal pages content alignment, sticky sidebar, blog cards, footer
+   ========================================================================== */
+
+/* 1. Legal pages: enforce 900px reading width (overrides section.py-5>.container 1400px !important) */
+section.py-5.bg-white > .container[style*="max-width: 900px"] {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* 2. Sticky sidebar fix: use overflow-x: clip instead of hidden on html/body.
+   overflow-x: hidden creates a scroll container that breaks position:sticky.
+   overflow-x: clip clips overflow WITHOUT creating a scroll container. */
+html, body {
+  overflow-x: clip !important;
+}
+/* Ensure all ancestors of sticky sidebar have visible overflow */
+.geo-content-section,
+.geo-content-section > .container,
+.geo-content-section .row {
+  overflow: visible !important;
+}
+
+/* 3. Blog card images: ensure consistent display in workflow sections */
+.related-posts .row.g-3 {
+  align-items: stretch !important;
+}
+.related-posts .row.g-3 > [class*="col-"] {
+  display: flex;
+  align-items: stretch;
+}
+.related-posts .card.h-100 {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+.related-posts .card.h-100 .ratio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.related-posts .card.h-100 .ratio img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+}
+.related-posts .card.h-100 .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* 4. Footer payment icons: ensure consistent rendering across all pages */
+.footer-payment-icons-vertical .payment-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-color: rgba(255,255,255,0.92) !important;
+  font-size: 1.1rem !important;
+  transition: all 0.2s cubic-bezier(.25,1,.5,1) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important;
+}
+.footer-payment-icons-vertical .payment-icon .fa-cc-visa { color: #1A1F71 !important; }
+.footer-payment-icons-vertical .payment-icon .fa-cc-mastercard { color: #EB001B !important; }
+.footer-payment-icons-vertical .payment-icon .fa-paypal { color: #003087 !important; }
+.footer-payment-icons-vertical .payment-icon .fa-university { color: #B8860B !important; }
+.footer-payment-icons-vertical .payment-icon span { display: none !important; }
