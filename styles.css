@@ -4838,3 +4838,8 @@ body .product-detail-page .detail-desc{
     width:100% !important;flex:none !important;
   }
 }
+
+/* Fix horizontal overflow in CTA section right-panel list */
+#cta .col-lg-5 .position-absolute { min-width: 0; flex-wrap: nowrap !important; }
+#cta .col-lg-5 ul { min-width: 0; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
+#cta .col-lg-5 ul li { overflow-wrap: break-word; word-break: break-word; }
