@@ -24,6 +24,9 @@ yeatru.github.io/*          https://www.yeatru.com/:splat        301
 /blog-seasonal-sourcing.html    /blog.html                   301
 /blog-negotiation-strategies.html /blog.html                 301
 /blog-import-compliance.html     /blog-product-certifications.html  301
+# blog-supplier-verification.html was an old slug consolidated into the
+# full verification guide (blog-verify-chinese-supplier-license.html)
+/blog-supplier-verification.html   /blog-verify-chinese-supplier-license.html   301
 
 
 # 5) Strip ?lang=XX query params (handled via JavaScript 404.html too)
