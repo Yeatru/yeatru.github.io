@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Terms | Secure &amp; Flexible Payment — Yeatru Sourcing</title>
+<meta name="description" content="Secure, flexible payment methods for China sourcing: XTransfer, T/T bank transfer, and PayPal. Transparent terms, buyer protection, and clear process.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a2b35'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23d4a574' font-family='Georgia,serif' font-weight='bold'>Y</text></svg>">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+<style>
+:root{
+  --navy:#1a2b35; --navy-2:#0f1f28; --navy-3:#243b4a;
+  --gold:#d4a574; --gold-2:#b8895a;
+  --teal:#0b7b94; --teal-2:#0d9488;
+  --ink:#101828; --ink-2:#344054; --muted:#667085;
+  --bg:#f8fafc; --card:#ffffff; --line:#e2e8f0;
+  --ok:#0d9488; --warn:#b45309;
+  --radius:14px; --shadow:0 1px 3px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06);
+  --shadow-l:0 12px 40px rgba(16,24,40,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(26,43,53,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,165,116,.18)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:baseline;gap:10px;color:#fff}
+.brand .logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:.5px}
+.brand .tag{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.78);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy-2)!important;padding:9px 18px;border-radius:8px;font-weight:600}
+.nav-cta:hover{background:#e0b87e;color:var(--navy-2)!important}
+.hamburger{display:none;background:none;border:none;color:#fff;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;border-radius:8px}
+.hamburger:hover{background:rgba(255,255,255,.1)}
+.hamburger svg{width:24px;height:24px}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:88px 0 96px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(212,165,116,.18),transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,165,116,.14);border:1px solid rgba(212,165,116,.35);color:var(--gold);padding:7px 16px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:24px}
+.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.12;font-weight:700;margin-bottom:18px;max-width:760px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.72);max-width:620px;margin-bottom:36px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:14px}
+.chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:11px 18px;border-radius:10px;font-size:14px;color:rgba(255,255,255,.88)}
+.chip svg{width:18px;height:18px;color:var(--gold);flex-shrink:0}
+
+/* ===== SECTION COMMON ===== */
+section{padding:80px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 52px}
+.sec-eyebrow{color:var(--teal);font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.sec-head h2{font-size:clamp(28px,3.6vw,42px);line-height:1.18;color:var(--navy);margin-bottom:16px}
+.sec-head p{color:var(--muted);font-size:16px}
+
+/* ===== PAYMENT METHOD CARDS ===== */
+.methods{background:var(--bg)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.m-card{background:var(--card);border-radius:var(--radius);padding:36px 30px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.m-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-l)}
+.m-card.featured{border:2px solid var(--gold);box-shadow:0 12px 40px rgba(212,165,116,.18)}
+.m-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy-2);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;white-space:nowrap}
+.m-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.m-icon svg{width:28px;height:28px}
+.m-icon.teal{background:rgba(11,123,148,.1);color:var(--teal)}
+.m-icon.navy{background:rgba(26,43,53,.08);color:var(--navy)}
+.m-icon.gold{background:rgba(212,165,116,.14);color:var(--gold-2)}
+.m-card h3{font-size:22px;color:var(--navy);margin-bottom:6px}
+.m-tag{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:14px}
+.m-desc{font-size:14.5px;color:var(--ink-2);margin-bottom:22px;flex-grow:1}
+.m-meta{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.m-row{display:flex;justify-content:space-between;font-size:13.5px}
+.m-row .k{color:var(--muted)}
+.m-row .v{font-weight:600;color:var(--ink)}
+.m-row .v.free{color:var(--ok)}
+
+/* ===== COMPARISON TABLE ===== */
+.compare{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cmp-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)}
+table.cmp{width:100%;border-collapse:collapse;min-width:680px;background:#fff}
+.cmp th,.cmp td{padding:16px 20px;text-align:left;font-size:14px;border-bottom:1px solid var(--line)}
+.cmp thead th{background:var(--navy);color:#fff;font-weight:600;font-size:14px}
+.cmp thead th:first-child{border-radius:0}
+.cmp thead th.rec{background:var(--gold);color:var(--navy-2)}
+.cmp tbody th{font-weight:600;color:var(--ink-2);background:#f8fafc;width:28%}
+.cmp td{color:var(--ink-2)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
+.cmp .yes{color:var(--ok);font-weight:600}
+.cmp .no{color:#98a2b3}
+.cmp .pill{display:inline-block;padding:2px 10px;border-radius:100px;font-size:12px;font-weight:600}
+.cmp .pill.free{background:rgba(13,148,136,.12);color:var(--ok)}
+
+/* ===== DETAIL BLOCKS ===== */
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.d-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.d-card h3{font-size:22px;color:var(--navy);margin-bottom:6px}
+.d-sub{color:var(--teal);font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.d-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.d-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-2)}
+.d-list li svg{width:18px;height:18px;color:var(--ok);flex-shrink:0;margin-top:3px}
+.d-note{background:#fff8ed;border:1px solid #fde6c4;border-radius:10px;padding:16px 18px;font-size:13.5px;color:#7c4a12;line-height:1.6}
+.d-note strong{color:var(--warn)}
+.bank-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.bank-row:last-of-type{border-bottom:none}
+.bank-row .bk{color:var(--muted)}
+.bank-row .bv{font-weight:600;color:var(--ink);font-family:'Inter',monospace}
+
+/* ===== STEPS ===== */
+.steps{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff}
+.steps .sec-eyebrow{color:var(--gold)}
+.steps .sec-head h2{color:#fff}
+.steps .sec-head p{color:rgba(255,255,255,.65)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:32px 26px;position:relative}
+.step-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:16px;opacity:.9}
+.step h4{font-size:18px;margin-bottom:10px;color:#fff}
+.step p{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.6}
+
+/* ===== TERMS ===== */
+.terms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.t-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow)}
+.t-icon{width:44px;height:44px;border-radius:10px;background:rgba(11,123,148,.1);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.t-icon svg{width:22px;height:22px}
+.t-card h4{font-size:16px;color:var(--navy);margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700}
+.t-card p{font-size:13.5px;color:var(--muted)}
+
+/* ===== FAQ ===== */
+.faq{background:#fff;border-top:1px solid var(--line)}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;background:var(--card)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 26px;background:none;border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);text-align:left;font-family:'Inter',sans-serif}
+.faq-q .arrow{width:22px;height:22px;flex-shrink:0;transition:transform .3s;color:var(--teal)}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 26px 22px;font-size:14.5px;color:var(--ink-2);line-height:1.7}
+
+/* ===== SECURITY BANNER ===== */
+.sec-banner{background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(11,123,148,.08));border:1px solid rgba(13,148,136,.25);border-radius:var(--radius);padding:28px 32px;display:flex;gap:20px;align-items:flex-start;max-width:820px;margin:0 auto}
+.sec-banner .si{width:44px;height:44px;flex-shrink:0;background:var(--ok);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff}
+.sec-banner .si svg{width:22px;height:22px}
+.sec-banner h4{font-size:16px;color:var(--navy);margin-bottom:6px;font-family:'Inter',sans-serif}
+.sec-banner p{font-size:14px;color:var(--ink-2);line-height:1.65}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;text-align:center}
+.cta h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:14px;color:#fff}
+.cta p{color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 32px;font-size:16px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;transition:all .2s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--navy-2)}
+.btn-gold:hover{background:#e0b87e}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-2);color:rgba(255,255,255,.65);padding:60px 0 28px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.f-brand .logo{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);font-weight:700;margin-bottom:12px}
+.f-brand p{font-size:13.5px;line-height:1.7;max-width:300px}
+.f-col h5{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.f-col a{font-size:13.5px;transition:color .2s}
+.f-col a:hover{color:var(--gold)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+.f-bottom a:hover{color:var(--gold)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .method-grid{grid-template-columns:1fr 1fr}
+  .step-grid{grid-template-columns:1fr 1fr}
+  .terms-grid{grid-template-columns:1fr 1fr}
+  .detail-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .nav-links.mobile-open{display:flex;position:absolute;top:68px;left:0;right:0;background:var(--navy);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+}
+@media(max-width:600px){
+  .method-grid{grid-template-columns:1fr}
+  .step-grid{grid-template-columns:1fr}
+  .terms-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .hero{padding:60px 0 68px}
+  .sec-banner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="https://www.yeatru.com/" class="brand">
+      <span class="logo">Yeatru</span>
+      <span class="tag">Sourcing</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="https://www.yeatru.com/">Home</a>
+      <a href="https://www.yeatru.com/about.html">About</a>
+      <a href="https://www.yeatru.com/payment.html" class="active">Payment</a>
+      <a href="https://www.yeatru.com/faq.html">FAQ</a>
+      <a href="https://www.yeatru.com/blog.html">Blog</a>
+      <a href="https://www.yeatru.com/contact.html">Contact</a>
+      <a href="https://www.yeatru.com/request-quote.html" class="nav-cta">Request Quote</a>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('mobile-open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+      Secure Payment Terms
+    </div>
+    <h1>Secure &amp; <em>Flexible Payment</em></h1>
+    <p class="hero-sub">Multiple payment options to suit your business needs — transparent fees, fast settlement, and buyer protection for every order.</p>
+    <div class="hero-chips">
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compliance-Verified Protection
+      </div>
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Same-Day Settlement
+      </div>
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        0% Fee on XTransfer
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAYMENT METHODS ===== -->
+<section class="methods">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Payment Options</div>
+      <h2>Three Ways to Settle Your Order</h2>
+      <p>Choose the right method based on your order size, urgency, and risk tolerance. Each method has trade-offs between fees, speed, and buyer protection.</p>
+    </div>
+    <div class="method-grid">
+
+      <!-- XTransfer -->
+      <div class="m-card featured">
+        <div class="m-badge">Recommended</div>
+        <div class="m-icon teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </div>
+        <h3>XTransfer</h3>
+        <div class="m-tag">Best for new &amp; repeat clients</div>
+        <p class="m-desc">Our recommended cross-border method. Zero fees, instant arrival, and competitive exchange rates for international transactions — compliance-verified accounts protect both parties.</p>
+        <div class="m-meta">
+          <div class="m-row"><span class="k">Fees</span><span class="v free">0% — all bank fees absorbed</span></div>
+          <div class="m-row"><span class="k">Speed</span><span class="v">Same day – 2 business days</span></div>
+          <div class="m-row"><span class="k">Best for</span><span class="v">All order sizes</span></div>
+          <div class="m-row"><span class="k">Currencies</span><span class="v">USD, EUR, GBP + 14 more</span></div>
+        </div>
+      </div>
+
+      <!-- T/T -->
+      <div class="m-card">
+        <div class="m-icon navy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l1.5-6h15L21 10M3 10v10h18V10M3 10h18M7 15h4"/></svg>
+        </div>
+        <h3>Global Account (T/T)</h3>
+        <div class="m-tag">Secure wire transfer</div>
+        <p class="m-desc">Bank transfer via SWIFT / FPS / CHATS through our OCBC Hong Kong business account. The standard, irreversible method for larger production orders.</p>
+        <div class="m-meta">
+          <div class="m-row"><span class="k">Fees</span><span class="v">$15–$50 bank charge</span></div>
+          <div class="m-row"><span class="k">Speed</span><span class="v">1–3 business days (SWIFT)</span></div>
+          <div class="m-row"><span class="k">Best for</span><span class="v">Large orders ($3k+)</span></div>
+          <div class="m-row"><span class="k">Currencies</span><span class="v">USD, EUR, GBP, HKD</span></div>
+        </div>
+      </div>
+
+      <!-- PayPal -->
+      <div class="m-card">
+        <div class="m-icon gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        </div>
+        <h3>PayPal</h3>
+        <div class="m-tag">Credit card accepted</div>
+        <p class="m-desc">Ideal for sample orders. Your agent creates a PayPal bill and sends you a link to complete payment with a credit card or PayPal balance. 5% surcharge for bulk orders.</p>
+        <div class="m-meta">
+          <div class="m-row"><span class="k">Fees</span><span class="v">2.9% + $0.30 (+5% bulk)</span></div>
+          <div class="m-row"><span class="k">Speed</span><span class="v">Instant</span></div>
+          <div class="m-row"><span class="k">Best for</span><span class="v">Sample orders ($50–$500)</span></div>
+          <div class="m-row"><span class="k">Protection</span><span class="v">180-day purchase protection</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON TABLE ===== -->
+<section class="compare">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Comparison</div>
+      <h2>Compare the 3 Payment Methods</h2>
+      <p>At a glance — fees, speed, and protection for each option.</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th style="width:28%">Feature</th>
+            <th class="rec">XTransfer (Recommended)</th>
+            <th>Global Account (T/T)</th>
+            <th>PayPal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Fee</th><td><span class="pill free">0% — zero fees</span></td><td>$15–$50 bank charge</td><td>2.9% + $0.30 (+5% bulk)</td></tr>
+          <tr><th>Speed</th><td class="yes">Same day – 2 business days</td><td>1–3 business days (SWIFT)</td><td class="yes">Instant</td></tr>
+          <tr><th>Best For</th><td>All order sizes — new &amp; repeat clients</td><td>Large production orders ($3k+)</td><td>Sample orders ($50–$500)</td></tr>
+          <tr><th>Buyer Protection</th><td class="yes">Compliance-verified accounts</td><td class="no">None (irreversible)</td><td class="yes">180-day Purchase Protection</td></tr>
+          <tr><th>Supported Currencies</th><td>USD, EUR, GBP, and 14+ more</td><td>USD, EUR, GBP, HKD</td><td>All major currencies</td></tr>
+          <tr><th>Minimum Amount</th><td>No minimum</td><td>~$100 (below this, fees are disproportionate)</td><td>No minimum</td></tr>
+          <tr><th>Payment Networks</th><td>SWIFT / FPS / CHATS</td><td>SWIFT / FPS / CHATS</td><td>Credit card, PayPal balance, bank transfer</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DETAIL: T/T & PayPal ===== -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Account Details</div>
+      <h2>How Each Method Works</h2>
+      <p>For your security, complete account details are shared through your formal Proforma Invoice (PI) after order confirmation.</p>
+    </div>
+    <div class="detail-grid">
+
+      <!-- T/T -->
+      <div class="d-card">
+        <h3>Global Account — T/T</h3>
+        <div class="d-sub">OCBC Hong Kong Business Account</div>
+        <div class="bank-row"><span class="bk">Bank</span><span class="bv">OCBC Hong Kong Branch</span></div>
+        <div class="bank-row"><span class="bk">SWIFT / BIC</span><span class="bv">WIHB****XXX</span></div>
+        <div class="bank-row"><span class="bk">Account No.</span><span class="bv">8880******23519</span></div>
+        <div class="bank-row"><span class="bk">Account Type</span><span class="bv">Business Account</span></div>
+        <div class="bank-row"><span class="bk">Location</span><span class="bv">Hong Kong (China)</span></div>
+        <div class="bank-row"><span class="bk">Networks</span><span class="bv">SWIFT / FPS / CHATS</span></div>
+        <div class="d-note" style="margin-top:20px">
+          <strong>Note:</strong> The full account number, beneficiary name, and bank address are provided on your formal Proforma Invoice. Please include <em>[Buyer Name] [Invoice/Contract Number] [Product]</em> in the payment memo. We recommend T/T for production orders of $3,000 or more.
+        </div>
+      </div>
+
+      <!-- PayPal -->
+      <div class="d-card">
+        <h3>PayPal — Sample Orders</h3>
+        <div class="d-sub">Fast &amp; Secure</div>
+        <ul class="d-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Primarily for sample orders ($50–$500)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Your agent creates a PayPal bill and sends you a payment link</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Pay by credit card or PayPal balance — instant arrival</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 180-day Purchase Protection included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Bulk orders: please confirm with your agent first (5% surcharge applies)</li>
+        </ul>
+        <div class="d-note">
+          <strong>How to pay:</strong> Option 1 — your agent sends a PayPal link; pay with credit card or balance. Option 2 — direct payment is arranged by your agent once the order is confirmed. We do not display the PayPal email publicly for security.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== XTRANSFER RECOMMENDATION ===== -->
+<section style="background:#fff;border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Recommended Method</div>
+      <h2>Why We Recommend XTransfer</h2>
+      <p>Combines the security of bank transfers with zero fees and competitive exchange rates.</p>
+    </div>
+    <div class="terms-grid">
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h4>Zero Transaction Fees</h4>
+        <p>No hidden charges — you pay exactly the invoice amount. XTransfer absorbs all bank fees.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Instant &amp; Secure</h4>
+        <p>Funds arrive same-day to 2 business days. Compliance-verified accounts protect both parties.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h4>Competitive Rates</h4>
+        <p>Better exchange rates than most retail banks — typically saving 1–3% on currency conversion.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg></div>
+        <h4>Buyer Protection</h4>
+        <p>Compliance checks on every transaction. Multi-currency support: USD, EUR, GBP, AUD, CAD, JPY and 14+ more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="steps">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">How It Works</div>
+      <h2>4-Step Payment Process</h2>
+      <p>A clear, transparent flow from invoice confirmation to fund release — every step documented and traceable.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Confirm Invoice</h4>
+        <p>Review the Proforma Invoice (PI) with your agent. Confirm product specs, quantities, unit price, and total amount before any payment.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Pay Deposit (50%)</h4>
+        <p>Send 50% deposit via your chosen method (XTransfer recommended). We confirm receipt and start production immediately.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>QC &amp; Inspection</h4>
+        <p>Before shipping, we conduct a pre-shipment quality inspection (AQL 2.5) and share photo/video evidence for your approval.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Pay Balance &amp; Ship</h4>
+        <p>After QC approval, pay the remaining 50% balance. We release the goods for shipping and provide tracking details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STANDARD TERMS ===== -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Standard Terms</div>
+      <h2>Payment Terms That Protect Both Sides</h2>
+      <p>We work with standard, transparent terms that ensure smooth transactions.</p>
+    </div>
+    <div class="terms-grid">
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3M16 7V3M3 11h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg></div>
+        <h4>50% / 50% Split</h4>
+        <p>50% deposit to start production after order confirmation; 50% balance before shipping.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h4>Full Payment Before Shipping</h4>
+        <p>Complete the full payment before the goods are shipped — available for small or verified orders.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>Quality Guarantee</h4>
+        <p>If quality issues are found, we work with suppliers to resolve or provide compensation.</p>
+      </div>
+      <div class="t-card">
+        <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+        <h4>Transparent Process</h4>
+        <p>All payments handled with full transparency and integrity. Signed contract and PI for every order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECURITY BANNER ===== -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="sec-banner">
+      <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div>
+        <h4>Anti-Fraud Notice</h4>
+        <p>For your security, our full receiving account details are only shared through the formal Proforma Invoice (PI). If you receive any email requesting a change of payment account, please verify it by phone or through your existing agent contact before sending any funds. Yeatru will never ask you to transfer to a personal account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">FAQ</div>
+      <h2>Payment Questions, Answered</h2>
+      <p>Common questions about paying your China supplier through Yeatru.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Which payment method do you recommend for new clients?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">We strongly recommend XTransfer for new clients. It charges zero fees, offers same-day to 2-day settlement, supports 14+ currencies, and provides compliance-verified accounts that protect both buyer and supplier. It is the safest and most cost-effective option for orders of any size.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the 50/50 payment split?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The 50/50 split means you pay 50% deposit to start production after order confirmation, and the remaining 50% balance before shipping. This protects both parties: the supplier has funds to begin production, and you retain leverage until quality is verified via pre-shipment inspection (AQL 2.5).</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I pay the full amount upfront?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes, full payment before shipping is an option. However, we recommend the 50/50 split for most orders because it gives you more control — you only release the final 50% after approving the pre-shipment QC photos and video. Full upfront payment is typically used for very small sample orders or with fully verified repeat suppliers.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why is there a 5% surcharge for PayPal bulk orders?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">PayPal charges approximately 2.9% + $0.30 per transaction, plus additional withdrawal and currency conversion fees. For bulk orders, these fees add up significantly. The 5% surcharge covers PayPal's processing costs so we can keep our product pricing competitive. For orders over $3,000, we recommend switching to XTransfer (0% fee) or T/T wire transfer.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does it take for payment to arrive?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">XTransfer: same day to 2 business days. T/T wire (SWIFT): 1–3 business days. PayPal: instant. FPS and CHATS transfers within Hong Kong typically arrive within a few hours. We confirm receipt within 24 hours of the funds clearing.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is my payment protected if something goes wrong?
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. With XTransfer, every transaction goes through compliance verification. With PayPal, you get 180-day Purchase Protection for sample orders. For production orders paid via T/T, the 50/50 split ensures you only pay the balance after QC approval. We also provide a signed contract and Proforma Invoice for every order, and we mediate any quality disputes directly with the factory.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="container">
+    <h2>Have Questions About Payment?</h2>
+    <p>Contact us today and we'll help you choose the best payment option for your order.</p>
+    <div class="cta-btns">
+      <a href="https://www.yeatru.com/request-quote.html" class="btn btn-gold">Request a Free Quote</a>
+      <a href="https://www.yeatru.com/contact.html" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="logo">Yeatru Sourcing</div>
+        <p>Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
+      </div>
+      <div class="f-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="https://www.yeatru.com/">Home</a></li>
+          <li><a href="https://www.yeatru.com/about.html">About Us</a></li>
+          <li><a href="https://www.yeatru.com/payment.html">Payment Terms</a></li>
+          <li><a href="https://www.yeatru.com/blog.html">Blog</a></li>
+          <li><a href="https://www.yeatru.com/faq.html">FAQ</a></li>
+          <li><a href="https://www.yeatru.com/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="https://www.yeatru.com/supplier-verification.html">Supplier Verification</a></li>
+          <li><a href="https://www.yeatru.com/product-sourcing.html">Product Sourcing</a></li>
+          <li><a href="https://www.yeatru.com/quality-control.html">Quality Control</a></li>
+          <li><a href="https://www.yeatru.com/logistics-shipping.html">Logistics &amp; Shipping</a></li>
+          <li><a href="https://www.yeatru.com/oem.html">OEM / ODM</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@yeatru.com">info@yeatru.com</a></li>
+          <li><a href="https://wa.me/8615988516408">WhatsApp: +86 159 8851 6408</a></li>
+          <li><a href="https://t.me/YeatruSourcing">Telegram: @YeatruSourcing</a></li>
+          <li><a href="https://maps.google.com/?q=NO.188+Shangcheng+Avenue+Yiwu+Zhejiang+322000+China">Yiwu, Zhejiang, China</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2022–2026 Yeatru Sourcing (YIWU ETRUE TRADING CO. LTD.). All rights reserved.</span>
+      <span>
+        <a href="https://www.yeatru.com/privacy.html">Privacy</a> &nbsp;|&nbsp;
+        <a href="https://www.yeatru.com/terms.html">Terms</a> &nbsp;|&nbsp;
+        <a href="https://www.yeatru.com/refund.html">Refund</a> &nbsp;|&nbsp;
+        <a href="https://www.yeatru.com/nda.html">NDA</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  var item=btn.parentElement;
+  var ans=item.querySelector('.faq-a');
+  var isOpen=item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(function(i){
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight='0';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    ans.style.maxHeight=ans.scrollHeight+'px';
+  }
+}
+</script>
+
+</body>
+</html>
