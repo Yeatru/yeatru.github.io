@@ -3666,12 +3666,12 @@ section.py-5:has([class*="cta-section"]){
     gap:8px!important;
 }
 .navbar-brand .brand-logo-box + span,
-.navbar-brand > span:last-child{
+.navbar-brand > span:last-child:not(.brand-logo-box){
     display:inline-block!important;
 }
 /* On small screens, hide the extra "Sourcing" text since logo already says Yeatru */
 @media(max-width:480px){
-    .navbar-brand > span:last-child{ display:none!important; }
+    .navbar-brand > span:last-child:not(.brand-logo-box){ display:none!important; }
     .navbar-brand .brand-logo-box{ height:50px!important; max-height:50px!important; }
     .navbar-brand .brand-logo-box img{ max-height:50px!important; }
 }
