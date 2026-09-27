@@ -99,6 +99,25 @@
     .toc-pill { font-size: .82rem; }
     .toc-pill a { color:#222; text-decoration:none; }
     .toc-pill a:hover { color:var(--yeatru-indigo); text-decoration:underline; }
+    /* Lazy pagination: keep all cards in DOM for SEO, visually hide beyond first batch */
+    .pc-card.pc-card-hidden { display: none !important; }
+    .ap-loadmore-bar { text-align:center; padding: 1.5rem 0 .5rem; }
+    .ap-loadmore-bar .ap-loadmore-meta { display:block; color:#6b7280; font-size:.85rem; margin-bottom:.6rem; }
+    .ap-loadmore-btn {
+      display:inline-block; padding:.55rem 1.6rem; border:1px solid var(--yeatru-indigo);
+      background:transparent; color:var(--yeatru-indigo); border-radius:999px; font-weight:600;
+      cursor:pointer; transition:all .15s ease;
+    }
+    .ap-loadmore-btn:hover { background:var(--yeatru-indigo); color:#fff; }
+    .ap-loadmore-sentinel { height:1px; }
+    .ap-loadmore-spinner {
+      display:inline-block; width:1rem; height:1rem; border:2px solid var(--yeatru-indigo);
+      border-top-color:transparent; border-radius:50%; animation:ap-spin .7s linear infinite; vertical-align:-2px; margin-right:.4rem;
+    }
+    @keyframes ap-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .ap-loadmore-spinner { animation: none; }
+    }
   </style>
 
     <link rel="alternate" hreflang="en" href="https://www.yeatru.com/all-products.html">
@@ -17611,6 +17630,14 @@
     </div>
 
 
+<!-- Lazy pagination: load-more button + IntersectionObserver sentinel -->
+<div class="ap-loadmore-bar" id="apLoadMoreBar" style="display:none;">
+  <span class="ap-loadmore-meta" id="apLoadMoreMeta"></span>
+  <button type="button" class="ap-loadmore-btn" id="apLoadMoreBtn">Load more products</button>
+</div>
+<div class="ap-loadmore-sentinel" id="apLoadSentinel" aria-hidden="true"></div>
+
+
 <div class="card border-0 bg-light mb-4">
     <div class="card-body p-4">
       <h3 class="h5 mb-3"><i class="fas fa-shield-alt text-indigo me-2"></i>Why Yeatru for 678+ SKUs?</h3>
@@ -17857,7 +17884,12 @@ document.addEventListener('click', function(e) {
   let searchQ = '';
   let activeCat = 'All';
   let sortVal = 'newest';
-  
+
+  // Lazy pagination state — keep all cards in DOM for SEO, visually paginate
+  const PAGE_SIZE = 48;
+  let visibleCount = PAGE_SIZE;
+  let lastFiltered = cards;
+
   // Elements
   const searchInput = document.getElementById('apSearchInput');
   const searchClear = document.getElementById('apSearchClear');
@@ -17865,7 +17897,45 @@ document.addEventListener('click', function(e) {
   const chipsEl = document.getElementById('apCatChips');
   const countEl = document.getElementById('apCountNum');
   const resetBtn = document.getElementById('apResetBtn');
-  
+  const loadMoreBar = document.getElementById('apLoadMoreBar');
+  const loadMoreMeta = document.getElementById('apLoadMoreMeta');
+  const loadMoreBtn = document.getElementById('apLoadMoreBtn');
+  const sentinel = document.getElementById('apLoadSentinel');
+
+  // Reorder DOM + apply visibility class. Cards stay in DOM (SEO/JSON-LD safe).
+  function renderList() {
+    const total = lastFiltered.length;
+    const showCount = Math.min(visibleCount, total);
+    // Clear once: filtered-out cards are detached (matches prior behavior).
+    // `cards` array still holds live references so we can re-attach.
+    grid.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    lastFiltered.forEach((c, i) => {
+      c.classList.toggle('pc-card-hidden', i >= showCount);
+      frag.appendChild(c);
+    });
+    grid.appendChild(frag);
+    const remaining = total - showCount;
+    if (remaining > 0) {
+      loadMoreBar.style.display = '';
+      loadMoreMeta.textContent = 'Showing ' + showCount + ' of ' + total + ' products';
+      loadMoreBtn.innerHTML = 'Load more products (' + remaining + ' remaining)';
+    } else {
+      loadMoreBar.style.display = 'none';
+    }
+  }
+
+  function loadMore(n) {
+    if (visibleCount >= lastFiltered.length) return;
+    // Show spinner briefly while next batch hydrates
+    loadMoreBtn.innerHTML = '<span class="ap-loadmore-spinner"></span>Loading...';
+    // Defer to next tick so spinner paints before heavy DOM op
+    setTimeout(() => {
+      visibleCount = Math.min(visibleCount + n, lastFiltered.length);
+      renderList();
+    }, 30);
+  }
+
   function applyFilters() {
     let filtered = activeCat === 'All' ? cards : cards.filter(c => c.dataset.category === activeCat);
     if (searchQ) {
@@ -17883,14 +17953,28 @@ document.addEventListener('click', function(e) {
       if (sortVal === 'name-asc') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
       return 0;
     });
-    grid.innerHTML = '';
-    filtered.forEach(c => grid.appendChild(c));
+    lastFiltered = filtered;
+    visibleCount = PAGE_SIZE; // reset pagination when filters change
+    renderList();
     countEl.textContent = filtered.length;
     if (searchQ || activeCat !== 'All') {
       resetBtn.classList.remove('d-none');
     } else {
       resetBtn.classList.add('d-none');
     }
+  }
+
+  // Auto-load on scroll via IntersectionObserver (with manual button as fallback)
+  loadMoreBtn?.addEventListener('click', () => loadMore(PAGE_SIZE));
+  if ('IntersectionObserver' in window && sentinel) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && visibleCount < lastFiltered.length) {
+          loadMore(PAGE_SIZE);
+        }
+      });
+    }, { rootMargin: '600px 0px' });
+    io.observe(sentinel);
   }
   
   let searchTimer;
