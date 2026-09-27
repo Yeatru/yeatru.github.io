@@ -96,12 +96,25 @@
  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
  @media (max-width: 700px) {
- .grid-2 .grid-3 { grid-template-columns: 1fr; }
+ .grid-2, .grid-3 { grid-template-columns: 1fr; }
  header h1 { font-size: 1.6rem; }
+ nav { flex-wrap: wrap; gap: 0.5rem; }
+ nav a { font-size: 0.85rem; }
+ section { padding: 1.25rem; }
+ pre { font-size: 0.78rem; padding: 0.75rem; }
+ .hero-stats { gap: 0.75rem; }
+ .hero-stats span { padding: 0.4rem 0.75rem; font-size: 0.85rem; }
+ }
+ @media (max-width: 480px) {
+ header { padding: 2rem 1rem; }
+ header h1 { font-size: 1.4rem; }
+ header p { font-size: 0.95rem; }
+ .hero-stats span b { font-size: 1.05rem; }
+ main { padding: 1rem 0.5rem; }
  }
 
  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
- th td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #e1e8ed; }
+ th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #e1e8ed; }
  th { background: #f0f3f5; font-weight: 600; }
 
  .badge {
