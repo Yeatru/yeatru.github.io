@@ -268,13 +268,13 @@
  </div>
  </nav>
 
- <section class="page-header py-5">
+ <section class="page-header py-4">
  <div class="container text-center">
  <span class="section-eyebrow" data-i18n="pay.eyebrow">SETTLEMENT GUIDE</span>
  <div class="section-divider mx-auto"></div>
  <h1 class="section-title" data-i18n="pay.heroTitle">Order Settlement — 3 Options</h1>
  <p class="section-subtitle" data-i18n="pay.heroSubtitle">Choose the settlement method that fits your order size and timeline</p>
- <p class="text-muted small mt-3 mb-0"><em>This page is a settlement-method overview for confirmed orders. Actual receiving account details are provided in the Proforma Invoice (PI) and contract — please do not transfer to any account not confirmed in writing by your agent.</em></p>
+ <p class="text-muted small mt-2 mb-0"><em>This page is a settlement-method overview for confirmed orders. Actual receiving account details are provided in the Proforma Invoice (PI) and contract — please do not transfer to any account not confirmed in writing by your agent.</em></p>
  </div>
  </section>
 
@@ -321,98 +321,73 @@
  </div>
  </section>
 
- <section class="py-5 bg-light">
+ <section class="py-4 bg-light">
  <div class="container">
- <div class="card shadow-sm" style="border: 1px solid #e5e7eb; border-radius: 12px;">
- <div class="card-header" style="background: linear-gradient(135deg, var(--accent-teal), var(--c-accent-700)); color: var(--bg-panel); border-radius: 12px 12px 0 0; padding: 1.25rem 1.5rem;">
+ <div class="row g-4 justify-content-center">
+ <div class="col-lg-6">
+ <div class="card shadow-sm h-100" style="border: 1px solid #e5e7eb; border-radius: 12px;">
+ <div class="card-header" style="background: linear-gradient(135deg, var(--accent-teal), var(--c-accent-700)); color: var(--bg-panel); border-radius: 12px 12px 0 0; padding: 1rem 1.25rem;">
  <h3 class="mb-0 h5"><i class="fas fa-university me-2"></i><span data-i18n="pay.bankDetailsTitle">Bank Transfer Details (T/T)</span></h3>
  </div>
- <div class="card-body p-5">
- <div class="mb-4 p-4 text-center rounded-3" style="background: linear-gradient(135deg, var(--c-brand-800) 0%, var(--c-brand-600) 100%); color: var(--bg-panel);">
- <h4 class="mb-1 fw-bold" style="letter-spacing: 0.02em;">Global Account</h4>
- <p class="mb-0 fw-semibold" style="color: #f1f5f9; text-shadow: 0 1px 2px rgba(0,0,0,0.25);">OCBC Hong Kong Branch Provide</p>
+ <div class="card-body p-4">
+ <div class="mb-3 p-3 text-center rounded-3" style="background: linear-gradient(135deg, var(--c-brand-800) 0%, var(--c-brand-600) 100%); color: var(--bg-panel);">
+ <h4 class="mb-1 fw-bold fs-6" style="letter-spacing: 0.02em;">Global Account · OCBC Hong Kong</h4>
  </div>
- <div class="mb-3 p-3 rounded-2" style="background: #f4f8fb; border-left: 4px solid var(--accent-teal);">
- <p class="mb-0" style="color: var(--c-brand-800);"><i class="fas fa-info-circle me-2" style="color: var(--accent-teal);"></i> <strong>Only support payment via SWIFT/FPS/CHATS</strong></p>
+ <div class="mb-3 p-2 rounded-2 small" style="background: #f4f8fb; border-left: 4px solid var(--accent-teal);">
+ <p class="mb-0" style="color: var(--c-brand-800);"><i class="fas fa-info-circle me-1" style="color: var(--accent-teal);"></i> <strong>SWIFT / FPS / CHATS only</strong></p>
  </div>
  <div class="table-responsive">
  <table class="table table-sm table-borderless table-striped align-middle mb-0">
- <tr style="background: #f8fafc;"><td style="width:35%;"><strong data-i18n="pay.accountNumber">Account number:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">8880******23519</code></td></tr>
- <tr><td><strong data-i18n="pay.companyName">Account name:</strong></td><td><strong>YIWU ETRUE TRADING CO.,LTD.</strong> <small class="text-muted d-block mt-1" style="color: #64748b;">(<em>If the account name exceeds the available space please continue in the address field.</em>)</small></td></tr>
- <tr style="background: #f8fafc;"><td><strong>SWIFT/BIC code:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">WIHB****XXX</code></td></tr>
+ <tr style="background: #f8fafc;"><td style="width:40%;"><strong data-i18n="pay.accountNumber">Account number:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">8880******23519</code></td></tr>
+ <tr><td><strong data-i18n="pay.companyName">Account name:</strong></td><td><strong>YIWU ETRUE TRADING CO.,LTD.</strong></td></tr>
+ <tr style="background: #f8fafc;"><td><strong>SWIFT/BIC:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">WIHB****XXX</code></td></tr>
  <tr><td><strong data-i18n="pay.bankName">Bank name:</strong></td><td><strong>OCBC Hong Kong Branch</strong></td></tr>
- <tr style="background: #f8fafc;"><td><strong data-i18n="pay.address">Bank address:</strong></td><td>Central, Hong Kong (full address in PI)</td></tr>
- <tr><td><strong>Country/region:</strong></td><td>Hong Kong (China)</td></tr>
- <tr style="background: #f8fafc;"><td><strong>Account type:</strong></td><td>Business Account</td></tr>
+ <tr style="background: #f8fafc;"><td><strong data-i18n="pay.address">Bank address:</strong></td><td>Central, Hong Kong (full in PI)</td></tr>
  <tr><td><strong>Bank code:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">035</code></td></tr>
- <tr style="background: #f8fafc;"><td><strong>Payment method:</strong></td><td>For the payment of goods please make a FPS/CHATS/SWIFT Payment</td></tr>
  </table>
  </div>
- <div class="mt-4 p-3 rounded-2" style="background: #f4f8fb; border: 1px solid var(--c-brand-200); color: var(--c-brand-800);">
- <i class="fas fa-info-circle me-2" style="color: var(--accent-teal);"></i>
- <strong data-i18n="pay.noteLabel">Notes:</strong>
- <span>Please include the following memo/message to receiver when making a payment: <strong>[Buyer Name] [Invoice/Contract Number] [Product]</strong></span>
+ <div class="mt-3 p-2 rounded-2 small" style="background: #f4f8fb; border: 1px solid var(--c-brand-200); color: var(--c-brand-800);">
+ <i class="fas fa-info-circle me-1" style="color: var(--accent-teal);"></i>
+ <strong data-i18n="pay.noteLabel">Note:</strong> include <strong>[Buyer Name] [Invoice No.] [Product]</strong> in the memo.
  </div>
  </div>
  </div>
  </div>
- </section>
-
- <!-- PayPal Details Section -->
- <section class="py-5 bg-light">
- <div class="container">
- <div class="card shadow-sm" style="border: 1px solid #e5e7eb; border-radius: 12px;">
- <div class="card-header" style="background: linear-gradient(135deg, var(--accent-teal), var(--c-accent-700)); color: var(--bg-panel); border-radius: 12px 12px 0 0; padding: 1.25rem 1.5rem;">
- <h3 class="mb-0 h5"><i class="fab fa-paypal me-2"></i>PayPal Payment (Credit Card Accept)</h3>
+ <div class="col-lg-6">
+ <div class="card shadow-sm h-100" style="border: 1px solid #e5e7eb; border-radius: 12px;">
+ <div class="card-header" style="background: linear-gradient(135deg, var(--accent-teal), var(--c-accent-700)); color: var(--bg-panel); border-radius: 12px 12px 0 0; padding: 1rem 1.25rem;">
+ <h3 class="mb-0 h5"><i class="fab fa-paypal me-2"></i>PayPal (Sample Orders)</h3>
  </div>
- <div class="card-body p-5">
- <div class="mb-4 p-4 text-center rounded-3" style="background: linear-gradient(135deg, var(--c-brand-800) 0%, var(--c-brand-600) 100%); color: var(--bg-panel);">
- <h4 class="mb-1 fw-bold" style="letter-spacing: 0.02em;">PayPal</h4>
- <p class="mb-0 fw-semibold" style="color: #f1f5f9; text-shadow: 0 1px 2px rgba(0,0,0,0.25);">Fast &amp; Secure Payment for Sample Orders</p>
- </div>
- 
- <div class="mb-4">
- <p class="mb-3">We accept PayPal mainly for <strong>sample orders</strong>. Your agent will create a PayPal bill and send you the link to finish the payment or you can directly pay to our PayPal account.</p>
- 
- <div class="mb-3 p-3 rounded-2" style="background: #f4f8fb; border-left: 4px solid var(--accent-teal);">
+ <div class="card-body p-4">
+ <p class="mb-3">For <strong>sample orders</strong> only. Your agent sends a PayPal payment link; pay by card or PayPal balance.</p>
+ <div class="mb-3 p-2 rounded-2 small" style="background: #f4f8fb; border-left: 4px solid var(--accent-teal);">
  <p class="mb-0" style="color: var(--c-brand-800);">
- <i class="fas fa-exclamation-triangle me-2" style="color: var(--accent-teal);"></i>
- <strong>For bulk orders:</strong> You first need to confirm with your agent if the payment is acceptable. Please note that for bulk orders you need to pay <strong>5% more</strong> of the amount because it's the fee charged by PayPal from our side.
+ <i class="fas fa-exclamation-triangle me-1" style="color: var(--accent-teal);"></i>
+ <strong>Bulk orders:</strong> confirm with your agent first — a <strong>~5%</strong> PayPal fee applies.
  </p>
  </div>
- </div>
-
  <div class="table-responsive">
- <table class="table table-sm table-borderless table-striped align-middle">
- <tr style="background: #f8fafc;">
- <td style="width:35%;"><strong>PayPal Account:</strong></td>
- <td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">yeatru****@gmail.com (full address sent with the PI/link)</code></td>
- </tr>
- <tr>
- <td><strong>Account Name:</strong></td>
- <td><strong>Yiwu Etrue Trading Co. Limited</strong> <small class="text-muted d-block mt-1" style="color: #64748b;"></small></td>
- </tr>
+ <table class="table table-sm table-borderless table-striped align-middle mb-0">
+ <tr style="background: #f8fafc;"><td style="width:40%;"><strong>PayPal account:</strong></td><td><code class="fs-6" style="background: var(--c-brand-50); color: var(--c-brand-800); padding: 0px 0.5rem; border-radius: 6px;">yeatru****@gmail.com</code></td></tr>
+ <tr><td><strong>Account name:</strong></td><td><strong>Yiwu Etrue Trading Co. Limited</strong></td></tr>
  </table>
  </div>
-
- <div class="mt-4 p-3 rounded-2" style="background: #f4f8fb; border: 1px solid var(--c-brand-200); color: var(--c-brand-800);">
- <i class="fas fa-info-circle me-2" style="color: var(--accent-teal);"></i>
- <strong>How to use:</strong>
- <ul class="mb-0 mt-2" style="color: var(--c-brand-800);">
- <li><strong>Option 1:</strong> Your agent creates a PayPal bill → You receive a link → Pay with credit card or PayPal balance</li>
- <li><strong>Option 2:</strong> Send payment directly to <strong>yeatru****@gmail.com (full address sent with the PI/link)</strong> via PayPal</li>
- </ul>
+ <div class="mt-3 p-2 rounded-2 small" style="background: #f4f8fb; border: 1px solid var(--c-brand-200); color: var(--c-brand-800);">
+ <i class="fas fa-info-circle me-1" style="color: var(--accent-teal);"></i>
+ <strong>Options:</strong> agent-issued PayPal link, or pay directly to the account above.
+ </div>
+ </div>
  </div>
  </div>
  </div>
  </div>
  </section>
 
- <section class="py-5 bg-white">
+ <section class="py-4 bg-white">
  <div class="container">
- <div class="row align-items-center g-5">
+ <div class="row align-items-center g-4">
  <div class="col-lg-6">
- <h2 class="section-title mb-4" data-i18n="pay.termsTitle">Standard Payment Terms</h2>
+ <h2 class="section-title mb-3" data-i18n="pay.termsTitle">Standard Payment Terms</h2>
  <p class="text-muted mb-4" data-i18n="pay.termsIntro">We work with standard payment terms that protect both parties and ensure smooth transactions.</p>
  <div class="mb-4">
  <div class="d-flex align-items-start mb-3 flex-wrap">
@@ -446,15 +421,15 @@
  </div>
  </div>
  <div class="col-lg-6">
- <div class="card shadow-lg">
- <div class="card-body p-5">
- <h3 class="text-center mb-4" data-i18n="pay.recommendedTitle">Recommended for New Clients</h3>
- <div class="text-center mb-4">
- <div class="d-inline-block p-4 rounded-3 bg-primary bg-opacity-10 mb-3 border border-primary border-opacity-20">
- <img src="xtransfer-qr.jpg" alt="XTransfer QR Code" class="img-fluid" style="max-width: 200px; max-height: 200px;">
+ <div class="card shadow-lg h-100">
+ <div class="card-body p-4">
+ <h3 class="text-center mb-3" data-i18n="pay.recommendedTitle">Recommended for New Clients</h3>
+ <div class="text-center mb-3">
+ <div class="d-inline-block p-3 rounded-3 bg-primary bg-opacity-10 mb-3 border border-primary border-opacity-20">
+ <img src="xtransfer-qr.jpg" alt="XTransfer QR Code" class="img-fluid" style="max-width: 180px; max-height: 180px;">
  </div>
  </div>
- <h4 class="text-center mb-3" data-i18n="pay.worldFirstTitle">XTransfer</h4>
+ <h4 class="text-center mb-2" data-i18n="pay.worldFirstTitle">XTransfer</h4>
  <p class="text-muted text-center mb-2" data-i18n="pay.worldFirstDesc">For new clients we recommend XTransfer for maximum protection. Zero fees instant arrival — secure fast and competitive exchange rates for international transactions.</p>
  <p class="text-muted text-center small mb-4"><em> · YIWU ETRUE TRADING CO. LTD.</em></p>
  <ul class="list-unstyled">
@@ -471,17 +446,7 @@
  </div>
  </section>
 
- <section class="py-5 bg-white">
- <div class="payment-note container">
- <div class="card bg-light border-0 shadow-sm">
- <div class="card-body p-4">
- <p class="mb-0"><i class="fas fa-info-circle text-primary me-2"></i><strong data-i18n="pay.noteLabel">Note:</strong> <span data-i18n="pay.noteBody2">We offer two payment options: 50%/50% split (50% deposit + 50% balance before shipping) or full payment before shipping. For new clients we recommend XTransfer for secure cross-border payments. All transactions are handled with full transparency and integrity. If you have any questions about payment methods please feel free to contact us directly.</span></p>
- </div>
- </div>
- </div>
- </section>
-
- <section class="py-5 bg-light">
+ <section class="py-4 bg-light">
  <div class="container text-center">
  <h2 class="section-title mb-3" data-i18n="pay.ctaTitle">Have Questions About Payment?</h2>
  <p class="section-subtitle mb-4" data-i18n="pay.ctaSubtitle">Contact us today and we'll help you choose the best payment option</p>

@@ -246,9 +246,9 @@ const I18N_MISC = {
             heroCta2: "View Service Plans"
         },
         pay: {
-            eyebrow: "PAYMENT TERMS",
-            heroTitle: "Secure & Flexible Payment",
-            heroSubtitle: "Multiple payment options to suit your business needs",
+            eyebrow: "SETTLEMENT GUIDE",
+            heroTitle: "Order Settlement — 3 Options",
+            heroSubtitle: "Choose the settlement method that fits your order size and timeline",
             cardBankTitle: "Bank Transfer (T/T)",
             cardBankDesc: "Secure wire transfer directly to our company bank account. Most cost-effective for larger orders.",
             cardPaypalTitle: "PayPal",
@@ -583,9 +583,9 @@ a33: "Depende del producto y cantidad: muestras 3-7 días por mensajería expré
             tieredCommission: "comisión escalonada"
         },
         pay: {
-            eyebrow: "TÉRMINOS DE PAGO",
-            heroTitle: "Pago Seguro y Flexible",
-            heroSubtitle: "Múltiples opciones de pago para satisfacer las necesidades de su negocio",
+            eyebrow: "GUÍA DE LIQUIDACIÓN",
+            heroTitle: "Liquidación de Pedidos — 3 Opciones",
+            heroSubtitle: "Elija el método de liquidación que se ajuste al tamaño y plazo de su pedido",
             cardBankTitle: "Transferencia Bancaria (T/T)",
             cardBankDesc: "Transferencia bancaria segura directamente a nuestra cuenta bancaria corporativa. Más rentable para pedidos grandes.",
             cardWuTitle: "Western Union",
@@ -918,9 +918,9 @@ a33: "Le délai dépend du produit et de la quantité : échantillons 3-7 jours 
             tieredCommission: "commission dégressive"
         },
         pay: {
-            eyebrow: "CONDITIONS DE PAIEMENT",
-            heroTitle: "Paiement Sécurisé et Flexible",
-            heroSubtitle: "Plusieurs options de paiement pour répondre aux besoins de votre entreprise",
+            eyebrow: "GUIDE DE RÈGLEMENT",
+            heroTitle: "Règlement de Commande — 3 Options",
+            heroSubtitle: "Choisissez la méthode de règlement adaptée à la taille et au délai de votre commande",
             cardBankTitle: "Virement Bancaire (T/T)",
             cardBankDesc: "Virement bancaire sécurisé directement sur notre compte bancaire d'entreprise. Le plus rentable pour les commandes importantes.",
             cardWuTitle: "Western Union",
@@ -1253,9 +1253,9 @@ a33: "Сроки зависят от типа продукта и объема: 
             tieredCommission: "дифференцированная комиссия"
         },
         pay: {
-            eyebrow: "УСЛОВИЯ ОПЛАТЫ",
-            heroTitle: "Безопасные и гибкие платежи",
-            heroSubtitle: "Несколько вариантов оплаты для нужд вашего бизнеса",
+            eyebrow: "ИНСТРУКЦИЯ ПО РАСЧЁТАМ",
+            heroTitle: "Расчёт по заказу — 3 варианта",
+            heroSubtitle: "Выберите способ расчёта, подходящий по объёму и сроку вашего заказа",
             cardBankTitle: "Банковский перевод (T/T)",
             cardBankDesc: "Безопасный банковский перевод напрямую на корпоративный банковский счет нашей компании. Наиболее выгодно для крупных заказов.",
             cardWuTitle: "Western Union",
@@ -1588,9 +1588,9 @@ a33: "يعتمد ذلك على نوع المنتج وحجم الطلب: العي
             tieredCommission: "عمولة متدرجة"
         },
         pay: {
-            eyebrow: "شروط الدفع",
-            heroTitle: "دفع آمن ومرن",
-            heroSubtitle: "خيارات دفع متعددة لتناسب احتياجات عملك",
+            eyebrow: "دليل التسوية",
+            heroTitle: "تسوية الطلب — 3 خيارات",
+            heroSubtitle: "اختر طريقة التسوية التي تناسب حجم طلبك ومدته",
             cardBankTitle: "تحويل بنكي (T/T)",
             cardBankDesc: "تحويل بنكي آمن مباشرة إلى حسابنا البنكي للشركة. الأكثر فعالية من حيث التكلفة للطلبات الكبيرة.",
             cardWuTitle: "Western Union",
