@@ -5277,3 +5277,118 @@ body .product-detail-page .detail-left-stack .sp-calc-card{
   body .product-detail-page .detail-left-stack .detail-action-row{flex-wrap:wrap !important}
   body .product-detail-page .detail-left-stack .detail-cta-buttons{flex:1 1 100% !important;flex-wrap:nowrap !important}
 }
+
+/* ================================================================
+   LAYOUT BALANCE FIX — final
+   Left: image gallery + spec cards + description
+   Right: title + price + variations + CTA + shipping + calculator
+   ================================================================ */
+
+/* 1. Remove sticky from image — it was getting covered by content below */
+body .product-detail-page .detail-image-col{
+  position:static !important;top:auto !important;
+}
+
+/* 2. Left column spacing */
+body .product-detail-page .detail-left-stack{
+  gap:.75rem !important;
+}
+body .product-detail-page .detail-left-stack .detail-image-col{
+  margin-bottom:0 !important;
+}
+
+/* 3. Right column — balanced with left, proper spacing */
+body .product-detail-page .detail-info{
+  gap:.6rem !important;
+}
+
+/* 4. Variations + action row in right column — grouped card */
+body .product-detail-page .detail-info .variations-display,
+body .product-detail-page .detail-info .detail-action-row{
+  background:#fff !important;border:1px solid #e2e8f0 !important;
+  padding:.75rem 1rem !important;
+}
+body .product-detail-page .detail-info .variations-display{
+  border-bottom:none !important;border-radius:12px 12px 0 0 !important;
+}
+body .product-detail-page .detail-info .detail-action-row{
+  border-radius:0 0 12px 12px !important;
+}
+
+/* 5. Shipping info in right column */
+body .product-detail-page .detail-info .detail-shipping-info{
+  background:#eff6ff !important;border:1px solid #bfdbfe !important;
+  border-radius:12px !important;padding:.75rem 1rem !important;color:#1e40af !important;
+}
+
+/* 6. Calculator auto-injects after shipping-info (in right column) */
+body .product-detail-page .detail-info .sp-calc-card{
+  margin-top:0 !important;
+}
+
+/* 7. Description in left column */
+body .product-detail-page .detail-left-stack .detail-desc{
+  background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:12px !important;
+  padding:.75rem 1rem !important;color:#475569 !important;line-height:1.65 !important;font-size:.86rem !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;margin:0 !important;
+}
+
+/* 8. Spec cards in left column */
+body .product-detail-page .detail-left-stack .detail-spec-cards{
+  border:1px solid #e2e8f0 !important;border-radius:12px !important;
+  padding:.75rem !important;background:#fff !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;
+  display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:.5rem !important;
+  margin:0 !important;
+}
+body .product-detail-page .detail-left-stack .detail-spec-cards .spec-card{
+  border:1px solid #f1f5f9 !important;background:#f8fafc !important;
+  border-radius:10px !important;padding:.5rem !important;box-shadow:none !important;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+/* On mobile, everything stacks vertically. Order: image, title/price, CTA, specs, shipping, desc */
+@media (max-width:991.98px){
+  body .product-detail-page .detail-main{flex-direction:column !important;gap:1rem !important}
+  body .product-detail-page .detail-main>.detail-left-stack,
+  body .product-detail-page .detail-main>.detail-info{
+    flex:1 1 auto !important;width:100% !important;
+  }
+  /* Image gallery first on mobile */
+  body .product-detail-page .detail-left-stack{order:1 !important}
+  body .product-detail-page .detail-info{order:2 !important}
+  /* Spec cards: 3 cols on tablet */
+  body .product-detail-page .detail-left-stack .detail-spec-cards{
+    grid-template-columns:1fr 1fr 1fr !important;
+  }
+}
+
+@media (max-width:575.98px){
+  /* Spec cards: 2 cols on phone */
+  body .product-detail-page .detail-left-stack .detail-spec-cards{
+    grid-template-columns:1fr 1fr !important;
+  }
+  /* Action row: qty on one line, buttons on next */
+  body .product-detail-page .detail-info .detail-action-row{
+    flex-wrap:wrap !important;
+  }
+  body .product-detail-page .detail-info .detail-qty{
+    flex:1 1 100% !important;justify-content:space-between !important;
+  }
+  body .product-detail-page .detail-info .detail-cta-buttons{
+    flex:1 1 100% !important;flex-wrap:nowrap !important;
+  }
+  body .product-detail-page .detail-info .detail-buy-btn,
+  body .product-detail-page .detail-info .detail-wa-btn{
+    font-size:.78rem !important;padding:.5rem .6rem !important;
+  }
+  /* Price slightly smaller on phone */
+  body .product-detail-page .detail-price-big,
+  body .product-detail-page .detail-price-big .variation-price{
+    font-size:1.7rem !important;
+  }
+  /* Gallery main not too tall on phone */
+  body .product-detail-page .gallery-main{
+    aspect-ratio:1/1 !important;max-height:400px !important;
+  }
+}
