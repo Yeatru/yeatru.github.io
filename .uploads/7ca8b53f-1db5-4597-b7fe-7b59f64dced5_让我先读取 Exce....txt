@@ -1,0 +1,266 @@
+让我先读取 Excel 文件，了解一下价格结构。
+The user has uploaded an Excel file with global parcel pricing. They want me to:
+1. Organize prices, converting to USD using exchange rate 6.6 (iayx6.6 likely means "按6.6" - using rate 6.6)
+2. Optimize the existing product price calculation rules
+3. Build a parcel cost calculation model
+4. Apply this model to calculate shipping on product pages
+
+Let me first read the Excel file to understand the pricing structure. I should use Python with openpyxl or pandas to read it.
+
+max_col=16384 looks suspicious. Let me read the actual content.
+
+现在让我来探索现有的产品定价/运费逻辑，以便我能一致地进行扩展。
+Now I understand the structure. Let me summarize the global parcel pricing data:
+
+**File structure:**
+- 90 destination countries/zones (rows 2-91), grouped by continent
+- Columns: 大洲 (continent), 国家 (country), 分区 (zone code), 最低重量 (min weight), 限重 (max weight), 运费/KG (shipping per KG in CNY), 派送费/件 (delivery fee per package in CNY), 参考时效 (delivery time), 备注 (notes)
+- Then rows 94-108 are disclaimers/rules
+
+**Key rules from row 94:**
+- 最低收费500g (minimum charge 500g)
+- 0.5进位计费 (rounded up to next 0.5kg)
+- 体积/6000 (volumetric weight = L*W*H/6000, takes max of actual and volumetric)
+- 方形货物尺寸限制: max 60CM, min 15*10*1CM, sum of three sides 26-90CM
+
+**Formula:**
+- billable weight = max(actual weight, volumetric weight), rounded up to 0.5kg, min 0.5kg
+- freight = billable_weight * 运费/KG (in CNY)
+- delivery fee = 派送费/件 (per package, CNY)
+- total CNY = freight + delivery fee
+- total USD = total CNY / 6.6 (using rate 6.6)
+
+The user wants:
+1. Convert CNY prices to USD at rate 6.6
+2. Optimize the existing product price calculation rules (预留的价格运算规则) - meaning whatever is in product pages now
+3. Build a small parcel cost calculation model
+4. Apply this model on product pages to compute shipping
+
+I need to:
+1. Investigate existing product pages and any "shipping" or "freight" calculation logic
+2. Check if there's a site-data.json with product info including weight/dimensions
+3. Build a JS model
+4. Apply to product pages (probably each individual product page or all-products page)
+
+Let me explore:
+- /workspace/site-data.json structure
+- Product page template / individual product pages
+- Existing "shipping cost" or "freight" or "运费" references
+
+让我先检查一下现有的产品详情页面和现行的运费显示规则。
+Now I understand the existing data. Each product has:
+- sku, name, priceMin/Max, moq
+- NO weight or dimensions field!
+
+So the global parcel model needs a weight/dimensions field per product. I need to think about how to handle this gracefully.
+
+Strategy:
+1. Build a small parcel cost model (`small-parcel-shipping.js`) with:
+   - Country-to-zone table (90 entries from Excel)
+   - USD prices (rate 6.6)
+   - Calculation function: takes (weight, country, packageCount) and returns USD shipping cost
+2. For products without explicit weight, derive a default weight by category (estimate reasonable shipping weight per category). For products with explicit weight, use that.
+3. Show shipping calculation on:
+   - all-products.html (per-card display: "Shipping from $X to US")
+   - Individual product pages (if any have shipping calc UI)
+
+Let me check existing product detail page pattern (one of the YCS- pages) to see if there's a shipping calculator already:
+
+让我检查一下产品页面加载了哪些共享脚本：
+Now I have a clear picture. Let me plan the implementation:
+
+**Existing state:**
+- 675 products in site-data.json, each has priceMin/priceMax, moq, but NO weight/dimensions
+- 676 product-detail pages (product-YCS-XXX-NNN.html), each with: SKU, price, qty input, no shipping calc UI
+- Existing JSON-LD `OfferShippingDetails` shows `shippingRate.value: 0` (free shipping claim — wrong, should reflect actual)
+- Existing `priceFormula`: `USD * 1.15` markup, `CNY / 7 * 1.15`
+
+**User's request:**
+1. Convert Excel prices (CNY) to USD at rate 6.6
+2. Optimize existing price calculation rules (the markup formula)
+3. Build a small parcel cost calculation model
+4. Apply this model on product pages to compute shipping
+
+**My plan:**
+
+### A. Build a small-parcel model (`small-parcel-rates.js`)
+A standalone JS module exposing:
+- `YEATRU_SP.RATES`: country code → { zone, minKg, maxKg, ratePerKgUSD, perPackageUSD, eta, notes }
+- `YEATRU_SP.CNY_RATE = 6.6`
+- `YEATRU_SP.estimateWeight(sku, category)`: derive estimated weight per unit by category (since site-data has no weights). I'll use a category-based weight lookup (kg/unit) — sensible defaults like hair accessories 0.05kg, backpacks 0.5kg, etc.
+- `YEATRU_SP.calc({sku, category, qty, country})`: returns { billableKg, freightUSD, perPackageUSD, totalUSD, etaDays, notes }
+  - billable weight = max(actualWeight, volumetricWeight), rounded up to 0.5kg, min 0.5kg
+  - Per the spreadsheet: min charge 500g, 0.5kg increments, volumetric /6000
+  - For small parcel, I'll assume 1 package holds up to ~30kg; if qty × unit weight > 30kg, multi-package (each gets the per-package fee)
+  - total = freight (kg rate × billableKg) + perPackageFee × numPackages
+  - USD = CNY total / 6.6
+
+### B. Build a small-parcel calculator widget (`small-parcel-calculator.js`)
+- Renders a "Shipping Calculator" card on product detail pages
+- Country dropdown (90 destinations, grouped by continent)
+- Qty input (defaults to product's MOQ)
+- Live result: billable weight, freight, delivery fee, total USD, ETA, notes
+- Updates JSON-LD `OfferShippingDetails.shippingRate.value` to computed total
+
+### C. Patch product detail template
+- All 676 pages share similar structure; I'll add a placeholder div + script tag
+- But editing 676 files individually is heavy. Better: use a single JS file loaded by all product pages (check if there's a common include/footer script)
+
+Let me check the product page footer to see what scripts are shared:
+
+Good - all product pages load `app.js`. So I can put the model + calculator in `app.js` (or a separate file included by app.js or referenced from product pages).
+
+Let me check app.js structure:
+
+我已经准备好所需的一切。当前 `app.js` 使用 `CNY_TO_USD_RATE = 6.7`，加价 15%。计划如下：
+
+1. **从 Excel 生成 `small-parcel-rates.js`** — 包含 90 个国家/地区的 USD 费率表（按 6.6 汇率换算）+ 重量估算表
+2. **创建 `small-parcel-calculator.js`** — 一个自动注入到每个产品页面的 UI 组件
+3. **批量在所有 676 个 `product-*.html` 页面中引入这两个脚本**
+4. **验证 + 部署**
+
+让我先用 Excel 数据生成费率模块：
+Now I have a complete picture:
+
+**Existing price formula in app.js:**
+- `CNY_TO_USD_RATE = 6.7` (currently using 6.7)
+- `PRICE_MARKUP = 1.15` (15% markup)
+- `cnyToUsd(cny) = (cny / 6.7) * 1.15`
+
+**User wants:**
+1. Convert Excel prices (CNY) to USD at rate 6.6 (small parcel)
+2. Optimize existing price calculation rules
+3. Build a small parcel cost model
+4. Apply on product pages
+
+Note: User said "iayx6.6" — likely "按6.6" (using 6.6). The current `CNY_TO_USD_RATE = 6.7` is for product pricing. User wants shipping rates (which are in CNY in the Excel) converted using 6.6. The 0.1 difference is small but should be honored: product price stays at 6.7 (or also moved to 6.6?), shipping uses 6.6.
+
+Actually rereading: "整理一下将价格按iayx6.6换算成美元" — "organize the prices, converting to USD at rate 6.6". This refers to the EXCEL prices (small parcel freight in CNY), so shipping calculation uses 6.6.
+
+"另外对产品页面也按此模型计算运费" — "Also, on product pages, calculate shipping using this model".
+
+"优化现有产品的预留的价格运算规则" — "Optimize the existing product's reserved price calculation rules". This is ambiguous — could mean the markup formula. Let me interpret conservatively: the user wants me to (a) keep the existing product pricing formula but make sure shipping is layered on top using the new model.
+
+Plan:
+1. Create `small-parcel-rates.js` — module exposing:
+   - `YEATRU_SP.RATES_BY_COUNTRY`: country code → rate info (90 countries, USD prices from Excel converted at 6.6)
+   - `YEATRU_SP.CATEGORIES_WEIGHTS`: estimated unit weight by main category
+   - `YEATRU_SP.calc({sku, mainCategory, qty, countryCode})`: returns full breakdown
+2. Create `small-parcel-calculator.js` — UI widget that injects a "Shipping Calculator" card into `.detail-spec-cards` area or near `.detail-action-row` on every product page
+3. Patch `product-YCS-*.html` (676 files) to include the new scripts. Best done with a single bulk script include + a single injection point. Since all 676 product pages already load `app.js`, I can include the new modules inside `app.js` itself OR add a `<script src="small-parcel-rates.js" defer>` before `app.js` in all 676 files.
+
+Approach: Add the modules as new files `small-parcel-rates.js` and `small-parcel-calculator.js`. Then bulk-edit all 676 product pages to include them. The calculator auto-detects product detail page (has `.detail-spec-cards` and `data-sku` near `quote-product`) and injects the card.
+
+For the "estimating unit weight" problem: the Excel has no per-product weight. I'll need a category-based default weight table — reasonable estimates per main category (e.g. Hair Accessories 0.05kg, Backpacks 0.5kg, Kitchen Appliances 2kg, etc.). I'll expose `YEATRU_SP.estimateWeight(mainCategory)` returning kg per unit.
+
+For the JSON-LD `OfferShippingDetails.shippingRate.value: 0` — the calculator should update it dynamically to reflect the computed US shipping (the default).
+
+For all-products.html: optionally display "Shipping from $X" badge on each card — but with 639 cards that adds a lot of DOM. I'll skip for now since user said "对产品页面也按此模型计算运费" (product pages, not catalog).
+
+Let me build this now. I'll:
+1. Generate small-parcel-rates.js by parsing the Excel
+2. Write small-parcel-calculator.js (UI widget)
+3. Bulk-include both scripts in 676 product-*.html files
+4. Verify with a browser on one product page
+5. Push & deploy
+
+Let me check if site-data.json product has mainCategory (yes, from earlier sample — "mainCategory": "Beauty & Personal Care"). I'll also need to read all 675 products' mainCategory to derive weights per main category.
+
+Actually, for unit weight estimation, I'll use a static table keyed by mainCategory (17 main categories). I'll assign reasonable per-unit kg weights per category by inspecting the data.
+
+Let me proceed step by step. First, generate small-parcel-rates.js from Excel.
+
+现在我已经获取了所有数据。让我来构建 small-parcel rates 模块：
+Now I'll build the small parcel rates JS file. The 17 main categories — I'll assign a reasonable per-unit shipping weight (kg) for each. These are educated estimates for small parcel (under 30kg per package).
+
+Category weight estimates (kg per unit):
+- Apparel & Footwear: 0.30 (clothes/shoes ~300g)
+- Auto Parts & Tools: 1.20 (small tools/parts)
+- Baby & Toys: 0.40 (baby items)
+- Bags & Luggage: 0.50 (a backpack ~500g)
+- Beauty & Personal Care: 0.20 (cosmetics ~200g)
+- Digital Electronics: 0.35 (small electronics)
+- Hardware & Home: 0.80 (hardware bits)
+- Home & Daily Living: 0.50 (home goods vary widely)
+- Home Appliances: 2.50 (small appliances)
+- Kitchen Supplies: 0.45 (kitchen items)
+- Material: 1.00 (bulk material)
+- Musical Instruments: 1.50 (instruments)
+- Others: 0.50 (default)
+- Pet Supplies: 0.50 (pet items)
+- Phone Accessories: 0.10 (phone cases/chargers)
+- Sports & Outdoor: 0.70 (sports gear)
+- Stationery & Office: 0.25 (paper/pens)
+
+These are unit-level weights. The calculator will multiply by qty to get total weight, then apply the small parcel model:
+- billable = max(actual, volumetric / 6000) — but volumetric requires dimensions we don't have. So I'll use only actual weight here.
+- Round up to next 0.5kg, min 0.5kg
+- numPackages = ceil(totalWeight / 30) (30kg per package max from spreadsheet)
+- freight = billable_kg × rate_per_kg_usd (sum across all packages)
+- perPkg = numPackages × per_package_usd
+- total = freight + perPkg
+
+Wait — re-reading the spreadsheet: per row, max_kg is the limit per package. So for each country, the max weight per package varies (5kg for US, 20kg for Canada etc.). So numPackages should be based on the country's max_kg, not 30kg.
+
+But the rate is "per KG" — if total weight is 5kg split into 2 packages of 2.5kg each, do we pay freight on 5kg + 2×perPkg? Yes that makes sense.
+
+Actually wait — for small parcels, each package is a separate parcel with its own billable weight. So if I have 10kg total to US (max 5kg/pkg), I split into 2 packages of 5kg each. Each gets freight = 5 × rate_per_kg_usd + per_package_usd. Total = 2 × (5×rate + perPkg) = 10×rate + 2×perPkg.
+
+But if 10kg total to a country with max 30kg/pkg, it's 1 package of 10kg = 10×rate + 1×perPkg.
+
+So the formula per destination:
+- numPackages = ceil(totalKg / max_kg) where max_kg is per country
+- perPackageKg = totalKg / numPackages (split evenly)
+- perPackageBillable = round up to next 0.5kg, min 0.5kg
+- freight = numPackages × perPackageBillable × rate_per_kg_usd
+- perPkgFee = numPackages × per_package_usd
+- total = freight + perPkgFee
+
+Actually if total weight is, say, 7.5kg to US (max 5kg), we have 2 packages: 5kg + 2.5kg. Each rounded up to 0.5kg. 5kg → 5.0kg, 2.5kg → 2.5kg. Total billable = 7.5kg. Freight = 7.5 × rate. PerPkg = 2 × perPkg. So actually rounding doesn't change anything if weights are already on 0.5kg boundaries. The rounding matters for non-0.5 weights like 0.3kg → 0.5kg.
+
+Simpler model: just bill the total weight rounded up to 0.5kg, multiplied by rate, plus perPkg × numPackages. This matches the spreadsheet's "0.5进位计费" rule at the consignment level.
+
+Let me keep it simple but document the per-package split:
+
+```
+function calc(sku, mainCategory, qty, countryCode) {
+  const unitKg = estimateWeight(sku, mainCategory);
+  const totalKg = unitKg * qty;
+  const rate = RATES_BY_COUNTRY[countryCode];
+  if (!rate) return null;
+  // Per-package weight limit (country-specific)
+  const maxPerPkg = rate.max_kg;
+  const numPackages = Math.max(1, Math.ceil(totalKg / maxPerPkg));
+  // Split evenly, each rounded up to next 0.5kg, min 0.5kg
+  const perPkgRaw = totalKg / numPackages;
+  const roundUp05 = (x) => Math.max(0.5, Math.ceil(x * 2) / 2);
+  const perPgBillable = roundUp05(perPkgRaw);
+  const totalBillableKg = perPkgBillable * numPackages;
+  const freight = totalBillableKg * rate.rate_per_kg_usd;
+  const perPkgFee = numPackages * rate.per_package_usd;
+  const total = freight + perPkgFee;
+  return { unitKg, totalKg, numPackages, perPkgBillable, totalBillableKg, freight, perPkgFee, total, eta: rate.eta, notes: rate.notes };
+}
+```
+
+Now I need to generate the JS. Let me build small-parcel-rates.js with:
+- IIFE that exposes window.YEATRU_SP
+- RATES_BY_COUNTRY map
+- CATEGORY_WEIGHTS map (17 entries)
+- estimateWeight(sku, mainCategory) function
+- calc() function
+
+For volumetric weight — I'll skip since we have no dimensions; this matches reality (we don't know dims).
+
+Let me write the file:
+
+现在开始创建 calculator widget，将其自动注入到每个产品页面中：
+
+现在将这两个脚本批量嵌入到所有 676 个产品页面中。我将使用 Python 在 `app.js` 引用之前插入 `<script defer>` 标签：
+
+已注入全部 676 个产品页面。请在本地进行验证，然后再推送：
+
+让我启动一个本地服务器，并在推送之前对一个产品页面进行浏览器测试：
+Now I need to start a local server so the browser can verify the calculator. Let me start a local http server pointing at /workspace, and use the browser_use agent to test.
+
+Actually wait — there are 676 product pages with similar content. Before pushing 676 file changes, I should test on a single page first using a local server. Let me start Python's http.server on /workspace.
