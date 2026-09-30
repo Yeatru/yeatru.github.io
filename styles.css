@@ -5221,3 +5221,59 @@ body .product-detail-page .contact-float .contact-float-btn{
   body .product-detail-page .detail-price-big .variation-price{font-size:1.7rem !important}
   body .product-detail-page .detail-spec-cards{grid-template-columns:1fr 1fr !important}
 }
+
+/* ================================================================
+   LEFT COLUMN — moved sections styling
+   Spec cards, variations, action row, shipping info, and desc
+   now live in .detail-left-stack (below the image gallery).
+   ================================================================ */
+
+/* Add spacing between gallery and the moved sections */
+body .product-detail-page .detail-left-stack .detail-image-col{margin-bottom:.75rem !important}
+
+/* Spec cards in left column — full width grid */
+body .product-detail-page .detail-left-stack .detail-spec-cards{
+  margin-top:0 !important;
+}
+
+/* Variations + action row in left column — grouped card */
+body .product-detail-page .detail-left-stack .variations-display,
+body .product-detail-page .detail-left-stack .detail-action-row{
+  background:#fff !important;border:1px solid #e2e8f0 !important;
+  padding:.75rem 1rem !important;
+}
+body .product-detail-page .detail-left-stack .variations-display{border-bottom:none !important;border-radius:12px 12px 0 0 !important}
+body .product-detail-page .detail-left-stack .detail-action-row{border-radius:0 0 12px 12px !important}
+
+/* Shipping info in left column */
+body .product-detail-page .detail-left-stack .detail-shipping-info{
+  background:#eff6ff !important;border:1px solid #bfdbfe !important;
+  border-radius:12px !important;padding:.75rem 1rem !important;color:#1e40af !important;
+}
+
+/* Description in left column */
+body .product-detail-page .detail-left-stack .detail-desc{
+  background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:12px !important;
+  padding:.75rem 1rem !important;color:#475569 !important;line-height:1.65 !important;font-size:.86rem !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;
+}
+
+/* Right column (detail-info) — now a compact buy box */
+body .product-detail-page .detail-info{
+  gap:.5rem !important;
+}
+
+/* Calculator card in left column */
+body .product-detail-page .detail-left-stack .sp-calc-card{
+  margin-top:.5rem !important;
+}
+
+/* Responsive: on mobile, left stack sections naturally stack below */
+@media (max-width:991.98px){
+  body .product-detail-page .detail-left-stack .detail-spec-cards{grid-template-columns:1fr 1fr 1fr !important}
+}
+@media (max-width:575.98px){
+  body .product-detail-page .detail-left-stack .detail-spec-cards{grid-template-columns:1fr 1fr !important}
+  body .product-detail-page .detail-left-stack .detail-action-row{flex-wrap:wrap !important}
+  body .product-detail-page .detail-left-stack .detail-cta-buttons{flex:1 1 100% !important;flex-wrap:nowrap !important}
+}
