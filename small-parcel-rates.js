@@ -144,43 +144,111 @@
     return out;
   })();
 
-  // Estimated per-unit shipping weight (kg) by mainCategory.
-  // Site-data.json has no per-SKU weights, so we use category defaults
-  // derived from typical parcel profiles for these 17 Yeatru main
-  // categories. Override per-SKU by setting window.YEATRU_SP_WEIGHTS[sku].
+  // Estimated per-unit shipping weight (kg) — refined to the 50 sub-categories
+  // actually used in site-data.json's `category` field. Site-data has no
+  // per-SKU weights, so these are typical single-unit parcel weights derived
+  // from the product profile of each sub-category. Override per-SKU by
+  // setting window.YEATRU_SP_WEIGHTS[sku] = 0.123 (kg).
+  var SUBCATEGORY_WEIGHTS = {
+    "Toys":                 0.30, // plushies, figures, small toys
+    "Storage & Organization": 0.60, // bins, organizers, boxes
+    "Clothing":             0.25, // shirts, dresses, single garment
+    "Shoes":                0.80, // a pair of shoes
+    "Household":            1.50, // small appliances (kettles, irons)
+    "Kitchen Storage":      0.40, // canisters, racks
+    "Home & Garden":        0.50, // decor, planters, garden tools
+    "Bags":                 0.40, // handbags, totes, purses
+    "Cleaning":             0.35, // brushes, mops, sponges
+    "Cups & Drinkware":     0.30, // bottles, tumblers, mugs
+    "Kids":                 0.30, // kids' items
+    "Kitchen Tools":        0.30, // peelers, graters, utensils
+    "Lighting":             0.40, // lamps, bulbs, fixtures
+    "Microphones/Audio":    0.50, // mics, small audio gear
+    "Other":                0.50, // default bucket
+    "Dog Supplies":         0.50, // pet toys, leashes, bowls
+    "Audio/Electronics":    0.40, // speakers, cables, dongles
+    "Fitness":              1.00, // dumbbells, resistance gear
+    "Smart Electronics":    0.35, // smart plugs, trackers
+    "Personal Care":        0.20, // shavers, trimmers, care devices
+    "Machinery":            2.00, // small machines
+    "Baby Care":            0.30, // bottles, soothers, baby gear
+    "Stationery":           0.15, // pens, notebooks
+    "Skin Care":            0.15, // creams, serums, jars
+    "Auto Repair Tools":    0.80, // wrenches, jacks, sockets
+    "Backpacks":            0.60, // student/travel backpacks
+    "Hardware":             0.50, // fittings, brackets, fasteners
+    "Hair Accessories":     0.05, // scrunchies, clips, pins
+    "Photography":          0.80, // tripods, lights, accessories
+    "Auto Accessories":     0.60, // mats, covers, trim
+    "Swimwear":             0.20, // swimsuits
+    "Audio/Video":          0.50, // adapters, small AV gear
+    "Beauty":              0.15, // makeup, palettes
+    "Locks":               0.40, // padlocks, smart locks
+    "Accessories":          0.10, // misc small accessories
+    "Fans":                1.20, // desk/stand fans
+    "Kitchen/Bath":         0.40, // faucets, fixtures
+    "Mobile Accessories":   0.10, // chargers, holders, cables
+    "Footwear":             0.80, // shoes (generic)
+    "KAP":                 1.00, // material (Kapton etc.)
+    "Screen Protectors":   0.05, // films, glass
+    "Musical Instruments": 1.50, // small instruments
+    "OFC":                 1.00, // material (OFC wire/cable)
+    "Outdoor":             0.80, // camping, hiking gear
+    "Socks":               0.05, // socks (pair)
+    "Kitchen Appliances":  2.00, // blenders, ovens, cookers
+    "Tablets":             0.50, // tablets
+    "Dry Goods":           1.00, // bulk material
+    "MSF":                 1.00, // material
+    "PET":                 1.00  // material
+  };
+
+  // Coarse fallback: 17 mainCategory-level weights (used only when the
+  // sub-category isn't in SUBCATEGORY_WEIGHTS — shouldn't happen for any
+  // catalogued SKU, but kept for safety / future categories).
   var CATEGORY_WEIGHTS = {
-    "Apparel & Footwear":   0.30, // shirts/socks/shoes ~300 g
-    "Auto Parts & Tools":   1.20, // small tools, fittings
-    "Baby & Toys":          0.40, // plushies, baby items
-    "Bags & Luggage":       0.50, // backpacks ~500 g
-    "Beauty & Personal Care": 0.20, // cosmetics ~200 g
-    "Digital Electronics":  0.35, // small electronics
-    "Hardware & Home":      0.80, // fixtures, hardware
-    "Home & Daily Living":  0.50, // mixed home goods
-    "Home Appliances":      2.50, // kettles, fans
-    "Kitchen Supplies":     0.45, // utensils, gadgets
-    "Material":             1.00, // fabric/material rolls
-    "Musical Instruments":  1.50, // small instruments
-    "Others":               0.50, // default
-    "Pet Supplies":         0.50, // pet toys/accessories
-    "Phone Accessories":    0.10, // cases/chargers
-    "Sports & Outdoor":     0.70, // small sports gear
-    "Stationery & Office":  0.25  // paper, pens
+    "Apparel & Footwear":   0.30,
+    "Auto Parts & Tools":   1.20,
+    "Baby & Toys":          0.40,
+    "Bags & Luggage":       0.50,
+    "Beauty & Personal Care": 0.20,
+    "Digital Electronics":  0.35,
+    "Hardware & Home":      0.80,
+    "Home & Daily Living":  0.50,
+    "Home Appliances":      2.50,
+    "Kitchen Supplies":     0.45,
+    "Material":             1.00,
+    "Musical Instruments":  1.50,
+    "Others":               0.50,
+    "Pet Supplies":         0.50,
+    "Phone Accessories":    0.10,
+    "Sports & Outdoor":     0.70,
+    "Stationery & Office":  0.25
   };
   var DEFAULT_UNIT_KG = 0.50;
 
   /**
    * Estimate per-unit shipping weight in kg.
-   * Priority: window.YEATRU_SP_WEIGHTS[sku] > CATEGORY_WEIGHTS[mainCategory] > default
+   * Priority: window.YEATRU_SP_WEIGHTS[sku] (real weighed data)
+   *         > SUBCATEGORY_WEIGHTS[subcategory] (50 sub-cats)
+   *         > CATEGORY_WEIGHTS[mainCategory] (17 main cats, fallback)
+   *         > DEFAULT_UNIT_KG
    */
-  function estimateUnitWeight(sku, mainCategory) {
+  function estimateUnitWeight(sku, subcategory, mainCategory) {
     if (sku && global.YEATRU_SP_WEIGHTS && global.YEATRU_SP_WEIGHTS[sku]) {
       return parseFloat(global.YEATRU_SP_WEIGHTS[sku]) || DEFAULT_UNIT_KG;
+    }
+    if (subcategory && SUBCATEGORY_WEIGHTS[subcategory]) {
+      return SUBCATEGORY_WEIGHTS[subcategory];
     }
     if (mainCategory && CATEGORY_WEIGHTS[mainCategory]) {
       return CATEGORY_WEIGHTS[mainCategory];
     }
     return DEFAULT_UNIT_KG;
+  }
+
+  /** Whether the weight used is a real weighed value (vs category estimate). */
+  function isRealWeight(sku) {
+    return !!(sku && global.YEATRU_SP_WEIGHTS && global.YEATRU_SP_WEIGHTS[sku]);
   }
 
   // Round up to next 0.5 kg, with 0.5 kg minimum (per spreadsheet rule).
@@ -192,12 +260,13 @@
   /**
    * Full small-parcel cost breakdown.
    * @param {Object} args
-   *   sku, mainCategory, qty, countryCode, dims {l,w,h} (optional, cm)
+   *   sku, subcategory, mainCategory, qty, countryCode, dims {l,w,h} (optional, cm)
    * @returns {Object|null} breakdown or null if country unknown
    */
   function calc(args) {
     args = args || {};
     var sku = args.sku || '';
+    var subcategory = args.subcategory || '';
     var mainCategory = args.mainCategory || '';
     var qty = Math.max(1, parseInt(args.qty, 10) || 1);
     var countryCode = (args.countryCode || 'US').toUpperCase();
@@ -206,7 +275,8 @@
     var rate = RATES_BY_COUNTRY[countryCode];
     if (!rate) return null;
 
-    var unitKg = estimateUnitWeight(sku, mainCategory);
+    var unitKg = estimateUnitWeight(sku, subcategory, mainCategory);
+    var weightIsReal = isRealWeight(sku);
     var actualKg = unitKg * qty;
 
     // Volumetric weight: optional, only if all three dims supplied
@@ -233,8 +303,11 @@
       countryCn:  rate.name_cn,
       continent:  rate.continent,
       sku: sku,
+      subcategory: subcategory,
+      mainCategory: mainCategory,
       qty: qty,
       unitKg: unitKg,
+      weightIsReal: weightIsReal,
       actualKg: actualKg,
       volumetricKg: volKg,
       chargeKgRaw: chargeKgRaw,
@@ -260,9 +333,11 @@
     RATES_BY_COUNTRY: RATES_BY_COUNTRY,
     COUNTRY_LIST: COUNTRY_LIST,
     CONTINENT_ORDER: CONTINENT_ORDER,
+    SUBCATEGORY_WEIGHTS: SUBCATEGORY_WEIGHTS,
     CATEGORY_WEIGHTS: CATEGORY_WEIGHTS,
     DEFAULT_UNIT_KG: DEFAULT_UNIT_KG,
     estimateUnitWeight: estimateUnitWeight,
+    isRealWeight: isRealWeight,
     roundUpHalfKg: roundUpHalfKg,
     calc: calc,
     formatUsd: formatUsd
