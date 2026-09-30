@@ -5102,3 +5102,122 @@ html, body {
 .footer-payment-icons-vertical .payment-icon .fa-paypal { color: #003087 !important; }
 .footer-payment-icons-vertical .payment-icon .fa-university { color: #2E5B4A !important; }
 .footer-payment-icons-vertical .payment-icon span { display: none !important; }
+
+/* ================================================================
+   PRODUCT DETAIL — PROFESSIONAL REDESIGN OVERRIDES (final)
+   Neutralizes the legacy amber/red treatment and enforces the
+   clean B2B wholesale visual system.
+   ================================================================ */
+
+/* Category badge — solid brand pill, not a translucent gradient */
+body .product-detail-page .detail-cat-badge{
+  background:var(--primary) !important;
+  color:#fff !important;
+  border:1px solid var(--primary) !important;
+  font-size:.72rem !important;font-weight:600 !important;
+  letter-spacing:.02em !important;text-transform:none !important;
+  padding:.3rem .85rem !important;border-radius:20px !important;
+}
+
+/* Price box — clean white card, not a yellow gradient */
+body .product-detail-page .detail-price-box{
+  background:#fff !important;
+  border:1px solid #e2e8f0 !important;
+  border-radius:12px !important;
+  padding:.85rem 1.1rem !important;margin:.5rem 0 0 !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;
+  display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:.25rem !important;
+}
+body .product-detail-page .detail-price-label{
+  color:#64748b !important;font-size:.72rem !important;font-weight:600 !important;
+  text-transform:uppercase !important;letter-spacing:.04em !important;
+}
+body .product-detail-page .detail-price-big,
+body .product-detail-page .detail-price-big .variation-price{
+  color:var(--primary-dark) !important;
+  font-size:2.1rem !important;font-weight:800 !important;
+  letter-spacing:-.02em !important;line-height:1.1 !important;
+}
+body .product-detail-page .detail-price-save{
+  color:var(--primary) !important;background:#eff6ff !important;
+  border:1px solid #bfdbfe !important;font-size:.72rem !important;font-weight:600 !important;
+  padding:.2rem .6rem !important;border-radius:999px !important;
+}
+body .product-detail-page .detail-price-save i{color:var(--primary) !important}
+
+/* Trust badges — pill style (overrides the global card radius) */
+body .product-detail-page .trust-badge{
+  border-radius:999px !important;
+  background:#f8fafc !important;border:1px solid #e2e8f0 !important;
+  box-shadow:none !important;padding:.35rem .75rem !important;
+  font-size:.76rem !important;font-weight:600 !important;color:#475569 !important;
+  width:auto !important;
+}
+body .product-detail-page .trust-badge i{color:var(--primary) !important}
+body .product-detail-page .trust-badge:hover{
+  border-color:var(--primary) !important;background:#eff6ff !important;
+  transform:translateY(-1px) !important;box-shadow:0 4px 12px -4px rgba(37,99,235,.2) !important;
+}
+
+/* Spec cards — keep as a proper card, not merged into info */
+body .product-detail-page .detail-spec-cards{
+  border:1px solid #e2e8f0 !important;border-radius:12px !important;
+  padding:.75rem !important;background:#fff !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;
+  display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:.5rem !important;
+}
+body .product-detail-page .detail-spec-cards .spec-card{
+  border:1px solid #f1f5f9 !important;background:#f8fafc !important;
+  border-radius:10px !important;padding:.5rem !important;box-shadow:none !important;
+}
+body .product-detail-page .detail-spec-cards .spec-card:hover{
+  border-color:var(--primary) !important;background:#eff6ff !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Remove the legacy order-based reordering — DOM order is now correct */
+body .product-detail-page .detail-info > *{order:0 !important}
+
+/* Variations + action row grouped card look */
+body .product-detail-page .variations-display,
+body .product-detail-page .detail-action-row{
+  background:#fff !important;border:1px solid #e2e8f0 !important;
+  padding:.75rem 1rem !important;
+}
+body .product-detail-page .variations-display{border-bottom:none !important;border-radius:12px 12px 0 0 !important}
+body .product-detail-page .detail-action-row{border-radius:0 0 12px 12px !important}
+
+/* Shipping info — brand-blue tint */
+body .product-detail-page .detail-shipping-info{
+  background:#eff6ff !important;border:1px solid #bfdbfe !important;
+  border-radius:12px !important;padding:.75rem 1rem !important;
+  color:#1e40af !important;
+}
+body .product-detail-page .detail-shipping-info i{color:var(--primary) !important}
+
+/* Description card */
+body .product-detail-page .detail-desc{
+  background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:12px !important;
+  padding:.75rem 1rem !important;color:#475569 !important;line-height:1.65 !important;font-size:.86rem !important;
+  box-shadow:0 1px 3px rgba(15,23,42,.06) !important;
+}
+
+/* CTA buttons — keep the professional gradients (already good) but ensure no yellow */
+body .product-detail-page .detail-buy-btn{
+  background:linear-gradient(135deg,#4338ca 0%,#4f46e5 50%,#6366f1 100%) !important;
+}
+body .product-detail-page .detail-wa-btn{
+  background:linear-gradient(135deg,#16a34a 0%,#22c55e 50%,#16a34a 100%) !important;
+}
+
+/* Floating contact buttons — compact */
+body .product-detail-page .contact-float .contact-float-btn{
+  width:46px !important;height:46px !important;font-size:1.1rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width:575.98px){
+  body .product-detail-page .detail-price-big,
+  body .product-detail-page .detail-price-big .variation-price{font-size:1.7rem !important}
+  body .product-detail-page .detail-spec-cards{grid-template-columns:1fr 1fr !important}
+}

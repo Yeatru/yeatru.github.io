@@ -26,7 +26,7 @@
   var SP = global.YEATRU_SP;
 
   function init() {
-    var host = document.querySelector('.detail-spec-cards');
+    var host = document.querySelector('.detail-info .detail-shipping-info') || document.querySelector('.detail-spec-cards');
     if (!host) return; // not a product detail page
 
     // Pull SKU + subcategory (JSON-LD `category`) + mainCategory (parsed
