@@ -5392,3 +5392,46 @@ body .product-detail-page .detail-left-stack .detail-spec-cards .spec-card{
     aspect-ratio:1/1 !important;max-height:400px !important;
   }
 }
+
+/* ================================================================
+   Move variations + action-row to left column (below main image)
+   ================================================================ */
+
+/* Variations + action row now live in left column below the image */
+body .product-detail-page .detail-left-stack .variations-display,
+body .product-detail-page .detail-left-stack .detail-action-row{
+  background:#fff !important;border:1px solid #e2e8f0 !important;
+  padding:.75rem 1rem !important;
+}
+body .product-detail-page .detail-left-stack .variations-display{
+  border-bottom:none !important;border-radius:12px 12px 0 0 !important;
+}
+body .product-detail-page .detail-left-stack .detail-action-row{
+  border-radius:0 0 12px 12px !important;
+}
+
+/* Right column shipping info + calculator spacing */
+body .product-detail-page .detail-info .detail-shipping-info{
+  background:#eff6ff !important;border:1px solid #bfdbfe !important;
+  border-radius:12px !important;padding:.75rem 1rem !important;color:#1e40af !important;
+}
+body .product-detail-page .detail-info .sp-calc-card{
+  margin-top:0 !important;
+}
+
+/* Mobile: action-row wrap in left column */
+@media (max-width:575.98px){
+  body .product-detail-page .detail-left-stack .detail-action-row{
+    flex-wrap:wrap !important;
+  }
+  body .product-detail-page .detail-left-stack .detail-qty{
+    flex:1 1 100% !important;justify-content:space-between !important;
+  }
+  body .product-detail-page .detail-left-stack .detail-cta-buttons{
+    flex:1 1 100% !important;flex-wrap:nowrap !important;
+  }
+  body .product-detail-page .detail-left-stack .detail-buy-btn,
+  body .product-detail-page .detail-left-stack .detail-wa-btn{
+    font-size:.78rem !important;padding:.5rem .6rem !important;
+  }
+}
