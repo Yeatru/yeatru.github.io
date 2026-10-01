@@ -17903,11 +17903,10 @@ document.addEventListener('click', function(e) {
   const sentinel = document.getElementById('apLoadSentinel');
 
   // Reorder DOM + apply visibility class. Cards stay in DOM (SEO/JSON-LD safe).
+  // Called only when filters/sort change (needs reordering).
   function renderList() {
     const total = lastFiltered.length;
     const showCount = Math.min(visibleCount, total);
-    // Clear once: filtered-out cards are detached (matches prior behavior).
-    // `cards` array still holds live references so we can re-attach.
     grid.innerHTML = '';
     const frag = document.createDocumentFragment();
     lastFiltered.forEach((c, i) => {
@@ -17915,6 +17914,11 @@ document.addEventListener('click', function(e) {
       frag.appendChild(c);
     });
     grid.appendChild(frag);
+    updateLoadMoreBar(total, showCount);
+  }
+
+  // Update load-more bar text + visibility.
+  function updateLoadMoreBar(total, showCount) {
     const remaining = total - showCount;
     if (remaining > 0) {
       loadMoreBar.style.display = '';
@@ -17925,14 +17929,19 @@ document.addEventListener('click', function(e) {
     }
   }
 
+  // Optimized load-more: unhide the next batch without re-appending all cards.
+  // This avoids O(n) DOM churn on every scroll-triggered load.
   function loadMore(n) {
     if (visibleCount >= lastFiltered.length) return;
-    // Show spinner briefly while next batch hydrates
     loadMoreBtn.innerHTML = '<span class="ap-loadmore-spinner"></span>Loading...';
-    // Defer to next tick so spinner paints before heavy DOM op
     setTimeout(() => {
+      const prevCount = visibleCount;
       visibleCount = Math.min(visibleCount + n, lastFiltered.length);
-      renderList();
+      // Unhide only the newly-visible cards (they are already in DOM in correct order)
+      for (let i = prevCount; i < visibleCount && i < lastFiltered.length; i++) {
+        lastFiltered[i].classList.remove('pc-card-hidden');
+      }
+      updateLoadMoreBar(lastFiltered.length, visibleCount);
     }, 30);
   }
 
