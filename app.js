@@ -1122,10 +1122,11 @@ function initVariantSelection() {
                 if (priceUsd !== null && priceUsd !== '') {
                     const price = parseFloat(priceUsd);
                     if (isFinite(price)) {
+                        const priceHtml = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
                         const display = document.getElementById('detailPriceDisplay');
-                        if (display) {
-                            display.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
-                        }
+                        if (display) display.innerHTML = priceHtml;
+                        const displayLeft = document.getElementById('detailPriceLeft');
+                        if (displayLeft) displayLeft.innerHTML = priceHtml;
                     }
                 }
             };
@@ -1153,9 +1154,10 @@ function initVariantSelection() {
                 const price = parseFloat(priceUsd);
                 if (isFinite(price)) {
                     lastClickedPrice = price;
-                    if (priceDisplayEl) {
-                        priceDisplayEl.innerHTML = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
-                    }
+                    const priceHtml = '<span class="variation-price detail-price-big" data-usd-price="' + price.toFixed(6) + '">' + formatPrice(price) + '</span>';
+                    if (priceDisplayEl) priceDisplayEl.innerHTML = priceHtml;
+                    const displayLeft = document.getElementById('detailPriceLeft');
+                    if (displayLeft) displayLeft.innerHTML = priceHtml;
                 }
             }
         };
