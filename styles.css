@@ -5516,3 +5516,44 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons .btn{
     font-size:1.5rem !important;
   }
 }
+
+/* ================================================================
+   Action row: Quantity + CTA buttons on same line
+   Price stays on its own row above; qty and buttons share one row.
+   ================================================================ */
+body .product-detail-page .detail-left-stack .detail-action-row{
+  display:flex !important;flex-direction:row !important;flex-wrap:wrap !important;
+  align-items:center !important;gap:.6rem !important;
+}
+/* Price takes full width on its own row */
+body .product-detail-page .detail-left-stack .detail-price-inline{
+  flex:1 1 100% !important;margin-bottom:0 !important;padding-bottom:.5rem !important;
+}
+/* Quantity: natural width, left side */
+body .product-detail-page .detail-left-stack .detail-qty{
+  flex:0 0 auto !important;
+}
+/* CTA buttons: fill remaining space, right side */
+body .product-detail-page .detail-left-stack .detail-cta-buttons{
+  flex:1 1 auto !important;display:flex !important;gap:.5rem !important;min-width:0 !important;
+}
+body .product-detail-page .detail-left-stack .detail-cta-buttons .btn{
+  flex:1 1 0 !important;min-width:0 !important;white-space:nowrap !important;
+  overflow:hidden !important;text-overflow:ellipsis !important;
+}
+
+/* Tablet: keep same-line layout but allow wrap if too narrow */
+@media (max-width:991.98px) and (min-width:576px){
+  body .product-detail-page .detail-left-stack .detail-action-row{flex-wrap:wrap !important}
+  body .product-detail-page .detail-left-stack .detail-cta-buttons{flex:1 1 100% !important}
+}
+
+/* Mobile: stack qty above buttons for usability */
+@media (max-width:575.98px){
+  body .product-detail-page .detail-left-stack .detail-qty{
+    flex:1 1 100% !important;justify-content:space-between !important;
+  }
+  body .product-detail-page .detail-left-stack .detail-cta-buttons{
+    flex:1 1 100% !important;flex-direction:row !important;
+  }
+}
