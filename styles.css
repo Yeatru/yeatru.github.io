@@ -5557,3 +5557,8 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons .btn{
     flex:1 1 100% !important;flex-direction:row !important;
   }
 }
+
+/* Force CTA buttons into a row in left column action area */
+body .product-detail-page .detail-left-stack .detail-cta-buttons{
+  flex-direction:row !important;flex-wrap:nowrap !important;
+}
