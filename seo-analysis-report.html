@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO分析与优化建议报告 | Yeatru.com</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.65;
+    padding: 24px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; background:#fff; padding: 40px 48px; border-radius: 12px; box-shadow: 0 4px 24px rgba(15,23,42,.08); }
+  h1 { font-size: 2rem; color: #0f172a; margin-bottom: 8px; border-bottom: 3px solid #1665a9; padding-bottom: 12px; }
+  .subtitle { color:#64748b; font-size:.95rem; margin-bottom: 32px; }
+  h2 { font-size: 1.4rem; color: #1665a9; margin: 32px 0 16px; padding-left: 12px; border-left: 4px solid #1665a9; }
+  h3 { font-size: 1.15rem; color: #1e293b; margin: 20px 0 10px; }
+  h4 { font-size: 1rem; color: #1665a9; margin: 14px 0 6px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 8px 0 16px 24px; }
+  li { margin-bottom: 6px; }
+  code { background: #f1f5f9; color: #be123c; padding: 2px 6px; border-radius: 4px; font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; overflow-x:auto; margin: 12px 0; font-size: .85rem; }
+  pre code { background: transparent; color: inherit; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .92rem; }
+  th, td { border: 1px solid #e2e8f0; padding: 10px 12px; text-align: left; }
+  th { background: #1665a9; color: #fff; font-weight: 600; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+  .card { padding: 20px; border-radius: 10px; color:#fff; }
+  .card.clicks { background: linear-gradient(135deg, #1a73e8, #1665a9); }
+  .card.imp { background: linear-gradient(135deg, #9334e6, #6d28d9); }
+  .card.ctr { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+  .card.pos { background: linear-gradient(135deg, #ea580c, #c2410c); }
+  .card .label { font-size: .8rem; opacity:.85; text-transform: uppercase; letter-spacing:.05em; }
+  .card .value { font-size: 2.2rem; font-weight: 700; margin-top: 6px; }
+  .card .note { font-size:.78rem; opacity:.8; margin-top:6px; }
+  .alert { padding: 14px 18px; border-radius: 8px; margin: 16px 0; border-left: 4px solid; }
+  .alert.crit { background: #fef2f2; border-color:#dc2626; color:#7f1d1d; }
+  .alert.warn { background: #fffbeb; border-color:#d97706; color:#78350f; }
+  .alert.ok { background: #ecfdf5; border-color:#10b981; color:#064e3b; }
+  .alert.info { background: #eff6ff; border-color:#3b82f6; color:#1e3a8a; }
+  .alert strong { font-weight: 700; }
+  .trend-down { color: #dc2626; font-weight: 600; }
+  .trend-up { color: #059669; font-weight: 600; }
+  .tag { display:inline-block; padding:3px 10px; border-radius: 12px; font-size:.75rem; font-weight:600; margin-right:6px; }
+  .tag.high { background:#fee2e2; color:#b91c1c; }
+  .tag.med { background:#fef3c7; color:#92400e; }
+  .tag.low { background:#dbeafe; color:#1e40af; }
+  .pillar { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px 20px; margin:14px 0; }
+  .pillar h4 { margin-top: 0; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e2e8f0; color:#64748b; font-size:.85rem; }
+  .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .grid-2 .item { background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:6px; }
+  .grid-2 .item .label { color:#64748b; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+  .grid-2 .item .val { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.88rem; color:#1e293b; word-break:break-word; }
+  .grid-2 .item .val.bad { color:#dc2626; }
+  .grid-2 .item .val.good { color:#059669; }
+  @media (max-width: 768px) {
+    .container { padding: 24px 20px; }
+    h1 { font-size: 1.5rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Yeatru.com SEO 分析与优化建议报告</h1>
+<p class="subtitle">基于 Google Search Console 数据 + 网站源码审查 | 生成日期：2026-10-07</p>
+
+<!-- ============ 第一部分：性能数据概览 ============ -->
+<h2>一、Search Console 性能数据汇总</h2>
+
+<p>您上传的三张截图分别覆盖 24 小时 / 7 天 / 28 天三个时间窗口，将数据并排对比后，可以清晰看到 <strong>排名持续下滑、CTR 偏低</strong> 两条主线问题。</p>
+
+<div class="summary-cards">
+  <div class="card clicks">
+    <div class="label">28天 总点击</div>
+    <div class="value">31</div>
+    <div class="note">7天: 5 ▼ &nbsp;|&nbsp; 24h: 0 ▼</div>
+  </div>
+  <div class="card imp">
+    <div class="label">28天 展示</div>
+    <div class="value">3.88K</div>
+    <div class="note">7天: 714 &nbsp;|&nbsp; 24h: 136</div>
+  </div>
+  <div class="card ctr">
+    <div class="label">CTR</div>
+    <div class="value">0.8%</div>
+    <div class="note">行业基准 1.5–3%（位置11–20）</div>
+  </div>
+  <div class="card pos">
+    <div class="label">平均排名</div>
+    <div class="value">16.2 → 25.9</div>
+    <div class="note">28天→24h <span class="trend-down">▼ 持续下滑</span></div>
+  </div>
+</div>
+
+<div class="alert crit">
+  <strong>核心问题 1：排名位置持续恶化。</strong> 28 天平均位置 16.2（约 Google 第 2 页），7 天降至 22.1（第 3 页顶），24 小时已掉到 25.9。这意味着即使展示量保持，点击会进一步被压缩。
+</div>
+
+<div class="alert warn">
+  <strong>核心问题 2：CTR 仅 0.7–0.8%。</strong> 当排名位于 11–20（第 2 页）时，行业平均 CTR 通常在 1.5%–3% 之间；0.8% 说明您的 <code>&lt;title&gt;</code> 与 <code>meta description</code> 在 SERP 中吸引力不足，或者与查询意图不匹配。
+</div>
+
+<h3>可见 Top Queries（来自截图数据表）</h3>
+<table>
+  <tr><th>查询词</th><th>展示</th><th>点击</th><th>CTR</th><th>问题诊断</th></tr>
+  <tr><td>china sourcing agent</td><td>6</td><td>0</td><td>0%</td><td>展示基数极低，可能排名靠后</td></tr>
+  <tr><td>china procurement agent</td><td>11</td><td>0</td><td>0%</td><td>冷门变体词，主页未直接命中意图</td></tr>
+  <tr><td>china sourcing for amazon sellers</td><td>10</td><td>0</td><td>0%</td><td>有专属页 <code>sourcing-for-amazon-fba-usa.html</code>，但 CTR=0</td></tr>
+  <tr><td>dropshipping sourcing agent</td><td>22</td><td>1</td><td>4.5%</td><td>唯一有点击的查询，CTR 尚可</td></tr>
+  <tr><td>dropshipping agent</td><td>44</td><td>0</td><td>0%</td><td>展示最高但点击为 0，需匹配的落地页</td></tr>
+</table>
+
+<!-- ============ 第二部分：诊断 ============ -->
+<h2>二、源码审查发现的问题</h2>
+
+<h3>问题 1：Title 标签存在"品牌位浪费"现象</h3>
+<div class="grid-2">
+  <div class="item">
+    <div class="label">当前 (wholesale-bulk-supplier-china.html)</div>
+    <div class="val bad">China Wholesale Supplier &amp; Bulk Trading Co | Yeatru</div>
+  </div>
+  <div class="item">
+    <div class="label">问题</div>
+    <div class="val">" | Yeatru" 占用 9 字符品牌位，但主关键词 "Yiwu Sourcing Agent" 未前置；缺数字 USP（675+/DDP）；长度 56 字符尚可但密度不足</div>
+  </div>
+</div>
+
+<h3>问题 2：Description 被截断 / 信息密度低</h3>
+<div class="grid-2">
+  <div class="item">
+    <div class="label">blog-china-sourcing-agent-guide.html</div>
+    <div class="val bad">Complete China sourcing agent guide 2026: how to find vet and work with sourcing agents. Fee structures services red flags and contract negotiation tips...</div>
+  </div>
+  <div class="item">
+    <div class="label">问题</div>
+    <div class="val">末尾 <code>...</code> 是字面省略号，不是 Google 截断；用户在 SERP 看到"tips..."会降低点击欲望，应为完整句+USP+CTA</div>
+  </div>
+</div>
+
+<h3>问题 3：H1 与 Title 关键词布局不一致</h3>
+<ul>
+  <li><code>sourcing-agent-for-tiktok-shop-seller.html</code> H1 是 "Sourcing Agent for TikTok Shop Sellers"，Title 也包含但顺序可优化</li>
+  <li>多个 blog 页面 H1 用 "article-title" class，主关键词未在 H1 首位</li>
+  <li>产品页 H1 缺少主关键词，如 <code>Microphone Professional Studio</code> 应改为 <code>Wholesale Microphone Professional Studio - Yiwu Factory Direct</code></li>
+</ul>
+
+<h3>问题 4：Meta Keywords 仍在使用（无效但浪费）</h3>
+<p>Google 自 2009 年起完全忽略 <code>&lt;meta name="keywords"&gt;</code>，但您的页面仍维护这一标签。建议保留但不再花时间优化（用于 Bing 弱权重评估可以，但优先级最低）。</p>
+
+<h3>问题 5：缺乏 FAQ / HowTo 结构化数据</h3>
+<p>对于 <code>blog-what-is-sourcing-agent.html</code>、<code>blog-how-to-choose-sourcing-agent.html</code> 这类 Q&A 性质的内容，添加 FAQPage schema 可在 SERP 占据 rich snippet 位置，显著提升 CTR。</p>
+
+<h3>问题 6：URL 结构含连字符过长（轻微）</h3>
+<p>如 <code>wholesale-bulk-supplier-china.html</code>、<code>sourcing-agent-for-tiktok-shop-seller.html</code>。已收录的页面<strong>不要</strong>改 URL（会丢权重），仅在未来新建页面时缩短。</p>
+
+<!-- ============ 第三部分：优化建议 ============ -->
+<h2>三、分优先级优化建议</h2>
+
+<h3><span class="tag high">P0</span> 高优先级 — Title / Description 重写（影响 CTR 立竿见影）</h3>
+
+<p>Google SERP 显示 Title ≤ 60 字符、Description ≤ 155 字符。优化时<strong>主关键词前置 + 加入数字 USP + 包含 CTA/情绪词</strong>。</p>
+
+<h4>建议改写清单（针对截图中的核心查询）</h4>
+<table>
+  <tr><th>页面</th><th>当前 Title</th><th>建议 Title</th></tr>
+  <tr>
+    <td>wholesale-bulk-supplier-china.html</td>
+    <td>China Wholesale Supplier &amp; Bulk Trading Co | Yeatru</td>
+    <td><strong>Yiwu China Wholesale Supplier &amp; Sourcing Agent | 675+ SKUs DDP</strong></td>
+  </tr>
+  <tr>
+    <td>index.html (主页)</td>
+    <td>Yeatru: China Sourcing Agent — Cut Costs 30%, MOQ from 50 pcs</td>
+    <td><strong>China Sourcing Agent Yiwu | Cut Costs 30% &amp; MOQ 50 pcs | Yeatru</strong>（已较好，可暂不动）</td>
+  </tr>
+  <tr>
+    <td>sourcing-for-amazon-fba-usa.html</td>
+    <td>(Title 未显示在截图中)</td>
+    <td><strong>Amazon FBA Sourcing Agent China → USA | DDP LAX/JFK 7-15d</strong></td>
+  </tr>
+  <tr>
+    <td>sourcing-agent-for-tiktok-shop-seller.html</td>
+    <td>(未直接查询)</td>
+    <td><strong>TikTok Shop Sourcing Agent China | Viral Products DDP US</strong></td>
+  </tr>
+</table>
+
+<h4>Description 改写示例</h4>
+<div class="grid-2">
+  <div class="item">
+    <div class="label">wholesale-bulk-supplier-china.html 当前</div>
+    <div class="val">Licensed Yiwu China wholesale supplier &amp; bulk trading company. 675+ factory-verified SKUs across 59 categories. DDP shipping QC OEM available. Free quote.</div>
+  </div>
+  <div class="item">
+    <div class="label">建议改写</div>
+    <div class="val good">Licensed Yiwu wholesale supplier &amp; sourcing agent. 675+ verified factories, 59 categories, low MOQ from 50 pcs. DDP shipping to 80+ countries, AQL QC, OEM/ODM. Get a free quote in 24h.</div>
+  </div>
+</div>
+
+<h3><span class="tag high">P0</span> 高优先级 — 为 "dropshipping agent" 创建/优化落地页</h3>
+<p>该词展示量 44 最高但 0 点击，说明：</p>
+<ol>
+  <li>当前页面 Title 中 dropshipping 词频不足，SERP 中未能吸引点击；</li>
+  <li>或现有页面是泛主页，意图不匹配。</li>
+</ol>
+<p>建议：检查 <code>blog-sourcing-agent-vs-dropshipping.html</code> 的 Title/H1，确保包含 "Dropshipping Agent" 关键词；或新建 <code>dropshipping-agent-china.html</code> 落地页，内容针对 dropship 卖家痛点（无库存、快速发货、TikTok Shop 集成）。</p>
+
+<h3><span class="tag med">P1</span> 中优先级 — 添加 FAQ 结构化数据</h3>
+
+<p>对以下 Q&A 型博客添加 FAQPage JSON-LD schema：</p>
+<ul>
+  <li><code>blog-what-is-sourcing-agent.html</code></li>
+  <li><code>blog-how-to-choose-sourcing-agent.html</code></li>
+  <li><code>blog-how-much-sourcing-agents-charge.html</code></li>
+  <li><code>blog-sourcing-agent-vs-trading-company.html</code></li>
+</ul>
+
+<h4>FAQ Schema 模板示例</h4>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a China sourcing agent do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A China sourcing agent identifies vetted factories, negotiates pricing, manages samples, performs AQL QC inspections, and arranges DDP shipping. Typical fees range 3-8%."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+<h3><span class="tag med">P1</span> 中优先级 — 内链锚文本优化</h3>
+<p>当前页脚与相关链接中锚文本多用 "Learn more" / "Read more"，浪费关键词传递。建议锚文本明确包含目标关键词，例如：</p>
+<ul>
+  <li>❌ <code>&lt;a href="blog-what-is-sourcing-agent.html"&gt;Learn more&lt;/a&gt;</code></li>
+  <li>✅ <code>&lt;a href="blog-what-is-sourcing-agent.html"&gt;What is a China sourcing agent?&lt;/a&gt;</code></li>
+</ul>
+
+<h3><span class="tag med">P1</span> 中优先级 — 排名下滑根因排查</h3>
+<div class="alert info">
+  <strong>排查清单：</strong>
+  <ol style="margin-bottom:0">
+    <li>查看 GSC <em>Coverage</em> 报告，确认是否有页面被索引排除</li>
+    <li>检查 <code>robots.txt</code> / <code>_headers</code> 是否意外屏蔽了重要页面</li>
+    <li>使用 <a href="https://search.google.com/search-console">URL Inspection</a> 工具抽检核心页面是否仍正常索引</li>
+    <li>9/30–10/2 期间是否进行过大规模改动（如批量替换 title、canonical 错误）？查看 git log 比对时间点</li>
+    <li>是否有 Google Core Update 临近？参考 <a href="https://search.google.com/search-core-updates">Google Search Status Dashboard</a></li>
+  </ol>
+</div>
+
+<h3><span class="tag low">P2</span> 低优先级 — 长期策略</h3>
+<ul>
+  <li><strong>内容深度</strong>：现有 100+ 博客已铺得广，下一步应在 "china sourcing agent" 主话题下做<strong>支柱页+集群</strong>（Pillar + Cluster）模型，把 <code>blog-china-sourcing-agent-guide.html</code> 升级为 3000+ 字支柱页，内链回链所有子话题</li>
+  <li><strong>外链</strong>：当前显然缺外链支撑（位置 16+ 暗示权重不足）。考虑在 Reddit r/AmazonSeller、r/dropship 自然参与，发布真实案例（如 "How I sourced 500 units from Yiwu"）</li>
+  <li><strong>E-E-A-T</strong>：在 About 页加入团队照片、营业执照、Yiwu 实地办公室照片，强化 Experience/Expertise 信号</li>
+  <li><strong>多语言 hreflang</strong>：截图显示德国/中东/英国市场有专属页，确认 hreflang 标签配置正确（当前 wholesale 页 hreflang 仅 en + x-default）</li>
+</ul>
+
+<!-- ============ 第四部分：行动计划 ============ -->
+<h2>四、30 天行动计划</h2>
+
+<table>
+  <tr><th>阶段</th><th>动作</th><th>预期影响</th></tr>
+  <tr><td>第 1 周</td><td>重写 Top 10 高展示页面的 Title + Description（按上表）；修复 description 末尾字面 <code>...</code></td><td>CTR +0.5–1%</td></tr>
+  <tr><td>第 1 周</td><td>提交 URL 到 IndexNow（已有 <code>indexnow_submit.py</code>）加速重新抓取</td><td>3–7 天内重新索引</td></tr>
+  <tr><td>第 2 周</td><td>为 4 个 Q&A 博客添加 FAQPage schema</td><td>SERP rich snippet，CTR +1–2%</td></tr>
+  <tr><td>第 2 周</td><td>排查 9/30–10/2 排名下滑根因（git log + GSC Coverage）</td><td>止损</td></tr>
+  <tr><td>第 3 周</td><td>新建 / 优化 <code>dropshipping-agent-china.html</code>，针对 44 展示 0 点击词</td><td>占稳第 2 页 → 推上第 1 页</td></tr>
+  <tr><td>第 3 周</td><td>批量修正内链锚文本为关键词锚文本</td><td>主题相关性提升</td></tr>
+  <tr><td>第 4 周</td><td>启动 pillar 页升级：把 <code>blog-china-sourcing-agent-guide.html</code> 扩展到 3000+ 字</td><td>主词排名爬升</td></tr>
+  <tr><td>第 4 周</td><td>About 页加 E-E-A-T 元素（团队照、执照）</td><td>长期权重信号</td></tr>
+</table>
+
+<h2>五、量化目标</h2>
+<div class="grid-2">
+  <div class="item">
+    <div class="label">当前 (28天)</div>
+    <div class="val bad">31 点击 / 0.8% CTR / 位置 16.2</div>
+  </div>
+  <div class="item">
+    <div class="label">30 天目标</div>
+    <div class="val good">80–120 点击 / 1.8–2.2% CTR / 位置 ≤12</div>
+  </div>
+</div>
+
+<h2>六、备注与限制</h2>
+<ul>
+  <li>截图只显示了部分 Top queries（GSC 默认显示前 1000 行），建议导出完整 CSV 做关键词分组分析</li>
+  <li>排名波动可能受 Google 9 月 Core Update 影响，需结合 Search Status Dashboard 验证</li>
+  <li>本报告未访问真实 SERP（如竞品 title 对比），建议用 Ahrefs/Semrush 的 SERP Overview 查看实际竞品写法</li>
+</ul>
+
+<div class="footer">
+  报告生成于 2026-10-07 | 基于 3 张 GSC 截图 + 网站源码审查 | 建议每月复盘一次数据
+</div>
+
+</div>
+</body>
+</html>
