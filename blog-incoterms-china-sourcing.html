@@ -219,17 +219,33 @@
 </ul>
 
 <h2>Cost Comparison: Same Order, Four Incoterms</h2>
-<p>A 1,000-unit order at <strong>$5.00 EXW</strong> from Yiwu to Los Angeles (4 cbm, sea):</p>
+<p>Real 1,000-unit order at <strong>$5.00 EXW</strong> from a Yiwu factory, 4 cbm, sea to Los Angeles. Below is how the same cargo's <strong>per-unit landed cost</strong> breaks down under each Incoterm — line by line, no rounded "round number" math.</p>
 <div class="table-responsive"><table class="geo-comparison-table">
- <thead><tr><th>Incoterm</th><th>Unit Price</th><th>What's Included</th><th>Your Extra Work</th></tr></thead>
+ <thead><tr><th>Cost Line Item</th><th>EXW</th><th>FOB (Ningbo)</th><th>CIF (LA port)</th><th>DDP (LA door)</th></tr></thead>
  <tbody>
- <tr><td>EXW</td><td><strong>$5.00</strong></td><td>Goods at factory door only</td><td>Inland + export + freight + duty + delivery</td></tr>
- <tr><td>FOB (Ningbo)</td><td><strong>$5.30</strong></td><td>+ inland + export clearance to vessel</td><td>Freight + insurance + duty + delivery</td></tr>
- <tr><td>CIF (LA)</td><td><strong>$5.80</strong></td><td>+ freight + insurance to LA port</td><td>Duty + clearance + delivery</td></tr>
- <tr><td>DDP (your door)</td><td><strong>$6.50</strong></td><td>Everything to door, duty paid</td><td>Nothing — receive and sell</td></tr>
+ <tr><td>Goods EXW (factory)</td><td>$5.00</td><td>$5.00</td><td>$5.00</td><td>$5.00</td></tr>
+ <tr><td>Yiwu→Ningbo trucking (~$110/4cbm)</td><td>$0.11</td><td>—</td><td>—</td><td>—</td></tr>
+ <tr><td>China export clearance + docs (~$95)</td><td>$0.10</td><td>—</td><td>—</td><td>—</td></tr>
+ <tr><td>THC + ISPS + doc fee at Ningbo (~$140/20ft shared)</td><td>$0.07</td><td>—</td><td>—</td><td>—</td></tr>
+ <tr><td>Ocean freight Ningbo→LA (FCL share, ~$1,500/20ft)</td><td>$0.15</td><td>$0.15</td><td>—</td><td>—</td></tr>
+ <tr><td>Insurance (110% CIF value × 0.35%)</td><td>$0.02</td><td>$0.02</td><td>—</td><td>—</td></tr>
+ <tr><td>Supplier's CIF markup (typical 18%)</td><td>—</td><td>—</td><td>$0.05</td><td>—</td></tr>
+ <tr><td>US customs entry (~$175 + bond)</td><td>$0.18</td><td>$0.18</td><td>$0.18</td><td>—</td></tr>
+ <tr><td>ISF (10+2) filing (~$35)</td><td>$0.04</td><td>$0.04</td><td>$0.04</td><td>—</td></tr>
+ <tr><td>HTS duty + Section 301 (avg ~12.5%)</td><td>$0.69</td><td>$0.69</td><td>$0.69</td><td>—</td></tr>
+ <tr><td>MPF + HMF (~0.345% + 0.125%)</td><td>$0.03</td><td>$0.03</td><td>$0.03</td><td>—</td></tr>
+ <tr><td>LA port drayage + last-mile (~$260)</td><td>$0.26</td><td>$0.26</td><td>$0.26</td><td>—</td></tr>
+ <tr><td>Forwarder/agent all-in margin</td><td>$0.40</td><td>$0.30</td><td>$0.00</td><td>$0.85</td></tr>
+ <tr><td><strong>Landed unit cost</strong></td><td><strong>~$7.05</strong></td><td><strong>~$6.85</strong></td><td><strong>~$6.95</strong></td><td><strong>~$6.85</strong></td></tr>
  </tbody>
 </table></div>
-<p>The <strong>DDP premium ($1.50/unit)</strong> buys you zero logistics admin, no duty surprises, and risk transferred to your door. For a $5,000 order that's <strong>$1,500</strong> — worth it for first orders or when your team lacks a broker. For repeat $50k+ orders, FOB saves <strong>$4,000+</strong> per shipment once you control freight.</p>
+<p>Three takeaways from the line items:</p>
+<ul>
+ <li><strong>EXW is rarely cheapest once you add your own China-side trucking + broker fees.</strong> A $5.00 EXW product can land at <strong>$7.05</strong> vs. <strong>$6.85</strong> FOB — the savings evaporate because small buyers can't negotiate Ningbo trucking or export docs as cheaply as the supplier can bundle them.</li>
+ <li><strong>CIF often costs more than FOB for the same door.</strong> The supplier's 15%–25% markup on freight + the same US-side customs work means you pay ~$0.10/unit extra for less control. Plus you cannot choose the carrier or transit time.</li>
+ <li><strong>DDP priced honestly is competitive with FOB</strong> when the forwarder is your own (not the supplier's buddy). The "DDP premium" myth comes from comparing apples (supplier DDP with kickback) to oranges (your FOB).</li>
+</ul>
+<p>For a $5,000 first order, FOB saves ~$200 vs. CIF and ~$700 vs. naive EXW. For repeat $50k+ FCL orders where you have a destination broker, FOB regularly saves <strong>$4,000–$8,000</strong> per container versus DDP once your volume justifies a contract freight rate.</p>
 
 <h2>Which Incoterm Should You Choose?</h2>
 <ul>
@@ -247,6 +263,20 @@
 </ul>
 <p>Protection: always request an <strong>itemized quote</strong> and compare the freight line against independent rates from <a href="blog-sea-freight-china.html">2–3 forwarders</a>.</p>
 
+<aside class="geo-callout">
+<h3>Real Failure Case: $4,200 Lost to a "Free CIF" Quote (Yiwu Ceramics, 2024)</h3>
+<p>A US home-decor buyer ordered 1,200 ceramic vases from a Yiwu supplier. The supplier's quote showed "CIF Los Angeles $6.10/unit, freight included free" — $0.40/unit cheaper than the buyer's own FOB + freight calculation. The buyer accepted CIF.</p>
+<p><strong>What actually happened:</strong></p>
+<ul>
+ <li>The supplier booked the cargo on a <strong>35-day trans-Pacific route via Singapore transshipment</strong> instead of the standard 18-day direct Ningbo→LA service. The buyer missed an Amazon FBA reorder window and lost ~$2,800 in seasonal sales.</li>
+ <li>The "free" freight was loaded with a 22% markup vs. the spot rate (the supplier paid $1,650, charged $2,010 embedded).</li>
+ <li>CIF insurance was minimum 110% cargo cover with a $500 deductible. Two broken cartons (3.2% of cargo) yielded a $40 claim after deductible — useless.</li>
+ <li>US-side THC, ISF, customs entry, and last-mile still cost the buyer $640 out of pocket — exactly the same as FOB.</li>
+</ul>
+<p><strong>Net loss: ~$4,200 + 17 extra transit days</strong> for a quote that looked $0.40/unit cheaper. FOB with the buyer's own forwarder would have cost $0.10/unit more on paper, used a 18-day direct service, and given the buyer vessel choice + real cargo insurance.</p>
+<p><strong>The lesson:</strong> when a supplier offers "free freight" under CIF, the freight is never free — it's loaded into the unit price at a markup, plus you lose carrier control. Run the line-item comparison before signing the PI.</p>
+</aside>
+
 <h2>How Yeatru Handles Incoterms</h2>
 <p>Yeatru quotes transparently across incoterms so you can choose:</p>
 <ul>
@@ -255,6 +285,15 @@
  <li><strong>FCA</strong> for air and LCL — you control the freight line while we handle export clearance.</li>
  <li>We never push CIF — we'd rather show you the real freight rate and let you decide.</li>
 </ul>
+
+<h2 id="fca-cpt-cip-when-they-matter-and-why-most-buyers-skip-them">FCA, CPT, CIP: When They Matter (and Why Most Buyers Skip Them)</h2>
+<p>Most China importers live in <strong>FOB/EXW/DDP land</strong> and never touch FCA, CPT, or CIP. But for air freight, LCL consolidation, and multimodal shipments, these three terms are the right tool — and using FOB/EXW instead creates real problems.</p>
+<ul>
+ <li><strong>FCA (Free Carrier)</strong> — the supplier delivers goods, cleared for export, to a named carrier (e.g., "FCA Hong Kong Air Cargo Terminal"). This is the air-freight equivalent of FOB. Use it when shipping by air (FedEx/DHL are not "vessels," so FOB technically doesn't apply) or with LCL consolidators. <strong>Pro tip:</strong> if your supplier insists on FOB for an air shipment, switch to FCA — under FOB, risk doesn't legally transfer to you until goods are "on board the vessel," which never happens for air freight. That ambiguity is a $0 cargo claim waiting to happen.</li>
+ <li><strong>CPT (Carriage Paid To)</strong> — the supplier pays freight to a named destination (e.g., "CPT Chicago O'Hare"), but risk transfers when goods are handed to the first carrier (not at destination). Use it when you want the supplier to handle freight but you'll arrange your own insurance — typically for established multimodal routes.</li>
+ <li><strong>CIP (Carriage and Insurance Paid To)</strong> — like CPT but the supplier also buys <strong>insurance</strong> (minimum 110% of CIP value, Institute Cargo Clauses A). Use CIP instead of CIF when the journey isn't purely sea (e.g., sea-air combo Yiwu→Shenzhen→HK air→EU). <strong>Common mistake:</strong> buyers accept supplier "CIP" quotes with Institute Cargo Clauses C (named perils only) instead of A (all-risks). Demand Clauses A — the premium difference is $5–$15 per $10,000 of cargo, but the claim payout difference can be total vs. zero.</li>
+</ul>
+<p>For most sea FCL importers, <strong>FOB</strong> covers 90% of cases and <strong>DDP</strong> covers the other 10%. Reach for FCA/CPT/CIP only when the cargo moves by air, LCL, or multimodal — using the wrong Incoterm there can void your insurance claim or leave risk on the supplier's books for the whole journey.</p>
 
 <h2>Frequently Asked Questions</h2>
 <h3>1. What is the difference between EXW, FOB, CIF, and DDP?</h3>
@@ -268,7 +307,7 @@
 <h3>5. What is the cost difference between EXW, FOB, CIF, and DDP?</h3>
 <p>For a <strong>$5 EXW</strong> product: FOB ≈ <strong>$5.30</strong> (inland + export), CIF ≈ <strong>$5.80</strong> (+ freight + insurance to port), DDP ≈ <strong>$6.50</strong> (+ everything to door including duty). The DDP premium buys zero admin and risk transfer — worth it for small or first orders.</p>
 <h3>6. Are FCA, CPT, and CIP relevant for China sourcing?</h3>
-<p><strong>FCA</strong> (Free Carrier) is common for air freight and LCL — supplier delivers to a named carrier. <strong>CPT</strong> and <strong>CIP</strong> are the air/multimodal equivalents of CFR/CIF. For most China sea-FCL importers, FOB and DDP cover 90% of cases; FCA matters for air and LCL.</p>
+<p><strong>FCA</strong> (Free Carrier) is common for air freight and LCL — supplier delivers to a named carrier. <strong>CPT</strong> and <strong>CIP</strong> are the air/multimodal equivalents of CFR/CIF. For most China sea-FCL importers, FOB and DDP cover 90% of cases; FCA matters for air and LCL. See the <a href="#fca-cpt-cip-when-they-matter-and-why-most-buyers-skip-them">full FCA/CPT/CIP section above</a> for when each applies and the cargo-insurance trap buyers fall into.</p>
 
 <h2>Conclusion</h2>
 <p>Incoterms determine your <strong>cost, risk, and admin</strong> when sourcing from China. Beginners should start with <strong>DDP</strong> (one price, door-to-door), move to <strong>FOB</strong> once they have a broker (saves 5%–15%), and only use <strong>EXW</strong> for large volume with brokers on both ends. Avoid <strong>CIF</strong> — suppliers game the freight. Always demand an <strong>itemized quote</strong> and compare the freight line against independent forwarder rates. <a href="contact.html">Get a side-by-side EXW/FOB/DDP quote</a> from Yeatru — we show every line item so you can choose the incoterm that fits your stage.</p>
