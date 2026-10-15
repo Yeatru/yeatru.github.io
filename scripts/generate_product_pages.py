@@ -563,7 +563,7 @@ def generate_faq_json_ld():
     {"@type": "Question", "name": "What materials are used in your products?", "acceptedAnswer": {"@type": "Answer", "text": "We source products from certified suppliers using high-quality materials suitable for their intended use. Specific material details are listed in the product specifications table above."}},
     {"@type": "Question", "name": "How long is the production lead time?", "acceptedAnswer": {"@type": "Answer", "text": "Standard lead time is 15-30 days for production, plus 5-7 days international shipping. Rush orders may be available for an additional fee."}},
     {"@type": "Question", "name": "Can I customize colors, sizes, or logos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! We offer OEM/ODM services including custom colors, sizes, logos, and packaging. Minimum order quantities apply for custom orders. Contact us with your specific requirements."}},
-    {"@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": {"@type": "Answer", "text": "We accept T/T (Telegraphic Transfer), PayPal, Western Union, and letter of credit (L/C). Payment terms: 50%/50% split (50% deposit + 50% balance before shipping) or full payment before shipping."}},
+    {"@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": {"@type": "Answer", "text": "We accept XTransfer, LianLian, AIRwallex, T/T (Telegraphic Transfer), and PayPal. Payment terms: 50/50 split (50% deposit + 50% balance before shipping) or full payment before shipping."}},
     {"@type": "Question", "name": "Do you provide samples?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we can provide samples for most products. Sample costs and shipping fees apply. Sample orders are typically dispatched within 3-5 business days."}},
     {"@type": "Question", "name": "What is your quality guarantee?", "acceptedAnswer": {"@type": "Answer", "text": "We offer a quality inspection service before shipment. Third-party inspection companies such as SGS and Bureau Veritas are also available upon request. We stand behind our products with a quality assurance commitment."}}
   ]
@@ -808,7 +808,7 @@ def generate_aplus_section(product):
     <tr><th scope="row">Shipping Options</th><td>✅ Sea (25–45d) · Air (5–15d) · Express (3–7d) · Amazon FBA DDP</td></tr>
     <tr><th scope="row">Free Warehousing</th><td>✅ 15 days at Yeatru Yiwu facility — order consolidation included</td></tr>
     <tr><th scope="row">Lead Time (Production)</th><td>7–15 days (stock) · 15–30 days (OEM / mass production)</td></tr>
-    <tr><th scope="row">Payment Methods</th><td>T/T (bank wire) · PayPal (Yeatrusourcing@gmail.com) · Western Union · XTransfer · Trade Assurance</td></tr>
+    <tr><th scope="row">Payment Methods</th><td>T/T (bank wire) · XTransfer · LianLian · AIRwallex · PayPal (samples) · Trade Assurance</td></tr>
     <tr><th scope="row">Sourcing Agent Fee</th><td>3–4% Order Management · 4–8% Full Sourcing — transparent, no hidden markup</td></tr>
     <tr><th scope="row">Supplier</th><td>Verified Chinese manufacturer via Yeatru Sourcing (on-site audited)</td></tr>
   </tbody>
@@ -957,7 +957,7 @@ def generate_faq_section():
       </details>
       <details class="faq-item">
         <summary><i class="fas fa-chevron-right me-2"></i>What payment methods do you accept?</summary>
-        <div class="faq-answer"><p>We accept T/T (Telegraphic Transfer), PayPal, Western Union, and letter of credit (L/C). Payment terms: 50%/50% split (50% deposit + 50% balance before shipping) or full payment before shipping.</p></div>
+        <div class="faq-answer"><p>We accept XTransfer, LianLian, AIRwallex, T/T (Telegraphic Transfer), and PayPal. Payment terms: 50/50 split (50% deposit + 50% balance before shipping) or full payment before shipping.</p></div>
       </details>
       <details class="faq-item">
         <summary><i class="fas fa-chevron-right me-2"></i>Do you provide samples?</summary>
