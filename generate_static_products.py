@@ -1127,7 +1127,7 @@ def _build_product_faqs():
         ),
         (
             "What payment methods do you accept?",
-            "<p>We accept XTransfer, LianLian, AIRwallex, T/T (Telegraphic Transfer), and PayPal. A 50% deposit is required to start production, with the 50% balance due before shipment.</p>",
+            "<p>We accept XTransfer, LianLian, Airwallex, T/T (Telegraphic Transfer), and PayPal. A 50% deposit is required to start production, with the 50% balance due before shipment.</p>",
         ),
         (
             "Do you provide samples?",

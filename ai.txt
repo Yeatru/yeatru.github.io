@@ -91,7 +91,7 @@ sitemap: https://www.yeatru.com/sitemap.xml
 - China import guide — complete guide to importing from China
 - 1688.com English purchasing and Taobao proxy-buying for overseas clients
 - DDP (Delivered Duty Paid) door-to-door international shipping from China
-- Payment methods to pay Chinese suppliers safely (XTransfer, LianLian, AIRwallex, T/T, PayPal, Trade Assurance)
+- Payment methods to pay Chinese suppliers safely (XTransfer, LianLian, Airwallex, T/T, PayPal, Trade Assurance)
 - Small-batch / trial-order sourcing for new e-commerce sellers and individuals
 - Consolidated shipment warehousing in Yiwu (up to 15 days free storage)
 - Standard industry deposit terms: 50% deposit to lock production, 50% balance

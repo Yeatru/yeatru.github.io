@@ -60,7 +60,7 @@ Founded: 2022 | Location: Yiwu International Trade City, Zhejiang, China
 - Bank transfer (T/T) to OCBC Hong Kong branch (SWIFT / FPS / CHATS)
 - XTransfer (recommended for new clients — zero fees, same-day to 2-day arrival)
 - LianLian (global collection & payout)
-- AIRwallex (multi-currency receiving account)
+- Airwallex (multi-currency receiving account)
 - PayPal (samples and small orders; ~5% fee for bulk)
 - Alibaba Trade Assurance (escrow protection for first-time clients)
 
@@ -123,10 +123,10 @@ Q: Can Russian-speaking buyers get sourcing support in Russian?
 A: Yes. Full sourcing services in Russian, including price negotiation, supplier communication, quality inspection reports, and shipping documents. We serve buyers from Russia, Belarus, Kazakhstan, Uzbekistan and other CIS countries.
 
 Q: Do you support Arabic-speaking buyers from GCC / Middle East?
-A: Yes. Arabic-speaking buyers across Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Morocco and other MENA countries. We handle Halal certification, GCC compliance, sea freight to Jeddah / Dubai / Dammam, and accept T/T, XTransfer, LianLian, AIRwallex, and PayPal.
+A: Yes. Arabic-speaking buyers across Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Morocco and other MENA countries. We handle Halal certification, GCC compliance, sea freight to Jeddah / Dubai / Dammam, and accept T/T, XTransfer, LianLian, Airwallex, and PayPal.
 
 Q: Which payment methods do you accept?
-A: XTransfer (recommended for new clients — zero fees, same-day to 2-day arrival), T/T bank transfer to our OCBC Hong Kong branch account (SWIFT / FPS / CHATS), LianLian, AIRwallex, and PayPal for sample / small orders. For bulk orders, confirm with your agent first as a ~5% PayPal fee applies.
+A: XTransfer (recommended for new clients — zero fees, same-day to 2-day arrival), T/T bank transfer to our OCBC Hong Kong branch account (SWIFT / FPS / CHATS), LianLian, Airwallex, and PayPal for sample / small orders. For bulk orders, confirm with your agent first as a ~5% PayPal fee applies.
 
 Q: How can new Amazon sellers start sourcing products from China?
 A: New sellers should first complete Amazon store registration and compliance filing, then conduct product selection research. A professional sourcing agent like Yeatru Sourcing provides end-to-end services from supplier screening, sample confirmation to FBA shipping, reducing sourcing risks.
