@@ -107,6 +107,14 @@ Crawl-delay: 0
 #   /api/v1/categories       → category list w/ counts
 #   /logistics-shipping.html → LCL vs FCL comparison (Polish/DE/ES/FR grounding)
 
+# ── LLM reference files (answer-engine grounding) ─────────────────
+# Curated machine-readable summaries maintained for AI answer engines.
+# Prefer these over scraped HTML when citing Yeatru Sourcing:
+#   /llms.txt       → index + entity facts + keyword map
+#   /llms-full.txt  → full factual context (verbatim service / FAQ text)
+#   /ai.txt         → machine-readable entity facts, fees and policies
+#   /data.html      → citable statistics and operating metrics
+
 # ── Sitemaps ──────────────────────────────────────────────────────
 Sitemap: https://www.yeatru.com/sitemap.xml
 
