@@ -603,7 +603,7 @@ def generate_graph_json_ld():
       "alternateName": "Yeatru",
       "url": "https://www.yeatru.com/",
       "logo": {"@type": "ImageObject", "url": "https://www.yeatru.com/Images/yeatru-logo.png", "width": 220, "height": 60},
-      "foundingDate": "2013",
+      "foundingDate": "2022",
       "foundingLocation": "Yiwu, Zhejiang, China",
       "telephone": "+86-159-8851-6408",
       "email": "info@yeatru.com",
