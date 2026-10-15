@@ -20,7 +20,7 @@ CATEGORIES = {
         "pitfalls": [
             "<strong>Wiring to a personal account instead of the company account.</strong> Always confirm the PI beneficiary name matches the supplier's business license. A personal account = red flag for fraud or tax evasion, and you lose all payment protection.",
             "<strong>No bank-detail re-verification before the balance transfer.</strong> Hackers infiltrate supplier email and send a 'new account' notice mid-order. Re-confirm bank details by phone or WeChat call before every wire over $5,000.",
-            "<strong>Paying 100% upfront without a QC gate.</strong> Structure 30/70 or 50/50 with an AQL 2.5 pre-shipment inspection before the balance. Once the full amount is paid, you have zero leverage over defects.",
+            "<strong>Paying 100% upfront without a QC gate.</strong> Structure 50/50 with an AQL 2.5 pre-shipment inspection before the balance. Once the full amount is paid, you have zero leverage over defects.",
             "<strong>Ignoring SWIFT cost-sharing (SHA vs OUR).</strong> SHA splits fees ($25–$45 total) but the supplier receives $15–$25 less. OUR costs you ~$55–$60 upfront but guarantees the full amount arrives. For deposits over $10k, OUR avoids short-payment disputes.",
             "<strong>No written payment terms in the contract.</strong> Specify due dates, currency, bank charges, and late-payment penalties. Verbal agreements are unenforceable in Chinese courts.",
         ],
@@ -109,7 +109,7 @@ CATEGORIES = {
         "keywords": [],
         "pitfalls": [
             "<strong>No written contract.</strong> A PO or email exchange is not a contract. Sign a detailed agreement covering price, MOQ, lead time, QC standards, defect liability, payment terms, and IP protection before placing any order.",
-            "<strong>Paying 100% upfront.</strong> Structure payments as 30% deposit + 70% balance after pre-shipment QC. Paying everything upfront removes your leverage over quality and delivery.",
+            "<strong>Paying 100% upfront.</strong> Structure payments as 50% deposit + 50% balance after pre-shipment QC. Paying everything upfront removes your leverage over quality and delivery.",
             "<strong>Skipping pre-shipment inspection.</strong> Once cargo is at sea, you cannot return defects. An AQL 2.5 inspection ($150–$300) catches $1,000+ in defects before shipping.",
             "<strong>No clear product specification sheet.</strong> A verbal description leads to 5,000 units that don't match your expectation. Provide written specs: dimensions, materials, tolerances, labeling, packaging, and a signed golden sample.",
             "<strong>Ignoring destination compliance.</strong> Confirm required certifications (CE, FCC, CPC, RoHS) and labeling rules before production. Fixing non-compliance after arrival costs 5–10x more than getting it right in China.",

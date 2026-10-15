@@ -1128,8 +1128,8 @@ def _build_product_faqs():
         (
             "What payment methods do you accept?",
             "<p>We accept T/T (Telegraphic Transfer), PayPal, Western Union, "
-            "and letter of credit (L/C). A 30% deposit is required to start "
-            "production, with the balance due before shipment.</p>",
+            "and letter of credit (L/C). A 50% deposit is required to start "
+            "production, with the 50% balance due before shipment.</p>",
         ),
         (
             "Do you provide samples?",

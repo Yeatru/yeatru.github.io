@@ -568,7 +568,7 @@ BLOGS.append({
         {"name": "Research the product and check compliance", "text": "Validate demand, calculate target landed cost, and check destination regulations (FCC, FDA, CE, CPC) and tariffs before contacting any supplier. Use the HS code to estimate duty and Section 301 impact."},
         {"name": "Source and verify 3-5 suppliers", "text": "Find factories on Alibaba, 1688, Canton Fair, or via a sourcing agent. Verify each supplier's business license, factory audit, and trade history. Never commit to the first quote."},
         {"name": "Run RFQ, negotiate, and sign a contract", "text": "Send a detailed RFQ (specs, MOQ, incoterm, payment terms) to 3+ suppliers, compare total landed cost, and sign a written contract with QC clauses, penalty terms, and an IP/NDA."},
-        {"name": "Manage production and pre-shipment QC", "text": "Pay 30% deposit to start production, monitor milestones, and run an AQL 2.5 pre-shipment inspection before paying the 70% balance. QC catches defects before cargo leaves China."},
+        {"name": "Manage production and pre-shipment QC", "text": "Pay 50% deposit to start production, monitor milestones, and run an AQL 2.5 pre-shipment inspection before paying the 50% balance. QC catches defects before cargo leaves China."},
         {"name": "Ship, clear destination customs, and deliver", "text": "Choose FOB or DDP shipping, clear export (China) and import (destination) customs, pay duty/VAT, and arrange last-mile to your warehouse or Amazon FBA. Reorder based on sell-through."},
     ],
     "faq": [
@@ -585,7 +585,7 @@ BLOGS.append({
  <li>Importing from China is a <strong>10-step process</strong> from product research to reorder; total timeline is <strong>25–50 days</strong> (sea) or <strong>5–15 days</strong> (air) for stock products.</li>
  <li>Total landed cost = <strong>EXW + inland ($80–$500) + export clearance ($40–$150) + freight + duty (0%–25%) + VAT + last-mile</strong>; a $5 EXW product lands at <strong>$7–$9/unit</strong> by sea DDP to the US.</li>
  <li>Beginners should use <a href="blog-fob-vs-exw-vs-ddp.html"><strong>DDP</strong></a> (door-to-door, duty paid); switch to FOB once you have volume and a destination broker to save <strong>5%–15%</strong>.</li>
- <li>Always run <strong>AQL 2.5 pre-shipment QC</strong> before paying the 70% balance — defects caught in China cost <strong>1/10th</strong> of fixing them at destination.</li>
+ <li>Always run <strong>AQL 2.5 pre-shipment QC</strong> before paying the 50% balance — defects caught in China cost <strong>1/10th</strong> of fixing them at destination.</li>
  <li>Key documents: commercial invoice, packing list, BL/AWB, <a href="blog-china-customs-clearance.html">CO/FORM A/E</a>, and product certs (FCC, CE, CPC, FDA).</li>
  </ul>
 </aside>
@@ -622,7 +622,7 @@ BLOGS.append({
 
 <h2>Steps 5–7: Production, QC, and Shipping</h2>
 <ol start="5">
- <li><strong>Production &amp; QC</strong> — pay <strong>30% deposit</strong> to start production. Mid-production, run an in-line check; before shipment, run an <strong>AQL 2.5 pre-shipment inspection</strong> ($80–$300/man-day). Only pay the 70% balance after QC passes.</li>
+ <li><strong>Production &amp; QC</strong> — pay <strong>50% deposit</strong> to start production. Mid-production, run an in-line check; before shipment, run an <strong>AQL 2.5 pre-shipment inspection</strong> ($80–$300/man-day). Only pay the 50% balance after QC passes.</li>
  <li><strong>China export customs</strong> — the factory's trading company or export agent files the declaration (see our <a href="blog-china-customs-clearance.html">export clearance guide</a>). 1–2 days, $40–$150.</li>
  <li><strong>International shipping</strong> — choose <a href="blog-sea-freight-china.html">sea</a> (25–40 days, $0.50–$1.50/kg) or <a href="blog-air-freight-china.html">air</a> (3–7 days, $4–$9/kg). For beginners, <a href="blog-ddp-shipping-china.html">DDP</a> (door-to-door, duty paid) is simplest.</li>
 </ol>
@@ -666,7 +666,7 @@ BLOGS.append({
  <li>Product compliance pre-check (HS code, FCC/FDA/CE/CPC, duty estimate) — free.</li>
  <li>3 verified factory quotes side-by-side with total landed cost breakdown.</li>
  <li><a href="blog-rfq-guide-china-sourcing.html">RFQ</a>, sample coordination, and <a href="blog-verify-chinese-supplier-license.html">supplier verification</a>.</li>
- <li><a href="blog-china-quality-control-inspection.html">AQL 2.5 QC</a> with photo/video before the 70% balance.</li>
+ <li><a href="blog-china-quality-control-inspection.html">AQL 2.5 QC</a> with photo/video before the 50% balance.</li>
  <li><a href="blog-ddp-shipping-china.html">DDP door-to-door shipping</a> with duty prepaid and real-time tracking.</li>
 </ul>
 

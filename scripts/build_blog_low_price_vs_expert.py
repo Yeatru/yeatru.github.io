@@ -868,7 +868,7 @@ free TCO audits for new clients.</p>
     it")</li>
   <li>Did you compare TCO (not just unit price) across the top 3 quotes?
     (2 = formal TCO, 1 = rough estimate, 0 = only compared unit price)</li>
-  <li>Did you set payment terms with ≤30% deposit and ≤100% T/T before QC PASS verified?
+  <li>Did you set payment terms with ≤50% deposit and ≤100% T/T before QC PASS verified?
     (2 = yes + retention, 1 = 50/50 no retention, 0 = 100% or near-100% upfront)</li>
   <li>Do you have mold / tooling ownership documented in Chinese?
     (2 = yes + 3rd-party drawing escrow, 1 = signed email, 0 = factory has the mold, we trust
