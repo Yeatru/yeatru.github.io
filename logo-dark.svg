@@ -1,36 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <g transform="translate(115, 72)" fill="none" stroke="#FF9500" stroke-width="3.5" stroke-linecap="round">
-    <line x1="-44" y1="6" x2="-18" y2="-7"/>
-    <line x1="-18" y1="-7" x2="0" y2="7"/>
-    <line x1="0" y1="7" x2="22" y2="-7"/>
-    <line x1="22" y1="-7" x2="44" y2="7"/>
-    <line x1="-18" y1="-7" x2="-7" y2="-20"/>
-    <line x1="-7" y1="-20" x2="16" y2="-28"/>
-    <line x1="22" y1="-7" x2="34" y2="-24"/>
-    <line x1="16" y1="-28" x2="34" y2="-24"/>
-    <line x1="0" y1="7" x2="10" y2="20"/>
-    <line x1="22" y1="-7" x2="30" y2="-3"/>
-    <circle cx="-44" cy="6" r="5.5" fill="#FF9500"/>
-    <circle cx="-18" cy="-7" r="5.5" fill="#FF9500"/>
-    <circle cx="0" cy="7" r="5.5" fill="#FF9500"/>
-    <circle cx="22" cy="-7" r="5.5" fill="#FF9500"/>
-    <circle cx="44" cy="6" r="5.5" fill="#FF9500"/>
-    <circle cx="-7" cy="-20" r="5.5" fill="#FF9500"/>
-    <circle cx="16" cy="-28" r="5.5" fill="#FF9500"/>
-    <circle cx="34" cy="-24" r="5.5" fill="#FF9500"/>
-    <circle cx="10" cy="20" r="5.5" fill="#FF9500"/>
-    <circle cx="30" cy="-3" r="5.5" fill="#FF9500"/>
-    <circle cx="-28" cy="0" r="4" fill="#FF9500"/>
-    <circle cx="-7" cy="-20" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
-    <circle cx="16" cy="-28" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
-    <circle cx="34" cy="-24" r="7.5" fill="none" stroke="#FF9500" stroke-width="2.5"/>
-    <rect x="-13" y="-23" width="12" height="8" rx="1.5" fill="#FF9500" stroke="none"/>
-    <rect x="-13" y="-23" width="12" height="3" fill="#ffffff" stroke="none" opacity="0.5"/>
-    <circle cx="16" cy="-28" r="4" fill="#ffffff" stroke="none"/>
-    <path d="M10,-22 Q16,-17 22,-22" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <path d="M28,-28 L40,-28 L37,-34 L31,-34 Z" fill="#ffffff" stroke="none"/>
+  <!-- Yeatru original brand mark + wordmark (dark background) -->
+  <g transform="translate(37.1, 11.1) scale(0.982)">
+    <circle cx="64" cy="64" r="57" fill="#001F5C"/>
+    <path d="M38 29 L51 29 L64 45.8 L77 29 L90 29 L70.9 53.6 L70.9 99 L57.1 99 L57.1 53.6 Z" fill="#FFFFFF"/>
+    <circle cx="20.5" cy="22.5" r="9.5" fill="#FF9500"/>
+    <circle cx="100" cy="98" r="9.5" fill="#FF9500"/>
   </g>
-  <text x="100" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="56" fill="#ffffff" letter-spacing="-2">Yeatru</text>
-  <text x="100" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="12" fill="#CBD5E1">Global Procurement. Inspection. Logistics.</text>
-  <text x="100" y="175" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="14" fill="#FF9500">One Stop, Seamless Service</text>
+  <text x="100" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="48" fill="#FFFFFF" letter-spacing="-1">Yeatru</text>
 </svg>
