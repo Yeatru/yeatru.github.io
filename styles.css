@@ -5562,3 +5562,85 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons .btn{
 body .product-detail-page .detail-left-stack .detail-cta-buttons{
   flex-direction:row !important;flex-wrap:nowrap !important;
 }
+
+/* =====================================================================
+   RESPONSIVE HARDENING (2026-10-16)
+   Fixes measured mobile defects without altering the desktop layout.
+   Baseline audit: Desktop 5.44 vs Mobile 13.12 rank gap; quote form
+   clipped on phones; comparison tables forced to 640px.
+   ===================================================================== */
+
+/* 1) HIGH — the quote form must stack under the info panel on phones and
+   tablets. `.contact-card > .row` was locked to nowrap, so .col-lg-7
+   overflowed ~300px and was clipped by the container overflow guard. */
+@media (max-width: 991.98px) {
+  .contact-section .contact-card > .row { flex-wrap: wrap !important; }
+  .contact-section .contact-card > .row > .col-lg-5,
+  .contact-section .contact-card > .row > .col-lg-7 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* 2) Phone — trim the oversized contact-panel padding (was 3rem 2.5rem). */
+@media (max-width: 575.98px) {
+  .contact-info, .contact-form { padding: 1.75rem 1.25rem !important; }
+  .contact-info-title, .form-title { font-size: 1.35rem !important; }
+}
+
+/* 3) Mobile — data tables: cut the forced min-width and font so fewer
+   tables need dragging, and make the horizontal scroll affordance visible. */
+@media (max-width: 767.98px) {
+  .table-responsive table,
+  .geo-comparison .geo-comparison-table {
+    min-width: 560px !important;
+    font-size: .8rem !important;
+  }
+  .table-responsive, .geo-comparison {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .table-responsive::-webkit-scrollbar,
+  .geo-comparison::-webkit-scrollbar { height: 8px; }
+  .table-responsive::-webkit-scrollbar-thumb,
+  .geo-comparison::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+  .table-responsive::-webkit-scrollbar-track,
+  .geo-comparison::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
+}
+
+/* 4) Touch comfort — collapsed navigation links reach the 44px tap target. */
+@media (max-width: 1199.98px) {
+  .navbar-nav .nav-link { min-height: 44px; display: flex; align-items: center; }
+}
+@media (max-width: 767.98px) {
+  .footer-link { min-height: 32px; display: inline-flex; align-items: center; }
+}
+
+/* 5) Floating contact cluster — clear of the home indicator / screen edge. */
+.contact-float { bottom: max(24px, calc(env(safe-area-inset-bottom) + 16px)) !important; }
+@media (max-width: 575.98px) {
+  .contact-float { right: max(12px, env(safe-area-inset-right)) !important; }
+}
+
+/* 6) FAQ — collapsed answers leaked ~20px of clipped text.
+   `.faq-answer` also carries `padding: 0 1.25rem 1.25rem` (rule further up the
+   sheet) while the accordion only animates `max-height`; under border-box a box
+   cannot shrink below its own padding, so every collapsed answer showed one
+   chopped-off line. Zero the vertical padding while collapsed and restore it
+   only when the item is actually open (or hovered on pointer devices). */
+.faq-answer { padding-bottom: 0 !important; }
+.faq-item.active .faq-answer,
+.faq-question:hover + .faq-answer { padding-bottom: 1.25rem !important; }
+
+/* 7) Footer legal/copyright text failed WCAG AA.
+   Measured 4.28:1 on the near-black footer surface — below the 4.5:1 minimum
+   for normal text. Lift it to the neutral-400 range (~6:1). */
+.footer-bottom { color: oklch(0.66 0.02 258) !important; }
+
+/* 8) Footer — the fixed WhatsApp/Email cluster sat on top of the copyright and
+   legal links at the end of every page (measured overlap up to ~1300px wide).
+   Reserve room at the bottom of the footer so the last row clears the cluster. */
+@media (max-width: 1399.98px) {
+  .footer { padding-bottom: 148px !important; }
+}
