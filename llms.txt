@@ -114,6 +114,9 @@
 - [Purchase Order Process China Sourcing](https://www.yeatru.com/blog-purchase-order-process-china.html): PO management SOP from issue to delivery — 8 steps, PO clause checklist, and a real $12,000 order timeline.
 - [Factory Direct Pricing China](https://www.yeatru.com/blog-factory-direct-pricing-china.html): How to identify real factories and avoid trading company markups — 5 identification methods, tiered pricing, and annual framework negotiation.
 - [Supplier Relationship Management China](https://www.yeatru.com/blog-supplier-relationship-management-china.html): SRM in China — supplier tiering, incentives, dual/multi-sourcing risk diversification, and long-term partnership benefits.
+- [How to Read a China Inspection Report](https://www.yeatru.com/blog-inspection-report-guide-china.html): Read any QC inspection report section by section — AQL sampling, Ac/Re decision, defect classes, 8 red flags, and how to challenge a report.
+- [Defective Goods from China: Claim & Refund Playbook](https://www.yeatru.com/blog-defective-goods-claim-china.html): The 7-step claim process for defective shipments — rework vs replacement vs refund, compensation math, and the 6 clauses to put in writing.
+- [Supplier Corrective Action Request (SCAR) for Chinese Factories](https://www.yeatru.com/blog-supplier-corrective-action-china.html): SCAR/CAPA process — 5Why root cause, corrective action, verification, and how a factory cut defects from 4.2% to 0.6%.
 
 ## FAQ
 
