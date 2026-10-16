@@ -434,3 +434,15 @@ destination-city, and current fuel surcharges. Always get a written quote.
 - REACH Regulation for EU Imports from China: https://www.yeatru.com/blog-reach-regulation-china.html
 - Ethical Sourcing in China (labor & social audits): https://www.yeatru.com/blog-ethical-sourcing-china.html
 - How to Pay Chinese Suppliers Safely: https://www.yeatru.com/blog-how-to-pay-chinese-suppliers-safely.html
+
+### Incoterms & Shipping Guides
+- DAP vs DDP for China Sourcing (import duty, risk transfer, DDU replacement): https://www.yeatru.com/blog-dap-vs-ddp-china.html
+- FCA vs EXW for China Sourcing (export clearance, air & LCL): https://www.yeatru.com/blog-fca-vs-exw-china.html
+- FOB vs CIF from China (freight control, supplier gaming, cost): https://www.yeatru.com/blog-fob-vs-cif-china.html
+- FCA vs FOB for China Sourcing (air vs sea legal Incoterm): https://www.yeatru.com/blog-fca-vs-fob-china.html
+- CIF vs CIP for China Sourcing (sea-only vs all-modes, insurance Clauses A vs C): https://www.yeatru.com/blog-cif-vs-cip-china.html
+- FOB Origin vs FOB Destination (US domestic shipping terms, collect vs prepaid): https://www.yeatru.com/blog-fob-origin-vs-destination.html
+- Incoterms for China Sourcing (EXW, FOB, CIF, DDP explained): https://www.yeatru.com/blog-incoterms-china-sourcing.html
+- FOB vs EXW vs DDP from China (cost comparison): https://www.yeatru.com/blog-fob-vs-exw-vs-ddp.html
+- DDP Shipping from China (Delivered Duty Paid): https://www.yeatru.com/blog-ddp-shipping-china.html
+- Sea Freight from China (cost & transit time): https://www.yeatru.com/blog-sea-freight-china.html
