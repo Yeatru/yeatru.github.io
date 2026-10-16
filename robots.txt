@@ -18,6 +18,18 @@ Disallow: /indexnow.txt
 Disallow: /products.xml
 Disallow: /products.csv
 Disallow: /*.py$
+
+# Duplicate canonical cleanup (GSC reports 40 "Duplicate without user-selected canonical")
+# products.html is the OLD catalog URL; all-products.html is the canonical.
+# products.html with query params (?product=, ?lang=) creates 200+dup pages that
+# Google won't canonicalize correctly (meta refresh + canonical are weak signals).
+# Block the whole products.html path; keep all-products.html as the real catalog.
+Disallow: /products.html
+# Block contact.html query-param variants (?product= etc.) that create dup pages
+Disallow: /contact.html?
+# Block any URL path with ?product= param — pure duplicate catalog views
+Disallow: /*?product=
+
 Crawl-delay: 1
 
 # ── OpenAI / ChatGPT / Codex ──────────────────────────────────────
