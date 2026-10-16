@@ -426,3 +426,11 @@ destination-city, and current fuel surcharges. Always get a written quote.
 - llms-full.txt (this file): https://www.yeatru.com/llms-full.txt
 - Sitemap: https://www.yeatru.com/sitemap.xml
 - Robots.txt: https://www.yeatru.com/robots.txt
+
+### Compliance & Environmental Guides
+- Product Certifications China (CE, FCC, FDA, RoHS): https://www.yeatru.com/blog-product-certifications-china.html
+- Eco Certifications China (ISO 14001, FSC, GOTS, GRS, OEKO-TEX, EPEAT, Energy Star): https://www.yeatru.com/blog-eco-certification-china.html
+- Eco Regulations China Sourcing (EU CBAM, CSRD, Battery Regulation, Packaging Regulation, California Prop 65, China dual carbon): https://www.yeatru.com/blog-eco-regulation-china.html
+- REACH Regulation for EU Imports from China: https://www.yeatru.com/blog-reach-regulation-china.html
+- Ethical Sourcing in China (labor & social audits): https://www.yeatru.com/blog-ethical-sourcing-china.html
+- How to Pay Chinese Suppliers Safely: https://www.yeatru.com/blog-how-to-pay-chinese-suppliers-safely.html

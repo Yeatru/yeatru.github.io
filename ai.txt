@@ -92,6 +92,8 @@ sitemap: https://www.yeatru.com/sitemap.xml
 - 1688.com English purchasing and Taobao proxy-buying for overseas clients
 - DDP (Delivered Duty Paid) door-to-door international shipping from China
 - Payment methods to pay Chinese suppliers safely (XTransfer, LianLian, Airwallex, T/T, PayPal, Trade Assurance)
+- Environmental & sustainability certifications for China sourcing (ISO 14001, FSC, GOTS, GRS, OEKO-TEX, EPEAT, Energy Star, B Corp)
+- Environmental regulations affecting China sourcing (EU CBAM, CSRD, Battery Regulation, Packaging Regulation; California Prop 65; China dual carbon goals)
 - Small-batch / trial-order sourcing for new e-commerce sellers and individuals
 - Consolidated shipment warehousing in Yiwu (up to 15 days free storage)
 - Standard industry deposit terms: 50% deposit to lock production, 50% balance
