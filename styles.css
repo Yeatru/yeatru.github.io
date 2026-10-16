@@ -5644,3 +5644,199 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons{
 @media (max-width: 1399.98px) {
   .footer { padding-bottom: 148px !important; }
 }
+
+/* ============================================================
+   FOOTER — final authoritative redesign (overrides all prior
+   conflicting .footer rules above). Clean 4-column layout,
+   generous spacing, dark surface, accessible contrast.
+   ============================================================ */
+.footer{
+  background:#0B1F33 !important;
+  color:#CBD5E1 !important;
+  padding-top:56px !important;
+  padding-bottom:24px !important;
+  position:relative;
+  border-top:3px solid #FF8C00 !important;
+}
+.footer::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,140,0,0.4),transparent);
+}
+/* Column gutters */
+.footer .row > div{
+  margin-bottom:32px !important;
+}
+/* Brand column */
+.footer-brand{
+  display:inline-flex !important;
+  align-items:flex-start !important;
+  gap:0 !important;
+  margin-bottom:14px !important;
+  text-decoration:none !important;
+}
+.footer-brand .brand-logo-box{
+  width:auto !important;
+  height:72px !important;
+  min-height:72px !important;
+  max-height:72px !important;
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  padding:0 !important;
+}
+.footer-brand .brand-logo-box img{
+  height:72px !important;
+  width:auto !important;
+  max-width:none !important;
+  max-height:72px !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+.footer-desc{
+  font-size:.9rem !important;
+  line-height:1.65 !important;
+  color:#94A3B8 !important;
+  margin-bottom:18px !important;
+  max-width:320px;
+}
+/* Social icons */
+.footer-social{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin-top:4px !important;
+}
+.footer-social-icon{
+  width:40px !important;
+  height:40px !important;
+  min-width:40px !important;
+  min-height:40px !important;
+  border-radius:10px !important;
+  background:rgba(255,255,255,0.06) !important;
+  border:1px solid rgba(255,255,255,0.12) !important;
+  color:#CBD5E1 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-decoration:none !important;
+  font-size:1rem !important;
+  transition:all .2s ease !important;
+}
+.footer-social-icon:hover{
+  background:#FF8C00 !important;
+  border-color:#FF8C00 !important;
+  color:#fff !important;
+  transform:translateY(-2px) !important;
+}
+/* Section titles */
+.footer-title{
+  font-size:.85rem !important;
+  font-weight:700 !important;
+  color:#FFFFFF !important;
+  margin-bottom:18px !important;
+  text-transform:uppercase !important;
+  letter-spacing:.08em !important;
+  position:relative !important;
+  padding-bottom:10px !important;
+}
+.footer-title::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:32px;
+  height:2px;
+  background:#FF8C00;
+  border-radius:2px;
+}
+/* Links — stacked, not inline */
+.footer-link{
+  display:block !important;
+  color:#94A3B8 !important;
+  text-decoration:none !important;
+  font-size:.9rem !important;
+  line-height:1.6 !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+  transition:color .2s ease, padding-left .2s ease !important;
+}
+.footer-link:hover{
+  color:#FFB347 !important;
+  padding-left:6px !important;
+  text-decoration:none !important;
+}
+.footer-link i{
+  color:#FF8C00 !important;
+  width:18px !important;
+  display:inline-block !important;
+  text-align:center !important;
+  margin-right:6px !important;
+}
+/* Payment methods */
+.footer-payment-section{
+  margin-top:18px !important;
+  padding-top:16px !important;
+  border-top:1px solid rgba(255,255,255,0.08) !important;
+}
+.footer-payment-label{
+  font-size:.8rem !important;
+  font-weight:600 !important;
+  color:#CBD5E1 !important;
+  margin-bottom:10px !important;
+  text-transform:uppercase !important;
+  letter-spacing:.06em !important;
+}
+.footer-payment-icons-vertical{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:8px !important;
+  align-items:center !important;
+}
+.footer-payment-icons-vertical .payment-icon{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:46px !important;
+  height:30px !important;
+  border-radius:6px !important;
+  background:#fff !important;
+  font-size:1.3rem !important;
+  box-shadow:0 1px 3px rgba(0,0,0,0.2) !important;
+}
+/* Bottom bar */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1) !important;
+  padding-top:20px !important;
+  margin-top:8px !important;
+  color:#64748B !important;
+  font-size:.82rem !important;
+  line-height:1.7 !important;
+  text-align:center !important;
+}
+.footer-bottom p{ margin-bottom:0 !important; }
+.footer-bottom .footer-link{
+  display:inline !important;
+  padding:0 !important;
+  margin:0 6px !important;
+  color:#94A3B8 !important;
+}
+.footer-bottom .footer-link:hover{
+  color:#FFB347 !important;
+  padding-left:0 !important;
+}
+/* Mobile refinements */
+@media (max-width:767.98px){
+  .footer{ padding-top:40px !important; }
+  .footer .row > div{ margin-bottom:28px !important; }
+  .footer-title{ margin-bottom:14px !important; }
+  .footer-link{ padding:3px 0 !important; font-size:.88rem !important; }
+  .footer-brand .brand-logo-box{ height:60px !important; }
+  .footer-brand .brand-logo-box img{ height:60px !important; max-height:60px !important; }
+  .footer-desc{ font-size:.85rem !important; }
+  .footer-bottom{ font-size:.78rem !important; }
+}
+
