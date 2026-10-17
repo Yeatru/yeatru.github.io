@@ -5961,3 +5961,63 @@ main#mainContent{
     display: flex;
   }
 }
+
+/* === New full logo (icon + Yeatru wordmark + tagline) === */
+.navbar .brand-logo-box{
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.navbar .brand-logo-box img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.footer-brand .brand-logo-box{
+  width: 90px !important;
+  height: 90px !important;
+  min-width: 90px !important;
+  min-height: 90px !important;
+  max-width: 90px !important;
+  max-height: 90px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.footer-brand .brand-logo-box img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+/* Footer brand name: keep but lighter since logo already has Yeatru */
+.footer-brand-name{
+  font-size: 1.1rem !important;
+}
+@media(max-width:767.98px){
+  .navbar .brand-logo-box{
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    max-width: 52px !important;
+    max-height: 52px !important;
+  }
+  .footer-brand .brand-logo-box{
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    min-height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+  }
+}
