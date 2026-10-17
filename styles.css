@@ -6054,40 +6054,21 @@ main#mainContent{
   z-index:1;
 }
 
-/* Eyebrow */
+/* Eyebrow — consistent with site standard section-eyebrow */
 .about-teaser-section .section-eyebrow{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  padding:5px 14px;
-  background:linear-gradient(90deg, #FFF7ED, #FEF3C7);
-  color:#C2410C;
-  border:1px solid #FED7AA;
-  border-radius:999px;
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.02em;
-}
-.about-teaser-section .section-eyebrow i{
-  color:#EA580C;
 }
 
-/* Title */
+/* Title — use standard section-title styling, navy color */
 .about-teaser-section .section-title{
-  font-size:2rem !important;
+  font-size:1.75rem !important;
   font-weight:800 !important;
-  line-height:1.25 !important;
-  color:#0B2545;
-  letter-spacing:-0.02em;
-}
-.about-teaser-section .section-title::after{
-  content:"";
-  display:block;
-  width:48px;
-  height:3px;
-  background:linear-gradient(90deg, #FF8C00, #FFB347);
-  border-radius:3px;
-  margin-top:14px;
+  line-height:1.3 !important;
+  color:#0B2545 !important;
+  letter-spacing:-0.01em;
+  text-align:center;
 }
 
 /* Lead text */
