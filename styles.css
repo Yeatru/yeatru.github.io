@@ -5864,3 +5864,72 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons{
   .footer-bottom-row{flex-direction:column !important;text-align:center !important;}
   .footer-legal{justify-content:center !important;}
 }
+
+/* === About teaser section — stat cards & badges === */
+.about-stat-card{
+  background:#f8fafc;
+  border:1px solid #eef2f7;
+  border-left:3px solid var(--primary);
+  border-radius:10px;
+  padding:1.1rem 1rem;
+  text-align:center;
+  transition:all .25s ease;
+  height:100%;
+}
+.about-stat-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
+  border-left-color:var(--primary-dark);
+}
+.about-stat-icon{
+  font-size:1.15rem;
+  margin-bottom:.4rem;
+  opacity:.85;
+}
+.about-stat-num{
+  font-size:1.7rem;
+  font-weight:800;
+  color:var(--primary);
+  line-height:1.1;
+  font-family:var(--font-display);
+}
+.about-stat-label{
+  font-size:.75rem;
+  color:#64748b;
+  margin-top:.25rem;
+  line-height:1.3;
+}
+.about-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+.about-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.4rem .85rem;
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:500;
+  color:#475569;
+  transition:all .2s ease;
+}
+.about-badge i{
+  color:var(--primary);
+  font-size:.75rem;
+}
+.about-badge:hover{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+.about-badge:hover i{
+  color:#fff;
+}
+@media(max-width:767.98px){
+  .about-stat-num{font-size:1.4rem;}
+  .about-stat-card{padding:.9rem .7rem;}
+}
