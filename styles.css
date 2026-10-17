@@ -5933,3 +5933,31 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons{
   .about-stat-num{font-size:1.4rem;}
   .about-stat-card{padding:.9rem .7rem;}
 }
+
+/* === Fix: remove top white gap above hero === */
+body main#mainContent > section.hero-section{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+main#mainContent{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* === Fix: case study cards equal height with footer aligned to bottom === */
+.case-study-card{
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.case-study-card .case-study-desc{
+  flex-grow: 0 !important;
+}
+.case-study-card .case-study-footer{
+  margin-top: auto !important;
+}
+@media(min-width:992px){
+  .row.g-4 > [class*="col-"]{
+    display: flex;
+  }
+}
