@@ -1,8 +1,8 @@
-# Yeatru Sourcing — robots.txt (AI-friendly revision 2026-08-31)
+# Yeatru Sourcing — robots.txt (AI-friendly revision 2026-10-18)
 #
 # We intentionally serve structured JSON endpoints (site-data.json +
 # /api/v1/*) so AI coding agents (ChatGPT/Codex/Claude/Copilot) and
-# AI search engines can fetch Yeatru's 656-product catalog without
+# AI search engines can fetch Yeatru's 675-product catalog without
 # scraping HTML. Every AI bot below is explicitly allowed + zero
 # crawl delay because they hit public read-only endpoints.
 

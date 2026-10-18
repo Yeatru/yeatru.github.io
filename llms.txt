@@ -1,4 +1,5 @@
 # Yeatru Sourcing — China Sourcing Agent
+# Last updated: 2026-10-18
 
 > Yiwu-based China sourcing agent specializing in product sourcing, supplier verification, quality control, and logistics for Amazon FBA sellers, TikTok shop owners, e-commerce brands, and wholesale buyers worldwide. Founded in 2022 with import/export rights, connecting global buyers with 75,000+ reliable Chinese manufacturers. 14+ years experience, 200+ clients in 50+ countries.
 
@@ -44,6 +45,7 @@
 ## Service Plans & Pricing
 
 - [Service Plans](https://www.yeatru.com/service-plans.html): Transparent sourcing agent cost China — Plan 1 (Order Management, 3-4% commission, min USD 50/order) for buyers with ready supplier links. Plan 2 (Full Sourcing, 4-8% tiered, min USD 100/order) for sourcing from scratch. China sourcing agent fee structure published openly.
+- [Value-Added Sourcing Services](https://www.yeatru.com/service-plans.html): What a China sourcing agent adds beyond price negotiation — supplier vetting, AQL 2.5 pre-shipment inspection, warehousing & consolidation, white-label packaging, DDP freight, and milestone payment protection.
 
 ## Sourcing Agent for E-commerce
 
@@ -102,10 +104,18 @@
 - [Sourcing Agent vs Buying Office](https://www.yeatru.com/blog-sourcing-agent-vs-buying-office.html): China sourcing consultant — agent vs buying office comparison.
 - [Sourcing Agent vs Direct Factory](https://www.yeatru.com/blog-sourcing-agent-vs-direct-factory.html): Buy from China manufacturer — agent vs direct factory.
 - [TikTok Shop Compliance 2026](https://www.yeatru.com/blog-tiktok-shop-compliance-2026.html): Ecommerce sourcing China — TikTok Shop compliance.
-- [Incoterms for China Sourcing](https://www.yeatru.com/blog-incoterms-china-sourcing.html): EXW, FOB, CIF, DDP explained — who pays freight, risk transfer points, and cost comparison.
+- [Incoterms for China Sourcing](https://www.yeatru.com/blog-incoterms-china-sourcing.html): EXW, FOB, CIF, DDP explained — who pays freight, risk transfer points, cost comparison, plus an international trade & shipping terminology glossary.
+- [International Trade & Shipping Terminology](https://www.yeatru.com/blog-incoterms-china-sourcing.html): Glossary of trade and shipping terms — CBM, TEU/FEU, B/L (Bill of Lading), AWB (Air Waybill), HS code, MOQ, AQL, ETD/ETA, demurrage — and what each means for your cost and risk when importing from China.
 - [DAP vs DDP for China Sourcing](https://www.yeatru.com/blog-dap-vs-ddp-china.html): DAP vs DDP — who pays import duty, where risk transfers, and which incoterm saves you money.
 - [DDU vs DDP for China Sourcing](https://www.yeatru.com/blog-ddu-vs-ddp-china.html): DDU vs DDP — DDU is the old name for DAP under Incoterms 2020. Who pays import duty, cost gap, and which term to quote in 2026.
 - [ETA vs ETD in China Shipping](https://www.yeatru.com/blog-eta-vs-etd-china.html): ETA vs ETD explained — ETD is departure from the Chinese port, ETA is arrival at destination, with a real shipping timeline.
+- [FOB vs CIF for China Sourcing](https://www.yeatru.com/blog-fob-vs-cif-china.html): FOB vs CIF — where risk transfers, who arranges and insures freight, and which term costs less.
+- [CIF vs CIP for China Sourcing](https://www.yeatru.com/blog-cif-vs-cip-china.html): CIF vs CIP — sea vs multimodal insurance cover, level of cover, and risk-transfer differences.
+- [FCA vs EXW for China Sourcing](https://www.yeatru.com/blog-fca-vs-exw-china.html): FCA vs EXW — who handles origin loading and export clearance, and which suits container vs LCL.
+- [FCA vs FOB for China Sourcing](https://www.yeatru.com/blog-fca-vs-fob-china.html): FCA vs FOB — seller's cost to load on board, container vs breakbulk, and cost implications.
+- [FOB vs EXW vs DDP](https://www.yeatru.com/blog-fob-vs-exw-vs-ddp.html): FOB vs EXW vs DDP — three cost and risk profiles side by side for China buyers.
+- [FOB Origin vs Destination](https://www.yeatru.com/blog-fob-origin-vs-destination.html): FOB origin vs FOB destination — who pays freight and when title and risk transfer.
+- [LCL vs FCL Shipping](https://www.yeatru.com/logistics-shipping.html): LCL vs FCL comparison — cost crossover point, transit time, and consolidation.
 - [Best Sourcing Agent for Amazon FBA](https://www.yeatru.com/blog-best-sourcing-agent-amazon-fba.html): How to choose the best sourcing agent for Amazon FBA — vetting criteria, fees, and FBA prep.
 - [Best Sourcing Agent for Small Business](https://www.yeatru.com/blog-best-sourcing-agent-small-business.html): Best sourcing agent for small business — low MOQ, trial orders, and how to pick a partner.
 - [Product Category Sourcing Guide China](https://www.yeatru.com/blog-product-category-sourcing-china.html): Sourcing by product category from China — electronics, home goods, apparel, toys, beauty, and outdoor: production hubs, MOQ, certifications, and QC focus.
@@ -225,6 +235,18 @@
 - china shipping agent
 - china sourcing logistics
 - china product sourcing service
+
+# International Trade & Shipping Terminology
+- international trade terminology
+- shipping terms glossary
+- cbm meaning shipping
+- what is teu container
+- bill of lading meaning
+- air waybill meaning
+- hs code meaning
+- demurrage meaning
+- incoterms glossary
+- fob cif ddp meaning
 
 # Wholesale & Bulk Keywords
 - china wholesale supplier
