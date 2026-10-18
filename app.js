@@ -1605,11 +1605,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     safeAddEventListener('exportDataBtn', 'click', exportSiteData);
-    safeAddEventListener('importDataBtn', 'click', function () {
-        const importFile = document.getElementById('importDataFile');
-        if (importFile) importFile.click();
-    });
-    safeAddEventListener('importDataFile', 'change', importSiteDataFromFile);
 
     safeAddEventListener('detailBackBtn', 'click', function () {
         var params = new URLSearchParams(window.location.search);
@@ -2358,24 +2353,6 @@ function exportSiteData() {
     URL.revokeObjectURL(aplusUrl);
     
     alert('已导出 site-data.json 和 site-data-aplus.json。请把两个文件都上传到 GitHub 仓库同目录，游客刷新网页后即可看到更新。');
-}
-
-function importSiteDataFromFile(event) {
-    if (!isAdmin()) return;
-    const file = event.target.files && event.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        try {
-            const data = JSON.parse(e.target.result);
-            applySiteData(data);
-        } catch (error) {
-            alert('导入失败：请选择格式正确的 site-data.json 文件。');
-        } finally {
-            event.target.value = '';
-        }
-    };
-    reader.readAsText(file, 'utf-8');
 }
 
 /**
