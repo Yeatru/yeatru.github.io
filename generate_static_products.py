@@ -815,6 +815,10 @@ def build_head(product, canonical_url):
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "USD",
+            # Google Product rich results require offers.price (or
+            # priceSpecification.price); lowPrice/highPrice alone leave
+            # every SKU "not eligible for rich results".
+            "price": round(price_min_usd, 2),
             "lowPrice": round(price_min_usd, 2),
             "highPrice": round(price_max_usd, 2),
             "availability": "https://schema.org/InStock",
