@@ -5956,10 +5956,28 @@ main#mainContent{
 .case-study-card .case-study-footer{
   margin-top: auto !important;
 }
-@media(min-width:992px){
-  .row.g-4 > [class*="col-"]{
-    display: flex;
-  }
+/* Stretch each row's columns and let the card fill the full row height, so a
+   card with fewer text lines matches the tallest card in the same row.
+   Scoped to the 4-step process (#sourcing-process) and case-study (#case-studies)
+   rows so other .row.g-4 layouts are untouched. */
+#sourcing-process .row.g-4,
+#case-studies .row.g-4{
+  align-items: stretch;
+}
+#sourcing-process .row.g-4 > [class*="col-"],
+#case-studies .row.g-4 > [class*="col-"]{
+  display: flex;
+  flex-direction: column;
+  /* The site-wide ".row > [class*=\"col-\"]{height:100%}" sets a non-auto cross
+     size on each column, which disables flex align-items:stretch. Resetting to
+     auto lets the tall card of the row drive the column height. */
+  height: auto !important;
+}
+#sourcing-process .row.g-4 > [class*="col-"] > .step-card,
+#case-studies .row.g-4 > [class*="col-"] > .case-study-card{
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto !important;
 }
 
 /* === New full logo (icon + Yeatru wordmark + tagline) === */
