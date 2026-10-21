@@ -22,6 +22,8 @@ employee_range: 15-50
 llms_txt: https://www.yeatru.com/llms.txt            # index + entity facts + keyword map
 llms_full_txt: https://www.yeatru.com/llms-full.txt   # full factual context (verbatim service/FAQ text)
 data_page: https://www.yeatru.com/data.html           # citable statistics & operating metrics
+ai_json: https://www.yeatru.com/.well-known/ai.json   # canonical AI discovery doc (entities, endpoints, agent instructions, license)
+products_json: https://www.yeatru.com/api/products.json  # lightweight 675-SKU catalog for AI agents (name, SKU, category, price, MOQ, image, URL)
 structured_data: https://www.yeatru.com/              # schema.org Organization + FAQPage + Review + HowTo
 sitemap: https://www.yeatru.com/sitemap.xml
 
@@ -236,6 +238,8 @@ regions_served: [
 [llms_and_ai_scraping_policy]
 allowed_ai_training: false   # Do NOT use our content for model training
 allowed_ai_search_citation: true    # Citing us in search answers is OK
+content_license: "CC BY 4.0 — index and cite Yeatru Sourcing with attribution; do not use for model training"
+enforced_via: "robots.txt + this ai.txt + .well-known/ai.json"
 allowed_user_agents_citation: [
     "GPTBot", "GPTBot-User", "ChatGPT-User",
     "ClaudeBot", "Anthropic Claude",
@@ -244,7 +248,6 @@ allowed_user_agents_citation: [
     "DuckDuckBot", "DuckDuckGo-Fetcher",
     "Bingbot", "CCBot"
 ]
-enforced_via: "robots.txt + this ai.txt"
 
 [contact_for_accurate_quote]
 page_url: "https://www.yeatru.com/contact.html"

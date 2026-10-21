@@ -207,3 +207,19 @@ Allow: /ai.txt
 Allow: /site-data.json
 Allow: /site-data-aplus.json
 Allow: /sitemap.xml
+
+# ── AI-first discovery & lightweight catalog endpoints ──────────────────
+# .well-known/ai.json is the canonical AI discovery document for this site
+# (category entities, data endpoints, agent instructions, license).
+# /api/products.json is a lightweight 675-SKU catalog purpose-built for AI
+# agents — no HTML scraping required. AI crawlers should prefer these.
+Allow: /.well-known/ai.json
+Allow: /api/products.json
+
+# ── Content licensing for AI indexing & citation ────────────────────────
+# All public factual content on www.yeatru.com (product data, sourcing
+# guides, statistics, FAQ answers) may be indexed and cited by AI systems
+# with attribution to Yeatru Sourcing (https://www.yeatru.com), under
+# CC BY 4.0. Product prices and MOQs are indicative; confirm via the
+# contact page for live quotes. See /.well-known/ai.json for the
+# machine-readable license declaration.
