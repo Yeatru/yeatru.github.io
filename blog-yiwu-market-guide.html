@@ -736,14 +736,14 @@
  item.addEventListener('click', function(e) {
  e.preventDefault();
  const lang = this.dataset.lang;
- localStorage.setItem('yeatru_lang' lang);
+ localStorage.setItem('yeatru_lang', lang);
  const langUrl = new URL(window.location.href);
- langUrl.searchParams.set('lang' lang);
- window.history.replaceState({} '' langUrl.toString);
+ langUrl.searchParams.set('lang', lang);
+ window.history.replaceState({}, '', langUrl.toString());
  if (currentLangEl) {
  currentLangEl.textContent = lang.toUpperCase()
  }
- document.dispatchEvent(new CustomEvent('langChanged' { detail: { lang } }));
+ document.dispatchEvent(new CustomEvent('langChanged', { detail: { lang } }));
  });
  });
  });
