@@ -280,7 +280,15 @@ export async function onRequest(context) {
         if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
         const canPath = url.pathname.replace(/^\/index\.html$/i, '/');
         h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
-        if (/\/data(\.html)?$/i.test(url.pathname)) {
+        // Product detail pages (SKU pages + product-sourcing service page) are
+        // intentionally noindex: they are mass-generated catalog landing pages
+        // kept out of the Google index while remaining crawlable for structured
+        // data and internal link flow. The X-Robots-Tag header takes precedence
+        // over the HTML <meta name="robots">, so it must be set at the edge.
+        const isProductPage = /^\/product-(YCS-|sourcing)/i.test(url.pathname);
+        if (isProductPage) {
+          h.set('X-Robots-Tag', 'noindex, follow, max-snippet:-1, max-image-preview:large');
+        } else if (/\/data(\.html)?$/i.test(url.pathname)) {
           h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
         } else {
           h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');

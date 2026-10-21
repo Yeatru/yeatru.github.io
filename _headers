@@ -67,6 +67,12 @@
   Cache-Control: public, max-age=86400
 
 # --- HTML 页面: 缓存 1 小时, 必须重新校验 ---
+# 产品详情页 (SKU 页 + product-sourcing 服务页): 强制 noindex, follow
+# (HTTP header 优先级高于 HTML meta robots, 必须在边缘层设置)
+/product-*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Robots-Tag: noindex, follow, max-snippet:-1, max-image-preview:large
+
 /*.html
   Cache-Control: public, max-age=3600, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large
