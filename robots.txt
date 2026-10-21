@@ -135,3 +135,75 @@ Sitemap: https://www.yeatru.com/sitemap.xml
 # ClaudeBot: https://support.claude.com/s/article/Claude-Web-Crawler
 # PerplexityBot: https://docs.perplexity.ai/docs/perplexitybot
 # Google-Extended: https://developers.google.com/search/blog/2023/07/google-extended-crawler
+
+# ── New AI Crawlers (2026) ──────────────────────────────────────
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 0
+
+User-agent: ByteDance
+Allow: /
+Crawl-delay: 0
+
+User-agent: KimiBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: MoonshotBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: DoubaoBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: DeepSeekBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: TencentBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: PetalBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Applebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Facebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 0
+
+# ── AI Discovery endpoints (explicit paths for crawlers) ──────────
+# .well-known — machine-readable entity / data discovery
+Allow: /.well-known/
+Allow: /.well-known/ai.json
+
+# LLM-first context files (Perplexity/Claude/ChatGPT all prefer these)
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai.txt
+
+# Raw structured product data (machine-consumable)
+Allow: /site-data.json
+Allow: /site-data-aplus.json
+Allow: /sitemap.xml

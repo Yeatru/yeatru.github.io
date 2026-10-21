@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Yeatru Sourcing",
+  "url": "https://www.yeatru.com",
+  "description": "Yiwu-based China sourcing agent for Amazon FBA, TikTok Shop and wholesale buyers. 75K+ verified factories, on-site QC, DDP shipping, OEM private label.",
+  "inLanguage": "en",
+  "primaryEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.yeatru.com/"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "Yeatru Sourcing",
+    "legalName": "YIWU ETRUE TRADING CO. LTD.",
+    "@id": "https://www.yeatru.com/#organization"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Neil Liu",
+    "jobTitle": "Founder & Lead Sourcing Strategist",
+    "@id": "https://www.yeatru.com/#person",
+    "sameAs": [
+      "https://www.linkedin.com/in/neil-liu-398983257",
+      "https://www.facebook.com/NeilLaw"
+    ]
+  },
+  "publisher": {
+    "@id": "https://www.yeatru.com/#organization"
+  },
+  "knowsAbout": [
+    "China product sourcing",
+    "Yiwu wholesale market procurement",
+    "1688 purchasing agent",
+    "Supplier verification & factory audit",
+    "AQL 2.5 quality control inspection",
+    "Amazon FBA preparation & sourcing",
+    "TikTok Shop supply chain",
+    "DDP door-to-door shipping from China",
+    "CE REACH UKCA FCC compliance",
+    "OEM ODM private label manufacturing",
+    "Low MOQ small batch sourcing",
+    "Alibaba vs agent vs 1688 comparison"
+  ],
+  "dataEndpoints": [
+    {
+      "type": "ProductCatalog",
+      "url": "https://www.yeatru.com/site-data.json",
+      "description": "675 curated product SKUs with factory-direct prices, categories, MOQs and images",
+      "format": "application/json",
+      "lastUpdated": "2026-10-19"
+    },
+    {
+      "type": "ExtendedCatalog",
+      "url": "https://www.yeatru.com/site-data-aplus.json",
+      "description": "Extended product catalog with full compliance flags and regional pricing",
+      "format": "application/json",
+      "lastUpdated": "2026-10-19"
+    },
+    {
+      "type": "Sitemap",
+      "url": "https://www.yeatru.com/sitemap.xml",
+      "description": "Canonical sitemap for all 913 public HTML pages",
+      "format": "application/xml"
+    }
+  ],
+  "blog": "https://www.yeatru.com/blog.html",
+  "productCatalog": "https://www.yeatru.com/all-products.html",
+  "contact": "https://www.yeatru.com/contact.html",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "robots": "https://www.yeatru.com/robots.txt"
+}
