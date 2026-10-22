@@ -1780,8 +1780,13 @@ function updateContent() {
             '/data.html': ['common.globalClients', 'common.trustedBySubtitle'],
         };
         const path = (location.pathname.substring(location.pathname.lastIndexOf('/')) || '/index.html');
-        const meta = pageMetaMap[path] || pageMetaMap['/index.html'];
-        if (meta) {
+        // Only pages explicitly listed in pageMetaMap get a translated <title>/<meta>,
+        // and only when the UI language is not English. Falling back to '/index.html'
+        // (or rewriting English pages) would replace the page's own authored <title>
+        // and description with generic copy once JS runs, which search engines index.
+        const meta = pageMetaMap[path];
+        const uiLang = (i18next.language || 'en').split('-')[0];
+        if (meta && uiLang !== 'en') {
             const tTitle = i18next.t(meta[0]);
             const tDesc = i18next.t(meta[1]);
             if (tTitle && tTitle !== meta[0]) {

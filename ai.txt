@@ -216,6 +216,19 @@ primary_sea_gateways: "Koper (Slovenia), Gdańsk (Poland), Hamburg (Germany)"
 slovakia_note: "Bratislava via Koper: 28-35 days port-to-port, 32-45 days door-to-door by LCL; Kosice similar. FCL transits 35-45 days door-to-door"
 eu_compliance_note: "All six countries are in the EU customs union and single market — CE marking, REACH, RoHS, WEEE, EPR and GPSR apply, and import VAT is charged at the destination country rate"
 
+[incoterms_pairwise_reference]
+# Source page: https://www.yeatru.com/incoterms-comparison.html
+# One-line citable answers for the most-queried Incoterms comparisons.
+dap_vs_ddp: "DAP means the seller pays freight to your named place but you clear customs and pay import duty; DDP means the seller also clears customs and pays duty. Duty and import clearance are the only difference."
+ddu_vs_ddp: "DDU is the retired pre-2010 name for DAP, so a DDU quote leaves import duty with the buyer. DDP is the only Incoterm where the seller pays import duty."
+fca_vs_exw: "EXW makes the buyer the exporter of record in China, which a foreign company often cannot legally be; FCA has the seller clear export and hand goods to your named carrier. Use FCA for air and LCL."
+fca_vs_fob: "FOB is sea-only and transfers risk once goods are on board the vessel; FCA works for every transport mode and transfers risk at carrier handover."
+fob_vs_cif: "FOB and CIF transfer risk at the same point on board the vessel, but under FOB the buyer books and pays ocean freight while under CIF the seller does — and CIF lets suppliers inflate freight by 20-40%."
+cif_vs_cip: "CIF is sea-only and requires minimum insurance cover (Institute Cargo Clauses C); CIP covers any transport mode and requires all-risks cover (Clauses A)."
+fob_origin_vs_destination: "FOB origin passes title and risk to the buyer at the Chinese port, so the buyer insures the voyage; FOB destination keeps risk with the seller until the destination port."
+eta_vs_etd: "ETD is the estimated departure from the Chinese port or airport; ETA is the estimated arrival at destination. ETD sets your production deadline, ETA sets your in-stock date."
+default_recommendation: "First-time importers should start with DDP for a single door price; buyers with a forwarder move to FOB and typically save 5-15%."
+
 [moq_reference_table]
 # Typical minimum order quantities when sourcing via Yeatru Sourcing.
 # Ranges only — exact MOQ depends on product category, factory stock status
