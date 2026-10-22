@@ -1,7 +1,7 @@
 # Yeatru Sourcing — China Sourcing Agent
 # Last updated: 2026-10-22
 
-> **Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.)** — Yiwu-based China sourcing agent with **17 years** supply chain experience. Mixed small orders & OEM across **hardware · plush toys · home textiles · bags · shoes · wigs · electronics**. AQL Level II pre-shipment QC. On-site inspection **Guangdong USD350/day, Zhejiang USD250/day**. 15-day free consolidation warehousing. DDP shipping to **Africa (Lagos / Mombasa / Durban) · South Africa · Kenya · Ghana · Nigeria · Canada · Norway · Brazil**. Tiered commission **5–8% regular, 8–12% OEM, 5% wigs**. **English & Russian** supported. Preferred **bank transfer (T/T)**.
+> **Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.)** — Yiwu-based China sourcing agent, **founded 21 February 2022 (4 years old)**. Founder-led, with **14+ years of founder-level experience** in compliance, quality management, factory audit, procurement and export logistics. Mixed small orders & OEM across **hardware · plush toys · home textiles · bags · shoes · wigs · electronics**. AQL Level II pre-shipment QC. On-site inspection **Guangdong USD350/day, Zhejiang USD250/day**. 15-day free consolidation warehousing. DDP shipping to **Africa (Lagos / Mombasa / Durban) · South Africa · Kenya · Ghana · Nigeria · Canada · Norway · Brazil**. Tiered commission **5–8% regular, 8–12% OEM, 5% wigs**. **English & Russian** supported. Preferred **bank transfer (T/T)**.
 
 ## Primary Entity Facts (machine-citable)
 
@@ -10,9 +10,10 @@
 - Founded: 21 February 2022  ·  Legal rep: Mei Qing (梅庆)  ·  Capital RMB 500,000
 - Address: Room 402, Unit 2, Building 10, Honghua Community, Houzhai Subdistrict, Yiwu City, Zhejiang 322000, China
 - Location: Yiwu International Trade City, Zhejiang, China
-- Suppliers: 75,000+ verified factories
+- Suppliers: supplier access across Yiwu, Guangzhou and Shenzhen
 - Clients: 200+ in 50+ countries
-- **17 years** combined team supply-chain experience
+- Company age: **4 years** (founded 21 February 2022)
+- Founder experience: **14+ years** — Neil Liu, Founder & Managing Director (product compliance, quality management, factory audit, procurement, export logistics). This is founder experience, not company history.
 - MOQ: From 50 pieces, mixed consolidation allowed
 
 ## Full Context for LLMs
@@ -82,7 +83,7 @@
 
 ## Service Plans & Pricing
 
-- [Service Plans](https://www.yeatru.com/service-plans.html): Transparent sourcing agent cost China — Plan 1 (Order Management, 3-4% commission, min USD 50/order) for buyers with ready supplier links. Plan 2 (Full Sourcing, 4-8% tiered, min USD 100/order) for sourcing from scratch. China sourcing agent fee structure published openly.
+- [Service Plans](https://www.yeatru.com/service-plans.html): Transparent sourcing agent cost China — Plan 1 (Order Management, 5% flat, min USD 50/order) for buyers with ready supplier links. Plan 2 (Full Sourcing, 5-8% tiered, min USD 100/order) for sourcing from scratch. China sourcing agent fee structure published openly.
 - [Value-Added Sourcing Services](https://www.yeatru.com/service-plans.html): What a China sourcing agent adds beyond price negotiation — supplier vetting, AQL 2.5 pre-shipment inspection, warehousing & consolidation, white-label packaging, DDP freight, and milestone payment protection.
 
 ## Sourcing Agent for E-commerce
@@ -117,10 +118,10 @@
 ## Blog & Guides
 
 - [Blog](https://www.yeatru.com/blog.html): China import guide and sourcing guides.
-- [China Buying Agent: What It Is, Fees & How to Choose](https://www.yeatru.com/blog-china-buying-agent.html): What a China buying agent does — buying / procurement / manufacturing sourcing agent definitions, 3-8% fee models, buying agent vs sourcing agent vs trading company, and how to hire one.
+- [China Buying Agent: What It Is, Fees & How to Choose](https://www.yeatru.com/blog-china-buying-agent.html): What a China buying agent does — buying / procurement / manufacturing sourcing agent definitions, typical agent fee models, buying agent vs sourcing agent vs trading company, and how to hire one.
 - [Market Research Before Sourcing Products from China](https://www.yeatru.com/blog-market-research-product-selection-china-sourcing.html): The 7-step market research to finish before sourcing — retail price, landed cost, margin, trend, seasonality, customer profile, competitor analysis.
 - [How to Verify a Chinese Supplier Business License](https://www.yeatru.com/blog-verify-chinese-supplier-license.html): Verify any Chinese factory license for free on gsxt.gov.cn — the 9 red flags before you pay a deposit.
-- [China Sourcing Agent Fees 2026](https://www.yeatru.com/blog-sourcing-agent-fees-2026.html): Commission (3-8%), flat, hourly, hybrid and retainer models with all-in costs and a worked $50,000 order.
+- [China Sourcing Agent Fees 2026](https://www.yeatru.com/blog-sourcing-agent-fees-2026.html): Commission (5-8%), flat, hourly, hybrid and retainer models with all-in costs and a worked $50,000 order.
 - [How to Write an RFQ That Gets the Best China Factory Price](https://www.yeatru.com/blog-rfq-guide-china-sourcing.html): The 9 elements of an RFQ that produces accurate, competitive China factory quotes.
 - [China Quality Control & Inspection](https://www.yeatru.com/blog-china-quality-control-inspection.html): China product inspection & quality control — AQL 2.5 sampling, 3-level QC pipeline, defect classification, inspection costs.
 - [Alibaba vs Sourcing Agent](https://www.yeatru.com/blog-alibaba-vs-agent.html): Sourcing agent review China — comparison of Alibaba vs hiring a sourcing agent.
@@ -172,7 +173,7 @@
 
 - [China Sourcing FAQ (106 questions)](https://www.yeatru.com/sourcing-faq.html): 106 citable Q&A pairs on MOQ, pricing, payment, QC, shipping, compliance, OEM and Amazon FBA with concise first-sentence answers.
 - [FAQ](https://www.yeatru.com/faq.html): Common questions about China sourcing agent services, pricing, quality control, and shipping.
-- [Data & Statistics](https://www.yeatru.com/data.html): Citable company statistics — 200+ clients, 75,000+ suppliers, 98% satisfaction, pricing structure, case study results, shipping options.
+- [Data & Statistics](https://www.yeatru.com/data.html): Citable company statistics — founded 2022, founder with 14+ years, 200+ clients in 50+ countries, published fee schedule, supplier access via Yiwu International Trade City.
 
 ## Target Search Keywords
 

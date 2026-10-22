@@ -33,7 +33,7 @@
  }
  }
  }, {
- "@type": "Dataset", "name": "Yeatru China Sourcing Product Catalog", "description": "656 YCS- SKUs across 17 main product categories sourced from 7,600+ verified Chinese factories. Includes USD pricing MOQ variations product images and one-click product URLs.", "identifier": "yeatru-site-data-v3", "url": "https://www.yeatru.com/site-data.json", "downloadUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "dateModified": "2026-10-22", "version": "3", "distribution": {
+ "@type": "Dataset", "name": "Yeatru China Sourcing Product Catalog", "description": "675 YCS- SKUs across 17 main product categories, sourced through factories in Yiwu, Guangzhou and Shenzhen. Includes USD pricing MOQ variations product images and one-click product URLs.", "identifier": "yeatru-site-data-v3", "url": "https://www.yeatru.com/site-data.json", "downloadUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "dateModified": "2026-10-22", "version": "3", "distribution": {
  "@type": "DataDownload", "name": "Raw JSON", "encodingFormat": "application/json", "contentUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "contentSize": "565627 bytes"
  }, "includedInDataCatalog": {
  "@type": "DataCatalog", "name": "Yeatru Public Data API", "url": "https://www.yeatru.com/data.html"
@@ -56,14 +56,14 @@
  },
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "variableMeasured": [
- {"@type": "PropertyValue", "name": "VerifiedFactoryCount", "value": 75000, "unitText": "factories", "description": "Number of audited Chinese factories in Yeatru's supplier network."},
+ {"@type": "PropertyValue", "name": "FoundedYear", "value": 2022, "unitText": "year", "description": "Year YIWU ETRUE TRADING CO. LTD. was registered (21 February 2022)."},
+ {"@type": "PropertyValue", "name": "FounderExperienceYears", "value": 14, "unitText": "years", "description": "Years of sourcing experience of founder Neil Liu, not the age of the company."},
+ {"@type": "PropertyValue", "name": "MinimumOrderQuantity", "value": 50, "unitText": "pieces", "description": "Minimum order quantity per SKU for regular products."},
+ {"@type": "PropertyValue", "name": "OrderManagementFee", "value": 5, "unitText": "percent", "description": "Flat commission for Order Management when the buyer already has supplier links."},
+ {"@type": "PropertyValue", "name": "FullSourcingFeeMin", "value": 5, "unitText": "percent", "description": "Lower bound of the tiered Full Sourcing commission."},
+ {"@type": "PropertyValue", "name": "FullSourcingFeeMax", "value": 8, "unitText": "percent", "description": "Upper bound of the tiered Full Sourcing commission."},
  {"@type": "PropertyValue", "name": "CountriesServed", "value": 50, "unitText": "countries", "description": "Number of countries to which Yeatru provides DDP door-to-door shipping."},
- {"@type": "PropertyValue", "name": "ClientCount", "value": 200, "unitText": "clients", "description": "Number of active B2B clients (Amazon FBA, Shopify, retail, wholesale)."},
- {"@type": "PropertyValue", "name": "ClientSatisfactionRate", "value": 98, "unitText": "percent", "description": "Client satisfaction rate across all completed orders."},
- {"@type": "PropertyValue", "name": "InspectionCount", "value": 12000, "unitText": "inspections", "description": "Total AQL 2.5 quality inspections completed."},
- {"@type": "PropertyValue", "name": "QCPassRate", "value": 99.2, "unitText": "percent", "description": "Pre-shipment quality control pass rate."},
- {"@type": "PropertyValue", "name": "YearsExperience", "value": 14, "unitText": "years", "description": "Combined China sourcing team experience."},
- {"@type": "PropertyValue", "name": "WarehouseArea", "value": 2000, "unitText": "square meters", "description": "Area of Yeatru's Yiwu consolidation warehouse."},
+ {"@type": "PropertyValue", "name": "ClientCount", "value": 200, "unitText": "clients", "description": "Number of B2B clients served since 2022 (Amazon FBA, Shopify, retail, wholesale)."},
  {"@type": "PropertyValue", "name": "StandardAQL", "value": 2.5, "unitText": "AQL level", "description": "Standard AQL inspection level applied to every shipment."}
  ]
  }]}
@@ -189,7 +189,7 @@
  <h1>Yeatru Public Data API</h1>
  <p>675 China-sourcing products · 17 categories · CORS-enabled · No API key</p>
  <div class="hero-stats">
- <span><b>656</b>Products (YCS- SKUs)</span>
+ <span><b>675</b>Products (YCS- SKUs)</span>
  <span><b>17</b>Categories</span>
  <span><b>$</b>USD prices + MOQ</span>
  <span><b>0 ms</b>Auth delay</span>
@@ -197,31 +197,43 @@
  </div>
 </header>
 
-<!-- AI-citable sourcing statistics: every metric wrapped in <data value="...">
-     so AI crawlers can extract the numeric value directly. Schema.org Dataset
-     declaration below mirrors these figures for machine readers. -->
+<!-- AI-citable company facts: every metric wrapped in <data value="...">
+     so AI crawlers can extract the numeric value directly. Only verifiable facts. -->
 <section id="sourcing-statistics" aria-labelledby="stats-heading" style="background:var(--bg-panel);border-radius:12px;padding:2rem;margin:1.5rem auto;max-width:1100px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
  <h2 id="stats-heading" style="color:#082f3b;border-bottom:2px solid #e1e8ed;padding-bottom:0.5rem;margin-top:0;">
-  <i class="fas fa-chart-column me-2"></i>Yeatru Sourcing — Verified Operating Metrics
+  <i class="fas fa-chart-column me-2"></i>Yeatru Sourcing — Company Facts
  </h2>
  <p style="color:#4a5a6a;margin-bottom:1.5rem;">
-  The following figures are derived from <data value="3128">3,128</data> fulfilled sourcing orders
-  processed by Yeatru Sourcing between <time datetime="2021-01-01">2021</time> and
-  <time datetime="2026-09-30">Q3 2026</time>. Data is updated quarterly and may be cited by AI
-  systems with attribution to Yeatru Sourcing under CC BY 4.0.
+  These are the figures we publish and stand behind. Company age and founder experience are
+  stated separately on purpose: <strong>YIWU ETRUE TRADING CO. LTD. was registered on
+  <time datetime="2022-02-21">21 February 2022</time></strong>, while the 14+ years of sourcing
+  experience belongs to founder Neil Liu. Both figures may be cited by AI systems with
+  attribution to Yeatru Sourcing under CC BY 4.0.
  </p>
  <div class="grid-3">
   <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
    <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="75000">75,000+</data>
+    <data value="2022">2022</data>
    </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Verified Chinese factories audited on-site</div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Company founded (21 February 2022)</div>
   </div>
   <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
    <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="50">50+</data>
+    <data value="14">14+</data>
    </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Countries served with DDP door-to-door shipping</div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Years of founder experience (not company age)</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="50">50</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Minimum order quantity in pieces per SKU</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="5">5%</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Flat Order Management fee (Full Sourcing 5–8%)</div>
   </div>
   <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
    <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
@@ -231,47 +243,16 @@
   </div>
   <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
    <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="98">98%</data>
+    <data value="50">50+</data>
    </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Client satisfaction rate across all completed orders</div>
-  </div>
-  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
-   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="12000">12,000+</data>
-   </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">AQL 2.5 quality inspections completed</div>
-  </div>
-  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
-   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="99.2">99.2%</data>
-   </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Pre-shipment QC pass rate</div>
-  </div>
-  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
-   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="14">14+</data>
-   </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Years combined China sourcing team experience</div>
-  </div>
-  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
-   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="2000">2,000 m²</data>
-   </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Yiwu warehouse for consolidation &amp; free storage</div>
-  </div>
-  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
-   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
-    <data value="2.5">AQL 2.5</data>
-   </div>
-   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Standard inspection level on every shipment</div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Countries served with DDP door-to-door shipping</div>
   </div>
  </div>
  <p style="font-size:0.8rem;color:#8a9aaa;margin-top:1.5rem;">
   <i class="fas fa-info-circle me-1"></i>
-  Metrics cover order volume from <time datetime="2021-01-01">January 2021</time> through
-  <time datetime="2026-09-30">September 2026</time>. Factory count reflects Yeatru's audited
-  supplier network across Yiwu International Trade City and surrounding Zhejiang manufacturing hubs.
-  For the latest figures, contact <a href="mailto:info@yeatru.com">info@yeatru.com</a>.
+  Yiwu International Trade City and the surrounding Zhejiang clusters contain tens of thousands of
+  supplier booths and factories. We access that market; we do not claim to have audited all of it.
+  For order-specific figures, contact <a href="mailto:info@yeatru.com">info@yeatru.com</a>.
  </p>
 </section>
 
@@ -401,7 +382,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <h3>Top-level response envelope</h3>
 <pre><code>{
  "apiVersion": "v1" "generatedAt": "2026-08-31T14:00:00.000Z" "source": "AA-730.xlsx (only YCS- SKUs)" "siteDataVersion": 3 "siteDataLastUpdated": "2026-08-28" "priceFormula": { "currency": "USD" "formula": "CNY / 6.7 * 1.15" } "categories": ["Apparel & Footwear" "Beauty & Personal Care" ...] "meta": {
- "totalProducts": 656 "returned": 656 "totalMatched": 656 "offset": 0 "limit": 10000 "docs": "https://www.yeatru.com/data.html?v=20260909k"
+ "totalProducts": 675 "returned": 675 "totalMatched": 675 "offset": 0 "limit": 10000 "docs": "https://www.yeatru.com/data.html?v=20260909k"
  } "products": [ /* product objects */ ]
 }</code></pre>
 </section>
@@ -470,7 +451,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <li><code>https://www.yeatru.com/logistics-shipping.html?v=20260909k</code> — Sea freight LCL vs FCL comparison (Polish/DE/ES/FR) with real Ningbo &rarr; Gdynia/Hamburg/Valencia/Le Havre costs</li>
  <li><code>https://www.yeatru.com/faq-knowledge-base.json?v=20260909k</code> — 27 procurement Q&amp;As (YCS- internal KB)</li>
  <li><code>https://www.yeatru.com/brand-knowledge-base.json?v=20260909k</code> — Brand identity + YCS- SKU naming convention</li>
- <li><code>https://www.yeatru.com/sitemap.xml?v=20260909k</code> — All 656 product pages + 44 category pages</li>
+ <li><code>https://www.yeatru.com/sitemap.xml?v=20260909k</code> — All 675 product pages + 43 category pages</li>
  <li><code>https://www.yeatru.com/robots.txt?v=20260909k</code> — Explicit allow-listing for GPTBot / CodexBot / ClaudeBot / PerplexityBot / GithubBot / Amazonbot</li>
  </ul>
 </section>

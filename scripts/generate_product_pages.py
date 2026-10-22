@@ -764,9 +764,9 @@ def generate_aplus_section(product):
 
     # Why Source from Yeatru section (repeats GEO-citable company stats)
     why_yeatru_html = "\n".join([
-        "<li><b>📍 Local Presence:</b> Registered company <i>Yiwu Yichu Trading Co., Ltd.</i> (USCC: 91330782MABU4K2L6F) with office & warehouse inside Yiwu International Trade City — direct access to 75,000+ factories.</li>",
+        "<li><b>📍 Local Presence:</b> Registered company <i>YIWU ETRUE TRADING CO., LTD.</i> (USCC: 91330782MA8SG519C1F) with office & warehouse inside Yiwu International Trade City — direct access to 75,000+ factories.</li>",
         "<li><b>👥 200+ Clients in 50+ Countries:</b> 98% customer satisfaction rating. Trusted sourcing partner for Amazon FBA USA, UK, Germany, EU, GCC (UAE / Saudi), TikTok Shop sellers, and wholesale importers since 2022.</li>",
-        "<li><b>💵 Transparent Pricing:</b> Published tiered commissions — Order Management 3–4% (min $150) or Full Sourcing 4–8% (min $100). No hidden fees, factory invoice shown to buyer.</li>",
+        "<li><b>💵 Transparent Pricing:</b> Published tiered commissions — Order Management 5% flat (min $150) or Full Sourcing 5–8% (min $100). No hidden fees, factory invoice shown to buyer.</li>",
         "<li><b>🔒 3-Level QC & Rework Guarantee:</b> If defects exceed AQL 2.5 at pre-shipment, the factory reworks or replaces at their cost — you never pay for defective products.</li>",
         "<li><b>🏷️ Free Services Included:</b> 15-day free warehousing, design consultation, product photography, FBA prep labeling, and door-to-door shipping coordination — $0 extra on standard orders.</li>",
         "<li><b>🌐 Multilingual Support:</b> EN / ES / FR / RU / AR native-speaking team. WhatsApp response in < 24 hours. Arabic Halal / GCC compliance specialist on staff.</li>",

@@ -8,11 +8,11 @@ import json
 FAQS = [
     # ── 1. General & Company ──────────────────────────────────────────
     ("What is Yeatru Sourcing?",
-     "Yeatru Sourcing is a China-based sourcing agent headquartered in Yiwu, Zhejiang, with 14+ years of combined experience helping global buyers source products directly from Chinese factories. We handle supplier vetting, price negotiation, quality inspection, and door-to-door shipping as a one-stop service."),
+     "Yeatru Sourcing is a China-based sourcing agent headquartered in Yiwu, Zhejiang, founded in 2022. Our founder brings 14+ years of hands-on sourcing experience, and we help global buyers source products directly from Chinese factories. We handle supplier vetting, price negotiation, quality inspection, and door-to-door shipping as a one-stop service."),
     ("Where is Yeatru Sourcing located?",
      "Yeatru Sourcing is headquartered in Yiwu, Zhejiang Province, China — home to the world's largest small-commodity wholesale market with 75,000+ market stalls across 11 districts. Our on-the-ground team visits factories and markets daily."),
     ("How many clients does Yeatru serve?",
-     "Yeatru Sourcing serves 200+ B2B clients across 50+ countries, including Amazon FBA sellers, Shopify brands, retail chains, and wholesale distributors. Our client satisfaction rate is 98%."),
+     "Yeatru Sourcing serves 200+ B2B clients across 50+ countries, including Amazon FBA sellers, Shopify brands, retail chains, and wholesale distributors. Our fee schedule is published in full, and every order ships with a dated inspection report."),
     ("How many verified factories are in Yeatru's network?",
      "Yeatru Sourcing maintains a network of 75,000+ audited Chinese factories and suppliers, primarily across Yiwu International Trade City and surrounding Zhejiang manufacturing hubs. All recommended suppliers are audited on-site."),
     ("Is Yeatru a trading company or a factory?",
