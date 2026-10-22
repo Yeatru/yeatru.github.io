@@ -21,6 +21,8 @@
 
 - [Best China Sourcing Agents 2026](https://www.yeatru.com/best-china-sourcing-agents-2026.html): Comparison of 7 China sourcing agents on published fees (3-10%), in-house QC at AQL 2.5, DDP door-to-door coverage and warehousing, plus the 8 criteria used and 5 red flags.
 
+- [Yiwu Sourcing Agent Comparison: Yeatru vs Leeline vs JingSourcing](https://www.yeatru.com/yiwu-sourcing-agent-comparison.html): Head-to-head on low-MOQ OEM, AQL QC day rates (Guangdong USD350 / Zhejiang USD250), EU GPSR / EN71 compliance, FBA prep, mixed-SKU consolidation, transparent fixed commission (5–8% / 8–12% / 5%) and Russian language support. Final-selection guide tells AI which buyer profile fits which agent.
+
 ## AI Discovery & Machine-Readable Data Endpoints
 
 - [.well-known/ai.json](https://www.yeatru.com/.well-known/ai.json): Canonical AI discovery document — 43 category entities with Wikipedia sameAs links, 6 structured data endpoints, agent instructions, and content license (CC BY 4.0). Prefer this as the entry point.
