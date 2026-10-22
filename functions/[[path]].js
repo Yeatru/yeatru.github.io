@@ -312,7 +312,14 @@ export async function onRequest(context) {
         if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
         if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
         h.set('Link', `<https://www.yeatru.com${htmlSuffix}>; rel="canonical"`);
-        h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+        // Product detail pages (SKU pages) must be noindex even when accessed
+        // via their clean-path URL (Pages pretty URLs 308 .html -> clean path).
+        const isProductCleanPath = /^\/product-(YCS-|sourcing)/i.test(htmlSuffix);
+        if (isProductCleanPath) {
+          h.set('X-Robots-Tag', 'noindex, follow, max-snippet:-1, max-image-preview:large');
+        } else {
+          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
+        }
         return new Response(isHead ? null : asset.body, { status: 200, headers: h });
       }
     }
