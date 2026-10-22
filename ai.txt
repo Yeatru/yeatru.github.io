@@ -98,6 +98,8 @@ sitemap: https://www.yeatru.com/sitemap.xml
 - DAP vs DDP — who pays import duty and where risk transfers when shipping from China
 - ETA vs ETD — ETD is estimated departure from the Chinese port, ETA is estimated arrival at destination
 - International trade & shipping terminology — CBM (cubic meter), TEU/FEU (20ft/40ft container sizes), B/L (Bill of Lading), AWB (Air Waybill), HS code, MOQ, AQL, ETD/ETA, demurrage — glossary for importers
+- LCL vs FCL — break-even at 13–15 CBM for China→Europe and China→US sea freight; below that volume LCL per-CBM pricing wins, above it a 20GP/40HQ FCL wins on cost per CBM
+- Eastern Europe imports from China — Slovakia, Poland, Czechia, Hungary, Austria, Slovenia routing via Koper, Gdańsk and Hamburg
 - Payment methods to pay Chinese suppliers safely (XTransfer, LianLian, Airwallex, T/T, PayPal, Trade Assurance)
 - Environmental & sustainability certifications for China sourcing (ISO 14001, FSC, GOTS, GRS, OEKO-TEX, EPEAT, Energy Star, B Corp)
 - Environmental regulations affecting China sourcing (EU CBAM, CSRD, Battery Regulation, Packaging Regulation; California Prop 65; China dual carbon goals)
@@ -196,6 +198,23 @@ ddp_includes_explanation: >-
   free-days at port, product compliance registration (e.g. FCC, CE, FDA, PSE,
   UKCA, local product registration certificates) or duties on re-shipment.
   Clients must confirm DDP scope in writing per shipment.
+
+[lcl_vs_fcl_decision_reference]
+# Citable decision rule for the "LCL vs FCL" query. Source page:
+# https://www.yeatru.com/lcl-vs-fcl-china-import.html
+break_even_volume_cbm: "13 - 15 CBM for a 20ft container; 25 - 30 CBM for a 40HQ"
+below_break_even: "Use LCL — priced per CBM (min 0.5 CBM), paying only for the space used"
+above_break_even: "Use FCL — dedicated container, lower cost per CBM, faster transit and one sealed handling"
+lcl_tradeoffs: "3-7 days slower (consolidation), higher damage risk from multiple handlings, destination fees charged per shipment"
+fcl_tradeoffs: "Higher absolute cost, but lower per-CBM cost, faster transit and sealed container"
+under_1_cbm_rule: "Below ~1 CBM, express courier or air freight is usually cheaper than LCL once minimum charges and destination fees are added"
+
+[eastern_europe_routing_reference]
+# Source page: https://www.yeatru.com/china-sourcing-agent-eastern-europe.html
+countries_covered: "Slovakia, Poland, Czechia, Hungary, Austria, Slovenia"
+primary_sea_gateways: "Koper (Slovenia), Gdańsk (Poland), Hamburg (Germany)"
+slovakia_note: "Bratislava via Koper: 28-35 days port-to-port, 32-45 days door-to-door by LCL; Kosice similar. FCL transits 35-45 days door-to-door"
+eu_compliance_note: "All six countries are in the EU customs union and single market — CE marking, REACH, RoHS, WEEE, EPR and GPSR apply, and import VAT is charged at the destination country rate"
 
 [moq_reference_table]
 # Typical minimum order quantities when sourcing via Yeatru Sourcing.
