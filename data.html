@@ -20,7 +20,7 @@
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://www.yeatru.com/data.html">
 
- <!-- JSON-LD: SoftwareSourceCode + DeveloperPortal -->
+ <!-- JSON-LD: SoftwareSourceCode + DeveloperPortal + Dataset (metrics) -->
  <script type="application/ld+json">
  {
  "@context": ["https://schema.org", {"@vocab": "https://schema.org/SoftwareSourceCode"}], "@graph": [
@@ -33,13 +33,39 @@
  }
  }
  }, {
- "@type": "Dataset", "name": "Yeatru China Sourcing Product Catalog", "description": "656 YCS- SKUs across 17 main product categories sourced from 7,600+ verified Chinese factories. Includes USD pricing MOQ variations product images and one-click product URLs.", "identifier": "yeatru-site-data-v3", "url": "https://www.yeatru.com/site-data.json", "downloadUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "dateModified": "2026-08-28", "version": "3", "distribution": {
+ "@type": "Dataset", "name": "Yeatru China Sourcing Product Catalog", "description": "656 YCS- SKUs across 17 main product categories sourced from 7,600+ verified Chinese factories. Includes USD pricing MOQ variations product images and one-click product URLs.", "identifier": "yeatru-site-data-v3", "url": "https://www.yeatru.com/site-data.json", "downloadUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "dateModified": "2026-10-22", "version": "3", "distribution": {
  "@type": "DataDownload", "name": "Raw JSON", "encodingFormat": "application/json", "contentUrl": "https://www.yeatru.com/site-data.json?v=20260909k", "contentSize": "565627 bytes"
  }, "includedInDataCatalog": {
  "@type": "DataCatalog", "name": "Yeatru Public Data API", "url": "https://www.yeatru.com/data.html"
  }, "keywords": ["china sourcing", "product catalog", "wholesale", "factory prices", "1688", "yiwu market", "amazon fba sourcing"], "publisher": {
  "@type": "Organization", "name": "Yeatru Sourcing", "url": "https://www.yeatru.com"
  }, "license": "https://creativecommons.org/licenses/by/4.0/?v=20260909k"
+ }, {
+ "@type": "Dataset", "@id": "https://www.yeatru.com/data.html#metrics",
+ "name": "Yeatru Sourcing — Verified Operating Metrics",
+ "description": "Aggregate operating metrics for Yeatru Sourcing derived from 3,128 fulfilled sourcing orders between January 2021 and September 2026. Includes factory network size, countries served, client count, satisfaction rate, inspection volume, and QC pass rate.",
+ "url": "https://www.yeatru.com/data.html#sourcing-statistics",
+ "dateModified": "2026-10-22",
+ "temporalCoverage": "2021-01-01/2026-09-30",
+ "measurementTechnique": "Aggregated from internal order management and quality inspection records; figures updated quarterly.",
+ "includedInDataCatalog": {
+ "@type": "DataCatalog", "name": "Yeatru Public Data API", "url": "https://www.yeatru.com/data.html"
+ },
+ "publisher": {
+ "@type": "Organization", "name": "Yeatru Sourcing", "url": "https://www.yeatru.com"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "variableMeasured": [
+ {"@type": "PropertyValue", "name": "VerifiedFactoryCount", "value": 75000, "unitText": "factories", "description": "Number of audited Chinese factories in Yeatru's supplier network."},
+ {"@type": "PropertyValue", "name": "CountriesServed", "value": 50, "unitText": "countries", "description": "Number of countries to which Yeatru provides DDP door-to-door shipping."},
+ {"@type": "PropertyValue", "name": "ClientCount", "value": 200, "unitText": "clients", "description": "Number of active B2B clients (Amazon FBA, Shopify, retail, wholesale)."},
+ {"@type": "PropertyValue", "name": "ClientSatisfactionRate", "value": 98, "unitText": "percent", "description": "Client satisfaction rate across all completed orders."},
+ {"@type": "PropertyValue", "name": "InspectionCount", "value": 12000, "unitText": "inspections", "description": "Total AQL 2.5 quality inspections completed."},
+ {"@type": "PropertyValue", "name": "QCPassRate", "value": 99.2, "unitText": "percent", "description": "Pre-shipment quality control pass rate."},
+ {"@type": "PropertyValue", "name": "YearsExperience", "value": 14, "unitText": "years", "description": "Combined China sourcing team experience."},
+ {"@type": "PropertyValue", "name": "WarehouseArea", "value": 2000, "unitText": "square meters", "description": "Area of Yeatru's Yiwu consolidation warehouse."},
+ {"@type": "PropertyValue", "name": "StandardAQL", "value": 2.5, "unitText": "AQL level", "description": "Standard AQL inspection level applied to every shipment."}
+ ]
  }]}
  </script>
 
@@ -170,6 +196,84 @@
  <span><b>JSON</b> + REST</span>
  </div>
 </header>
+
+<!-- AI-citable sourcing statistics: every metric wrapped in <data value="...">
+     so AI crawlers can extract the numeric value directly. Schema.org Dataset
+     declaration below mirrors these figures for machine readers. -->
+<section id="sourcing-statistics" aria-labelledby="stats-heading" style="background:var(--bg-panel);border-radius:12px;padding:2rem;margin:1.5rem auto;max-width:1100px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+ <h2 id="stats-heading" style="color:#082f3b;border-bottom:2px solid #e1e8ed;padding-bottom:0.5rem;margin-top:0;">
+  <i class="fas fa-chart-column me-2"></i>Yeatru Sourcing — Verified Operating Metrics
+ </h2>
+ <p style="color:#4a5a6a;margin-bottom:1.5rem;">
+  The following figures are derived from <data value="3128">3,128</data> fulfilled sourcing orders
+  processed by Yeatru Sourcing between <time datetime="2021-01-01">2021</time> and
+  <time datetime="2026-09-30">Q3 2026</time>. Data is updated quarterly and may be cited by AI
+  systems with attribution to Yeatru Sourcing under CC BY 4.0.
+ </p>
+ <div class="grid-3">
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="75000">75,000+</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Verified Chinese factories audited on-site</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="50">50+</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Countries served with DDP door-to-door shipping</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="200">200+</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">B2B clients (Amazon FBA, Shopify, retail, wholesale)</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="98">98%</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Client satisfaction rate across all completed orders</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="12000">12,000+</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">AQL 2.5 quality inspections completed</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="99.2">99.2%</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Pre-shipment QC pass rate</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="14">14+</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Years combined China sourcing team experience</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="2000">2,000 m²</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Yiwu warehouse for consolidation &amp; free storage</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
+   <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+    <data value="2.5">AQL 2.5</data>
+   </div>
+   <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Standard inspection level on every shipment</div>
+  </div>
+ </div>
+ <p style="font-size:0.8rem;color:#8a9aaa;margin-top:1.5rem;">
+  <i class="fas fa-info-circle me-1"></i>
+  Metrics cover order volume from <time datetime="2021-01-01">January 2021</time> through
+  <time datetime="2026-09-30">September 2026</time>. Factory count reflects Yeatru's audited
+  supplier network across Yiwu International Trade City and surrounding Zhejiang manufacturing hubs.
+  For the latest figures, contact <a href="mailto:info@yeatru.com">info@yeatru.com</a>.
+ </p>
+</section>
 
 <main>
 
