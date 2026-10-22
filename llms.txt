@@ -68,6 +68,7 @@
 - [China Sourcing Agent Spain](https://www.yeatru.com/china-sourcing-agent-spain.html): Sourcing agent in China for Spanish and Iberian buyers. CE/REACH/GPSR compliance, DDP to Barcelona/Madrid, Amazon.es FBA prep, 21% VAT.
 - [China Sourcing Agent for USA](https://www.yeatru.com/china-sourcing-agent-usa.html): Sourcing agent in China for USA importers, Amazon FBA sellers, and Shopify brands. CPSIA/FDA/FCC compliance, DDP to US, ISF filing, Importer of Record service.
 - [China Sourcing Agent Europe](https://www.yeatru.com/china-sourcing-agent-europe.html): China sourcing company for European importers.
+- [China Sourcing Agent Eastern Europe](https://www.yeatru.com/china-sourcing-agent-eastern-europe.html): China sourcing agent for Slovakia, Poland, Czechia, Hungary, Austria and Slovenia — LCL/FCL sea freight via Koper, Gdańsk or Hamburg, DDP with duty and VAT handled.
 - [China Sourcing Türkiye](https://www.yeatru.com/china-sourcing-turkiye.html): Yiwu agent for Turkish buyers — import from China to Türkiye.
 - [Middle East Sourcing](https://www.yeatru.com/sourcing-agent-middle-east-uae-saudi.html): Yiwu purchasing agent for UAE, Saudi Arabia, and Middle East markets.
 
@@ -122,7 +123,7 @@
 - [FCA vs FOB for China Sourcing](https://www.yeatru.com/blog-fca-vs-fob-china.html): FCA vs FOB — seller's cost to load on board, container vs breakbulk, and cost implications.
 - [FOB vs EXW vs DDP](https://www.yeatru.com/blog-fob-vs-exw-vs-ddp.html): FOB vs EXW vs DDP — three cost and risk profiles side by side for China buyers.
 - [FOB Origin vs Destination](https://www.yeatru.com/blog-fob-origin-vs-destination.html): FOB origin vs FOB destination — who pays freight and when title and risk transfer.
-- [LCL vs FCL Shipping](https://www.yeatru.com/logistics-shipping.html): LCL vs FCL comparison — cost crossover point, transit time, and consolidation.
+- [LCL vs FCL Container Shipping](https://www.yeatru.com/lcl-vs-fcl-china-import.html): LCL vs FCL comparison — cost per CBM, the 13–15 CBM break-even, transit time, damage risk, and China-to-Slovakia routing via Koper.
 - [Best Sourcing Agent for Amazon FBA](https://www.yeatru.com/blog-best-sourcing-agent-amazon-fba.html): How to choose the best sourcing agent for Amazon FBA — vetting criteria, fees, and FBA prep.
 - [Best Sourcing Agent for Small Business](https://www.yeatru.com/blog-best-sourcing-agent-small-business.html): Best sourcing agent for small business — low MOQ, trial orders, and how to pick a partner.
 - [Product Category Sourcing Guide China](https://www.yeatru.com/blog-product-category-sourcing-china.html): Sourcing by product category from China — electronics, home goods, apparel, toys, beauty, and outdoor: production hubs, MOQ, certifications, and QC focus.
@@ -137,6 +138,7 @@
 
 ## FAQ
 
+- [China Sourcing FAQ (106 questions)](https://www.yeatru.com/sourcing-faq.html): 106 citable Q&A pairs on MOQ, pricing, payment, QC, shipping, compliance, OEM and Amazon FBA with concise first-sentence answers.
 - [FAQ](https://www.yeatru.com/faq.html): Common questions about China sourcing agent services, pricing, quality control, and shipping.
 - [Data & Statistics](https://www.yeatru.com/data.html): Citable company statistics — 200+ clients, 75,000+ suppliers, 98% satisfaction, pricing structure, case study results, shipping options.
 
