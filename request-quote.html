@@ -14,7 +14,7 @@
  <link rel="manifest" href="/site.webmanifest">
 
  <title>Free Sourcing Quote for US Importers 2026 | Yeatru</title>
- <meta name="description" content="Instant no-obligation quote. Tell us product specs target price MOQ US shipping destination. Yiwu team responds within 24h. Save 15-25% on COGS.">
+ <meta name="description" content="Free no-obligation sourcing quote. Tell us your product, specs, quantity and destination. Yiwu team responds within 24 hours.">
  <meta name="keywords" content="free sourcing quote China sourcing quote request get quote for sourcing supplier pricing China sourcing cost estimate free consultation China sourcing Yeatru quote">
  <meta name="robots" content="index follow">
  <link rel="alternate" type="application/atom+xml" title="Yeatru Sourcing Blog" href="https://www.yeatru.com/atom.xml?v=20260909k">
@@ -132,10 +132,10 @@
  </script>
 
  <meta property="og:title" content="Free Sourcing Quote for US Importers 2026 | Yeatru">
- <meta property="og:description" content="Instant no-obligation quote. Tell us product specs target price MOQ US shipping destination. Yiwu team responds within 24h. Save 15-25% on COGS.">
+ <meta property="og:description" content="Free no-obligation sourcing quote. Tell us your product, specs, quantity and destination. Yiwu team responds within 24 hours.">
  <meta property="og:url" content="https://www.yeatru.com/request-quote.html">
  <meta name="twitter:title" content="Free Sourcing Quote for US Importers 2026 | Yeatru">
- <meta name="twitter:description" content="Instant no-obligation quote. Tell us product specs target price MOQ US shipping destination. Yiwu team responds within 24h. Save 15-25% on COGS.">
+ <meta name="twitter:description" content="Free no-obligation sourcing quote. Tell us your product, specs, quantity and destination. Yiwu team responds within 24 hours.">
  <meta name="twitter:url" content="https://www.yeatru.com/request-quote.html">
  <link rel="alternate" hreflang="en" href="https://www.yeatru.com/request-quote.html">
  <link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/request-quote.html">
@@ -314,12 +314,23 @@
  <div class="row g-4 align-items-stretch">
  <div class="col-lg-7">
  <div class="quote-form-card p-4 p-lg-5 bg-white rounded shadow-sm border">
- <h2 class="mb-4">Tell Us About Your Project</h2>
- <p class="text-muted mb-4">Fill in the form below and we'll get back to you within 24 hours with detailed supplier recommendations and pricing.</p>
+ <h2 class="mb-2">Tell Us About Your Project</h2>
+ <p class="text-muted mb-4">3 quick steps. We'll get back to you within 24 hours with supplier options and pricing.</p>
+
+ <!-- Progress Steps -->
+ <div class="d-flex justify-content-between mb-4">
+ <div class="text-center flex-fill"><div id="stepDot1" class="step-dot active">1</div><small>Your Details</small></div>
+ <div class="flex-fill text-center"><div id="stepDot2" class="step-dot">2</div><small>Product &amp; Order</small></div>
+ <div class="flex-fill text-center"><div id="stepDot3" class="step-dot">3</div><small>Review &amp; Submit</small></div>
+ </div>
+
  <form id="quoteForm" action="https://formsubmit.co/info@yeatru.com" method="POST">
 <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
+
+ <!-- Step 1 -->
+ <div id="step1" class="form-step">
  <div class="row g-3">
  <div class="col-md-6">
  <label for="fullName" class="form-label">Full Name *</label>
@@ -338,6 +349,16 @@
  <input type="text" class="form-control" id="company" name="company" placeholder="Your company or online store">
  </div>
  <div class="col-12">
+ <label for="sourcingType" class="form-label">What do you need help with? *</label>
+ <select class="form-select" id="sourcingType" name="sourcingType" required>
+ <option value="">Select your sourcing need</option>
+ <option value="amazon-fba">Amazon FBA Sourcing</option>
+ <option value="oem-private-label">OEM / Private Label</option>
+ <option value="wholesale">Wholesale / Bulk Import</option>
+ <option value="find-supplier">Find Supplier / Product</option>
+ </select>
+ </div>
+ <div class="col-12">
  <label for="productCategory" class="form-label">Product Category *</label>
  <select class="form-select" id="productCategory" name="productCategory" required>
  <option value="">Select your product category</option>
@@ -353,26 +374,34 @@
  <option value="other">Other / Not Sure</option>
  </select>
  </div>
+ </div>
+ <button type="button" class="btn btn-cta btn-lg w-100 mt-4" onclick="nextStep(1)">Next: Product Details <i class="fas fa-arrow-right ms-2"></i></button>
+ </div>
+
+ <!-- Step 2 -->
+ <div id="step2" class="form-step d-none">
+ <div class="row g-3">
  <div class="col-12">
  <label for="productDetails" class="form-label">Product Details *</label>
- <textarea class="form-control" id="productDetails" name="productDetails" rows="4" required placeholder="Describe your product: what it does materials size color any specific features or certifications needed. Include links if you have reference images."></textarea>
+ <textarea class="form-control" id="productDetails" name="productDetails" rows="4" required placeholder="Describe your product: what it does, materials, size, color, features. Paste Alibaba / 1688 links or upload photos if available."></textarea>
  </div>
  <div class="col-md-6">
  <label for="quantity" class="form-label">Estimated Order Quantity</label>
  <select class="form-select" id="quantity" name="quantity">
  <option value="">Select quantity range</option>
- <option value="1-100">1 - 100 pcs (small batch)</option>
- <option value="100-500">100 - 500 pcs</option>
+ <option value="1-50">1 - 50 pcs (sample / test)</option>
+ <option value="50-200">50 - 200 pcs</option>
+ <option value="200-500">200 - 500 pcs</option>
  <option value="500-1000">500 - 1,000 pcs</option>
  <option value="1000-5000">1,000 - 5,000 pcs</option>
- <option value="5000+">5,000+ pcs (large volume)</option>
+ <option value="5000+">5,000+ pcs</option>
  </select>
  </div>
  <div class="col-md-6">
  <label for="targetMarket" class="form-label">Target Market / Platform</label>
  <select class="form-select" id="targetMarket" name="targetMarket">
  <option value="">Select your main market</option>
- <option value="amazon-fba">Amazon FBA</option>
+ <option value="amazon-fba">Amazon FBA (US / EU / UK / JP)</option>
  <option value="tiktok-shop">TikTok Shop</option>
  <option value="shopify">Shopify / Own Website</option>
  <option value="ebay">eBay</option>
@@ -381,9 +410,32 @@
  <option value="other">Other</option>
  </select>
  </div>
+ <div class="col-md-6">
+ <label for="targetCountry" class="form-label">Destination Country</label>
+ <input type="text" class="form-control" id="targetCountry" name="targetCountry" placeholder="e.g. USA, Germany, UK, UAE">
+ </div>
+ <div class="col-md-6">
+ <label for="productStage" class="form-label">Your Current Stage</label>
+ <select class="form-select" id="productStage" name="productStage">
+ <option value="">Select stage</option>
+ <option value="have-link">I have a product link / reference</option>
+ <option value="have-sample">I have photos or a sample</option>
+ <option value="still-looking">Still looking for product ideas</option>
+ </select>
+ </div>
+ </div>
+ <div class="d-flex gap-2 mt-4">
+ <button type="button" class="btn btn-outline-secondary btn-lg flex-fill" onclick="prevStep(2)"><i class="fas fa-arrow-left me-2"></i>Back</button>
+ <button type="button" class="btn btn-cta btn-lg flex-fill" onclick="nextStep(2)">Review &amp; Submit <i class="fas fa-arrow-right ms-2"></i></button>
+ </div>
+ </div>
+
+ <!-- Step 3 -->
+ <div id="step3" class="form-step d-none">
+ <div class="row g-3">
  <div class="col-12">
  <label for="additionalInfo" class="form-label">Additional Information</label>
- <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3" placeholder="Target price timeline certification needs or any other requirements."></textarea>
+ <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4" placeholder="Target price, timeline, certifications needed (CE, REACH, FDA, etc.), packaging requirements, or anything else."></textarea>
  </div>
  <div class="col-12">
  <div class="form-check mb-3">
@@ -394,7 +446,14 @@
  </div>
  </div>
  <div class="col-12">
- <button type="submit" class="btn btn-cta btn-lg w-100">
+ <div class="alert alert-info small mb-0">
+ <i class="fas fa-clock me-1"></i> <strong>What happens next:</strong> Our Yiwu team reviews your request within 24 hours and replies with 2–3 supplier options, unit prices, MOQ, and estimated landed cost. No payment required to get a quote.
+ </div>
+ </div>
+ </div>
+ <div class="d-flex gap-2 mt-4">
+ <button type="button" class="btn btn-outline-secondary btn-lg flex-fill" onclick="prevStep(3)"><i class="fas fa-arrow-left me-2"></i>Back</button>
+ <button type="submit" class="btn btn-cta btn-lg flex-fill">
  <i class="fas fa-paper-plane me-2"></i> Submit Quote Request
  </button>
  </div>
@@ -653,6 +712,30 @@
  setTimeout(() => {
  document.getElementById('quoteSuccess').classList.remove('d-none');
  }, 500);
+ }
+
+ // Multi-step form navigation
+ function nextStep(current) {
+ const form = document.getElementById('quoteForm');
+ const stepEl = document.getElementById('step' + current);
+ const requiredFields = stepEl.querySelectorAll('[required]');
+ let valid = true;
+ requiredFields.forEach(f => {
+ if (!f.checkValidity()) { valid = false; f.reportValidity(); }
+ });
+ if (!valid) return;
+ stepEl.classList.add('d-none');
+ document.getElementById('step' + (current + 1)).classList.remove('d-none');
+ document.getElementById('stepDot' + current).classList.remove('active');
+ document.getElementById('stepDot' + (current + 1)).classList.add('active');
+ window.scrollTo({ top: document.querySelector('.quote-form-card').offsetTop - 80, behavior: 'smooth' });
+ }
+ function prevStep(current) {
+ document.getElementById('step' + current).classList.add('d-none');
+ document.getElementById('step' + (current - 1)).classList.remove('d-none');
+ document.getElementById('stepDot' + current).classList.remove('active');
+ document.getElementById('stepDot' + (current - 1)).classList.add('active');
+ window.scrollTo({ top: document.querySelector('.quote-form-card').offsetTop - 80, behavior: 'smooth' });
  }
  // Pre-fill product from URL params
  document.addEventListener('DOMContentLoaded', function() {
