@@ -5,49 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Yeatru.com 在 AI 推荐中的表现分析与优化建议</title>
+<link rel="canonical" href="https://www.yeatru.com/ai-recommendation-analysis.html">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-         background:#f8fafc; color:#1e293b; line-height:1.65; padding:24px; }
-  .container { max-width:1100px; margin:0 auto; background:#fff; padding:40px 48px; border-radius:12px; box-shadow:0 4px 24px rgba(15,23,42,.08); }
-  h1 { font-size:2rem; color:#0f172a; margin-bottom:8px; border-bottom:3px solid #1665a9; padding-bottom:12px; }
-  .subtitle { color:#64748b; font-size:.95rem; margin-bottom:32px; }
-  h2 { font-size:1.4rem; color:#1665a9; margin:36px 0 16px; padding-left:12px; border-left:4px solid #1665a9; }
-  h3 { font-size:1.15rem; color:#1e293b; margin:22px 0 10px; }
-  h4 { font-size:1rem; color:#1665a9; margin:14px 0 6px; }
-  p { margin-bottom:12px; }
-  ul, ol { margin:8px 0 16px 24px; }
-  li { margin-bottom:6px; }
-  code { background:#f1f5f9; color:#be123c; padding:2px 6px; border-radius:4px; font-size:.9em; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
-  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:.92rem; }
-  th, td { border:1px solid #e2e8f0; padding:9px 12px; text-align:left; }
-  th { background:#1665a9; color:#fff; font-weight:600; }
-  tr:nth-child(even) td { background:#f8fafc; }
-  .summary-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin:24px 0; }
-  .card { padding:20px; border-radius:10px; color:#fff; }
-  .card.c1 { background:linear-gradient(135deg,#1a73e8,#1665a9); }
-  .card.c2 { background:linear-gradient(135deg,#9334e6,#6d28d9); }
-  .card.c3 { background:linear-gradient(135deg,#0ea5e9,#0369a1); }
-  .card.c4 { background:linear-gradient(135deg,#dc2626,#b91c1c); }
-  .card .label { font-size:.8rem; opacity:.85; text-transform:uppercase; letter-spacing:.05em; }
-  .card .value { font-size:2.1rem; font-weight:700; margin-top:6px; }
-  .card .note { font-size:.78rem; opacity:.82; margin-top:6px; }
-  .alert { padding:14px 18px; border-radius:8px; margin:16px 0; border-left:4px solid; }
-  .alert.crit { background:#fef2f2; border-color:#dc2626; color:#7f1d1d; }
-  .alert.warn { background:#fffbeb; border-color:#d97706; color:#78350f; }
-  .alert.ok { background:#ecfdf5; border-color:#10b981; color:#064e3b; }
-  .alert.info { background:#eff6ff; border-color:#3b82f6; color:#1e3a8a; }
-  .tag { display:inline-block; padding:3px 10px; border-radius:12px; font-size:.75rem; font-weight:600; margin-right:6px; }
-  .tag.p0 { background:#fee2e2; color:#b91c1c; }
-  .tag.p1 { background:#ffedd5; color:#c2410c; }
-  .tag.p2 { background:#fef3c7; color:#92400e; }
-  .tag.p3 { background:#dbeafe; color:#1e40af; }
-  .bar-wrap { background:#e2e8f0; border-radius:6px; height:20px; position:relative; overflow:hidden; }
-  .bar { height:100%; background:linear-gradient(90deg,#1665a9,#3b82f6); border-radius:6px; }
-  .bar-label { font-size:.8rem; color:#475569; }
-  .footer { margin-top:40px; padding-top:16px; border-top:1px solid #e2e8f0; color:#64748b; font-size:.85rem; }
-  .src { font-size:.82rem; color:#64748b; margin-top:-4px; margin-bottom:14px; }
-  @media (max-width:768px){ .container{padding:24px 20px;} h1{font-size:1.5rem;} table{font-size:.82rem;} }
+ * { margin:0; padding:0; box-sizing:border-box; }
+ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:#f8fafc; color:#1e293b; line-height:1.65; padding:24px; }
+ .container { max-width:1100px; margin:0 auto; background:#fff; padding:40px 48px; border-radius:12px; box-shadow:0 4px 24px rgba(15,23,42,.08); }
+ h1 { font-size:2rem; color:#0f172a; margin-bottom:8px; border-bottom:3px solid #1665a9; padding-bottom:12px; }
+ .subtitle { color:#64748b; font-size:.95rem; margin-bottom:32px; }
+ h2 { font-size:1.4rem; color:#1665a9; margin:36px 0 16px; padding-left:12px; border-left:4px solid #1665a9; }
+ h3 { font-size:1.15rem; color:#1e293b; margin:22px 0 10px; }
+ h4 { font-size:1rem; color:#1665a9; margin:14px 0 6px; }
+ p { margin-bottom:12px; }
+ ul, ol { margin:8px 0 16px 24px; }
+ li { margin-bottom:6px; }
+ code { background:#f1f5f9; color:#be123c; padding:2px 6px; border-radius:4px; font-size:.9em; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+ table { width:100%; border-collapse:collapse; margin:16px 0; font-size:.92rem; }
+ th, td { border:1px solid #e2e8f0; padding:9px 12px; text-align:left; }
+ th { background:#1665a9; color:#fff; font-weight:600; }
+ tr:nth-child(even) td { background:#f8fafc; }
+ .summary-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin:24px 0; }
+ .card { padding:20px; border-radius:10px; color:#fff; }
+ .card.c1 { background:linear-gradient(135deg,#1a73e8,#1665a9); }
+ .card.c2 { background:linear-gradient(135deg,#9334e6,#6d28d9); }
+ .card.c3 { background:linear-gradient(135deg,#0ea5e9,#0369a1); }
+ .card.c4 { background:linear-gradient(135deg,#dc2626,#b91c1c); }
+ .card .label { font-size:.8rem; opacity:.85; text-transform:uppercase; letter-spacing:.05em; }
+ .card .value { font-size:2.1rem; font-weight:700; margin-top:6px; }
+ .card .note { font-size:.78rem; opacity:.82; margin-top:6px; }
+ .alert { padding:14px 18px; border-radius:8px; margin:16px 0; border-left:4px solid; }
+ .alert.crit { background:#fef2f2; border-color:#dc2626; color:#7f1d1d; }
+ .alert.warn { background:#fffbeb; border-color:#d97706; color:#78350f; }
+ .alert.ok { background:#ecfdf5; border-color:#10b981; color:#064e3b; }
+ .alert.info { background:#eff6ff; border-color:#3b82f6; color:#1e3a8a; }
+ .tag { display:inline-block; padding:3px 10px; border-radius:12px; font-size:.75rem; font-weight:600; margin-right:6px; }
+ .tag.p0 { background:#fee2e2; color:#b91c1c; }
+ .tag.p1 { background:#ffedd5; color:#c2410c; }
+ .tag.p2 { background:#fef3c7; color:#92400e; }
+ .tag.p3 { background:#dbeafe; color:#1e40af; }
+ .bar-wrap { background:#e2e8f0; border-radius:6px; height:20px; position:relative; overflow:hidden; }
+ .bar { height:100%; background:linear-gradient(90deg,#1665a9,#3b82f6); border-radius:6px; }
+ .bar-label { font-size:.8rem; color:#475569; }
+ .footer { margin-top:40px; padding-top:16px; border-top:1px solid #e2e8f0; color:#64748b; font-size:.85rem; }
+ .src { font-size:.82rem; color:#64748b; margin-top:-4px; margin-bottom:14px; }
+ @media (max-width:768px){ .container{padding:24px 20px;} h1{font-size:1.5rem;} table{font-size:.82rem;} }
 </style>
 </head>
 <body>
@@ -60,34 +61,34 @@
 <h2>一、AI 推荐表现总览</h2>
 
 <div class="summary-cards">
-  <div class="card c1">
-    <div class="label">3M 总引用（Copilot）</div>
-    <div class="value">104</div>
-    <div class="note">7D：29 次 · 绝对量仍处于起步阶段</div>
-  </div>
-  <div class="card c2">
-    <div class="label">平均被引用页面</div>
-    <div class="value">0–1</div>
-    <div class="note">3M=0，7D=1 → 引用高度集中</div>
-  </div>
-  <div class="card c3">
-    <div class="label">被引用页面数（7D）</div>
-    <div class="value">6</div>
-    <div class="note">前 1 页占 48%，前 4 页占 ~90%</div>
-  </div>
-  <div class="card c4">
-    <div class="label">头部 grounding query 占比</div>
-    <div class="value">22%</div>
-    <div class="note">单条 query 即占全部引用的 22%</div>
-  </div>
+ <div class="card c1">
+ <div class="label">3M 总引用（Copilot）</div>
+ <div class="value">104</div>
+ <div class="note">7D：29 次 · 绝对量仍处于起步阶段</div>
+ </div>
+ <div class="card c2">
+ <div class="label">平均被引用页面</div>
+ <div class="value">0–1</div>
+ <div class="note">3M=0，7D=1 → 引用高度集中</div>
+ </div>
+ <div class="card c3">
+ <div class="label">被引用页面数（7D）</div>
+ <div class="value">6</div>
+ <div class="note">前 1 页占 48%，前 4 页占 ~90%</div>
+ </div>
+ <div class="card c4">
+ <div class="label">头部 grounding query 占比</div>
+ <div class="value">22%</div>
+ <div class="note">单条 query 即占全部引用的 22%</div>
+ </div>
 </div>
 
 <div class="alert crit">
-  <strong>核心结论 1：AI 引用规模小、且极度集中。</strong> 3 个月仅 104 次引用，平均被引用页面近乎 0–1。7D 的 29 次引用几乎全部来自 6 个页面，其中 <code>blog-fcc-certification-china.html</code> 一页独占 14 次（48%）。这意味着 Copilot 目前只“记住”了极少数内容，绝大部分页面在生成式 AI 中完全不可见。
+ <strong>核心结论 1：AI 引用规模小、且极度集中。</strong> 3 个月仅 104 次引用，平均被引用页面近乎 0–1。7D 的 29 次引用几乎全部来自 6 个页面，其中 <code>blog-fcc-certification-china.html</code> 一页独占 14 次（48%）。这意味着 Copilot 目前只“记住”了极少数内容，绝大部分页面在生成式 AI 中完全不可见。
 </div>
 
 <div class="alert warn">
-  <strong>核心结论 2：AI 把 Yeatru 归类为“贸易术语/合规权威”，而非“中国采购服务商”。</strong> 被引用的全部是信息型内容（FCC 认证、REACH 法规、付款安全、代理费用、海运、中东市场）。核心商业页（首页、服务页、国家页、品类页）无一进入 Copilot 引用集合。主题画像也只识别出 International Trade &amp; Shipping Terminology 与 B2B Services 两个主题。
+ <strong>核心结论 2：AI 把 Yeatru 归类为“贸易术语/合规权威”，而非“中国采购服务商”。</strong> 被引用的全部是信息型内容（FCC 认证、REACH 法规、付款安全、代理费用、海运、中东市场）。核心商业页（首页、服务页、国家页、品类页）无一进入 Copilot 引用集合。主题画像也只识别出 International Trade &amp; Shipping Terminology 与 B2B Services 两个主题。
 </div>
 
 <!-- ============ 二、引用结构 ============ -->
@@ -95,31 +96,31 @@
 
 <h3>2.1 被引用页面（7D 明细）</h3>
 <table>
-  <tr><th>被引用页面</th><th>引用次数</th><th>占 7D 总引用</th><th>内容类型</th></tr>
-  <tr><td>blog-fcc-certification-china.html</td><td>14</td><td>48%</td><td>美国电子合规</td></tr>
-  <tr><td>blog-reach-regulation-china.html</td><td>4</td><td>14%</td><td>欧盟法规</td></tr>
-  <tr><td>blog-how-to-pay-chinese-suppliers-safely.html</td><td>4</td><td>14%</td><td>付款安全</td></tr>
-  <tr><td>blog-sourcing-agent-fees-2026.html</td><td>4</td><td>14%</td><td>代理费用</td></tr>
-  <tr><td>sourcing-agent-middle-east-uae-saudi.html</td><td>2</td><td>7%</td><td>区域市场页</td></tr>
-  <tr><td>blog-sea-freight-china.html</td><td>1</td><td>3%</td><td>海运物流</td></tr>
+ <tr><th>被引用页面</th><th>引用次数</th><th>占 7D 总引用</th><th>内容类型</th></tr>
+ <tr><td>blog-fcc-certification-china.html</td><td>14</td><td>48%</td><td>美国电子合规</td></tr>
+ <tr><td>blog-reach-regulation-china.html</td><td>4</td><td>14%</td><td>欧盟法规</td></tr>
+ <tr><td>blog-how-to-pay-chinese-suppliers-safely.html</td><td>4</td><td>14%</td><td>付款安全</td></tr>
+ <tr><td>blog-sourcing-agent-fees-2026.html</td><td>4</td><td>14%</td><td>代理费用</td></tr>
+ <tr><td>sourcing-agent-middle-east-uae-saudi.html</td><td>2</td><td>7%</td><td>区域市场页</td></tr>
+ <tr><td>blog-sea-freight-china.html</td><td>1</td><td>3%</td><td>海运物流</td></tr>
 </table>
 
 <h3>2.2 引用来源查询（Grounding Queries，3M）</h3>
 <table>
-  <tr><th>Grounding Query</th><th>意图</th><th>主题</th><th>引用次数</th><th>引用占比</th></tr>
-  <tr><td>sourcing agent services china germany</td><td>Informational</td><td>B2B Services</td><td>32</td><td>22.07%</td></tr>
-  <tr><td>LCL vs FCL Import 2 China …</td><td>Comparison</td><td>Intl. Trade &amp; Shipping Terminology</td><td>10</td><td>17.86%</td></tr>
+ <tr><th>Grounding Query</th><th>意图</th><th>主题</th><th>引用次数</th><th>引用占比</th></tr>
+ <tr><td>sourcing agent services china germany</td><td>Informational</td><td>B2B Services</td><td>32</td><td>22.07%</td></tr>
+ <tr><td>LCL vs FCL Import 2 China …</td><td>Comparison</td><td>Intl. Trade &amp; Shipping Terminology</td><td>10</td><td>17.86%</td></tr>
 </table>
 <p class="src">仅 2 条 query 就贡献了约 40% 的引用。第一条对应德国采购页（<code>china-sourcing-agent-germany.html</code>），说明该页面已成为品牌在 AI 中最强的单一引用资产。</p>
 
 <h3>2.3 AI 主题画像（Topic Portfolio，3M Jul–Sep）</h3>
 <table>
-  <tr><th>主题</th><th>Topic Size</th><th>Sites Cited</th><th>Queries</th></tr>
-  <tr><td>International Trade &amp; Shipping Terminology</td><td>50M–100M</td><td>10K–50K</td><td>50K–100K</td></tr>
-  <tr><td>B2B Services</td><td>10M–50M</td><td>10K–50K</td><td>50K–100K</td></tr>
+ <tr><th>主题</th><th>Topic Size</th><th>Sites Cited</th><th>Queries</th></tr>
+ <tr><td>International Trade &amp; Shipping Terminology</td><td>50M–100M</td><td>10K–50K</td><td>50K–100K</td></tr>
+ <tr><td>B2B Services</td><td>10M–50M</td><td>10K–50K</td><td>50K–100K</td></tr>
 </table>
 <div class="alert info">
-  Copilot 认为 Yeatru 最相关的是<strong>贸易术语</strong>，其次是 B2B Services。SEO 关键词（china sourcing agent / procurement agent）与 AI 实际关联的主题存在错位——品牌被当作“查术语的工具站”，而不是“找采购代理的服务商”。
+ Copilot 认为 Yeatru 最相关的是<strong>贸易术语</strong>，其次是 B2B Services。SEO 关键词（china sourcing agent / procurement agent）与 AI 实际关联的主题存在错位——品牌被当作“查术语的工具站”，而不是“找采购代理的服务商”。
 </div>
 
 <!-- ============ 三、机会 query ============ -->
@@ -127,14 +128,14 @@
 <p>Bing 的 Top Opportunity Queries 给出每条查询的引用区间（Citation Range）。区间越高，代表该 query 的引用盘子越大、越值得争夺。所有机会查询几乎都是 <strong>incoterms / 贸易术语对比</strong>：</p>
 
 <table>
-  <tr><th>引用区间（需求热度）</th><th>代表机会查询</th></tr>
-  <tr><td><strong>1K–5K（最高）</strong></td><td>fob e cif · dap vs ddp · fca vs fob · cif vs fob · fob vs cif · ddp vs dap · fca vs exw · dap vs ddp incoterms · fob origin vs destination</td></tr>
-  <tr><td><strong>500–1K</strong></td><td>cif vs cip · ddp vs ddu · difference between fca and exw · fob fca · incoterms dap vs ddp · difference between cif and fob · dap and ddp · dap or ddp · fob vs fca incoterms · exw vs fca · ex works vs fca · ddu vs ddp · ddp vs dap incoterms · value added services</td></tr>
-  <tr><td><strong>101–500</strong></td><td>fob vs ex works · incoterm dap vs ddp · incoterm fca vs exw · incoterm cip vs cif · difference between cip and cif · value added service · difference between cif and cip · incoterms fca vs exw · cif vs cip incoterms · fca and exw difference · what is the difference between exw and fca · dap &amp; ddp · eta etd</td></tr>
+ <tr><th>引用区间（需求热度）</th><th>代表机会查询</th></tr>
+ <tr><td><strong>1K–5K（最高）</strong></td><td>fob e cif · dap vs ddp · fca vs fob · cif vs fob · fob vs cif · ddp vs dap · fca vs exw · dap vs ddp incoterms · fob origin vs destination</td></tr>
+ <tr><td><strong>500–1K</strong></td><td>cif vs cip · ddp vs ddu · difference between fca and exw · fob fca · incoterms dap vs ddp · difference between cif and fob · dap and ddp · dap or ddp · fob vs fca incoterms · exw vs fca · ex works vs fca · ddu vs ddp · ddp vs dap incoterms · value added services</td></tr>
+ <tr><td><strong>101–500</strong></td><td>fob vs ex works · incoterm dap vs ddp · incoterm fca vs exw · incoterm cip vs cif · difference between cip and cif · value added service · difference between cif and cip · incoterms fca vs exw · cif vs cip incoterms · fca and exw difference · what is the difference between exw and fca · dap &amp; ddp · eta etd</td></tr>
 </table>
 
 <div class="alert ok">
-  <strong>机会判断：</strong>站内已有部分 incoterms 内容（<code>blog-incoterms-china-sourcing.html</code>、<code>blog-fob-vs-cif-china.html</code>、<code>blog-cif-vs-cip-china.html</code>、<code>blog-fca-vs-exw-china.html</code>、<code>blog-dap-vs-ddp-china.html</code>、<code>blog-fob-vs-exw-vs-ddp.html</code>、<code>blog-fob-origin-vs-destination.html</code>），但 Bing AI 的高价值变体尚未被引用。经核对，站内<strong>缺少</strong>以下专属页面：<code>ddu vs ddp</code>、<code>eta vs etd</code>、<code>lcl vs fcl</code>（后者已在被引用之列，但无专属页）。
+ <strong>机会判断：</strong>站内已有部分 incoterms 内容（<code>blog-incoterms-china-sourcing.html</code>、<code>blog-fob-vs-cif-china.html</code>、<code>blog-cif-vs-cip-china.html</code>、<code>blog-fca-vs-exw-china.html</code>、<code>blog-dap-vs-ddp-china.html</code>、<code>blog-fob-vs-exw-vs-ddp.html</code>、<code>blog-fob-origin-vs-destination.html</code>），但 Bing AI 的高价值变体尚未被引用。经核对，站内<strong>缺少</strong>以下专属页面：<code>ddu vs ddp</code>、<code>eta vs etd</code>、<code>lcl vs fcl</code>（后者已在被引用之列，但无专属页）。
 </div>
 
 <!-- ============ 四、经典搜索对照 ============ -->
@@ -142,22 +143,22 @@
 
 <h3>4.1 Google Search Console</h3>
 <table>
-  <tr><th>窗口</th><th>点击</th><th>展示</th><th>CTR</th><th>平均排名</th></tr>
-  <tr><td>3 个月</td><td>43</td><td>6.47K</td><td>0.7%</td><td>25</td></tr>
-  <tr><td>28 天</td><td>31</td><td>3.88K</td><td>0.8%</td><td>16.2</td></tr>
-  <tr><td>7 天</td><td>5</td><td>714</td><td>0.7%</td><td>22.1</td></tr>
-  <tr><td>24 小时</td><td>0</td><td>136</td><td>0%</td><td>25.9</td></tr>
+ <tr><th>窗口</th><th>点击</th><th>展示</th><th>CTR</th><th>平均排名</th></tr>
+ <tr><td>3 个月</td><td>43</td><td>6.47K</td><td>0.7%</td><td>25</td></tr>
+ <tr><td>28 天</td><td>31</td><td>3.88K</td><td>0.8%</td><td>16.2</td></tr>
+ <tr><td>7 天</td><td>5</td><td>714</td><td>0.7%</td><td>22.1</td></tr>
+ <tr><td>24 小时</td><td>0</td><td>136</td><td>0%</td><td>25.9</td></tr>
 </table>
 <p class="src">有曝光、无点击。国家维度（24h）：美国 57 次展示 0 点击；德国 1 次点击；其余市场近乎为 0。这与 AI 侧一致——内容被“看到”，但未与转化意图绑定。</p>
 
 <h3>4.2 Bing Search Performance（3M）</h3>
 <table>
-  <tr><th>关键词</th><th>展示</th><th>点击</th><th>CTR</th><th>平均排名</th></tr>
-  <tr><td>yeatru</td><td>20</td><td>7</td><td>35.00%</td><td>4.15</td></tr>
-  <tr><td>www.yeatru.com</td><td>10</td><td>3</td><td>30.00%</td><td>1.50</td></tr>
-  <tr><td>yeatru.com</td><td>6</td><td>3</td><td>50.00%</td><td>1.17</td></tr>
-  <tr><td>yeatrusourcing</td><td>5</td><td>3</td><td>60.00%</td><td>2.20</td></tr>
-  <tr><td>how long to learn china sourcing for beginners</td><td>4</td><td>0</td><td>0.00%</td><td>1.00</td></tr>
+ <tr><th>关键词</th><th>展示</th><th>点击</th><th>CTR</th><th>平均排名</th></tr>
+ <tr><td>yeatru</td><td>20</td><td>7</td><td>35.00%</td><td>4.15</td></tr>
+ <tr><td>www.yeatru.com</td><td>10</td><td>3</td><td>30.00%</td><td>1.50</td></tr>
+ <tr><td>yeatru.com</td><td>6</td><td>3</td><td>50.00%</td><td>1.17</td></tr>
+ <tr><td>yeatrusourcing</td><td>5</td><td>3</td><td>60.00%</td><td>2.20</td></tr>
+ <tr><td>how long to learn china sourcing for beginners</td><td>4</td><td>0</td><td>0.00%</td><td>1.00</td></tr>
 </table>
 <p class="src">Bing 的 16 次点击（CTR 9.52%）几乎全部来自品牌词，排名 1–4。非品牌词即使排名第 1 也是 0 点击——说明 Bing 侧流量同样依赖品牌认知，而非内容拉新。</p>
 
@@ -165,15 +166,15 @@
 <h2>五、限制 AI / 富结果可得性的技术障碍</h2>
 
 <div class="alert crit">
-  <strong>障碍 1（最严重）：1,278 个商品全部无法生成富结果。</strong> Google Product snippets 显示 “100% of your items aren't eligible for rich results”。错误明细：<code>Either 'price' or 'priceSpecification.price' should be specified in 'offers'</code>（1,278 项）、<code>Either 'offers','review', or 'aggregateRating' should be specified</code>（62 项）；外观项缺失 <code>priceCurrency</code> / <code>availability</code> / <code>aggregateRating</code> / <code>review</code> 各 1,278 项。Merchant listings 同样 100% 不合格。这直接切断了 AI 与 Google 获取商品价格/库存/评分的通路。
+ <strong>障碍 1（最严重）：1,278 个商品全部无法生成富结果。</strong> Google Product snippets 显示 “100% of your items aren't eligible for rich results”。错误明细：<code>Either 'price' or 'priceSpecification.price' should be specified in 'offers'</code>（1,278 项）、<code>Either 'offers','review', or 'aggregateRating' should be specified</code>（62 项）；外观项缺失 <code>priceCurrency</code> / <code>availability</code> / <code>aggregateRating</code> / <code>review</code> 各 1,278 项。Merchant listings 同样 100% 不合格。这直接切断了 AI 与 Google 获取商品价格/库存/评分的通路。
 </div>
 
 <div class="alert warn">
-  <strong>障碍 2：40 页 “Duplicate without user-selected canonical” 仍未通过验证。</strong> 验证于 2026-09-24 发起，2026-10-05 失败。受影响 URL 均为参数化产品页，例如 <code>/products.html?lang=es&amp;product=YCS-…</code>、<code>/product-YCS-….html?lang=ar|fr|es|ru</code>、<code>/contact.html?product=…</code>。GitHub Pages 不支持服务端重定向，只能靠 canonical + robots + 内链清理组合治理。
+ <strong>障碍 2：40 页 “Duplicate without user-selected canonical” 仍未通过验证。</strong> 验证于 2026-09-24 发起，2026-10-05 失败。受影响 URL 均为参数化产品页，例如 <code>/products.html?lang=es&amp;product=YCS-…</code>、<code>/product-YCS-….html?lang=ar|fr|es|ru</code>、<code>/contact.html?product=…</code>。GitHub Pages 不支持服务端重定向，只能靠 canonical + robots + 内链清理组合治理。
 </div>
 
 <div class="alert warn">
-  <strong>障碍 3：核心转化页尚未建立可被 AI 提取的结构化答案。</strong> 首页、服务页、国家页、43 个品类页虽已补齐 FAQPage，但 AI 引用仍停留在博客层。AI 需要“可直接摘录的答案块”（定义 + 对比表 + 具体数字），而非营销文案。
+ <strong>障碍 3：核心转化页尚未建立可被 AI 提取的结构化答案。</strong> 首页、服务页、国家页、43 个品类页虽已补齐 FAQPage，但 AI 引用仍停留在博客层。AI 需要“可直接摘录的答案块”（定义 + 对比表 + 具体数字），而非营销文案。
 </div>
 
 <!-- ============ 六、优化建议 ============ -->
@@ -181,41 +182,41 @@
 
 <h3><span class="tag p0">P0</span>修复商品结构化数据 —— 撬动面最大</h3>
 <ul>
-  <li>为全部产品页补全 <code>offers</code>：<code>price</code>、<code>priceCurrency</code>、<code>availability</code>、<code>priceValidUntil</code>，并修正 <code>OfferShippingDetails.shippingRate.value = 0</code>（改为小包模型计算值）。</li>
-  <li>用真实评价（来自 <code>testimonials.html</code>）补 <code>aggregateRating</code> / <code>review</code>，把 1,278 项从 invalid 转为 eligible。</li>
-  <li>目标：GSC Product snippets 有效项从 0 → 覆盖全部在售 SKU，恢复 Shopping 与 AI 商品数据通路。</li>
+ <li>为全部产品页补全 <code>offers</code>：<code>price</code>、<code>priceCurrency</code>、<code>availability</code>、<code>priceValidUntil</code>，并修正 <code>OfferShippingDetails.shippingRate.value = 0</code>（改为小包模型计算值）。</li>
+ <li>用真实评价（来自 <code>testimonials.html</code>）补 <code>aggregateRating</code> / <code>review</code>，把 1,278 项从 invalid 转为 eligible。</li>
+ <li>目标：GSC Product snippets 有效项从 0 → 覆盖全部在售 SKU，恢复 Shopping 与 AI 商品数据通路。</li>
 </ul>
 
 <h3><span class="tag p1">P1</span>主攻 Bing AI 的高价值机会词（incoterms）</h3>
 <ul>
-  <li>为 1K–5K 区间的高热度变体建立/强化专属内容：<code>cif vs cip</code>、<code>exw vs fca</code>、<code>ddu vs ddp</code>、<code>dap vs ddp</code>、<code>fob vs exw</code>、<code>fob origin vs destination</code>、<code>eta vs etd</code>、<code>ddp vs dap incoterms</code>。</li>
-  <li>缺失页面优先新建：<code>ddu vs ddp</code>、<code>eta vs etd</code>；<code>LCL vs FCL</code> 已有引用但无专属页，值得补页面承接。</li>
-  <li>结构统一：首屏 3–5 句直接定义 + 对比表 + <code>FAQPage</code> schema + 真实 DDP 数字/时效（AI 偏好可摘录的事实块）。</li>
+ <li>为 1K–5K 区间的高热度变体建立/强化专属内容：<code>cif vs cip</code>、<code>exw vs fca</code>、<code>ddu vs ddp</code>、<code>dap vs ddp</code>、<code>fob vs exw</code>、<code>fob origin vs destination</code>、<code>eta vs etd</code>、<code>ddp vs dap incoterms</code>。</li>
+ <li>缺失页面优先新建：<code>ddu vs ddp</code>、<code>eta vs etd</code>；<code>LCL vs FCL</code> 已有引用但无专属页，值得补页面承接。</li>
+ <li>结构统一：首屏 3–5 句直接定义 + 对比表 + <code>FAQPage</code> schema + 真实 DDP 数字/时效（AI 偏好可摘录的事实块）。</li>
 </ul>
 
 <h3><span class="tag p2">P2</span>把 AI 关联从“术语”扩到“采购服务”</h3>
 <ul>
-  <li>统一全站实体：<code>Organization</code> / <code>ProfessionalService</code> 的 <code>sameAs</code>、<code>foundingDate</code>、VAT、地址保持一致，强化 B2B Services 主题信号。</li>
-  <li>为服务页、国家页补齐 FAQPage（德国、美国、法国、西班牙已有；<code>index.html</code> 已有），并加入数字型买家问答。</li>
-  <li>保持 <code>llms.txt</code> / <code>llms-full.txt</code> / <code>ai.txt</code> 与可见内容同步，补入 France / Spain / incoterms 关键事实。</li>
-  <li>目标：让 Copilot 的引用从博客层扩散到服务页与国家页，降低对单页的依赖。</li>
+ <li>统一全站实体：<code>Organization</code> / <code>ProfessionalService</code> 的 <code>sameAs</code>、<code>foundingDate</code>、VAT、地址保持一致，强化 B2B Services 主题信号。</li>
+ <li>为服务页、国家页补齐 FAQPage（德国、美国、法国、西班牙已有；<code>index.html</code> 已有），并加入数字型买家问答。</li>
+ <li>保持 <code>llms.txt</code> / <code>llms-full.txt</code> / <code>ai.txt</code> 与可见内容同步，补入 France / Spain / incoterms 关键事实。</li>
+ <li>目标：让 Copilot 的引用从博客层扩散到服务页与国家页，降低对单页的依赖。</li>
 </ul>
 
 <h3><span class="tag p3">P3</span>消除 40 条重复 canonical</h3>
 <ul>
-  <li>确认参数化 URL 的 canonical 指向干净版本，robots 规则生效；清理站内指向 <code>?lang=</code> / <code>?product=</code> 的内链。</li>
-  <li>在 GSC 重新提交验证，直至 “Duplicate without user-selected canonical” 归零。</li>
+ <li>确认参数化 URL 的 canonical 指向干净版本，robots 规则生效；清理站内指向 <code>?lang=</code> / <code>?product=</code> 的内链。</li>
+ <li>在 GSC 重新提交验证，直至 “Duplicate without user-selected canonical” 归零。</li>
 </ul>
 
 <h3><span class="tag p3">P4</span>监控与迭代节奏</h3>
 <ul>
-  <li><strong>2–3 周后</strong>查看 Bing AI Performance → Citations &amp; Pages / Topic Portfolio：新国家页与 incoterms 页是否进入 cited pages；grounding query 是否出现商业词。</li>
-  <li><strong>2–4 周后</strong>查看 GSC Product snippets 有效项数、重复 canonical 是否清零。</li>
-  <li>建议目标：被引用页面从 6 页扩至 &gt;20 页；头部单条 query 占比从 22% 降到 &lt;15%；AI 引用出现 “sourcing agent / procurement” 类商业词。</li>
+ <li><strong>2–3 周后</strong>查看 Bing AI Performance → Citations &amp; Pages / Topic Portfolio：新国家页与 incoterms 页是否进入 cited pages；grounding query 是否出现商业词。</li>
+ <li><strong>2–4 周后</strong>查看 GSC Product snippets 有效项数、重复 canonical 是否清零。</li>
+ <li>建议目标：被引用页面从 6 页扩至 &gt;20 页；头部单条 query 占比从 22% 降到 &lt;15%；AI 引用出现 “sourcing agent / procurement” 类商业词。</li>
 </ul>
 
 <div class="footer">
-  Yeatru Sourcing · AI 推荐表现分析 · 生成日期 2026-10-16 · 数据窗口 2026-07 ~ 2026-10（Bing 3M/1M，GSC 24h/7D/28D/3M）
+ Yeatru Sourcing · AI 推荐表现分析 · 生成日期 2026-10-16 · 数据窗口 2026-07 ~ 2026-10（Bing 3M/1M，GSC 24h/7D/28D/3M）
 </div>
 
 </div>
