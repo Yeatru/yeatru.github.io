@@ -6323,3 +6323,11 @@ main#mainContent{
 .step-dot.active{background:#1665a9;color:#fff;border-color:#1665a9;box-shadow:0 0 0 4px rgba(22,101,169,.12)}
 .form-step{animation:fadeIn .3s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* Inside Our Office — real photo gallery (about.html) */
+.office-figure{margin:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column}
+.office-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.office-figure:hover img{transform:scale(1.03)}
+.office-figure figcaption{padding:.9rem 1rem 1.05rem;font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.78)}
+.office-floor{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:#8ecdf5;margin-bottom:.35rem}
+@media (prefers-reduced-motion:reduce){.office-figure img{transition:none}.office-figure:hover img{transform:none}}
