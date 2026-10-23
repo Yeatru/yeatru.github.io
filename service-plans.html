@@ -71,11 +71,8 @@
  .mt-4{margin-top:1.5rem}
  .py-5{padding-top:3rem;padding-bottom:3rem}
  @media(min-width:992px){
- #plan-section>.container{height:1280px;overflow:hidden;position:relative}
- #plan-section>.container>.breadcrumb{position:absolute;top:0;left:0;right:0}
- #plan-section>.container>.section-title-wrap{position:absolute;top:50px;left:0;right:0;height:144px!important;overflow:hidden!important;margin:0!important}
- #plan-section>.container>.row{position:absolute;top:194px;left:0;right:0;margin:0}
- #plan-section .breadcrumb{height:26px!important;overflow:hidden!important;flex-wrap:nowrap!important;margin:0 0 16px!important}
+ #plan-section>.container{position:relative}
+ #plan-section .breadcrumb{flex-wrap:nowrap!important;margin:0 0 16px!important}
  }
  @media(min-width:768px){.col-md-6{flex:0 0 50%;max-width:50%}}
  @media(min-width:992px){.col-lg-3{flex:0 0 25%;max-width:25%}.col-lg-4{flex:0 0 33.333333%;max-width:33.333333%}.col-lg-6{flex:0 0 50%;max-width:50%}.col-lg-8{flex:0 0 66.666667%;max-width:66.666667%}.g-lg-5>*{padding-right:1.5rem;padding-left:1.5rem;margin-top:3rem}}
@@ -83,7 +80,7 @@
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css?v=20260909k" media="print" onload="this.media='all'" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css?v=20260909k" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"></noscript>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="styles.css?v=20261023a">
+ <link rel="stylesheet" href="styles.css?v=20261023e">
  <script type="application/ld+json">
  {
  "@context": "https://schema.org", "@type": "Service", "name": "Sourcing Service Plans", "description": "Compare Yeatru sourcing plans: Free Quotation Order Management Full Sourcing. Transparent 5-8% tiered commission covering QC consolidation documentation. 2026 pricing.", "provider": {
@@ -217,7 +214,7 @@
  }
  .spc-plan-badge.p0 { color: #065f46; } /* Free Quotation (green) */
  .spc-plan-badge.p1 { color: var(--c-brand-600); } /* Order Management (blue) */
- .spc-plan-badge.p2 { color: #f97316; } /* Full Sourcing (teal) */
+ .spc-plan-badge.p2 { color: #c2410c; } /* Full Sourcing (teal) */
 
  .spc-plan-title {
  font-size: 1.22rem;
@@ -253,7 +250,7 @@
  color: var(--text-tertiary);
  }
  .spc-price-min.p1 { color: var(--c-brand-600); } /* icon tint */
- .spc-price-min.p2 { color: #f97316; }
+ .spc-price-min.p2 { color: #c2410c; }
 
  /* 3. label (Best For / What's Included / Tiered Rates) */
  .spc-section-label {
@@ -261,11 +258,11 @@
  font-weight: 700;
  letter-spacing: 0.08em;
  text-transform: uppercase;
- color: #94a3b8; /* slate-400 */
+ color: #475569; /* slate-600 · 7.4:1 on white */
  line-height: 1.2;
  }
  .spc-section-label .accent {
- color: #10b981; /* Plan0 "· 100% Free" */
+ color: #047857; /* emerald-700 · 5.4:1 on white */
  font-style: normal;
  }
 
@@ -296,9 +293,9 @@
  margin-top: 0.45rem;
  font-size: 0.9rem;
  }
- .spc-icon.p0 { color: #10b981; }
+ .spc-icon.p0 { color: #047857; }
  .spc-icon.p1 { color: var(--c-brand-600); }
- .spc-icon.p2 { color: #f97316; }
+ .spc-icon.p2 { color: #c2410c; }
 
  /* 5. Note / Info block (Plan0 How We Earn / Plan1 Service Model) */
  .spc-note {
@@ -331,10 +328,10 @@
  .spc-tier-row { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0.95rem; }
  .spc-tier-row + .spc-tier-row { border-top: 1px solid #f1f5f9; }
  .spc-tier-row.bg-alt { background: #f8fafc; }
- .spc-tier-row.bg-feat { background: var(--bg-panel)7ed; }
+ .spc-tier-row.bg-feat { background: #fff7ed; }
  .spc-tier-label { font-size: 0.85rem; color: var(--text-secondary); }
  .spc-tier-row.bg-feat .spc-tier-label { color: #9a3412; font-weight: 600; }
- .spc-tier-value { font-size: 0.88rem; font-weight: 700; color: #f97316; }
+ .spc-tier-value { font-size: 0.88rem; font-weight: 700; color: #c2410c; }
  .spc-tier-row.bg-feat .spc-tier-value { font-size: 0.9rem; font-weight: 800; }
 
  /* 7. Tier (Plan0 ) */
@@ -366,18 +363,18 @@
  padding: 0.8rem 1rem;
  color: var(--bg-panel);
  text-decoration: none;
- transition: transform .15s ease box-shadow .15s ease;
+ transition: transform .15s ease, box-shadow .15s ease;
  }
  .spc-cta:hover { transform: translateY(-1px); color: var(--bg-panel); text-decoration: none; }
- .spc-cta.p0 { background: #10b981; border: 1px solid #10b981; box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
+ .spc-cta.p0 { background: #047857; border: 1px solid #047857; box-shadow: 0 6px 18px rgba(4,120,87,0.30); }
  .spc-cta.p1 { background: var(--c-brand-600); border: 1px solid var(--c-brand-600); box-shadow: 0 6px 18px rgba(13,148,136,0.30); }
- .spc-cta.p2 { background: linear-gradient(135deg #f97316 #ea580c); border: 1px solid #f97316; box-shadow: 0 6px 18px rgba(249,115,22,0.30); }
+ .spc-cta.p2 { background: linear-gradient(135deg, #c2410c, #9a3412); border: 1px solid #c2410c; box-shadow: 0 6px 18px rgba(154,52,18,0.28); }
 
  .spc-cta-secondary {
  display: block;
  text-align: center;
  padding: 0.5rem 1rem;
- color: #10b981;
+ color: #047857;
  font-size: 0.84rem;
  font-weight: 600;
  text-decoration: none;
@@ -395,9 +392,9 @@
  display: flex; align-items: center; justify-content: center;
  flex-shrink: 0;
  }
- .spc-icon-tile.p0 { background: #10b981; box-shadow: 0 6px 16px rgba(16,185,129,0.35); }
+ .spc-icon-tile.p0 { background: #059669; box-shadow: 0 6px 16px rgba(5,150,105,0.32); }
  .spc-icon-tile.p1 { background: var(--c-brand-600); box-shadow: 0 6px 16px rgba(13,148,136,0.30); }
- .spc-icon-tile.p2 { background: #f97316; box-shadow: 0 6px 16px rgba(249,115,22,0.28); }
+ .spc-icon-tile.p2 { background: #c2410c; box-shadow: 0 6px 16px rgba(194,65,12,0.28); }
  .spc-icon-tile i { color: var(--bg-panel); font-size: 1.22rem; }
 
 
@@ -416,11 +413,11 @@
  }
  /* Card border + soft inner fade — unified 2px solid brand */
  .plan-card.p0 { border: 2px solid #10b981; box-shadow: 0 12px 40px rgba(16,185,129,0.18);
- background: linear-gradient(180deg #ecfdf5 0% var(--bg-panel) 28%); }
+ background: linear-gradient(180deg, #ecfdf5 0%, var(--bg-panel) 28%); }
  .plan-card.p1 { border: 2px solid var(--c-brand-600); box-shadow: 0 12px 40px rgba(13,148,136,0.14);
- background: linear-gradient(180deg #f0fdfa 0% var(--bg-panel) 28%); }
+ background: linear-gradient(180deg, #f0fdfa 0%, var(--bg-panel) 28%); }
  .plan-card.p2 { border: 2px solid #f97316; box-shadow: 0 12px 40px rgba(249,115,22,0.16);
- background: linear-gradient(180deg var(--bg-panel)7ed 0% var(--bg-panel) 28%); }
+ background: linear-gradient(180deg, #fff7ed 0%, var(--bg-panel) 28%); }
 
  /* Header — unified 135deg 3-stop gradient per tier */
  .spc-card-header {
@@ -430,9 +427,9 @@
  flex-direction: column;
  gap: 0.85rem;
  }
- .spc-card-header.p0 { background: linear-gradient(135deg #d1fae5 0% #ecfdf5 50% #f0fdf4 100%); }
- .spc-card-header.p1 { background: linear-gradient(135deg #ccfbf1 0% #f0fdfa 55% #f8fafc 100%); }
- .spc-card-header.p2 { background: linear-gradient(135deg #fed7aa 0% var(--bg-panel)7ed 55% #f8fafc 100%); }
+ .spc-card-header.p0 { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #f0fdf4 100%); }
+ .spc-card-header.p1 { background: linear-gradient(135deg, #ccfbf1 0%, #f0fdfa 55%, #f8fafc 100%); }
+ .spc-card-header.p2 { background: linear-gradient(135deg, #fed7aa 0%, #fff7ed 55%, #f8fafc 100%); }
 
  /* Price divider — dashed line tinted by tier (P0 dashed green P1 dashed blue P2 dashed teal) */
  .spc-divider { border-bottom-style: dashed; border-bottom-width: 1px; }
@@ -465,24 +462,25 @@
  * + + + 14px
  * ============================================================ */
  .spc-ribbon {
- position: absolute;
- top: 10px;
- right: 10px;
+ display: block;
+ position: relative;
+ top: auto;
+ right: auto;
  z-index: 3;
+ text-align: center;
  font-size: 0.68rem;
  font-weight: 700;
- letter-spacing: 0.06em;
+ letter-spacing: 0.09em;
  text-transform: uppercase;
- color: var(--bg-panel);
+ color: #ffffff;
  white-space: nowrap;
- padding: 0.3rem 1.2rem;
+ padding: 0.45rem 1rem;
  line-height: 1.4;
- /* 14px → ribbon */
- clip-path: polygon(0 0 100% 0 calc(100% - 14px) 100% 0 100%);
- box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+ box-shadow: none;
  }
- .spc-ribbon.p0 { background: #10b981; }
- .spc-ribbon.p2 { background: linear-gradient(135deg #f97316 #ea580c); }
+ .spc-ribbon.p0 { background: #047857; }
+ .spc-ribbon.p1 { background: var(--c-brand-700); }
+ .spc-ribbon.p2 { background: linear-gradient(135deg, #c2410c, #9a3412); }
 
  /* Note block (Plan0 / Plan1) — unify border-radius & subtle left accent bar */
  .spc-note.p1 { border-left: 3px solid var(--c-brand-600); }
@@ -515,7 +513,7 @@
 
  /* Tiered tint classes for decorative inline helper icons inside text blocks */
  .spc-tint.p1 { color: var(--c-brand-600) !important; }
- .spc-tint.p2 { color: #f97316 !important; }
+ .spc-tint.p2 { color: #c2410c !important; }
 
  /* */
  @media (max-width: 767.98px) {
@@ -687,9 +685,9 @@
  <span class="section-eyebrow" data-i18n="sp.heroTag"><i class="fas fa-list me-2"></i>Transparent Pricing</span>
  <div class="section-divider mx-auto"></div>
  <h1 data-i18n="sp.heroTitle">Sourcing Service Plans — Find Your Fit (2026)</h1>
- <p class="section-subtitle mx-auto" data-i18n="sp.heroSubtitle">Three service models — Free Quotation (always $0), Order Management (5% flat if you already have supplier links) and Full Sourcing (5–8% tiered from scratch, 8–12% for OEM, 5% for wigs). Every commission tier is confirmed in writing before your order.</p>
+ <p class="section-subtitle mx-auto" data-i18n="sp.heroSubtitle">Three service models — Free Quotation (always $0), Order Management (5%, flat if you already have supplier links) and Full Sourcing (5–8%, tiered from scratch, 8–12%, for OEM, 5%, for wigs). Every commission tier is confirmed in writing before your order.</p>
  <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
- <span class="badge" style="background: rgba(255,255,255,0.12) !important; color: #e2e8f0 !important; border: 1px solid rgba(255,255,255,0.22) !important; padding: 0.5rem 1rem !important; border-radius: 999px !important; font-weight: 500 !important; font-size: 0.85rem !important; display: inline-flex !important; align-items: center !important; gap: 0.25rem !important;"><i class="fas fa-check-circle me-1" style="color: #86efac !important;"></i> <span data-i18n="sp.heroFeat1">100% Transparent Pricing</span></span>
+ <span class="badge" style="background: rgba(255,255,255,0.12) !important; color: #e2e8f0 !important; border: 1px solid rgba(255,255,255,0.22) !important; padding: 0.5rem 1rem !important; border-radius: 999px !important; font-weight: 500 !important; font-size: 0.85rem !important; display: inline-flex !important; align-items: center !important; gap: 0.25rem !important;"><i class="fas fa-check-circle me-1" style="color: #86efac !important;"></i> <span data-i18n="sp.heroFeat1">100%, Transparent Pricing</span></span>
  <span class="badge" style="background: rgba(255,255,255,0.12) !important; color: #e2e8f0 !important; border: 1px solid rgba(255,255,255,0.22) !important; padding: 0.5rem 1rem !important; border-radius: 999px !important; font-weight: 500 !important; font-size: 0.85rem !important; display: inline-flex !important; align-items: center !important; gap: 0.25rem !important;"><i class="fas fa-check-circle me-1" style="color: #86efac !important;"></i> <span data-i18n="sp.heroFeat2">No Hidden Commission</span></span>
  <span class="badge" style="background: rgba(255,255,255,0.12) !important; color: #e2e8f0 !important; border: 1px solid rgba(255,255,255,0.22) !important; padding: 0.5rem 1rem !important; border-radius: 999px !important; font-weight: 500 !important; font-size: 0.85rem !important; display: inline-flex !important; align-items: center !important; gap: 0.25rem !important;"><i class="fas fa-check-circle me-1" style="color: #86efac !important;"></i> <span data-i18n="sp.heroFeat3">Tiered Rates for Volume</span></span>
  </div>
@@ -758,7 +756,7 @@
  <!-- Body -->
  <div class="spc-card-body">
  <div style="margin-bottom: 1.25rem;">
- <div class="spc-section-label" style="margin-bottom: 0.5rem;">What You Get <span class="accent">· 100% Free</span></div>
+ <div class="spc-section-label" style="margin-bottom: 0.5rem;">What You Get <span class="accent">· 100%, Free</span></div>
  <ul class="spc-body-list" style="gap: 0.5rem;">
  <li><i class="fas fa-check-circle spc-icon p0"></i>
  <span><strong>Detailed unit price</strong> from vetted suppliers</span>
@@ -784,7 +782,7 @@
  <div class="spc-note p0" style="margin-top: auto;">
  <div class="spc-note-label p0"><i class="fas fa-circle-info me-1"></i> How We Earn</div>
  <div class="spc-note-text p0">
- <strong>5–8% commission</strong> only after you confirm an order — deducted from total order value.
+ <strong>5–8%, commission</strong> only after you confirm an order — deducted from total order value.
  </div>
  <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 0.25rem; margin-top: 0.75rem;">
  <div style="background: var(--bg-panel); padding: 0.25rem 0.25rem; border-radius: 8px; text-align: center; border: 1px solid #bbf7d0;">
@@ -800,15 +798,13 @@
  <div class="spc-chip-value">5%</div>
  </div>
  </div>
+ <a href="blog-free-quotation-china-sourcing.html" class="spc-cta-secondary" style="padding:0.35rem 0 0;text-align:left;font-weight:600;">Learn how our quotation works →</a>
  </div>
  </div>
  <!-- CTA -->
- <div class="spc-card-footer with-secondary">
+ <div class="spc-card-footer">
  <a href="mailto:info@yeatru.com?subject=Free%20Quotation%20Request%20-%20Sourcing%20from%20China" class="spc-cta p0">
  <i class="fas fa-paper-plane me-1"></i> Request Free Quote
- </a>
- <a href="blog-free-quotation-china-sourcing.html" class="spc-cta-secondary">
- Learn how it works →
  </a>
  </div>
  </div>
@@ -818,6 +814,8 @@
  <!-- ======================================================= -->
  <div class="col-md-6 col-lg-4">
  <div class="plan-card h-100 p1">
+ <!-- Ribbon -->
+ <div class="spc-ribbon p1">Tiered Commission</div>
  <!-- Header -->
  <div class="spc-card-header p1">
  <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
@@ -837,7 +835,7 @@
  <!-- Price -->
  <div class="spc-divider p1" style="min-height: 124px; padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; justify-content: center;">
  <div style="display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;">
- <div class="spc-price-amount p1">5% flat</div>
+ <div class="spc-price-amount p1">5%, flat</div>
  <div class="spc-price-sub" data-i18n="sp.commission">commission</div>
  </div>
  <div class="spc-price-min p1" style="margin-top: 0.5rem;">
@@ -998,7 +996,7 @@
  <div class="row justify-content-center mb-5">
  <div class="col-lg-10">
  <div class="border rounded-3 bg-white shadow-sm p-4">
- <h3 class="h5 fw-bold mb-2 text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Important Note on Sourcing Inquiries</h3>
+ <h3 class="h5 fw-bold mb-2" style="color:#92400e"><i class="fas fa-exclamation-triangle me-2" style="color:#b45309"></i>Important Note on Sourcing Inquiries</h3>
  <p class="mb-2 text-muted">Continuous full-catalogue inquiry for dozens or hundreds of items consumes massive manpower and factories will treat us as price shoppers without real orders.</p>
  <p class="mb-2"><strong>Therefore we can only conduct detailed sourcing and quotation after you:</strong></p>
  <ol class="mt-2 mb-0 text-muted">
@@ -1064,8 +1062,8 @@
  <h3 class="accordion-header" id="faqH1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC1" aria-expanded="false" aria-controls="faqC1">What's the difference between Plan 1 and Plan 2?</button></h3>
  <div id="faqC1" class="accordion-collapse collapse" aria-labelledby="faqH1" data-bs-parent="#faqAccordion">
  <div class="accordion-body small lh-lg">
- <p class="mb-2"><strong>Plan 1 (Order Management &mdash; 5% flat):</strong> You already have supplier links. We arrange orders, follow production and conduct basic inspection. Minimum USD 50 per order.</p>
- <p class="mb-0"><strong>Plan 2 (Full Sourcing &mdash; 5&ndash;8% tiered):</strong> You only have photos or model names. We source manufacturers from scratch, compare prices, verify specifications and handle everything end-to-end. Minimum USD 100 per formal order.</p>
+ <p class="mb-2"><strong>Plan 1 (Order Management &mdash; 5%, flat):</strong> You already have supplier links. We arrange orders, follow production and conduct basic inspection. Minimum USD 50 per order.</p>
+ <p class="mb-0"><strong>Plan 2 (Full Sourcing &mdash; 5&ndash;8%, tiered):</strong> You only have photos or model names. We source manufacturers from scratch, compare prices, verify specifications and handle everything end-to-end. Minimum USD 100 per formal order.</p>
  </div>
  </div>
  </div>
@@ -1073,8 +1071,8 @@
  <h3 class="accordion-header" id="faqH2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">How is the commission calculated for Plan 2?</button></h3>
  <div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqAccordion">
  <div class="accordion-body small lh-lg">
- <p class="mb-2">Plan 2 is charged at <strong>5&ndash;8% of order value</strong>, tiered by order size and complexity. The exact rate is quoted in writing before production starts.</p>
- <p class="mb-0">The minimum service fee is USD 100 per formal order. Larger orders benefit from lower commission rates within the 5&ndash;8% range.</p>
+ <p class="mb-2">Plan 2 is charged at <strong>5&ndash;8%, of order value</strong>, tiered by order size and complexity. The exact rate is quoted in writing before production starts.</p>
+ <p class="mb-0">The minimum service fee is USD 100 per formal order. Larger orders benefit from lower commission rates within the 5&ndash;8%, range.</p>
  </div>
  </div>
  </div>
@@ -1253,7 +1251,7 @@
  |
  <a href="refund.html" class="footer-link d-inline">Refund Policy</a> |
  <a href="nda.html" class="footer-link d-inline">NDA & Confidentiality</a></p>
-<p class="footer-ai-note" style="font-size:0.78rem;color:#6b7280;margin-top:0.5rem;">AI citation license: Content may be indexed and cited by AI systems with attribution to <a href="https://www.yeatru.com" style="color:#0d9488;">Yeatru Sourcing</a> (CC BY 4.0). Not for model training. See <a href="https://www.yeatru.com/.well-known/ai.json" style="color:#0d9488;">.well-known/ai.json</a>.</p>
+<p class="footer-ai-note" style="font-size:0.78rem;color:#94A3B8;margin-top:0.5rem;">AI citation license: Content may be indexed and cited by AI systems with attribution to <a href="https://www.yeatru.com" style="color:#5eead4;">Yeatru Sourcing</a> (CC BY 4.0). Not for model training. See <a href="https://www.yeatru.com/.well-known/ai.json" style="color:#5eead4;">.well-known/ai.json</a>.</p>
  </div>
  </div>
  </footer>
@@ -1327,7 +1325,7 @@
 <script src="i18n-svc2.js" defer></script>
 <script src="i18n-svc3.js" defer></script>
 <script src="i18n-misc.js" defer></script>
- <script src="app.js?v=20261022a" defer></script>
+ <script src="app.js?v=20261023f" defer></script>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
  const searchToggle = document.getElementById('navSearchToggle');

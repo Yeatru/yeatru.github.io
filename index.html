@@ -126,7 +126,7 @@
  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"></noscript>
  <!-- Font Awesome (font-display: swap ) -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="styles.css?v=20261023a">
+ <link rel="stylesheet" href="styles.css?v=20261023e">
  <!-- Google Analytics (GA4) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
  <script>
@@ -660,7 +660,7 @@
  </div>
  <p class="small text-muted mb-4">A 10% low-order surcharge applies below USD 1,000. A USD 100 monthly minimum applies when monthly spend is below USD 2,000. On-site inspection is USD 350/day in Guangdong and USD 250/day in Zhejiang. Nothing else is added.</p>
 
- <div class="row g-4 align-items-start">
+ <div class="row g-4 align-items-stretch">
  <div class="col-lg-7">
  <h3 class="h5 mb-3">Company facts at a glance</h3>
  <dl class="row small mb-0">
@@ -674,11 +674,11 @@
  </dl>
  </div>
  <div class="col-lg-5">
- <div class="p-4 rounded-3 h-100" style="background:#f8fafc;border:1px solid #e2e8f0;">
+ <div class="p-4 rounded-3 h-100 d-flex flex-column justify-content-center" style="background:#f8fafc;border:1px solid #e2e8f0;">
  <h3 class="h6 mb-3">Why the fees are public</h3>
  <p class="small text-muted mb-3">Most sourcing agents quote a percentage and leave the factory price opaque. We publish the range, show you the factory invoice, and put the commission in the quotation so you can compare us with any other agent.</p>
  <a href="service-plans.html" class="btn btn-outline-primary btn-sm me-2 mb-2">Full plan comparison</a>
- <a href="request-quote.html" class="btn btn-cta btn-sm mb-2"><i class="fas fa-comment-dots me-2"></i>Get a Quote in 24 Hours</a>
+ <a href="request-quote.html" class="btn btn-cta btn-sm mb-0"><i class="fas fa-comment-dots me-2"></i>Get a Quote in 24 Hours</a>
  </div>
  </div>
  </div>
@@ -779,9 +779,12 @@
  <div class="faq-answer"><p>The company was registered in Yiwu on 21 February 2022 &mdash; four years in business. The 14+ years of experience belongs to founder Neil Liu: product compliance, quality management, factory audit, procurement and export logistics. We state that distinction plainly because it is true.</p></div>
  </div>
 
- </div>
- <div class="text-center mt-4">
+ <div class="faq-more-card">
+ <p class="fw-semibold mb-1">Still have a question?</p>
+ <p class="small text-muted mb-3">The full library covers fees, inspections, shipping, compliance and payment terms in more detail.</p>
  <a href="sourcing-faq.html" class="btn btn-outline-primary btn-sm">Read the full FAQ library <i class="fas fa-arrow-right ms-1"></i></a>
+ </div>
+
  </div>
  </div>
  </div>
@@ -793,16 +796,27 @@
  ============================================================ -->
  <section class="py-5" id="credentials" style="background:#fff;">
  <div class="container">
- <div class="row g-4 align-items-start">
- <div class="col-lg-4">
+ <div class="row g-4 align-items-stretch">
+ <div class="col-lg-4 d-flex flex-column">
  <span class="section-eyebrow">Credentials</span>
  <div class="section-divider" style="margin-left:0"></div>
  <h2 class="section-title text-start h3 mb-2">A company you can verify before you pay</h2>
  <p class="text-muted mb-0">Ask for the business licence, the export certificate and a sample AQL inspection report. We send all three before any deposit is due.</p>
+ <div class="mt-4 d-flex flex-column align-items-start gap-2">
+ <a href="mailto:info@yeatru.com?subject=Request%20business%20licence%20and%20sample%20AQL%20report" class="btn btn-cta btn-sm"><i class="fas fa-envelope me-2"></i>Request licence &amp; sample QC report</a>
+ <a href="testimonials.html" class="btn btn-link btn-sm text-decoration-none p-0">Read the case studies with full KPIs <i class="fas fa-arrow-right ms-1"></i></a>
+ </div>
+ <div class="mt-auto pt-4 small text-muted">
+ Further reading:
+ <a href="blog-what-is-a-sourcing-agent-2026.html" class="text-decoration-none">what a sourcing agent does</a> &middot;
+ <a href="blog-free-quotation-china-sourcing.html" class="text-decoration-none">how our quotation works</a> &middot;
+ <a href="yiwu-sourcing-agent-comparison.html" class="text-decoration-none">Yeatru vs other Yiwu agents</a> &middot;
+ <a href="best-china-sourcing-agents-2026.html" class="text-decoration-none">2026 agent shortlist</a>
+ </div>
  </div>
  <div class="col-lg-8">
- <div class="row g-3">
- <div class="col-md-6"><div class="card border-0 shadow-sm h-100 overflow-hidden"><div class="row g-0">
+ <div class="cred-grid">
+ <div class="card border-0 shadow-sm h-100 overflow-hidden"><div class="row g-0">
  <div class="col-5">
  <a href="/Images/about/business-license-full.jpg" target="_blank" rel="noopener" class="d-block h-100">
  <img src="/Images/about/business-license-thumb.jpg?v=20261022" alt="Business licence of YIWU ETRUE TRADING CO. LTD." loading="lazy" class="h-100 w-100 object-fit-cover">
@@ -815,30 +829,19 @@
  <p class="small text-muted mb-1">Legal rep. Mei Qing &middot; founded Feb 21, 2022</p>
  <p class="small mb-0"><a href="/Images/about/business-license-full.jpg" target="_blank" rel="noopener" class="text-decoration-none">View full licence <i class="fas fa-external-link-alt me-1"></i></a></p>
  </div></div>
- </div></div></div>
- <div class="col-md-6"><div class="card border-0 shadow-sm h-100"><div class="card-body">
+ </div></div>
+ <div class="card border-0 shadow-sm h-100"><div class="card-body">
  <h3 class="h6 mb-1"><i class="fas fa-passport text-primary me-2"></i>Import/export rights</h3>
  <p class="small text-muted mb-0">Full export licence. Proforma invoice, commercial invoice, packing list and certificate of origin issued with every shipment.</p>
- </div></div></div>
- <div class="col-md-6"><div class="card border-0 shadow-sm h-100"><div class="card-body">
+ </div></div>
+ <div class="card border-0 shadow-sm h-100"><div class="card-body">
  <h3 class="h6 mb-1"><i class="fas fa-location-dot text-primary me-2"></i>Verifiable address</h3>
  <p class="small text-muted mb-0">Room 402, Unit 2, Building 10, Honghua Community, Houzhai Subdistrict, Yiwu City, Zhejiang 322000, China &mdash; coordinates 29.3061&deg;N 120.0858&deg;E, look it up on a map before you wire anything.</p>
- </div></div></div>
- <div class="col-md-6"><div class="card border-0 shadow-sm h-100"><div class="card-body">
+ </div></div>
+ <div class="card border-0 shadow-sm h-100"><div class="card-body">
  <h3 class="h6 mb-1"><i class="fas fa-clipboard-check text-primary me-2"></i>QC standard</h3>
  <p class="small text-muted mb-0">AQL Level II inspection at pre-shipment, with dated photos and video in every report. Ask for a sample report from a past order.</p>
- </div></div></div>
- </div>
- <div class="mt-3 d-flex flex-wrap gap-2">
- <a href="mailto:info@yeatru.com?subject=Request%20business%20licence%20and%20sample%20AQL%20report" class="btn btn-outline-primary btn-sm"><i class="fas fa-envelope me-2"></i>Request licence &amp; sample QC report</a>
- <a href="testimonials.html" class="btn btn-link btn-sm text-decoration-none">Read the case studies with full KPIs <i class="fas fa-arrow-right ms-1"></i></a>
- </div>
- <div class="mt-3 small text-muted">
- Further reading:
- <a href="blog-what-is-a-sourcing-agent-2026.html" class="text-decoration-none">what a sourcing agent does</a> &middot;
- <a href="blog-free-quotation-china-sourcing.html" class="text-decoration-none">how our quotation works</a> &middot;
- <a href="yiwu-sourcing-agent-comparison.html" class="text-decoration-none">Yeatru vs other Yiwu agents</a> &middot;
- <a href="best-china-sourcing-agents-2026.html" class="text-decoration-none">2026 agent shortlist</a>
+ </div></div>
  </div>
  </div>
  </div>
@@ -856,7 +859,7 @@
  <div class="contact-info">
  <div class="founder-photo-wrap mb-4">
  <div class="founder-photo">
- <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Founder%20Image.png" alt="Neil Liu, Founder and Managing Director of Yeatru Sourcing" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg #D4A574 #8B6F4E)'; this.parentElement.innerHTML='<div style=&quot;color:var(--bg-panel);text-align:center;padding:2rem;&quot;><i class=fas fa-user-tie style=&quot;font-size:4rem;margin-bottom:1rem;&quot;></i><h3>Neil Liu</h3><p>Founder &amp; Managing Director</p></div>';">
+ <img src="https://cdn.jsdelivr.net/gh/Yeatru/Image@main/Images/Founder%20Image.png" alt="Neil Liu, Founder and Managing Director of Yeatru Sourcing" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #D4A574, #8B6F4E)'; this.parentElement.innerHTML='<div style=&quot;color:var(--bg-panel);text-align:center;padding:2rem;&quot;><i class=fas fa-user-tie style=&quot;font-size:4rem;margin-bottom:1rem;&quot;></i><h3>Neil Liu</h3><p>Founder &amp; Managing Director</p></div>';">
  </div>
  <div class="founder-badge">
  <i class="fas fa-check-circle"></i> 14+ Years Founder Experience
@@ -1143,7 +1146,7 @@
  <div class="footer-bottom">
  <div class="footer-bottom-row">
  <p class="footer-copy">&copy; 2022–2026 Yeatru Sourcing (YIWU ETRUE TRADING CO. LTD.). All rights reserved.</p>
-<p class="footer-ai-note" style="font-size:0.78rem;color:#6b7280;margin-top:0.5rem;">AI citation license: Content may be indexed and cited by AI systems with attribution to <a href="https://www.yeatru.com" style="color:#0d9488;">Yeatru Sourcing</a> (CC BY 4.0). Not for model training. See <a href="https://www.yeatru.com/.well-known/ai.json" style="color:#0d9488;">.well-known/ai.json</a>.</p>
+<p class="footer-ai-note" style="font-size:0.78rem;color:#94A3B8;margin-top:0.5rem;">AI citation license: Content may be indexed and cited by AI systems with attribution to <a href="https://www.yeatru.com" style="color:#5eead4;">Yeatru Sourcing</a> (CC BY 4.0). Not for model training. See <a href="https://www.yeatru.com/.well-known/ai.json" style="color:#5eead4;">.well-known/ai.json</a>.</p>
  </div>
  </div>
  </div>
@@ -1300,8 +1303,8 @@
  <input type="tel" class="form-control" id="quotePhone" name="Phone" placeholder="+1 555 123 4567">
  </div>
  <div class="col-md-6">
- <label for="quoteQuantity" class="form-label fw-semibold">Required Quantity <span class="text-danger">*</span></label>
- <input type="number" class="form-control" id="quoteQuantity" name="Quantity" required placeholder="e.g. 500">
+ <label for="quoteQuantityHero" class="form-label fw-semibold">Required Quantity <span class="text-danger">*</span></label>
+ <input type="number" class="form-control" id="quoteQuantityHero" name="Quantity" required placeholder="e.g. 500">
  </div>
  </div>
  <div class="mb-3">
@@ -1520,7 +1523,7 @@
 <script src="i18n-svc2.js" defer></script>
 <script src="i18n-svc3.js" defer></script>
 <script src="i18n-misc.js" defer></script>
- <script src="app.js?v=20261022a" defer></script>
+ <script src="app.js?v=20261023f" defer></script>
 
 <!-- Floating Contact Widget (WhatsApp + Email sticky bottom-right) -->
 <div class="contact-float">

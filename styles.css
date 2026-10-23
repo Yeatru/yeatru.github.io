@@ -332,7 +332,7 @@ html[data-theme="b"] {
   --space-section-y:    5rem;
   --space-section-y-sm: 3.5rem;
   --space-section-x:    1.5rem;
-  --container-max:    1400px;
+  --container-max:    1280px;
   --container-max-sm: 960px;
 
   --bg-section-alt:  var(--c-neutral-50);
@@ -392,7 +392,7 @@ select{color:var(--bg-dark);background-image:url("data:image/svg+xml,%3Csvg xmln
 .form-control{border-radius:var(--radius)!important;border:1px solid var(--border)!important;padding: .625rem 1rem!important;min-height:44px;font-size:.95rem!important;color:var(--text-primary)!important;transition:border-color 0.2s cubic-bezier(.25,1,.5,1),box-shadow 0.2s cubic-bezier(.25,1,.5,1)!important}
 .form-control:focus{border-color:var(--primary)!important;box-shadow:0 0 0 3px color-mix(in oklch, var(--c-brand-600) 12%, transparent)!important;outline:none!important}
 .page-header{padding-top: 2.5rem!important;padding-bottom: 2.5rem!important;min-height:auto;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%)!important;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.12)}
-.page-header::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
+.page-header::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40%, at 15%, 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35%, at 85%, 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
 .page-header::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
 .page-header .container,.page-header .container-fluid{position:relative;z-index:1}
 .page-header .section-title{font-size:2.5rem;margin-bottom: .75rem;letter-spacing:0;background:none;-webkit-background-clip:unset;background-clip:unset;color:#FFF;font-family:var(--font-display)}
@@ -480,7 +480,7 @@ body.edit-mode .page-block [data-block-field]:hover{background-color:color-mix(i
 .process-desc{font-size:.9rem;color:var(--text-tertiary);line-height:1.6;margin-bottom: 0}
 .plan-card{background:var(--bg-panel);border:1px solid #e9ecef;border-radius:12px;overflow:hidden;height:100%;transition:transform 0.3s,box-shadow 0.3s}
 .plan-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.1)}
-.plan-card.featured{border-color:var(--primary);transform:scale(1.02);box-shadow:0 8px 24px color-mix(in oklch, var(--c-brand-800) 15%, transparent)}
+.plan-card.featured{border-color:var(--primary);border-width:2px;box-shadow:0 10px 30px color-mix(in oklch, var(--c-brand-800) 16%, transparent)}
 .plan-card-header{padding: 1.5rem;text-align:center;color:white}
 .plan-card-header.plan-a{background:linear-gradient(135deg,var(--text-tertiary),#495057)}
 .plan-card-header.plan-b{background:linear-gradient(135deg,var(--primary),var(--primary-dark))}
@@ -693,7 +693,7 @@ to{opacity:1;transform:translateY(0)}
 .navbar-collapse .lang-selector{margin-top:0!important;align-self:center!important}
 }
 .banner-carousel{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%);padding-top: 1rem;padding-bottom: 1rem}
-.banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
+.banner-carousel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40%, at 15%, 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35%, at 85%, 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
 .banner-carousel::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
 .banner-slides{display:flex;position:relative;z-index:1;transition:transform 0.5s cubic-bezier(.25,1,.5,1);will-change:transform}
 .banner-slide{min-width:100%;flex:0 0 100%;padding: .75rem 0 1.5rem;position:relative;display:flex;align-items:flex-start}
@@ -953,12 +953,11 @@ to{opacity:1;transform:translateY(0)}
 .plan-card-img img{width:100%;height:100%;object-fit:cover;display:block}
 .plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.12)}
 .plan-card.featured{border:2px solid var(--primary)}
-.plan-card.featured::before{content:'Most Popular';position:absolute;top:10px;right:-28px;background:var(--primary);color:var(--bg-panel);font-size:.65rem;font-weight:700;padding: .2rem 2rem;transform:rotate(45deg);z-index:10}
 .plan-card-header{padding: .9rem .75rem;text-align:center}
-.plan-card-header.plan-a,.plan-card-header.plan-c{background-color:var(--bg-panel)8e1;border-bottom:2px solid #ffc700}
+.plan-card-header.plan-a,.plan-card-header.plan-c{background-color:#fff8e1;border-bottom:2px solid #ffc700}
 .plan-card-header.plan-b{background:linear-gradient(135deg,#212529,#343a40);border-bottom:2px solid #ffc700}
 .plan-card-header.plan-b .plan-name,.plan-card-header.plan-b .plan-percent,.plan-card-header.plan-b .plan-subtitle{color:var(--bg-panel)}
-.plan-card-header.plan-d{background-color:var(--bg-panel)8e1;border-bottom:2px solid #ffc700}
+.plan-card-header.plan-d{background-color:#fff8e1;border-bottom:2px solid #ffc700}
 .plan-name{font-size:.82rem;font-weight:700;margin-bottom: .3rem;color:var(--primary-dark);text-transform:uppercase;letter-spacing:1px}
 .plan-title{font-size:1.3rem;font-weight:800;margin-bottom: .2rem;color:var(--primary-dark);line-height:1}
 .plan-percent{font-size:1.8rem;font-weight:800;margin-bottom: .2rem;color:var(--primary-dark);line-height:1}
@@ -1099,8 +1098,8 @@ textarea.form-control{min-height:120px;resize:vertical}
 .detail-spec-table{width:100%;max-width:100%;border-collapse:collapse;table-layout:auto}
 .detail-spec-table th,.detail-spec-table td{padding: .7rem .9rem;border-bottom:1px solid #e2e8f0;font-size:.98rem;line-height:1.5;text-align:left;color:var(--text-primary);white-space:normal;word-wrap:break-word;word-break:break-word;vertical-align:middle}
 .detail-spec-table th{color:#3730a3;background-color:#eef2ff;width:38%;font-weight:700}
-.detail-spec-table tr.spec-price-row th{background-color:var(--bg-panel)1f2;color:#be123c;text-transform:uppercase;letter-spacing:.6px;font-weight:800;border-top:none;border-bottom:1px solid #fecdd3;font-size:.88rem}
-.detail-spec-table tr.spec-price-row td.spec-price-cell{border-top:none;border-bottom:1px solid #fecdd3;background-color:var(--bg-panel)afb;padding: .7rem 1rem}
+.detail-spec-table tr.spec-price-row th{background-color:#fff1f2;color:#be123c;text-transform:uppercase;letter-spacing:.6px;font-weight:800;border-top:none;border-bottom:1px solid #fecdd3;font-size:.88rem}
+.detail-spec-table tr.spec-price-row td.spec-price-cell{border-top:none;border-bottom:1px solid #fecdd3;background-color:#fffafb;padding: .7rem 1rem}
 @media(max-width:767.98px){.table-responsive{margin-bottom: 1rem;padding: 0}
 .detail-spec-table th,.detail-spec-table td{padding: .55rem .65rem;font-size:.88rem;line-height:1.45}
 .detail-spec-table{min-width:100%}
@@ -1415,7 +1414,7 @@ html[dir="rtl"] .contact-float,body.rtl .contact-float{right:auto;left:20px;alig
 .payment-icon{width:60px;height:60px;font-size:1.5rem}
 }
 .page-header-gradient{background:linear-gradient(135deg,var(--c-brand-900) 0,var(--c-brand-800) 40%,var(--c-brand-800) 70%,var(--c-brand-900) 100%);position:relative;overflow:hidden}
-.page-header-gradient::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(ellipse 60% 50% at 20% 20%,color-mix(in oklch, var(--c-brand-600) 25%, transparent) 0,transparent 55%),radial-gradient(ellipse 50% 40% at 85% 80%,rgba(200,165,116,0.15) 0,transparent 50%);opacity:.5;pointer-events:none}
+.page-header-gradient::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(ellipse 60% 50%, at 20%, 20%,color-mix(in oklch, var(--c-brand-600) 25%, transparent) 0,transparent 55%),radial-gradient(ellipse 50% 40%, at 85%, 80%,rgba(200,165,116,0.15) 0,transparent 50%);opacity:.5;pointer-events:none}
 .page-header-gradient::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;opacity:.5}
 .section-eyebrow-custom{display:inline-block;text-transform:uppercase;font-size:.85rem;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,0.85);margin-bottom: 1rem;padding: .4rem 1rem;background:rgba(255,255,255,0.15);border-radius:20px}
 .section-divider-custom{width:60px;height:3px;background:linear-gradient(90deg,transparent,var(--bg-panel),transparent);border-radius:2px}
@@ -1957,7 +1956,7 @@ html[dir="rtl"] @media(max-width:575.98px){.contact-float{bottom:20px;right:20px
 }
 html[dir="rtl"] .currency-dropdown-btn .dropdown-toggle::after,html[dir="rtl"] .lang-dropdown-btn .dropdown-toggle::after,body.rtl .currency-dropdown-btn .dropdown-toggle::after,body.rtl .lang-dropdown-btn .dropdown-toggle::after{margin-left: 0;margin-right: .35em}
 .us-trip-section{background:linear-gradient(135deg,#0f1923 0,#1a2a3a 100%);padding: 80px 0;position:relative;overflow:hidden}
-.us-trip-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 20%,color-mix(in oklch, var(--c-brand-800) 15%, transparent) 0,transparent 50%),radial-gradient(circle at 80% 80%,color-mix(in oklch, var(--c-brand-800) 10%, transparent) 0,transparent 50%);pointer-events:none}
+.us-trip-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20%, 20%,color-mix(in oklch, var(--c-brand-800) 15%, transparent) 0,transparent 50%),radial-gradient(circle at 80%, 80%,color-mix(in oklch, var(--c-brand-800) 10%, transparent) 0,transparent 50%);pointer-events:none}
 .us-trip-section .section-title{color:var(--bg-panel)}
 .us-trip-section .section-subtitle{color:rgba(255,255,255,0.6)}
 .us-trip-section .section-eyebrow{color:var(--accent-teal)}
@@ -2202,14 +2201,14 @@ main>section.section-narrow>.container{max-width:var(--container-max-sm)!importa
 .section-dark .section-eyebrow{color:var(--primary-400,#818cf8)!important}
 .section-dark .card,.section-dark .card-body{background:rgba(255,255,255,0.05)!important;border-color:rgba(255,255,255,0.1)!important}
 .section-dark-alt{background:linear-gradient(135deg,var(--c-neutral-900) 0,var(--c-brand-900) 100%)!important;color:#FFF!important;position:relative}
-.section-dark-alt::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 60% 50% at 20% 20%,color-mix(in oklch, var(--c-brand-600) 35%, transparent) 0,transparent 55%),radial-gradient(ellipse 50% 40% at 85% 80%,rgba(59,130,246,0.1) 0,transparent 50%);z-index:0}
+.section-dark-alt::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 60% 50%, at 20%, 20%,color-mix(in oklch, var(--c-brand-600) 35%, transparent) 0,transparent 55%),radial-gradient(ellipse 50% 40%, at 85%, 80%,rgba(59,130,246,0.1) 0,transparent 50%);z-index:0}
 .section-dark-alt>.container{position:relative;z-index:1}
 .section-dark-alt .section-title,.section-dark-alt .section-title-wrap .section-title,.section-dark-alt h1,.section-dark-alt h2,.section-dark-alt h3,.section-dark-alt h4{color:#FFF!important}
 .section-dark-alt .section-subtitle,.section-dark-alt .lead,.section-dark-alt .section-subtitle-wrap p{color:rgba(255,255,255,0.85)!important}
 .section-dark-alt .section-eyebrow{color:var(--c-brand-300)!important}
 .section-dark-alt .section-divider{background:linear-gradient(90deg,transparent,var(--c-brand-300),transparent)!important}
 .section-dark-alt p:not(.bg-white p):not(.card p):not(.step-card p):not(.case-study-card p),.section-dark-alt li:not(.bg-white li):not(.card li):not(.step-card li):not(.case-study-card li){color:rgba(255,255,255,0.85)!important}
-.section-dark-alt a:not(.btn):not(.badge):not(.card-link){color:var(--c-brand-300)!important}
+.section-dark-alt a:not(.btn):not(.badge):not(.card-link):not(.step-link){color:var(--c-brand-300)!important}
 .section-dark-alt a:not(.btn):not(.badge):not(.card-link):hover{color:#FFF!important}
 .section-dark-alt .btn-outline-primary{color:#FFF!important;border-color:rgba(255,255,255,0.5)!important;background:transparent!important}
 .section-dark-alt .btn-outline-primary:hover{background:rgba(255,255,255,0.1)!important;border-color:#FFF!important}
@@ -2400,7 +2399,7 @@ body .hero-section,body .banner-carousel{padding-top: 1rem!important;padding-bot
 }
 .article-hero,.article-content,.article-related-section{overflow-wrap:anywhere;word-wrap:break-word}
 .article-hero{padding-top:2.5rem!important;padding-bottom:2.5rem!important;background:linear-gradient(135deg,#0f1b2d 0%,#1a2b4a 55%,#162033 100%)!important;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.12)}
-.article-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40% at 15% 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
+.article-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 50% 40%, at 15%, 25%,rgba(255,149,0,0.10) 0,transparent 55%),radial-gradient(ellipse 45% 35%, at 85%, 75%,rgba(59,130,246,0.08) 0,transparent 55%);z-index:0}
 .article-hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
 .article-hero .container{position:relative;z-index:1}
 .case-study-block,.related-posts{max-width:var(--container-max);margin-left:auto;margin-right:auto;padding-left:var(--space-section-x);padding-right:var(--space-section-x)}
@@ -2478,8 +2477,8 @@ html{scroll-behavior:smooth}
 .detail-spec-table th,.detail-spec-table td{padding: .7rem .9rem;border-bottom:1px solid #e2e8f0;text-align:left;font-size:.95rem;color:var(--text-primary);background:var(--bg-panel);white-space:normal;word-break:break-word;vertical-align:middle}
 .detail-spec-table tr:last-child th,.detail-spec-table tr:last-child td{border-bottom:none}
 .detail-spec-table th{width:38%;background:#eef2ff;color:#3730a3;font-weight:700;letter-spacing:.2px}
-.detail-spec-table tr.spec-price-row th{background:var(--bg-panel)1f2;color:#be123c;text-transform:uppercase;letter-spacing:.6px;font-weight:800;font-size:.85rem}
-.detail-spec-table tr.spec-price-row td.spec-price-cell{background:var(--bg-panel)afb;padding: .7rem 1rem}
+.detail-spec-table tr.spec-price-row th{background:#fff1f2;color:#be123c;text-transform:uppercase;letter-spacing:.6px;font-weight:800;font-size:.85rem}
+.detail-spec-table tr.spec-price-row td.spec-price-cell{background:#fffafb;padding: .7rem 1rem}
 .spec-price-hint{display:inline-block;margin-top: 4px;font-size:.88rem;color:var(--text-secondary);font-weight:600;letter-spacing:.15px}
 .detail-price-hero{display:inline-block;font-size:3.4rem;line-height:1.02;font-weight:900;color:#dc2626;letter-spacing:-0.8px;text-shadow:0 2px 6px rgba(220,38,38,0.12);margin: .1rem 0 .2rem;padding: 0;border-radius:0}
 .detail-price-hero .variation-price{font-size:inherit;font-weight:900;color:inherit}
@@ -2492,7 +2491,7 @@ html{scroll-behavior:smooth}
 .aplus-spec-table tbody tr:nth-child(even) th,.aplus-spec-table tbody tr:nth-child(even) td{background:#f8fafc}
 .aplus-spec-table tbody tr:last-child th,.aplus-spec-table tbody tr:last-child td{border-bottom:none}
 .aplus-spec-table tbody th{width:35%;color:var(--text-secondary);font-weight:700;background:#fafbff!important}
-.aplus-spec-table tbody tr.aplus-spec-price-row th,.aplus-spec-table tbody tr.aplus-spec-price-row td{background:var(--bg-panel)1f2!important;border-bottom:1px solid #fecdd3}
+.aplus-spec-table tbody tr.aplus-spec-price-row th,.aplus-spec-table tbody tr.aplus-spec-price-row td{background:#fff1f2!important;border-bottom:1px solid #fecdd3}
 .aplus-spec-table code{background:#eef2ff;color:#3730a3;padding: .1rem .4rem;border-radius:4px;font-size:.88em}
 .aplus-block-text table{max-width:100%!important;width:100%!important}
 .aplus-block-text table th{background:#eef2ff!important;color:#3730a3!important;text-align:left!important}
@@ -2538,7 +2537,7 @@ html{scroll-behavior:smooth}
 .detail-spec-table th,.detail-spec-table td,.aplus-spec-table tbody th,.aplus-spec-table tbody td{border-bottom:1px solid #f1f5f9;text-align:left;padding: .5rem .65rem}
 .detail-spec-table th:last-child,.detail-spec-table td:last-child,.aplus-spec-table tbody th:last-child,.aplus-spec-table tbody td:last-child{border-bottom:none}
 .detail-spec-table th,.aplus-spec-table tbody th{background:#eef2ff;color:#3730a3;font-weight:700;font-size:.82rem}
-.detail-spec-table tr.spec-price-row th{background:var(--bg-panel)1f2;color:#be123c;font-size:.82rem}
+.detail-spec-table tr.spec-price-row th{background:#fff1f2;color:#be123c;font-size:.82rem}
 .detail-price-hero{font-size:2.25rem}
 .detail-price-hero .price-dash{font-size:1.7rem}
 .aplus-inline-price{font-size:1.7rem!important}
@@ -2842,7 +2841,8 @@ body input::placeholder {
      Channel 2: focus-ring  color (danger-tinted)  ← visible also on keyboard focus
      Channel 3: right-side ⚠️ icon  ← visual glyph independent of color
    Plus companion JS class `.field-error-text` for Channel 4 (user-facing copy) */
-body .form-control:invalid:not(:placeholder-shown),
+body input.form-control:invalid:not(:placeholder-shown),
+body textarea.form-control:invalid:not(:placeholder-shown),
 body .form-control.is-invalid,
 body .form-select.is-invalid,
 body textarea.is-invalid,
@@ -2857,7 +2857,8 @@ body input.is-invalid {
 }
 /* Swap SVG stroke fill to --c-danger-600 by building data URI inline; use embedded hex-safe value
    --c-danger-600 = oklch(42% 0.150 25)  ↔ sRGB fallback #D92D20 */
-body .form-control:invalid:not(:placeholder-shown),
+body input.form-control:invalid:not(:placeholder-shown),
+body textarea.form-control:invalid:not(:placeholder-shown),
 body .form-control.is-invalid,
 body .form-select.is-invalid,
 body textarea.is-invalid,
@@ -3152,7 +3153,7 @@ body .blog-list-card .blog-card-title {
    ========================================================================== */
 
 /* ---- Re-declare Layer2 focus-ring token at END of cascade so it wins over earlier values
-       Enhancement: 4px (was 3px) × brand 28% (was 24%) + white "sandwich" gap for
+       Enhancement: 4px (was 3px) × brand 28%, (was 24%) + white "sandwich" gap for
        dark-on-light or light-on-dark contrast.
        Original: 0 0 0 3px color-mix(in oklch, var(--c-brand-500) 24%, transparent)
        Enhanced: outer brand 30% 4px  +  inner white 2px sandwich for stand-off */
@@ -4525,7 +4526,7 @@ body .product-detail-page .detail-gallery{
 }
 body .product-detail-page .gallery-main{
   aspect-ratio:1/1 !important;
-  background:radial-gradient(circle at 50% 40%,#ffffff 0%,#f8fafc 60%,#f1f5f9 100%) !important;
+  background:radial-gradient(circle at 50%, 40%,#ffffff 0%,#f8fafc 60%,#f1f5f9 100%) !important;
   border:1px solid #e2e8f0 !important;border-radius:12px !important;
   display:flex !important;align-items:center !important;justify-content:center !important;overflow:hidden !important;
   position:relative !important;
@@ -4912,9 +4913,11 @@ html, body { max-width: 100%; overflow-x: hidden; }
 img { max-width: 100%; height: auto; }
 img[width]:not([width="1"]):not([width="0"]) { max-width: 100%; }
 
-/* 3. Standard content wrapper — all page sections should use .container */
+/* 3. Standard content wrapper — all page sections should use .container.
+   Gutter must match pages without a <main> wrapper (Bootstrap default 12px),
+   otherwise the same layout sits 12px further inside on <main> pages. */
 main .container,
-main .container-fluid { max-width: var(--container-max, 1320px); margin-left: auto; margin-right: auto; padding-left: var(--space-section-x, 1.5rem); padding-right: var(--space-section-x, 1.5rem); }
+main .container-fluid { max-width: var(--container-max, 1320px); margin-left: auto; margin-right: auto; padding-left: .75rem; padding-right: .75rem; }
 
 /* 4. Unified section spacing for all pages */
 main section[class*="py-"],
@@ -4992,8 +4995,12 @@ body main .container-fluid {
   width: 100% !important;
 }
 
-/* Ensure equal-height cards in all rows */
-.row > [class*="col-"]{height:100%}
+/* Ensure equal-height cards in all rows.
+   Do NOT set height:100% on the grid column itself — that cancels the
+   flexbox align-items:stretch pass and makes sibling columns fall back to
+   their content height (cards end up ragged). Columns stretch by default;
+   the :has() block at the end of this file makes the card fill the column. */
+.row > [class*="col-"]{height:auto}
 .row > [class*="col-"] > .card.h-100,
 .row > [class*="col-"] > a.card.h-100{height:100%!important;display:flex!important;flex-direction:column!important}
 .row > [class*="col-"] > .card.h-100 .card-body,
@@ -5821,7 +5828,7 @@ body .product-detail-page .detail-left-stack .detail-cta-buttons{
   border-top:1px solid rgba(255,255,255,0.1) !important;
   padding-top:20px !important;
   margin-top:8px !important;
-  color:#64748B !important;
+  color:#94A3B8 !important;
   font-size:.82rem !important;
   line-height:1.7 !important;
   text-align:center !important;
@@ -6341,5 +6348,193 @@ main#mainContent{
 @media (prefers-reduced-motion:reduce){.qc-figure img{transition:none}.qc-figure:hover img{transform:none}}
 
 /* Process step inline link (index.html) */
-.step-link{display:inline-flex;align-items:center;margin-top:.55rem;font-size:.82rem;font-weight:600;color:var(--c-brand-600);text-decoration:none;transition:color .2s ease}
-.step-link:hover{color:var(--c-brand-700);text-decoration:underline}
+.step-link{display:inline-flex;align-items:center;margin-top:.55rem;font-size:.82rem;font-weight:600;color:var(--c-brand-700)!important;text-decoration:none;transition:color .2s ease}
+.step-link:hover{color:var(--c-brand-900)!important;text-decoration:underline}
+
+/* ============================================================
+ * CARD ALIGNMENT NORMALISATION  ·  2026-10
+ * 根因：Bootstrap 栅格列高度为 auto，子卡片 height:100% 解析失败，
+ *       导致同一行卡片高度参差、CTA 不在同一基线。
+ * 方案：让含卡片的栅格列成为纵向 flex 容器，卡片 flex:1 填满行高。
+ * ============================================================ */
+[class*="col-"]:has(> .card),
+[class*="col-"]:has(> .service-quick-link),
+[class*="col-"]:has(> .advantage-card),
+[class*="col-"]:has(> .service-card),
+[class*="col-"]:has(> .client-segment-card),
+[class*="col-"]:has(> .step-card),
+[class*="col-"]:has(> .about-stat-card),
+[class*="col-"]:has(> .plan-card),
+[class*="col-"]:has(> .value-card) {
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="col-"] > .card,
+[class*="col-"] > .service-quick-link,
+[class*="col-"] > .advantage-card,
+[class*="col-"] > .service-card,
+[class*="col-"] > .client-segment-card,
+[class*="col-"] > .step-card,
+[class*="col-"] > .about-stat-card,
+[class*="col-"] > .plan-card,
+[class*="col-"] > .value-card {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+/* 卡片内的标签与 CTA 贴底，保证同一行元素共线 */
+.advantage-card,
+.service-quick-link,
+.client-segment-card,
+.step-card { display: flex; flex-direction: column; }
+.advantage-card > .tag { margin-top: auto; padding-top: .5rem; }
+.client-segment-card > .client-segment-footer { margin-top: auto; }
+.service-quick-link > .service-desc { margin-top: auto; }
+.service-quick-link { justify-content: flex-start; }
+
+/* Company Profile — image fills the text column height (about.html) */
+#about-us .about-image-wrap{height:100%;margin-bottom:0;display:flex;flex-direction:column}
+#about-us .about-long-image{height:100%;min-height:300px;flex:1 1 auto;object-fit:cover;object-position:center}
+
+/* Contact block — both columns fill the card height, CTA sits on the baseline */
+.contact-card > .row > [class*="col-"]{display:flex;flex-direction:column}
+.contact-card .contact-info,
+.contact-card .contact-form{flex:1 1 auto;width:100%}
+.contact-form form{justify-content:flex-start}
+.contact-form form > .btn-cta{margin-top:auto !important;padding-top:.65rem;padding-bottom:.65rem}
+@media (max-width:991.98px){
+  .contact-card > .row > [class*="col-"]{display:block}
+  .contact-form form > .btn-cta{margin-top:.75rem !important}
+}
+
+/* ============================================================
+   Home · Credentials — 2×2 verification grid with equal rows
+   ============================================================ */
+#credentials .cred-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  gap:1rem;
+  height:100%;
+}
+#credentials .cred-grid > .card{
+  height:100%;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+}
+#credentials .cred-grid > .card > .row{height:100%;flex:1 1 auto}
+#credentials .cred-grid > .card > .row > [class*="col-"]{display:flex;flex-direction:column}
+#credentials .cred-grid > .card > .row > .col-5 > a{flex:1 1 auto}
+#credentials .cred-grid > .card > .row > .col-5 img{height:100%;min-height:132px;object-fit:cover}
+#credentials .cred-grid .card-body{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex:1 1 auto;
+  padding:1.15rem 1.25rem;
+}
+#credentials .cred-grid .card-body > .h6{margin-bottom:.45rem}
+#credentials .cred-grid .card-body p:last-child{margin-bottom:0}
+@media (max-width:767.98px){
+  #credentials .cred-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+  #credentials .cred-grid > .card > .row{height:auto}
+  #credentials .cred-grid > .card > .row > .col-5 img{min-height:180px}
+}
+
+/* Home · FAQ — CTA tile fills the empty cell of the 2-column grid */
+.home-faq-list .faq-more-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  height:100%;
+  padding:1.25rem 1.4rem;
+  background:var(--bg-panel);
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+}
+.home-faq-list .faq-more-card .btn{margin-top:auto}
+
+/* Hero trust stats — hold four items on one line at every width */
+.hero-trust-bar{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:center;
+  gap:0;
+  flex-wrap:nowrap;
+}
+.hero-trust-bar .trust-stat{padding:0 10px;align-items:center;text-align:center}
+.hero-trust-bar .trust-sep{display:none}
+.hero-trust-bar .trust-stat:not(:first-child){border-left:1px solid rgba(255,255,255,0.12)}
+.hero-trust-bar .ts-lab{white-space:normal;line-height:1.25;text-align:center}
+@media (max-width:575.98px){
+  .hero-trust-bar{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}
+  .hero-trust-bar .trust-stat{padding:0 6px}
+  .hero-trust-bar .trust-stat:nth-child(5){border-left:0}
+  .hero-trust-bar .trust-stat:nth-child(5),
+  .hero-trust-bar .trust-stat:nth-child(7){border-top:1px solid rgba(255,255,255,0.12);padding-top:10px}
+}
+
+/* Home · pricing table — readable cell padding, no text touching the border */
+#pricing-transparency .table > :not(caption) > * > *{padding:.7rem .85rem;vertical-align:middle}
+#pricing-transparency .table th:first-child,
+#pricing-transparency .table td:first-child{padding-left:1rem}
+#pricing-transparency .table th:last-child,
+#pricing-transparency .table td:last-child{padding-right:1rem;min-width:200px}
+
+/* ============================================================
+   Global contrast / alignment corrections
+   ============================================================ */
+
+/* Footer legal line: keep it readable on the dark footer on every page */
+.footer-bottom,
+.footer-bottom p,
+.footer-bottom .footer-copy{color:#94A3B8 !important}
+.footer-bottom .footer-ai-note{color:#94A3B8 !important}
+
+/* Contact page — photo captions sit on a dark gradient, so headings must stay white */
+.us-trip-card .us-trip-caption,
+.us-trip-card .us-trip-caption h3{color:#fff}
+.us-trip-card .us-trip-caption p{color:rgba(255,255,255,.88)}
+
+/* Bootstrap contextual badges: bg-info (#0dcaf0) fails contrast with white text */
+.badge.bg-info{background-color:#0e7490 !important;color:#fff !important}
+
+/* Rows that carry process/step cards must stretch so every card shares one baseline */
+.row:has(> [class*="col-"] > .step-card){align-items:stretch}
+.row:has(> [class*="col-"] > .step-card) > [class*="col-"]{align-self:stretch}
+
+/* about.html — left stat panel mirrors the right-hand advantage list:
+   both columns share a top baseline and the 2×2 tiles fill the remaining
+   height, so the short column no longer floats in a 300px void. */
+#why-yeatru .row > .col-lg-6:first-child{display:flex;flex-direction:column;align-self:stretch}
+#why-yeatru .row > .col-lg-6:first-child > .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:0;flex:1 1 auto}
+#why-yeatru .row > .col-lg-6:first-child > .row > [class*="col-"]{width:auto;max-width:none;padding:0;display:flex}
+#why-yeatru .stat-card{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:991.98px){#why-yeatru .row > .col-lg-6:first-child > .row{grid-auto-rows:auto}}
+
+/* case-studies.html — these cards are long-form reading, so they use an
+   editorial measure instead of the full 1280px shell (≈160 chars/line). */
+main.case-studies-page{max-width:1000px!important}
+main.case-studies-page .card-body{line-height:1.7}
+main.case-studies-page .card-body li{margin-bottom:.3rem}
+
+/* Home · pricing table — keep fee/minimum values on one line so rows don't
+   break mid-sentence at desktop widths */
+@media(min-width:992px){
+  #pricing-transparency .table th:nth-child(4),
+  #pricing-transparency .table td:nth-child(4){white-space:nowrap}
+}
+
+/* Form selects: the shared `background:` shorthand near L1831 wipes
+   Bootstrap's caret, so selects render like plain text inputs. Restore one. */
+body select.form-select{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2364748b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-position:right .8rem center!important;
+  background-size:14px 14px!important;
+  padding-right:2.2rem!important;
+}
