@@ -6538,3 +6538,19 @@ body select.form-select{
   background-size:14px 14px!important;
   padding-right:2.2rem!important;
 }
+
+/* about.html · Market visits & supplier talks — light-background photo cards */
+.market-figure{margin:0;background:var(--bg-panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column}
+.market-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.market-figure:hover img{transform:scale(1.03)}
+.market-figure figcaption{padding:.9rem 1rem 1.05rem;font-size:.9rem;line-height:1.55;color:var(--text-secondary)}
+.market-tag{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--primary);margin-bottom:.35rem}
+@media (prefers-reduced-motion:reduce){.market-figure img{transition:none}.market-figure:hover img{transform:none}}
+
+/* quality-control.html · Inspection report sample — masonry gallery for mixed-height pages */
+.report-gallery{column-count:2;column-gap:1.25rem}
+.report-gallery .report-figure{break-inside:avoid;margin-bottom:1.25rem;background:var(--bg-panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.report-gallery .report-figure img{width:100%;height:auto;display:block;background:#fff}
+.report-gallery .report-figure figcaption{padding:.9rem 1rem 1.05rem;font-size:.9rem;line-height:1.55;color:var(--text-secondary)}
+.report-tag{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--primary);margin-bottom:.35rem}
+@media(max-width:767.98px){.report-gallery{column-count:1}}
