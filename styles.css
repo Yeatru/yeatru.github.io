@@ -6331,3 +6331,15 @@ main#mainContent{
 .office-figure figcaption{padding:.9rem 1rem 1.05rem;font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.78)}
 .office-floor{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:#8ecdf5;margin-bottom:.35rem}
 @media (prefers-reduced-motion:reduce){.office-figure img{transition:none}.office-figure:hover img{transform:none}}
+
+/* Inspection photo gallery (quality-control.html) — shares office-figure styling */
+.qc-figure{margin:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column}
+.qc-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.qc-figure:hover img{transform:scale(1.03)}
+.qc-figure figcaption{padding:.9rem 1rem 1.05rem;font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.78)}
+.qc-stage{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:#8ecdf5;margin-bottom:.35rem}
+@media (prefers-reduced-motion:reduce){.qc-figure img{transition:none}.qc-figure:hover img{transform:none}}
+
+/* Process step inline link (index.html) */
+.step-link{display:inline-flex;align-items:center;margin-top:.55rem;font-size:.82rem;font-weight:600;color:var(--c-brand-600);text-decoration:none;transition:color .2s ease}
+.step-link:hover{color:var(--c-brand-700);text-decoration:underline}
