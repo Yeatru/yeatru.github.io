@@ -582,6 +582,15 @@ a33: "Depende del producto y cantidad: muestras 3-7 días por mensajería expré
             startPlan2: "Comience con el Plan 2",
             tieredCommission: "comisión escalonada"
         },
+        about: {
+            heroTitle: "Sobre Yeatru Sourcing",
+            heroSubtitle: "Su socio de confianza para el abastecimiento en China, con sede en Yiwu — el mayor centro mayorista de pequeños artículos del mundo. Sinceridad, integridad y experiencia liderada por el fundador desde 2022.",
+            heroFact1: "14+ años de experiencia del fundador",
+            heroFact2: "Con sede en el mercado de Yiwu",
+            heroFact3: "200+ clientes globales",
+            heroCta1: "Obtenga su cotización gratuita",
+            heroCta2: "Ver planes de servicio"
+        },
         pay: {
             eyebrow: "GUÍA DE LIQUIDACIÓN",
             heroTitle: "Liquidación de Pedidos — 3 Opciones",
@@ -916,6 +925,15 @@ a33: "Le délai dépend du produit et de la quantité : échantillons 3-7 jours 
             plan2If5: "Vous voulez un service d'approvisionnement complet de bout en bout",
             startPlan2: "Commencer avec le Plan 2",
             tieredCommission: "commission dégressive"
+        },
+        about: {
+            heroTitle: "À propos de Yeatru Sourcing",
+            heroSubtitle: "Votre partenaire de confiance pour le sourcing en Chine, basé à Yiwu — la plus grande plateforme de gros de petits articles au monde. Sincérité, intégrité et expérience dirigée par le fondateur depuis 2022.",
+            heroFact1: "14+ ans d'expérience du fondateur",
+            heroFact2: "Basé au marché de Yiwu",
+            heroFact3: "200+ clients internationaux",
+            heroCta1: "Obtenez votre devis gratuit",
+            heroCta2: "Voir les offres de service"
         },
         pay: {
             eyebrow: "GUIDE DE RÈGLEMENT",
@@ -1252,6 +1270,15 @@ a33: "Сроки зависят от типа продукта и объема: 
             startPlan2: "Начать с Плана 2",
             tieredCommission: "дифференцированная комиссия"
         },
+        about: {
+            heroTitle: "О компании Yeatru Sourcing",
+            heroSubtitle: "Ваш надёжный партнёр по закупкам в Китае, базирующийся в Иу — крупнейшем в мире центре оптовой торговли мелкими товарами. Искренность, честность и опыт под руководством основателя с 2022 года.",
+            heroFact1: "Опыт основателя 14+ лет",
+            heroFact2: "База на рынке Иу",
+            heroFact3: "200+ клиентов по всему миру",
+            heroCta1: "Получить бесплатный расчёт",
+            heroCta2: "Посмотреть тарифы"
+        },
         pay: {
             eyebrow: "ИНСТРУКЦИЯ ПО РАСЧЁТАМ",
             heroTitle: "Расчёт по заказу — 3 варианта",
@@ -1586,6 +1613,15 @@ a33: "يعتمد ذلك على نوع المنتج وحجم الطلب: العي
             plan2If5: "تريد خدمة توريد متكاملة من البداية إلى النهاية",
             startPlan2: "ابدأ بالخطة 2",
             tieredCommission: "عمولة متدرجة"
+        },
+        about: {
+            heroTitle: "عن Yeatru Sourcing",
+            heroSubtitle: "شريكك الموثوق للتوريد من الصين ومقرنا في ييوو — أكبر مركز تجاري للسلع الصغيرة في العالم. الصدق والنزاهة وخبرة يقودها المؤسس منذ 2022.",
+            heroFact1: "خبرة المؤسس أكثر من 14 عامًا",
+            heroFact2: "مقرنا في سوق ييوو",
+            heroFact3: "أكثر من 200 عميل عالمي",
+            heroCta1: "احصل على عرض سعر مجاني",
+            heroCta2: "عرض خطط الخدمة"
         },
         pay: {
             eyebrow: "دليل التسوية",

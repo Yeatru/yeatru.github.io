@@ -28,7 +28,7 @@
  {
  "@context": ["https://schema.org", {"@vocab": "https://schema.org/SoftwareSourceCode"}], "@graph": [
  {
- "@type": "WebPage", "@id": "https://www.yeatru.com/data.html", "name": "Yeatru Public Data API Documentation", "description": "Read-only JSON API exposing 675 China-sourcing products across 17 categories. CORS-enabled no authentication required.", "url": "https://www.yeatru.com/data.html", "inLanguage": "en", "isPartOf": { "@id": "https://www.yeatru.com/#website" }, "about": {
+ "@type": "WebPage", "@id": "https://www.yeatru.com/data.html", "name": "Yeatru Public Data API Documentation", "description": "Read-only JSON API exposing 675 China-sourcing products across 17 main categories and 50 subcategories. CORS-enabled no authentication required.", "url": "https://www.yeatru.com/data.html", "inLanguage": "en", "isPartOf": { "@id": "https://www.yeatru.com/#website" }, "about": {
  "@type": "Thing", "name": "China product sourcing product catalog"
  }, "apiSpecification": {
  "@type": "WebAPI", "name": "Yeatru Product Catalog API v1", "url": "https://www.yeatru.com/api/v1/products", "endpoint": "https://www.yeatru.com/api/v1/products?v=20260909k", "apiType": "REST", "protocol": "HTTPS", "authentication": "None", "rateLimit": "Public read-only. Cloudflare cached 24h. No documented rate limit but please respect reasonable volumes.", "documentation": "https://www.yeatru.com/data.html?v=20260909k", "provider": {
@@ -190,7 +190,7 @@
 
 <header>
  <h1>Yeatru Public Data API</h1>
- <p>675 China-sourcing products · 17 categories · CORS-enabled · No API key</p>
+ <p>675 China-sourcing products · 17 main categories · CORS-enabled · No API key</p>
  <div class="hero-stats">
  <span><b>675</b>Products (YCS- SKUs)</span>
  <span><b>17</b>Categories</span>
@@ -352,7 +352,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <code>GET https://www.yeatru.com/api/v1/categories?v=20260909k</code>
  <span class="badge badge-get">GET</span>
  <span class="badge badge-public">Public</span>
- <p>All 17 categories with product counts and per-category endpoint URLs.</p>
+ <p>All 17 main categories with product counts and per-category endpoint URLs.</p>
  </div>
  <div class="endpoint">
  <code>GET https://www.yeatru.com/site-data.json?v=20260909k</code>
@@ -372,7 +372,7 @@ jq '.products[] | {sku name priceMin moq mainCategory}' yeatru-catalog.json \
  <tr><td><code>id</code></td><td>string</td><td><code>acc-001</code></td><td>Slug id</td></tr>
  <tr><td><code>name</code></td><td>string</td><td><code>Hair Tie Scrunchie Set 8-Piece</code></td><td>English product name</td></tr>
  <tr><td><code>name_cn</code></td><td>string</td><td><code></code></td><td> (Simplified)</td></tr>
- <tr><td><code>mainCategory</code></td><td>string</td><td><code>Beauty &amp; Personal Care</code></td><td>One of 17 categories</td></tr>
+ <tr><td><code>mainCategory</code></td><td>string</td><td><code>Beauty &amp; Personal Care</code></td><td>One of 17 main categories</td></tr>
  <tr><td><code>priceMin</code></td><td>number/null</td><td><code>0.85</code></td><td>USD unit price (CNY / 6.7 &times; 1.15 formula)</td></tr>
  <tr><td><code>priceMax</code></td><td>number/null</td><td><code>1.65</code></td><td>Upper USD price range</td></tr>
  <tr><td><code>moq</code></td><td>number/null</td><td><code>100</code></td><td>Minimum Order Quantity (units)</td></tr>
