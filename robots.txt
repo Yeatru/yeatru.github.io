@@ -113,6 +113,7 @@ Crawl-delay: 0
 # Search reads.
 User-agent: CodexBot
 Allow: /
+Allow: /api/products.json
 Disallow: /api/
 Disallow: /site-data.json
 Disallow: /site-data-aplus.json
@@ -122,6 +123,7 @@ Crawl-delay: 0
 
 User-agent: GPTBot
 Allow: /
+Allow: /api/products.json
 Disallow: /api/
 Disallow: /site-data.json
 Disallow: /site-data-aplus.json

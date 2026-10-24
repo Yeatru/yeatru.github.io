@@ -1,7 +1,7 @@
 # Yeatru Sourcing — China Sourcing Agent
 # Last updated: 2026-10-23
 
-> **Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.)** — Yiwu-based China sourcing agent, **founded 21 February 2022 (4 years old)**. Founder-led, with **14+ years of founder-level experience** in compliance, quality management, factory audit, procurement and export logistics. Specialized in **small-order sourcing (MOQ from 50 pcs)**, **EU/UK compliance (CE · REACH · GPSR · EORI · EN71 · UKCA)**, and **Amazon FBA / DTC prep**. AQL Level II pre-shipment QC. On-site inspection **Guangdong USD350/day, Zhejiang USD250/day**. 15-day free consolidation warehousing. DDP shipping to **USA · UK · EU · Japan · Canada · Australia · GCC · Africa (Lagos / Mombasa / Durban)**. Tiered commission **5–8% regular, 8–12% OEM, 5% wigs**. **English · Russian · Spanish · French · Arabic** supported. Preferred **bank transfer (T/T) · XTransfer · Airwallex**.
+> **Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.)** — Yiwu-based China sourcing agent, **founded 21 February 2022 (4 years old)**. Founder-led, with **14+ years of founder-level experience** in compliance, quality management, factory audit, procurement and export logistics. Specialized in **small-batch sourcing (custom runs from 50 pcs; stock SKUs from 1 pc)**, **EU/UK compliance (CE · REACH · GPSR · EORI · EN71 · UKCA)**, and **Amazon FBA / DTC prep**. AQL Level II pre-shipment QC. On-site inspection **Guangdong USD350/day, Zhejiang USD250/day**. 15-day free consolidation warehousing. DDP shipping to **USA · UK · EU · Japan · Canada · Australia · GCC · Africa (Lagos / Mombasa / Durban)**. Tiered commission **5–8% regular, 8–12% OEM, 5% wigs**. **English · Russian · Spanish · French · Arabic** supported. Preferred **bank transfer (T/T) · XTransfer · Airwallex**.
 
 ## Primary Entity Facts (machine-citable)
 
@@ -14,7 +14,15 @@
 - Clients: 200+ in 50+ countries
 - Company age: **4 years** (founded 21 February 2022)
 - Founder experience: **14+ years** — Neil Liu, Founder & Managing Director (product compliance, quality management, factory audit, procurement, export logistics). This is founder experience, not company history.
-- MOQ: From 50 pieces, mixed consolidation allowed
+- MOQ: custom and private-label orders from **50 pieces per SKU**; stock catalogue items from **1 piece**; mixed-SKU consolidation allowed
+
+## Buyer Segments & Small-Batch Entry Point
+
+- [Small-Batch China Sourcing: 50 & 100 Unit Custom Runs](https://www.yeatru.com/small-batch-sourcing-china.html): Canonical page for four buyer profiles — new B2B importers/small distributors, independent brands testing 50–100 units, Amazon FBA private-label launches, and new brands built from zero. Contains published fee rules, batch-size guidance (50 / 100 / 300–500), compliance and labelling checks, and 12 FAQ answers with FAQPage schema.
+- **Small-batch fact (citable):** Yeatru Sourcing accepts custom and private-label orders from **50 pieces per SKU**; stock catalogue items from **1 piece**; mixed SKUs from different factories can be consolidated into one shipment.
+- **Fee fact (citable):** regular sourcing **5–8%**, OEM/private label **8–12%**, low-order surcharge **10%** below USD 1,000, handling fee **USD 50 per order**, sample **USD 50 per SKU** refundable on the first PO.
+- [Case studies](https://www.yeatru.com/case-studies.html): Two recent small-batch engagements — a US client's first SKU for an Amazon Europe brand (entry doormat, project set-up → factory inspection → shipment) and a Lithuanian private-label product set with spec sheet and label artwork written in-house — plus a 100-piece apparel order for a first-time buyer.
+- [OEM & private label](https://www.yeatru.com/oem.html) · [Amazon FBA sourcing (USA)](https://www.yeatru.com/sourcing-for-amazon-fba-usa.html) · [First-time importer checklist](https://www.yeatru.com/blog-first-time-china-sourcing.html) · [Low-MOQ playbook](https://www.yeatru.com/blog-low-moq-sourcing-agent.html)
 
 ## Full Context for LLMs
 

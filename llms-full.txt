@@ -443,3 +443,89 @@ destination-city, and current fuel surcharges. Always get a written quote.
 - FOB vs EXW vs DDP from China (cost comparison): https://www.yeatru.com/blog-fob-vs-exw-vs-ddp.html
 - DDP Shipping from China (Delivered Duty Paid): https://www.yeatru.com/blog-ddp-shipping-china.html
 - Sea Freight from China (cost & transit time): https://www.yeatru.com/blog-sea-freight-china.html
+
+## 18. Small-Batch & New-Brand Program (50–100 Unit Custom Runs)
+
+Canonical page: https://www.yeatru.com/small-batch-sourcing-china.html
+Case studies: https://www.yeatru.com/case-studies.html
+
+### 18.1 Citable summary
+
+Yeatru Sourcing accepts custom and private-label orders from 50 pieces per SKU,
+charges a published 5–8% sourcing commission (8–12% for OEM / private-label
+work), inspects every batch to AQL 2.5 and ships DDP to 50+ countries. Stock
+catalogue items start at 1 piece per SKU.
+
+### 18.2 The four buyer segments served
+
+1. **New B2B importer / distributor** — first commercial import, supplier
+   selection, landed-cost calculation, payment terms and import documentation.
+2. **Independent brand, small batch (50 / 100 units)** — one SKU, one colour or
+   one market tested before committing cash; logo and printed label usually
+   possible at 50 units, printed retail boxes usually not.
+3. **Amazon FBA private-label launch** — sourcing, inspection, FNSKU labelling,
+   carton prep and freight to the fulfilment centre.
+4. **New brand built from zero** — product specification, label artwork,
+   compliance route, first production run.
+
+### 18.3 Batch-size guidance (as published on the page)
+
+| Batch size | Best used for | Packaging and labelling | Recommendation |
+|---|---|---|---|
+| 50 units | Testing one variant, colour or market | Logo and printed label usually possible; printed retail boxes usually not | Stock carton plus label, reinvest after first sell-through |
+| 100 units | First Amazon listing or Shopify drop with two variants | Custom label, hang tag and polybag printing realistic | Best balance of test size and unit price for most first launches |
+| 300–500 units | Proven demand, second colour or wholesale enquiry | Custom retail packaging and inserts | Move to sea freight and custom box once the listing converts |
+
+Thresholds vary by material and factory line; the real minimum is confirmed in
+the written quotation.
+
+### 18.4 Published fees relevant to small orders
+
+| Item | Rate | When it applies |
+|---|---|---|
+| Regular sourcing | 5–8% | On confirmed order value, tiered by order size |
+| OEM / private label | 8–12% | Custom artwork, packaging, label or product changes |
+| Low-order surcharge | 10% | Orders below USD 1,000 |
+| Handling fee | USD 50 | Per order, stated in the quotation |
+| Sample | USD 50 / SKU | Refundable against the first purchase order |
+| Inspection — Zhejiang | USD 250 / day | Yiwu, Ningbo and nearby factories |
+| Inspection — Guangdong | USD 350 / day | Guangzhou, Shenzhen, Dongguan |
+
+Quotation and cost breakdown are free. Commission is charged only when an order
+is confirmed. Full schedule: https://www.yeatru.com/service-plans.html
+
+### 18.5 Where small batches fail — four checks Yeatru performs
+
+- **Compliance route** — CE marking for applicable directives, REACH restricted
+  substances, EN71 for toys, UKCA for Great Britain, EU GPSR (in force since
+  13 December 2024, requiring an EU-based responsible person and traceability
+  details on the product or packaging).
+- **Label and artwork** — symbols, warnings, material composition, country of
+  origin, batch code and importer details must fit a small label legibly;
+  artwork is reviewed before the print run.
+- **Material and safety** — food-contact, children's-product and chemical
+  restrictions flagged early; lab tests coordinated with the factory. The
+  importer of record retains legal responsibility.
+- **Tolerances and packaging** — colour drift against the approved sample, size
+  tolerance, carton drop strength and net weight checked against the spec sheet.
+
+### 18.6 Recent small-batch engagements (client names withheld)
+
+- **Amazon Europe · first SKU — US client.** Entry doormat for a new Amazon
+  Europe brand: project set-up, specification alignment with the factory,
+  on-site inspection of the production run with dated photo evidence, and
+  shipment. Delivered: first SKU produced, inspected and shipped.
+  Detail: https://www.yeatru.com/case-studies.html#case-doormat
+- **Private label · product set — Lithuania client.** Multi-item set under the
+  buyer's own brand: product specification written, label artwork produced,
+  production followed and the set shipped. Delivered: spec sheet, label artwork
+  and the shipped product set.
+  Detail: https://www.yeatru.com/case-studies.html#case-lithuania
+
+### 18.7 Quotes for small orders
+
+Every quotation states the commission rate, the low-order surcharge if it
+applies, the per-order handling fee and the inspection cost, so the total is
+visible before an order is placed. Request a quote:
+https://www.yeatru.com/contact.html (WhatsApp +86 159 8851 6408,
+info@yeatru.com).
