@@ -1778,12 +1778,19 @@ function updateContent() {
             '/data.html': ['common.globalClients', 'common.trustedBySubtitle'],
             '/value-added-services.html': ['vas.h1', 'vas.sub'],
         };
-        const path = (location.pathname.substring(location.pathname.lastIndexOf('/')) || '/index.html');
+        // Cloudflare Pages serves clean URLs without redirecting, so the same page can
+        // arrive as "/about" or "/about.html". Normalise both forms to the map keys.
+        const trimmedPath = location.pathname.replace(/\/+$/, '');
+        const normPath = trimmedPath.substring(trimmedPath.lastIndexOf('/')) || '/';
+        const pathCandidates = [normPath, normPath + '.html'];
         // Only pages explicitly listed in pageMetaMap get a translated <title>/<meta>,
         // and only when the UI language is not English. Falling back to '/index.html'
         // (or rewriting English pages) would replace the page's own authored <title>
         // and description with generic copy once JS runs, which search engines index.
-        const meta = pageMetaMap[path];
+        let meta = null;
+        for (let i = 0; i < pathCandidates.length; i++) {
+            if (pageMetaMap[pathCandidates[i]]) { meta = pageMetaMap[pathCandidates[i]]; break; }
+        }
         const uiLang = (i18next.language || 'en').split('-')[0];
         // Capture the authored (English) title/description once, so switching
         // back to English restores them instead of leaving translated copy.
@@ -1795,7 +1802,9 @@ function updateContent() {
             const tTitle = i18next.t(meta[0]);
             const tDesc = i18next.t(meta[1]);
             if (tTitle && tTitle !== meta[0]) {
-                const brand = 'Yeatru Sourcing — China Sourcing Agent';
+                // Keep the brand short in translated titles; the English tagline would
+                // look out of place in a Russian/Arabic/Spanish <title>.
+                const brand = uiLang === 'en' ? 'Yeatru Sourcing — China Sourcing Agent' : 'Yeatru Sourcing';
                 // Avoid repeating the brand if already in the translated title
                 document.title = tTitle.indexOf('Yeatru') !== -1 ? tTitle : (tTitle + ' | ' + brand);
             }
