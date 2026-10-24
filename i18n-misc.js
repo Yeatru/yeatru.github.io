@@ -242,11 +242,13 @@ const I18N_MISC = {
             heroFact1: "14+ Years Founder Experience",
             heroFact2: "Yiwu Market Based",
             heroFact3: "200+ Global Clients",
+            heroFact4: "English · 中文 · Español · Русский · العربية",
             heroCta1: "Get Your Free Quote",
             heroCta2: "View Service Plans"
         },
         pay: {
             faqTitle: "Payment FAQ",
+            faqSubtitle: "Quick answers to the most common settlement questions",
             eyebrow: "SETTLEMENT GUIDE",
             heroTitle: "Order Settlement — 3 Options",
             heroSubtitle: "Choose the settlement method that fits your order size and timeline",
@@ -589,11 +591,13 @@ a33: "Depende del producto y cantidad: muestras 3-7 días por mensajería expré
             heroFact1: "14+ años de experiencia del fundador",
             heroFact2: "Con sede en el mercado de Yiwu",
             heroFact3: "200+ clientes globales",
+            heroFact4: "English · 中文 · Español · Русский · العربية",
             heroCta1: "Obtenga su cotización gratuita",
             heroCta2: "Ver planes de servicio"
         },
         pay: {
             faqTitle: "Preguntas sobre Pagos",
+            faqSubtitle: "Respuestas rápidas a las preguntas de pago más comunes",
             eyebrow: "GUÍA DE LIQUIDACIÓN",
             heroTitle: "Liquidación de Pedidos — 3 Opciones",
             heroSubtitle: "Elija el método de liquidación que se ajuste al tamaño y plazo de su pedido",
@@ -934,11 +938,13 @@ a33: "Le délai dépend du produit et de la quantité : échantillons 3-7 jours 
             heroFact1: "14+ ans d'expérience du fondateur",
             heroFact2: "Basé au marché de Yiwu",
             heroFact3: "200+ clients internationaux",
+            heroFact4: "English · 中文 · Español · Русский · العربية",
             heroCta1: "Obtenez votre devis gratuit",
             heroCta2: "Voir les offres de service"
         },
         pay: {
             faqTitle: "FAQ Paiement",
+            faqSubtitle: "Réponses rapides aux questions de paiement les plus courantes",
             eyebrow: "GUIDE DE RÈGLEMENT",
             heroTitle: "Règlement de Commande — 3 Options",
             heroSubtitle: "Choisissez la méthode de règlement adaptée à la taille et au délai de votre commande",
@@ -1279,11 +1285,13 @@ a33: "Сроки зависят от типа продукта и объема: 
             heroFact1: "Опыт основателя 14+ лет",
             heroFact2: "База на рынке Иу",
             heroFact3: "200+ клиентов по всему миру",
+            heroFact4: "English · 中文 · Español · Русский · العربية",
             heroCta1: "Получить бесплатный расчёт",
             heroCta2: "Посмотреть тарифы"
         },
         pay: {
             faqTitle: "Вопросы об оплате",
+            faqSubtitle: "Быстрые ответы на самые частые вопросы об оплате",
             eyebrow: "ИНСТРУКЦИЯ ПО РАСЧЁТАМ",
             heroTitle: "Расчёт по заказу — 3 варианта",
             heroSubtitle: "Выберите способ расчёта, подходящий по объёму и сроку вашего заказа",
@@ -1624,11 +1632,13 @@ a33: "يعتمد ذلك على نوع المنتج وحجم الطلب: العي
             heroFact1: "خبرة المؤسس أكثر من 14 عامًا",
             heroFact2: "مقرنا في سوق ييوو",
             heroFact3: "أكثر من 200 عميل عالمي",
+            heroFact4: "English · 中文 · Español · Русский · العربية",
             heroCta1: "احصل على عرض سعر مجاني",
             heroCta2: "عرض خطط الخدمة"
         },
         pay: {
             faqTitle: "الأسئلة الشائعة حول الدفع",
+            faqSubtitle: "إجابات سريعة على أكثر أسئلة الدفع شيوعًا",
             eyebrow: "دليل التسوية",
             heroTitle: "تسوية الطلب — 3 خيارات",
             heroSubtitle: "اختر طريقة التسوية التي تناسب حجم طلبك ومدته",
