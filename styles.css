@@ -5869,3 +5869,20 @@ body .nav-link:focus-visible{
 @media(prefers-reduced-motion:reduce){
   body :focus-visible{transition:none}
 }
+
+/* Collapsed navbar (<1200px): render language/currency dropdowns in flow so
+   the scrollable .navbar-collapse cannot clip them out of view. */
+@media (max-width:1199.98px){
+  .navbar-collapse .lang-selector .dropdown-menu,
+  .navbar-collapse .currency-selector .dropdown-menu{
+    position:static!important;
+    inset:auto!important;
+    transform:none!important;
+    float:none!important;
+    min-width:0;
+    margin:.35rem 0 0!important;
+    box-shadow:none;
+  }
+  .navbar-collapse .lang-selector .dropdown-menu .dropdown-item,
+  .navbar-collapse .currency-selector .dropdown-menu .dropdown-item{padding:.4rem .75rem}
+}

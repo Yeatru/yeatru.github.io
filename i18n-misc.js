@@ -246,6 +246,7 @@ const I18N_MISC = {
             heroCta2: "View Service Plans"
         },
         pay: {
+            faqTitle: "Payment FAQ",
             eyebrow: "SETTLEMENT GUIDE",
             heroTitle: "Order Settlement — 3 Options",
             heroSubtitle: "Choose the settlement method that fits your order size and timeline",
@@ -592,6 +593,7 @@ a33: "Depende del producto y cantidad: muestras 3-7 días por mensajería expré
             heroCta2: "Ver planes de servicio"
         },
         pay: {
+            faqTitle: "Preguntas sobre Pagos",
             eyebrow: "GUÍA DE LIQUIDACIÓN",
             heroTitle: "Liquidación de Pedidos — 3 Opciones",
             heroSubtitle: "Elija el método de liquidación que se ajuste al tamaño y plazo de su pedido",
@@ -936,6 +938,7 @@ a33: "Le délai dépend du produit et de la quantité : échantillons 3-7 jours 
             heroCta2: "Voir les offres de service"
         },
         pay: {
+            faqTitle: "FAQ Paiement",
             eyebrow: "GUIDE DE RÈGLEMENT",
             heroTitle: "Règlement de Commande — 3 Options",
             heroSubtitle: "Choisissez la méthode de règlement adaptée à la taille et au délai de votre commande",
@@ -1280,6 +1283,7 @@ a33: "Сроки зависят от типа продукта и объема: 
             heroCta2: "Посмотреть тарифы"
         },
         pay: {
+            faqTitle: "Вопросы об оплате",
             eyebrow: "ИНСТРУКЦИЯ ПО РАСЧЁТАМ",
             heroTitle: "Расчёт по заказу — 3 варианта",
             heroSubtitle: "Выберите способ расчёта, подходящий по объёму и сроку вашего заказа",
@@ -1624,6 +1628,7 @@ a33: "يعتمد ذلك على نوع المنتج وحجم الطلب: العي
             heroCta2: "عرض خطط الخدمة"
         },
         pay: {
+            faqTitle: "الأسئلة الشائعة حول الدفع",
             eyebrow: "دليل التسوية",
             heroTitle: "تسوية الطلب — 3 خيارات",
             heroSubtitle: "اختر طريقة التسوية التي تناسب حجم طلبك ومدته",
