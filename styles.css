@@ -2850,7 +2850,7 @@ body .list-group-item-action {
 @media (max-width: 1440px) {
   .container, .container-fluid {
     max-width: 100% !important;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 }
 
@@ -2940,7 +2940,7 @@ body .list-group-item-action {
 
 /* ---- Horizontal overflow safety (AC-10 TR-7.2: scrollWidth <= innerWidth)
        Any accidental child > viewport is clipped via these high-level guards ---- */
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
 main, section, header, footer, .page-header, .section-dark-alt, .banner-carousel {
   max-width: 100% !important;
   overflow-x: clip !important;
@@ -2948,7 +2948,14 @@ main, section, header, footer, .page-header, .section-dark-alt, .banner-carousel
 img, iframe, video, svg, table {
   max-width: 100% !important;
 }
-table { overflow-x: auto; display: block; }  /* data tables can scroll if too wide */
+/* Tables keep real table layout so columns share the full width on desktop;
+   only small screens turn a table into a horizontally scrollable block. */
+@media (min-width: 768px) {
+  table { display: table; width: 100%; }
+}
+@media (max-width: 767.98px) {
+  table { overflow-x: auto; display: block; }
+}
 
 /* ===== Navbar font-size & spacing unification (overrides all prior rules) ===== */
 /* Desktop base rules (unconditional, then mobile overrides below) */

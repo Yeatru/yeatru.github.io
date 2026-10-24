@@ -11,6 +11,10 @@ const I18N_VAS = {
             feat2: "Free consolidation storage in Yiwu",
             feat3: "Markup on third-party costs",
             feat4: "Commission, confirmed in writing",
+            feat1v: "AQL 2.5",
+            feat2v: "15 days",
+            feat3v: "0%",
+            feat4v: "5–8%",
             defEyebrow: "Definition",
             defTitle: "What \u201cvalue-added services\u201d means in sourcing",
             defP1: "A sourcing agent\u2019s core job is to find a factory, agree a price and place the order. Everything a buyer needs after that point — proving the factory is real, checking the goods before they ship, holding cartons from three suppliers in one place, printing your logo on the packaging, sticking FNSKU labels on for Amazon, and moving the goods door-to-door — is what the industry calls a value-added service.",
@@ -61,7 +65,8 @@ const I18N_VAS = {
             a6: "Consolidated cartons stay in our Yiwu warehouse free for 15 days from check-in — normally enough to collect goods from several suppliers before a single shipment leaves.",
             ctaTitle: "Tell us what you need and we\u2019ll confirm the fee in writing",
             ctaSub: "Send your product, quantity and destination — you get an itemised quote within 24 hours.",
-            ctaBtn: "Get a Free Quote"
+            ctaBtn: "Get a Free Quote",
+            ctaSecondary: "Compare service plans"
         }
     },
     es: {
@@ -73,6 +78,10 @@ const I18N_VAS = {
             feat2: "Almacenaje gratuito para consolidar en Yiwu",
             feat3: "recargo sobre costes de terceros",
             feat4: "Comisión, confirmada por escrito",
+            feat1v: "AQL 2.5",
+            feat2v: "15 días",
+            feat3v: "0%",
+            feat4v: "5–8%",
             defEyebrow: "Definición",
             defTitle: "Qué significa «servicios de valor añadido» en el abastecimiento",
             defP1: "El trabajo central de un agente de abastecimiento es encontrar una fábrica, acordar un precio y cursar el pedido. Todo lo que el comprador necesita después —comprobar que la fábrica existe, revisar la mercancía antes del envío, reunir cajas de tres proveedores en un mismo lugar, imprimir tu logotipo en el embalaje, colocar etiquetas FNSKU para Amazon y mover la mercancía puerta a puerta— es lo que el sector llama servicio de valor añadido.",
@@ -123,7 +132,8 @@ const I18N_VAS = {
             a6: "Las cajas consolidadas permanecen gratis en nuestro almacén de Yiwu 15 días desde su entrada, normalmente suficiente para reunir mercancía de varios proveedores antes de un solo envío.",
             ctaTitle: "Dinos qué necesitas y confirmamos la tarifa por escrito",
             ctaSub: "Envía producto, cantidad y destino: recibes un presupuesto detallado en 24 horas.",
-            ctaBtn: "Solicitar presupuesto gratis"
+            ctaBtn: "Solicitar presupuesto gratis",
+            ctaSecondary: "Comparar planes de servicio"
         }
     },
     fr: {
@@ -135,6 +145,10 @@ const I18N_VAS = {
             feat2: "Stockage gratuit pour le groupage à Yiwu",
             feat3: "marge sur les coûts tiers",
             feat4: "Commission confirmée par écrit",
+            feat1v: "AQL 2.5",
+            feat2v: "15 jours",
+            feat3v: "0%",
+            feat4v: "5–8%",
             defEyebrow: "Définition",
             defTitle: "Ce que « services à valeur ajoutée » veut dire en sourcing",
             defP1: "Le cœur du métier d\u2019un agent de sourcing est de trouver une usine, de négocier un prix et de passer la commande. Tout ce dont l\u2019acheteur a besoin ensuite — prouver que l\u2019usine existe, contrôler la marchandise avant expédition, regrouper les cartons de trois fournisseurs au même endroit, imprimer votre logo sur l\u2019emballage, coller les étiquettes FNSKU pour Amazon et acheminer la marchandise porte à porte — est ce que le secteur appelle un service à valeur ajoutée.",
@@ -185,7 +199,8 @@ const I18N_VAS = {
             a6: "Les cartons groupés restent gratuitement dans notre entrepôt de Yiwu pendant 15 jours après réception, généralement assez pour réunir la marchandise de plusieurs fournisseurs avant un seul envoi.",
             ctaTitle: "Dites-nous ce qu\u2019il vous faut, nous confirmons les frais par écrit",
             ctaSub: "Envoyez produit, quantité et destination : devis détaillé sous 24 heures.",
-            ctaBtn: "Demander un devis gratuit"
+            ctaBtn: "Demander un devis gratuit",
+            ctaSecondary: "Comparer les formules"
         }
     },
     ru: {
@@ -197,6 +212,10 @@ const I18N_VAS = {
             feat2: "Бесплатное хранение для консолидации в Иу",
             feat3: "наценки на сторонние расходы",
             feat4: "Комиссия, подтверждённая письменно",
+            feat1v: "AQL 2.5",
+            feat2v: "15 дней",
+            feat3v: "0%",
+            feat4v: "5–8%",
             defEyebrow: "Определение",
             defTitle: "Что значит «дополнительные услуги» в закупках",
             defP1: "Основная работа закупочного агента — найти фабрику, согласовать цену и разместить заказ. Всё, что нужно покупателю после этого: убедиться, что фабрика существует, проверить товар до отправки, собрать коробки от трёх поставщиков в одном месте, напечатать ваш логотип на упаковке, наклеить этикетки FNSKU для Amazon и доставить груз «от двери до двери», — отрасль называет дополнительной услугой.",
@@ -247,7 +266,8 @@ const I18N_VAS = {
             a6: "Консолидированные коробки хранятся бесплатно на нашем складе в Иу 15 дней с момента приёмки — обычно этого хватает, чтобы собрать товар от нескольких поставщиков перед одной отправкой.",
             ctaTitle: "Опишите задачу — подтвердим стоимость письменно",
             ctaSub: "Пришлите товар, количество и пункт назначения: расчёт в течение 24 часов.",
-            ctaBtn: "Получить бесплатный расчёт"
+            ctaBtn: "Получить бесплатный расчёт",
+            ctaSecondary: "Сравнить тарифы"
         }
     },
     ar: {
@@ -259,6 +279,10 @@ const I18N_VAS = {
             feat2: "تخزين مجاني للتجميع في ييوو",
             feat3: "هامش على تكاليف الأطراف الأخرى",
             feat4: "عمولة مؤكدة كتابياً",
+            feat1v: "AQL 2.5",
+            feat2v: "15 يومًا",
+            feat3v: "0%",
+            feat4v: "5–8%",
             defEyebrow: "التعريف",
             defTitle: "ما معنى «خدمات القيمة المضافة» في التوريد",
             defP1: "مهمة وكيل التوريد الأساسية هي إيجاد المصنع والاتفاق على السعر وتقديم الطلب. وكل ما يحتاجه المشتري بعد ذلك — إثبات أن المصنع قائم، وفحص البضاعة قبل الشحن، وتجميع كراتين من ثلاثة مورّدين في مكان واحد، وطباعة شعارك على العبوة، ولصق ملصقات FNSKU لأمازون، ونقل البضاعة من الباب إلى الباب — هو ما يسميه القطاع خدمة قيمة مضافة.",
@@ -309,7 +333,8 @@ const I18N_VAS = {
             a6: "تُخزّن الكراتين المجمّعة مجاناً في مستودعنا بييوو 15 يوماً من تاريخ الاستلام، وهو ما يكفي عادةً لتجميع بضائع عدة مورّدين قبل إرسالية واحدة.",
             ctaTitle: "أخبرنا بما تحتاجه ونؤكد الرسوم كتابياً",
             ctaSub: "أرسل المنتج والكمية والوجهة — وتحصل على عرض مفصّل خلال 24 ساعة.",
-            ctaBtn: "احصل على عرض سعر مجاني"
+            ctaBtn: "احصل على عرض سعر مجاني",
+            ctaSecondary: "قارن بين خطط الخدمة"
         }
     }
 };

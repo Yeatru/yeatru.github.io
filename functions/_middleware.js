@@ -32,11 +32,12 @@ function addSecurityHeaders(headers, isHtml) {
     headers.set('Content-Security-Policy',
       "default-src 'self'; " +
       "img-src 'self' data: https: blob:; " +
-      "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " +
+      "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; " +
       "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com " +
-      "https://www.googletagmanager.com https://www.clarity.ms https://wsrv.nl; " +
-      "font-src 'self' https://cdnjs.cloudflare.com data:; " +
-      "connect-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https:;");
+      "https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://wsrv.nl; " +
+      "font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; " +
+      "connect-src 'self' https:; frame-src 'none'; object-src 'none'; " +
+      "frame-ancestors 'self'; base-uri 'self'; form-action 'self' https:; upgrade-insecure-requests;");
   }
 }
 
