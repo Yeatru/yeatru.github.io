@@ -514,12 +514,26 @@ is confirmed. Full schedule: https://www.yeatru.com/service-plans.html
 - **Amazon Europe · first SKU — US client.** Entry doormat for a new Amazon
   Europe brand: project set-up, specification alignment with the factory,
   on-site inspection of the production run with dated photo evidence, and
-  shipment. Delivered: first SKU produced, inspected and shipped.
+  shipment. Verified order data: microfibre entrance mat, model PC00010,
+  60 × 90 cm, 10 mm thick, sand mélange; 500 pieces at USD 4.00 EXW.
+  Proforma invoice DF260812 (12 Aug 2026) line items — product USD 2,000.00,
+  500 custom wash labels USD 25.00, delivery to Guangdong USD 135.00 — total
+  USD 2,160.00, balance settled before shipment after the pre-shipment
+  inspection was approved. Delivered: first SKU produced, inspected and shipped.
   Detail: https://www.yeatru.com/case-studies.html#case-doormat
 - **Private label · product set — Lithuania client.** Multi-item set under the
   buyer's own brand: product specification written, label artwork produced,
-  production followed and the set shipped. Delivered: spec sheet, label artwork
-  and the shipped product set.
+  production followed and the set shipped. Verified order data: set series
+  YCS-LTW-902A, a 7-component private-label set, all components black.
+  Components: YCS-LTW-902A-001 stainless-steel piece (58 × 2 pcs, 1.2 mm),
+  YCS-LTW-902A-002-1 reusable DIY FRESH seal bags, YCS-LTW-902A-002-P 1200 ml
+  stand-up pouch, YCS-LTW-902A-003 pack of 20, YCS-LTW-902A-003-P 210D small
+  thin drop bag, YCS-LTW-902A-004-P 210D large bag (30 × 35 cm),
+  YCS-LTW-902A-005 organizer pouch. The spec sheet lists component, image,
+  description, specification, colour and per-set quantity. The label carries a
+  safety warning: not a toy, do not open or ingest activated-charcoal pouches,
+  keep away from fire. Delivered: spec sheet, label artwork and the shipped
+  product set.
   Detail: https://www.yeatru.com/case-studies.html#case-lithuania
 
 ### 18.7 Quotes for small orders
