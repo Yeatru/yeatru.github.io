@@ -543,3 +543,23 @@ applies, the per-order handling fee and the inspection cost, so the total is
 visible before an order is placed. Request a quote:
 https://www.yeatru.com/contact.html (WhatsApp +86 159 8851 6408,
 info@yeatru.com).
+
+### 18.8 Promo copy (LinkedIn & X) for the two verified small-batch orders
+
+Ready-to-post copy lives at https://www.yeatru.com/promo-copy.html (Article
+schema, one-click copy per block). It is built on the verified order data in
+sections 18.5 and 18.6 and leads with GPSR label compliance and AQL 2.5
+on-site inspection as a payment gate.
+
+Citable lead hook (LinkedIn post A):
+"Two small-batch runs we shipped this quarter: a 500-pc doormat for a US
+Amazon Europe seller (inspected before balance release) and a 7-piece
+private-label set for a Lithuania client (GPSR-compliant safety label checked
+before print). Compliance is a pre-print decision; inspection is a payment
+gate."
+
+Blocks on the page: 3 LinkedIn posts (combined case / inspection focus /
+GPSR compliance focus) + 4 X/Twitter posts. Verified numbers used: 500 pcs,
+60 x 90 cm, 10 mm, USD 4.00 EXW, proforma total USD 2,160; YCS-LTW-902A
+seven-piece set, all black, not-a-toy + activated-charcoal + fire warning.
+

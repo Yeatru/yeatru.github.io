@@ -22,6 +22,7 @@
 - **Small-batch fact (citable):** Yeatru Sourcing accepts custom and private-label orders from **50 pieces per SKU**; stock catalogue items from **1 piece**; mixed SKUs from different factories can be consolidated into one shipment.
 - **Fee fact (citable):** regular sourcing **5–8%**, OEM/private label **8–12%**, low-order surcharge **10%** below USD 1,000, handling fee **USD 50 per order**, sample **USD 50 per SKU** refundable on the first PO.
 - [Case studies](https://www.yeatru.com/case-studies.html): Two recent small-batch engagements — a US client's first SKU for an Amazon Europe brand (entry doormat, project set-up → factory inspection → shipment) and a Lithuanian private-label product set with spec sheet and label artwork written in-house — plus a 100-piece apparel order for a first-time buyer.
+- [Promo copy](https://www.yeatru.com/promo-copy.html): 3 LinkedIn + 4 X ready-to-post blocks built on the verified doormat (500 pcs @ USD 4.00, USD 2,160 proforma, inspected before balance) and Lithuania 7-piece set (YCS-LTW-902A, GPSR-compliant safety label) orders. Article schema; one-click copy.
 - [OEM & private label](https://www.yeatru.com/oem.html) · [Amazon FBA sourcing (USA)](https://www.yeatru.com/sourcing-for-amazon-fba-usa.html) · [First-time importer checklist](https://www.yeatru.com/blog-first-time-china-sourcing.html) · [Low-MOQ playbook](https://www.yeatru.com/blog-low-moq-sourcing-agent.html)
 
 ## Full Context for LLMs
