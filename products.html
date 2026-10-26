@@ -967,9 +967,11 @@
  <i class="fas fa-envelope"></i>
  </a></div>
 <script>
-// Auto-upgrade every FormSubmit form on the page to AJAX so visitors stay
-// on-site instead of being redirected to FormSubmit's default thank-you page.
-// Falls back to native POST (via _next) if fetch fails or times out (15s).
+// FormSubmit forms submit natively with a _next redirect back to the same
+// page (?success=1), so visitors never land on FormSubmit's own thank-you
+// page. The AJAX endpoint (formsubmit.co/ajax/...) hangs indefinitely, so we
+// skip it and rely on the native POST + _next round-trip, which is reliable
+// and returns in ~1-2s. On reload with ?success=1 the success message shows.
 (function(){
   var forms = document.querySelectorAll('form[action*="formsubmit.co"]');
   forms.forEach(function(form){
@@ -989,35 +991,22 @@
       ok.innerHTML = '<h5 class="mb-1"><i class="fas fa-check-circle me-2"></i> Thank you!</h5><p class="mb-0">Your request has been received. Our team will reply within 24 hours.</p>';
       form.parentNode.insertBefore(ok, form.nextSibling);
     }
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
+    form.addEventListener('submit', function(){
       var btn = form.querySelector('button[type="submit"]');
-      var orig = btn ? btn.innerHTML : '';
-      if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending…'; }
-      var data = new URLSearchParams(new FormData(form));
-      var ctrl = new AbortController();
-      var timer = setTimeout(function(){ ctrl.abort(); }, 15000);
-      fetch('https://formsubmit.co/ajax/info@yeatru.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
-        body: data.toString(),
-        signal: ctrl.signal
-      }).then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); }).then(function(){
-        form.style.display = 'none';
-        ok.classList.remove('d-none');
-        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }).catch(function(){ clearTimeout(timer); form.submit(); }).finally(function(){
-        clearTimeout(timer);
-        if (btn) { btn.disabled = false; btn.innerHTML = orig; }
-      });
+      if (btn) { btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending…'; }
+      // No preventDefault — the form submits natively to FormSubmit, which
+      // 302-redirects to _next (this page ?success=1).
     });
     if (new URLSearchParams(location.search).get('success') === '1') {
       form.style.display = 'none';
       ok.classList.remove('d-none');
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
 })();
 </script>
+
+
 
 
 </body>
