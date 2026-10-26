@@ -2,11 +2,11 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
         <loc>https://www.yeatru.com/sitemap-static.xml</loc>
-        <lastmod>2026-10-24</lastmod>
+        <lastmod>2026-10-26</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://www.yeatru.com/sitemap-blog.xml</loc>
-        <lastmod>2026-10-24</lastmod>
+        <lastmod>2026-10-26</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://www.yeatru.com/sitemap-products-a-m.xml</loc>
@@ -18,6 +18,6 @@
     </sitemap>
     <sitemap>
         <loc>https://www.yeatru.com/sitemap-categories.xml</loc>
-        <lastmod>2026-09-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
     </sitemap>
 </sitemapindex>
