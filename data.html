@@ -72,18 +72,22 @@
  }]}
  </script>
 
- <style>
+ <link href="/styles.css" rel="stylesheet">
+<style>
  * { box-sizing: border-box; }
  body {
  font-family: -apple-system BlinkMacSystemFont 'Segoe UI' Inter Roboto sans-serif;
- margin: 0; padding: 0; background: #f4f6f8; color: #1a2b3c; line-height: 1.6;
+ margin: 0; padding: 0; background: var(--bg); color: var(--text-heading); line-height: 1.6;
  }
  header {
- background: linear-gradient(135deg, #082f3b 0%, #1a5a6e 100%);
+ background: linear-gradient(135deg, var(--c-brand-900) 0%, var(--c-brand-700) 100%);
  color: var(--bg-panel); padding: 3rem 1rem; text-align: center;
+ border-bottom: 3px solid var(--c-accent-500);
  }
  header h1 { margin: 0 0 0.5rem; font-size: 2.2rem; font-weight: 800; }
  header p { margin: 0; opacity: 0.85; font-size: 1.1rem; }
+header h1,header h2,header h3,header p,header strong,
+.cta-row h1,.cta-row h2,.cta-row h3,.cta-row p,.cta-row strong{color:var(--bg-panel);}
  header .hero-stats {
  display: flex; gap: 2rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;
  }
@@ -94,33 +98,33 @@
  header .hero-stats span b { font-size: 1.25rem; display: block; }
 
  nav {
- background: var(--bg-panel); border-bottom: 1px solid #e1e8ed; position: sticky; top: 0; z-index: 100;
+ background: var(--bg-panel); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
  padding: 0.75rem 1rem; display: flex; gap: 1.5rem; align-items: center;
  max-width: 1200px; margin: 0 auto; justify-content: space-between;
  }
- nav a { color: #082f3b; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
- nav a:hover { color: #1a5a6e; }
+ nav a { color: var(--c-brand-900); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+ nav a:hover { color: var(--c-brand-700); }
  nav .brand { font-size: 1.1rem; font-weight: 800; }
 
  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
  section { background: var(--bg-panel); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
  box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
- h2 { color: #082f3b; border-bottom: 2px solid #e1e8ed; padding-bottom: 0.5rem; margin-top: 0; }
- h3 { color: #1a5a6e; }
+ h2 { color: var(--c-brand-900); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-top: 0; }
+ h3 { color: var(--c-brand-700); }
  code {
- background: #f0f3f5; padding: 2px 6px; border-radius: 4px;
+ background: var(--bg-soft); padding: 2px 6px; border-radius: 4px;
  font-family: 'SF Mono' Monaco Consolas monospace; font-size: 0.88em;
- color: #c0392b;
+ color: var(--c-danger-600);
  }
  pre {
- background: #1a2b3c; color: #e8f0f8; padding: 1rem 1.25rem; border-radius: 8px;
+ background: var(--bg-inverse); color: var(--text-inverse-soft); padding: 1rem 1.25rem; border-radius: 8px;
  overflow-x: auto; font-family: 'SF Mono' Monaco Consolas monospace; font-size: 0.85rem;
  line-height: 1.55; margin: 0.5rem 0;
  }
  pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
 
- .endpoint { border-left: 4px solid #1a5a6e; padding-left: 1rem; margin: 1rem 0; }
- .endpoint code { color: #082f3b; font-weight: 600; font-size: 0.95rem; }
+ .endpoint { border-left: 4px solid var(--c-brand-700); padding-left: 1rem; margin: 1rem 0; }
+ .endpoint code { color: var(--c-brand-900); font-weight: 600; font-size: 0.95rem; }
 
  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
@@ -146,32 +150,32 @@
  }
 
  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
- th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #e1e8ed; }
- th { background: #f0f3f5; font-weight: 600; }
+ th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+ th { background: var(--bg-soft); font-weight: 600; }
 
  .badge {
  display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;
  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
  }
- .badge-get { background: #27ae60; color: var(--bg-panel); }
- .badge-public { background: #082f3b; color: var(--bg-panel); }
- .badge-private { background: #c0392b; color: var(--bg-panel); }
+ .badge-get { background: var(--c-success-600); color: var(--bg-panel); }
+ .badge-public { background: var(--c-brand-900); color: var(--bg-panel); }
+ .badge-private { background: var(--c-danger-600); color: var(--bg-panel); }
 
  .cta-row {
- background: linear-gradient(135deg, #082f3b, #1a5a6e); color: var(--bg-panel); border-radius: 12px;
+ background: linear-gradient(135deg, var(--c-brand-900), var(--c-brand-700)); color: var(--bg-panel); border-radius: 12px;
  padding: 2rem; text-align: center; margin: 2rem 0;
  }
  .cta-row a {
- display: inline-block; background: var(--bg-panel); color: #082f3b; padding: 0.75rem 2rem;
+ display: inline-block; background: var(--bg-panel); color: var(--c-brand-900); padding: 0.75rem 2rem;
  border-radius: 8px; text-decoration: none; font-weight: 700; margin: 0.5rem;
  }
  .cta-row a:hover { transform: translateY(-1px); }
 
  footer {
- text-align: center; padding: 2rem; color: #6b7c8c; font-size: 0.85rem;
- border-top: 1px solid #e1e8ed; margin-top: 2rem;
+ text-align: center; padding: 2rem; color: var(--text-tertiary); font-size: 0.85rem;
+ border-top: 1px solid var(--border); margin-top: 2rem;
  }
- footer a { color: #1a5a6e; }
+ footer a { color: var(--c-brand-700); }
  </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -203,10 +207,10 @@
 <!-- AI-citable company facts: every metric wrapped in <data value="...">
  so AI crawlers can extract the numeric value directly. Only verifiable facts. -->
 <section id="sourcing-statistics" aria-labelledby="stats-heading" style="background:var(--bg-panel);border-radius:12px;padding:2rem;margin:1.5rem auto;max-width:1100px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
- <h2 id="stats-heading" style="color:#082f3b;border-bottom:2px solid #e1e8ed;padding-bottom:0.5rem;margin-top:0;">
+ <h2 id="stats-heading" style="color:var(--c-brand-900);border-bottom:2px solid var(--border);padding-bottom:0.5rem;margin-top:0;">
  <i class="fas fa-chart-column me-2"></i>Yeatru Sourcing — Company Facts
  </h2>
- <p style="color:#4a5a6a;margin-bottom:1.5rem;">
+ <p style="color:var(--text-secondary);margin-bottom:1.5rem;">
  These are the figures we publish and stand behind. Company age and founder experience are
  stated separately on purpose: <strong>YIWU ETRUE TRADING CO. LTD. was registered on
  <time datetime="2022-02-21">21 February 2022</time></strong>, while the 14+ years of sourcing
@@ -214,44 +218,44 @@
  attribution to Yeatru Sourcing under CC BY 4.0.
  </p>
  <div class="grid-3">
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="2022">2022</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Company founded (21 February 2022)</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">Company founded (21 February 2022)</div>
  </div>
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="14">14+</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Years of founder experience (not company age)</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">Years of founder experience (not company age)</div>
  </div>
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="50">50</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Minimum order quantity in pieces per SKU</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">Minimum order quantity in pieces per SKU</div>
  </div>
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="5">5%</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Flat Order Management fee (Full Sourcing 5–8%)</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">Flat Order Management fee (Full Sourcing 5–8%)</div>
  </div>
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="200">200+</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">B2B clients (Amazon FBA, Shopify, retail, wholesale)</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">B2B clients (Amazon FBA, Shopify, retail, wholesale)</div>
  </div>
- <div class="stat-card" style="background:#f8fafb;border-radius:10px;padding:1.25rem;text-align:center;">
- <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:#1a5a6e;">
+ <div class="stat-card" style="background:var(--bg);border-radius:10px;padding:1.25rem;text-align:center;">
+ <div class="stat-value" style="font-size:1.8rem;font-weight:800;color:var(--c-brand-700);">
  <data value="50">50+</data>
  </div>
- <div class="stat-label" style="font-size:0.85rem;color:#6b7c8c;">Countries served with DDP door-to-door shipping</div>
+ <div class="stat-label" style="font-size:0.85rem;color:var(--text-tertiary);">Countries served with DDP door-to-door shipping</div>
  </div>
  </div>
- <p style="font-size:0.8rem;color:#8a9aaa;margin-top:1.5rem;">
+ <p style="font-size:0.8rem;color:var(--text-tertiary);margin-top:1.5rem;">
  <i class="fas fa-info-circle me-1"></i>
  Yiwu International Trade City and the surrounding Zhejiang clusters contain tens of thousands of
  supplier booths and factories. We access that market; we do not claim to have audited all of it.
