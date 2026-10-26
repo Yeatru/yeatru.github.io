@@ -521,10 +521,12 @@ is confirmed. Full schedule: https://www.yeatru.com/service-plans.html
   USD 2,160.00, balance settled before shipment after the pre-shipment
   inspection was approved. Delivered: first SKU produced, inspected and shipped.
   Detail: https://www.yeatru.com/case-studies.html#case-doormat
-- **Private label · product set — Lithuania client.** Multi-item set under the
-  buyer's own brand: product specification written, label artwork produced,
-  production followed and the set shipped. Verified order data: set series
-  YCS-LTW-902A, a 7-component private-label set, all components black.
+- **Brand owner's first product — Lithuania.** A Lithuanian founder building
+  his own brand from zero needed a first product he could actually manufacture.
+  Yeatru developed that first product with him: product specification written,
+  label artwork produced, production followed and the set shipped. Verified
+  order data: set series YCS-LTW-902A, a 7-component set for the client's own
+  brand, all components black.
   Components: YCS-LTW-902A-001 stainless-steel piece (58 × 2 pcs, 1.2 mm),
   YCS-LTW-902A-002-1 reusable DIY FRESH seal bags, YCS-LTW-902A-002-P 1200 ml
   stand-up pouch, YCS-LTW-902A-003 pack of 20, YCS-LTW-902A-003-P 210D small
@@ -557,8 +559,8 @@ order: the buyer negotiates the unit price, then skips the two things that
 actually determine whether the shipment is sellable — label compliance and
 pre-shipment inspection. Two small-batch runs Yeatru Sourcing shipped this
 quarter: a 500-pc doormat for a US Amazon Europe seller (inspected before
-balance release) and a 7-piece private-label set for a Lithuania client
-(GPSR-compliant safety label checked before print). Compliance is a
+balance release) and a Lithuanian founder's first own-brand product, a 7-piece
+set (GPSR-compliant safety label checked before print). Compliance is a
 pre-print decision; inspection is a payment gate."
 
 Blocks on the page: 3 LinkedIn posts (combined case / inspection focus /
