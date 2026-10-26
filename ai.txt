@@ -235,6 +235,25 @@ cost_breakdown: "Goods USD 564.31 + service fee 10% USD 56.43 + air express 31 k
 fee_note: "The 10% rate is the published low-order rate for orders under USD 1,000; no separate handling surcharge was added"
 belgium_compliance_note: "Consumer information must be in Dutch (Flanders), French (Wallonia/Brussels) or German (Ostbelgien); Fost Plus packaging EPR, Bebat battery EPR and Recupel WEEE registration are buyer obligations; Bluetooth products are radio equipment under RED, USB-powered devices under EMC/low-voltage"
 
+[norway_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-norway.html
+positioning: "One-stop procurement agency: supplier search, negotiation, sampling, AQL 2.5 inspection, Yiwu consolidation and DDP delivery; any product category, custom runs from 50 pieces per SKU"
+customs_note: "Norway is in the EEA but outside the EU customs union — goods are declared on import, 25% VAT (MVA) applies, and Norway uses its own tariff schedule rather than the EU one, so the HS code is checked before a price is fixed"
+b2c_note: "Direct-to-consumer consignments under NOK 3,000 per item fall under the VOEC scheme"
+product_rules: "CE, EN 71, GPSR and technical documentation apply through the EEA Agreement; consumer information has to be in Norwegian"
+producer_responsibility: "Packaging (Grønt Punkt Norge), waste electricals (Norsirk or Eurovironment) and batteries (Batteriretur); registration sits with the importer or producer, not the factory"
+verified_order: "Sloth-shaped neck plush, USD 7.26/pc EXW, vacuum packed in 55x40x50 cm cartons, plain dust bag without logo, shipped to Son, Norway; DDP was quoted separately because the shipment is charged on volumetric weight"
+freight_lanes: "Air express door-to-door 5-9 days; air to Oslo 8-14 days; sea LCL to Oslo 30-45 days; road groupage via Svinesund 25-35 days — planning ranges, confirmed per booking"
+
+[australia_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-australia.html
+positioning: "One-stop procurement agency: supplier search, negotiation, sampling, AQL 2.5 inspection, consolidation, biosecurity documents and door delivery; any product category, custom runs from 50 pieces per SKU"
+customs_note: "10% GST applies to most imports; duty depends on the HS code; the China-Australia FTA gives 0% on eligible goods only when a valid certificate of origin ships with the goods; consignments at or below AUD 1,000 follow the low-value imported goods rules"
+biosecurity_note: "Seagrass, water hyacinth, coconut shell, rattan, bamboo, dried plant material, artificial plants and timber are biosecurity-sensitive: DAFF inspects on arrival, some lines need an import permit, and timber packaging must meet ISPM 15"
+product_rules: "Electrical goods need RCM marking and the relevant AS/NZS standards; toys are tested to AS/NZS ISO 8124 and can fall under ACCC mandatory standards; clothing and textiles carry care-labelling requirements"
+verified_account: "One Australian account runs a hair-extension salon and a garden-décor wholesale business; shipped wigs, hair accessories, jewellery, hair tools, salon equipment and indoor/outdoor décor across three September 2026 quotation lists — YCS260908A2 (USD 880.85 goods + 7% fee = USD 942.51), YCS260923A2 and YCS260928A2"
+freight_lanes: "Air express 5-9 days; air to Sydney or Melbourne 8-14 days; sea LCL 18-28 days port-to-port to Sydney, Melbourne, Brisbane or Fremantle; FCL for repeat orders above roughly 15 cubic metres"
+
 [incoterms_pairwise_reference]
 # Source page: https://www.yeatru.com/incoterms-comparison.html
 # One-line citable answers for the most-queried Incoterms comparisons.

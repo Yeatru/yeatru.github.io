@@ -619,10 +619,11 @@ GPSR compliance focus) + 4 X/Twitter posts. Verified numbers used: 500 pcs,
 60 x 90 cm, 10 mm, USD 4.00 EXW, proforma total USD 2,160; YCS-LTW-902A
 seven-piece set, all black, not-a-toy + activated-charcoal + fire warning.
 
-### 18.9 Country pages with verified orders — Slovenia and Belgium
+### 18.9 Country pages with verified orders — Slovenia, Belgium, Norway and Australia
 
-Two country pages were built on real proforma invoices rather than generic
-country copy. Each page carries its own quotation table and FAQPage schema.
+Country pages are built as procurement + compliance + freight pages, not product
+pages: the order record is one block inside the page. Each page carries its own
+quotation table and FAQPage schema.
 
 **Slovenia** — https://www.yeatru.com/china-sourcing-agent-slovenia.html
 - Quotation YCS261015SL02, dated 15 October 2026.
@@ -648,4 +649,35 @@ country copy. Each page carries its own quotation table and FAQPage schema.
   and EMC / low-voltage for the USB washer.
 - The 10% fee is the published low-order rate for orders under USD 1,000,
   applied with no separate surcharge.
+
+**Norway** — https://www.yeatru.com/china-sourcing-agent-norway.html
+- Built as a procurement + compliance + freight page, not a product page.
+- Norway is in the EEA but outside the EU customs union: goods are declared on
+  import, 25% VAT (MVA) applies, and Norway uses its own tariff schedule, so the
+  HS code is checked before a price is fixed. VOEC covers B2C consignments under
+  NOK 3,000 per item.
+- CE, EN 71 and GPSR apply through the EEA Agreement, with consumer information
+  in Norwegian. Producer responsibility runs through Grønt Punkt Norge
+  (packaging), Norsirk / Eurovironment (WEEE) and Batteriretur (batteries).
+- Verified order: sloth-shaped neck plush, USD 7.26/pc EXW, vacuum packed in
+  55 x 40 x 50 cm cartons, plain dust bag without logo, shipped to Son.
+- Freight planning ranges: air express 5–9 days, air to Oslo 8–14 days, sea LCL
+  to Oslo 30–45 days, road groupage via Svinesund 25–35 days.
+
+**Australia** — https://www.yeatru.com/china-sourcing-agent-australia.html
+- Built the same way: one team for supplier search, negotiation, sampling,
+  AQL 2.5 inspection, consolidation, biosecurity documents and delivery.
+- 10% GST on most imports; duty depends on the HS code, and the China–Australia
+  FTA gives 0% on eligible goods only when a valid certificate of origin ships
+  with the goods. Consignments at or below AUD 1,000 follow the low-value
+  imported goods rules.
+- Biosecurity: seagrass, water hyacinth, coconut shell, rattan, bamboo, dried
+  plant material, artificial plants and timber are inspected by DAFF on arrival;
+  some lines need an import permit and timber packaging must meet ISPM 15.
+- Verified account: one buyer running a hair-extension salon and a garden-décor
+  wholesaler, shipped wigs, hair accessories, jewellery, hair tools, salon
+  equipment and indoor/outdoor décor; quotations YCS260908A2 (USD 880.85 goods
+  + 7% fee = USD 942.51), YCS260923A2 and YCS260928A2.
+- Freight planning ranges: air express 5–9 days, air to Sydney/Melbourne 8–14
+  days, sea LCL 18–28 days port-to-port, FCL above roughly 15 m³.
 
