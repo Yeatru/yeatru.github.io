@@ -613,7 +613,12 @@
       "slovenia_verified_16_piece_10_sku_trial": "https://www.yeatru.com/china-sourcing-agent-slovenia.html",
       "belgium_verified_120_piece_3_sku_trial": "https://www.yeatru.com/china-sourcing-agent-belgium.html",
       "norway_procurement_compliance_freight": "https://www.yeatru.com/china-sourcing-agent-norway.html",
-      "australia_procurement_biosecurity_freight": "https://www.yeatru.com/china-sourcing-agent-australia.html"
+      "australia_procurement_biosecurity_freight": "https://www.yeatru.com/china-sourcing-agent-australia.html",
+      "slovakia_procurement_vat_epr_freight": "https://www.yeatru.com/china-sourcing-agent-slovakia.html",
+      "switzerland_procurement_non_eu_customs_freight": "https://www.yeatru.com/china-sourcing-agent-switzerland.html",
+      "ghana_procurement_conformity_freight": "https://www.yeatru.com/china-sourcing-agent-ghana.html",
+      "brazil_procurement_import_tax_stack_freight": "https://www.yeatru.com/china-sourcing-agent-brazil.html",
+      "kuwait_verified_100_piece_padded_vest_order": "https://www.yeatru.com/china-sourcing-agent-kuwait.html"
     },
     "categoryScope": "Yeatru does not work from a fixed product-category list. Every case study is an example of what a buyer ordered, not the range of what the agency will quote.",
     "countryPagePattern": "Country pages are procurement + compliance + freight pages, not product pages; the verified order is one block inside the page."

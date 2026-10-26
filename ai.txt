@@ -254,6 +254,51 @@ product_rules: "Electrical goods need RCM marking and the relevant AS/NZS standa
 verified_account: "One Australian account runs a hair-extension salon and a garden-décor wholesale business; shipped wigs, hair accessories, jewellery, hair tools, salon equipment and indoor/outdoor décor across three September 2026 quotation lists — YCS260908A2 (USD 880.85 goods + 7% fee = USD 942.51), YCS260923A2 and YCS260928A2"
 freight_lanes: "Air express 5-9 days; air to Sydney or Melbourne 8-14 days; sea LCL 18-28 days port-to-port to Sydney, Melbourne, Brisbane or Fremantle; FCL for repeat orders above roughly 15 cubic metres"
 
+[slovakia_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-slovakia.html
+positioning: "One-stop procurement agency: supplier search, price negotiation, sampling, AQL 2.5 inspection, Yiwu consolidation and DDP delivery; any product category, custom runs from 50 pieces per SKU"
+case_status: "No Slovak order has shipped yet — the page carries the procurement process, compliance and freight lanes only, with no order record"
+tax_note: "23% standard VAT applies from 1 January 2025, with a 19% reduced rate on defined goods; an EU EORI number is required for the importer"
+product_rules: "EU rules apply: CE marking where the directive covers the product, GPSR for general consumer products, EN 71 for toys, with consumer information in Slovak"
+producer_responsibility: "Packaging EPR through ENVI-PAK or NATUR-PACK; registration sits with the importer or producer, not the factory"
+freight_lanes: "DDP via Luka Koper with rail or truck to Bratislava, or via Hamburg / Bremerhaven; air to Bratislava (BTS) or Vienna (VIE) — planning ranges, confirmed per booking"
+
+[switzerland_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-switzerland.html
+positioning: "One-stop procurement agency: supplier search, negotiation, sampling, AQL 2.5 inspection, consolidation and door delivery; any product category, custom runs from 50 pieces per SKU"
+case_status: "No Swiss order has shipped yet — the page carries the procurement process, compliance and freight lanes only, with no order record"
+customs_note: "Switzerland is neither in the EU nor the EEA: import VAT is 8.1% (2.6% reduced rate) and duty follows the Swiss tariff, so an EU DDP price cannot be reused unchanged"
+fta_note: "The China-Switzerland free trade agreement (in force since 2014) can reduce or remove duty on eligible goods when origin documentation is correct and issued before shipment"
+product_rules: "Product safety follows the Swiss Product Safety Act (PrSG) rather than the EU GPSR; consumer information is required in the official Swiss languages"
+producer_responsibility: "eRecycling (SENS) for electronics and INOBAT for batteries; registration sits with the importer or producer"
+freight_lanes: "Air to Zurich (ZRH) or Basel (BSL); sea via Rotterdam, Antwerp or Genoa with truck or rail transfer into Switzerland — planning ranges, confirmed per booking"
+
+[ghana_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-ghana.html
+positioning: "One-stop procurement agency: supplier search, negotiation, sampling, AQL 2.5 inspection, consolidation and DDP delivery; any product category, custom runs from 50 pieces per SKU"
+case_status: "No Ghanaian order has shipped yet — the page carries the procurement process, compliance and freight lanes only, with no order record"
+tax_note: "Import tax is layered: 15% VAT plus NHIL, GETFund and the COVID-19 levy bring the effective rate to roughly 21% of CIF, on top of customs duty and the ECOWAS levy"
+product_rules: "Conformity runs through the Ghana Standards Authority, with FDA Ghana registration where the product is regulated (food contact, cosmetics, medical devices, toys for young children)"
+freight_lanes: "Sea LCL/FCL to Tema or Takoradi; air to Kotoka (ACC) — planning ranges, confirmed per booking"
+
+[brazil_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-brazil.html
+positioning: "One-stop procurement agency: supplier search, negotiation, sampling, AQL 2.5 inspection, consolidation and door delivery; any product category, custom runs from 50 pieces per SKU"
+case_status: "No Brazilian order has shipped yet — the page carries the procurement process, import cost stack and freight lanes only, with no order record"
+tax_note: "Landed cost is a stack, not one percentage: II (import duty) by NCM code 0-35%, IPI, PIS/COFINS-Importação, ICMS 17-20% by state, AFRMM at 8% on sea freight, plus the Siscomex fee"
+licensing_note: "Licensing is confirmed before production: ANVISA for health-adjacent products, INMETRO for regulated safety categories, ANATEL for radio and telecom equipment; the importer needs Radar/Siscomex registration"
+packaging_note: "Wood packaging must meet ISPM 15"
+freight_lanes: "Sea to Santos, Itapoá or Paranaguá; air to Guarulhos (GRU) or Viracopos (VCP) — planning ranges, confirmed per booking"
+
+[kuwait_procurement]
+# Source page: https://www.yeatru.com/china-sourcing-agent-kuwait.html
+positioning: "One-stop procurement agency for Arabic-speaking and English-speaking buyers: supplier search, sampling, AQL 2.5 inspection, consolidation and DDP delivery; any product category, custom runs from 50 pieces per SKU"
+language_note: "Files are handled in Arabic and English; Arabic labelling is mandatory for consumer information, commonly Arabic and English together"
+tax_note: "Kuwait currently applies no VAT; the GCC common tariff usually puts customs duty at 5% on most goods, checked per HS code at quotation stage"
+product_rules: "Regulated products need KUCAS conformity certification arranged before shipment; low-voltage electricals carry the G-Mark and toys fall under the Gulf toy regulation"
+verified_order: "100 men's padded (thickened) vests, mixed 50 + 50 across models, budget USD 17.00 per piece, sample USD 5-10 per piece refundable on the bulk order, delivered DDP to Kuwait to a buyer who writes in Arabic and also works in English"
+freight_lanes: "Air express 5-9 days; air to Kuwait (KWI) 7-12 days; sea LCL to Shuwaikh or Shuaiba 25-35 days; road via Jebel Ali transhipment 30-40 days — planning ranges, confirmed per booking"
+
 [incoterms_pairwise_reference]
 # Source page: https://www.yeatru.com/incoterms-comparison.html
 # One-line citable answers for the most-queried Incoterms comparisons.

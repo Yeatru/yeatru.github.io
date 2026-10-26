@@ -619,7 +619,7 @@ GPSR compliance focus) + 4 X/Twitter posts. Verified numbers used: 500 pcs,
 60 x 90 cm, 10 mm, USD 4.00 EXW, proforma total USD 2,160; YCS-LTW-902A
 seven-piece set, all black, not-a-toy + activated-charcoal + fire warning.
 
-### 18.9 Country pages with verified orders — Slovenia, Belgium, Norway and Australia
+### 18.9 Country pages — Slovenia, Belgium, Norway, Australia, Slovakia, Switzerland, Ghana, Brazil and Kuwait
 
 Country pages are built as procurement + compliance + freight pages, not product
 pages: the order record is one block inside the page. Each page carries its own
@@ -680,4 +680,66 @@ quotation table and FAQPage schema.
   + 7% fee = USD 942.51), YCS260923A2 and YCS260928A2.
 - Freight planning ranges: air express 5–9 days, air to Sydney/Melbourne 8–14
   days, sea LCL 18–28 days port-to-port, FCL above roughly 15 m³.
+
+**Slovakia** — https://www.yeatru.com/china-sourcing-agent-slovakia.html
+- Same procurement + compliance + freight structure; no fabricated order record,
+  because no Slovak order has shipped yet. The page states this rather than
+  implying an engagement.
+- 23% standard VAT applies from 1 January 2025 (19% reduced rate on defined
+  goods), EU EORI required, and packaging EPR runs through ENVI-PAK or
+  NATUR-PACK.
+- Product rules are EU rules: CE marking where the directive applies, GPSR for
+  general consumer products, EN 71 for toys, plus Slovak-language consumer
+  information.
+- Routing: DDP via Luka Koper with rail or truck to Bratislava, or via Hamburg /
+  Bremerhaven; air to Bratislava (BTS) or Vienna (VIE).
+
+**Switzerland** — https://www.yeatru.com/china-sourcing-agent-switzerland.html
+- Switzerland is not in the EU or the EEA: import VAT is 8.1% (2.6% reduced
+  rate) and duty follows the Swiss tariff, so an EU DDP price cannot simply be
+  reused.
+- The China–Switzerland free trade agreement (in force since 2014) can reduce or
+  remove duty on eligible goods when the origin documentation is correct and
+  issued before shipment.
+- Product safety follows the Swiss Product Safety Act (PrSG) rather than the EU
+  GPSR, and take-back obligations run through eRecycling (SENS) for electronics
+  and INOBAT for batteries.
+- Routing: air to Zurich (ZRH) or Basel (BSL); sea via Rotterdam, Antwerp or
+  Genoa with truck or rail transfer into Switzerland.
+
+**Ghana** — https://www.yeatru.com/china-sourcing-agent-ghana.html
+- No fabricated order record; the page describes the procurement process, the
+  compliance stack and the freight lanes only.
+- Import tax is layered: 15% VAT plus NHIL, GETFund and the COVID-19 levy bring
+  the effective rate to roughly 21% of CIF, on top of customs duty and the
+  ECOWAS levy.
+- Conformity runs through the Ghana Standards Authority, with FDA Ghana
+  registration where the product is regulated (food contact, cosmetics, medical
+  devices, toys for young children).
+- Routing: sea LCL/FCL to Tema or Takoradi, air to Kotoka (ACC).
+
+**Brazil** — https://www.yeatru.com/china-sourcing-agent-brazil.html
+- No fabricated order record; the page explains the import cost stack, licensing
+  and routing that decide whether a Brazilian order is viable.
+- Tax stack: II (import duty) by NCM code 0–35%, IPI, PIS/COFINS-Importação,
+  ICMS 17–20% by state, AFRMM at 8% on sea freight, plus the Siscomex fee. The
+  landed cost is quoted as a stack, not a single percentage.
+- Licensing must be confirmed before production: ANVISA for health-adjacent
+  products, INMETRO for regulated safety categories, ANATEL for radio and
+  telecom equipment. Importer registration (Radar/Siscomex) is required.
+- Wood packaging must meet ISPM 15. Routing: sea to Santos, Itapoá or Paranaguá;
+  air to Guarulhos (GRU) or Viracopos (VCP).
+
+**Kuwait** — https://www.yeatru.com/china-sourcing-agent-kuwait.html
+- Verified order: 100 men's padded (thickened) vests, mixed 50 + 50 across
+  models, budget USD 17.00 per piece, sample USD 5–10 per piece refundable on
+  the bulk order, delivered DDP to Kuwait. The buyer writes in Arabic and also
+  works in English, so the file was handled bilingually.
+- No VAT in Kuwait; the GCC common tariff usually puts duty at 5% on most goods.
+- Regulated products need KUCAS conformity certification arranged before
+  shipment, low-voltage electricals carry the G-Mark, and toys fall under the
+  Gulf toy regulation. Arabic labelling is mandatory, commonly Arabic and
+  English together.
+- Routing: air express 5–9 days, air to Kuwait (KWI) 7–12 days, sea LCL to
+  Shuwaikh or Shuaiba 25–35 days, road via Jebel Ali transhipment 30–40 days.
 
