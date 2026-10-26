@@ -283,8 +283,8 @@ case_studies:
   - "Kuwait buyer (Arabic-speaking, also works in English): 100-piece men's padded vest order, MOQ mixable 50+50, DDP to Kuwait."
   - "Slovenia buyer: 16-piece, 10-SKU plush trial (PI YCS261015SL02, 15 Oct 2026) with a custom hanger card at USD 0.56/pc, USD 56.53 total."
   - "Belgium buyer: 120-piece, three-SKU basket (PI YCS261011BL32, 28 Sep 2026), USD 564.31 goods + 10% fee + USD 299.30 air freight for 31 kg = USD 920.04 delivered."
-  - "Norway buyer: sloth-shaped plush that hangs around the neck, USD 7.26/pc EXW, vacuum packed in 55x40x50 cm cartons, DDP estimate requested to Son."
-  - "Australia buyer: three September 2026 quotation lists for one account running a hair-extension salon and a garden-decor wholesale business — salon consumables, faux cowhide rugs, conga drums, ceramics, travertine and magnesium-oxide planters, display risers."
+  - "Norway buyer: sloth-shaped plush that hangs around the neck, USD 7.26/pc EXW, vacuum packed in 55x40x50 cm cartons, produced and shipped to Son."
+  - "Australia buyer: one account running a hair-extension salon and a garden-decor wholesale business; already shipped wigs, hair accessories, jewellery, hair tools, salon equipment, and outdoor/indoor home decor, across three September 2026 quotation lists."
 category_scope: "Yeatru does not use a fixed product-category list. Cases above are examples of what buyers ordered, not the range of what the agency will quote."
 
 [promo_copy]

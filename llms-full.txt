@@ -563,15 +563,19 @@ across cases is the evidence, not a service menu.
   delivered; freight is 32.5% of the total.
   Detail: https://www.yeatru.com/case-studies.html#case-belgium
 - **Sloth neck plush — Norway.** Sloth-shaped plush designed to hang around the
-  neck, weight built into the arms. Quoted at USD 7.26 per piece EXW based on
-  the full specification; vacuum packed in 55 × 40 × 50 cm cartons; buyer asked
-  for a plain dust bag, no logo. Destination Son, Norway; DDP quoted as a
-  separate leg because Norway is in the EEA but outside the EU customs union
-  (25% import VAT).
+  neck, weight built into the arms. Produced and shipped at USD 7.26 per piece
+  EXW; vacuum packed in 55 × 40 × 50 cm cartons; buyer asked for a plain dust
+  bag, no logo. Destination Son, Norway; a DDP price was quoted alongside the
+  EXW price because the shipment is charged on volumetric weight, and Norway is
+  in the EEA but outside the EU customs union (25% import VAT).
   Detail: https://www.yeatru.com/case-studies.html#case-norway
-- **Three enquiries, one account — Australia.** A client running a hair-extension
-  salon and a garden-décor wholesale business sent three quotation lists in
-  September 2026. PI YCS260908A2 (8 Sep) salon side: hair ties, hair-extension
+- **Shipped across two unrelated businesses — Australia.** A client running a
+  hair-extension salon and a garden-décor wholesale business sent three
+  quotation lists in September 2026. Already shipped under this account: wigs,
+  hair accessories (hair ties, extension-tying rings, clips, durags), jewellery
+  and necklaces, hair tools, salon equipment, and outdoor/indoor home décor
+  including ceramics, woven baskets, travertine and magnesium-oxide planters
+  and display risers. PI YCS260908A2 (8 Sep) salon side: hair ties, hair-extension
   tying rings 10 / 11 cm, pearl necklaces, durags, 14 cm hair clips and a
   hair-dressing trolley (40 × 28 × 86 cm, 15 kg); goods USD 880.85 + 7% service
   fee USD 61.66 = USD 942.51. PI YCS260923A2 (23 Sep) décor side: faux cowhide
