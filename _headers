@@ -67,8 +67,8 @@
   Cache-Control: public, max-age=86400
 
 # --- HTML 页面: 缓存 1 小时, 必须重新校验 ---
-# 产品详情页 (SKU 页 + product-sourcing 服务页): 强制 noindex, follow
-# X-Robots-Tag 由 functions/[[path]].js 在边缘层统一设置 (product=noindex, 其他=index),
+# 所有 HTML 页面 (含 SKU 产品页) 均为 index, follow。
+# X-Robots-Tag 由 functions/[[path]].js 在边缘层统一设置,
 # 此处不再设置 X-Robots-Tag 以避免与 Function 产生重复 header。
 /product-*.html
   Cache-Control: public, max-age=3600, must-revalidate

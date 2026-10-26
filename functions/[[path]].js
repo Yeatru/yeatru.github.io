@@ -280,15 +280,11 @@ export async function onRequest(context) {
         if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
         const canPath = url.pathname.replace(/^\/index\.html$/i, '/');
         h.set('Link', `<https://www.yeatru.com${canPath}>; rel="canonical"`);
-        // Product detail pages (SKU pages + product-sourcing service page) are
-        // intentionally noindex: they are mass-generated catalog landing pages
-        // kept out of the Google index while remaining crawlable for structured
-        // data and internal link flow. The X-Robots-Tag header takes precedence
-        // over the HTML <meta name="robots">, so it must be set at the edge.
-        const isProductPage = /^\/product-(YCS-|sourcing)/i.test(url.pathname);
-        if (isProductPage) {
-          h.set('X-Robots-Tag', 'noindex, follow, max-snippet:-1, max-image-preview:large');
-        } else if (/\/data(\.html)?$/i.test(url.pathname)) {
+        // Every HTML page is indexable. SKU detail pages used to be forced to
+        // noindex here while still being listed in sitemap-products-*.xml, which
+        // is what GSC reported as "Excluded by 'noindex' tag" and also blocked
+        // the product-sourcing.html service page. Both are now indexable.
+        if (/\/data(\.html)?$/i.test(url.pathname)) {
           h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
         } else {
           h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
@@ -312,11 +308,13 @@ export async function onRequest(context) {
         if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
         if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
         h.set('Link', `<https://www.yeatru.com${htmlSuffix}>; rel="canonical"`);
-        // Product detail pages (SKU pages) must be noindex even when accessed
-        // via their clean-path URL (Pages pretty URLs 308 .html -> clean path).
-        const isProductCleanPath = /^\/product-(YCS-|sourcing)/i.test(htmlSuffix);
-        if (isProductCleanPath) {
-          h.set('X-Robots-Tag', 'noindex, follow, max-snippet:-1, max-image-preview:large');
+        // Product detail pages (SKU pages) are indexable. They used to be
+        // noindex here while still being listed in sitemap-products-*.xml,
+        // which is what GSC reported as "Excluded by 'noindex' tag".
+        // `product-sourcing.html` is a normal service page and must never be
+        // caught by a /product-* rule either.
+        if (/\/data(\.html)?$/i.test(htmlSuffix)) {
+          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
         } else {
           h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
         }
