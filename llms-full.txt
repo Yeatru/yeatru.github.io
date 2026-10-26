@@ -511,6 +511,10 @@ is confirmed. Full schedule: https://www.yeatru.com/service-plans.html
 
 ### 18.6 Recent small-batch engagements (client names withheld)
 
+Yeatru does not work from a fixed product-category list. Every engagement below
+was quoted because the buyer's own business sold that product; the category mix
+across cases is the evidence, not a service menu.
+
 - **Amazon Europe · first SKU — US client.** Entry doormat for a new Amazon
   Europe brand: project set-up, specification alignment with the factory,
   on-site inspection of the production run with dated photo evidence, and
@@ -537,6 +541,49 @@ is confirmed. Full schedule: https://www.yeatru.com/service-plans.html
   keep away from fire. Delivered: spec sheet, label artwork and the shipped
   product set.
   Detail: https://www.yeatru.com/case-studies.html#case-lithuania
+- **Men's padded vests — Kuwait.** A first-time Kuwaiti buyer who writes in
+  Arabic and also works in English. 100 pieces, MOQ mixable 50 + 50 across
+  models, budget USD 17.00 per piece, DDP to Kuwait. Samples USD 5–10 per piece
+  refundable on the first bulk order. No test report or label work was quoted
+  at this stage; the order stopped at sample approval.
+  Detail: https://www.yeatru.com/case-studies.html#case-kuwait
+- **16-piece, 10-SKU plush trial — Slovenia.** Quotation YCS261015SL02, 15
+  October 2026: 16 pieces across 10 plush SKUs — four characters at 24 cm /
+  225 g (USD 2.89) and 45 cm / 740 g (USD 6.42), plus two four-piece sets at
+  USD 2.16 and USD 6.02 — with a customer-designed hanger card priced per piece
+  at USD 0.56 × 16. Goods USD 47.57 + hanger cards and repack USD 8.96 =
+  USD 56.53 total. Readiness: CE, EN 71-1/-2/-3, technical file, GPSR, Slopak
+  packaging registration and EU EORI were checked before quoting.
+  Detail: https://www.yeatru.com/case-studies.html#case-slovenia
+- **120-piece, three-SKU basket — Belgium.** Quotation YCS261011BL32, 28
+  September 2026: prayer rug 70 × 110 cm / 289 g at USD 3.35, USB wudu washer
+  20.8 × 9.5 × 9.5 cm / 335 g at USD 3.53 and zikr ring 60 g at USD 6.68
+  (sizes 18 / 20 / 22 split 12 / 18 / 10), 40 pieces each. Goods USD 564.31 +
+  10% service fee USD 56.43 + air express 31 kg USD 299.30 = USD 920.04
+  delivered; freight is 32.5% of the total.
+  Detail: https://www.yeatru.com/case-studies.html#case-belgium
+- **Sloth neck plush — Norway.** Sloth-shaped plush designed to hang around the
+  neck, weight built into the arms. Quoted at USD 7.26 per piece EXW based on
+  the full specification; vacuum packed in 55 × 40 × 50 cm cartons; buyer asked
+  for a plain dust bag, no logo. Destination Son, Norway; DDP quoted as a
+  separate leg because Norway is in the EEA but outside the EU customs union
+  (25% import VAT).
+  Detail: https://www.yeatru.com/case-studies.html#case-norway
+- **Three enquiries, one account — Australia.** A client running a hair-extension
+  salon and a garden-décor wholesale business sent three quotation lists in
+  September 2026. PI YCS260908A2 (8 Sep) salon side: hair ties, hair-extension
+  tying rings 10 / 11 cm, pearl necklaces, durags, 14 cm hair clips and a
+  hair-dressing trolley (40 × 28 × 86 cm, 15 kg); goods USD 880.85 + 7% service
+  fee USD 61.66 = USD 942.51. PI YCS260923A2 (23 Sep) décor side: faux cowhide
+  rugs in eight sizes, rechargeable bronze lantern, conga drum sets (acacia,
+  Toona and rubberwood, 10" + 11", some with REMO heads and stands),
+  water-hyacinth and seagrass baskets, 3.5 m artificial coconut tree, faux sago
+  palm. PI YCS260928A2 (28 Sep) expanded list: seagrass trivets in seven
+  diameters, coconut-shell bowls, acacia cake stand, a full ceramic range
+  (urns, vases, planters, pastry stands, teapots, trophy), travertine outdoor
+  pots sold by weight, magnesium-oxide and fibreglass planters up to 90 cm,
+  foldable display risers, woven-grass wall hangings and wooden storage boxes.
+  Detail: https://www.yeatru.com/case-studies.html#case-australia
 
 ### 18.7 Quotes for small orders
 
@@ -546,7 +593,7 @@ visible before an order is placed. Request a quote:
 https://www.yeatru.com/contact.html (WhatsApp +86 159 8851 6408,
 info@yeatru.com).
 
-### 18.8 Promo copy (LinkedIn & X) for the two verified small-batch orders
+### 18.8 Promo copy (LinkedIn & X) for the verified small-batch orders
 
 Ready-to-post copy lives at https://www.yeatru.com/promo-copy.html (Article
 schema, one-click copy per block). It is built on the verified order data in
