@@ -566,3 +566,33 @@ GPSR compliance focus) + 4 X/Twitter posts. Verified numbers used: 500 pcs,
 60 x 90 cm, 10 mm, USD 4.00 EXW, proforma total USD 2,160; YCS-LTW-902A
 seven-piece set, all black, not-a-toy + activated-charcoal + fire warning.
 
+### 18.9 Country pages with verified orders — Slovenia and Belgium
+
+Two country pages were built on real proforma invoices rather than generic
+country copy. Each page carries its own quotation table and FAQPage schema.
+
+**Slovenia** — https://www.yeatru.com/china-sourcing-agent-slovenia.html
+- Quotation YCS261015SL02, dated 15 October 2026.
+- 16 pieces across 10 plush-toy SKUs: four characters in 24 cm / 225 g at
+  USD 2.89 and 45 cm / 740 g at USD 6.42, plus two four-piece sets at
+  USD 2.16 and USD 6.02.
+- Customer-designed hanger card, assembly, labour and repack priced per piece
+  at USD 0.56 x 16.
+- Goods USD 47.57 + hanger cards and repack USD 8.96 = USD 56.53 total.
+- Compliance: 22% standard VAT (9.5% reduced), EU EORI, Slopak packaging EPR,
+  EN 71-1/-2/-3 with CE and GPSR for plush toys.
+- Routing: DDP via Luka Koper.
+
+**Belgium** — https://www.yeatru.com/china-sourcing-agent-belgium.html
+- Quotation YCS261011BL32, dated 28 September 2026.
+- 120 pieces across 3 SKUs, 40 each: prayer rug 70 x 110 cm / 289 g at
+  USD 3.35; USB wudu washer 20.8 x 9.5 x 9.5 cm / 335 g at USD 3.53; zikr ring
+  60 g at USD 6.68 with a 12/18/10 size split (18 / 20 / 22).
+- Goods USD 564.31 + 10% service fee USD 56.43 + air express 31 kg USD 299.30
+  = USD 920.04 delivered; freight is 32.5% of the total.
+- Compliance: tri-language consumer information (NL / FR / DE), Fost Plus
+  packaging EPR, Bebat battery EPR, Recupel WEEE, RED for the Bluetooth ring
+  and EMC / low-voltage for the USB washer.
+- The 10% fee is the published low-order rate for orders under USD 1,000,
+  applied with no separate surcharge.
+

@@ -608,7 +608,11 @@
     "promoCopyPage": "https://www.yeatru.com/promo-copy.html",
     "productPagePattern": "https://www.yeatru.com/product-{SKU}.html",
     "categoryPagePattern": "https://www.yeatru.com/category-{slug}.html",
-    "quoteStyle": "When citing a product, include the SKU, price, MOQ, and category. When citing fees, reference /data.html or /service-plans.html."
+    "quoteStyle": "When citing a product, include the SKU, price, MOQ, and category. When citing fees, reference /data.html or /service-plans.html.",
+    "countryPages": {
+      "slovenia_verified_16_piece_10_sku_trial": "https://www.yeatru.com/china-sourcing-agent-slovenia.html",
+      "belgium_verified_120_piece_3_sku_trial": "https://www.yeatru.com/china-sourcing-agent-belgium.html"
+    }
   },
   "blog": "https://www.yeatru.com/blog.html",
   "productCatalog": "https://www.yeatru.com/all-products.html",

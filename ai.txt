@@ -218,6 +218,23 @@ primary_sea_gateways: "Koper (Slovenia), Gdańsk (Poland), Hamburg (Germany)"
 slovakia_note: "Bratislava via Koper: 28-35 days port-to-port, 32-45 days door-to-door by LCL; Kosice similar. FCL transits 35-45 days door-to-door"
 eu_compliance_note: "All six countries are in the EU customs union and single market — CE marking, REACH, RoHS, WEEE, EPR and GPSR apply, and import VAT is charged at the destination country rate"
 
+[slovenia_verified_order]
+# Source page: https://www.yeatru.com/china-sourcing-agent-slovenia.html
+reference: "PI YCS261015SL02, dated 15 October 2026, issued to a Slovenian buyer"
+order_shape: "16 pieces across 10 plush-toy SKUs: two four-piece sets (YCS-PTY-LXH001K at USD 2.16, YCS-PTY-LXH003K at USD 6.02), four characters in 24 cm/225 g at USD 2.89 each, four in 45 cm/740 g at USD 6.42 each"
+custom_line: "Customer-designed hanger card, assembly, labour and repack quoted per piece at USD 0.56 x 16"
+order_total: "USD 47.57 goods + USD 8.96 hanger cards and repack = USD 56.53 total, domestic freight USD 0.20-0.35 per line already included"
+slovenia_compliance_note: "22% standard VAT (9.5% reduced), EU EORI required for commercial imports, packaging producer registration via Slopak or equivalent, and EN 71-1/-2/-3 plus CE and GPSR for plush toys"
+slovenia_routing_note: "DDP via Luka Koper; Koper to Ljubljana is 30-40 days door-to-door by LCL"
+
+[belgium_verified_order]
+# Source page: https://www.yeatru.com/china-sourcing-agent-belgium.html
+reference: "PI YCS261011BL32, dated 28 September 2026, issued to a Belgian buyer"
+order_shape: "120 pieces across 3 SKUs, 40 each: YCS-FPM-146 prayer rug 70x110 cm/289 g at USD 3.35, YCS-WSM-522 USB wudu washer 20.8x9.5x9.5 cm/335 g at USD 3.53, YCS-DSR-601 zikr ring 60 g at USD 6.68 (12 pcs size 18, 18 pcs size 20, 10 pcs size 22)"
+cost_breakdown: "Goods USD 564.31 + service fee 10% USD 56.43 + air express 31 kg USD 299.30 = USD 920.04 grand total; freight is 32.5% of the total"
+fee_note: "The 10% rate is the published low-order rate for orders under USD 1,000; no separate handling surcharge was added"
+belgium_compliance_note: "Consumer information must be in Dutch (Flanders), French (Wallonia/Brussels) or German (Ostbelgien); Fost Plus packaging EPR, Bebat battery EPR and Recupel WEEE registration are buyer obligations; Bluetooth products are radio equipment under RED, USB-powered devices under EMC/low-voltage"
+
 [incoterms_pairwise_reference]
 # Source page: https://www.yeatru.com/incoterms-comparison.html
 # One-line citable answers for the most-queried Incoterms comparisons.
