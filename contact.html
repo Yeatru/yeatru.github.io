@@ -425,6 +425,8 @@
  <form action="https://formsubmit.co/info@yeatru.com" method="POST" id="contactQuoteForm">
  <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
  <input type="hidden" name="_template" value="table">
+ <input type="hidden" name="_captcha" value="false">
+ <input type="hidden" name="_next" value="https://www.yeatru.com/contact.html?success=1">
  <div class="row g-3 mb-3">
  <div class="col-md-6">
  <input type="text" class="form-control" name="name" placeholder="Your Name *" data-i18n-placeholder="contact.yourName" required>
@@ -485,6 +487,10 @@
  <i class="fas fa-paper-plane me-2"></i>Send Request
  </button>
  </form>
+ <div id="contactSuccess" class="d-none mt-4 alert alert-success">
+ <h5><i class="fas fa-check-circle me-2"></i> Thank you!</h5>
+ <p class="mb-0">Your inquiry has been received. Our team will review it and get back to you within 24 hours.</p>
+ </div>
  </div>
  </div>
  </div>
@@ -794,5 +800,37 @@
  <a href="mailto:info@yeatru.com?subject=Free%20Quote%20Request%20-%20Sourcing%20from%20China" class="contact-float-btn email" data-label="Email Quote" title="Send us an email for a free quote">
  <i class="fas fa-envelope"></i>
  </a></div>
+<script>
+// Submit contact form via AJAX so the visitor stays on-site (FormSubmit's
+// native POST redirects away). Falls back to native POST if fetch fails.
+(function(){
+ var form = document.getElementById('contactQuoteForm');
+ if (!form) return;
+ form.addEventListener('submit', function(e){
+ e.preventDefault();
+ var btn = form.querySelector('button[type="submit"]');
+ var orig = btn.innerHTML;
+ btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending…';
+ var data = new URLSearchParams(new FormData(form));
+ fetch('https://formsubmit.co/ajax/info@yeatru.com', {
+ method:'POST',
+ headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
+ body: data.toString()
+ }).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); }).then(function(){
+ form.style.display='none';
+ var ok = document.getElementById('contactSuccess');
+ ok.classList.remove('d-none');
+ ok.scrollIntoView({behavior:'smooth',block:'center'});
+ }).catch(function(){ form.submit(); }).finally(function(){
+ btn.disabled=false; btn.innerHTML=orig;
+ });
+ });
+ // Native-POST fallback shows success via ?success=1
+ if (new URLSearchParams(location.search).get('success')==='1') {
+ form.style.display='none';
+ document.getElementById('contactSuccess').classList.remove('d-none');
+ }
+})();
+</script>
 </body>
 </html>

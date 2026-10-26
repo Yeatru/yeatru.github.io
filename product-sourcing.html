@@ -813,5 +813,54 @@
  </div>
  </div>
  </div>
+<script>
+// Auto-upgrade every FormSubmit form on the page to AJAX so visitors stay
+// on-site instead of being redirected to FormSubmit's default thank-you page.
+// Falls back to native POST (via _next) if fetch fails.
+(function(){
+  var forms = document.querySelectorAll('form[action*="formsubmit.co"]');
+  forms.forEach(function(form){
+    if (form.dataset.ajaxReady === '1') return;
+    form.dataset.ajaxReady = '1';
+    if (!form.querySelector('input[name="_captcha"]')) {
+      var c = document.createElement('input'); c.type = 'hidden'; c.name = '_captcha'; c.value = 'false'; form.appendChild(c);
+    }
+    if (!form.querySelector('input[name="_next"]')) {
+      var n = document.createElement('input'); n.type = 'hidden'; n.name = '_next';
+      n.value = location.origin + location.pathname + '?success=1'; form.appendChild(n);
+    }
+    var ok = form.parentNode.querySelector('.formsubmit-success');
+    if (!ok) {
+      ok = document.createElement('div');
+      ok.className = 'formsubmit-success d-none alert alert-success mt-3';
+      ok.innerHTML = '<h5 class="mb-1"><i class="fas fa-check-circle me-2"></i> Thank you!</h5><p class="mb-0">Your request has been received. Our team will reply within 24 hours.</p>';
+      form.parentNode.insertBefore(ok, form.nextSibling);
+    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var orig = btn ? btn.innerHTML : '';
+      if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending…'; }
+      var data = new URLSearchParams(new FormData(form));
+      fetch('https://formsubmit.co/ajax/info@yeatru.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+        body: data.toString()
+      }).then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); }).then(function(){
+        form.style.display = 'none';
+        ok.classList.remove('d-none');
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }).catch(function(){ form.submit(); }).finally(function(){
+        if (btn) { btn.disabled = false; btn.innerHTML = orig; }
+      });
+    });
+    if (new URLSearchParams(location.search).get('success') === '1') {
+      form.style.display = 'none';
+      ok.classList.remove('d-none');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

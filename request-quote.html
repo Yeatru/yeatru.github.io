@@ -339,6 +339,7 @@
 <input type="hidden" name="_subject" value="New Quote Request from Yeatru Website">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://www.yeatru.com/request-quote.html?success=1">
 
  <!-- Step 1 -->
  <div id="step1" class="form-step">
@@ -715,11 +716,34 @@
  });
  });
 
+ // Submit the quote form via AJAX so the visitor never leaves the page
+ // (FormSubmit's native POST redirects to its own thank-you page, which
+ // drops conversions). Falls back to native POST if fetch fails.
  function submitQuoteForm(e) {
- // formsubmit handles the actual submission; show success message
- setTimeout(() => {
+ e.preventDefault();
+ const form = document.getElementById('quoteForm');
+ const btn = form.querySelector('button[type="submit"]');
+ const orig = btn.innerHTML;
+ btn.disabled = true;
+ btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending…';
+ const data = new URLSearchParams(new FormData(form));
+ fetch('https://formsubmit.co/ajax/info@yeatru.com', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+ body: data.toString()
+ }).then(r => {
+ if (r.ok) {
+ form.style.display = 'none';
  document.getElementById('quoteSuccess').classList.remove('d-none');
- }, 500);
+ document.getElementById('quoteSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+ } else { throw new Error('HTTP ' + r.status); }
+ }).catch(() => {
+ // AJAX failed — fall back to native form POST (uses _next redirect)
+ form.submit();
+ }).finally(() => {
+ btn.disabled = false;
+ btn.innerHTML = orig;
+ });
  }
 
  // Multi-step form navigation
@@ -747,7 +771,15 @@
  }
  // Pre-fill product from URL params
  document.addEventListener('DOMContentLoaded', function() {
+ // Bind quote form submit (AJAX)
+ var qf = document.getElementById('quoteForm');
+ if (qf) qf.addEventListener('submit', submitQuoteForm);
+ // Show inline success if redirected back by native POST fallback
  var params = new URLSearchParams(window.location.search);
+ if (params.get('success') === '1' && qf) {
+ qf.style.display = 'none';
+ document.getElementById('quoteSuccess').classList.remove('d-none');
+ }
  var product = params.get('product');
  var name = params.get('name');
  if (product) {
