@@ -1146,6 +1146,12 @@ html[dir="rtl"] .contact-float,body.rtl .contact-float{right:auto;left:20px;alig
 .callout-box{background:linear-gradient(135deg,color-mix(in oklch, var(--c-brand-800) 8%, transparent) 0,color-mix(in oklch, var(--c-accent-500) 7%, transparent) 100%);border:1px solid color-mix(in oklch, var(--c-brand-800) 20%, transparent);border-radius:12px;padding: 1.25rem;margin: 1.5rem 0}
 .callout-box p{margin: 0;font-weight:500;color:var(--text-dark)}
 .callout-box i{color:var(--primary);margin-right: .5rem}
+.yeatru-fact-block{background:linear-gradient(135deg,color-mix(in oklch, var(--c-accent-500) 10%, transparent) 0,color-mix(in oklch, var(--c-brand-800) 8%, transparent) 100%);border:1px solid color-mix(in oklch, var(--c-accent-500) 35%, transparent);border-radius:14px;padding: 1.5rem 1.75rem;margin: 1.25rem 0 2rem 0}
+.yeatru-fact-block h3{font-size:1.05rem;font-weight:700;margin:0 0 .75rem 0;color:var(--primary)}
+.yeatru-fact-block ul{margin:0;padding:0;list-style:none}
+.yeatru-fact-block li{padding:.35rem 0;color:var(--text-dark);font-size:.95rem;line-height:1.55;border-bottom:1px dashed color-mix(in oklch, var(--c-brand-800) 10%, transparent)}
+.yeatru-fact-block li:last-child{border-bottom:0}
+.yeatru-fact-block li strong{color:var(--primary);font-weight:600}
 .related-article-card{display:block;text-decoration:none;color:inherit;background:var(--bg-panel);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);transition:all 0.3s cubic-bezier(.25,1,.5,1)}
 .related-article-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.12)}
 .related-article-image{position:relative;width:100%;height:180px;overflow:hidden;background:linear-gradient(135deg,var(--primary-50,var(--c-brand-50)) 0,var(--bg-panel) 100%)}
