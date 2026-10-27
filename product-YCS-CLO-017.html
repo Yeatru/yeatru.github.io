@@ -255,4 +255,48 @@
 </a>
 <a class="contact-float-btn email" data-label="Email Quote" href="mailto:info@yeatru.com?subject=Free%20Quote%20Request%20-%20Sourcing%20from%20China" title="Send us an email for a free quote">
 <i class="fas fa-envelope"></i>
-</a></div> <script crossorigin="anonymous" defer="" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script> <script defer="" src="small-parcel-rates.js?v=20260928b"></script><script defer="" src="small-parcel-calculator.js?v=20260930b"></script><script defer="" src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script><script defer="" src="app.js?v=20261024m"></script></body></html>
+</a></div> <script crossorigin="anonymous" defer="" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script> <script defer="" src="small-parcel-rates.js?v=20260928b"></script><script defer="" src="small-parcel-calculator.js?v=20260930b"></script><script defer="" src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script><script defer="" src="app.js?v=20261024m"></script><script>
+// Conversion instrumentation + WhatsApp friction removal.
+// 1) Give generic WhatsApp links a page-specific opening message so the visitor
+//    never has to decide what to write (curated per-page messages are kept).
+// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
+//    visitors reach WhatsApp / email / the quote form at all.
+(function(){
+ // --- WhatsApp page-aware prefill ---
+ try {
+   var links = document.querySelectorAll('a[href*="wa.me"]');
+   var raw = document.title || '';
+   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
+   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
+   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
+           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+   for (var i = 0; i < links.length; i++) {
+     var a = links[i], h = a.getAttribute('href') || '';
+     var m = h.match(/[?&]text=([^&]*)/);
+     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+     // Replace only missing or generic messages
+     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
+     var base = h.split('?')[0];
+     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+   }
+ } catch(e){}
+
+ // --- conversion-intent click tracking ---
+ function track(kind, href){
+   try {
+     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
+     if (window.clarity) window.clarity('event','intent_'+kind);
+   } catch(e){}
+ }
+ document.addEventListener('click', function(e){
+   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+   if (!a) return;
+   var h = a.getAttribute('href') || '';
+   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
+   else if (h.indexOf('mailto:') === 0) track('email', h);
+   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
+   else if (h.indexOf('tel:') === 0) track('phone', h);
+ }, true);
+})();
+</script>
+</body></html>

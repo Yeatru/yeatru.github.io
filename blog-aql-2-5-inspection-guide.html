@@ -33,6 +33,22 @@
  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "AQL 2.5 Inspection: Acceptable Quality Level Explained", "description": "AQL 2.5 means up to 2.5% defects allowed under ISO 2859/ANSI Z1.4. AQL levels 0.4/1.0/2.5/4.0/6.5, sample size, Ac/Re and how to read the AQL table.", "step": [{"@type": "HowToStep", "name": "Confirm your lot size and inspection level", "text": "Identify the total order quantity (lot size) and choose an inspection level. Level II is the industry default; Level I for lower-risk repeat orders, Level III for higher scrutiny. This determines your sample-size code letter on the ISO 2859-1 / ANSI Z1.4 table."}, {"@type": "HowToStep", "name": "Look up the sample size code letter", "text": "Find your lot-size row and the chosen inspection-level column. The intersection gives a code letter (e.g. lot 2,000 units under General Inspection Level II = code letter K)."}, {"@type": "HowToStep", "name": "Pick your AQL levels by defect type", "text": "Assign AQL 0 for critical defects (zero tolerance), AQL 2.5 for major defects, and AQL 4.0 for minor defects. Each defect class uses its own column and gets its own Ac/Re decision."}, {"@type": "HowToStep", "name": "Read the Ac/Re numbers for your sample", "text": "On the single-sampling-plan table, find the row for your code letter's sample size n (e.g. code K = 125 samples). Read across to your AQL column to get Accept (Ac) and Reject (Re) numbers, e.g. AQL 2.5 gives Ac=5, Re=6."}, {"@type": "HowToStep", "name": "Inspect, count defects, decide pass or fail", "text": "Pull n units randomly, classify every defect as critical/major/minor, count each class. If any class exceeds its Ac number (i.e. count >= Re), the lot fails that class and the whole inspection fails — trigger rework and re-inspection."}], "headline": "AQL 2.5 Inspection: Acceptable Quality Level Explained"}</script>
  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is AQL 2.5 inspection?", "acceptedAnswer": {"@type": "Answer", "text": "AQL 2.5 is the Acceptable Quality Limit that allows up to 2.5% defective units in a sample under the ISO 2859-1 / ANSI Z1.4 standard. For a given sample size n, the inspector counts major defects and compares them against the Ac (accept) and Re (reject) numbers for the AQL 2.5 column. AQL 2.5 is the most common level for major defects in consumer-goods sourcing from China."}}, {"@type": "Question", "name": "Is AQL 2.5 strict?", "acceptedAnswer": {"@type": "Answer", "text": "AQL 2.5 is the industry-standard middle ground — not overly strict but not loose. It means 2.5% major defects are statistically acceptable. Tighter levels like AQL 1.0 or 0.65 are used for high-value, regulated, or safety-critical products; looser levels like AQL 4.0 or 6.5 are used for minor defects or low-cost commodities. Critical defects always use AQL 0 (zero tolerance)."}}, {"@type": "Question", "name": "How many samples do I inspect for 1,000 units under AQL 2.5?", "acceptedAnswer": {"@type": "Answer", "text": "A lot of 1,000 units under General Inspection Level II maps to sample-size code letter J = 80 samples. For AQL 2.5 major defects, Ac = 5 and Re = 6. For AQL 4.0 minor defects, Ac = 7 and Re = 8. So you inspect 80 units and reject the lot if you find 6 or more major defects or 8 or more minor defects."}}, {"@type": "Question", "name": "Can I negotiate AQL with my supplier?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AQL levels are negotiable and should be written into the purchase contract before production starts. Buyers can require tighter AQL (e.g. 1.0 instead of 2.5) for high-value orders, or agree on a defect penalty clause. Suppliers often accept tighter AQL if you pay a small unit-price premium or give them clear defect-specification sheets before mass production."}}, {"@type": "Question", "name": "What happens if an AQL inspection fails?", "acceptedAnswer": {"@type": "Answer", "text": "A failed inspection means the defect count in any class reaches Re. Standard options are: (1) supplier reworks the whole lot and passes a re-inspection at their cost, (2) you accept with a price discount, (3) you reject the lot and cancel/refund, or (4) sort-and-replace defective units. The re-inspection is usually paid by the supplier and reported before balance payment is released."}}, {"@type": "Question", "name": "AQL sampling vs 100% inspection — which should I use?", "acceptedAnswer": {"@type": "Answer", "text": "AQL sampling inspects a statistically representative sample (e.g. 80 of 1,000 units) and is the standard for cost-effective QC. 100% inspection checks every unit and is used for safety-critical products (toys, medical, food-contact), very small lots, or lots that already failed AQL. AQL is cheaper ($80-$300/man-day) and faster; 100% inspection costs 2-5x more but gives full certainty."}}]}</script>
  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.yeatru.com/blog-aql-2-5-inspection-guide.html"}, "headline": "AQL 2.5 Inspection: Acceptable Quality Level Explained", "description": "AQL 2.5 means up to 2.5% defects allowed under ISO 2859/ANSI Z1.4. AQL levels 0.4/1.0/2.5/4.0/6.5, sample size, Ac/Re and how to read the AQL table.", "image": ["https://www.yeatru.com/Images/blog/blog-aql-2-5-inspection-guide.jpg"], "datePublished": "2026-06-15", "dateModified": "2026-06-15", "author": {"@type": "Person", "name": "Neil Liu", "jobTitle": "Founder & Managing Director", "url": "https://www.yeatru.com/about.html", "sameAs": ["https://www.linkedin.com/in/neil-liu-398983257"]}, "publisher": {"@id": "https://www.yeatru.com/#organization"}, "keywords": "AQL 2.5 inspection, AQL sampling table, acceptable quality limit, ISO 2859, ANSI Z1.4, quality inspection China", "articleSection": "China Sourcing Blog", "inLanguage": "en"}</script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KXW2N4FHZR');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+ t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','xsam7gvp9o');
+</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-xl bg-white sticky-top">
@@ -483,5 +499,49 @@
 <div class="contact-float">
  <a href="https://wa.me/8615988516408?text=Hello%20Yeatru%20Sourcing" class="contact-float-btn whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
  <a href="mailto:info@yeatru.com" class="contact-float-btn email"><i class="fas fa-envelope"></i></a></div>
+<script>
+// Conversion instrumentation + WhatsApp friction removal.
+// 1) Give generic WhatsApp links a page-specific opening message so the visitor
+//    never has to decide what to write (curated per-page messages are kept).
+// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
+//    visitors reach WhatsApp / email / the quote form at all.
+(function(){
+ // --- WhatsApp page-aware prefill ---
+ try {
+   var links = document.querySelectorAll('a[href*="wa.me"]');
+   var raw = document.title || '';
+   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
+   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
+   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
+           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+   for (var i = 0; i < links.length; i++) {
+     var a = links[i], h = a.getAttribute('href') || '';
+     var m = h.match(/[?&]text=([^&]*)/);
+     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+     // Replace only missing or generic messages
+     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
+     var base = h.split('?')[0];
+     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+   }
+ } catch(e){}
+
+ // --- conversion-intent click tracking ---
+ function track(kind, href){
+   try {
+     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
+     if (window.clarity) window.clarity('event','intent_'+kind);
+   } catch(e){}
+ }
+ document.addEventListener('click', function(e){
+   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+   if (!a) return;
+   var h = a.getAttribute('href') || '';
+   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
+   else if (h.indexOf('mailto:') === 0) track('email', h);
+   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
+   else if (h.indexOf('tel:') === 0) track('phone', h);
+ }, true);
+})();
+</script>
 </body>
 </html>

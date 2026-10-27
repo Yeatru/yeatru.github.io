@@ -49,6 +49,22 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Small-batch China sourcing for Slovenia","serviceType":"China sourcing agent","provider":{"@id":"https://www.yeatru.com/#organization"},"areaServed":{"@type":"Country","name":"Slovenia"},"description":"Yeatru Sourcing quotes and produces small-batch and private-label orders for Slovenian buyers from 50 pieces per SKU, with AQL 2.5 inspection before the balance is released and DDP delivery via Luka Koper.","offers":{"@type":"Offer","priceSpecification":{"@type":"PriceSpecification","priceRange":"5% - 12% of order value","priceCurrency":"USD"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you source plush toys from China to Slovenia?","acceptedAnswer":{"@type":"Answer","text":"Yes. Plush toys are a regular category. A Slovenian buyer ordered four characters in 24 cm and 45 cm sizes plus two four-piece sets on quotation YCS261015SL02. Toy imports need CE marking, EN 71-1/-2/-3 reports and GPSR safety information, checked before the factory is booked."}},{"@type":"Question","name":"What is the minimum order for a custom hanger card?","acceptedAnswer":{"@type":"Answer","text":"The card is priced per piece and the printer minimum depends on card stock and print method. On quotation YCS261015SL02 it was USD 0.56 per piece across 16 pieces, including assembly, labour and repack. It is quoted as a separate line so the customisation cost is visible."}},{"@type":"Question","name":"How does DDP delivery to Slovenia work?","acceptedAnswer":{"@type":"Answer","text":"Goods are consolidated at the Yiwu warehouse, shipped to Luka Koper, cleared through EU customs, 22% import VAT is paid, and delivery is made to the buyer address for one all-in price. Buyers with their own forwarder and EU EORI usually choose FOB or FCA to control freight."}},{"@type":"Question","name":"Do I need packaging EPR registration before importing into Slovenia?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you are the producer placing packaged goods on the Slovenian market. You register with a packaging producer-responsibility scheme such as Slopak and report packaging weight. It is a producer obligation that neither the factory nor the agent can absorb."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yeatru.com/"},{"@type":"ListItem","position":2,"name":"Small-Batch Sourcing","item":"https://www.yeatru.com/small-batch-sourcing-china.html"},{"@type":"ListItem","position":3,"name":"Slovenia","item":"https://www.yeatru.com/china-sourcing-agent-slovenia.html"}]}</script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KXW2N4FHZR');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+ t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','xsam7gvp9o');
+</script>
 </head>
 <body>
 
@@ -493,5 +509,49 @@
  <a href="mailto:info@yeatru.com?subject=Free%20Quote%20Request%20-%20Sourcing%20from%20China" class="contact-float-btn email" data-label="Email Quote" title="Send us an email for a free quote">
  <i class="fas fa-envelope"></i>
  </a></div>
+<script>
+// Conversion instrumentation + WhatsApp friction removal.
+// 1) Give generic WhatsApp links a page-specific opening message so the visitor
+//    never has to decide what to write (curated per-page messages are kept).
+// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
+//    visitors reach WhatsApp / email / the quote form at all.
+(function(){
+ // --- WhatsApp page-aware prefill ---
+ try {
+   var links = document.querySelectorAll('a[href*="wa.me"]');
+   var raw = document.title || '';
+   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
+   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
+   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
+           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+   for (var i = 0; i < links.length; i++) {
+     var a = links[i], h = a.getAttribute('href') || '';
+     var m = h.match(/[?&]text=([^&]*)/);
+     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+     // Replace only missing or generic messages
+     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
+     var base = h.split('?')[0];
+     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+   }
+ } catch(e){}
+
+ // --- conversion-intent click tracking ---
+ function track(kind, href){
+   try {
+     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
+     if (window.clarity) window.clarity('event','intent_'+kind);
+   } catch(e){}
+ }
+ document.addEventListener('click', function(e){
+   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+   if (!a) return;
+   var h = a.getAttribute('href') || '';
+   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
+   else if (h.indexOf('mailto:') === 0) track('email', h);
+   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
+   else if (h.indexOf('tel:') === 0) track('phone', h);
+ }, true);
+})();
+</script>
 </body>
 </html>

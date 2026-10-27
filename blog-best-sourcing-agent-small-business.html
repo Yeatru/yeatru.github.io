@@ -35,6 +35,22 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I import from China with a small business budget?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most sourcing agents now support orders as small as $500-$1,000. With 1688.com in-stock suppliers, MOQs can be as low as 2-5 pieces for standard items. Budget $800-$1,500 total for a first trial order including samples, production, freight, and a small QC check."}}, {"@type": "Question", "name": "What is the cheapest sourcing agent for small orders?", "acceptedAnswer": {"@type": "Answer", "text": "Flat-fee agents charging $90-$200 per order are cheapest for orders under $3,000. Above that, a 3-5% commission agent like Yeatru Sourcing becomes cheaper because the commission scales with value, not effort. Break-even for a $90 flat fee vs 5% commission is around $1,800."}}, {"@type": "Question", "name": "Do I need a registered business to import from China?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can import as a private individual using an importer-of-record service. Small sample orders under €22 / $25 are usually duty-free and tax-free. Larger commercial shipments (≥ $150) need EORI (EU) or ISF filing (US), but agents can handle this for you."}}, {"@type": "Question", "name": "How long does a small import order take?", "acceptedAnswer": {"@type": "Answer", "text": "Standard in-stock items from 1688: 5-10 days production + 7-14 days air freight = 12-24 days total. Sea freight for bulk orders: 25-40 days. Emergency rush air: 5-10 days door-to-door with express courier."}}, {"@type": "Question", "name": "Should I use Alibaba 1688 or a sourcing agent?", "acceptedAnswer": {"@type": "Answer", "text": "Use both. 1688 has the lowest prices but is entirely in Chinese and lacks quality control. A sourcing agent sources from 1688, AliExpress, Yiwu wholesale, and OEM factories, handles the language barrier, negotiates better prices, and does QC. The agent fee (5-8%) is offset by the 10-25% lower factory price they secure."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.yeatru.com/blog-best-sourcing-agent-small-business.html"}, "headline": "Best Sourcing Agent for Small Business 2026: Low-MOQ &amp; Budget Picks", "description": "Best China sourcing agents for small businesses in 2026. Low MOQs from 2 pcs, $90 flat fees, trial order friendly.", "datePublished": "2026-09-15", "dateModified": "2026-09-15", "author": {"@type": "Person", "name": "Neil Liu", "jobTitle": "Founder &amp; Managing Director", "url": "https://www.yeatru.com/about.html", "sameAs": ["https://www.linkedin.com/in/neil-liu-398983257"]}, "publisher": {"@id": "https://www.yeatru.com/#organization"}, "keywords": "best china sourcing agent small business, low moq sourcing agent", "articleSection": "China Sourcing Blog", "inLanguage": "en"}</script>
 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KXW2N4FHZR');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+ t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','xsam7gvp9o');
+</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-xl bg-white sticky-top">
@@ -599,5 +615,49 @@ No. You can import as a private individual. Small orders under €22 / $25 are u
 <div class="contact-float">
  <a href="https://wa.me/8615988516408?text=Hello%20Yeatru%20Sourcing" class="contact-float-btn whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
  <a href="mailto:info@yeatru.com" class="contact-float-btn email"><i class="fas fa-envelope"></i></a></div>
+<script>
+// Conversion instrumentation + WhatsApp friction removal.
+// 1) Give generic WhatsApp links a page-specific opening message so the visitor
+//    never has to decide what to write (curated per-page messages are kept).
+// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
+//    visitors reach WhatsApp / email / the quote form at all.
+(function(){
+ // --- WhatsApp page-aware prefill ---
+ try {
+   var links = document.querySelectorAll('a[href*="wa.me"]');
+   var raw = document.title || '';
+   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
+   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
+   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
+           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+   for (var i = 0; i < links.length; i++) {
+     var a = links[i], h = a.getAttribute('href') || '';
+     var m = h.match(/[?&]text=([^&]*)/);
+     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+     // Replace only missing or generic messages
+     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
+     var base = h.split('?')[0];
+     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+   }
+ } catch(e){}
+
+ // --- conversion-intent click tracking ---
+ function track(kind, href){
+   try {
+     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
+     if (window.clarity) window.clarity('event','intent_'+kind);
+   } catch(e){}
+ }
+ document.addEventListener('click', function(e){
+   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+   if (!a) return;
+   var h = a.getAttribute('href') || '';
+   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
+   else if (h.indexOf('mailto:') === 0) track('email', h);
+   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
+   else if (h.indexOf('tel:') === 0) track('phone', h);
+ }, true);
+})();
+</script>
 </body>
 </html>

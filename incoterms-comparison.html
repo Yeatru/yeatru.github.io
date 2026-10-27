@@ -39,6 +39,22 @@
  /* Keep matrix header words intact; the wrapper scrolls horizontally instead */
  .geo-comparison-table th { white-space: nowrap; }
  </style>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KXW2N4FHZR');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+ t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','xsam7gvp9o');
+</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-xl bg-white sticky-top">
@@ -354,6 +370,10 @@
 </table></div>
 <p>Batch size changes the economics but not the terms. A <a href="small-batch-sourcing-china.html">50–100 unit custom run</a> is normally shipped by consolidated air or LCL sea freight rather than a full container, so DDP or FCA is usually the practical choice — FOB and CIF assume a full vessel booking that a small order cannot fill.</p>
 
+<aside class="callout-box">
+<p><i class="fas fa-lightbulb"></i><strong>Not sure which term your order needs?</strong> Tell us the product, the quantity and the destination country, and we will quote the same order on the two terms that fit it — usually DDP versus FOB — so you can see the actual price gap in dollars rather than percentages. Orders start at 50 pieces for custom and 1 piece for stock SKUs. <a href="request-quote.html">Request a two-term comparison quote</a> or <a href="https://wa.me/8615988516408?text=Hi%20Yeatru%2C%20I%20read%20your%20Incoterms%20comparison%20and%20would%20like%20the%20same%20order%20quoted%20DDP%20versus%20FOB." target="_blank" rel="noopener noreferrer">ask on WhatsApp</a>.</p>
+</aside>
+
 <h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-item mb-4"><h3 class="h5">What is the difference between DAP and DDP?</h3><p class="mb-0">DAP (Delivered at Place) means the seller pays freight to your named destination but you clear customs and pay import duty. DDP (Delivered Duty Paid) means the seller also clears customs and pays duty. Duty and import clearance are the only difference.</p></div>
 <div class="faq-item mb-4"><h3 class="h5">Is DDU the same as DDP?</h3><p class="mb-0">No. DDU is the retired pre-2010 name for DAP, so under a DDU quote you pay import duty. DDP is the only Incoterm where the seller pays import duty and clears customs for you.</p></div>
@@ -466,5 +486,49 @@
 <div class="contact-float">
  <a href="https://wa.me/8615988516408?text=Hello%20Yeatru%20Sourcing" class="contact-float-btn whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
  <a href="mailto:info@yeatru.com" class="contact-float-btn email"><i class="fas fa-envelope"></i></a></div>
+<script>
+// Conversion instrumentation + WhatsApp friction removal.
+// 1) Give generic WhatsApp links a page-specific opening message so the visitor
+//    never has to decide what to write (curated per-page messages are kept).
+// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
+//    visitors reach WhatsApp / email / the quote form at all.
+(function(){
+ // --- WhatsApp page-aware prefill ---
+ try {
+   var links = document.querySelectorAll('a[href*="wa.me"]');
+   var raw = document.title || '';
+   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
+   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
+   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
+           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+   for (var i = 0; i < links.length; i++) {
+     var a = links[i], h = a.getAttribute('href') || '';
+     var m = h.match(/[?&]text=([^&]*)/);
+     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+     // Replace only missing or generic messages
+     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
+     var base = h.split('?')[0];
+     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+   }
+ } catch(e){}
+
+ // --- conversion-intent click tracking ---
+ function track(kind, href){
+   try {
+     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
+     if (window.clarity) window.clarity('event','intent_'+kind);
+   } catch(e){}
+ }
+ document.addEventListener('click', function(e){
+   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+   if (!a) return;
+   var h = a.getAttribute('href') || '';
+   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
+   else if (h.indexOf('mailto:') === 0) track('email', h);
+   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
+   else if (h.indexOf('tel:') === 0) track('phone', h);
+ }, true);
+})();
+</script>
 </body>
 </html>
