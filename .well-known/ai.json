@@ -195,17 +195,6 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://www.yeatru.com/category-dog-supplies.html#collectionpage",
-      "name": "Dog Supplies",
-      "url": "https://www.yeatru.com/category-dog-supplies.html",
-      "sameAs": "https://en.wikipedia.org/wiki/Dog",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.yeatru.com/category-dog-supplies.html"
-      }
-    },
-    {
-      "@type": "CollectionPage",
       "@id": "https://www.yeatru.com/category-fans.html#collectionpage",
       "name": "Fans",
       "url": "https://www.yeatru.com/category-fans.html",

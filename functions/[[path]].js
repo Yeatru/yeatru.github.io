@@ -55,6 +55,9 @@ const PERMANENT_301 = {
   // 构建用模板片段, 不应被公开索引 (GSC "Crawled - currently not indexed")
   '/freequote_body.tmpl.html':      '/blog-free-quotation-china-sourcing.html',
   '/freequote_body.tmpl':           '/blog-free-quotation-china-sourcing.html',
+  // 空分类页(产品已按品类重新归类, 0 SKU) → 301 到分类总览, 避免薄内容/软404
+  '/category-dog-supplies.html':    '/categories.html',
+  '/category-dog-supplies':         '/categories.html',
 };
 
 // --- (0) 产品详情页合法SKU白名单 → 服务端301替代客户端JS redirect ---
