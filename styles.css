@@ -6112,6 +6112,29 @@ body .btn-cta, body .btn-primary{box-shadow:var(--shadow-xs)}
 body .btn-cta:hover, body .btn-primary:hover{box-shadow:var(--shadow-sm);transform:translateY(-1px)}
 body .final-cta-box .btn{margin:.25rem}
 
+/* ---------- 6 · Why Yeatru · stop the stretch -----------------------------
+   The outer row used align-items:stretch and the stats row had flex-grow:1,
+   so the four number cards and the two inner list cards were all pulled to
+   the height of the tallest column — numbers sat at the top, labels at the
+   bottom, with a big empty band in the middle. Top-align everything and let
+   cards keep their natural content height. */
+body #why-yeatru > .container > .row{align-items:flex-start!important}
+
+/* Left column's two inner cards ("What 14+ years gives you" / "What we do not
+   claim"): natural height, top-aligned, no stretched empty space. */
+body #why-yeatru .col-lg-7 .row.g-3{align-items:flex-start!important}
+body #why-yeatru .col-lg-7 .row.g-3 > [class*="col-"] > div.h-100{height:auto!important}
+
+/* Right column: stats row does not grow, stat cards stay compact. */
+body #why-yeatru .col-lg-5 .row.flex-grow-1{flex-grow:0!important}
+body #why-yeatru .about-stat-card{
+  flex:0 0 auto!important;
+  height:auto!important;
+  text-align:center;
+}
+body #why-yeatru .about-stat-card .about-stat-num{margin-bottom:.25rem}
+body #why-yeatru .about-stat-card .about-stat-label{margin-top:0}
+
 /* ---------- 5 · Touch screens -------------------------------------------- */
 @media (max-width:575.98px){
   body .advantage-card{padding:1rem!important}
