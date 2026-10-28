@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e8f0fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fef3e2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="30" flood-color="#1e3a8a" flood-opacity="0.15"/>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="80" r="180" fill="#f97316" opacity="0.06"/>
+  <circle cx="1100" cy="150" r="100" fill="#6366f1" opacity="0.05"/>
+  <circle cx="150" cy="550" r="150" fill="#6366f1" opacity="0.05"/>
+  <circle cx="80" cy="500" r="80" fill="#f97316" opacity="0.06"/>
+  
+  <!-- Main content card -->
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="url(#cardGradient)" filter="url(#shadow)"/>
+  
+  <!-- Top accent line -->
+  <rect x="60" y="60" width="1080" height="4" rx="2" fill="url(#accentGradient)"/>
+  
+  <!-- Logo area -->
+  <g transform="translate(100, 110)">
+    <rect width="52" height="52" rx="12" fill="url(#accentGradient)"/>
+    <text x="26" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">Y</text>
+  </g>
+  <text x="170" y="145" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Yeatru Sourcing</text>
+  
+  <!-- Main heading -->
+  <text x="100" y="240" font-family="Arial, sans-serif" font-size="56" font-weight="800" fill="#0f172a">Your Trusted China</text>
+  <text x="100" y="310" font-family="Arial, sans-serif" font-size="56" font-weight="800" fill="#0f172a">Sourcing Partner</text>
+  
+  <!-- Accent underline -->
+  <rect x="100" y="340" width="80" height="4" rx="2" fill="url(#accentGradient)"/>
+  
+  <!-- Subtitle -->
+  <text x="100" y="395" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#475569">Yiwu-based sourcing agent for global buyers</text>
+  <text x="100" y="430" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#475569">Quality products at factory-direct prices</text>
+  
+  <!-- Feature badges -->
+  <g transform="translate(100, 480)">
+    <rect width="180" height="44" rx="22" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="90" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#1d4ed8">14+ Years Experience</text>
+  </g>
+  <g transform="translate(300, 480)">
+    <rect width="160" height="44" rx="22" fill="#fef3c7" stroke="#fcd34d" stroke-width="1"/>
+    <text x="80" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#92400e">50+ Countries</text>
+  </g>
+  <g transform="translate(480, 480)">
+    <rect width="200" height="44" rx="22" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1"/>
+    <text x="100" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#be185d">200+ Global Clients</text>
+  </g>
+  
+  <!-- Right side - illustration area -->
+  <g transform="translate(780, 180)">
+    <!-- Box icon -->
+    <rect x="40" y="40" width="200" height="160" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+    <line x1="140" y1="40" x2="140" y2="200" stroke="#bfdbfe" stroke-width="2"/>
+    <line x1="40" y1="120" x2="240" y2="120" stroke="#bfdbfe" stroke-width="2"/>
+    
+    <!-- Check marks -->
+    <circle cx="110" cy="80" r="16" fill="#10b981" opacity="0.2"/>
+    <path d="M103 80 L108 85 L118 73" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <circle cx="170" cy="160" r="16" fill="#10b981" opacity="0.2"/>
+    <path d="M163 160 L168 165 L178 153" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Globe icon -->
+    <circle cx="260" cy="50" r="30" fill="#f97316" opacity="0.1"/>
+    <circle cx="260" cy="50" r="22" fill="none" stroke="#f97316" stroke-width="2"/>
+    <path d="M238 50 Q260 35 282 50 Q260 65 238 50" fill="none" stroke="#f97316" stroke-width="1.5"/>
+    <line x1="260" y1="28" x2="260" y2="72" stroke="#f97316" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Bottom bar -->
+  <rect x="60" y="546" width="1080" height="24" rx="0" fill="none"/>
+  <text x="100" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#94a3b8">www.yeatru.com</text>
+  <text x="1020" y="560" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="#94a3b8">Get Quote in 24 Hours</text>
+</svg>

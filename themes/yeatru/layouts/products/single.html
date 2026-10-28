@@ -1,0 +1,60 @@
+{{ define "main" }}
+<article class="section">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav style="font-size:.85rem;color:var(--text-tertiary);margin-bottom:1.5rem">
+      <a href="/">Home</a> / <a href="/all-products.html">Products</a>
+      {{ with .Params.categories }}{{ range . }} / <a href="/categories.html">{{ . }}</a>{{ end }}{{ end }}
+      / <span>{{ .Title }}</span>
+    </nav>
+
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <!-- Product image -->
+      <div>
+        {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" style="border-radius:var(--r-lg);border:1px solid var(--border-light)">
+        {{ end }}
+      </div>
+      <!-- Product info -->
+      <div>
+        {{ with .Params.sku }}<div class="eyebrow">SKU: {{ . }}</div>{{ end }}
+        <h1 class="mb-2">{{ .Title }}</h1>
+        {{ with .Params.price }}
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:1rem">${{ . }}<span style="font-size:.9rem;font-weight:400;color:var(--text-tertiary)">/unit</span></div>
+        {{ end }}
+        {{ with .Params.lowPrice }}
+        {{ if ne . $.Params.price }}
+        <div style="color:var(--text-tertiary);font-size:.85rem;margin-bottom:1rem">Price range: ${{ . }} – ${{ $.Params.highPrice }} based on quantity</div>
+        {{ end }}
+        {{ end }}
+
+        <p style="color:var(--text-secondary);margin-bottom:1.5rem">{{ .Params.description }}</p>
+
+        <div class="flex gap-3 flex-wrap" style="margin-bottom:1.5rem">
+          <a href="/request-quote.html" class="btn btn-primary btn-lg">Request a Quote</a>
+          <a href="https://wa.me/8615988516408?text=Hello%2C%20I%27m%20interested%20in%20{{ .Params.sku }}" class="btn btn-outline btn-lg" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <div class="grid grid-3" style="gap:.5rem;margin-bottom:1.5rem">
+          <div class="card" style="padding:.75rem;text-align:center"><i class="fas fa-shield-halved" style="color:var(--primary)"></i><div style="font-size:.75rem;margin-top:.25rem">Verified Supplier</div></div>
+          <div class="card" style="padding:.75rem;text-align:center"><i class="fas fa-clipboard-check" style="color:var(--primary)"></i><div style="font-size:.75rem;margin-top:.25rem">AQL 2.5 QC</div></div>
+          <div class="card" style="padding:.75rem;text-align:center"><i class="fas fa-truck" style="color:var(--primary)"></i><div style="font-size:.75rem;margin-top:.25rem">DDP Shipping</div></div>
+          <div class="card" style="padding:.75rem;text-align:center"><i class="fas fa-pen-ruler" style="color:var(--primary)"></i><div style="font-size:.75rem;margin-top:.25rem">OEM / ODM</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product content -->
+    <div class="prose" style="margin-top:3rem;max-width:none">
+      {{ .Content }}
+    </div>
+
+    <!-- CTA -->
+    <div class="section-inverse text-center" style="margin-top:3rem;padding:3rem 1rem;border-radius:var(--r-xl)">
+      <h2 style="margin-bottom:1rem">Interested in this product?</h2>
+      <p style="color:rgba(255,255,255,.7);margin-bottom:1.5rem">Get a free quote within 24 hours.</p>
+      <a href="/request-quote.html" class="btn btn-accent btn-lg">Request a Free Quote</a>
+    </div>
+  </div>
+</article>
+{{ end }}

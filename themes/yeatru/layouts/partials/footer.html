@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-brand" style="color:#fff;margin-bottom:1rem">
+          <img src="/logo.png" alt="{{ .Site.Params.siteName }}" style="height:36px">
+          <span>{{ .Site.Params.siteName }}</span>
+        </div>
+        <p style="color:rgba(255,255,255,.6);font-size:.9rem;max-width:320px">
+          Yiwu-based China sourcing agent. Small orders, mixed batches, AQL 2.5 QC, DDP shipping to 50+ countries.
+        </p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/product-sourcing.html">Product Sourcing</a></li>
+          <li><a href="/factory-audit.html">Factory Audit</a></li>
+          <li><a href="/quality-control.html">Quality Control</a></li>
+          <li><a href="/logistics-shipping.html">Logistics & Shipping</a></li>
+          <li><a href="/oem.html">OEM & Private Label</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog.html">Sourcing Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/categories.html">Categories</a></li>
+          <li><a href="/all-products.html">All Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:{{ .Site.Params.contactEmail }}">{{ .Site.Params.contactEmail }}</a></li>
+          <li><a href="tel:{{ .Site.Params.contactPhone }}">{{ .Site.Params.contactPhone }}</a></li>
+          <li><a href="/request-quote.html">Request a Quote</a></li>
+          <li><a href="/about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {{ now.Format "2006" }} {{ .Site.Params.siteName }}. All rights reserved.</span>
+      <span><a href="/privacy.html" style="color:inherit">Privacy</a> · <a href="/terms.html" style="color:inherit">Terms</a></span>
+    </div>
+  </div>
+</footer>

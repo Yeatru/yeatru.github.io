@@ -1,0 +1,233 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Yiwu · China · Since {{ .Site.Params.foundedYear }}</div>
+        <h1>A China sourcing agent that says yes to small orders.</h1>
+        <p class="lead">One-stop sourcing from Yiwu, Guangzhou and Shenzhen. Mixed batches, AQL 2.5 quality control, and DDP shipping to 50+ countries — for B2B buyers of every size.</p>
+        <div class="hero-actions">
+          <a href="/request-quote.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
+          <a href="/all-products.html" class="btn btn-outline btn-lg">Browse Products</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">{{ sub now.Year (.Site.Params.foundedYear | int) }}</div><div class="hero-stat-label">Years as a Company</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">{{ .Site.Params.founderYears }}+</div><div class="hero-stat-label">Years Founder Experience</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">200+</div><div class="hero-stat-label">Clients in 50+ Countries</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">50</div><div class="hero-stat-label">Pieces Minimum Order</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/Images/hero-team-office.jpg" alt="Yeatru Sourcing team in Yiwu office" style="border-radius:var(--r-xl);box-shadow:var(--shadow-lg)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THREE PILLARS ===== -->
+<section class="section section-soft">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">What We Bring</div>
+      <h2>Yiwu market access, a multilingual team, and 14+ years of real procurement</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-number">01 · Market</div>
+        <h3 class="mb-2">Yiwu Market, Not a Call Centre</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem">We work from Yiwu International Trade City — 75,000+ booths across 26 product categories. We compare stalls in person, collect factory-direct samples, and combine market stock with bespoke orders in one consolidation.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">02 · Team</div>
+        <h3 class="mb-2">Multilingual, End to End</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem">Quotes, QC reports and shipping documents in English, Mandarin or Spanish, with Russian and Arabic support for CIS and GCC buyers. This website itself is published in five languages.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">03 · Experience</div>
+        <h3 class="mb-2">14+ Years of Buying, Not Just Selling</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem">Founder Neil Liu has spent 14+ years in procurement, supplier audits and export logistics — long enough to know which quote is too cheap to be real. You deal with the person who negotiates your price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY YEATRU ===== -->
+<section class="section" id="why-yeatru">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div class="eyebrow">Why Yeatru</div>
+        <h2 class="mb-3">Four years old. Fourteen years of operating experience.</h2>
+        <p style="color:var(--text-secondary);font-size:1.05rem;margin-bottom:1.2rem">We will not pretend to be a 20-year-old company. <strong>YIWU ETRUE TRADING CO. LTD. was registered in Yiwu on 21 February 2022</strong> — four years in business. What we do bring is a founder, Neil Liu, with <strong>14+ years in product compliance, quality management, supplier audits, procurement and export logistics</strong>.</p>
+        <p style="color:var(--text-secondary);margin-bottom:1.2rem">Being new has an advantage: we remember exactly how hard the first order is. So we built the company we wished we had — one that takes <strong>small batches and mixed orders</strong>, quotes a real landed cost, and stays with you after the first shipment.</p>
+        <div class="grid grid-2 mt-3">
+          <div class="card" style="background:var(--bg-soft)">
+            <h4 class="mb-2" style="font-size:1rem">What 14+ years gives you</h4>
+            <ul style="font-size:.88rem;color:var(--text-secondary);line-height:1.7">
+              <li>Compliance guidance (CE, FCC, REACH, FDA)</li>
+              <li>Factory audits and AQL 2.5 inspection</li>
+              <li>Negotiation and procurement planning</li>
+              <li>Export docs, consolidation and DDP logistics</li>
+            </ul>
+          </div>
+          <div class="card" style="background:var(--bg-soft)">
+            <h4 class="mb-2" style="font-size:1rem">What we do not claim</h4>
+            <ul style="font-size:.88rem;color:var(--text-secondary);line-height:1.7">
+              <li>No invented company history — founded 2022</li>
+              <li>No "thousands of inspections" badge</li>
+              <li>No hidden commission or factory markup</li>
+              <li>No minimum retainer to start a conversation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="grid grid-2" style="gap:.75rem">
+          <div class="card text-center"><div style="font-size:2rem;font-weight:800;color:var(--primary)">4</div><div style="font-size:.82rem;color:var(--text-tertiary)">Years as a Company</div></div>
+          <div class="card text-center"><div style="font-size:2rem;font-weight:800;color:var(--primary)">14+</div><div style="font-size:.82rem;color:var(--text-tertiary)">Years Founder Experience</div></div>
+          <div class="card text-center"><div style="font-size:2rem;font-weight:800;color:var(--primary)">200+</div><div style="font-size:.82rem;color:var(--text-tertiary)">Clients in 50+ Countries</div></div>
+          <div class="card text-center"><div style="font-size:2rem;font-weight:800;color:var(--primary)">50</div><div style="font-size:.82rem;color:var(--text-tertiary)">Pieces Minimum Order</div></div>
+        </div>
+        <div class="text-center mt-3">
+          <a href="/about.html" class="btn btn-outline">About Yeatru Sourcing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section section-soft" id="services">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">One-Stop Sourcing Services</div>
+      <h2>Everything you need to source from China — handled by one team in Yiwu</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="/product-sourcing.html"><div class="card-number">01</div><h3 class="mb-2">Product Sourcing</h3><p style="color:var(--text-secondary);font-size:.9rem">Find the right factory at the right price across Yiwu, Guangzhou and Shenzhen.</p></a>
+      <a class="card" href="/factory-audit.html"><div class="card-number">02</div><h3 class="mb-2">Factory Audit</h3><p style="color:var(--text-secondary);font-size:.9rem">On-site verification of licenses, capacity, quality systems and social compliance.</p></a>
+      <a class="card" href="/quality-control.html"><div class="card-number">03</div><h3 class="mb-2">Quality Control</h3><p style="color:var(--text-secondary);font-size:.9rem">AQL 2.5 pre-shipment inspection with photo and video evidence.</p></a>
+      <a class="card" href="/logistics-shipping.html"><div class="card-number">04</div><h3 class="mb-2">Logistics & Shipping</h3><p style="color:var(--text-secondary);font-size:.9rem">Sea, air and express with DDP delivery to your warehouse worldwide.</p></a>
+      <a class="card" href="/oem.html"><div class="card-number">05</div><h3 class="mb-2">OEM & Private Label</h3><p style="color:var(--text-secondary);font-size:.9rem">Custom molds, packaging and branding from prototype to mass production.</p></a>
+      <a class="card" href="/sample-order.html"><div class="card-number">06</div><h3 class="mb-2">Sample Orders</h3><p style="color:var(--text-secondary);font-size:.9rem">Order samples before committing — small batches from 1 piece.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADVANTAGES ===== -->
+<section class="section" id="advantages">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">Why Buyers Choose Us</div>
+      <h2>Built for buyers the big agents decline</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="card-number">01 · Flexibility</div><h3 class="mb-2">Low MOQ, Mixed Batches</h3><p style="color:var(--text-secondary);font-size:.9rem">Start from 50 pieces. Combine different products and suppliers into one shipment.</p></div>
+      <div class="card"><div class="card-number">02 · Transparency</div><h3 class="mb-2">Published Fees, No Hidden Markup</h3><p style="color:var(--text-secondary);font-size:.9rem">Our service fee structure is published on the site. No hidden commission from factories.</p></div>
+      <div class="card"><div class="card-number">03 · Quality</div><h3 class="mb-2">AQL 2.5 Inspection</h3><p style="color:var(--text-secondary);font-size:.9rem">Every shipment inspected before it leaves China. Photo and video evidence included.</p></div>
+      <div class="card"><div class="card-number">04 · Speed</div><h3 class="mb-2">24h Quote Reply</h3><p style="color:var(--text-secondary);font-size:.9rem">Send us your specs and get a real quote within one business day.</p></div>
+      <div class="card"><div class="card-number">05 · Compliance</div><h3 class="mb-2">CE / FCC / REACH / FDA</h3><p style="color:var(--text-secondary);font-size:.9rem">We handle certification documentation so your products clear customs.</p></div>
+      <div class="card"><div class="card-number">06 · Reliability</div><h3 class="mb-2">DDP to 50+ Countries</h3><p style="color:var(--text-secondary);font-size:.9rem">Door-to-door delivery with customs clearance to EU, USA, LATAM, Middle East and more.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="section section-soft" id="products">
+  <div class="container">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <div>
+        <div class="eyebrow">Hot Selling Products</div>
+        <h2>Trending products sourced from verified factories</h2>
+      </div>
+      <a href="/all-products.html" class="btn btn-outline">View all products →</a>
+    </div>
+    <div class="grid grid-4">
+      {{ range first 8 (where .Site.RegularPages "Section" "products") }}
+      <a class="cat-card" href="{{ .RelPermalink }}">
+        {{ with .Params.image }}<img class="cat-card-img" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        <div class="cat-card-body">
+          <div class="cat-card-num">{{ .Params.sku }}</div>
+          <div class="cat-card-title">{{ .Title }}</div>
+          {{ with .Params.price }}<div style="color:var(--primary);font-weight:700;margin-top:.25rem">${{ . }}/unit</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING TRANSPARENCY ===== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">Pricing Transparency</div>
+      <h2>Our fees, published up front</h2>
+      <p style="color:var(--text-secondary);max-width:600px;margin:1rem auto">No hidden commission. No factory markup. You see exactly what you pay.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card text-center">
+        <div class="card-number">Small Orders</div>
+        <h3 style="font-size:2rem;color:var(--primary)">5%</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem">Service fee on orders under $5,000</p>
+      </div>
+      <div class="card text-center" style="border-color:var(--accent)">
+        <div class="card-number">Standard</div>
+        <h3 style="font-size:2rem;color:var(--primary)">3%</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem">Service fee on orders $5,000–$30,000</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-number">Volume</div>
+        <h3 style="font-size:2rem;color:var(--primary)">2%</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem">Service fee on orders over $30,000</p>
+      </div>
+    </div>
+    <p class="text-center mt-3" style="font-size:.85rem;color:var(--text-tertiary)">Product cost + shipping quoted at net. Fee charged only on product value.</p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section section-soft" id="process">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">How It Works</div>
+      <h2>Simple 4-step sourcing process</h2>
+    </div>
+    <div class="grid grid-4">
+      <div><div class="step-num">01</div><h3 class="mb-2">Send Inquiry</h3><p style="color:var(--text-secondary);font-size:.92rem">Share specs, photos and target MOQ. Get a free quote within 24 hours.</p></div>
+      <div><div class="step-num">02</div><h3 class="mb-2">Source & Sample</h3><p style="color:var(--text-secondary);font-size:.92rem">We shortlist factories, negotiate price and arrange samples for approval.</p></div>
+      <div><div class="step-num">03</div><h3 class="mb-2">QC & Production</h3><p style="color:var(--text-secondary);font-size:.92rem">On-site checks during and after production, plus AQL 2.5 inspection.</p></div>
+      <div><div class="step-num">04</div><h3 class="mb-2">Consolidate & Ship</h3><p style="color:var(--text-secondary);font-size:.92rem">We consolidate orders, clear customs and deliver DDP to your warehouse.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="container container-narrow">
+    <div class="text-center mb-4">
+      <div class="eyebrow mx-auto" style="justify-content:center">FAQ</div>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div>
+      <div class="step-item"><h3 class="step-title">What is your minimum order quantity?</h3><p class="step-desc">Our MOQ starts at 50 pieces for most products, and we accept sample orders from 1 piece. We are flexible for trial orders.</p></div>
+      <div class="step-item"><h3 class="step-title">How long does sourcing take?</h3><p class="step-desc">Quotes within 24 hours. Sample delivery 3–7 days. Production 15–30 days. International shipping 5–14 days.</p></div>
+      <div class="step-item"><h3 class="step-title">What payment methods do you accept?</h3><p class="step-desc">XTransfer, LianLian, Airwallex, T/T and PayPal. 50% deposit to start, 50% balance before shipment.</p></div>
+      <div class="step-item"><h3 class="step-title">Do you provide quality inspection?</h3><p class="step-desc">Yes. Every shipment undergoes AQL 2.5 pre-shipment inspection with photo and video evidence. Third-party inspection (SGS, Bureau Veritas) also available.</p></div>
+      <div class="step-item"><h3 class="step-title">Can you handle OEM and private label?</h3><p class="step-desc">Yes. We manage custom molds, tooling, sampling, revisions and compliance (CE, FCC, REACH, FDA) from prototype to mass production.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section-inverse" style="padding:clamp(3rem,7vw,5rem) 0;text-align:center">
+  <div class="container container-narrow">
+    <h2>Ready to source from China?</h2>
+    <p style="color:rgba(255,255,255,.7);font-size:1.1rem;margin:1rem 0 2rem">Get a free quote within 24 hours. No commitment required.</p>
+    <a href="/request-quote.html" class="btn btn-accent btn-lg">Get a Free Quote</a>
+  </div>
+</section>
+
+{{ end }}

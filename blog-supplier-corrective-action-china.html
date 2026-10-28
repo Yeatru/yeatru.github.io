@@ -1,911 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Supplier Corrective Action Request (SCAR) for Chinese Factories: Template &amp; Process</title>
- <meta name="description" content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%.">
- <meta name="keywords" content="supplier corrective action request, SCAR china supplier, CAPA china factory, supplier improvement china, china supplier quality improvement, supplier root cause analysis, factory CAPA template">
- <meta name="robots" content="index, follow">
- <meta name="theme-color" content="#1665a9">
- <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png">
- <link rel="canonical" href="https://www.yeatru.com/blog-supplier-corrective-action-china.html">
- <link rel="alternate" hreflang="en" href="https://www.yeatru.com/blog-supplier-corrective-action-china.html">
- <link rel="alternate" hreflang="x-default" href="https://www.yeatru.com/blog-supplier-corrective-action-china.html">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="styles.css?v=20261028d">
- <meta property="og:type" content="article">
- <meta property="og:url" content="https://www.yeatru.com/blog-supplier-corrective-action-china.html">
- <meta property="og:site_name" content="Yeatru Sourcing">
- <meta property="og:title" content="Supplier Corrective Action Request (SCAR) for Chinese Factories: Template &amp; Process">
- <meta property="og:description" content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%.">
- <meta property="og:image" content="https://www.yeatru.com/Images/blog/audit-factory-real.jpg">
- <meta property="og:locale" content="en_US">
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="Supplier Corrective Action Request (SCAR) for Chinese Factories: Template &amp; Process">
- <meta name="twitter:description" content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%.">
- <meta name="twitter:image" content="https://www.yeatru.com/Images/blog/audit-factory-real.jpg">
- <meta name="article:published_time" content="2026-10-16">
- <meta name="article:modified_time" content="2026-10-16">
- <meta name="article:author" content="Neil Liu">
- <meta name="article:section" content="Quality &amp; Inspection">
-
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": "https://www.yeatru.com/"
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Blog",
- "item": "https://www.yeatru.com/blog.html"
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process",
- "item": "https://www.yeatru.com/blog-supplier-corrective-action-china.html"
- }
- ]
-}
- </script>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Article",
- "headline": "Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process",
- "description": "How to run a Supplier Corrective Action Request (SCAR) and CAPA with a Chinese factory: the 8-step process, 5 Whys and fishbone root-cause analysis, the required-fields template, and a case study that cut a recurring defect from 4.2% to 0.6%.",
- "author": {
- "@type": "Person",
- "name": "Neil Liu",
- "jobTitle": "Founder & Managing Director",
- "url": "https://www.yeatru.com/about.html",
- "sameAs": ["https://www.linkedin.com/in/neil-liu-398983257"]
- },
- "publisher": {
- "@type": "Organization",
- "name": "Yeatru Sourcing",
- "url": "https://www.yeatru.com",
- "logo": {
- "@type": "ImageObject",
- "url": "https://www.yeatru.com/Images/logo.png", "width": 1024, "height": 1024
- }
- },
- "datePublished": "2026-10-02",
- "dateModified": "2026-10-02",
- "image": {
- "@type": "ImageObject",
- "url": "https://www.yeatru.com/Images/blog/blog-china-factory-audit.jpg",
- "width": 2560,
- "height": 1440
- },
- "mainEntityOfPage": {
- "@type": "WebPage",
- "@id": "https://www.yeatru.com/blog-supplier-corrective-action-china.html"
- },
- "articleSection": "Quality & Inspection",
- "keywords": "supplier corrective action request, SCAR china supplier, CAPA china factory, supplier improvement china, china supplier quality improvement, supplier root cause analysis, factory CAPA template",
- "inLanguage": "en-US"
-}
- </script>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "HowTo",
- "name": "How to Run a Supplier Corrective Action Request (SCAR) with a Chinese Factory",
- "description": "An eight-step SCAR/CAPA process for a Chinese factory, from problem statement and containment to root cause, corrective action, verification and closure.",
- "step": [
- {
- "@type": "HowToStep",
- "name": "Write a precise problem statement",
- "text": "State the defect, the part number, the batch, the quantity found, the detection point and the discovery date. 'Guide marks are 0.4 mm out of tolerance on 6 of 50 units of batch B-0912, found at PSI on 12 Oct' is a problem statement; 'quality is bad' is not."
- },
- {
- "@type": "HowToStep",
- "name": "Apply immediate containment",
- "text": "Stop the line or quarantine affected stock within 24 hours, segregate suspect batches, and issue a 100% sort or re-inspection for the units already packed. Containment protects the shipment while the real fix is worked out."
- },
- {
- "@type": "HowToStep",
- "name": "Find the root cause with 5 Whys or a fishbone",
- "text": "Drive past the first answer using 5 Whys (Why did it fail? Why was it made? Why was it not caught?) or a fishbone diagram across man, machine, material, method, measurement and environment. A root cause that names a person is not a root cause."
- },
- {
- "@type": "HowToStep",
- "name": "Define corrective and preventive actions",
- "text": "The corrective action fixes the specific batch; the preventive action changes the process so it cannot recur (a jig, an added inspection station, an updated work instruction, a supplier-material spec). Both need an owner and a due date."
- },
- {
- "@type": "HowToStep",
- "name": "Verify effectiveness, standardize and close",
- "text": "Run the next 3 batches at the new process and measure the defect rate against the target. If it holds, lock the change into the work instruction and control plan, update the supplier scorecard, and close the SCAR in writing with the evidence attached."
- }
- ],
- "headline": "Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process"
-}
- </script>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is a SCAR and how is it different from a one-off rework?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A Supplier Corrective Action Request (SCAR) is a formal, documented request that the factory find the root cause of a defect and change its process so it cannot recur. A one-off rework only fixes the units in front of you. Rework fixes this shipment; a SCAR fixes the factory. If the same defect appears in 2 or 3 batches, you need a SCAR, not another rework."
- }
- },
- {
- "@type": "Question",
- "name": "How fast should a Chinese factory respond to a SCAR?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A workable timeline is: acknowledgement within 24 hours, containment within 48 hours, root cause and action plan within 7 days, action completion within 30 days, and effectiveness verification over the next 3 batches (typically 30-60 days). Deadlines in the SCAR should be written into the purchase order terms: 'SCAR close-out within 30 days or the balance is withheld'."
- }
- },
- {
- "@type": "Question",
- "name": "What are the must-have fields in a SCAR template?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Eleven fields: SCAR number; issue date; supplier and contact; part/SKU and drawing revision; problem statement with defect quantity and detection point; immediate containment; root cause (5 Whys or fishbone); corrective action; preventive action; owner and due date per action; and verification method plus close-out sign-off. A SCAR missing the preventive action or the owner field will not stop the defect from returning."
- }
- },
- {
- "@type": "Question",
- "name": "How do I tell a real root cause from an evasive reply?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "A real root cause is systemic and testable; it points to a process, material spec, tool or measurement gap. Red flags of evasion: blaming the worker ('operator carelessness'), blaming the buyer ('your spec is unclear'), 'we will strengthen inspection' as the only action, no preventive action, no owner and no date, and no measurement to prove the fix works. If the reply cannot be verified by numbers, it is not a root cause."
- }
- },
- {
- "@type": "Question",
- "name": "Does a SCAR cost money to run?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "The documentation is free but the verification costs time. A typical verification inspection is $80-$300 per man-day for 3 batches, or roughly $240-$900 total. The payoff is large: cutting a recurring 4.2% defect rate to 0.6% on a $60,000 annual spend removes about $2,160 in defects plus returns, far more than the verification cost."
- }
- },
- {
- "@type": "Question",
- "name": "When should I escalate from SCAR to switching suppliers?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Escalate when a factory misses the SCAR deadlines twice, cannot provide a verifiable root cause, or the defect recurs after a closed SCAR. Give one written improvement plan with a 30-60 day window and a pilot PO; if the defect rate does not fall to target, move the volume to an approved backup supplier and down-tier the factory in your scorecard."
- }
- }
- ]
-}
- </script>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "BlogPosting",
- "mainEntityOfPage": {
- "@type": "WebPage",
- "@id": "https://www.yeatru.com/blog-supplier-corrective-action-china.html"
- },
- "headline": "Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process",
- "description": "How to run a SCAR/CAPA with a Chinese factory: the 8-step process, 5 Whys and fishbone root-cause analysis, the required-fields template, and a case study that cut a recurring defect from 4.2% to 0.6%.",
- "image": ["https://www.yeatru.com/Images/blog/blog-china-factory-audit.jpg"],
- "datePublished": "2026-10-02",
- "dateModified": "2026-10-02",
- "author": {
- "@type": "Person",
- "name": "Neil Liu",
- "jobTitle": "Founder & Managing Director",
- "url": "https://www.yeatru.com/about.html",
- "sameAs": ["https://www.linkedin.com/in/neil-liu-398983257"]
- },
- "publisher": {
- "@id": "https://www.yeatru.com/#organization"
- },
- "keywords": "supplier corrective action request, SCAR china supplier, CAPA china factory, supplier improvement china, china supplier quality improvement, supplier root cause analysis, factory CAPA template",
- "articleSection": "China Sourcing Blog",
- "inLanguage": "en"
-}
- </script>
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW2N4FHZR"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-KXW2N4FHZR');
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
- c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
- t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
- y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window,document,'clarity','script','xsam7gvp9o');
-</script>
-</head>
-<body>
-<nav class="navbar navbar-expand-xl bg-white sticky-top">
- <div class="container">
- <a class="navbar-brand" href="/">
- <span class="brand-logo-box"><img src="logo.png" alt="Yeatru Sourcing Logo" width="38" height="38"></span>
- </a>
- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
- <span class="navbar-toggler-icon"></span>
- </button>
- <div class="collapse navbar-collapse" id="navbarNav">
- <ul class="navbar-nav mx-auto">
- <li class="nav-item"><a class="nav-link" href="/" data-i18n="nav.home">Home</a></li>
- <li class="nav-item dropdown">
- <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.products">Products</a>
- <ul class="dropdown-menu">
- <li><a class="dropdown-item" href="all-products.html" data-i18n="nav.browseAll"><i class="fas fa-th me-2 text-muted"></i>Browse All Products</a></li>
- <li><hr class="dropdown-divider"></li>
- <li><h6 class="dropdown-header" data-i18n="nav.shopByCategory">Shop by Category</h6></li>
- <li><a class="dropdown-item" href="all-products.html?category=Apparel" data-i18n="nav.catApparel"><i class="fas fa-shirt me-2 text-muted"></i>Apparel &amp;
-Textile</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Beauty" data-i18n="nav.catBeauty"><i class="fas fa-spa me-2 text-muted"></i>Beauty &amp;
-Personal Care</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Electronics" data-i18n="nav.catElectronics"><i class="fas fa-mobile-screen me-2 text-muted"></i>Electronics &amp;
-Mobile</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Kitchenware" data-i18n="nav.catKitchen"><i class="fas fa-utensils me-2 text-muted"></i>Kitchenware</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Home+%26+Garden" data-i18n="nav.catHomeGarden"><i class="fas fa-house me-2 text-muted"></i>Home &amp;
-Garden</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Toys" data-i18n="nav.catToys"><i class="fas fa-gamepad me-2 text-muted"></i>Toys &amp;
-Hobbies</a></li>
- <li><a class="dropdown-item" href="all-products.html?category=Storage" data-i18n="nav.catStorage"><i class="fas fa-box me-2 text-muted"></i>Storage &amp;
-Organization</a></li>
- <li><hr class="dropdown-divider"></li>
- <li><h6 class="dropdown-header" data-i18n="nav.quickSearches">Quick Searches</h6></li>
- <li><a class="dropdown-item" href="products.html?q=wireless+earbuds" data-i18n="nav.qEarbuds"><i class="fas fa-headphones me-2 text-muted"></i>Wireless Earbuds</a></li>
- <li><a class="dropdown-item" href="products.html?q=silicone+kitchen" data-i18n="nav.qSilicone"><i class="fas fa-blender me-2 text-muted"></i>Silicone Kitchenware</a></li>
- <li><a class="dropdown-item" href="products.html?q=pet" data-i18n="nav.qPet"><i class="fas fa-paw me-2 text-muted"></i>Pet Supplies</a></li>
- <li><a class="dropdown-item" href="products.html?q=salon+equipment" data-i18n="nav.qSalon"><i class="fas fa-scissors me-2 text-muted"></i>Salon Equipment</a></li>
- <li><a class="dropdown-item" href="products.html?q=hair+accessories" data-i18n="nav.qHair"><i class="fas fa-ribbon me-2 text-muted"></i>Hair Accessories</a></li>
- <li><hr class="dropdown-divider"></li>
- <li><a class="dropdown-item" href="all-products.html" data-i18n="nav.fullCatalog"><i class="fas fa-list me-2 text-muted"></i>Full Catalog (675 SKUs)</a></li>
- </ul>
- </li>
- <li class="nav-item dropdown">
- <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="servicesDropdown" role="button" data-bs-toggle="dropdown" data-i18n="nav.services">Sourcing Service</a>
- <ul class="dropdown-menu">
- <li><a class="dropdown-item" href="blog-free-quotation-china-sourcing.html" style="color:var(--accent-teal)!important;font-weight:600!important;" data-i18n="nav.freeQuotation"><i class="fas fa-file-invoice-dollar me-2 text-muted"></i>Free Quotation Service</a></li>
- <li><a class="dropdown-item" href="supplier-verification.html" data-i18n="services.supplierVerification"><i class="fas fa-search me-2 text-muted"></i>Supplier Verification</a></li>
- <li><a class="dropdown-item" href="product-sourcing.html" data-i18n="services.productSourcing"><i class="fas fa-boxes me-2 text-muted"></i>Product Sourcing</a></li>
- <li><a class="dropdown-item" href="quality-control.html" data-i18n="services.qualityControl"><i class="fas fa-clipboard-check me-2 text-muted"></i>Quality Control</a></li>
- <li><a class="dropdown-item" href="logistics-shipping.html" data-i18n="services.logistics"><i class="fas fa-truck me-2 text-muted"></i>Logistics & Warehousing</a></li>
- <li><a class="dropdown-item" href="price-negotiation.html" data-i18n="services.priceNegotiation"><i class="fas fa-handshake me-2 text-muted"></i>Price Negotiation</a></li>
- <li><a class="dropdown-item" href="factory-audit.html" data-i18n="nav.factoryAudit"><i class="fas fa-industry me-2 text-muted"></i>Factory Audit</a></li>
- <li><hr class="dropdown-divider"></li>
- <li><a class="dropdown-item" href="oem.html" data-i18n="nav.oem"><i class="fas fa-cogs me-2 text-muted"></i>OEM Customization</a></li>
- <li><a class="dropdown-item" href="wholesale-bulk-supplier-china.html" style="color:var(--c-brand-600);font-weight:600;" data-i18n="nav.wholesaleBulk"><i class="fas fa-pallet me-2 text-muted"></i>Wholesale &amp;
-Bulk Import</a></li>
- <li><a class="dropdown-item" href="sample-order.html" data-i18n="nav.sampleOrder"><i class="fas fa-box-open me-2 text-muted"></i>Sample Order</a></li>
- <li><a class="dropdown-item" href="small-batch-sourcing-china.html" style="color:var(--accent-teal)!important;font-weight:600!important;" data-i18n="nav.smallBatch"><i class="fas fa-seedling me-2 text-muted"></i>Small-Batch &amp; New Brands</a></li>
-
- <li><a class="dropdown-item" href="service-plans.html" data-i18n="nav.servicePlans"><i class="fas fa-layer-group me-2 text-muted"></i>Service Plans</a></li>
- </ul>
- </li>
- <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.aboutUs">About Us</a></li>
- <li class="nav-item"><a class="nav-link" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
- <li class="nav-item"><a class="nav-link active" href="blog.html" data-i18n="nav.blog">Blog</a></li>
- <li class="nav-item dropdown">
- <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" data-i18n="nav.resources">Resources</a>
- <ul class="dropdown-menu">
- <li><a class="dropdown-item" href="payment.html" data-i18n="nav.payment"><i class="fas fa-credit-card me-2 text-muted"></i>Payment Methods</a></li>
- <li><a class="dropdown-item" href="refund.html" data-i18n="nav.refundPolicy"><i class="fas fa-rotate-left me-2 text-muted"></i>Refund &amp;
-Cancellation Policy</a></li>
- <li><a class="dropdown-item" href="terms.html" data-i18n="nav.termsService"><i class="fas fa-scale-balanced me-2 text-muted"></i>Terms of Service</a></li> <li><hr class="dropdown-divider"></li>
- <li><h6 class="dropdown-header text-primary" data-i18n="nav.sourcingByCountry">Sourcing by Country / Platform</h6></li>
- <li><a class="dropdown-item" href="sourcing-for-amazon-fba-usa.html" data-i18n="nav.regionUsaFba">🇺🇸 Amazon FBA (USA)</a></li>
- <li><a class="dropdown-item" href="yiwu-sourcing-agent-uk.html" data-i18n="nav.regionUk">🇬🇧 United Kingdom</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-germany.html" data-i18n="nav.regionGermany">🇩🇪 Germany / DACH</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-france.html" data-i18n="nav.regionFrance">🇫🇷 France</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-spain.html" data-i18n="nav.regionSpain">🇪🇸 Spain</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-slovenia.html">🇸🇮 Slovenia</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-belgium.html">🇧🇪 Belgium</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-norway.html">🇳🇴 Norway</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-australia.html">🇦🇺 Australia</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-slovakia.html">🇸🇰 Slovakia</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-switzerland.html">🇨🇭 Switzerland</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-ghana.html">🇬🇭 Ghana</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-brazil.html">🇧🇷 Brazil</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-kuwait.html">🇰🇼 Kuwait</a></li>
- <li><a class="dropdown-item" href="china-sourcing-agent-europe.html" data-i18n="nav.regionEurope">🇪🇺 Whole of Europe</a></li>
- <li><a class="dropdown-item" href="china-sourcing-turkiye.html" data-i18n="nav.regionTurkiye">🇹🇷 Türkiye</a></li>
- <li><a class="dropdown-item" href="sourcing-agent-middle-east-uae-saudi.html" data-i18n="nav.regionGcc">🇦🇪🇸🇦 UAE / Saudi (GCC)</a></li>
- <li><a class="dropdown-item" href="sourcing-agent-for-tiktok-shop-seller.html" data-i18n="nav.regionTiktok">🎵 TikTok Shop (Global)</a></li>
- <li><hr class="dropdown-divider"></li>
-<li><a class="dropdown-item" href="testimonials.html" data-i18n="nav.clientTestimonials">Client Testimonials</a></li>
- <li><hr class="dropdown-divider"></li>
- </ul>
- </li>
- <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contactUs">Contact</a></li>
- </ul>
- <div class="d-flex align-items-center gap-1 gap-xl-2 flex-nowrap" style="min-width:0;">
- <!-- Global Search -->
- <div class="nav-search-wrapper">
- <button class="btn nav-search-btn" type="button" id="navSearchToggle" aria-label="Toggle search">
- <i class="fas fa-search"></i>
- </button>
- <div class="nav-search-dropdown" id="navSearchDropdown">
- <form class="nav-search-form" id="navSearchForm">
- <input type="text" class="nav-search-input" id="navSearchInput" placeholder="Search products services guides..." aria-label="Search products services guides" autocomplete="off">
- <button type="submit" class="btn nav-search-submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
- </form>
- <div class="nav-search-results" id="navSearchResults"></div>
- </div>
- </div>
- <!-- Currency Selector -->
- <div class="dropdown currency-selector">
- <button class="btn currency-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select currency">
- <span id="current-currency">USD</span>
- </button>
- <ul class="dropdown-menu dropdown-menu-end">
- <li><a class="dropdown-item" href="#" data-currency="USD">USD $</a></li>
- <li><a class="dropdown-item" href="#" data-currency="EUR">EUR €</a></li>
- <li><a class="dropdown-item" href="#" data-currency="GBP">GBP £</a></li>
- <li><a class="dropdown-item" href="#" data-currency="RUB">RUB ₽</a></li>
- <li><a class="dropdown-item" href="#" data-currency="CNY">CNY ¥</a></li>
- <li><a class="dropdown-item" href="#" data-currency="AED">AED د.إ</a></li>
- <li><a class="dropdown-item" href="#" data-currency="SAR">SAR ر.س</a></li>
- <li><a class="dropdown-item" href="#" data-currency="EGP">EGP ج.م</a></li>
- </ul>
- </div>
- <!-- Language Selector -->
- <div class="dropdown lang-selector">
- <button class="btn lang-dropdown-btn dropdown-toggle" aria-label="Select language" type="button" data-bs-toggle="dropdown" aria-expanded="false">
- <i class="fas fa-globe" aria-hidden="true"></i> <span id="current-lang">EN</span>
- </button>
- <ul class="dropdown-menu dropdown-menu-end">
- <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
- <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
- <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
- <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
- <li><a class="dropdown-item" href="#" data-lang="ar">العربية</a></li>
- </ul>
- </div>
- <a href="request-quote.html" class="btn btn-cta btn-nav-cta quote-product d-inline-flex text-nowrap" data-i18n="common.getQuote">
- <i class="fas fa-comment-dots me-1"></i>Get Quote
- </a>
- <button id="authBtn" class="btn admin-nav-btn d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
- <i class="fas fa-user-shield" aria-hidden="true"></i>
- </button>
- </div>
- </div>
- </div>
- </nav>
-
- <section class="page-header py-5">
- <div class="container text-center">
- <span class="section-eyebrow">QUALITY &amp; INSPECTION</span>
- <div class="section-divider mx-auto"></div>
- <h1 class="section-title">Supplier Corrective Action Request (SCAR) for Chinese Factories: Template &amp; Process</h1>
- <p class="section-subtitle">The 8-step SCAR/CAPA process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a 4.2% → 0.6% case study.</p>
- </div>
- </section>
-
- <section class="article-body-section py-5">
- <div class="container">
- <div class="row justify-content-center">
- <div class="col-lg-8">
- <article class="article-content">
-<div class="article-featured-image">
-<img loading="lazy" src="/Images/blog/blog-china-factory-audit.jpg" alt="Quality engineer and Chinese factory staff reviewing a supplier corrective action request and fishbone root-cause diagram on a production line" class="img-fluid rounded" width="2560" height="1440">
-</div>
-
-<aside class="article-takeaways">
-<h2>Key Takeaways</h2>
-<ul>
- <li>A <strong>SCAR (Supplier Corrective Action Request)</strong> fixes the factory;
-a rework only fixes one shipment.
-If the same defect hits <strong>2–3 batches</strong>, stop reworking and open a SCAR.</li>
- <li>The <strong>8-step process</strong> runs problem statement → containment → root cause (5 Whys / fishbone) → corrective action → verification → standardization → closure → tracking.</li>
- <li>A root cause that names a person ("operator careless") is <strong>not a root cause</strong>;
-real ones point to a process, tool, material or measurement gap — see <a href="blog-defect-classification-qc.html">defect classification</a> for framing the defect.</li>
- <li>Field the template with <strong>11 required fields</strong>, including a preventive action, an owner and a due date per action, and a verification method.</li>
- <li>A working SCAR cut one factory's recurring defect from <strong>4.2% to 0.6%</strong> across 3 verified batches, and it feeds directly into <a href="blog-supplier-evaluation-scorecard-china.html">supplier tiering</a>.</li>
-</ul>
-</aside>
-
-<div class="geo-definition">
- <h2>What Is a Supplier Corrective Action Request (SCAR)?</h2>
- <p>A <strong>Supplier Corrective Action Request (SCAR)</strong> is a formal, documented request that a supplier investigate the root cause of a defect and change its process so the defect cannot recur.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process | Yeatru Sourcing</title>
+<meta name=description content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%."><meta name=robots content="index, follow, max-snippet:-1, max-image-preview:large"><link rel=canonical href=https://www.yeatru.com/blog-supplier-corrective-action-china.html><meta name=keywords content="[supplier corrective action request,SCAR china supplier,CAPA china factory,supplier improvement china,china supplier quality improvement,supplier root cause analysis,factory CAPA template]"><meta property="og:title" content="Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process"><meta property="og:description" content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%."><meta property="og:type" content="article"><meta property="og:url" content="https://www.yeatru.com/blog-supplier-corrective-action-china.html"><meta property="og:site_name" content="Yeatru Sourcing"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process"><meta name=twitter:description content="Run a SCAR/CAPA with a Chinese factory: 8-step process, 5 Whys and fishbone root-cause analysis, a required-fields template, and a case study cutting defects from 4.2% to 0.6%."><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css><link rel=stylesheet href=/css/bundle.min.83843da28fcb29c760644a65dd98f829a3695cc88ff166967fd53c3dfa9adde2.css integrity="sha256-g4Q9oo/LKcdgZEpl3Zj4KaNpXMiP8WaWf9U8Pfqa3eI="><link rel=alternate type=application/rss+xml title="Yeatru Sourcing — China Sourcing Agent for Small Orders" href=https://www.yeatru.com/index.xml><link rel=icon type=image/png href=/logo.png><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"\"Supplier Corrective Action Request (SCAR) for Chinese Factories: Template \\u0026 Process\"","datePublished":"\"2026-10-02\"","dateModified":"\"2026-10-02\"","author":{"@type":"Organization","name":"\"Yeatru Sourcing\""},"publisher":{"@type":"Organization","name":"\"Yeatru Sourcing\""},"mainEntityOfPage":{"@type":"WebPage","@id":"\"https://www.yeatru.com/blog-supplier-corrective-action-china.html\""}}</script></head><body><header class=site-header><div class="container nav"><a href=/ class=nav-brand><img src=/logo.png alt="Yeatru Sourcing">
+<span>Yeatru Sourcing</span></a><nav><ul class=nav-menu><li><a href=/>Home</a></li><li><a href=/all-products.html>Products</a></li><li><a href=/categories.html>Categories</a></li><li><a href=/product-sourcing.html>Services</a></li><li><a href=/process.html>Process</a></li><li><a href=/about.html>About</a></li><li><a href=/blog/>Blog</a></li><li class=nav-cta><a href=/request-quote.html class="btn btn-primary">Get a Quote</a></li></ul></nav></div></header><main><article class=section><div class="container container-narrow"><h1 class=mb-3>Supplier Corrective Action Request (SCAR) for Chinese Factories: Template & Process</h1><p style=color:var(--text-tertiary);font-size:.88rem;margin-bottom:2rem>October 2, 2026</p><div class=prose><p><img src=/Images/blog/blog-china-factory-audit.jpg alt="Quality engineer and Chinese factory staff reviewing a supplier corrective action request and fishbone root-cause diagram on a production line"></p><h2 id=what-is-a-supplier-corrective-action-request-scar>What Is a Supplier Corrective Action Request (SCAR)?</h2><p>A <strong>Supplier Corrective Action Request (SCAR)</strong> is a formal, documented request that a supplier investigate the root cause of a defect and change its process so the defect cannot recur.
 It sits inside the wider <strong>CAPA</strong> system (Corrective and Preventive Action): the corrective action fixes the specific batch, and the preventive action changes the process permanently.
-A SCAR is triggered when a defect is critical, when a defect rate breaches your <strong>AQL 2.5 major</strong> standard, or when the same defect reappears across batches — precisely when a one-off rework has already proven insufficient.</p>
-</div>
-
-<h2>SCAR vs CAPA vs One-Off Rework</h2>
-<p>Buyers confuse three different tools.
-They are not interchangeable, and using the wrong one is why the same defect keeps coming back.</p>
-<div class="table-responsive"><table class="geo-comparison-table">
- <thead><tr>
-<th>Tool</th>
-<th>Scope</th>
-<th>Output</th>
-<th>Use When</th>
-</tr></thead>
- <tbody>
- <tr>
-<td><strong>One-off rework</strong></td>
-<td>This batch only</td>
-<td>Fixed units, same process</td>
-<td>A single, isolated defect that will not recur</td>
-</tr>
- <tr>
-<td><strong>CAPA (system)</strong></td>
-<td>Supplier quality system</td>
-<td>Documented corrective + preventive process</td>
-<td>Ongoing quality management with a supplier you keep</td>
-</tr>
- <tr>
-<td><strong>SCAR (document)</strong></td>
-<td>A single, specific defect event</td>
-<td>Root cause + actions + verification + close-out</td>
-<td>Critical defect, AQL breach, or a defect recurring 2–3 times</td>
-</tr>
- </tbody>
-</table></div>
-<p>Put simply: <strong>rework fixes the shipment, a SCAR fixes the factory</strong>. A CAPA is the framework; a SCAR is the document you file inside it for each serious event.</p>
-
-<h2>The 8-Step SCAR Process</h2>
-<ol>
- <li><strong>Problem description.</strong> State the defect, part/SKU and drawing revision, the batch, the quantity found, the detection point and the date. "Guide marks 0.4 mm out of tolerance on 6 of 50 units, batch B-0912, found at PSI on 12 Oct" is a problem statement;
-"quality is poor" is not.</li>
- <li><strong>Immediate containment.</strong> Stop the line or quarantine stock within <strong>24–48 hours</strong>, segregate suspect batches, and run a 100% sort or re-inspection on already-packed units.
-Containment protects this shipment while the real fix is developed.</li>
- <li><strong>Root cause analysis.</strong> Use <strong>5 Whys</strong> or a <strong>fishbone (Ishikawa)</strong> diagram across man, machine, material, method, measurement and environment.
-The factory, not the buyer, must own this analysis — see the section below.</li>
- <li><strong>Corrective action.</strong> The action that fixes the root cause for the specific batch: a tooling adjustment, a material spec change, a re-trained station.
-Needs an owner and a due date.</li>
- <li><strong>Preventive action.</strong> The action that stops recurrence across all future batches: a jig, an added in-line inspection point, an updated work instruction or control plan.
-Without this field a SCAR fails.</li>
- <li><strong>Verification.</strong> Run the next <strong>3 batches</strong> at the new process and measure the defect rate against the target (for example clear the AQL 2.5 major limit by a wide margin).</li>
- <li><strong>Standardization.</strong> Lock the change into the work instruction, control plan and golden sample;
-update the supplier scorecard to reflect the improvement.</li>
- <li><strong>Closure and tracking.</strong> Close the SCAR in writing with the verification evidence attached, and track the defect trend for at least one more quarter to confirm it holds.</li>
-</ol>
-
-<h2>Root Cause Analysis: 5 Whys and the Fishbone</h2>
-<p>The root cause section is where most Chinese factories fail.
-A weak reply stops at the first plausible answer — usually "operator error".
+A SCAR is triggered when a defect is critical, when a defect rate breaches your <strong>AQL 2.5 major</strong> standard, or when the same defect reappears across batches — precisely when a one-off rework has already proven insufficient.</p><h2 id=scar-vs-capa-vs-one-off-rework>SCAR vs CAPA vs One-Off Rework</h2><p>Buyers confuse three different tools.
+They are not interchangeable, and using the wrong one is why the same defect keeps coming back.</p><p>|
+| Tool |
+| Scope |
+| Output |
+| Use When |</p><p>| <strong>One-off rework</strong> |
+| This batch only |
+| Fixed units, same process |
+| A single, isolated defect that will not recur |</p><p>| <strong>CAPA (system)</strong> |
+| Supplier quality system |
+| Documented corrective + preventive process |
+| Ongoing quality management with a supplier you keep |</p><p>| <strong>SCAR (document)</strong> |
+| A single, specific defect event |
+| Root cause + actions + verification + close-out |
+| Critical defect, AQL breach, or a defect recurring 2–3 times |</p><p>Put simply: <strong>rework fixes the shipment, a SCAR fixes the factory</strong>. A CAPA is the framework; a SCAR is the document you file inside it for each serious event.</p><h2 id=the-8-step-scar-process>The 8-Step SCAR Process</h2><ul><li><strong>Problem description.</strong> State the defect, part/SKU and drawing revision, the batch, the quantity found, the detection point and the date. &ldquo;Guide marks 0.4 mm out of tolerance on 6 of 50 units, batch B-0912, found at PSI on 12 Oct&rdquo; is a problem statement;
+&ldquo;quality is poor&rdquo; is not.</li><li><strong>Immediate containment.</strong> Stop the line or quarantine stock within <strong>24–48 hours</strong>, segregate suspect batches, and run a 100% sort or re-inspection on already-packed units.
+Containment protects this shipment while the real fix is developed.</li><li><strong>Root cause analysis.</strong> Use <strong>5 Whys</strong> or a <strong>fishbone (Ishikawa)</strong> diagram across man, machine, material, method, measurement and environment.
+The factory, not the buyer, must own this analysis — see the section below.</li><li><strong>Corrective action.</strong> The action that fixes the root cause for the specific batch: a tooling adjustment, a material spec change, a re-trained station.
+Needs an owner and a due date.</li><li><strong>Preventive action.</strong> The action that stops recurrence across all future batches: a jig, an added in-line inspection point, an updated work instruction or control plan.
+Without this field a SCAR fails.</li><li><strong>Verification.</strong> Run the next <strong>3 batches</strong> at the new process and measure the defect rate against the target (for example clear the AQL 2.5 major limit by a wide margin).</li><li><strong>Standardization.</strong> Lock the change into the work instruction, control plan and golden sample;
+update the supplier scorecard to reflect the improvement.</li><li><strong>Closure and tracking.</strong> Close the SCAR in writing with the verification evidence attached, and track the defect trend for at least one more quarter to confirm it holds.</li></ul><h2 id=root-cause-analysis-5-whys-and-the-fishbone>Root Cause Analysis: 5 Whys and the Fishbone</h2><p>The root cause section is where most Chinese factories fail.
+A weak reply stops at the first plausible answer — usually &ldquo;operator error&rdquo;.
 Push the analysis until it lands on something the factory can change structurally.
-A worked 5 Whys for the guide-mark defect:</p>
-<ul>
- <li><strong>Why did the guide marks land out of tolerance?</strong> The print plate shifted during the run.</li>
- <li><strong>Why did the plate shift?</strong> The plate-lock bolt was not torqued.</li>
- <li><strong>Why was it not torqued?</strong> The torque wrench at the station was out of calibration.</li>
- <li><strong>Why was the wrench out of calibration?</strong> There is no calibration schedule for station tools.</li>
- <li><strong>Why is there no calibration schedule?</strong> The control plan never listed a calibration interval for this station.
-<em>→ Root cause: a missing control-plan requirement, not a careless worker.</em></li>
-</ul>
-<p>The matching fishbone covers six branches — <strong>man, machine, material, method, measurement, environment</strong>. Add the calibration interval to the control plan (preventive action), re-torque and re-verify the affected plate (corrective action), and verify across 3 batches.</p>
-
-<h2>The SCAR Template: Required Fields</h2>
-<p>Use this 11-field template so every SCAR is complete and auditable.
-A SCAR missing the preventive action or the owner will not stop recurrence.</p>
-<div class="table-responsive"><table class="geo-comparison-table">
- <thead><tr>
-<th>#</th>
-<th>Field</th>
-<th>What to Capture</th>
-</tr></thead>
- <tbody>
- <tr>
-<td>1</td>
-<td><strong>SCAR number &amp; date</strong></td>
-<td>Unique ID, issue date, revision</td>
-</tr>
- <tr>
-<td>2</td>
-<td><strong>Supplier &amp; contact</strong></td>
-<td>Factory name, buyer PO, named quality contact</td>
-</tr>
- <tr>
-<td>3</td>
-<td><strong>Part / SKU &amp; drawing rev</strong></td>
-<td>Product, drawing revision, golden-sample ID</td>
-</tr>
- <tr>
-<td>4</td>
-<td><strong>Problem statement</strong></td>
-<td>Defect, quantity, batch, detection point, date</td>
-</tr>
- <tr>
-<td>5</td>
-<td><strong>Immediate containment</strong></td>
-<td>Sort/quarantine action, units affected, date</td>
-</tr>
- <tr>
-<td>6</td>
-<td><strong>Root cause</strong></td>
-<td>5 Whys or fishbone result, systemic not personal</td>
-</tr>
- <tr>
-<td>7</td>
-<td><strong>Corrective action</strong></td>
-<td>Fix for the specific batch, owner, due date</td>
-</tr>
- <tr>
-<td>8</td>
-<td><strong>Preventive action</strong></td>
-<td>Process change to stop recurrence, owner, due date</td>
-</tr>
- <tr>
-<td>9</td>
-<td><strong>Verification method</strong></td>
-<td>3-batch check, measurement, target defect rate</td>
-</tr>
- <tr>
-<td>10</td>
-<td><strong>Effectiveness result</strong></td>
-<td>Measured defect rate per batch after the fix</td>
-</tr>
- <tr>
-<td>11</td>
-<td><strong>Close-out sign-off</strong></td>
-<td>Buyer + supplier signatures, date, evidence attached</td>
-</tr>
- </tbody>
-</table></div>
-
-<h2>The 6 Signs of a "Wrong Problem" or a Deflecting Reply</h2>
-<p>You will know a SCAR response is hollow before you finish reading it.
-Screen for these six:</p>
-<ol>
- <li><strong>Blaming the worker.</strong> "Operator carelessness" is an outcome, not a root cause.</li>
- <li><strong>Blaming the buyer.</strong> "Your spec is unclear" when the drawing was signed and sampled.</li>
- <li><strong>"We will strengthen inspection" as the only action.</strong> Inspecting harder does not fix a process that produces defects.</li>
- <li><strong>No preventive action.</strong> A corrective action alone means the defect returns on the next run.</li>
- <li><strong>No owner and no date.</strong> A vague "will improve quality soon" cannot be verified or enforced.</li>
- <li><strong>No measurement.</strong> No defect rate, no batch data, no test — nothing you can check against the target.</li>
-</ol>
-<p>If any two of these appear, return the SCAR unclosed and require a re-submission within 7 days, with the balance held until it passes.</p>
-
-<h2>Case Study: 4.2% → 0.6% Across 3 Batches</h2>
-<p>A European brand sourced <strong>18,000 silicone hose clamps per year</strong> at <strong>$3.20/unit (≈$57,600 annual spend), MOQ 3,000</strong> from a Ningbo factory.
+A worked 5 Whys for the guide-mark defect:</p><ul><li><strong>Why did the guide marks land out of tolerance?</strong> The print plate shifted during the run.</li><li><strong>Why did the plate shift?</strong> The plate-lock bolt was not torqued.</li><li><strong>Why was it not torqued?</strong> The torque wrench at the station was out of calibration.</li><li><strong>Why was the wrench out of calibration?</strong> There is no calibration schedule for station tools.</li><li><strong>Why is there no calibration schedule?</strong> The control plan never listed a calibration interval for this station.
+<em>→ Root cause: a missing control-plan requirement, not a careless worker.</em></li></ul><p>The matching fishbone covers six branches — <strong>man, machine, material, method, measurement, environment</strong>. Add the calibration interval to the control plan (preventive action), re-torque and re-verify the affected plate (corrective action), and verify across 3 batches.</p><h2 id=the-scar-template-required-fields>The SCAR Template: Required Fields</h2><p>Use this 11-field template so every SCAR is complete and auditable.
+A SCAR missing the preventive action or the owner will not stop recurrence.</p><p>|
+| # |
+| Field |
+| What to Capture |</p><p>| 1 |
+| <strong>SCAR number & date</strong> |
+| Unique ID, issue date, revision |</p><p>| 2 |
+| <strong>Supplier & contact</strong> |
+| Factory name, buyer PO, named quality contact |</p><p>| 3 |
+| <strong>Part / SKU & drawing rev</strong> |
+| Product, drawing revision, golden-sample ID |</p><p>| 4 |
+| <strong>Problem statement</strong> |
+| Defect, quantity, batch, detection point, date |</p><p>| 5 |
+| <strong>Immediate containment</strong> |
+| Sort/quarantine action, units affected, date |</p><p>| 6 |
+| <strong>Root cause</strong> |
+| 5 Whys or fishbone result, systemic not personal |</p><p>| 7 |
+| <strong>Corrective action</strong> |
+| Fix for the specific batch, owner, due date |</p><p>| 8 |
+| <strong>Preventive action</strong> |
+| Process change to stop recurrence, owner, due date |</p><p>| 9 |
+| <strong>Verification method</strong> |
+| 3-batch check, measurement, target defect rate |</p><p>| 10 |
+| <strong>Effectiveness result</strong> |
+| Measured defect rate per batch after the fix |</p><p>| 11 |
+| <strong>Close-out sign-off</strong> |
+| Buyer + supplier signatures, date, evidence attached |</p><h2 id=the-6-signs-of-a-wrong-problem-or-a-deflecting-reply>The 6 Signs of a &ldquo;Wrong Problem&rdquo; or a Deflecting Reply</h2><p>You will know a SCAR response is hollow before you finish reading it.
+Screen for these six:</p><ul><li><strong>Blaming the worker.</strong> &ldquo;Operator carelessness&rdquo; is an outcome, not a root cause.</li><li><strong>Blaming the buyer.</strong> &ldquo;Your spec is unclear&rdquo; when the drawing was signed and sampled.</li><li><strong>&ldquo;We will strengthen inspection&rdquo; as the only action.</strong> Inspecting harder does not fix a process that produces defects.</li><li><strong>No preventive action.</strong> A corrective action alone means the defect returns on the next run.</li><li><strong>No owner and no date.</strong> A vague &ldquo;will improve quality soon&rdquo; cannot be verified or enforced.</li><li><strong>No measurement.</strong> No defect rate, no batch data, no test — nothing you can check against the target.</li></ul><p>If any two of these appear, return the SCAR unclosed and require a re-submission within 7 days, with the balance held until it passes.</p><h2 id=case-study-42--06-across-3-batches>Case Study: 4.2% → 0.6% Across 3 Batches</h2><p>A European brand sourced <strong>18,000 silicone hose clamps per year</strong> at <strong>$3.20/unit (≈$57,600 annual spend), MOQ 3,000</strong> from a Ningbo factory.
 For three consecutive batches the same defect appeared: a cracked plastic lever at a <strong>4.2% rate</strong> — breaching the AQL 2.5 major limit every time and generating returns.
-Each batch had been "reworked" and each batch failed again.
-We opened a SCAR.</p>
-<div class="table-responsive"><table class="geo-comparison-table">
- <thead><tr>
-<th>SCAR Stage</th>
-<th>Action Taken</th>
-<th>Timeline</th>
-<th>Result</th>
-</tr></thead>
- <tbody>
- <tr>
-<td>Problem &amp; containment</td>
-<td>100% sort of 3,000 units; line stopped</td>
-<td>Day 1–2</td>
-<td>Defective batch isolated</td>
-</tr>
- <tr>
-<td>Root cause (5 Whys)</td>
-<td>Reached a missing gate-cooling time in the control plan</td>
-<td>Day 7</td>
-<td>Systemic cause identified</td>
-</tr>
- <tr>
-<td>Corrective + preventive</td>
-<td>Added cooling time + mold-temperature check to control plan</td>
-<td>Day 14–21</td>
-<td>Process changed, tooling verified</td>
-</tr>
- <tr>
-<td>Verification</td>
-<td>Ran 3 batches, AQL 2.5 major sampling each</td>
-<td>Day 30–60</td>
-<td>Defect 4.2% → 0.6%</td>
-</tr>
- <tr>
-<td>Standardization &amp; closure</td>
-<td>Work instruction and scorecard updated, SCAR signed</td>
-<td>Day 60</td>
-<td>Trend held for 2 quarters</td>
-</tr>
- </tbody>
-</table></div>
-<p>The defect rate fell from <strong>4.2% to 0.6%</strong> — a <strong>3.6-point</strong> improvement on a $57,600 annual spend, removing roughly <strong>$2,076/year in defects</strong> plus returns and rework labour.
-Verification cost <strong>$240 (3 batches × ~$80/man-day)</strong>, so the SCAR paid for itself almost <strong>9×</strong> in the first year, and it moved the factory up a tier in the supplier scorecard.</p>
-
-<h2>One-Off Rework vs Systematic CAPA</h2>
-<div class="table-responsive"><table class="geo-comparison-table">
- <thead><tr>
-<th>Dimension</th>
-<th>One-Off Rework</th>
-<th>Systematic CAPA / SCAR</th>
-</tr></thead>
- <tbody>
- <tr>
-<td><strong>Fixes</strong></td>
-<td>One batch</td>
-<td>The process, permanently</td>
-</tr>
- <tr>
-<td><strong>Root cause</strong></td>
-<td>Not investigated</td>
-<td>5 Whys / fishbone documented</td>
-</tr>
- <tr>
-<td><strong>Recurrence</strong></td>
-<td>Likely — same defect returns</td>
-<td>Prevented by preventive action</td>
-</tr>
- <tr>
-<td><strong>Cost</strong></td>
-<td>Labour per batch, every batch</td>
-<td>One-time verification ($80–$300/man-day)</td>
-</tr>
- <tr>
-<td><strong>Evidence</strong></td>
-<td>None retained</td>
-<td>Auditable SCAR record</td>
-</tr>
- <tr>
-<td><strong>Supplier score</strong></td>
-<td>Unchanged</td>
-<td>Tier and rating updated</td>
-</tr>
- </tbody>
-</table></div>
-
-<h2>Linking SCAR to Supplier Tiering &amp; SRM</h2>
-<p>A closed SCAR is not just a quality record — it is supplier-relationship-management data.
-Add an "open SCARs" and "SCAR close-out time" column to your <a href="blog-supplier-evaluation-scorecard-china.html">supplier scorecard</a>. A factory that closes SCARs on time and demonstrably lowers its defect rate earns volume and moves up a tier; one that misses deadlines twice, cannot verify a root cause, or lets a defect recur after closure should be down-tiered and given a 30–60 day improvement plan with a small pilot PO before any further volume.
-This is how SCAR discipline connects to <a href="blog-supplier-relationship-management-china.html">supplier relationship management</a> and to your sourcing policy — quality improvement becomes a condition of the relationship, not a one-time complaint.</p>
-
-<h2>Frequently Asked Questions</h2>
-<h3>1.
-What is a SCAR and how is it different from a one-off rework?</h3>
-<p>A <strong>Supplier Corrective Action Request (SCAR)</strong> is a formal, documented request that the factory find the root cause of a defect and change its process so it cannot recur.
+Each batch had been &ldquo;reworked&rdquo; and each batch failed again.
+We opened a SCAR.</p><p>|
+| SCAR Stage |
+| Action Taken |
+| Timeline |
+| Result |</p><p>| Problem & containment |
+| 100% sort of 3,000 units; line stopped |
+| Day 1–2 |
+| Defective batch isolated |</p><p>| Root cause (5 Whys) |
+| Reached a missing gate-cooling time in the control plan |
+| Day 7 |
+| Systemic cause identified |</p><p>| Corrective + preventive |
+| Added cooling time + mold-temperature check to control plan |
+| Day 14–21 |
+| Process changed, tooling verified |</p><p>| Verification |
+| Ran 3 batches, AQL 2.5 major sampling each |
+| Day 30–60 |
+| Defect 4.2% → 0.6% |</p><p>| Standardization & closure |
+| Work instruction and scorecard updated, SCAR signed |
+| Day 60 |
+| Trend held for 2 quarters |</p><p>The defect rate fell from <strong>4.2% to 0.6%</strong> — a <strong>3.6-point</strong> improvement on a $57,600 annual spend, removing roughly <strong>$2,076/year in defects</strong> plus returns and rework labour.
+Verification cost <strong>$240 (3 batches × ~$80/man-day)</strong>, so the SCAR paid for itself almost <strong>9×</strong> in the first year, and it moved the factory up a tier in the supplier scorecard.</p><h2 id=one-off-rework-vs-systematic-capa>One-Off Rework vs Systematic CAPA</h2><p>|
+| Dimension |
+| One-Off Rework |
+| Systematic CAPA / SCAR |</p><p>| <strong>Fixes</strong> |
+| One batch |
+| The process, permanently |</p><p>| <strong>Root cause</strong> |
+| Not investigated |
+| 5 Whys / fishbone documented |</p><p>| <strong>Recurrence</strong> |
+| Likely — same defect returns |
+| Prevented by preventive action |</p><p>| <strong>Cost</strong> |
+| Labour per batch, every batch |
+| One-time verification ($80–$300/man-day) |</p><p>| <strong>Evidence</strong> |
+| None retained |
+| Auditable SCAR record |</p><p>| <strong>Supplier score</strong> |
+| Unchanged |
+| Tier and rating updated |</p><h2 id=linking-scar-to-supplier-tiering--srm>Linking SCAR to Supplier Tiering & SRM</h2><p>A closed SCAR is not just a quality record — it is supplier-relationship-management data.
+Add an &ldquo;open SCARs&rdquo; and &ldquo;SCAR close-out time&rdquo; column to your <a href=blog-supplier-evaluation-scorecard-china.html>supplier scorecard</a>. A factory that closes SCARs on time and demonstrably lowers its defect rate earns volume and moves up a tier; one that misses deadlines twice, cannot verify a root cause, or lets a defect recur after closure should be down-tiered and given a 30–60 day improvement plan with a small pilot PO before any further volume.
+This is how SCAR discipline connects to <a href=blog-supplier-relationship-management-china.html>supplier relationship management</a> and to your sourcing policy — quality improvement becomes a condition of the relationship, not a one-time complaint.</p><h2 id=frequently-asked-questions>Frequently Asked Questions</h2><h3 id=1>1.</h3><p>What is a SCAR and how is it different from a one-off rework?</p><p>A <strong>Supplier Corrective Action Request (SCAR)</strong> is a formal, documented request that the factory find the root cause of a defect and change its process so it cannot recur.
 A one-off rework only fixes the units in front of you.
-<strong>Rework fixes this shipment; a SCAR fixes the factory.</strong> If the same defect appears in 2 or 3 batches, you need a SCAR, not another rework.</p>
-<h3>2.
-How fast should a Chinese factory respond to a SCAR?</h3>
-<p>A workable timeline is: acknowledgement within <strong>24 hours</strong>, containment within <strong>48 hours</strong>, root cause and action plan within <strong>7 days</strong>, action completion within <strong>30 days</strong>, and effectiveness verification over the next <strong>3 batches</strong> (typically 30–60 days).
-Write the deadline into the PO terms: "SCAR close-out within 30 days or the balance is withheld."</p>
-<h3>3.
-What are the must-have fields in a SCAR template?</h3>
-<p>Eleven fields: SCAR number; issue date; supplier and contact; part/SKU and drawing revision; problem statement with defect quantity and detection point; immediate containment; root cause; corrective action; preventive action; owner and due date per action; and verification method plus close-out sign-off.
-A SCAR missing the preventive action or the owner field will not stop the defect from returning.</p>
-<h3>4.
-How do I tell a real root cause from an evasive reply?</h3>
-<p>A real root cause is <strong>systemic and testable</strong>; it points to a process, material spec, tool or measurement gap.
-Red flags of evasion: blaming the worker ("operator carelessness"), blaming the buyer ("your spec is unclear"), "we will strengthen inspection" as the only action, no preventive action, no owner and no date, and no measurement to prove the fix works.</p>
-<h3>5.
-Does a SCAR cost money to run?</h3>
-<p>The documentation is free but the verification costs time.
-A typical verification inspection is <strong>$80–$300 per man-day</strong> for 3 batches, or roughly <strong>$240–$900 total</strong>. The payoff is large: cutting a recurring 4.2% defect rate to 0.6% on a $60,000 annual spend removes about <strong>$2,160 in defects</strong> plus returns, far more than the verification cost.</p>
-<h3>6.
-When should I escalate from SCAR to switching suppliers?</h3>
-<p>Escalate when a factory misses the SCAR deadlines twice, cannot provide a verifiable root cause, or the defect recurs after a closed SCAR.
-Give one written improvement plan with a <strong>30–60 day</strong> window and a pilot PO; if the defect rate does not fall to target, move the volume to an approved backup supplier and down-tier the factory in your scorecard.</p>
-
-<h2>Conclusion</h2>
-<p>A SCAR is the difference between fixing a shipment and fixing a factory.
-Write a precise problem statement, contain within <strong>48 hours</strong>, drive the root cause past "operator error" with <strong>5 Whys or a fishbone</strong>, and always demand a preventive action with an owner and a date.
+<strong>Rework fixes this shipment; a SCAR fixes the factory.</strong> If the same defect appears in 2 or 3 batches, you need a SCAR, not another rework.</p><h3 id=2>2.</h3><p>How fast should a Chinese factory respond to a SCAR?</p><p>A workable timeline is: acknowledgement within <strong>24 hours</strong>, containment within <strong>48 hours</strong>, root cause and action plan within <strong>7 days</strong>, action completion within <strong>30 days</strong>, and effectiveness verification over the next <strong>3 batches</strong> (typically 30–60 days).
+Write the deadline into the PO terms: &ldquo;SCAR close-out within 30 days or the balance is withheld.&rdquo;</p><h3 id=3>3.</h3><p>What are the must-have fields in a SCAR template?</p><p>Eleven fields: SCAR number; issue date; supplier and contact; part/SKU and drawing revision; problem statement with defect quantity and detection point; immediate containment; root cause; corrective action; preventive action; owner and due date per action; and verification method plus close-out sign-off.
+A SCAR missing the preventive action or the owner field will not stop the defect from returning.</p><h3 id=4>4.</h3><p>How do I tell a real root cause from an evasive reply?</p><p>A real root cause is <strong>systemic and testable</strong>; it points to a process, material spec, tool or measurement gap.
+Red flags of evasion: blaming the worker (&ldquo;operator carelessness&rdquo;), blaming the buyer (&ldquo;your spec is unclear&rdquo;), &ldquo;we will strengthen inspection&rdquo; as the only action, no preventive action, no owner and no date, and no measurement to prove the fix works.</p><h3 id=5>5.</h3><p>Does a SCAR cost money to run?</p><p>The documentation is free but the verification costs time.
+A typical verification inspection is <strong>$80–$300 per man-day</strong> for 3 batches, or roughly <strong>$240–$900 total</strong>. The payoff is large: cutting a recurring 4.2% defect rate to 0.6% on a $60,000 annual spend removes about <strong>$2,160 in defects</strong> plus returns, far more than the verification cost.</p><h3 id=6>6.</h3><p>When should I escalate from SCAR to switching suppliers?</p><p>Escalate when a factory misses the SCAR deadlines twice, cannot provide a verifiable root cause, or the defect recurs after a closed SCAR.
+Give one written improvement plan with a <strong>30–60 day</strong> window and a pilot PO; if the defect rate does not fall to target, move the volume to an approved backup supplier and down-tier the factory in your scorecard.</p><h2 id=conclusion>Conclusion</h2><p>A SCAR is the difference between fixing a shipment and fixing a factory.
+Write a precise problem statement, contain within <strong>48 hours</strong>, drive the root cause past &ldquo;operator error&rdquo; with <strong>5 Whys or a fishbone</strong>, and always demand a preventive action with an owner and a date.
 Verify across <strong>3 batches</strong> before you close it.
 A defect that recurred at <strong>4.2%</strong> was driven to <strong>0.6%</strong> not by another rework but by a documented process change and a verified close-out — and that same record then raised the supplier a tier.
-<a href="contact.html">Contact Yeatru</a> to open and manage a SCAR with your Chinese factory.
-Related: <a href="blog-supplier-evaluation-scorecard-china.html">China supplier evaluation scorecard</a>.</p>
-
-<aside class="author-bio mt-5 pt-4 border-top">
- <div class="d-flex align-items-start gap-3 flex-wrap flex-sm-nowrap">
- <div>
- <h3 class="h5 mb-1">Neil Liu</h3>
- <p class="text-muted small mb-2"><strong>China Sourcing Expert</strong> · Yeatru Sourcing</p>
- <p class="mb-2">Neil Liu is the Founder &amp; Managing Director of Yeatru Sourcing, a Yiwu-based China sourcing agent with 14+ years of hands-on sourcing experience helping Amazon FBA sellers, retailers, and wholesale buyers find reliable suppliers, control product quality, and ship from China.
-Based in Yiwu — home to the world's largest small commodity market.</p>
- <div class="d-flex gap-2 flex-wrap">
- <a href="https://www.linkedin.com/in/neil-liu-398983257" target="_blank" rel="noopener noreferrer" aria-label="Neil Liu on LinkedIn" class="btn btn-sm btn-outline-secondary"><i class="fab fa-linkedin-in"></i></a>
- </div>
- </div>
- </div>
-</aside>
- </article>
- </div>
- </div>
- </div>
- </section>
-
- <section class="py-5 cta-section-dark">
- <div class="container">
- <div class="final-cta-box text-center">
- <span class="section-eyebrow">Get Started</span>
- <div class="section-divider mx-auto" style="margin: 0.75rem auto 1.5rem;"></div>
- <h2 class="section-title">Need a SCAR Opened With Your Factory?</h2>
- <p class="section-subtitle mb-4">Yeatru Sourcing writes the SCAR, drives the root-cause analysis with your Chinese factory, verifies the fix across 3 batches and updates your supplier scorecard.
-Get a free quote.</p>
- <a href="contact.html" class="btn btn-cta btn-lg"><i class="fas fa-comment-dots me-2"></i>Get a Free Quote</a>
- </div>
- </div>
- </section>
-
-<section class="py-5 section-alt">
- <div class="container">
- <div class="section-title-wrap text-center mb-5">
- <span class="section-eyebrow">Continue Reading</span>
- <div class="section-divider"></div>
- <h2 class="section-title">Related Articles</h2>
- </div>
- <div class="row g-4">
-<div class="col-lg-3 col-md-6">
- <a href="blog-supplier-evaluation-scorecard-china.html" class="related-article-card">
- <div class="related-article-image">
- <img src="/Images/blog/blog-china-factory-audit.jpg" class="card-img-top object-fit-cover" alt="China Supplier Evaluation Scorecard thumbnail" loading="lazy" decoding="async" width="320" height="180">
- </div>
- <div class="related-article-content">
- <span class="related-article-category">Quality Control</span>
- <h3 class="related-article-title">China Supplier Evaluation Scorecard: 10-Dimensional Template</h3>
- </div>
- </a>
- </div><div class="col-lg-3 col-md-6">
- <a href="blog-supplier-relationship-management-china.html" class="related-article-card">
- <div class="related-article-image">
- <img src="/Images/blog/blog-in-process-quality-inspection.jpg" class="card-img-top object-fit-cover" alt="Supplier Relationship Management China thumbnail" loading="lazy" decoding="async" width="320" height="180">
- </div>
- <div class="related-article-content">
- <span class="related-article-category">Sourcing Strategy</span>
- <h3 class="related-article-title">Supplier Relationship Management in China (SRM)</h3>
- </div>
- </a>
- </div><div class="col-lg-3 col-md-6">
- <a href="blog-product-compliance-inspection.html" class="related-article-card">
- <div class="related-article-image">
- <img src="/Images/blog/blog-product-compliance-inspection.jpg" class="card-img-top object-fit-cover" alt="Product Compliance Inspection thumbnail" loading="lazy" decoding="async" width="320" height="180">
- </div>
- <div class="related-article-content">
- <span class="related-article-category">Quality Control</span>
- <h3 class="related-article-title">Product Compliance Inspection in China</h3>
- </div>
- </a>
- </div><div class="col-lg-3 col-md-6">
- <a href="blog-defect-classification-qc.html" class="related-article-card">
- <div class="related-article-image">
- <img src="/Images/blog/blog-defect-classification-qc.jpg" class="card-img-top object-fit-cover" alt="Defect Classification in QC thumbnail" loading="lazy" decoding="async" width="320" height="180">
- </div>
- <div class="related-article-content">
- <span class="related-article-category">Quality Control</span>
- <h3 class="related-article-title">Defect Classification: Critical, Major &amp; Minor</h3>
- </div>
- </a>
- </div>
- </div>
- </div>
-</section>
-
-<footer class="footer">
- <div class="container">
- <div class="row">
- <div class="col-lg-3 col-md-6">
- <a href="/" class="footer-brand">
- <span class="brand-logo-box"><img src="logo.png" alt="Yeatru Sourcing Logo" width="38" height="38" loading="lazy"></span></a>
- <p class="footer-desc" data-i18n="footer.desc">Professional China sourcing agent helping businesses worldwide find reliable suppliers and quality products at competitive prices.</p>
- <div class="footer-social">
- <a href="https://facebook.com/NeilLaw" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="Facebook Yeatru Sourcing"><i class="fab fa-facebook-f"></i></a>
- <a href="https://www.linkedin.com/in/neil-liu-398983257" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="LinkedIn Yeatru Sourcing"><i class="fab fa-linkedin-in"></i></a>
- <a href="https://wa.me/8615988516408" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="WhatsApp Yeatru Sourcing"><i class="fab fa-whatsapp"></i></a><a href="https://instagram.com/yeatru_sourcing" target="_blank" class="footer-social-icon" rel="noopener noreferrer" aria-label="Instagram Yeatru Sourcing"><i class="fab fa-instagram"></i></a>
- </div>
- </div>
- <div class="col-lg-3 col-md-6">
- <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
- <a href="/" class="footer-link" data-i18n="nav.home">Home</a>
- <a href="products.html" class="footer-link" data-i18n="nav.products">Products</a>
- <a href="service-plans.html" class="footer-link" data-i18n="nav.servicePlans">Service Plans</a>
- <a href="payment.html" class="footer-link" data-i18n="nav.payment">Payment</a>
- <a href="about.html" class="footer-link" data-i18n="nav.aboutUs">About Us</a>
- <a href="blog.html" class="footer-link" data-i18n="nav.blog">Blog</a>
- <a href="contact.html" class="footer-link" data-i18n="nav.contactUs">Contact Us</a>
- <a href="data.html" class="footer-link" data-i18n="footer.linkOurData">Our Data</a>
- <a href="testimonials.html" class="footer-link" data-i18n="nav.testimonials">Testimonials</a>
- <a href="faq.html" class="footer-link" data-i18n="nav.faq">FAQ</a>
- </div>
- <div class="col-lg-3 col-md-6">
- <h3 class="footer-title" data-i18n="footer.services">Our Services</h3>
- <a href="supplier-verification.html" class="footer-link" data-i18n="services.supplierVerification">Supplier Verification</a>
- <a href="product-sourcing.html" class="footer-link" data-i18n="services.productSourcing">Product Sourcing</a>
- <a href="quality-control.html" class="footer-link" data-i18n="services.qualityControl">Quality Control</a>
- <a href="logistics-shipping.html" class="footer-link" data-i18n="services.logistics">Logistics &amp; Warehousing</a>
- <a href="price-negotiation.html" class="footer-link" data-i18n="services.priceNegotiation">Price Negotiation</a>
- <a href="factory-audit.html" class="footer-link" data-i18n="nav.factoryAudit">Factory Audit</a>
- <a href="sample-order.html" class="footer-link" data-i18n="nav.sampleOrder">Sample Order</a>
- <a href="oem.html" class="footer-link" data-i18n="nav.oem">OEM Customization</a>
- <a href="value-added-services.html" class="footer-link" data-i18n="footer.vas">Value-Added Services</a>
- </div>
- <div class="col-lg-3 col-md-6">
- <h3 class="footer-title" data-i18n="footer.contact">Contact Us</h3>
- <a href="https://maps.google.com/?q=Unit+2%2C+Building+10%2C+Honghua+Community%2C+Houzhai+Subdistrict%2C+Yiwu+City%2C+Zhejiang+Province%2C+China" target="_blank" rel="noopener noreferrer" class="footer-link" data-i18n="footer.address"><i class="fas fa-map-marker-alt me-2"></i> Unit 2, Building 10, Honghua Community, Houzhai Subdistrict, Yiwu City, Zhejiang Province, China</a>
- <a href="tel:+8615988516408" class="footer-link"><i class="fas fa-phone me-2"></i> +86 159 8851 6408</a>
- <a href="mailto:info@yeatru.com" class="footer-link"><i class="fas fa-envelope me-2"></i> info@yeatru.com</a>
- <a href="contact.html#opening-hours" class="footer-link" data-i18n="footer.hours"><i class="fas fa-clock me-2"></i> Open: 07:00–24:00 · 24/7 Online</a>
- <div class="footer-payment-section mt-3">
- <h4 class="footer-payment-label" data-i18n="footer.paymentMethods">Payment Methods</h4>
- <div class="footer-payment-icons-vertical">
- <span class="payment-icon"><i class="fab fa-cc-visa"></i><span>Visa</span></span>
- <span class="payment-icon"><i class="fab fa-cc-mastercard"></i><span>MasterCard</span></span>
- <span class="payment-icon"><i class="fab fa-paypal"></i><span>PayPal</span></span>
- <span class="payment-icon"><i class="fas fa-university"></i><span>Bank Transfer</span></span>
- </div>
- </div>
- </div>
- </div>
-
- <div class="footer-bottom">
- <p>&copy; 2022–2026 · Yeatru Sourcing (YIWU ETRUE TRADING CO. LTD.). <span data-i18n="footer.allRightsReserved">All rights reserved.</span> |
- <a href="privacy.html" class="footer-link d-inline" data-i18n="footer.privacyPolicy">Privacy Policy</a> |
- <a href="terms.html" class="footer-link d-inline" data-i18n="footer.termsOfService">Terms of Service</a>
- |
- <a href="refund.html" class="footer-link d-inline" data-i18n="footer.linkRefundPolicy">Refund Policy</a> |
- <a href="nda.html" class="footer-link d-inline" data-i18n="footer.linkNda">NDA & Confidentiality</a></p>
-<p class="footer-ai-note">AI citation license: Content may be indexed and cited by AI systems with attribution to <a href="https://www.yeatru.com">Yeatru Sourcing</a> (CC BY 4.0). Not for model training. See <a href="https://www.yeatru.com/.well-known/ai.json">.well-known/ai.json</a>.</p>
- </div>
- </div>
- </footer>
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js?v=20260909k" defer></script>
- <script defer src="https://cdn.jsdelivr.net/npm/i18next@23.2.3/dist/umd/i18next.min.js?v=20260909k"></script>
- <script defer src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/dist/umd/i18nextBrowserLanguageDetector.min.js?v=20260909k"></script>
- <script src="app.js?v=20261024m" defer></script>
-<div class="contact-float">
- <a href="https://wa.me/8615988516408?text=Hello%20Yeatru%20Sourcing" class="contact-float-btn whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
- <a href="mailto:info@yeatru.com" class="contact-float-btn email"><i class="fas fa-envelope"></i></a></div>
-<script>
-// Conversion instrumentation + WhatsApp friction removal.
-// 1) Give generic WhatsApp links a page-specific opening message so the visitor
-//    never has to decide what to write (curated per-page messages are kept).
-// 2) Record conversion-intent clicks (GA4 + Clarity) so we can tell whether
-//    visitors reach WhatsApp / email / the quote form at all.
-(function(){
- // --- WhatsApp page-aware prefill ---
- try {
-   var links = document.querySelectorAll('a[href*="wa.me"]');
-   var raw = document.title || '';
-   var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
-   if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
-   var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
-           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
-   for (var i = 0; i < links.length; i++) {
-     var a = links[i], h = a.getAttribute('href') || '';
-     var m = h.match(/[?&]text=([^&]*)/);
-     var current = m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
-     // Replace only missing or generic messages
-     if (current && current.toLowerCase().indexOf('hello yeatru') !== 0) continue;
-     var base = h.split('?')[0];
-     a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
-   }
- } catch(e){}
-
- // --- conversion-intent click tracking ---
- function track(kind, href){
-   try {
-     if (typeof gtag === 'function') gtag('event','conversion_intent',{link_type:kind,link_url:href,page_path:location.pathname});
-     if (window.clarity) window.clarity('event','intent_'+kind);
-   } catch(e){}
- }
- document.addEventListener('click', function(e){
-   var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-   if (!a) return;
-   var h = a.getAttribute('href') || '';
-   if (h.indexOf('wa.me') > -1) track('whatsapp', h);
-   else if (h.indexOf('mailto:') === 0) track('email', h);
-   else if (h.indexOf('request-quote') > -1) track('quote_form', h);
-   else if (h.indexOf('tel:') === 0) track('phone', h);
- }, true);
-})();
-</script>
-</body>
-</html>
+<a href=contact.html>Contact Yeatru</a> to open and manage a SCAR with your Chinese factory.
+Related: <a href=blog-supplier-evaluation-scorecard-china.html>China supplier evaluation scorecard</a>.</p></div></div></article></main><footer class=site-footer><div class=container><div class=footer-grid><div><div class=nav-brand style=color:#fff;margin-bottom:1rem><img src=/logo.png alt="Yeatru Sourcing" style=height:36px>
+<span>Yeatru Sourcing</span></div><p style=color:rgba(255,255,255,.6);font-size:.9rem;max-width:320px>Yiwu-based China sourcing agent. Small orders, mixed batches, AQL 2.5 QC, DDP shipping to 50+ countries.</p></div><div><h4>Services</h4><ul><li><a href=/product-sourcing.html>Product Sourcing</a></li><li><a href=/factory-audit.html>Factory Audit</a></li><li><a href=/quality-control.html>Quality Control</a></li><li><a href=/logistics-shipping.html>Logistics & Shipping</a></li><li><a href=/oem.html>OEM & Private Label</a></li></ul></div><div><h4>Resources</h4><ul><li><a href=/blog.html>Sourcing Blog</a></li><li><a href=/faq.html>FAQ</a></li><li><a href=/categories.html>Categories</a></li><li><a href=/all-products.html>All Products</a></li></ul></div><div><h4>Contact</h4><ul><li><a href=mailto:info@yeatru.com>info@yeatru.com</a></li><li><a href=tel:+8615988516408>+8615988516408</a></li><li><a href=/request-quote.html>Request a Quote</a></li><li><a href=/about.html>About Us</a></li></ul></div></div><div class=footer-bottom><span>&copy; 2026 Yeatru Sourcing. All rights reserved.</span>
+<span><a href=/privacy.html style=color:inherit>Privacy</a> · <a href=/terms.html style=color:inherit>Terms</a></span></div></div></footer><a href="https://wa.me/8615988516408?text=Hello%20Yeatru%2C%20I%20am%20interested%20in%20your%20sourcing%20service." class=whatsapp-float target=_blank rel=noopener aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentcolor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg></a></body></html>

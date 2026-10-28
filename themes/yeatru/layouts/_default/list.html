@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ with .Params.eyebrow }}<div class="eyebrow">{{ . }}</div>{{ end }}
+    <h1 class="mb-4">{{ .Title }}</h1>
+    {{ with .Content }}<div class="prose mb-4">{{ . }}</div>{{ end }}
+    <div class="grid grid-3">
+      {{ range .Paginator.Pages }}
+      <a class="card" href="{{ .RelPermalink }}">
+        <div class="card-number">{{ .Date.Format "Jan 2, 2006" }}</div>
+        <h3 class="mb-2">{{ .Title }}</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem">{{ .Summary | plainify | truncate 120 }}</p>
+      </a>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+{{ end }}

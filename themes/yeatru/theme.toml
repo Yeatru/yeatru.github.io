@@ -1,0 +1,12 @@
+name = "Yeatru"
+license = "MIT"
+licenselink = "https://github.com/Yeatru/yeatru.github.io/blob/main/LICENSE"
+description = "Custom Hugo theme for Yeatru Sourcing — faelmio-inspired layout with OKLCH design tokens"
+homepage = "https://www.yeatru.com"
+tags = ["sourcing", "b2b", "clean", "minimal"]
+features = ["responsive", "seo", "data-driven-products"]
+min_version = "0.139.0"
+
+[author]
+  name = "Yeatru Sourcing"
+  homepage = "https://www.yeatru.com"

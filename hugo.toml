@@ -1,0 +1,46 @@
+baseURL = "https://www.yeatru.com/"
+title = "Yeatru Sourcing — China Sourcing Agent for Small Orders"
+theme = "yeatru"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableEmoji = true
+[pagination]
+  pagerSize = 24
+summaryLength = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[permalinks]
+  blog = "/blog-:slug.html"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  siteName = "Yeatru Sourcing"
+  description = "China sourcing agent in Yiwu. Small orders, mixed batches, AQL 2.5 QC, DDP shipping to 50+ countries."
+  author = "Yeatru Sourcing"
+  logo = "/logo.png"
+  contactEmail = "info@yeatru.com"
+  contactPhone = "+8615988516408"
+  whatsapp = "8615988516408"
+  foundedYear = 2022
+  founderYears = 14
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[services]
+  [services.rss]
+    limit = 50
