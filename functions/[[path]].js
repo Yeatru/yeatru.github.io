@@ -52,6 +52,9 @@ const PERMANENT_301 = {
   '/services':                      '/supplier-verification.html',
   '/quality-inspection.html':       '/quality-control.html',
   '/quality-inspection':            '/quality-control.html',
+  // 构建用模板片段, 不应被公开索引 (GSC "Crawled - currently not indexed")
+  '/freequote_body.tmpl.html':      '/blog-free-quotation-china-sourcing.html',
+  '/freequote_body.tmpl':           '/blog-free-quotation-china-sourcing.html',
 };
 
 // --- (0) 产品详情页合法SKU白名单 → 服务端301替代客户端JS redirect ---
