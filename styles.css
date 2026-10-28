@@ -6157,3 +6157,52 @@ body #why-yeatru .about-stat-card .about-stat-label{margin-top:0}
   body .article-content > .callout-box,
   body .article-content > .yeatru-fact-block{max-width:100%}
 }
+
+/* ========================================================================
+   WIDTH CONSISTENCY & MOBILE OVERFLOW FIXES (v20261028e)
+   ======================================================================== */
+
+/* 1. Unify ALL container max-widths to --container-max (1280px).
+   Previous rules had conflicting 1200/1280/1320px values. */
+body .container,
+body .container-fluid,
+body .container-lg,
+body .container-md,
+body .container-sm,
+body .container-xl,
+main .container,
+main .container-fluid {
+  max-width: var(--container-max, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2. Product detail sub-sections share the same max-width. */
+.product-detail-page .aplus-section,
+.product-detail-page .faq-section,
+.product-detail-page .related-products-section,
+.product-detail-page .detail-main {
+  max-width: var(--container-max, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 3. Fix row gutter horizontal overflow on mobile.
+   Bootstrap .g-4/.g-5 use 1.5rem/3rem gutters → negative margins
+   of -12px/-24px per side, making rows wider than the viewport.
+   Reduce gutters below the md breakpoint so rows fit cleanly. */
+@media (max-width: 991.98px) {
+  .row.g-5 { --bs-gutter-x: 1.25rem; --bs-gutter-y: 1.25rem; }
+  .row.g-4 { --bs-gutter-x: 1rem;    --bs-gutter-y: 1rem; }
+}
+@media (max-width: 575.98px) {
+  .row.g-5, .row.g-4 { --bs-gutter-x: .75rem; --bs-gutter-y: .75rem; }
+  .row.g-3 { --bs-gutter-x: .5rem; }
+}
+
+/* 4. Prevent any stray element from forcing horizontal scroll. */
+body img, body table, body pre, body iframe, body video {
+  max-width: 100% !important;
+}
+body .row { min-width: 0; }
+body .row > [class*="col-"] { min-width: 0; max-width: 100%; }
