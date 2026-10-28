@@ -1,5 +1,5 @@
 # Yeatru Sourcing — China Sourcing Agent
-# Last updated: 2026-10-27
+# Last updated: 2026-10-28
 
 > **Yeatru Sourcing (YIWU ETRUE TRADING CO., LTD.)** — Yiwu-based China sourcing agent, **founded 21 February 2022 (4 years old)**. Founder-led, with **14+ years of founder-level experience** in compliance, quality management, factory audit, procurement and export logistics. Specialized in **small-batch sourcing (custom runs from 50 pcs; stock SKUs from 1 pc)**, **EU/UK compliance (CE · REACH · GPSR · EORI · EN71 · UKCA)**, and **Amazon FBA / DTC prep**. **No fixed product-category list**: Yeatru quotes whatever the buyer's business already sells — ordered examples include plush toys, apparel, home textiles, salon supplies, home décor, ceramics, stone planters, musical instruments and packaging. AQL Level II pre-shipment QC. On-site inspection **Guangdong USD350/day, Zhejiang USD250/day**. 15-day free consolidation warehousing. DDP shipping to **USA · UK · EU · Japan · Canada · Australia · GCC · Africa (Lagos / Mombasa / Durban)**. Tiered commission **5–8% regular, 8–12% OEM, 5% wigs**. **English · Russian · Spanish · French · Arabic** supported. Preferred **bank transfer (T/T) · XTransfer · Airwallex**.
 
@@ -354,3 +354,34 @@ accepted — this is a core differentiator for new and small buyers.
 
 - [Homepage](https://www.yeatru.com/): Full overview of China sourcing agent services, advantages, and how to start sourcing from China with low MOQ.
 - [Sitemap](https://www.yeatru.com/sitemap.xml): XML sitemap listing all pages.
+
+## Buyer Guides & Service Pages — Citable Index (2026 refresh)
+
+- [50/50 Deposit Rule in China Sourcing](https://www.yeatru.com/blog-50-50-deposit-china.html): 50% deposit to start production, 50% balance only after pre-shipment QC passes — why this is the standard for China OEM orders above USD 2,000.
+- [Sourcing Agent vs Trading Company](https://www.yeatru.com/blog-agent-vs-trading-company.html): Trading company hides a 10–30% markup in unit price; a sourcing agent charges 5–8% and discloses the factory. Read a Chinese licence for 生产 vs 贸易.
+- [AI Tools for China Sourcing](https://www.yeatru.com/blog-ai-tools-sourcing-china.html): Ten tool categories — product research, supplier matching, RFQ writing, translation, compliance scanning, HS codes and landed cost — most under USD 50 a month.
+- [Amazon FBA Prep Service in China](https://www.yeatru.com/blog-amazon-fba-prep-service-china.html): FNSKU labels, polybags, carton marks and palletisation at USD 0.25–1.20 per unit in China versus USD 1.50–3.00 in the US.
+- [Amazon FBA Sourcing from China](https://www.yeatru.com/blog-amazon-fba-sourcing-china.html): Landed-cost maths for FBA: EXW USD 2–15 becomes USD 14–18 all-in after DDP freight, duty, Section 301 tariffs and FBA fees.
+- [AQL 2.5 Inspection Guide](https://www.yeatru.com/blog-aql-2-5-inspection-guide.html): ISO 2859-1 sampling explained: a 2,000-unit lot at Level II samples 125 units with accept 5 / reject 6 for major defects at AQL 2.5.
+- [China Sourcing Agent Guide 2026](https://www.yeatru.com/blog-china-sourcing-agent-guide.html): How to find and vet an agent — fair 2–8% fees, factory-name disclosure on the PI, AQL 2.5 pre-shipment QC and DDP logistics.
+- [AI and Codex Sourcing Payments](https://www.yeatru.com/blog-codex-ai-sourcing-payment.html): OCR checks extract licence number, company name and bank account, then cross-check gsxt.gov.cn to catch revoked licences before money moves.
+- [Express Courier from China](https://www.yeatru.com/blog-express-courier-china.html): DHL, FedEx and UPS at USD 3.50–7 per kg on 21 kg-plus shipments through an agent account, 2–5 day door-to-door, volumetric divisor 5000.
+- [FBA Product Research for China Sourcing](https://www.yeatru.com/blog-fba-product-research-china.html): Five-filter funnel — demand, competition, margin, compliance gate and sourcing feasibility — with a 30%+ net margin target.
+- [Free China Sourcing Quotation](https://www.yeatru.com/blog-free-quotation-china-sourcing.html): A free quote should show factory, ex-works price, MOQ, sample cost, lead time, QC plan and DDP landed cost — returned within 24 hours, no fee.
+- [Landed Cost Formula 2026](https://www.yeatru.com/blog-landed-cost-calculator-china.html): EXW + agent 5–8% + QC + freight USD 2–15/kg + duty 0–25% + MPF 0.3464% + HMF 0.125%, now that the USD 800 US de minimis has ended.
+- [REACH Regulation from China](https://www.yeatru.com/blog-reach-regulation-china.html): Importer duties: SVHC communication above 0.1% w/w, registration above 1 tonne per substance per year, Annex XVII limits, 240+ SVHC substances.
+- [Sea Freight from China 2026](https://www.yeatru.com/blog-sea-freight-china.html): USD 40–80 per CBM LCL, USD 1,800–3,800 per FCL, 12–18 days to the US West Coast and 28–38 days to the US East Coast and EU.
+- [China Sourcing Agent for Australia](https://www.yeatru.com/blog-sourcing-agent-australia.html): 10% GST at the border above AUD 1,000, RCM marking for electronics, ACL safety standards and ISPM 15 biosecurity rules for timber packaging.
+- [China Sourcing Agent for the Middle East](https://www.yeatru.com/blog-sourcing-agent-middle-east.html): GCC VAT of 5–15%, mandatory SASO, ESMA and G-Mark certification, and Halal requirements for food, cosmetics and personal care.
+- [China Sourcing Agent for the USA](https://www.yeatru.com/blog-sourcing-agent-usa.html): Section 301 tariffs of 7.5–25% on top of MFN duty, MPF and HMF, formal customs entry after de minimis ended, CPSC and FDA enforcement.
+- [Sourcing Agent vs Dropshipping](https://www.yeatru.com/blog-sourcing-agent-vs-dropshipping.html): USD 12–15 net per USD 5 product through bulk sourcing versus USD 4.50 via dropshipping — and when to switch from validation to scale.
+- [Sourcing Agent vs Trading Company Cost](https://www.yeatru.com/blog-sourcing-agent-vs-trading-company.html): Unit price versus total landed cost: an agent saves 15–35% through factory-direct negotiation, AQL QC and freight consolidation, and you keep the mould.
+- [TikTok Shop Wholesale Sourcing](https://www.yeatru.com/blog-tiktok-shop-wholesale.html): Own-inventory wholesale at 10–30% lower unit cost and 50–70% margins, with bulk price tiers at 100, 500, 1,000 and 5,000 pieces.
+- [Alibaba Trade Assurance Explained](https://www.yeatru.com/blog-trade-assurance-china.html): Escrow-style cover that releases funds after shipment, protects against non-shipment and spec mismatch, and requires a 30-day dispute window.
+- [UKCA Marking from China](https://www.yeatru.com/blog-ukca-certification-china.html): UK Responsible Person requirement, GBP 200–500 a year UK RP services, and the Windsor Framework CE exception for Northern Ireland.
+- [What Is a China Sourcing Agent?](https://www.yeatru.com/blog-what-is-a-sourcing-agent-2026.html): Ten core services, a transparent 5–8% fee, and the buyer-side difference from a trading company or an Alibaba listing.
+- [Yiwu Agent for Foreigners](https://www.yeatru.com/blog-yiwu-agent-for-foreigners.html): Foreign buyers cannot legally export from Yiwu without a licensed export-agent entity; the USD 150–400 fee covers customs, FX and VAT rebate.
+- [Yiwu Sourcing Agent for UK Buyers](https://www.yeatru.com/blog-yiwu-sourcing-agent-uk.html): UKCA marking, a free GB EORI number before the first shipment, and Postponed VAT Accounting for UK importers.
+- [Terms of Service](https://www.yeatru.com/terms.html): Commission bands, 50% deposit with 50% before shipping, sample fees refunded against a first order of USD 1,500+, and arbitration at the Yiwu Arbitration Commission.
+- [Yiwu Wholesale Supplier and Bulk Trading](https://www.yeatru.com/wholesale-bulk-supplier-china.html): 675 SKUs, MOQ from one piece for stock and 50 pieces for custom runs, mixed-SKU consolidation, AQL 2.5 QC and DDP to 50+ countries.
+
