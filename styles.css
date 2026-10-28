@@ -5964,3 +5964,159 @@ body .nav-link:focus-visible{
   .navbar-collapse .lang-selector .dropdown-menu .dropdown-item,
   .navbar-collapse .currency-selector .dropdown-menu .dropdown-item{padding:.4rem .75rem}
 }
+
+/* ==========================================================================
+   VISUAL LAYER · 2026-10-28
+   Hugo-theme design language (Blowfish / PaperMod family) applied on top of
+   the existing OKLCH token system — CSS only, no markup or URL changes.
+
+   Four rules of the language, applied below:
+     1. One readable measure — long prose never runs the full container width.
+     2. One radius, one shadow, one hover motion for every card.
+     3. Text breaks before the box does — nothing is clipped at an edge.
+     4. 8px rhythm — padding, gaps and section spacing come from one scale.
+   ========================================================================== */
+
+:root{
+  --measure:       74ch;   /* article body line length (~690px at 1rem)      */
+  --measure-tight: 62ch;   /* callouts, fact blocks, captions                */
+  --card-pad:      clamp(1rem, 1.1vw + .65rem, 1.4rem);
+  --card-lift:     -3px;
+}
+
+/* ---------- 1 · Readable measure -----------------------------------------
+   Article copy was flowing the full 1280px container (~130 characters per
+   line). Cap the text column so the eye can find the next line; tables,
+   images and embeds keep the full width. */
+body .article-content > p,
+body .article-content > ul,
+body .article-content > ol,
+body .article-content > dl,
+body .article-content > blockquote,
+body .article-content > h2,
+body .article-content > h3,
+body .article-content > h4,
+body .article-content > h5,
+body .article-content > .callout-box,
+body .article-content > .yeatru-fact-block,
+body .article-content > .geo-definition{max-width:var(--measure)}
+
+body .article-content > .callout-box,
+body .article-content > .yeatru-fact-block{max-width:var(--measure-tight)}
+
+body .article-content p,
+body .article-content li{line-height:1.75}
+
+/* ---------- 2 · Break before you clip ------------------------------------
+   A single unbreakable token (SKU, URL, long compound word) used to push a
+   card or table column past its container; the parent then clipped the text
+   at the edge. Allow a break instead. */
+body p, body li, body dd, body dt, body blockquote, body figcaption,
+body td, body th, body .card-body,
+body .advantage-card, body .advantage-desc,
+body .service-card, body .service-quick-link, body .service-desc,
+body .product-catalog-card, body .client-segment-card, body .step-card,
+body .value-card, body .case-study-card, body .stat-card,
+body .yeatru-fact-block, body .callout-box{
+  overflow-wrap:break-word;
+  word-break:normal;
+  hyphens:auto;
+}
+
+/* URLs, e-mails and inline code have no natural break opportunity. */
+body .article-content a[href^="http"],
+body .article-content code, body .article-content kbd, body .article-content samp,
+body .yeatru-fact-block a,
+body .callout-box a,
+body a[href^="mailto:"]{overflow-wrap:anywhere}
+
+/* Flex/grid children default to min-width:auto, which lets one long word
+   size the whole card wider than its column. */
+body .advantage-card > *,
+body .service-card > *,
+body .service-quick-link > *,
+body .step-card > *,
+body .product-catalog-card > *,
+body .client-segment-card > *,
+body .case-study-card > *,
+body .card-body > *{min-width:0}
+
+/* Product catalog cards: price and the "Get quote" button were both locked
+   to one nowrap line, so at 596px the card ran 33px past its column.
+   Let the footer wrap onto two lines instead of overflowing. */
+body .product-catalog-footer{flex-wrap:wrap;row-gap:8px}
+body .product-catalog-price{flex-wrap:wrap;min-width:0}
+body .product-catalog-quote{max-width:100%;white-space:normal;text-align:center}
+
+/* ---------- 3 · Card system ----------------------------------------------
+   One radius, one shadow, one hover motion. Cards also get real padding so
+   body text stops sitting against the border. */
+body .advantage-card{
+  padding:var(--card-pad)!important;
+  border-radius:var(--r-lg)!important;
+  border:1px solid var(--border)!important;
+  background:var(--bg-panel)!important;
+  box-shadow:var(--shadow-xs);
+  transition:transform .28s cubic-bezier(.22,1,.36,1),
+             box-shadow .28s cubic-bezier(.22,1,.36,1),
+             border-color .28s ease;
+}
+body .advantage-card:hover{
+  transform:translateY(var(--card-lift));
+  box-shadow:var(--shadow-md);
+  border-color:var(--border-brand)!important;
+}
+body .advantage-icon{
+  width:46px!important;height:46px!important;
+  border-radius:12px!important;
+  background:var(--c-brand-50)!important;
+  margin-bottom:.85rem!important;
+}
+body .advantage-icon i{font-size:1.05rem!important;color:var(--c-brand-600)!important}
+body .advantage-title{
+  font-size:1.02rem!important;
+  line-height:1.32!important;
+  letter-spacing:-.012em!important;
+  margin-bottom:.45rem!important;
+}
+body .advantage-desc{
+  font-size:.9rem!important;
+  line-height:1.62!important;
+  color:var(--text-secondary)!important;
+  margin-bottom:.85rem!important;
+}
+body .advantage-card > .tag{align-self:flex-start}
+
+/* Services: six 1/6-width tiles squeezed the description to 0.82rem.
+   Three tiles per row on desktop, two on tablet, two on phone. */
+@media (min-width:992px){
+  body #services .row > [class*="col-"]{flex:0 0 33.333333%;max-width:33.333333%}
+}
+body #services .service-quick-link{padding:1.35rem 1rem!important;gap:.45rem}
+body #services .service-quick-title{font-size:1.02rem!important;line-height:1.35!important}
+body #services .service-desc{font-size:.86rem!important;line-height:1.55!important}
+
+/* ---------- 4 · Type & rhythm -------------------------------------------- */
+body .section-title{letter-spacing:-.015em!important;line-height:1.18!important}
+body .section-subtitle{font-size:.98rem!important;line-height:1.65!important}
+body .section-eyebrow{letter-spacing:.12em!important;font-weight:700!important}
+body .lead{font-size:1.09rem;line-height:1.7}
+
+/* Buttons: one radius, one weight, one resting shadow. */
+body .btn{border-radius:var(--r-md)!important;font-weight:600!important;letter-spacing:0}
+body .btn-cta, body .btn-primary{box-shadow:var(--shadow-xs)}
+body .btn-cta:hover, body .btn-primary:hover{box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+body .final-cta-box .btn{margin:.25rem}
+
+/* ---------- 5 · Touch screens -------------------------------------------- */
+@media (max-width:575.98px){
+  body .advantage-card{padding:1rem!important}
+  body .advantage-desc{font-size:.875rem!important;line-height:1.6!important}
+  body .article-content > p,
+  body .article-content > ul,
+  body .article-content > ol,
+  body .article-content > h2,
+  body .article-content > h3,
+  body .article-content > .callout-box,
+  body .article-content > .yeatru-fact-block{max-width:100%}
+}
