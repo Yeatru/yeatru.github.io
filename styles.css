@@ -6088,9 +6088,13 @@ body .advantage-desc{
 body .advantage-card > .tag{align-self:flex-start}
 
 /* Services: six 1/6-width tiles squeezed the description to 0.82rem.
-   Three tiles per row on desktop, two on tablet, two on phone. */
+   Three tiles per row from 768px up, two per row on phones. */
 @media (min-width:992px){
-  body #services .row > [class*="col-"]{flex:0 0 33.333333%;max-width:33.333333%}
+  body #services .row > [class*="col-"]{
+    flex:0 0 33.333333%;
+    width:33.333333%;
+    max-width:33.333333%;
+  }
 }
 body #services .service-quick-link{padding:1.35rem 1rem!important;gap:.45rem}
 body #services .service-quick-title{font-size:1.02rem!important;line-height:1.35!important}
