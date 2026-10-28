@@ -6120,6 +6120,16 @@ body .final-cta-box .btn{margin:.25rem}
    cards keep their natural content height. */
 body #why-yeatru > .container > .row{align-items:flex-start!important}
 
+/* The outer row carries an inline style="align-items:stretch!important" which
+   no stylesheet rule can override (inline !important always wins). A flex
+   item's own align-self (non-auto) always takes precedence over the parent's
+   align-items, so set both main columns to flex-start. This also overrides
+   #why-yeatru .row > [class*="col-lg-"]{align-self:stretch} at line ~5878. */
+body #why-yeatru > .container > .row > .col-lg-7,
+body #why-yeatru > .container > .row > .col-lg-5{
+  align-self:flex-start!important;
+}
+
 /* Left column's two inner cards ("What 14+ years gives you" / "What we do not
    claim"): natural height, top-aligned, no stretched empty space. */
 body #why-yeatru .col-lg-7 .row.g-3{align-items:flex-start!important}
