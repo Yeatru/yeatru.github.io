@@ -3,6 +3,3 @@ __pycache__/
 /.screenshots/
 *.csv
 /.trae-html-share-packages/
-/public/
-/resources/
-.hugo_build.lock
