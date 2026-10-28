@@ -301,30 +301,18 @@ export async function onRequest(context) {
     return next();
   }
 
-  // (2c) clean path (无后缀): 直接 fetch .html 后缀拿到内容返回 200
-  // 不再做 301! 避免与 Pages pretty_urls 的 .html→clean path 308 冲突
-  // canonical 通过 HTTP Link header + HTML 内 <link rel=canonical> 都指向 .html 版本
+  // (2c) clean path (无后缀): 存在同名 .html → 301 到 .html 规范地址
+  // 之前这里用 200 直出内容, 导致同一页面同时存在 /x 与 /x.html 两个 200 URL。
+  // Google 靠 canonical 能去重, 但 Bing AI Performance 会把两者当成两个页面
+  // 分别计引用 (实测 /sourcing-agent-middle-east-uae-saudi 与其 .html 各计 1 次)。
+  // 改为硬 301 后, 引用/排名信号统一到 .html 版本。
   if (isCleanPath) {
     const htmlSuffix = url.pathname.replace(/\/+$/, '') + '.html';
     if (env && env.ASSETS && typeof env.ASSETS.fetch === 'function') {
       const asset = await fetchAssetWithFollow(htmlSuffix);
       if (asset) {
-        const h = new Headers(asset.headers);
-        h.delete('Location'); h.delete('Refresh');
-        if (!h.has('Content-Type')) h.set('Content-Type', 'text/html; charset=utf-8');
-        if (isHead) h.set('Content-Length', asset.headers.get('Content-Length') || '0');
-        h.set('Link', `<https://www.yeatru.com${htmlSuffix}>; rel="canonical"`);
-        // Product detail pages (SKU pages) are indexable. They used to be
-        // noindex here while still being listed in sitemap-products-*.xml,
-        // which is what GSC reported as "Excluded by 'noindex' tag".
-        // `product-sourcing.html` is a normal service page and must never be
-        // caught by a /product-* rule either.
-        if (/\/data(\.html)?$/i.test(htmlSuffix)) {
-          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-        } else {
-          h.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large');
-        }
-        return new Response(isHead ? null : asset.body, { status: 200, headers: h });
+        // /index → /index.html → / 会多一跳, 直接指到根
+        return redirect301(url, htmlSuffix === '/index.html' ? '/' : htmlSuffix);
       }
     }
     return next();
