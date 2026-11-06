@@ -592,7 +592,7 @@ gtag('config', 'G-KXW2N4FHZR');
    var topic = raw.split('|')[0].split(' - Yeatru')[0].replace(/\s+/g,' ').trim();
    if (topic.length > 80) topic = topic.slice(0,80).replace(/[\s,;:]+$/,'');
    var msg = 'Hi Yeatru, I read your page "' + topic + '" and would like help sourcing from China. '
-           + 'Could you send me a quote within 24 hours? My product / target quantity / destination country: ';
+           + 'Could you send me a quote? My product / target quantity / destination country: ';
    for (var i = 0; i < links.length; i++) {
      var a = links[i], h = a.getAttribute('href') || '';
      var m = h.match(/[?&]text=([^&]*)/);
