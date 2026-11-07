@@ -1,0 +1,57 @@
+section,item,metric,min,max,unit,currency,period,notes
+Market facts,Yiwu International Trade City,Total booths / stores,75000,,count,,2026,Yiwu International Trade City official
+Market facts,Yiwu International Trade City,Product categories,26,,categories,,2026,"26 main categories, 2.1M+ SKUs"
+Market facts,Yiwu International Trade City,Total exhibition area,5.5,,million m2,,2026,5 districts
+Market facts,Yiwu International Trade City,Annual trade volume,50,,USD billion,USD,2024,Yiwu customs data
+Market facts,Yiwu International Trade City,Buyer countries,200,,count,,2026,Yiwu Bureau of Commerce
+Wholesale price (EXW Yiwu),"Home & Kitchen (utensils, storage)",Unit price,0.3,3.5,USD/pc,USD,2026-Q4,MOQ 100-500 pcs
+Wholesale price (EXW Yiwu),"Toys (plush, plastic, educational)",Unit price,0.5,8.0,USD/pc,USD,2026-Q4,MOQ 100-500 pcs
+Wholesale price (EXW Yiwu),Apparel & accessories,Unit price,1.2,12.0,USD/pc,USD,2026-Q4,MOQ 100-1000 pcs
+Wholesale price (EXW Yiwu),Electronics & small appliances,Unit price,1.5,25.0,USD/pc,USD,2026-Q4,MOQ 200-1000 pcs
+Wholesale price (EXW Yiwu),Beauty & personal care tools,Unit price,0.2,4.0,USD/pc,USD,2026-Q4,MOQ 100-500 pcs
+Wholesale price (EXW Yiwu),Sporting goods & outdoor,Unit price,1.0,15.0,USD/pc,USD,2026-Q4,MOQ 100-500 pcs
+Wholesale price (EXW Yiwu),Stationery & office,Unit price,0.1,2.5,USD/pc,USD,2026-Q4,MOQ 100-1000 pcs
+Wholesale price (EXW Yiwu),Bags & luggage,Unit price,1.5,18.0,USD/pc,USD,2026-Q4,MOQ 100-500 pcs
+Quality inspection (AQL 2.5),Pre-shipment inspection (Yiwu / Zhejiang),Rate per inspector-day,200,300,USD/day,USD,2026-Q4,"1 inspector, 8 hrs, photo report"
+Quality inspection (AQL 2.5),Pre-shipment inspection (Guangdong),Rate per inspector-day,300,400,USD/day,USD,2026-Q4,Travel & lodging extra
+Quality inspection (AQL 2.5),Third-party lab testing (CE / RoHS / EN71),Cost per test,150,800,USD/test,USD,2026-Q4,Depends on standard & product
+Quality inspection (AQL 2.5),Factory audit (on-site),Cost per audit,350,600,USD/audit,USD,2026-Q4,"1-day audit, photo report"
+Freight rates from China,US West Coast,Sea LCL,45,75,USD/CBM,USD,2026-Q4,Sea 18-28d / Air 5-8d
+Freight rates from China,US West Coast,Sea FCL 20GP,1500,2800,USD/container,USD,2026-Q4,Sea 18-28d / Air 5-8d
+Freight rates from China,US West Coast,Air freight,5,9,USD/kg,USD,2026-Q4,Sea 18-28d / Air 5-8d
+Freight rates from China,US West Coast,Express courier,7,12,USD/kg,USD,2026-Q4,Sea 18-28d / Air 5-8d
+Freight rates from China,US East Coast,Sea LCL,60,95,USD/CBM,USD,2026-Q4,Sea 28-40d / Air 6-9d
+Freight rates from China,US East Coast,Sea FCL 20GP,2200,3500,USD/container,USD,2026-Q4,Sea 28-40d / Air 6-9d
+Freight rates from China,US East Coast,Air freight,6,10,USD/kg,USD,2026-Q4,Sea 28-40d / Air 6-9d
+Freight rates from China,US East Coast,Express courier,8,13,USD/kg,USD,2026-Q4,Sea 28-40d / Air 6-9d
+Freight rates from China,EU (Rotterdam / Hamburg),Sea LCL,40,70,USD/CBM,USD,2026-Q4,Sea 25-35d / Air 5-8d
+Freight rates from China,EU (Rotterdam / Hamburg),Sea FCL 20GP,1400,2600,USD/container,USD,2026-Q4,Sea 25-35d / Air 5-8d
+Freight rates from China,EU (Rotterdam / Hamburg),Air freight,4.5,8,USD/kg,USD,2026-Q4,Sea 25-35d / Air 5-8d
+Freight rates from China,EU (Rotterdam / Hamburg),Express courier,6,11,USD/kg,USD,2026-Q4,Sea 25-35d / Air 5-8d
+Freight rates from China,UK (Felixstowe),Sea LCL,45,75,USD/CBM,USD,2026-Q4,Sea 28-38d / Air 5-8d
+Freight rates from China,UK (Felixstowe),Sea FCL 20GP,1500,2700,USD/container,USD,2026-Q4,Sea 28-38d / Air 5-8d
+Freight rates from China,UK (Felixstowe),Air freight,5,9,USD/kg,USD,2026-Q4,Sea 28-38d / Air 5-8d
+Freight rates from China,UK (Felixstowe),Express courier,7,12,USD/kg,USD,2026-Q4,Sea 28-38d / Air 5-8d
+Freight rates from China,Middle East (Jebel Ali / Dammam),Sea LCL,30,55,USD/CBM,USD,2026-Q4,Sea 15-22d / Air 4-7d
+Freight rates from China,Middle East (Jebel Ali / Dammam),Sea FCL 20GP,1100,2000,USD/container,USD,2026-Q4,Sea 15-22d / Air 4-7d
+Freight rates from China,Middle East (Jebel Ali / Dammam),Air freight,3.5,7,USD/kg,USD,2026-Q4,Sea 15-22d / Air 4-7d
+Freight rates from China,Middle East (Jebel Ali / Dammam),Express courier,5,9,USD/kg,USD,2026-Q4,Sea 15-22d / Air 4-7d
+Freight rates from China,Africa (Lagos / Mombasa / Durban),Sea LCL,50,90,USD/CBM,USD,2026-Q4,Sea 28-45d / Air 6-10d
+Freight rates from China,Africa (Lagos / Mombasa / Durban),Sea FCL 20GP,1600,3000,USD/container,USD,2026-Q4,Sea 28-45d / Air 6-10d
+Freight rates from China,Africa (Lagos / Mombasa / Durban),Air freight,5,9,USD/kg,USD,2026-Q4,Sea 28-45d / Air 6-10d
+Freight rates from China,Africa (Lagos / Mombasa / Durban),Express courier,7,12,USD/kg,USD,2026-Q4,Sea 28-45d / Air 6-10d
+Landed cost example,500-pcs order to US by sea LCL,Product cost (EXW),1000,1000,USD,USD,2026-Q4,500 pcs at USD 2.00 EXW
+Landed cost example,500-pcs order to US by sea LCL,Sourcing agent fee (5-8%),50,80,USD,USD,2026-Q4,3-5% of total
+Landed cost example,500-pcs order to US by sea LCL,Pre-shipment QC (1 day),250,350,USD,USD,2026-Q4,1 inspector-day
+Landed cost example,500-pcs order to US by sea LCL,Sea LCL freight + local charges,150,250,USD,USD,2026-Q4,To US port
+Landed cost example,500-pcs order to US by sea LCL,US duty + customs clearance,50,100,USD,USD,2026-Q4,Duty varies by HS code
+Landed cost example,500-pcs order to US by sea LCL,Last-mile delivery,50,120,USD,USD,2026-Q4,To US warehouse
+Landed cost example,500-pcs order to US by sea LCL,Total landed (approx.),1550,1900,USD,USD,2026-Q4,100%
+Lead time benchmarks,Order cycle,Supplier sourcing & quote,1,3,business days,,2026-Q4,
+Lead time benchmarks,Order cycle,Sample production (stock),3,7,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Sample production (OEM),7,15,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Mass production,7,30,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Pre-shipment inspection,1,2,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Sea freight (China to US/EU),18,40,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Air freight (China to US/EU),5,10,days,,2026-Q4,
+Lead time benchmarks,Order cycle,Express (DHL/FedEx/UPS),3,7,days,,2026-Q4,

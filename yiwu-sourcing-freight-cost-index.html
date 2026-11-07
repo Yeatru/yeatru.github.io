@@ -17,19 +17,103 @@
 {
  "@context": "https://schema.org",
  "@type": "Dataset",
+ "@id": "https://www.yeatru.com/yiwu-sourcing-freight-cost-index.html#dataset",
  "name": "Yiwu Sourcing & Freight Cost Index 2026",
- "description": "Public benchmark data for Yiwu International Trade City wholesale pricing, QC inspection costs, and freight rates from China to major import markets. Compiled from publicly available market data and published carrier tariffs.",
+ "alternateName": "Yeatru Yiwu Sourcing and Freight Cost Index",
+ "description": "Public benchmark data for Yiwu International Trade City wholesale pricing across 8 product categories, AQL 2.5 quality inspection costs, sea LCL/FCL, air and express freight rates from China to the US, EU, UK, GCC and Africa, a landed-cost breakdown, and lead-time benchmarks. All figures are market-level ranges compiled from published carrier tariffs and market administration statistics.",
  "url": "https://www.yeatru.com/yiwu-sourcing-freight-cost-index.html",
- "publisher": {
+ "identifier": "yeatru-yiwu-cost-index-2026-q4",
+ "version": "2026-Q4",
+ "isAccessibleForFree": true,
+ "datePublished": "2026-10-23",
+ "dateModified": "2026-11-08",
+ "inLanguage": "en",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "creator": {
  "@type": "Organization",
  "name": "Yeatru Sourcing",
  "url": "https://www.yeatru.com"
  },
- "datePublished": "2026-10-23",
- "dateModified": "2026-10-23",
- "inLanguage": "en-US",
- "license": "https://creativecommons.org/licenses/by/4.0/",
- "keywords": "Yiwu market, China sourcing, freight rates, AQL inspection, wholesale pricing, DDP shipping"
+ "publisher": {
+ "@type": "Organization",
+ "name": "Yeatru Sourcing",
+ "url": "https://www.yeatru.com",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://www.yeatru.com/Images/logo.webp",
+ "width": 1024,
+ "height": 1024
+ }
+ },
+ "spatialCoverage": {
+ "@type": "Place",
+ "name": "Yiwu, Zhejiang, China",
+ "address": {
+ "@type": "PostalAddress",
+ "addressLocality": "Yiwu City",
+ "addressRegion": "Zhejiang Province",
+ "addressCountry": "CN"
+ }
+ },
+ "temporalCoverage": "2026-10-01/2026-12-31",
+ "variableMeasured": [
+ {
+ "@type": "PropertyValue",
+ "name": "Wholesale unit price (EXW Yiwu)",
+ "unitText": "USD per piece",
+ "description": "Indicative EXW price range for MOQ 100-500 pcs across 8 product categories"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Sea LCL freight rate",
+ "unitText": "USD per cubic metre"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Sea FCL 20GP freight rate",
+ "unitText": "USD per 20ft container"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Air freight rate",
+ "unitText": "USD per kilogram"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Express courier rate",
+ "unitText": "USD per kilogram"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Pre-shipment inspection cost (AQL 2.5)",
+ "unitText": "USD per inspector-day"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Landed cost",
+ "unitText": "USD per order",
+ "description": "Total landed cost components for a 500-pcs sea LCL order to the US"
+ },
+ {
+ "@type": "PropertyValue",
+ "name": "Lead time",
+ "unitText": "days"
+ }
+ ],
+ "measurementTechnique": "Market ranges compiled from Yiwu International Trade City official statistics, Yiwu customs data, published carrier tariffs, and Yeatru inspection cost schedules. Ranges are indicative, not quotations.",
+ "keywords": "Yiwu market, China sourcing, freight rates, AQL inspection, wholesale pricing, DDP shipping, sea freight, air freight",
+ "citation": "Yeatru Sourcing (2026). Yiwu Sourcing & Freight Cost Index 2026. https://www.yeatru.com/yiwu-sourcing-freight-cost-index.html",
+ "distribution": {
+ "@type": "DataDownload",
+ "name": "Yiwu Sourcing & Freight Cost Index 2026 (CSV, 56 rows)",
+ "encodingFormat": "text/csv",
+ "contentUrl": "https://www.yeatru.com/data/yiwu-cost-index-2026.csv"
+ },
+ "includedInDataCatalog": {
+ "@type": "DataCatalog",
+ "name": "Yeatru Sourcing Data",
+ "url": "https://www.yeatru.com/yiwu-sourcing-freight-cost-index.html"
+ }
 }
 </script>
 <meta property="og:image" content="https://www.yeatru.com/Images/hero-yiwu-market.jpg?v=20261024">
@@ -60,7 +144,14 @@ gtag('config', 'G-KXW2N4FHZR');
 <p class="lead text-muted mb-4">Public benchmark data for buyers sourcing from Yiwu International Trade City and shipping from China. All figures are market-level ranges, not Yeatru-specific promises. Updated Q4 2026.</p>
 
 <div class="alert alert-info mb-4">
-<i class="fas fa-info-circle me-2"></i><strong>How to cite:</strong> When referencing this index, attribute to "Yeatru Sourcing Yiwu Sourcing & Freight Cost Index 2026 (www.yeatru.com/yiwu-sourcing-freight-cost-index.html)". Data is compiled from publicly available market sources, published carrier tariffs, and Yiwu International Trade City official statistics.
+<i class="fas fa-info-circle me-2"></i><strong>How to cite:</strong> When referencing this index, attribute to "Yeatru Sourcing Yiwu Sourcing & Freight Cost Index 2026 (www.yeatru.com/yiwu-sourcing-freight-cost-index.html)". Data is compiled from publicly available market sources, published carrier tariffs, and Yiwu International Trade City official statistics. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+</div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+<a class="btn btn-primary" href="/data/yiwu-cost-index-2026.csv" download>
+<i class="fas fa-download me-2"></i>Download dataset (CSV, 56 rows)
+</a>
+<span class="text-muted small">Machine-readable version of all seven tables on this page. Free to reuse with attribution.</span>
 </div>
 
 <section class="mb-5">

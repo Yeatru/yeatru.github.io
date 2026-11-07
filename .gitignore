@@ -2,6 +2,7 @@ __pycache__/
 /.uploads/
 /.screenshots/
 *.csv
+!data/*.csv
 /.trae-html-share-packages/
 
 # internal working docs (not deployed)
