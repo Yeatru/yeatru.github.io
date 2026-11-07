@@ -3,3 +3,6 @@ __pycache__/
 /.screenshots/
 *.csv
 /.trae-html-share-packages/
+
+# internal working docs (not deployed)
+/_internal/
